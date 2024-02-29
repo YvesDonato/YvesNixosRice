@@ -35,10 +35,6 @@
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -63,6 +59,12 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  services.passSecretService.enable = true;
+
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.lightdm.enableGnomeKeyring = true;
+  security.pam.services.sddm.enableGnomeKeyring = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -120,6 +122,9 @@
     xwayland
     wineWowPackages.waylandFull
     github-desktop
+    libsecret
+    gnome.gnome-keyring
+    lssecret
   ];
 
   fonts.packages = with pkgs; [
@@ -127,5 +132,4 @@
   ];
 
   system.stateVersion = "23.11";
-
 }
