@@ -122,9 +122,7 @@
     xwayland
     wineWowPackages.waylandFull
     github-desktop
-    libsecret
-    gnome.gnome-keyring
-    lssecret
+    tk
   ];
 
   fonts.packages = with pkgs; [
