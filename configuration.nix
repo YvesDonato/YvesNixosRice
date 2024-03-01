@@ -124,6 +124,7 @@
     github-desktop
     tk
     gitkraken
+    waypaper
   ];
 
   fonts.packages = with pkgs; [
