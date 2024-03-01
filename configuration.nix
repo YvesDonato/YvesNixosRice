@@ -123,6 +123,7 @@
     wineWowPackages.waylandFull
     github-desktop
     tk
+    gitkraken
   ];
 
   fonts.packages = with pkgs; [
