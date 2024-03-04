@@ -98,6 +98,12 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  #virtualisation.virtualbox.host.enable = true;
+
+  # Enable the Oracle Extension Pack.
+  #nixpkgs.config.virtualbox.enableExtensionPack = true;
+  #users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -125,6 +131,7 @@
     tk
     gitkraken
     waypaper
+    #virtualbox
   ];
 
   fonts.packages = with pkgs; [
