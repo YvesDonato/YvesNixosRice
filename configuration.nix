@@ -34,7 +34,7 @@
   };
 
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # networking.wireless.enable = true;
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -99,14 +99,11 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Vbox
   #virtualisation.virtualbox.host.enable = true;
-
-  # Enable the Oracle Extension Pack.
   #nixpkgs.config.virtualbox.enableExtensionPack = true;
   #users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     neovim
     git
@@ -138,6 +135,19 @@
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "CascadiaCode" ]; })
   ];
+
+  # Garbage colector
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
+  
+  # Auto Upgrade
+  system.autoUpgrade = {
+   enable = true;
+   channel = "https://nixos.org/channels/nixos-23.11";
+  };
 
   system.stateVersion = "23.11";
 }
