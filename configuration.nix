@@ -9,6 +9,7 @@
     [ 
       ./hardware-configuration.nix
       ./hyprland.nix
+      ./unstable.nix
     ];
 
   # Bootloader.

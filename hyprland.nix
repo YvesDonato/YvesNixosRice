@@ -22,7 +22,6 @@
     kitty
     swww
     wlogout
-    swaylock-effects
     wl-clipboard
     grim
     slurp

@@ -3,22 +3,27 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-23.11";
-
-    # use the following for unstable:
-    # nixpkgs.url = "nixpkgs/nixos-unstable";
-
-    # or any branch you want:
-    # nixpkgs.url = "nixpkgs/{BRANCH-NAME}";
+    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
   };
 
-  outputs = { self, nixpkgs, ... }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, ... }:
     let
+      system = "x86_64-linux";
       lib = nixpkgs.lib;
+      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+      username = "yvesd";
+      name = "Yves";
     in {
       nixosConfigurations = {
         nixos = lib.nixosSystem {
-          system = "x86_64-linux";
+          inherit system;
           modules = [ ./configuration.nix ];
+          specialArgs = {
+            inherit username;
+            inherit name;
+            inherit pkgs-unstable;
+        };
       };
     };
   };
