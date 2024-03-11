@@ -67,6 +67,8 @@
   security.pam.services.lightdm.enableGnomeKeyring = true;
   security.pam.services.sddm.enableGnomeKeyring = true;
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -84,7 +86,6 @@
     description = "Yves Donato";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      firefox
     ];
   };
 
@@ -105,13 +106,14 @@
   #users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
 
   environment.systemPackages = with pkgs; [
-    neovim
+    firefox
+    helix
     git
     rofi-wayland
     gnome.nautilus
     python3
-    gcc
     clang
+    stdenv
     neofetch
     pavucontrol
     pamixer
@@ -119,23 +121,18 @@
     spotify
     blanket
     libreoffice
-    libgccjit
-    vscode-fhs
     wget
     nodejs
     xwayland
-    wineWowPackages.waylandFull
-    github-desktop
     tk
-    gitkraken
+    gitg
     waypaper
-    #virtualbox
   ];
 
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "CascadiaCode" ]; })
   ];
-
+  
   # Garbage colector
   nix.gc = {
     automatic = true;
