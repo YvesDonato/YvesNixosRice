@@ -1,6 +1,6 @@
 
 # Yves Donato's nixos config
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   imports =
@@ -8,6 +8,7 @@
       ./hardware-configuration.nix
       ./hyprland.nix
       ./unstable.nix
+      inputs.home-manager.nixosModules.home-manager
     ];
 
   # Bootloader
@@ -20,6 +21,7 @@
     driSupport32Bit = true;
   };
   
+  # Drivers
   services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {
@@ -31,7 +33,8 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  networking.hostName = "nixos"; # Define your hostname.
+  # Networking
+  networking.hostName = "nixos";
   # networking.wireless.enable = true;
 
   # Enable networking
@@ -39,8 +42,6 @@
 
   # Set your time zone.
   time.timeZone = "America/Toronto";
-
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
 
   # Enable the X11 windowing system.
@@ -79,7 +80,8 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-
+  
+  # Shell Enable
   programs.zsh.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -88,6 +90,14 @@
     description = "Yves Donato";
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
+  };
+
+  # Home Mangager
+  home-manager = {
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      yvesd = import ./home.nix;
+    };
   };
   
   # Enable automatic login for the user
@@ -139,7 +149,8 @@
     # system
     xwayland
   ];
-
+  
+  # Fonts
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "CascadiaCode" ]; })
   ];
