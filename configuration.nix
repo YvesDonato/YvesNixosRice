@@ -112,7 +112,6 @@
     gitg
     
     # Terminal
-    lazygit
     helix
     zellij
     git
