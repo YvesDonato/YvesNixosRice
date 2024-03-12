@@ -126,8 +126,6 @@
     
     # Zsh
     starship
-    zsh-syntax-highlighting
-    zsh-autosuggestions
 
     # Terminal
     helix
