@@ -106,27 +106,36 @@
   #users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
 
   environment.systemPackages = with pkgs; [
+    # Programs
     firefox
-    helix
-    git
     rofi-wayland
     gnome.nautilus
-    python3
-    clang
-    stdenv
-    neofetch
     pavucontrol
     pamixer
     discord
     spotify
     blanket
     libreoffice
-    wget
-    nodejs
-    xwayland
-    tk
     gitg
-    waypaper
+    
+    # Terminal
+    helix
+    zellij
+    git
+    neofetch
+    wget
+    
+    # Languages
+    python3
+    clang
+    stdenv
+    nodejs
+    vscode-langservers-extracted
+    nodePackages_latest.typescript-language-server
+
+
+    # system
+    xwayland
   ];
 
   fonts.packages = with pkgs; [

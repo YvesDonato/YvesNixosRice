@@ -26,6 +26,7 @@
     grim
     slurp
     dunst
+    hyprpaper
   ];
   
   # Security
