@@ -1,7 +1,5 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
 
+# Yves Donato's nixos config
 { config, pkgs, ... }:
 
 {
@@ -12,7 +10,7 @@
       ./unstable.nix
     ];
 
-  # Bootloader.
+  # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   
@@ -60,9 +58,11 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
+  
+  # Password
   services.passSecretService.enable = true;
-
+  
+  # Keyring
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.lightdm.enableGnomeKeyring = true;
   security.pam.services.sddm.enableGnomeKeyring = true;
@@ -85,25 +85,18 @@
     isNormalUser = true;
     description = "Yves Donato";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    ];
   };
 
-  # Enable automatic login for the user.
+  # Enable automatic login for the user
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "yvesd";
 
-  # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
+  # Workaround for GNOME autologin
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # Vbox
-  #virtualisation.virtualbox.host.enable = true;
-  #nixpkgs.config.virtualbox.enableExtensionPack = true;
-  #users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
 
   environment.systemPackages = with pkgs; [
     # Programs
@@ -119,6 +112,7 @@
     gitg
     
     # Terminal
+    lazygit
     helix
     zellij
     git
@@ -132,7 +126,8 @@
     nodejs
     vscode-langservers-extracted
     nodePackages_latest.typescript-language-server
-
+    nodePackages_latest.bash-language-server
+    nil
 
     # system
     xwayland
