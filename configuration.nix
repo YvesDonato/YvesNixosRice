@@ -114,6 +114,7 @@
   environment.systemPackages = with pkgs; [
     # Programs
     firefox
+    chromium
     rofi-wayland
     gnome.nautilus
     pavucontrol
@@ -142,6 +143,7 @@
     vscode-langservers-extracted
     nodePackages_latest.typescript-language-server
     nodePackages_latest.bash-language-server
+    tailwindcss-language-server
     nil
 
     # system

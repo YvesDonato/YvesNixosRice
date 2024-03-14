@@ -27,6 +27,7 @@
     slurp
     dunst
     hyprpaper
+    waypaper
   ];
   
   # Security
