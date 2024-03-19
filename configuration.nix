@@ -19,6 +19,13 @@
     enable = true;
     driSupport = true;
     driSupport32Bit = true;
+    extraPackages = with pkgs; [
+      libva
+      libva-utils
+      nvidia-vaapi-driver
+      vaapiVdpau
+      libvdpau-va-gl
+    ];
   };
   
   # Drivers
@@ -30,7 +37,7 @@
     powerManagement.finegrained = false;
     open = false;
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.production;
   };
 
   # Networking
@@ -108,13 +115,13 @@
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
-  # Allow unfree packages
+  # Allow unfree packagesVA-API
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
     # Programs
     firefox
-    chromium
+    brave
     rofi-wayland
     gnome.nautilus
     pavucontrol
@@ -124,6 +131,7 @@
     blanket
     libreoffice
     gitg
+    steam
     
     # Zsh
     starship
@@ -134,6 +142,8 @@
     git
     neofetch
     wget
+    spotify-cli-linux
+    killall
     
     # Languages
     python3
@@ -148,6 +158,7 @@
 
     # system
     xwayland
+    swaynotificationcenter
   ];
   
   # Fonts

@@ -1,7 +1,7 @@
 { inputs, pkgs, ... }: {
 
     # Hyprland
-    environment.sessionVariables = {
+  environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
   };
@@ -25,7 +25,6 @@
     wl-clipboard
     grim
     slurp
-    dunst
     hyprpaper
     waypaper
   ];
