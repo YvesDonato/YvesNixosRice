@@ -27,6 +27,9 @@
       libvdpau-va-gl
     ];
   };
+
+  environment.variables.VDPAU_DRIVER = "va_gl";
+  environment.variables.LIBVA_DRIVER_NAME = "nvidia";
   
   # Drivers
   services.xserver.videoDrivers = ["nvidia"];
@@ -35,9 +38,9 @@
     modesetting.enable = true;
     powerManagement.enable = false;
     powerManagement.finegrained = false;
-    open = false;
+    open = true;
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.production;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
   # Networking
@@ -144,10 +147,12 @@
     wget
     spotify-cli-linux
     killall
+    btop
     
     # Languages
     python3
     clang
+    clang-tools
     stdenv
     nodejs
     vscode-langservers-extracted

@@ -11,9 +11,21 @@
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Hyprland
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
+    
+    hy3 = {
+      url = "github:outfoxxed/hy3";
+      inputs.hyprland.follows = "hyprland";
+    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, hy3, ... }@inputs:
     let
       # System
       system = "x86_64-linux";
