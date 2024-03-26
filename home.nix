@@ -28,6 +28,7 @@
     shellAliases = {
       ll = "ls -l";
       update = "sudo nixos-rebuild switch";
+      clean = "sudo nix-env --delete-generations old && nix-store --gc && nix-collect-garbage -d";
     };
     
     history.size = 10000;
@@ -136,16 +137,21 @@
     bind = $mainMod, H, exec, firefox --private-window # Private Window
     bind = $mainMod, Y, exec, firefox --new-window https://www.youtube.com/feed/subscriptions
     bind = $mainMod, U, exec, firefox --new-window https://slate.sheridancollege.ca/d2l/login
-    bind = $mainMod, N, exec, firefox --new-window https://www.notion.so/
-    bind = $mainMod, O, exec, firefox --new-window https://calendar.notion.so/
+    bind = $mainMod, N, exec, 
+    bind = $mainMod, O, exec, 
 
-    bind = $mainMod, D, exec, discord
-    bind = $mainMod, M, exec, spotify
-    bind = $mainMod, B, exec, blanket
-    bind = $mainMod, C, exec, kitty hx # Code editor
+    bind = $mainMod, D, exec,
+    bind = $mainMod, M, exec, 
+    bind = $mainMod, B, exec, 
+    bind = $mainMod, C, exec, firefox --new-window https://calendar.notion.so/
     bind = $mainMod, L, exec, hyprlock
     bind = $mainMod, P, exec, grim -g "$(slurp -d)" - | wl-copy
+    bind = $mainMod, O, exec, obsidian
 
+    windowrulev2 = workspace 10, title:^(Blanket)$
+    windowrulev2 = workspace 10, title:^(Spotify Premium)$
+    windowrulev2 = workspace 9, class:^(discord)$
+    
     # Move focus with mainMod + arrow keys
     bind = $mainMod, left, movefocus, l
     bind = $mainMod, right, movefocus, r

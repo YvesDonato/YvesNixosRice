@@ -124,7 +124,7 @@
   environment.systemPackages = with pkgs; [
     # Programs
     firefox
-    brave
+    qutebrowser
     rofi-wayland
     gnome.nautilus
     pavucontrol
