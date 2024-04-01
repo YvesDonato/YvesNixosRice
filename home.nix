@@ -28,7 +28,7 @@
     shellAliases = {
       ll = "ls -l";
       update = "sudo nixos-rebuild switch";
-      clean = "sudo nix-env --delete-generations old && nix-store --gc && nix-collect-garbage -d";
+      clean = " sudo nix-env --delete-generations old; sudo nix-store --gc; sudo nix-collect-garbage -d; sudo nixos-rebuild boot";
     };
     
     history.size = 10000;

@@ -124,7 +124,7 @@
   environment.systemPackages = with pkgs; [
     # Programs
     firefox
-    qutebrowser
+    chromium
     rofi-wayland
     gnome.nautilus
     pavucontrol
@@ -134,7 +134,6 @@
     blanket
     libreoffice
     gitg
-    steam
     
     # Zsh
     starship
