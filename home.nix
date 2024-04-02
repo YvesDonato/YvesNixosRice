@@ -45,7 +45,8 @@
     plugins = [
     ];
     extraConfig = ''
-      monitor=DP-1,3440x1440@175,0x0,1
+      monitor=eDP-1,2560x1600@165,0x0,1.5
+      monitor=DP-2,3440x1440@175,1707x0,1
       exec-once = waybar & swaync
       exec-once = bash ~/.config/hypr/start.sh
       env = XCURSOR_SIZE,24
@@ -148,9 +149,9 @@
     bind = $mainMod, P, exec, grim -g "$(slurp -d)" - | wl-copy
     bind = $mainMod, O, exec, obsidian
 
-    windowrulev2 = workspace 10, title:^(Blanket)$
-    windowrulev2 = workspace 10, title:^(Spotify Premium)$
-    windowrulev2 = workspace 9, class:^(discord)$
+    windowrulev2 = workspace 10,DP-2, title:^(Blanket)$
+    windowrulev2 = workspace 10,DP-2 title:^(Spotify Premium)$
+    windowrulev2 = workspace 9,DP-2 class:^(discord)$
     
     # Move focus with mainMod + arrow keys
     bind = $mainMod, left, movefocus, l

@@ -5,5 +5,5 @@ sleep 1 & # Wait for 1 second
 waypaper --restore &
 blanket &
 spotify &
-sleep 10 &
-discord 
+discord &
+echo 60 | sudo tee /sys/class/power_supply/BAT0/charge_control_end_threshold

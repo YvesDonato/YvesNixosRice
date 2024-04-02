@@ -1,6 +1,6 @@
 {
   "layer": "top",
-  "position": "bottom",
+  "position": "top",
   "mod": "dock",
   "exclusive": true,
   "passthrough": false,
@@ -11,16 +11,15 @@
   "modules-left": [
     "custom/logo",
     "group/hardware",
-    "hyprland/workspaces",
     "hyprland/window"
   ],
   "modules-center": [
-    "custom/spotify"
+    "hyprland/workspaces"
   ],
   "modules-right": [
-    //"network",
+    "battery",
     "clock",
-    "custom/notification"
+    "group/trayer"
   ],
   "hyprland/workspaces": {
     "disable-scroll": true,
@@ -71,8 +70,8 @@
     },
     "modules": [
       "custom/notification",
-      "pulseaudio",
-      "custom/light_dark"
+      "network",
+      "backlight"
     ]
   },
   "group/hardware": {
@@ -88,21 +87,14 @@
       "disk"
     ]
   },
-  "custom/light_dark": {
-    "format": "󰠠",
-    "on-click": "$HOME/.config/waybar/scripts/baraction light",
-    "tooltip": false
-  },
   "custom/logo": {
-    "format": "  ",
-    //"on-click": "kitty -T fetch neofetch",
+    "format": "     ",
     "tooltip": false
   },
   "cpu": {
     "interval": 2,
     "format": " {usage}%",
     "max-length": 10,
-    //"on-click": "foot -e btop --utf-force"
   },
   "memory": {
     "states": {
@@ -113,7 +105,6 @@
     "max-length": 10,
     "tooltip": true,
     "tooltip-format": "Memory - {used:0.1f}G/{total:0.1f}G",
-    "on-click": "foot -e btop --utf-force"
   },
   "custom/notification": {
     "tooltip": false,
@@ -183,13 +174,6 @@
     "icon-size": 18,
     "spacing": 10
   },
-  "custom/updates": {
-    "format": "󰏔 {}",
-    "exec": "~/.config/waybar/scripts/update-sys",
-    "on-click": "~/.config/waybar/scripts/update-sys update",
-    "interval": 300,
-    "tooltip": true
-  },
   "clock": {
     "format": "{:%I:%M %p}",
     "format-alt": "{:%R 󰃭 %d·%m·%y}",
@@ -219,7 +203,7 @@
     "path": "/"
   },
   "network": {
-    "interface": "wlan0",
+    "interface": "wlp2s0",
     "format": "{ifname}",
     "tooltip-format-wifi": "{icon} ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",
     "format-ethernet": "{ipaddr}/{cidr} 󰊗",
@@ -230,7 +214,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 20,
     "interval": 2,
-    "on-click": "foot -F sh -c 'sleep 2 && nmtui'"
+    "on-click": "kitty nmtui"
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",

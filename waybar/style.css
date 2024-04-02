@@ -1,8 +1,8 @@
-@define-color base   #1e1e2e;
+@define-color base #1e1e2e;
 @define-color mantle #181825;
-@define-color crust  #11111b;
+@define-color crust #11111b;
 
-@define-color text     #cdd6f4;
+@define-color text #cdd6f4;
 @define-color subtext0 #a6adc8;
 @define-color subtext1 #bac2de;
 
@@ -14,19 +14,19 @@
 @define-color overlay1 #7f849c;
 @define-color overlay2 #9399b2;
 
-@define-color blue      #89b4fa;
-@define-color lavender  #b4befe;
-@define-color sapphire  #74c7ec;
-@define-color sky       #89dceb;
-@define-color teal      #94e2d5;
-@define-color green     #a6e3a1;
-@define-color yellow    #f9e2af;
-@define-color peach     #fab387;
-@define-color maroon    #eba0ac;
-@define-color red       #f38ba8;
-@define-color mauve     #cba6f7;
-@define-color pink      #f5c2e7;
-@define-color flamingo  #f2cdcd;
+@define-color blue #89b4fa;
+@define-color lavender #b4befe;
+@define-color sapphire #74c7ec;
+@define-color sky #89dceb;
+@define-color teal #94e2d5;
+@define-color green #a6e3a1;
+@define-color yellow #f9e2af;
+@define-color peach #fab387;
+@define-color maroon #eba0ac;
+@define-color red #f38ba8;
+@define-color mauve #cba6f7;
+@define-color pink #f5c2e7;
+@define-color flamingo #f2cdcd;
 @define-color rosewater #f5e0dc;
 
 * {
@@ -36,15 +36,15 @@
 }
 
 window#waybar {
-    background-color: @crust;
-    color: @text;
-    transition-property: background-color;
-    transition-duration: .5s;
-    opacity: 0.8;
+  background-color: @crust;
+  color: @text;
+  transition-property: background-color;
+  transition-duration: .5s;
+  opacity: 0.8;
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
+  opacity: 0.2;
 }
 
 /*
@@ -57,12 +57,12 @@ window#waybar.solo {
 */
 
 window#waybar.termite {
-    background-color: #3F3F3F;
+  background-color: #3F3F3F;
 }
 
 window#waybar.chromium {
-    background-color: #000000;
-    border: none;
+  background-color: #000000;
+  border: none;
 }
 
 #waybar.empty #window {
@@ -70,11 +70,11 @@ window#waybar.chromium {
 }
 
 button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 0;
+  /* Use box-shadow instead of border so the text isn't offset */
+  box-shadow: inset 0 -3px transparent;
+  /* Avoid rounded borders under each button name */
+  border: none;
+  border-radius: 0;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -94,6 +94,7 @@ button {
 #workspaces button.active {
   color: #f97583;
 }
+
 #clock,
 #battery,
 #cpu,
@@ -115,32 +116,35 @@ button {
 #custom-notification,
 #custom-light_dark,
 #mpd {
-    padding: 0 8px;
-    background-color: @base;
-    color: @crust;
-    border-radius: 15px;
-    margin: 5px 0;
+  padding: 0 8px;
+  background-color: @base;
+  color: @crust;
+  border-radius: 15px;
+  margin: 5px 0;
 }
 
 #workspaces {
-    margin: 0 4px;
+  margin: 0 4px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
+.modules-left>widget:first-child>#workspaces {
+  margin-left: 0;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
+.modules-right>widget:last-child>#workspaces {
+  margin-right: 0;
 }
 
 label:focus {
-    background-color: #000000;
+  background-color: #000000;
 }
 
-#clock, #network, #bluetooth, #window {
+#clock,
+#network,
+#bluetooth,
+#window {
   color: @text;
 }
 
@@ -149,10 +153,11 @@ label:focus {
 }
 
 #disk {
-    color: @peach;
+  color: @peach;
 }
 
-#pulseaudio, #pulseaudio.microphone {
+#pulseaudio,
+#pulseaudio.microphone {
   color: @yellow;
 }
 
@@ -169,24 +174,24 @@ label:focus {
 }
 
 #battery {
-    color: @green;
+  color: @green;
 }
 
 @keyframes blink {
-    to {
-        background-color: #000000;
-        color: #000000;
-    }
+  to {
+    background-color: #000000;
+    color: #000000;
+  }
 }
 
 #battery.warning:not(.charging) {
-    background-color: @red;
-    color: @crust;
-    animation-name: blink;
-    animation-duration: 1.0s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  background-color: @red;
+  color: @crust;
+  animation-name: blink;
+  animation-duration: 1.0s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #memory.warning {
@@ -198,22 +203,31 @@ label:focus {
   color: @mauve;
 }
 
-#cpu, #memory, #custom-notification, #backlight, #custom-light_dark {
+#cpu,
+#memory,
+#custom-notification,
+#backlight,
+#custom-light_dark {
   color: @blue;
 }
 
 #custom-logo {
-  color: #1793d1;
+  background-image: url('/home/yvesd/Nixos/waybar/style/Pikachu.svg');
+  margin-bottom: 5px;
+  margin-left: 4px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 #custom-light_dark {
-    margin-right: 4px;
-    padding: 4px;
+  margin-right: 4px;
+  padding: 4px;
 }
 
 #custom-notification {
-    margin-right: 8px;
-    padding-left: 4px;
+  margin-right: 8px;
+  padding-left: 4px;
 }
 
 /* vim: ft=sass

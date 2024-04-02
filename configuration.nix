@@ -20,32 +20,33 @@
     driSupport = true;
     driSupport32Bit = true;
     extraPackages = with pkgs; [
-      libva
-      libva-utils
-      nvidia-vaapi-driver
-      vaapiVdpau
-      libvdpau-va-gl
+      #libva
+      #libva-utils
+      #nvidia-vaapi-driver
+      #vaapiVdpau
+      #libvdpau-va-gl
     ];
   };
 
-  environment.variables.VDPAU_DRIVER = "va_gl";
-  environment.variables.LIBVA_DRIVER_NAME = "nvidia";
+  #environment.variables.VDPAU_DRIVER = "va_gl";
+  #environment.variables.LIBVA_DRIVER_NAME = "nvidia";
   
   # Drivers
-  services.xserver.videoDrivers = ["nvidia"];
+  #services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "amdgpu" ];
 
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
-    open = true;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
+ # hardware.nvidia = {
+ #   modesetting.enable = true;
+ #   powerManagement.enable = false;
+ #   powerManagement.finegrained = false;
+ #   open = true;
+ #   nvidiaSettings = true;
+ #   package = config.boot.kernelPackages.nvidiaPackages.stable;
+ # };
 
   # Networking
   networking.hostName = "nixos";
-  # networking.wireless.enable = true;
+  #networking.wireless.enable = true;
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -163,6 +164,7 @@
     # system
     xwayland
     swaynotificationcenter
+    brightnessctl
   ];
   
   # Fonts
