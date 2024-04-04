@@ -1109,3 +1109,17 @@
 2024-04-04T15:46:28.981Z [Modules] Host is up to date.
 2024-04-04T15:46:28.981Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
 2024-04-04T15:46:28.983Z [Modules] No module updates available.
+2024-04-04T16:16:16.907Z [Modules] Modules initializing
+2024-04-04T16:16:16.908Z [Modules] Distribution: remote
+2024-04-04T16:16:16.908Z [Modules] Host updates: disabled
+2024-04-04T16:16:16.908Z [Modules] Module updates: enabled
+2024-04-04T16:16:16.908Z [Modules] Module install path: /home/yvesd/.config/discord/0.0.45/modules
+2024-04-04T16:16:16.908Z [Modules] Module installed file path: /home/yvesd/.config/discord/0.0.45/modules/installed.json
+2024-04-04T16:16:16.908Z [Modules] Module download path: /home/yvesd/.config/discord/0.0.45/modules/pending
+2024-04-04T16:16:17.113Z [Modules] No updates to install
+2024-04-04T16:16:17.114Z [Modules] Host is up to date.
+2024-04-04T16:16:17.114Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-04-04T16:16:17.221Z [Modules] No module updates available.
+2024-04-04T16:16:18.981Z [Modules] Host is up to date.
+2024-04-04T16:16:18.981Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-04-04T16:16:19.025Z [Modules] No module updates available.

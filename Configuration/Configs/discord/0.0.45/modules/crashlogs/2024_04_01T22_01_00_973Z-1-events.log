@@ -418,3 +418,17 @@
 
 ----------------------------------------------
 2024-04-04T15:49:42.062Z 1: Discord starting: {"releaseChannel":"stable","version":"0.0.45"}, modulepath: /home/yvesd/.config/discord/0.0.45/modules
+2024-04-04T16:15:54.651Z 12: before-quit
+2024-04-04T16:16:16.936Z 0: 
+
+----------------------------------------------
+2024-04-04T16:16:16.942Z 1: Discord starting: {"releaseChannel":"stable","version":"0.0.45"}, modulepath: /home/yvesd/.config/discord/0.0.45/modules
+2024-04-04T16:16:16.974Z 2: ✅ webContents.created web1 ""
+2024-04-04T16:16:16.980Z 3: ✅ window.created win1 "discord"
+2024-04-04T16:16:17.208Z 4: ✅ webContents.did-finish-load web1
+2024-04-04T16:16:17.281Z 5: ✅ webContents.created web2 ""
+2024-04-04T16:16:17.287Z 6: ✅ window.created win2 "Discord"
+2024-04-04T16:16:19.083Z 7: ✅ webContents.did-finish-load web2
+2024-04-04T16:16:19.182Z 8: window.close win1
+2024-04-04T16:16:19.186Z 9: webContents.destroyed web1
+2024-04-04T16:16:19.187Z 10: window.closed win1
