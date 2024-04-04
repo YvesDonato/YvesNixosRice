@@ -147,7 +147,7 @@
     btop
     tlp
     lazygit
-    git-credential-oauth
+    git-credential-manager
     
     # Languages
     python3
