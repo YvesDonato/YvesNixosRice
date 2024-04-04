@@ -1,0 +1,217 @@
+@define-color base #000000;
+@define-color mantle #000000;
+@define-color crust #0F0404;
+
+@define-color text #ffffff;
+@define-color subtext0 #ffffff;
+@define-color subtext1 #999999;
+
+@define-color surface0 #313244;
+@define-color surface1 #d4d4d4;
+@define-color surface2 #c7c7c7;
+
+@define-color overlay0 #b3b3b3;
+@define-color overlay1 #a6a6a6;
+@define-color overlay2 #999999;
+
+@define-color red #C21807;
+
+* {
+  font-family: 'JetBrainsMono Nerd Font', 'Noto Serif JP Bold';
+  font-size: 13px;
+}
+
+window#waybar {
+  background-color: @crust;
+  color: @text;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  opacity: 0.8;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+window#waybar.termite {
+  background-color: @base;
+}
+
+window#waybar.chromium {
+  background-color: @base;
+  border: none;
+}
+
+#waybar.empty #window {
+  background: none;
+}
+
+button {
+  box-shadow: inset 0 -3px transparent;
+  border: none;
+  border-radius: 0;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  color: #d4d4d6;
+  background: none;
+  font-weight: bolder;
+}
+
+#workspaces button:hover {
+  color: #f97583;
+}
+
+/* Fix: active workspace doesn't show up */
+/* #workspaces button.focused { */
+#workspaces button.active {
+  color: #f97583;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#backlight,
+#temperature,
+#backlight,
+#network,
+#bluetooth,
+#pulseaudio,
+#wireplumber,
+#custom-power,
+#custom-updates,
+#tray,
+#mode,
+#cpu,
+#window,
+#custom-notification,
+#custom-light_dark,
+#mpd {
+  padding: 0 8px;
+  background-color: @base;
+  color: @crust;
+  border-radius: 15px;
+  margin: 5px 0;
+}
+
+#workspaces {
+  margin: 0 4px;
+}
+
+.modules-left>widget:first-child>#workspaces {
+  margin-left: 0;
+}
+
+.modules-right>widget:last-child>#workspaces {
+  margin-right: 0;
+}
+
+label:focus {
+  background-color: @base;
+}
+
+#clock,
+#network,
+#bluetooth,
+#window {
+  color: @text;
+}
+
+#custom-updates {
+  color: @red;
+}
+
+#disk {
+  color: @text;
+}
+
+#pulseaudio,
+#pulseaudio.microphone {
+  color: @text;
+  padding: 3px;
+}
+
+#pulseaudio.muted {
+  color: @overlay1;
+}
+
+#network {
+  color: @text;
+}
+
+#network.disconnected {
+  color: @overlay1;
+}
+
+#battery {
+  color: @text;
+  padding: 0 6px;
+}
+
+@keyframes blink {
+  to {
+    background-color: #000000;
+    color: #000000;
+  }
+}
+
+#battery.warning:not(.charging) {
+  background-color: @red;
+  color: @crust;
+  animation-name: blink;
+  animation-duration: 1.0s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#memory.warning {
+  background-color: @red;
+  color: @crust;
+}
+
+#custom-power {
+  color: @text;
+  margin-right: 4px;
+}
+
+#cpu,
+#memory,
+#custom-notification,
+#backlight,
+#custom-light_dark {
+  color: @text;
+}
+
+#custom-light_dark {
+  margin-right: 4px;
+  padding: 4px;
+}
+
+#custom-notification {
+  margin-right: 8px;
+  padding-left: 4px;
+}
+
+#custom-logo {
+  color: #1793d1;
+}
+
+#keyboard-state>label {
+  padding: 0 5px;
+}
+
+#keyboard-state>label.locked {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad.empty {
+  background-color: transparent;
+}

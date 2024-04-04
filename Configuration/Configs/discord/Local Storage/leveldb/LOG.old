@@ -1,0 +1,5 @@
+2024/04/04-11:46:16.809 6d9 Creating DB /home/yvesd/.config/discord/Local Storage/leveldb since it was missing.
+2024/04/04-11:46:16.813 6d9 Reusing MANIFEST /home/yvesd/.config/discord/Local Storage/leveldb/MANIFEST-000001
+2024/04/04-11:50:18.712 14bf Level-0 table #5: started
+2024/04/04-11:50:18.766 14bf Level-0 table #5: 3004923 bytes OK
+2024/04/04-11:50:18.768 14bf Delete type=0 #3

@@ -14,18 +14,13 @@
 
     # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
-    
-    hy3 = {
-      url = "github:outfoxxed/hy3";
-      inputs.hyprland.follows = "hyprland";
-    };
-  };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, hy3, ... }@inputs:
+    # nix-colors
+    nix-colors.url = "github:misterio77/nix-colors";
+    
+    };
+
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-colors, ... }@inputs:
     let
       # System
       system = "x86_64-linux";
@@ -60,6 +55,7 @@
             inherit name;
             inherit pkgs-unstable;
             inherit inputs;
+            inherit nix-colors;
           };
           
       };

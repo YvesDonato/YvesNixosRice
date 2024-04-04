@@ -34,12 +34,19 @@
     history.size = 10000;
     history.path = "${config.xdg.dataHome}/zsh/history";
   };
+  
+  dconf = {
+    enable = true;
+    settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+  };
+  
   programs.starship = {
     enable = true;
     settings = {
       
     };
   };
+  
   wayland.windowManager.hyprland = {
     enable = true;
     plugins = [
@@ -47,7 +54,7 @@
     extraConfig = ''
       monitor=eDP-1,2560x1600@165,0x0,1.5
       monitor=DP-2,3440x1440@175,1707x0,1
-      exec-once = waybar & swaync
+      exec-once = waybar & swaync & hypridle
       exec-once = bash ~/.config/hypr/start.sh
       env = XCURSOR_SIZE,24
       input {

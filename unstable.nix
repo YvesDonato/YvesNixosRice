@@ -4,6 +4,7 @@
     hyprlock
     electron
     obsidian
+    hypridle
   ];
   
   #hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta.overrideAttrs {

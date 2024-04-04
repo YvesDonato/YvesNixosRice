@@ -1,0 +1,6 @@
+2024/04/03-19:34:48.040 1dd30 Reusing MANIFEST /home/yvesd/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/MANIFEST-000001
+2024/04/03-19:34:48.040 1dd30 Recovering log #3
+2024/04/03-19:34:48.051 1dd30 Reusing old log /home/yvesd/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/000003.log 
+2024/04/03-19:55:23.350 1dd30 Level-0 table #5: started
+2024/04/03-19:55:23.358 1dd30 Level-0 table #5: 938661 bytes OK
+2024/04/03-19:55:23.359 1dd30 Delete type=0 #3

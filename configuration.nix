@@ -32,22 +32,11 @@
   #environment.variables.LIBVA_DRIVER_NAME = "nvidia";
   
   # Drivers
-  #services.xserver.videoDrivers = ["nvidia"];
   services.xserver.videoDrivers = [ "amdgpu" ];
-
- # hardware.nvidia = {
- #   modesetting.enable = true;
- #   powerManagement.enable = false;
- #   powerManagement.finegrained = false;
- #   open = true;
- #   nvidiaSettings = true;
- #   package = config.boot.kernelPackages.nvidiaPackages.stable;
- # };
-
+    
   # Networking
   networking.hostName = "nixos";
-  #networking.wireless.enable = true;
-
+  
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -60,7 +49,6 @@
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
-  #services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -90,6 +78,7 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    jack.enable = true;
   };
   
   # Shell Enable
@@ -102,6 +91,14 @@
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
   };
+
+  environment.variables = {
+    EDITOR = "helix";
+    BROWSER = "firefox";
+    TERMINAL = "kitty";
+  };
+
+  services.xserver.excludePackages = [ pkgs.xterm ];
 
   # Home Mangager
   home-manager = {
@@ -119,7 +116,7 @@
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
-  # Allow unfree packagesVA-API
+  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
@@ -148,6 +145,9 @@
     spotify-cli-linux
     killall
     btop
+    tlp
+    lazygit
+    git-credential-oauth
     
     # Languages
     python3
@@ -177,12 +177,6 @@
     automatic = true;
     dates = "weekly";
     options = "--delete-older-than 7d";
-  };
-  
-  # Auto Upgrade
-  system.autoUpgrade = {
-   enable = true;
-   channel = "https://nixos.org/channels/nixos-23.11";
   };
 
   system.stateVersion = "23.11";
