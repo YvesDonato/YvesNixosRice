@@ -1,6 +1,6 @@
 autologin.saved_credentials="{\"dragonzilla9\":[\"dragonzilla9\",\"rhKTGfcMvHKCa/1UEhcNiTjHYKWc6XFvTfC4lP/aA4KmihakEyy70Aa6RVUyaRrEd9oTrUSpRD5MKcDbaSudMi8h9+Mz+05oHO6vuhi02OEaE7kWkQXuUi3Rr8lkaNRF6SJOM2nRJv1X7mXs7sjQdVwxeZ+cXF9oe9sf/Z/1L1mGwmb+iv9X7ESbwmYSwuDL5kfsi9ooikB9ZgbbNXR6OcQ/xMm/Z8pHY8DOUjv4379aQbg86Y09Mieb+TuSYRAFvNawvJurRI4rnbOCh+3BW8B42wDHBFYjtEfR+M9pLPY=\"]}"
 autologin.blob="rhKTGfcMvHKCa/1UEhcNiTjHYKWc6XFvTfC4lP/aA4KmihakEyy70Aa6RVUyaRrEd9oTrUSpRD5MKcDbaSudMi8h9+Mz+05oHO6vuhi02OEaE7kWkQXuUi3Rr8lkaNRF6SJOM2nRJv1X7mXs7sjQdVwxeZ+cXF9oe9sf/Z/1L1mGwmb+iv9X7ESbwmYSwuDL5kfsi9ooikB9ZgbbNXR6OcQ/xMm/Z8pHY8DOUjv4379aQbg86Y09Mieb+TuSYRAFvNawvJurRI4rnbOCh+3BW8B42wDHBFYjtEfR+M9pLPY="
-core.clock_delta=0
+core.clock_delta=1
 autologin.username="dragonzilla9"
 app.window.state=2
 app.window.position.saved=true
