@@ -131,7 +131,6 @@
     spotify
     blanket
     libreoffice
-    gitg
     
     # Zsh
     starship
@@ -148,6 +147,7 @@
     tlp
     lazygit
     git-credential-manager
+    wlr-randr
     
     # Languages
     python3
