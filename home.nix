@@ -74,18 +74,18 @@
       }
       
       general {
-        gaps_in = 3
-        gaps_out = 5
-        border_size = 4
-        col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
+        gaps_in = 5
+        gaps_out = 9
+        border_size = 0
+                
+        col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg        
         col.inactive_border = rgba(595959aa)
-
         layout = dwindle
       }
       
       decoration {
 
-        rounding = 5
+        rounding = 9
     
         blur {
           enabled = true

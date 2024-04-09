@@ -569,3 +569,11 @@
 2024-04-05T15:36:29.199Z 8: window.close win1
 2024-04-05T15:36:29.202Z 9: webContents.destroyed web1
 2024-04-05T15:36:29.203Z 10: window.closed win1
+2024-04-06T15:35:59.199Z 0: 
+
+----------------------------------------------
+2024-04-06T15:35:59.217Z 1: Discord starting: {"releaseChannel":"stable","version":"0.0.45"}, modulepath: /home/yvesd/.config/discord/0.0.45/modules
+2024-04-06T15:35:59.232Z 2: ✅ webContents.created web1 ""
+2024-04-06T15:35:59.234Z 3: ✅ window.created win1 "discord"
+2024-04-06T15:35:59.446Z 4: ✅ webContents.did-finish-load web1
+2024-04-06T15:37:52.795Z 5: ✅ webContents.created web2 ""

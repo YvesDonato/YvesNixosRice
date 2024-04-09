@@ -131,7 +131,8 @@
     spotify
     blanket
     libreoffice
-    
+    moonlight-qt
+        
     # Zsh
     starship
 

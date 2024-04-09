@@ -1,3 +1,17 @@
-2024/04/05-11:36:16.146 5da Reusing MANIFEST /home/yvesd/.config/discord/Local Storage/leveldb/MANIFEST-000001
-2024/04/05-11:36:16.146 5da Recovering log #23
-2024/04/05-11:36:16.147 5da Reusing old log /home/yvesd/.config/discord/Local Storage/leveldb/000023.log 
+2024/04/09-10:41:35.725 667 Reusing MANIFEST /home/yvesd/.config/discord/Local Storage/leveldb/MANIFEST-000001
+2024/04/09-10:41:35.725 667 Recovering log #53
+2024/04/09-10:41:35.726 667 Reusing old log /home/yvesd/.config/discord/Local Storage/leveldb/000053.log 
+2024/04/09-10:44:09.602 109c Level-0 table #57: started
+2024/04/09-10:44:09.652 109c Level-0 table #57: 744423 bytes OK
+2024/04/09-10:44:09.653 109c Delete type=0 #53
+2024/04/09-10:44:09.654 109c Compacting 4@0 + 2@1 files
+2024/04/09-10:44:09.663 109c Generated table #58@0: 4 keys, 2268561 bytes
+2024/04/09-10:44:09.676 109c Generated table #59@0: 39 keys, 753624 bytes
+2024/04/09-10:44:09.676 109c Compacted 4@0 + 2@1 files => 3022185 bytes
+2024/04/09-10:44:09.677 109c compacted to: files[ 0 2 1 0 0 0 0 ]
+2024/04/09-10:44:09.677 109c Delete type=2 #45
+2024/04/09-10:44:09.677 109c Delete type=2 #57
+2024/04/09-10:44:09.677 109c Delete type=2 #52
+2024/04/09-10:44:09.677 109c Delete type=2 #46
+2024/04/09-10:44:09.677 109c Delete type=2 #54
+2024/04/09-10:44:09.677 109c Delete type=2 #49
