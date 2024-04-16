@@ -1,12 +1,10 @@
-2024/04/09-09:06:26.053 bd5d Reusing MANIFEST /home/yvesd/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/MANIFEST-000001
-2024/04/09-09:06:26.053 bd5d Recovering log #4
-2024/04/09-09:06:26.064 bd5d Reusing old log /home/yvesd/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/000004.log 
-2024/04/09-09:22:56.606 be5c Level-0 table #8: started
-2024/04/09-09:22:56.618 be5c Level-0 table #8: 996289 bytes OK
-2024/04/09-09:22:56.620 be5c Delete type=0 #4
-2024/04/09-09:24:20.481 be5c Compacting 1@1 + 1@2 files
-2024/04/09-09:24:20.488 be5c Generated table #9@1: 972 keys, 177402 bytes
-2024/04/09-09:24:20.488 be5c Compacted 1@1 + 1@2 files => 177402 bytes
-2024/04/09-09:24:20.488 be5c compacted to: files[ 0 0 1 0 0 0 0 ]
-2024/04/09-09:24:20.489 be5c Delete type=2 #8
-2024/04/09-09:24:20.489 be5c Delete type=2 #5
+2024/04/15-07:20:49.366 13ce Reusing MANIFEST /home/yvesd/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/MANIFEST-000001
+2024/04/15-07:20:49.366 13ce Recovering log #15
+2024/04/15-07:20:49.390 13ce Reusing old log /home/yvesd/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/000015.log 
+2024/04/15-07:23:04.493 14ca Level-0 table #20: started
+2024/04/15-07:23:04.505 14ca Level-0 table #20: 1183438 bytes OK
+2024/04/15-07:23:04.506 14ca Delete type=0 #15
+2024/04/15-07:35:20.377 13ce Compacting 1@1 + 1@2 files
+2024/04/15-07:35:20.389 13ce Generated table #21@1: 1136 keys, 188051 bytes
+2024/04/15-07:35:20.389 13ce Compacted 1@1 + 1@2 files => 188051 bytes
+2024/04/15-07:35:20.390 13ce compacted to: files[ 0 0 1 0 0 0 0 ]

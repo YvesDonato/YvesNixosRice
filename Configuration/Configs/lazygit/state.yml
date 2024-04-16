@@ -1,8 +1,9 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/yvesd/Nixos
+- /home/yvesd/Codingspaces/seg5p
 startuppopupversion: 5
 customcommandshistory:
 - q
 hidecommandlog: false
-ignorewhitespaceindiffview: false
+ignorewhitespaceindiffview: true

@@ -131,13 +131,16 @@
     spotify
     blanket
     libreoffice
-    moonlight-qt
-        
+    obs-studio
+    vlc
+    audacity
+            
     # Zsh
     starship
 
     # Terminal
     helix
+    neovim
     zellij
     git
     neofetch
@@ -149,6 +152,7 @@
     lazygit
     git-credential-manager
     wlr-randr
+    lsof
     
     # Languages
     python3

@@ -1,0 +1,789 @@
+12:14:39.108: Platform: Wayland
+12:14:39.108: CPU Name: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+12:14:39.108: CPU Speed: 4689.411MHz
+12:14:39.109: Physical Cores: 8, Logical Cores: 16
+12:14:39.109: Physical Memory: 31315MB Total, 13011MB Free
+12:14:39.109: Kernel Version: Linux 6.1.82
+12:14:39.109: Distribution: NixOS "23.11"
+12:14:39.109: Desktop Environment: Hyprland (hyprland)
+12:14:39.109: Session Type: wayland
+12:14:39.110: Qt Version: 6.6.1 (runtime), 6.6.1 (compiled)
+12:14:39.110: Portable mode: false
+12:14:39.134: OBS 29.1.3 (linux)
+12:14:39.134: ---------------------------------
+12:14:39.135: ---------------------------------
+12:14:39.135: audio settings reset:
+12:14:39.135: 	samples per sec: 48000
+12:14:39.135: 	speakers:        2
+12:14:39.135: 	max buffering:   960 milliseconds
+12:14:39.135: 	buffering type:  dynamically increasing
+12:14:39.142: ---------------------------------
+12:14:39.142: Initializing OpenGL...
+12:14:39.142: Using EGL/Wayland
+12:14:39.184: Initialized EGL 1.5
+12:14:39.195: Loading up OpenGL on adapter AMD AMD Radeon Graphics (gfx1103_r1, LLVM 16.0.6, DRM 3.49, 6.1.82)
+12:14:39.195: OpenGL loaded successfully, version 4.6 (Core Profile) Mesa 23.1.9, shading language 4.60
+12:14:39.280: ---------------------------------
+12:14:39.280: video settings reset:
+12:14:39.280: 	base resolution:   1920x1080
+12:14:39.280: 	output resolution: 1280x720
+12:14:39.280: 	downscale filter:  Bicubic
+12:14:39.280: 	fps:               30/1
+12:14:39.280: 	format:            NV12
+12:14:39.280: 	YUV mode:          Rec. 709/Partial
+12:14:39.280: NV12 texture support not available
+12:14:39.280: P010 texture support not available
+12:14:39.282: Audio monitoring device:
+12:14:39.282: 	name: Default
+12:14:39.282: 	id: default
+12:14:39.282: ---------------------------------
+12:14:39.310: Failed to load 'en-GB' text for module: 'aja-output-ui.so'
+12:14:39.310: No AJA devices found, skipping loading AJA UI plugin
+12:14:39.310: Failed to initialize module 'aja-output-ui.so'
+12:14:39.338: Failed to load 'en-GB' text for module: 'aja.so'
+12:14:39.338: No AJA devices found, skipping loading AJA plugin
+12:14:39.338: Failed to initialize module 'aja.so'
+12:14:39.351: Failed to load 'en-US' text for module: 'decklink-captions.so'
+12:14:39.367: Failed to load 'en-US' text for module: 'decklink-output-ui.so'
+12:14:39.379: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+12:14:39.379: Failed to initialize module 'decklink.so'
+12:14:39.398: Failed to load 'en-GB' text for module: 'frontend-tools.so'
+12:14:39.529: Failed to load 'en-GB' text for module: 'linux-alsa.so'
+12:14:39.546: Failed to load 'en-GB' text for module: 'linux-capture.so'
+12:14:39.563: Failed to load 'en-GB' text for module: 'linux-jack.so'
+12:14:39.587: Failed to load 'en-GB' text for module: 'linux-pipewire.so'
+12:14:39.588: [pipewire] Available captures:
+12:14:39.588: [pipewire]     - Desktop capture
+12:14:39.588: [pipewire]     - Window capture
+12:14:39.601: Failed to load 'en-GB' text for module: 'linux-pulseaudio.so'
+12:14:39.623: v4l2loopback not installed, virtual camera disabled
+12:14:39.643: [obs-browser]: Version 2.21.1
+12:14:39.643: [obs-browser]: CEF Version 117.0.5938.150 (runtime), 117.2.4+g5053a95+chromium-117.0.5938.150 (compiled)
+12:14:39.716: os_dlopen(libnvidia-encode.so.1->libnvidia-encode.so.1): libnvidia-encode.so.1: cannot open shared object file: No such file or directory
+12:14:39.716: 
+12:14:39.733: VAAPI: API version 1.20
+12:14:39.734: FFmpeg VAAPI H264 encoding supported
+12:14:39.740: FFmpeg VAAPI HEVC encoding supported
+12:14:39.810: Failed to load 'en-GB' text for module: 'obs-vst.so'
+12:14:39.834: Failed to load 'en-GB' text for module: 'obs-websocket.so'
+12:14:39.834: [obs-websocket] [obs_module_load] you can haz websockets (Version: 5.2.3 | RPC Version: 1)
+12:14:39.834: [obs-websocket] [obs_module_load] Qt version (compile-time): 6.6.1 | Qt version (run-time): 6.6.1
+12:14:39.834: [obs-websocket] [obs_module_load] Linked ASIO Version: 102400
+12:14:39.834: [obs-websocket] [Config::Load] (FirstLoad) Generating new server password.
+12:14:39.840: [obs-websocket] [obs_module_load] Module loaded.
+12:14:39.871: Failed to load 'en-GB' text for module: 'rtmp-services.so'
+12:14:39.904: [vlc-video]: VLC 3.0.20 Vetinari found, VLC video source enabled
+12:14:39.904: ---------------------------------
+12:14:39.904:   Loaded Modules:
+12:14:39.904:     vlc-video.so
+12:14:39.904:     text-freetype2.so
+12:14:39.904:     rtmp-services.so
+12:14:39.904:     obs-x264.so
+12:14:39.904:     obs-websocket.so
+12:14:39.904:     obs-vst.so
+12:14:39.904:     obs-transitions.so
+12:14:39.904:     obs-outputs.so
+12:14:39.904:     obs-filters.so
+12:14:39.904:     obs-ffmpeg.so
+12:14:39.904:     obs-browser.so
+12:14:39.904:     linux-v4l2.so
+12:14:39.904:     linux-pulseaudio.so
+12:14:39.904:     linux-pipewire.so
+12:14:39.904:     linux-jack.so
+12:14:39.904:     linux-capture.so
+12:14:39.904:     linux-alsa.so
+12:14:39.904:     image-source.so
+12:14:39.904:     frontend-tools.so
+12:14:39.904:     decklink-output-ui.so
+12:14:39.904:     decklink-captions.so
+12:14:39.904: ---------------------------------
+12:14:39.904: ==== Startup complete ===============================================
+12:14:39.908: No scene file found, creating default scene
+12:14:39.927: All scene data cleared
+12:14:39.927: ------------------------------------------------
+12:14:39.936: pulse-input: Server name: 'PulseAudio (on PipeWire 1.0.1) 15.0.0'
+12:14:39.936: pulse-input: Audio format: s32le, 48000 Hz, 2 channels
+12:14:39.937: pulse-input: Started recording from 'alsa_output.pci-0000_65_00.6.analog-stereo.monitor' (default)
+12:14:39.937: pulse-input: Server name: 'PulseAudio (on PipeWire 1.0.1) 15.0.0'
+12:14:39.937: pulse-input: Audio format: s32le, 48000 Hz, 2 channels
+12:14:39.937: pulse-input: Started recording from 'alsa_input.pci-0000_65_00.6.analog-stereo' (default)
+12:14:39.938: Switched to scene 'Scene'
+12:14:39.938: Failed to glob scene collections
+12:14:39.981: [rtmp-services plugin] Successfully updated file 'services.json' (version 251)
+12:14:39.981: [rtmp-services plugin] Successfully updated package (version 251)
+12:14:40.522: adding 21 milliseconds of audio buffering, total audio buffering is now 21 milliseconds (source: Mic/Aux)
+12:14:40.522: 
+12:15:00.370: 
+12:15:00.370: ==== Auto-config wizard testing commencing ======
+
+12:15:00.383: Number of remaining views: 1
+12:15:00.383: ---------------------------------
+12:15:00.383: video settings reset:
+12:15:00.383: 	base resolution:   1920x1080
+12:15:00.383: 	output resolution: 1716x720
+12:15:00.383: 	downscale filter:  Bicubic
+12:15:00.383: 	fps:               60/1
+12:15:00.383: 	format:            NV12
+12:15:00.383: 	YUV mode:          Rec. 709/Partial
+12:15:00.383: NV12 texture support not available
+12:15:00.383: P010 texture support not available
+12:15:00.384: ---------------------------------
+12:15:00.384: [x264 encoder: 'test_x264'] preset: veryfast
+12:15:00.384: [x264 encoder: 'test_x264'] profile: high
+12:15:00.385: [x264 encoder: 'test_x264'] settings:
+12:15:00.385: 	rate_control: CRF
+12:15:00.385: 	bitrate:      0
+12:15:00.385: 	buffer size:  0
+12:15:00.385: 	crf:          20
+12:15:00.385: 	fps_num:      60
+12:15:00.385: 	fps_den:      1
+12:15:00.385: 	width:        1716
+12:15:00.385: 	height:       720
+12:15:00.385: 	keyint:       250
+12:15:00.385: 
+12:15:00.394: ---------------------------------
+12:15:00.395: [FFmpeg aac encoder: 'test_aac'] bitrate: 32, channels: 2, channel_layout: stereo
+12:15:00.395: 
+12:15:05.396: Output 'null': stopping
+12:15:05.396: Output 'null': Total frames output: 263
+12:15:05.396: Output 'null': Total drawn frames: 300
+12:15:05.436: Number of remaining views: 1
+12:15:05.436: ---------------------------------
+12:15:05.436: video settings reset:
+12:15:05.436: 	base resolution:   1920x1080
+12:15:05.436: 	output resolution: 1144x480
+12:15:05.436: 	downscale filter:  Bicubic
+12:15:05.436: 	fps:               60/1
+12:15:05.436: 	format:            NV12
+12:15:05.436: 	YUV mode:          Rec. 709/Partial
+12:15:05.436: NV12 texture support not available
+12:15:05.436: P010 texture support not available
+12:15:05.437: ---------------------------------
+12:15:05.437: [x264 encoder: 'test_x264'] preset: veryfast
+12:15:05.437: [x264 encoder: 'test_x264'] profile: high
+12:15:05.437: [x264 encoder: 'test_x264'] settings:
+12:15:05.437: 	rate_control: CRF
+12:15:05.437: 	bitrate:      0
+12:15:05.437: 	buffer size:  0
+12:15:05.437: 	crf:          20
+12:15:05.437: 	fps_num:      60
+12:15:05.437: 	fps_den:      1
+12:15:05.437: 	width:        1144
+12:15:05.437: 	height:       480
+12:15:05.437: 	keyint:       250
+12:15:05.437: 
+12:15:05.439: ---------------------------------
+12:15:05.440: [FFmpeg aac encoder: 'test_aac'] bitrate: 32, channels: 2, channel_layout: stereo
+12:15:05.440: 
+12:15:10.440: Output 'null': stopping
+12:15:10.440: Output 'null': Total frames output: 270
+12:15:10.440: Output 'null': Total drawn frames: 300
+12:15:10.471: Number of remaining views: 1
+12:15:10.471: ---------------------------------
+12:15:10.471: video settings reset:
+12:15:10.471: 	base resolution:   1920x1080
+12:15:10.471: 	output resolution: 856x360
+12:15:10.471: 	downscale filter:  Bicubic
+12:15:10.471: 	fps:               60/1
+12:15:10.471: 	format:            NV12
+12:15:10.471: 	YUV mode:          Rec. 709/Partial
+12:15:10.471: NV12 texture support not available
+12:15:10.471: P010 texture support not available
+12:15:10.472: ---------------------------------
+12:15:10.472: [x264 encoder: 'test_x264'] preset: veryfast
+12:15:10.472: [x264 encoder: 'test_x264'] profile: high
+12:15:10.472: [x264 encoder: 'test_x264'] settings:
+12:15:10.472: 	rate_control: CRF
+12:15:10.472: 	bitrate:      0
+12:15:10.472: 	buffer size:  0
+12:15:10.472: 	crf:          20
+12:15:10.472: 	fps_num:      60
+12:15:10.472: 	fps_den:      1
+12:15:10.472: 	width:        856
+12:15:10.472: 	height:       360
+12:15:10.472: 	keyint:       250
+12:15:10.472: 
+12:15:10.474: ---------------------------------
+12:15:10.474: [FFmpeg aac encoder: 'test_aac'] bitrate: 32, channels: 2, channel_layout: stereo
+12:15:10.474: 
+12:15:15.474: Output 'null': stopping
+12:15:15.474: Output 'null': Total frames output: 274
+12:15:15.474: Output 'null': Total drawn frames: 300
+12:15:15.490: Number of remaining views: 1
+12:15:15.490: ---------------------------------
+12:15:15.490: video settings reset:
+12:15:15.490: 	base resolution:   1920x1080
+12:15:15.490: 	output resolution: 1280x720
+12:15:15.490: 	downscale filter:  Bicubic
+12:15:15.490: 	fps:               30/1
+12:15:15.490: 	format:            NV12
+12:15:15.490: 	YUV mode:          Rec. 709/Partial
+12:15:15.490: NV12 texture support not available
+12:15:15.490: P010 texture support not available
+12:15:22.859: Number of remaining views: 1
+12:15:22.859: ---------------------------------
+12:15:22.859: video settings reset:
+12:15:22.859: 	base resolution:   3440x1440
+12:15:22.859: 	output resolution: 1716x720
+12:15:22.859: 	downscale filter:  Bicubic
+12:15:22.859: 	fps:               60/1
+12:15:22.859: 	format:            NV12
+12:15:22.859: 	YUV mode:          Rec. 709/Partial
+12:15:22.859: NV12 texture support not available
+12:15:22.859: P010 texture support not available
+12:15:22.862: 
+12:15:22.862: ==== Auto-config wizard testing stopping ========
+
+12:15:30.251: User added scene 'Scene 2'
+12:15:30.252: User switched to scene 'Scene 2'
+12:15:30.968: User switched to scene 'Scene'
+12:15:50.744: Number of remaining views: 1
+12:15:50.745: ---------------------------------
+12:15:50.745: video settings reset:
+12:15:50.745: 	base resolution:   1920x1080
+12:15:50.745: 	output resolution: 1440x810
+12:15:50.745: 	downscale filter:  Bicubic
+12:15:50.745: 	fps:               60/1
+12:15:50.745: 	format:            NV12
+12:15:50.745: 	YUV mode:          Rec. 709/Partial
+12:15:50.745: NV12 texture support not available
+12:15:50.745: P010 texture support not available
+12:15:50.746: Settings changed (outputs, video)
+12:15:50.746: ------------------------------------------------
+12:15:55.428: User switched to scene 'Scene 2'
+12:16:08.607: User switched to scene 'Scene'
+12:16:08.608: User Removed scene 'Scene 2'
+12:16:19.497: Number of remaining views: 1
+12:16:19.497: ---------------------------------
+12:16:19.497: video settings reset:
+12:16:19.497: 	base resolution:   1920x1080
+12:16:19.497: 	output resolution: 1920x1080
+12:16:19.497: 	downscale filter:  Bicubic
+12:16:19.497: 	fps:               60/1
+12:16:19.497: 	format:            NV12
+12:16:19.497: 	YUV mode:          Rec. 709/Partial
+12:16:19.497: NV12 texture support not available
+12:16:19.497: P010 texture support not available
+12:16:19.500: Settings changed (video)
+12:16:19.500: ------------------------------------------------
+12:16:28.229: User added source 'Browser' (browser_source) to scene 'Scene'
+12:16:36.229: User Removed source 'Browser' (browser_source) from scene 'Scene'
+12:16:42.544: PipeWire initialized
+12:16:42.545: User added source 'Screen Capture (PipeWire)' (pipewire-desktop-capture-source) to scene 'Scene'
+12:16:42.552: [pipewire] Screencast session created
+12:16:48.019: [pipewire] Asking for desktop
+12:16:48.020: [pipewire] desktop selected, setting up screencast
+12:16:48.026: [pipewire] Server version: 1.0.1
+12:16:48.026: [pipewire] Library version: 1.0.1
+12:16:48.026: [pipewire] Header version: 1.0.1
+12:16:48.027: [pipewire] Created stream 0x4a9c300
+12:16:48.027: [pipewire] Stream 0x4a9c300 state: "connecting" (error: none)
+12:16:48.027: [pipewire] Playing stream 0x4a9c300
+12:16:48.027: [pipewire] Stream 0x4a9c300 state: "paused" (error: none)
+12:16:48.064: [pipewire] Stream 0x4a9c300 state: "error" (error: no more input formats)
+12:16:48.064: [pipewire] Error id:2 seq:10 res:-32 (Unknown error -32): no more input formats
+12:16:52.956: [pipewire] Stream 0x4a9c300 state: "unconnected" (error: none)
+12:16:52.957: PipeWire initialized
+12:16:52.959: [pipewire] Screencast session created
+12:16:54.001: [pipewire] Asking for desktop
+12:16:54.005: [pipewire] desktop selected, setting up screencast
+12:16:54.010: [pipewire] Server version: 1.0.1
+12:16:54.010: [pipewire] Library version: 1.0.1
+12:16:54.010: [pipewire] Header version: 1.0.1
+12:16:54.010: [pipewire] Created stream 0x4a9c300
+12:16:54.010: [pipewire] Stream 0x4a9c300 state: "connecting" (error: none)
+12:16:54.010: [pipewire] Playing stream 0x4a9c300
+12:16:54.011: [pipewire] Stream 0x4a9c300 state: "paused" (error: none)
+12:16:54.013: [pipewire] Negotiated format:
+12:16:54.013: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+12:16:54.013: [pipewire]     Modifier: 0x0
+12:16:54.013: [pipewire]     Size: 2559x1599
+12:16:54.013: [pipewire]     Framerate: 0/1
+12:16:54.014: [pipewire] Negotiated format:
+12:16:54.014: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+12:16:54.014: [pipewire]     Modifier: 0x20000001046bb04
+12:16:54.014: [pipewire]     Size: 2559x1599
+12:16:54.014: [pipewire]     Framerate: 0/1
+12:16:54.030: [pipewire] Stream 0x4a9c300 state: "streaming" (error: none)
+12:16:54.050: Cannot create EGLImage: Arguments are inconsistent (for example, a valid context requires buffers not supplied by a valid surface).
+12:16:54.050: [pipewire] Renegotiating stream
+12:16:54.050: [pipewire] Negotiated format:
+12:16:54.050: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+12:16:54.050: [pipewire]     Modifier: 0x20000001046bb04
+12:16:54.050: [pipewire]     Size: 2559x1599
+12:16:54.050: [pipewire]     Framerate: 0/1
+12:16:54.051: [pipewire] Negotiated format:
+12:16:54.051: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+12:16:54.051: [pipewire]     Modifier: 0x200000010467b04
+12:16:54.051: [pipewire]     Size: 2559x1599
+12:16:54.051: [pipewire]     Framerate: 0/1
+12:16:54.068: Cannot create EGLImage: Arguments are inconsistent (for example, a valid context requires buffers not supplied by a valid surface).
+12:16:54.068: [pipewire] Renegotiating stream
+12:16:54.068: [pipewire] Stream 0x4a9c300 state: "paused" (error: none)
+12:16:54.069: [pipewire] Negotiated format:
+12:16:54.069: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+12:16:54.069: [pipewire]     Modifier: 0x200000010467b04
+12:16:54.069: [pipewire]     Size: 2559x1599
+12:16:54.069: [pipewire]     Framerate: 0/1
+12:16:54.069: [pipewire] Negotiated format:
+12:16:54.069: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+12:16:54.069: [pipewire]     Modifier: 0x200000010437b04
+12:16:54.069: [pipewire]     Size: 2559x1599
+12:16:54.069: [pipewire]     Framerate: 0/1
+12:16:54.070: [pipewire] Stream 0x4a9c300 state: "streaming" (error: none)
+12:16:54.087: Cannot create EGLImage: Arguments are inconsistent (for example, a valid context requires buffers not supplied by a valid surface).
+12:16:54.087: [pipewire] Renegotiating stream
+12:16:54.087: [pipewire] Negotiated format:
+12:16:54.087: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+12:16:54.087: [pipewire]     Modifier: 0x200000010437b04
+12:16:54.087: [pipewire]     Size: 2559x1599
+12:16:54.087: [pipewire]     Framerate: 0/1
+12:16:54.089: [pipewire] Negotiated format:
+12:16:54.089: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+12:16:54.089: [pipewire]     Modifier: 0x200000010401b04
+12:16:54.089: [pipewire]     Size: 2559x1599
+12:16:54.089: [pipewire]     Framerate: 0/1
+12:17:05.550: [pipewire] Stream 0x4a9c300 state: "paused" (error: none)
+12:17:08.150: [pipewire] Stream 0x4a9c300 state: "streaming" (error: none)
+12:17:20.316: [pipewire] Stream 0x4a9c300 state: "paused" (error: none)
+12:17:20.316: [pipewire] Stream 0x4a9c300 state: "unconnected" (error: none)
+12:17:20.317: PipeWire initialized
+12:17:20.319: [pipewire] Screencast session created
+12:17:21.900: [pipewire] Asking for desktop
+12:17:21.902: [pipewire] desktop selected, setting up screencast
+12:17:21.906: [pipewire] Server version: 1.0.1
+12:17:21.906: [pipewire] Library version: 1.0.1
+12:17:21.906: [pipewire] Header version: 1.0.1
+12:17:21.906: [pipewire] Created stream 0x4a9c300
+12:17:21.907: [pipewire] Stream 0x4a9c300 state: "connecting" (error: none)
+12:17:21.907: [pipewire] Playing stream 0x4a9c300
+12:17:21.907: [pipewire] Stream 0x4a9c300 state: "paused" (error: none)
+12:17:21.909: [pipewire] Negotiated format:
+12:17:21.909: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+12:17:21.909: [pipewire]     Modifier: 0x0
+12:17:21.909: [pipewire]     Size: 2559x1599
+12:17:21.909: [pipewire]     Framerate: 0/1
+12:17:21.909: [pipewire] Negotiated format:
+12:17:21.909: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+12:17:21.909: [pipewire]     Modifier: 0x20000001046bb04
+12:17:21.909: [pipewire]     Size: 2559x1599
+12:17:21.909: [pipewire]     Framerate: 0/1
+12:17:21.913: [pipewire] Stream 0x4a9c300 state: "streaming" (error: none)
+12:17:21.916: Cannot create EGLImage: Arguments are inconsistent (for example, a valid context requires buffers not supplied by a valid surface).
+12:17:21.916: [pipewire] Renegotiating stream
+12:17:21.917: [pipewire] Negotiated format:
+12:17:21.917: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+12:17:21.917: [pipewire]     Modifier: 0x20000001046bb04
+12:17:21.917: [pipewire]     Size: 2559x1599
+12:17:21.917: [pipewire]     Framerate: 0/1
+12:17:21.917: [pipewire] Negotiated format:
+12:17:21.917: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+12:17:21.917: [pipewire]     Modifier: 0x200000010467b04
+12:17:21.917: [pipewire]     Size: 2559x1599
+12:17:21.917: [pipewire]     Framerate: 0/1
+12:17:21.934: Cannot create EGLImage: Arguments are inconsistent (for example, a valid context requires buffers not supplied by a valid surface).
+12:17:21.934: [pipewire] Renegotiating stream
+12:17:21.934: [pipewire] Stream 0x4a9c300 state: "paused" (error: none)
+12:17:21.934: [pipewire] Negotiated format:
+12:17:21.934: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+12:17:21.934: [pipewire]     Modifier: 0x200000010467b04
+12:17:21.934: [pipewire]     Size: 2559x1599
+12:17:21.934: [pipewire]     Framerate: 0/1
+12:17:21.935: [pipewire] Negotiated format:
+12:17:21.935: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+12:17:21.935: [pipewire]     Modifier: 0x200000010437b04
+12:17:21.935: [pipewire]     Size: 2559x1599
+12:17:21.935: [pipewire]     Framerate: 0/1
+12:17:21.936: [pipewire] Stream 0x4a9c300 state: "streaming" (error: none)
+12:17:21.952: Cannot create EGLImage: Arguments are inconsistent (for example, a valid context requires buffers not supplied by a valid surface).
+12:17:21.952: [pipewire] Renegotiating stream
+12:17:21.952: [pipewire] Negotiated format:
+12:17:21.952: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+12:17:21.952: [pipewire]     Modifier: 0x200000010437b04
+12:17:21.952: [pipewire]     Size: 2559x1599
+12:17:21.952: [pipewire]     Framerate: 0/1
+12:17:21.954: [pipewire] Negotiated format:
+12:17:21.954: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+12:17:21.954: [pipewire]     Modifier: 0x200000010401b04
+12:17:21.954: [pipewire]     Size: 2559x1599
+12:17:21.954: [pipewire]     Framerate: 0/1
+12:19:50.075: PipeWire initialized
+12:19:50.077: User added source 'Window Capture (PipeWire)' (pipewire-window-capture-source) to scene 'Scene'
+12:19:50.085: [pipewire] Screencast session created
+12:19:52.286: [pipewire] Asking for window
+12:19:52.287: [pipewire] window selected, setting up screencast
+12:19:52.290: [pipewire] Server version: 1.0.1
+12:19:52.290: [pipewire] Library version: 1.0.1
+12:19:52.290: [pipewire] Header version: 1.0.1
+12:19:52.290: [pipewire] Created stream 0x3fecae0
+12:19:52.290: [pipewire] Stream 0x3fecae0 state: "connecting" (error: none)
+12:19:52.290: [pipewire] Playing stream 0x3fecae0
+12:19:52.290: [pipewire] Stream 0x3fecae0 state: "paused" (error: none)
+12:19:52.326: [pipewire] Stream 0x3fecae0 state: "error" (error: no more input formats)
+12:19:52.326: [pipewire] Error id:2 seq:10 res:-32 (Unknown error -32): no more input formats
+12:20:05.499: User Removed source 'Window Capture (PipeWire)' (pipewire-window-capture-source) from scene 'Scene'
+12:20:05.500: [pipewire] Stream 0x3fecae0 state: "unconnected" (error: none)
+12:22:06.637: ---------------------------------
+12:22:06.637: [x264 encoder: 'simple_video_recording'] preset: veryfast
+12:22:06.637: [x264 encoder: 'simple_video_recording'] profile: high
+12:22:06.637: [x264 encoder: 'simple_video_recording'] settings:
+12:22:06.637: 	rate_control: CRF
+12:22:06.637: 	bitrate:      0
+12:22:06.637: 	buffer size:  0
+12:22:06.637: 	crf:          23
+12:22:06.637: 	fps_num:      60
+12:22:06.637: 	fps_den:      1
+12:22:06.637: 	width:        1920
+12:22:06.637: 	height:       1080
+12:22:06.637: 	keyint:       250
+12:22:06.637: 
+12:22:06.641: ---------------------------------
+12:22:06.641: [FFmpeg aac encoder: 'simple_aac_recording0'] bitrate: 192, channels: 2, channel_layout: stereo
+12:22:06.641: 
+12:22:06.642: ==== Recording Start ===============================================
+12:22:06.642: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/yvesd/2024-04-15 12-22-06.mkv'...
+12:22:09.710: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/yvesd/2024-04-15 12-22-06.mkv' stopped
+12:22:09.710: Output 'simple_file_output': stopping
+12:22:09.710: Output 'simple_file_output': Total frames output: 145
+12:22:09.710: Output 'simple_file_output': Total drawn frames: 184
+12:22:09.711: ==== Recording Stop ================================================
+12:27:42.293: Settings changed (audio)
+12:27:42.293: ------------------------------------------------
+12:27:42.300: pulse-input: Stopped recording from 'alsa_output.pci-0000_65_00.6.analog-stereo.monitor'
+12:27:42.300: pulse-input: Got 31293 packets with 37551600 frames
+12:28:09.798: pulse-input: Stopped recording from 'alsa_input.usb-BLUE_MICROPHONE_Blue_Snowball_201511-00.mono-fallback'
+12:28:09.798: pulse-input: Got 32394 packets with 38872800 frames
+12:28:09.799: pulse-input: Server name: 'PulseAudio (on PipeWire 1.0.1) 15.0.0'
+12:28:09.799: pulse-input: Audio format: s16le, 48000 Hz, 1 channels
+12:28:09.799: pulse-input: Started recording from 'alsa_input.usb-BLUE_MICROPHONE_Blue_Snowball_201511-00.mono-fallback'
+12:28:09.800: Settings changed (audio)
+12:28:09.800: ------------------------------------------------
+12:28:10.399: adding 21 milliseconds of audio buffering, total audio buffering is now 42 milliseconds (source: Mic/Aux)
+12:28:10.399: 
+12:28:16.639: ---------------------------------
+12:28:16.639: [x264 encoder: 'simple_video_recording'] preset: veryfast
+12:28:16.639: [x264 encoder: 'simple_video_recording'] profile: high
+12:28:16.639: [x264 encoder: 'simple_video_recording'] settings:
+12:28:16.639: 	rate_control: CRF
+12:28:16.639: 	bitrate:      0
+12:28:16.639: 	buffer size:  0
+12:28:16.639: 	crf:          23
+12:28:16.639: 	fps_num:      60
+12:28:16.639: 	fps_den:      1
+12:28:16.639: 	width:        1920
+12:28:16.639: 	height:       1080
+12:28:16.639: 	keyint:       250
+12:28:16.639: 
+12:28:16.643: ---------------------------------
+12:28:16.643: [FFmpeg aac encoder: 'simple_aac_recording0'] bitrate: 192, channels: 2, channel_layout: stereo
+12:28:16.643: 
+12:28:16.645: ==== Recording Start ===============================================
+12:28:16.645: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/yvesd/2024-04-15 12-28-16.mkv'...
+12:28:24.658: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/yvesd/2024-04-15 12-28-16.mkv' stopped
+12:28:24.658: Output 'simple_file_output': stopping
+12:28:24.658: Output 'simple_file_output': Total frames output: 442
+12:28:24.658: Output 'simple_file_output': Total drawn frames: 481
+12:28:24.658: ==== Recording Stop ================================================
+12:28:51.263: ---------------------------------
+12:28:51.263: [x264 encoder: 'simple_video_recording'] preset: veryfast
+12:28:51.263: [x264 encoder: 'simple_video_recording'] profile: high
+12:28:51.263: [x264 encoder: 'simple_video_recording'] settings:
+12:28:51.263: 	rate_control: CRF
+12:28:51.263: 	bitrate:      0
+12:28:51.263: 	buffer size:  0
+12:28:51.263: 	crf:          23
+12:28:51.263: 	fps_num:      60
+12:28:51.263: 	fps_den:      1
+12:28:51.263: 	width:        1920
+12:28:51.263: 	height:       1080
+12:28:51.263: 	keyint:       250
+12:28:51.263: 
+12:28:51.267: ---------------------------------
+12:28:51.267: [FFmpeg aac encoder: 'simple_aac_recording0'] bitrate: 192, channels: 2, channel_layout: stereo
+12:28:51.267: 
+12:28:51.269: ==== Recording Start ===============================================
+12:28:51.269: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/yvesd/2024-04-15 12-28-51.mkv'...
+12:29:04.616: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/yvesd/2024-04-15 12-28-51.mkv' stopped
+12:29:04.616: Output 'simple_file_output': stopping
+12:29:04.616: Output 'simple_file_output': Total frames output: 762
+12:29:04.616: Output 'simple_file_output': Total drawn frames: 800
+12:29:04.616: ==== Recording Stop ================================================
+12:29:51.090: ---------------------------------
+12:29:51.090: [x264 encoder: 'simple_video_recording'] preset: veryfast
+12:29:51.090: [x264 encoder: 'simple_video_recording'] profile: high
+12:29:51.090: [x264 encoder: 'simple_video_recording'] settings:
+12:29:51.090: 	rate_control: CRF
+12:29:51.090: 	bitrate:      0
+12:29:51.090: 	buffer size:  0
+12:29:51.090: 	crf:          23
+12:29:51.090: 	fps_num:      60
+12:29:51.090: 	fps_den:      1
+12:29:51.090: 	width:        1920
+12:29:51.090: 	height:       1080
+12:29:51.090: 	keyint:       250
+12:29:51.090: 
+12:29:51.094: ---------------------------------
+12:29:51.094: [FFmpeg aac encoder: 'simple_aac_recording0'] bitrate: 192, channels: 2, channel_layout: stereo
+12:29:51.094: 
+12:29:51.095: ==== Recording Start ===============================================
+12:29:51.095: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/yvesd/2024-04-15 12-29-51.mkv'...
+12:30:00.174: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/yvesd/2024-04-15 12-29-51.mkv' stopped
+12:30:00.174: Output 'simple_file_output': stopping
+12:30:00.174: Output 'simple_file_output': Total frames output: 505
+12:30:00.174: Output 'simple_file_output': Total drawn frames: 542 (545 attempted)
+12:30:00.174: Output 'simple_file_output': Number of lagged frames due to rendering lag/stalls: 3 (0.6%)
+12:30:00.174: ==== Recording Stop ================================================
+12:30:05.157: ---------------------------------
+12:30:05.157: [x264 encoder: 'simple_video_recording'] preset: veryfast
+12:30:05.157: [x264 encoder: 'simple_video_recording'] profile: high
+12:30:05.157: [x264 encoder: 'simple_video_recording'] settings:
+12:30:05.157: 	rate_control: CRF
+12:30:05.157: 	bitrate:      0
+12:30:05.157: 	buffer size:  0
+12:30:05.157: 	crf:          23
+12:30:05.157: 	fps_num:      60
+12:30:05.157: 	fps_den:      1
+12:30:05.157: 	width:        1920
+12:30:05.157: 	height:       1080
+12:30:05.157: 	keyint:       250
+12:30:05.157: 
+12:30:05.161: ---------------------------------
+12:30:05.161: [FFmpeg aac encoder: 'simple_aac_recording0'] bitrate: 192, channels: 2, channel_layout: stereo
+12:30:05.161: 
+12:30:05.162: ==== Recording Start ===============================================
+12:30:05.162: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/yvesd/2024-04-15 12-30-05.mkv'...
+12:30:16.292: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/yvesd/2024-04-15 12-30-05.mkv' stopped
+12:30:16.292: Output 'simple_file_output': stopping
+12:30:16.292: Output 'simple_file_output': Total frames output: 629
+12:30:16.292: Output 'simple_file_output': Total drawn frames: 668
+12:30:16.292: ==== Recording Stop ================================================
+12:30:28.989: ---------------------------------
+12:30:28.989: [x264 encoder: 'simple_video_recording'] preset: veryfast
+12:30:28.989: [x264 encoder: 'simple_video_recording'] profile: high
+12:30:28.989: [x264 encoder: 'simple_video_recording'] settings:
+12:30:28.989: 	rate_control: CRF
+12:30:28.989: 	bitrate:      0
+12:30:28.989: 	buffer size:  0
+12:30:28.989: 	crf:          23
+12:30:28.989: 	fps_num:      60
+12:30:28.989: 	fps_den:      1
+12:30:28.989: 	width:        1920
+12:30:28.989: 	height:       1080
+12:30:28.989: 	keyint:       250
+12:30:28.989: 
+12:30:28.993: ---------------------------------
+12:30:28.993: [FFmpeg aac encoder: 'simple_aac_recording0'] bitrate: 192, channels: 2, channel_layout: stereo
+12:30:28.993: 
+12:30:28.995: ==== Recording Start ===============================================
+12:30:28.995: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/yvesd/2024-04-15 12-30-28.mkv'...
+12:30:41.757: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/yvesd/2024-04-15 12-30-28.mkv' stopped
+12:30:41.757: Output 'simple_file_output': stopping
+12:30:41.757: Output 'simple_file_output': Total frames output: 726
+12:30:41.757: Output 'simple_file_output': Total drawn frames: 762 (766 attempted)
+12:30:41.757: Output 'simple_file_output': Number of lagged frames due to rendering lag/stalls: 4 (0.5%)
+12:30:41.757: ==== Recording Stop ================================================
+12:33:55.862: ---------------------------------
+12:33:55.862: [x264 encoder: 'simple_video_recording'] preset: veryfast
+12:33:55.862: [x264 encoder: 'simple_video_recording'] profile: high
+12:33:55.862: [x264 encoder: 'simple_video_recording'] settings:
+12:33:55.862: 	rate_control: CRF
+12:33:55.862: 	bitrate:      0
+12:33:55.862: 	buffer size:  0
+12:33:55.862: 	crf:          23
+12:33:55.862: 	fps_num:      60
+12:33:55.862: 	fps_den:      1
+12:33:55.862: 	width:        1920
+12:33:55.862: 	height:       1080
+12:33:55.862: 	keyint:       250
+12:33:55.862: 
+12:33:55.867: ---------------------------------
+12:33:55.867: [FFmpeg aac encoder: 'simple_aac_recording0'] bitrate: 192, channels: 2, channel_layout: stereo
+12:33:55.867: 
+12:33:55.869: ==== Recording Start ===============================================
+12:33:55.869: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/yvesd/2024-04-15 12-33-55.mkv'...
+12:34:01.560: output simple_file_output paused
+12:34:02.029: output simple_file_output unpaused
+12:34:02.703: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/yvesd/2024-04-15 12-33-55.mkv' stopped
+12:34:02.703: Output 'simple_file_output': stopping
+12:34:02.703: Output 'simple_file_output': Total frames output: 342
+12:34:02.703: Output 'simple_file_output': Total drawn frames: 410
+12:34:02.703: ==== Recording Stop ================================================
+12:34:08.495: ---------------------------------
+12:34:08.495: [x264 encoder: 'simple_video_recording'] preset: veryfast
+12:34:08.495: [x264 encoder: 'simple_video_recording'] profile: high
+12:34:08.495: [x264 encoder: 'simple_video_recording'] settings:
+12:34:08.495: 	rate_control: CRF
+12:34:08.495: 	bitrate:      0
+12:34:08.495: 	buffer size:  0
+12:34:08.495: 	crf:          23
+12:34:08.495: 	fps_num:      60
+12:34:08.495: 	fps_den:      1
+12:34:08.495: 	width:        1920
+12:34:08.495: 	height:       1080
+12:34:08.495: 	keyint:       250
+12:34:08.495: 
+12:34:08.500: ---------------------------------
+12:34:08.501: [FFmpeg aac encoder: 'simple_aac_recording0'] bitrate: 192, channels: 2, channel_layout: stereo
+12:34:08.501: 
+12:34:08.503: ==== Recording Start ===============================================
+12:34:08.503: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/yvesd/2024-04-15 12-34-08.mkv'...
+12:34:15.101: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/yvesd/2024-04-15 12-34-08.mkv' stopped
+12:34:15.101: Output 'simple_file_output': stopping
+12:34:15.101: Output 'simple_file_output': Total frames output: 357
+12:34:15.101: Output 'simple_file_output': Total drawn frames: 396
+12:34:15.101: ==== Recording Stop ================================================
+12:34:20.361: ---------------------------------
+12:34:20.361: [x264 encoder: 'simple_video_recording'] preset: veryfast
+12:34:20.361: [x264 encoder: 'simple_video_recording'] profile: high
+12:34:20.361: [x264 encoder: 'simple_video_recording'] settings:
+12:34:20.361: 	rate_control: CRF
+12:34:20.361: 	bitrate:      0
+12:34:20.361: 	buffer size:  0
+12:34:20.361: 	crf:          23
+12:34:20.361: 	fps_num:      60
+12:34:20.361: 	fps_den:      1
+12:34:20.361: 	width:        1920
+12:34:20.361: 	height:       1080
+12:34:20.361: 	keyint:       250
+12:34:20.361: 
+12:34:20.364: ---------------------------------
+12:34:20.365: [FFmpeg aac encoder: 'simple_aac_recording0'] bitrate: 192, channels: 2, channel_layout: stereo
+12:34:20.365: 
+12:34:20.366: ==== Recording Start ===============================================
+12:34:20.366: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/yvesd/2024-04-15 12-34-20.mkv'...
+12:34:52.047: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/yvesd/2024-04-15 12-34-20.mkv' stopped
+12:34:52.047: Output 'simple_file_output': stopping
+12:34:52.047: Output 'simple_file_output': Total frames output: 1861
+12:34:52.047: Output 'simple_file_output': Total drawn frames: 1900 (1901 attempted)
+12:34:52.047: Output 'simple_file_output': Number of lagged frames due to rendering lag/stalls: 1 (0.1%)
+12:34:52.048: ==== Recording Stop ================================================
+12:35:09.298: ---------------------------------
+12:35:09.298: [x264 encoder: 'simple_video_recording'] preset: veryfast
+12:35:09.298: [x264 encoder: 'simple_video_recording'] profile: high
+12:35:09.298: [x264 encoder: 'simple_video_recording'] settings:
+12:35:09.298: 	rate_control: CRF
+12:35:09.298: 	bitrate:      0
+12:35:09.298: 	buffer size:  0
+12:35:09.298: 	crf:          23
+12:35:09.298: 	fps_num:      60
+12:35:09.298: 	fps_den:      1
+12:35:09.298: 	width:        1920
+12:35:09.298: 	height:       1080
+12:35:09.298: 	keyint:       250
+12:35:09.298: 
+12:35:09.301: ---------------------------------
+12:35:09.302: [FFmpeg aac encoder: 'simple_aac_recording0'] bitrate: 192, channels: 2, channel_layout: stereo
+12:35:09.302: 
+12:35:09.303: ==== Recording Start ===============================================
+12:35:09.303: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/yvesd/2024-04-15 12-35-09.mkv'...
+12:35:17.096: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/yvesd/2024-04-15 12-35-09.mkv' stopped
+12:35:17.096: Output 'simple_file_output': stopping
+12:35:17.096: Output 'simple_file_output': Total frames output: 429
+12:35:17.096: Output 'simple_file_output': Total drawn frames: 467
+12:35:17.096: ==== Recording Stop ================================================
+12:35:23.167: ---------------------------------
+12:35:23.167: [x264 encoder: 'simple_video_recording'] preset: veryfast
+12:35:23.167: [x264 encoder: 'simple_video_recording'] profile: high
+12:35:23.167: [x264 encoder: 'simple_video_recording'] settings:
+12:35:23.167: 	rate_control: CRF
+12:35:23.167: 	bitrate:      0
+12:35:23.167: 	buffer size:  0
+12:35:23.167: 	crf:          23
+12:35:23.167: 	fps_num:      60
+12:35:23.167: 	fps_den:      1
+12:35:23.167: 	width:        1920
+12:35:23.167: 	height:       1080
+12:35:23.167: 	keyint:       250
+12:35:23.167: 
+12:35:23.170: ---------------------------------
+12:35:23.171: [FFmpeg aac encoder: 'simple_aac_recording0'] bitrate: 192, channels: 2, channel_layout: stereo
+12:35:23.171: 
+12:35:23.172: ==== Recording Start ===============================================
+12:35:23.172: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/yvesd/2024-04-15 12-35-23.mkv'...
+12:35:41.327: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/yvesd/2024-04-15 12-35-23.mkv' stopped
+12:35:41.327: Output 'simple_file_output': stopping
+12:35:41.327: Output 'simple_file_output': Total frames output: 1051
+12:35:41.327: Output 'simple_file_output': Total drawn frames: 1089
+12:35:41.327: ==== Recording Stop ================================================
+13:02:49.068: pulse-input: Server name: 'PulseAudio (on PipeWire 1.0.1) 15.0.0'
+13:02:49.069: pulse-input: Audio format: s32le, 48000 Hz, 2 channels
+13:02:49.069: pulse-input: Started recording from 'alsa_output.pci-0000_65_00.6.analog-stereo.monitor'
+13:02:49.069: Settings changed (audio)
+13:02:49.069: ------------------------------------------------
+13:02:49.083: pulse-input: Stopped recording from 'alsa_input.usb-BLUE_MICROPHONE_Blue_Snowball_201511-00.mono-fallback'
+13:02:49.083: pulse-input: Got 43669 packets with 52402800 frames
+13:03:31.242: ---------------------------------
+13:03:31.242: [x264 encoder: 'simple_video_recording'] preset: veryfast
+13:03:31.242: [x264 encoder: 'simple_video_recording'] profile: high
+13:03:31.242: [x264 encoder: 'simple_video_recording'] settings:
+13:03:31.242: 	rate_control: CRF
+13:03:31.242: 	bitrate:      0
+13:03:31.242: 	buffer size:  0
+13:03:31.242: 	crf:          23
+13:03:31.242: 	fps_num:      60
+13:03:31.242: 	fps_den:      1
+13:03:31.242: 	width:        1920
+13:03:31.242: 	height:       1080
+13:03:31.242: 	keyint:       250
+13:03:31.242: 
+13:03:31.245: ---------------------------------
+13:03:31.245: [FFmpeg aac encoder: 'simple_aac_recording0'] bitrate: 192, channels: 2, channel_layout: stereo
+13:03:31.245: 
+13:03:31.246: ==== Recording Start ===============================================
+13:03:31.246: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/yvesd/2024-04-15 13-03-31.mkv'...
+13:03:57.841: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/yvesd/2024-04-15 13-03-31.mkv' stopped
+13:03:57.841: Output 'simple_file_output': stopping
+13:03:57.841: Output 'simple_file_output': Total frames output: 1556
+13:03:57.841: Output 'simple_file_output': Total drawn frames: 1593 (1596 attempted)
+13:03:57.841: Output 'simple_file_output': Number of lagged frames due to rendering lag/stalls: 3 (0.2%)
+13:03:57.841: ==== Recording Stop ================================================
+13:04:21.279: ---------------------------------
+13:04:21.279: [x264 encoder: 'simple_video_recording'] preset: veryfast
+13:04:21.279: [x264 encoder: 'simple_video_recording'] profile: high
+13:04:21.279: [x264 encoder: 'simple_video_recording'] settings:
+13:04:21.279: 	rate_control: CRF
+13:04:21.279: 	bitrate:      0
+13:04:21.279: 	buffer size:  0
+13:04:21.279: 	crf:          23
+13:04:21.279: 	fps_num:      60
+13:04:21.279: 	fps_den:      1
+13:04:21.279: 	width:        1920
+13:04:21.279: 	height:       1080
+13:04:21.279: 	keyint:       250
+13:04:21.279: 
+13:04:21.282: ---------------------------------
+13:04:21.282: [FFmpeg aac encoder: 'simple_aac_recording0'] bitrate: 192, channels: 2, channel_layout: stereo
+13:04:21.282: 
+13:04:21.284: ==== Recording Start ===============================================
+13:04:21.284: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/yvesd/2024-04-15 13-04-21.mkv'...
+13:05:31.793: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/yvesd/2024-04-15 13-04-21.mkv' stopped
+13:05:31.793: Output 'simple_file_output': stopping
+13:05:31.793: Output 'simple_file_output': Total frames output: 4189
+13:05:31.793: Output 'simple_file_output': Total drawn frames: 4177 (4230 attempted)
+13:05:31.793: Output 'simple_file_output': Number of lagged frames due to rendering lag/stalls: 53 (1.3%)
+13:05:31.793: ==== Recording Stop ================================================
+13:06:19.767: ---------------------------------
+13:06:19.767: [x264 encoder: 'simple_video_recording'] preset: veryfast
+13:06:19.767: [x264 encoder: 'simple_video_recording'] profile: high
+13:06:19.767: [x264 encoder: 'simple_video_recording'] settings:
+13:06:19.767: 	rate_control: CRF
+13:06:19.767: 	bitrate:      0
+13:06:19.767: 	buffer size:  0
+13:06:19.767: 	crf:          23
+13:06:19.767: 	fps_num:      60
+13:06:19.767: 	fps_den:      1
+13:06:19.767: 	width:        1920
+13:06:19.767: 	height:       1080
+13:06:19.767: 	keyint:       250
+13:06:19.767: 
+13:06:19.773: ---------------------------------
+13:06:19.774: [FFmpeg aac encoder: 'simple_aac_recording0'] bitrate: 192, channels: 2, channel_layout: stereo
+13:06:19.774: 
+13:06:19.775: ==== Recording Start ===============================================
+13:06:19.775: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/yvesd/2024-04-15 13-06-19.mkv'...
+13:06:48.697: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/yvesd/2024-04-15 13-06-19.mkv' stopped
+13:06:48.697: Output 'simple_file_output': stopping
+13:06:48.697: Output 'simple_file_output': Total frames output: 1696
+13:06:48.697: Output 'simple_file_output': Total drawn frames: 1734 (1735 attempted)
+13:06:48.697: Output 'simple_file_output': Number of lagged frames due to rendering lag/stalls: 1 (0.1%)
+13:06:48.697: ==== Recording Stop ================================================
