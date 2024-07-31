@@ -1,3 +1,5 @@
-2024/04/15-10:49:25.240 4 Reusing MANIFEST /home/yvesd/.config/chromium/Default/Local Storage/leveldb/MANIFEST-000001
-2024/04/15-10:49:25.241 4 Recovering log #3
-2024/04/15-10:49:25.242 4 Reusing old log /home/yvesd/.config/chromium/Default/Local Storage/leveldb/000003.log 
+2024/06/26-12:34:10.012 4 Reusing MANIFEST /home/yvesd/.config/chromium/Default/Local Storage/leveldb/MANIFEST-000001
+2024/06/26-12:34:10.015 4 Recovering log #3
+2024/06/26-12:34:10.016 4 Level-0 table #3: started
+2024/06/26-12:34:10.018 4 Level-0 table #3: 73389 bytes OK
+2024/06/26-12:34:10.019 4 Delete type=0 #3

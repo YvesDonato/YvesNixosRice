@@ -247,3 +247,59 @@
 2024-05-14 12:27:25 Success.
 2024-05-14 12:27:25 Latest version is 1.5.12
 2024-05-14 12:27:25 App is up to date.
+2024-05-21 14:33:10 Loading main app package /nix/store/9vgsv78wvjrq33r9mhz6g17sy0a9qvsq-obsidian-1.5.12/share/obsidian/obsidian.asar
+2024-05-21 14:33:10 Checking for update using Github
+2024-05-21 14:33:10 Success.
+2024-05-21 14:33:10 Latest version is 1.5.12
+2024-05-21 14:33:10 App is up to date.
+2024-05-27 18:50:43 Loading main app package /nix/store/9vgsv78wvjrq33r9mhz6g17sy0a9qvsq-obsidian-1.5.12/share/obsidian/obsidian.asar
+2024-05-27 18:50:43 Checking for update using Github
+2024-05-27 18:50:44 Success.
+2024-05-27 18:50:44 Latest version is 1.5.12
+2024-05-27 18:50:44 App is up to date.
+2024-06-07 21:25:26 Loading main app package /nix/store/9vgsv78wvjrq33r9mhz6g17sy0a9qvsq-obsidian-1.5.12/share/obsidian/obsidian.asar
+2024-06-07 21:25:26 Checking for update using Github
+2024-06-07 21:25:27 Success.
+2024-06-07 21:25:27 Latest version is 1.6.2
+2024-06-07 21:25:27 Downloading update from https://github.com/obsidianmd/obsidian-releases/releases/download/v1.6.2/obsidian-1.6.2.asar.gz
+2024-06-07 21:25:27 Verifying hash & signature. Size= 8794467
+2024-06-07 21:25:27 Saving file
+2024-06-07 21:25:27 Update complete.
+2024-07-23 18:34:58 Loading main app package /nix/store/80d5533k2c6fg0bvi9f312jwhd1bprl1-obsidian-1.6.5/share/obsidian/obsidian.asar
+2024-07-23 18:34:58 Loading main app package /nix/store/80d5533k2c6fg0bvi9f312jwhd1bprl1-obsidian-1.6.5/share/obsidian/obsidian.asar
+2024-07-23 18:34:58 Checking for update using Github
+2024-07-23 18:34:58 Checking for update using Github
+2024-07-23 18:34:59 Success.
+2024-07-23 18:34:59 Success.
+2024-07-23 18:34:59 Latest version is 1.6.7
+2024-07-23 18:34:59 Latest version is 1.6.7
+2024-07-23 18:34:59 Downloading update from https://github.com/obsidianmd/obsidian-releases/releases/download/v1.6.7/obsidian-1.6.7.asar.gz
+2024-07-23 18:34:59 Downloading update from https://github.com/obsidianmd/obsidian-releases/releases/download/v1.6.7/obsidian-1.6.7.asar.gz
+2024-07-23 18:34:59 Verifying hash & signature. Size= 7993245
+2024-07-23 18:34:59 Saving file
+2024-07-23 18:34:59 Verifying hash & signature. Size= 7993245
+2024-07-23 18:34:59 Saving file
+2024-07-23 18:34:59 Update complete.
+2024-07-23 18:34:59 Update complete.
+2024-07-29 22:20:03 Loading updated app package /home/yvesd/.config/obsidian/obsidian-1.6.7.asar
+2024-07-29 22:20:03 Checking for update using Github
+2024-07-29 22:20:04 Success.
+2024-07-29 22:20:04 Latest version is 1.6.7
+2024-07-29 22:20:04 App is up to date.
+2024-07-29 23:20:03 Checking for update using Github
+2024-07-29 23:20:03 Success.
+2024-07-29 23:20:03 Latest version is 1.6.7
+2024-07-29 23:20:03 App is up to date.
+2024-07-30 00:14:45 Loading updated app package /home/yvesd/.config/obsidian/obsidian-1.6.7.asar
+2024-07-30 00:14:45 Checking for update using Github
+2024-07-30 00:20:03 Checking for update using Github
+2024-07-30 00:20:03 Success.
+2024-07-30 00:20:03 Latest version is 1.6.7
+2024-07-30 00:20:03 App is up to date.
+2024-07-31 21:52:50 Loading updated app package /home/yvesd/.config/obsidian/obsidian-1.6.7.asar
+2024-07-31 21:52:50 Checking for update using Github
+2024-07-31 21:52:50 Success.
+2024-07-31 21:52:50 Latest version is 1.6.7
+2024-07-31 21:52:50 App is up to date.
+2024-07-31 21:54:39 Loading updated app package /home/yvesd/.config/obsidian/obsidian-1.6.7.asar
+2024-07-31 21:54:39 Checking for update using Github

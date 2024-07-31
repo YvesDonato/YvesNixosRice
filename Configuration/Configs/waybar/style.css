@@ -233,8 +233,8 @@ label:focus {
 
 #custom-notification {
   margin-right: 8px;
+  padding-right: 10px;
   padding-left: 7px;
-  padding-right: 7px
 }
 
 /* vim: ft=sass
