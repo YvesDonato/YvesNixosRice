@@ -170,6 +170,7 @@
     xwayland
     swaynotificationcenter
     brightnessctl
+    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
   
   # Fonts
@@ -184,5 +185,5 @@
     options = "--delete-older-than 7d";
   };
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
 }

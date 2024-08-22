@@ -3,21 +3,24 @@
 
   inputs = {
     # Nixos Packages URLs
-    nixpkgs.url = "nixpkgs/nixos-23.11";
+    nixpkgs.url = "nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
     # Home Manager
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.11";
+      url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Hyprland
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
-    # nix-colors
+    # Nix colors
     nix-colors.url = "github:misterio77/nix-colors";
-    
+
+    # Cursors Themes
+    rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
+
     };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-colors, ... }@inputs:

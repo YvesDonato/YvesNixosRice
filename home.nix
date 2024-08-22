@@ -4,7 +4,7 @@
   home.username = "yvesd";
   home.homeDirectory = "/home/yvesd";
 
-  home.stateVersion = "23.11"; # Please read the comment before changing.
+  home.stateVersion = "24.05"; # Please read the comment before changing.
 
   home.packages = [
   
@@ -66,11 +66,12 @@
     plugins = [
     ];
     extraConfig = ''
-      monitor=eDP-1,2560x1600@165,0x0,1.5
-      monitor=DP-2,3440x1440@144,1707x0,1,bitdepth,10
+      monitor=eDP-1,2560x1600@165,0x0,1.6
+      monitor=DP-2,3440x1440@144,1600x0,1,bitdepth,10
       exec-once = waybar & swaync & hypridle
       exec-once = bash ~/.config/hypr/start.sh
-      env = XCURSOR_SIZE,24
+      env = HYPRCURSOR_THEME,rose-pine-hyprcursor
+      env = HYPRCURSOR_SIZE,24
       input {
         kb_layout = us
         kb_variant =
@@ -132,7 +133,6 @@
     }
 
     master {
-      new_is_master = true
     }
 
     gestures {
@@ -165,7 +165,7 @@
     bind = $mainMod, D, exec,
     bind = $mainMod, M, exec, 
     bind = $mainMod, B, exec, 
-    bind = $mainMod, C, exec, firefox --new-window https://calendar.notion.so/
+    bind = $mainMod, C, exec, firefox --new-window https://calendar.google.com
     bind = $mainMod, L, exec, hyprlock
     bind = $mainMod, P, exec, grim -g "$(slurp -d)" - | wl-copy
     bind = $mainMod, O, exec, obsidian

@@ -32,6 +32,7 @@
     slurp
     hyprpaper
     waypaper
+    hyprcursor
   ];
   
   # Security
