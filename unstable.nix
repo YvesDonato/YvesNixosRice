@@ -5,6 +5,8 @@
     electron
     obsidian
     hypridle
+    firefox
+  
   ];
   
   #hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta.overrideAttrs {

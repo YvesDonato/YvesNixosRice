@@ -1,0 +1,6 @@
+2024/08/30-08:33:49.953 6a8 Creating DB /home/yvesd/.config/discord/WebStorage/2/IndexedDB/indexeddb.leveldb since it was missing.
+2024/08/30-08:33:49.955 6a8 Reusing MANIFEST /home/yvesd/.config/discord/WebStorage/2/IndexedDB/indexeddb.leveldb/MANIFEST-000001
+2024/08/30-10:01:21.409 64e Level-0 table #5: started
+2024/08/30-10:01:21.410 64e Level-0 table #5: 25546 bytes OK
+2024/08/30-10:01:21.411 64e Delete type=0 #3
+2024/08/30-10:01:21.412 64e Manual compaction at level-0 from (begin) .. (end); will stop at (end)

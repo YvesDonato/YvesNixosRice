@@ -1,179 +1,600 @@
-[2024-08-22 12:14:41.398] [2285] (engine.cpp:534): Created native Engine, time: Thu Aug 22 12:14:41 2024 EDT, logPath: /home/yvesd/.config/discord/0.0.63/modules/discord_voice/, logLevel: 2
-[2024-08-22 12:14:41.399] [2285] (input_volume_stats_reporter.cc:98): Will not log any `WebRTC.Audio.Apm.AppliedInputVolume.*` histogram stats.
-[2024-08-22 12:14:41.399] [2285] (input_volume_stats_reporter.cc:98): Will not log any `WebRTC.Audio.Apm.RecommendedInputVolume.*` histogram stats.
-[2024-08-22 12:14:41.399] [2285] (audio_processing_impl.cc:695): Injected APM submodules:
+[2024-09-07 15:31:15.285] [2309] (engine.cpp:534): Created native Engine, time: Sat Sep  7 15:31:15 2024 EDT, logPath: /home/yvesd/.config/discord/0.0.63/modules/discord_voice/, logLevel: 2
+[2024-09-07 15:31:15.286] [2309] (input_volume_stats_reporter.cc:98): Will not log any `WebRTC.Audio.Apm.AppliedInputVolume.*` histogram stats.
+[2024-09-07 15:31:15.286] [2309] (input_volume_stats_reporter.cc:98): Will not log any `WebRTC.Audio.Apm.RecommendedInputVolume.*` histogram stats.
+[2024-09-07 15:31:15.286] [2309] (audio_processing_impl.cc:695): Injected APM submodules:
 Echo control factory: 0
 Echo detector: 0
 Capture analyzer: 0
 Capture post processor: 0
 Render pre processor: 0
-[2024-08-22 12:14:41.399] [2285] (audio_processing_impl.cc:708): AudioProcessing: AudioProcessing::Config{ pipeline: { maximum_internal_processing_rate: 48000, multi_channel_render: 0, multi_channel_capture: 0 }, pre_amplifier: { enabled: 0, fixed_gain_factor: 1 },capture_level_adjustment: { enabled: 0, pre_gain_factor: 1, post_gain_factor: 1, analog_mic_gain_emulation: { enabled: 0, initial_level: 255 }}, high_pass_filter: { enabled: 0 }, echo_canceller: { enabled: 0, mobile_mode: 0, enforce_high_pass_filtering: 1 }, noise_suppression: { enabled: 0, level: Moderate }, transient_suppression: { enabled: 0 }, gain_controller1: { enabled: 0, mode: AdaptiveAnalog, target_level_dbfs: 3, compression_gain_db: 9, enable_limiter: 1, analog_gain_controller { enabled: 1, startup_min_volume: 0, clipped_level_min: 70, enable_digital_adaptive: 1, clipped_level_step: 15, clipped_ratio_threshold: 0.1, clipped_wait_frames: 300, clipping_predictor:  { enabled: 0, mode: 0, window_length: 5, reference_window_length: 5, reference_window_delay: 5, clipping_threshold: -1, crest_factor_margin: 3, use_predicted_step: 1 }}}, gain_controller2: { enabled: 0, fixed_digital: { gain_db: 0 }, adaptive_digital: { enabled: 0, headroom_db: 6, max_gain_db: 30, initial_gain_db: 8, max_gain_change_db_per_second: 3, max_output_noise_level_dbfs: -50 }, input_volume_control : { enabled 0}}
-[2024-08-22 12:14:41.399] [2285] (audio_processing_impl.cc:911): AudioProcessing::ApplyConfig: AudioProcessing::Config{ pipeline: { maximum_internal_processing_rate: 48000, multi_channel_render: 0, multi_channel_capture: 0 }, pre_amplifier: { enabled: 0, fixed_gain_factor: 1 },capture_level_adjustment: { enabled: 0, pre_gain_factor: 1, post_gain_factor: 1, analog_mic_gain_emulation: { enabled: 0, initial_level: 255 }}, high_pass_filter: { enabled: 1 }, echo_canceller: { enabled: 0, mobile_mode: 0, enforce_high_pass_filtering: 1 }, noise_suppression: { enabled: 0, level: Moderate }, transient_suppression: { enabled: 0 }, gain_controller1: { enabled: 0, mode: AdaptiveAnalog, target_level_dbfs: 3, compression_gain_db: 9, enable_limiter: 1, analog_gain_controller { enabled: 1, startup_min_volume: 0, clipped_level_min: 70, enable_digital_adaptive: 1, clipped_level_step: 15, clipped_ratio_threshold: 0.1, clipped_wait_frames: 300, clipping_predictor:  { enabled: 0, mode: 0, window_length: 5, reference_window_length: 5, reference_window_delay: 5, clipping_threshold: -1, crest_factor_margin: 3, use_predicted_step: 1 }}}, gain_controller2: { enabled: 0, fixed_digital: { gain_db: 0 }, adaptive_digital: { enabled: 0, headroom_db: 6, max_gain_db: 30, initial_gain_db: 8, max_gain_change_db_per_second: 3, max_output_noise_level_dbfs: -50 }, input_volume_control : { enabled 0}}
-[2024-08-22 12:14:41.400] [2285] (audio_device_buffer.cc:65): AudioDeviceBuffer::ctor
-[2024-08-22 12:14:41.400] [2285] (audio_device_impl.cc:143): current platform is Linux
-[2024-08-22 12:14:41.400] [2285] (audio_device_impl.cc:162): CreatePlatformSpecificObjects
-[2024-08-22 12:14:41.400] [2285] (audio_device_impl.cc:991): PlatformAudioLayer
-[2024-08-22 12:14:41.400] [2285] (audio_device_impl.cc:298): PulseAudio support is enabled.
-[2024-08-22 12:14:41.400] [2285] (audio_device_impl.cc:303): Linux PulseAudio APIs will be utilized
-[2024-08-22 12:14:41.400] [2285] (audio_device_impl.cc:344): AttachAudioBuffer
-[2024-08-22 12:14:41.400] [2285] (audio_device_buffer.cc:182): SetRecordingSampleRate(0)
-[2024-08-22 12:14:41.400] [2285] (audio_device_buffer.cc:188): SetPlayoutSampleRate(0)
-[2024-08-22 12:14:41.400] [2285] (audio_device_buffer.cc:202): SetRecordingChannels(0)
-[2024-08-22 12:14:41.400] [2285] (audio_device_buffer.cc:208): SetPlayoutChannels(0)
-[2024-08-22 12:14:41.400] [2285] (audio_device_impl.cc:354): ActiveAudioLayer
-[2024-08-22 12:14:41.400] [2285] (audio_device_buffer.cc:65): AudioDeviceBuffer::ctor
-[2024-08-22 12:14:41.400] [2285] (audio_device_impl.cc:143): current platform is Linux
-[2024-08-22 12:14:41.400] [2285] (audio_device_impl.cc:162): CreatePlatformSpecificObjects
-[2024-08-22 12:14:41.400] [2285] (audio_device_impl.cc:991): PlatformAudioLayer
-[2024-08-22 12:14:41.400] [2285] (audio_device_impl.cc:298): PulseAudio support is enabled.
-[2024-08-22 12:14:41.400] [2285] (audio_device_impl.cc:303): Linux PulseAudio APIs will be utilized
-[2024-08-22 12:14:41.400] [2285] (audio_device_impl.cc:344): AttachAudioBuffer
-[2024-08-22 12:14:41.400] [2285] (audio_device_buffer.cc:182): SetRecordingSampleRate(0)
-[2024-08-22 12:14:41.400] [2285] (audio_device_buffer.cc:188): SetPlayoutSampleRate(0)
-[2024-08-22 12:14:41.400] [2285] (audio_device_buffer.cc:202): SetRecordingChannels(0)
-[2024-08-22 12:14:41.400] [2285] (audio_device_buffer.cc:208): SetPlayoutChannels(0)
-[2024-08-22 12:14:41.400] [2285] (input_volume_stats_reporter.cc:98): Will not log any `WebRTC.Audio.Apm.AppliedInputVolume.*` histogram stats.
-[2024-08-22 12:14:41.400] [2285] (input_volume_stats_reporter.cc:98): Will not log any `WebRTC.Audio.Apm.RecommendedInputVolume.*` histogram stats.
-[2024-08-22 12:14:41.400] [2285] (audio_processing_impl.cc:695): Injected APM submodules:
+[2024-09-07 15:31:15.286] [2309] (audio_processing_impl.cc:708): AudioProcessing: AudioProcessing::Config{ pipeline: { maximum_internal_processing_rate: 48000, multi_channel_render: 0, multi_channel_capture: 0 }, pre_amplifier: { enabled: 0, fixed_gain_factor: 1 },capture_level_adjustment: { enabled: 0, pre_gain_factor: 1, post_gain_factor: 1, analog_mic_gain_emulation: { enabled: 0, initial_level: 255 }}, high_pass_filter: { enabled: 0 }, echo_canceller: { enabled: 0, mobile_mode: 0, enforce_high_pass_filtering: 1 }, noise_suppression: { enabled: 0, level: Moderate }, transient_suppression: { enabled: 0 }, gain_controller1: { enabled: 0, mode: AdaptiveAnalog, target_level_dbfs: 3, compression_gain_db: 9, enable_limiter: 1, analog_gain_controller { enabled: 1, startup_min_volume: 0, clipped_level_min: 70, enable_digital_adaptive: 1, clipped_level_step: 15, clipped_ratio_threshold: 0.1, clipped_wait_frames: 300, clipping_predictor:  { enabled: 0, mode: 0, window_length: 5, reference_window_length: 5, reference_window_delay: 5, clipping_threshold: -1, crest_factor_margin: 3, use_predicted_step: 1 }}}, gain_controller2: { enabled: 0, fixed_digital: { gain_db: 0 }, adaptive_digital: { enabled: 0, headroom_db: 6, max_gain_db: 30, initial_gain_db: 8, max_gain_change_db_per_second: 3, max_output_noise_level_dbfs: -50 }, input_volume_control : { enabled 0}}
+[2024-09-07 15:31:15.286] [2309] (audio_processing_impl.cc:911): AudioProcessing::ApplyConfig: AudioProcessing::Config{ pipeline: { maximum_internal_processing_rate: 48000, multi_channel_render: 0, multi_channel_capture: 0 }, pre_amplifier: { enabled: 0, fixed_gain_factor: 1 },capture_level_adjustment: { enabled: 0, pre_gain_factor: 1, post_gain_factor: 1, analog_mic_gain_emulation: { enabled: 0, initial_level: 255 }}, high_pass_filter: { enabled: 1 }, echo_canceller: { enabled: 0, mobile_mode: 0, enforce_high_pass_filtering: 1 }, noise_suppression: { enabled: 0, level: Moderate }, transient_suppression: { enabled: 0 }, gain_controller1: { enabled: 0, mode: AdaptiveAnalog, target_level_dbfs: 3, compression_gain_db: 9, enable_limiter: 1, analog_gain_controller { enabled: 1, startup_min_volume: 0, clipped_level_min: 70, enable_digital_adaptive: 1, clipped_level_step: 15, clipped_ratio_threshold: 0.1, clipped_wait_frames: 300, clipping_predictor:  { enabled: 0, mode: 0, window_length: 5, reference_window_length: 5, reference_window_delay: 5, clipping_threshold: -1, crest_factor_margin: 3, use_predicted_step: 1 }}}, gain_controller2: { enabled: 0, fixed_digital: { gain_db: 0 }, adaptive_digital: { enabled: 0, headroom_db: 6, max_gain_db: 30, initial_gain_db: 8, max_gain_change_db_per_second: 3, max_output_noise_level_dbfs: -50 }, input_volume_control : { enabled 0}}
+[2024-09-07 15:31:15.287] [2309] (audio_device_buffer.cc:65): AudioDeviceBuffer::ctor
+[2024-09-07 15:31:15.287] [2309] (audio_device_impl.cc:143): current platform is Linux
+[2024-09-07 15:31:15.287] [2309] (audio_device_impl.cc:162): CreatePlatformSpecificObjects
+[2024-09-07 15:31:15.287] [2309] (audio_device_impl.cc:991): PlatformAudioLayer
+[2024-09-07 15:31:15.287] [2309] (audio_device_impl.cc:298): PulseAudio support is enabled.
+[2024-09-07 15:31:15.287] [2309] (audio_device_impl.cc:303): Linux PulseAudio APIs will be utilized
+[2024-09-07 15:31:15.287] [2309] (audio_device_impl.cc:344): AttachAudioBuffer
+[2024-09-07 15:31:15.287] [2309] (audio_device_buffer.cc:182): SetRecordingSampleRate(0)
+[2024-09-07 15:31:15.287] [2309] (audio_device_buffer.cc:188): SetPlayoutSampleRate(0)
+[2024-09-07 15:31:15.287] [2309] (audio_device_buffer.cc:202): SetRecordingChannels(0)
+[2024-09-07 15:31:15.287] [2309] (audio_device_buffer.cc:208): SetPlayoutChannels(0)
+[2024-09-07 15:31:15.287] [2309] (audio_device_impl.cc:354): ActiveAudioLayer
+[2024-09-07 15:31:15.287] [2309] (audio_device_buffer.cc:65): AudioDeviceBuffer::ctor
+[2024-09-07 15:31:15.287] [2309] (audio_device_impl.cc:143): current platform is Linux
+[2024-09-07 15:31:15.287] [2309] (audio_device_impl.cc:162): CreatePlatformSpecificObjects
+[2024-09-07 15:31:15.287] [2309] (audio_device_impl.cc:991): PlatformAudioLayer
+[2024-09-07 15:31:15.287] [2309] (audio_device_impl.cc:298): PulseAudio support is enabled.
+[2024-09-07 15:31:15.287] [2309] (audio_device_impl.cc:303): Linux PulseAudio APIs will be utilized
+[2024-09-07 15:31:15.287] [2309] (audio_device_impl.cc:344): AttachAudioBuffer
+[2024-09-07 15:31:15.287] [2309] (audio_device_buffer.cc:182): SetRecordingSampleRate(0)
+[2024-09-07 15:31:15.287] [2309] (audio_device_buffer.cc:188): SetPlayoutSampleRate(0)
+[2024-09-07 15:31:15.287] [2309] (audio_device_buffer.cc:202): SetRecordingChannels(0)
+[2024-09-07 15:31:15.287] [2309] (audio_device_buffer.cc:208): SetPlayoutChannels(0)
+[2024-09-07 15:31:15.288] [2309] (input_volume_stats_reporter.cc:98): Will not log any `WebRTC.Audio.Apm.AppliedInputVolume.*` histogram stats.
+[2024-09-07 15:31:15.288] [2309] (input_volume_stats_reporter.cc:98): Will not log any `WebRTC.Audio.Apm.RecommendedInputVolume.*` histogram stats.
+[2024-09-07 15:31:15.288] [2309] (audio_processing_impl.cc:695): Injected APM submodules:
 Echo control factory: 0
 Echo detector: 0
 Capture analyzer: 0
 Capture post processor: 0
 Render pre processor: 0
-[2024-08-22 12:14:41.400] [2285] (audio_processing_impl.cc:708): AudioProcessing: AudioProcessing::Config{ pipeline: { maximum_internal_processing_rate: 48000, multi_channel_render: 0, multi_channel_capture: 0 }, pre_amplifier: { enabled: 0, fixed_gain_factor: 1 },capture_level_adjustment: { enabled: 0, pre_gain_factor: 1, post_gain_factor: 1, analog_mic_gain_emulation: { enabled: 0, initial_level: 255 }}, high_pass_filter: { enabled: 0 }, echo_canceller: { enabled: 0, mobile_mode: 0, enforce_high_pass_filtering: 1 }, noise_suppression: { enabled: 0, level: Moderate }, transient_suppression: { enabled: 0 }, gain_controller1: { enabled: 0, mode: AdaptiveAnalog, target_level_dbfs: 3, compression_gain_db: 9, enable_limiter: 1, analog_gain_controller { enabled: 1, startup_min_volume: 0, clipped_level_min: 70, enable_digital_adaptive: 1, clipped_level_step: 15, clipped_ratio_threshold: 0.1, clipped_wait_frames: 300, clipping_predictor:  { enabled: 0, mode: 0, window_length: 5, reference_window_length: 5, reference_window_delay: 5, clipping_threshold: -1, crest_factor_margin: 3, use_predicted_step: 1 }}}, gain_controller2: { enabled: 0, fixed_digital: { gain_db: 0 }, adaptive_digital: { enabled: 0, headroom_db: 6, max_gain_db: 30, initial_gain_db: 8, max_gain_change_db_per_second: 3, max_output_noise_level_dbfs: -50 }, input_volume_control : { enabled 0}}
-[2024-08-22 12:14:41.400] [2285] (audio_engine.cpp:445): Creating audio engine: standard
-[2024-08-22 12:14:41.400] [2285] (audio_device_impl.cc:364): Init
-[2024-08-22 12:14:41.408] [2285] (audio_device_impl.cc:364): Init
-[2024-08-22 12:14:41.410] [2285] (audio_coding.cpp:156): Using software Opus decoder
-[2024-08-22 12:14:41.410] [2285] (audio_coding.cpp:173): Using software Opus encoder
-[2024-08-22 12:14:41.410] [2285] (audio_device_impl.cc:895): RegisterAudioCallback
-[2024-08-22 12:14:41.410] [2285] (audio_device_impl.cc:547): SetMicrophoneVolume(100)
-[2024-08-22 12:14:41.410] [2285] (audio_mixer_manager_pulse_linux.cc:575): input device index has not been set
-[2024-08-22 12:14:41.410] [2285] (audio_device_impl.cc:895): RegisterAudioCallback
-[2024-08-22 12:14:41.410] [2285] (audio_engine.cpp:152): Setting audio input device: 'default'
-[2024-08-22 12:14:41.410] [2285] (audio_device_impl.cc:578): SetStereoRecording(1)
-[2024-08-22 12:14:41.410] [2285] (audio_device_buffer.cc:202): SetRecordingChannels(2)
-[2024-08-22 12:14:41.410] [2285] (audio_device_impl.cc:776): SetRecordingDevice(0)
-[2024-08-22 12:14:41.410] [2285] (audio_device_impl.cc:566): StereoRecordingIsAvailable
-[2024-08-22 12:14:41.411] [2285] (audio_device_impl.cc:573): output: 1
-[2024-08-22 12:14:41.411] [2285] (audio_device_impl.cc:578): SetStereoRecording(1)
-[2024-08-22 12:14:41.411] [2285] (audio_device_buffer.cc:202): SetRecordingChannels(2)
-[2024-08-22 12:14:41.411] [2285] (audio_mixer_manager_pulse_linux.cc:669): input device index has not been set
-[2024-08-22 12:14:41.411] [2285] (audio_device_impl.cc:547): SetMicrophoneVolume(255)
-[2024-08-22 12:14:41.411] [2285] (audio_mixer_manager_pulse_linux.cc:575): input device index has not been set
-[2024-08-22 12:14:41.411] [2285] (audio_engine.cpp:169): Setting audio output device: 'default'
-[2024-08-22 12:14:41.411] [2285] (audio_device_impl.cc:708): SetPlayoutDevice(0)
-[2024-08-22 12:14:41.411] [2285] (audio_device_impl.cc:612): StereoPlayoutIsAvailable
-[2024-08-22 12:14:41.411] [2285] (audio_device_impl.cc:619): output: 1
-[2024-08-22 12:14:41.411] [2285] (audio_device_impl.cc:624): SetStereoPlayout(1)
-[2024-08-22 12:14:41.411] [2285] (audio_device_buffer.cc:208): SetPlayoutChannels(2)
-[2024-08-22 12:14:41.411] [2285] (audio_device_impl.cc:911): BuiltInAECIsAvailable
-[2024-08-22 12:14:41.411] [2285] (audio_device_generic.cc:32): BuiltInAECIsAvailable: Not supported on this platform
-[2024-08-22 12:14:41.411] [2285] (audio_device_impl.cc:914): output: 0
-[2024-08-22 12:14:41.411] [2285] (audio_processing_impl.cc:911): AudioProcessing::ApplyConfig: AudioProcessing::Config{ pipeline: { maximum_internal_processing_rate: 48000, multi_channel_render: 0, multi_channel_capture: 0 }, pre_amplifier: { enabled: 0, fixed_gain_factor: 1 },capture_level_adjustment: { enabled: 0, pre_gain_factor: 1, post_gain_factor: 1, analog_mic_gain_emulation: { enabled: 0, initial_level: 255 }}, high_pass_filter: { enabled: 1 }, echo_canceller: { enabled: 1, mobile_mode: 0, enforce_high_pass_filtering: 1 }, noise_suppression: { enabled: 0, level: Moderate }, transient_suppression: { enabled: 0 }, gain_controller1: { enabled: 0, mode: AdaptiveAnalog, target_level_dbfs: 3, compression_gain_db: 9, enable_limiter: 1, analog_gain_controller { enabled: 1, startup_min_volume: 0, clipped_level_min: 70, enable_digital_adaptive: 1, clipped_level_step: 15, clipped_ratio_threshold: 0.1, clipped_wait_frames: 300, clipping_predictor:  { enabled: 0, mode: 0, window_length: 5, reference_window_length: 5, reference_window_delay: 5, clipping_threshold: -1, crest_factor_margin: 3, use_predicted_step: 1 }}}, gain_controller2: { enabled: 0, fixed_digital: { gain_db: 0 }, adaptive_digital: { enabled: 0, headroom_db: 6, max_gain_db: 30, initial_gain_db: 8, max_gain_change_db_per_second: 3, max_output_noise_level_dbfs: -50 }, input_volume_control : { enabled 0}}
-[2024-08-22 12:14:41.413] [2285] (matched_filter.cc:141): AEC3: Pre echo configuration:  threshold = 0.5, mode =  3.
-[2024-08-22 12:14:41.415] [2285] (transparent_mode.cc:239): AEC3 Transparent Mode: Legacy
-[2024-08-22 12:14:41.415] [2285] (echo_canceller3.cc:793): AEC3 created with sample rate: 16000 Hz, num render channels: 1, num capture channels: 1
-[2024-08-22 12:14:41.415] [2285] (audio_processing_impl.cc:911): AudioProcessing::ApplyConfig: AudioProcessing::Config{ pipeline: { maximum_internal_processing_rate: 48000, multi_channel_render: 0, multi_channel_capture: 0 }, pre_amplifier: { enabled: 0, fixed_gain_factor: 1 },capture_level_adjustment: { enabled: 0, pre_gain_factor: 1, post_gain_factor: 1, analog_mic_gain_emulation: { enabled: 0, initial_level: 255 }}, high_pass_filter: { enabled: 1 }, echo_canceller: { enabled: 1, mobile_mode: 0, enforce_high_pass_filtering: 1 }, noise_suppression: { enabled: 0, level: Moderate }, transient_suppression: { enabled: 0 }, gain_controller1: { enabled: 1, mode: AdaptiveAnalog, target_level_dbfs: 3, compression_gain_db: 9, enable_limiter: 1, analog_gain_controller { enabled: 1, startup_min_volume: 0, clipped_level_min: 70, enable_digital_adaptive: 1, clipped_level_step: 15, clipped_ratio_threshold: 0.1, clipped_wait_frames: 300, clipping_predictor:  { enabled: 0, mode: 0, window_length: 5, reference_window_length: 5, reference_window_delay: 5, clipping_threshold: -1, crest_factor_margin: 3, use_predicted_step: 1 }}}, gain_controller2: { enabled: 0, fixed_digital: { gain_db: 0 }, adaptive_digital: { enabled: 0, headroom_db: 6, max_gain_db: 30, initial_gain_db: 8, max_gain_change_db_per_second: 3, max_output_noise_level_dbfs: -50 }, input_volume_control : { enabled 0}}
-[2024-08-22 12:14:41.415] [2285] (clipping_predictor.cc:358): [AGC2] Clipping prediction disabled.
-[2024-08-22 12:14:41.415] [2285] (agc_manager_direct.cc:481): [agc] analog controller enabled: yes
-[2024-08-22 12:14:41.415] [2285] (agc_manager_direct.cc:484): [agc] Min mic level: 12 (overridden: no)
-[2024-08-22 12:14:41.415] [2285] (captured_audio_processor.cpp:127): SetNoiseCancellation: 0
-[2024-08-22 12:14:41.415] [2285] (audio_processing_impl.cc:911): AudioProcessing::ApplyConfig: AudioProcessing::Config{ pipeline: { maximum_internal_processing_rate: 48000, multi_channel_render: 0, multi_channel_capture: 0 }, pre_amplifier: { enabled: 0, fixed_gain_factor: 1 },capture_level_adjustment: { enabled: 0, pre_gain_factor: 1, post_gain_factor: 1, analog_mic_gain_emulation: { enabled: 0, initial_level: 255 }}, high_pass_filter: { enabled: 1 }, echo_canceller: { enabled: 1, mobile_mode: 0, enforce_high_pass_filtering: 1 }, noise_suppression: { enabled: 1, level: High }, transient_suppression: { enabled: 0 }, gain_controller1: { enabled: 1, mode: AdaptiveAnalog, target_level_dbfs: 3, compression_gain_db: 9, enable_limiter: 1, analog_gain_controller { enabled: 1, startup_min_volume: 0, clipped_level_min: 70, enable_digital_adaptive: 1, clipped_level_step: 15, clipped_ratio_threshold: 0.1, clipped_wait_frames: 300, clipping_predictor:  { enabled: 0, mode: 0, window_length: 5, reference_window_length: 5, reference_window_delay: 5, clipping_threshold: -1, crest_factor_margin: 3, use_predicted_step: 1 }}}, gain_controller2: { enabled: 0, fixed_digital: { gain_db: 0 }, adaptive_digital: { enabled: 0, headroom_db: 6, max_gain_db: 30, initial_gain_db: 8, max_gain_change_db_per_second: 3, max_output_noise_level_dbfs: -50 }, input_volume_control : { enabled 0}}
-[2024-08-22 12:14:41.416] [2285] (field_trial.cc:164): Setting field trial string:WebRTC-Audio-NetEqDecisionLogicConfig/reinit_after_expands:100/
-[2024-08-22 12:14:41.418] [2285] (engine.cpp:238): *** OnDevicesChanged:
-[2024-08-22 12:14:41.418] [2285] (engine.cpp:239): * audioInput:
-[2024-08-22 12:14:41.418] [2285] (engine.cpp:244): * audioOutput:
-[2024-08-22 12:14:41.418] [2285] (engine.cpp:238): *** OnDevicesChanged:
-[2024-08-22 12:14:41.418] [2285] (engine.cpp:239): * audioInput:
-[2024-08-22 12:14:41.418] [2285] (engine.cpp:242): - default: Family 17h/19h HD Audio Controller Analog Stereo ()
-[2024-08-22 12:14:41.418] [2285] (engine.cpp:242): - Family 17h/19h HD Audio Controller Analog Stereo ()
-[2024-08-22 12:14:41.418] [2285] (engine.cpp:244): * audioOutput:
-[2024-08-22 12:14:41.418] [2285] (engine.cpp:247): - default: Family 17h/19h HD Audio Controller Analog Stereo ()
-[2024-08-22 12:14:41.418] [2285] (engine.cpp:247): - Family 17h/19h HD Audio Controller Analog Stereo ()
-[2024-08-22 12:14:41.483] [2285] (audio_engine.cpp:152): Setting audio input device: 'Blue Snowball Mono'
-[2024-08-22 12:14:41.483] [2285] (audio_device_impl.cc:826): RecordingIsInitialized
-[2024-08-22 12:14:41.483] [2285] (audio_device_impl.cc:578): SetStereoRecording(1)
-[2024-08-22 12:14:41.483] [2285] (audio_device_buffer.cc:202): SetRecordingChannels(2)
-[2024-08-22 12:14:41.483] [2285] (audio_device_impl.cc:788): SetRecordingDevice
-[2024-08-22 12:14:41.483] [2285] (audio_device_generic.cc:67): SetRecordingDevice: Not supported on this platform
-[2024-08-22 12:14:41.484] [2285] (audio_device_impl.cc:566): StereoRecordingIsAvailable
-[2024-08-22 12:14:41.484] [2285] (audio_device_impl.cc:573): output: 1
-[2024-08-22 12:14:41.484] [2285] (audio_device_impl.cc:578): SetStereoRecording(1)
-[2024-08-22 12:14:41.484] [2285] (audio_device_buffer.cc:202): SetRecordingChannels(2)
-[2024-08-22 12:14:41.484] [2285] (audio_mixer_manager_pulse_linux.cc:669): input device index has not been set
-[2024-08-22 12:14:41.484] [2285] (audio_device_impl.cc:547): SetMicrophoneVolume(255)
-[2024-08-22 12:14:41.484] [2285] (audio_mixer_manager_pulse_linux.cc:575): input device index has not been set
-[2024-08-22 12:14:41.484] [2285] (audio_engine.cpp:169): Setting audio output device: 'default'
-[2024-08-22 12:14:41.484] [2285] (audio_device_impl.cc:820): PlayoutIsInitialized
-[2024-08-22 12:14:41.484] [2285] (audio_device_impl.cc:708): SetPlayoutDevice(0)
-[2024-08-22 12:14:41.484] [2285] (audio_device_impl.cc:612): StereoPlayoutIsAvailable
-[2024-08-22 12:14:41.484] [2241] (discord.cpp:765): JS console: [default] [BUILD INFO] Release Channel: stable, Build Number: 320887, Version Hash: 527d3acde5537f46f8839e518a5c4ddc9c2d693a
-[2024-08-22 12:14:41.484] [2285] (audio_device_impl.cc:619): output: 1
-[2024-08-22 12:14:41.484] [2285] (audio_device_impl.cc:624): SetStereoPlayout(1)
-[2024-08-22 12:14:41.484] [2285] (audio_device_buffer.cc:208): SetPlayoutChannels(2)
-[2024-08-22 12:14:41.484] [2285] (audio_mixer_manager_pulse_linux.cc:669): input device index has not been set
-[2024-08-22 12:14:41.484] [2285] (audio_device_impl.cc:547): SetMicrophoneVolume(255)
-[2024-08-22 12:14:41.484] [2285] (audio_mixer_manager_pulse_linux.cc:575): input device index has not been set
-[2024-08-22 12:14:41.484] [2285] (engine_audio_transport.cpp:547): EngineAudioTransport::SetSidechainCompression 1
-[2024-08-22 12:14:41.559] [2241] (discord.cpp:765): JS console: [default] [NATIVE INFO] host 0.0.63, modules: discord_desktop_core: 1, discord_erlpack: 1, discord_spellcheck: 1, discord_utils: 1, discord_voice: 1, discord_zstd: 1, discord_krisp: 1, discord_game_utils: 1, discord_rpc: 1, build: null
-[2024-08-22 12:14:41.573] [2241] (discord.cpp:765): JS console: [FAST CONNECT] connected in 436ms
-[2024-08-22 12:14:41.576] [2285] (audio_engine.cpp:152): Setting audio input device: 'default'
-[2024-08-22 12:14:41.576] [2285] (audio_device_impl.cc:826): RecordingIsInitialized
-[2024-08-22 12:14:41.576] [2285] (audio_device_impl.cc:578): SetStereoRecording(1)
-[2024-08-22 12:14:41.576] [2285] (audio_device_buffer.cc:202): SetRecordingChannels(2)
-[2024-08-22 12:14:41.576] [2285] (audio_device_impl.cc:776): SetRecordingDevice(0)
-[2024-08-22 12:14:41.577] [2285] (audio_device_impl.cc:566): StereoRecordingIsAvailable
-[2024-08-22 12:14:41.577] [2285] (audio_device_impl.cc:573): output: 1
-[2024-08-22 12:14:41.577] [2285] (audio_device_impl.cc:578): SetStereoRecording(1)
-[2024-08-22 12:14:41.577] [2285] (audio_device_buffer.cc:202): SetRecordingChannels(2)
-[2024-08-22 12:14:41.577] [2285] (audio_mixer_manager_pulse_linux.cc:669): input device index has not been set
-[2024-08-22 12:14:41.577] [2285] (audio_device_impl.cc:547): SetMicrophoneVolume(255)
-[2024-08-22 12:14:41.577] [2285] (audio_mixer_manager_pulse_linux.cc:575): input device index has not been set
-[2024-08-22 12:14:41.577] [2285] (audio_engine.cpp:169): Setting audio output device: 'default'
-[2024-08-22 12:14:41.577] [2285] (audio_device_impl.cc:820): PlayoutIsInitialized
-[2024-08-22 12:14:41.577] [2285] (audio_device_impl.cc:708): SetPlayoutDevice(0)
-[2024-08-22 12:14:41.577] [2285] (audio_device_impl.cc:612): StereoPlayoutIsAvailable
-[2024-08-22 12:14:41.578] [2285] (audio_device_impl.cc:619): output: 1
-[2024-08-22 12:14:41.578] [2285] (audio_device_impl.cc:624): SetStereoPlayout(1)
-[2024-08-22 12:14:41.578] [2285] (audio_device_buffer.cc:208): SetPlayoutChannels(2)
-[2024-08-22 12:14:41.578] [2285] (audio_engine.cpp:152): Setting audio input device: 'default'
-[2024-08-22 12:14:41.578] [2285] (audio_device_impl.cc:826): RecordingIsInitialized
-[2024-08-22 12:14:41.578] [2285] (audio_device_impl.cc:578): SetStereoRecording(1)
-[2024-08-22 12:14:41.578] [2285] (audio_device_buffer.cc:202): SetRecordingChannels(2)
-[2024-08-22 12:14:41.578] [2285] (audio_device_impl.cc:776): SetRecordingDevice(0)
-[2024-08-22 12:14:41.578] [2285] (audio_device_impl.cc:566): StereoRecordingIsAvailable
-[2024-08-22 12:14:41.578] [2285] (audio_device_impl.cc:573): output: 1
-[2024-08-22 12:14:41.578] [2285] (audio_device_impl.cc:578): SetStereoRecording(1)
-[2024-08-22 12:14:41.578] [2285] (audio_device_buffer.cc:202): SetRecordingChannels(2)
-[2024-08-22 12:14:41.578] [2285] (audio_mixer_manager_pulse_linux.cc:669): input device index has not been set
-[2024-08-22 12:14:41.578] [2285] (audio_device_impl.cc:547): SetMicrophoneVolume(255)
-[2024-08-22 12:14:41.578] [2285] (audio_mixer_manager_pulse_linux.cc:575): input device index has not been set
-[2024-08-22 12:14:41.578] [2285] (audio_engine.cpp:169): Setting audio output device: 'default'
-[2024-08-22 12:14:41.578] [2285] (audio_device_impl.cc:820): PlayoutIsInitialized
-[2024-08-22 12:14:41.578] [2285] (audio_device_impl.cc:708): SetPlayoutDevice(0)
-[2024-08-22 12:14:41.579] [2285] (audio_device_impl.cc:612): StereoPlayoutIsAvailable
-[2024-08-22 12:14:41.579] [2285] (audio_device_impl.cc:619): output: 1
-[2024-08-22 12:14:41.579] [2285] (audio_device_impl.cc:624): SetStereoPlayout(1)
-[2024-08-22 12:14:41.579] [2285] (audio_device_buffer.cc:208): SetPlayoutChannels(2)
-[2024-08-22 12:14:41.592] [2241] (discord.cpp:765): JS console: ["Initializing krisp module"]
-[2024-08-22 12:14:41.872] [2241] (discord.cpp:765): JS console: [MediaEngineStore] Failed to load Krisp module: Failed to setup Krisp module, error code: -3
-[2024-08-22 12:14:42.013] [2241] (discord.cpp:765): JS console: [Spellchecker] sh is not a valid locale.
-[2024-08-22 12:14:42.087] [2241] (discord.cpp:765): JS console: [Spellchecker] Switching to en-US (available)
-[2024-08-22 12:14:42.217] [2241] (discord.cpp:765): JS console: [CloudSyncUtils] CloudSync is not supported on this platform
-[2024-08-22 12:14:42.314] [2241] (discord.cpp:765): JS console: [DEPRECATED] Please use `subscribeWithSelector` middleware
-[2024-08-22 12:14:42.353] [2241] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway.discord.gg, encoding: etf, version: 9, compression: zstd-stream
-[2024-08-22 12:14:42.354] [2241] (discord.cpp:765): JS console: [GatewaySocket] [FAST CONNECT] successfully took over websocket, state: [object Object]
-[2024-08-22 12:14:42.354] [2241] (discord.cpp:765): JS console: [GatewaySocket] [CONNECTED] wss://gateway.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 1 ms
-[2024-08-22 12:14:42.387] [2241] (discord.cpp:765): JS console: [RPCServer:WSS] Starting on 6463
-[2024-08-22 12:14:42.389] [2241] (discord.cpp:765): JS console: [RPCServer:IPC] Starting on /run/user/1000/discord-ipc-0
-[2024-08-22 12:14:42.811] [2241] (discord.cpp:765): JS console: [GatewaySocket] [READY] took 458ms, as ea2056234384b297a4acd32c3b735a4f
-[2024-08-22 12:14:42.832] [2241] (discord.cpp:765): JS console: [Flux] Dispatching CONNECTION_OPEN
-[2024-08-22 12:14:42.833] [2241] (discord.cpp:765): JS console: [DatabaseManager] removing database (user: 175004270414921728, database: undefined)
-[2024-08-22 12:14:42.841] [2241] (discord.cpp:765): JS console: [NativeDispatchUtils] Tried getting Dispatch instance before instantiated
-[2024-08-22 12:14:42.848] [2241] (discord.cpp:765): JS console: [Spotify] WS Connecting
-[2024-08-22 12:14:42.849] [2241] (discord.cpp:765): JS console: [Spotify] Added account: dragonzilla9
-[2024-08-22 12:14:42.866] [2241] (discord.cpp:765): JS console: [GatewaySocket] [READY_SUPPLEMENTAL] took 513ms
-[2024-08-22 12:14:43.158] [2241] (discord.cpp:765): JS console: [Spotify] WS Connected
-[2024-08-22 12:14:43.247] [2241] (discord.cpp:765): JS console: [Spotify] Profile updated for dragonzilla9: isPremium = true
-[2024-08-22 12:14:43.404] [2241] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-07 15:31:15.288] [2309] (audio_processing_impl.cc:708): AudioProcessing: AudioProcessing::Config{ pipeline: { maximum_internal_processing_rate: 48000, multi_channel_render: 0, multi_channel_capture: 0 }, pre_amplifier: { enabled: 0, fixed_gain_factor: 1 },capture_level_adjustment: { enabled: 0, pre_gain_factor: 1, post_gain_factor: 1, analog_mic_gain_emulation: { enabled: 0, initial_level: 255 }}, high_pass_filter: { enabled: 0 }, echo_canceller: { enabled: 0, mobile_mode: 0, enforce_high_pass_filtering: 1 }, noise_suppression: { enabled: 0, level: Moderate }, transient_suppression: { enabled: 0 }, gain_controller1: { enabled: 0, mode: AdaptiveAnalog, target_level_dbfs: 3, compression_gain_db: 9, enable_limiter: 1, analog_gain_controller { enabled: 1, startup_min_volume: 0, clipped_level_min: 70, enable_digital_adaptive: 1, clipped_level_step: 15, clipped_ratio_threshold: 0.1, clipped_wait_frames: 300, clipping_predictor:  { enabled: 0, mode: 0, window_length: 5, reference_window_length: 5, reference_window_delay: 5, clipping_threshold: -1, crest_factor_margin: 3, use_predicted_step: 1 }}}, gain_controller2: { enabled: 0, fixed_digital: { gain_db: 0 }, adaptive_digital: { enabled: 0, headroom_db: 6, max_gain_db: 30, initial_gain_db: 8, max_gain_change_db_per_second: 3, max_output_noise_level_dbfs: -50 }, input_volume_control : { enabled 0}}
+[2024-09-07 15:31:15.288] [2309] (audio_engine.cpp:445): Creating audio engine: standard
+[2024-09-07 15:31:15.288] [2309] (audio_device_impl.cc:364): Init
+[2024-09-07 15:31:15.298] [2309] (audio_device_impl.cc:364): Init
+[2024-09-07 15:31:15.302] [2309] (audio_coding.cpp:156): Using software Opus decoder
+[2024-09-07 15:31:15.302] [2309] (audio_coding.cpp:173): Using software Opus encoder
+[2024-09-07 15:31:15.302] [2309] (audio_device_impl.cc:895): RegisterAudioCallback
+[2024-09-07 15:31:15.302] [2309] (audio_device_impl.cc:547): SetMicrophoneVolume(100)
+[2024-09-07 15:31:15.302] [2309] (audio_mixer_manager_pulse_linux.cc:575): input device index has not been set
+[2024-09-07 15:31:15.302] [2309] (audio_device_impl.cc:895): RegisterAudioCallback
+[2024-09-07 15:31:15.302] [2309] (audio_engine.cpp:152): Setting audio input device: 'default'
+[2024-09-07 15:31:15.302] [2309] (audio_device_impl.cc:578): SetStereoRecording(1)
+[2024-09-07 15:31:15.302] [2309] (audio_device_buffer.cc:202): SetRecordingChannels(2)
+[2024-09-07 15:31:15.302] [2309] (audio_device_impl.cc:776): SetRecordingDevice(0)
+[2024-09-07 15:31:15.302] [2309] (audio_device_impl.cc:566): StereoRecordingIsAvailable
+[2024-09-07 15:31:15.302] [2309] (audio_device_impl.cc:573): output: 1
+[2024-09-07 15:31:15.302] [2309] (audio_device_impl.cc:578): SetStereoRecording(1)
+[2024-09-07 15:31:15.302] [2309] (audio_device_buffer.cc:202): SetRecordingChannels(2)
+[2024-09-07 15:31:15.302] [2309] (audio_mixer_manager_pulse_linux.cc:669): input device index has not been set
+[2024-09-07 15:31:15.302] [2309] (audio_device_impl.cc:547): SetMicrophoneVolume(255)
+[2024-09-07 15:31:15.302] [2309] (audio_mixer_manager_pulse_linux.cc:575): input device index has not been set
+[2024-09-07 15:31:15.302] [2309] (audio_engine.cpp:169): Setting audio output device: 'default'
+[2024-09-07 15:31:15.302] [2309] (audio_device_impl.cc:708): SetPlayoutDevice(0)
+[2024-09-07 15:31:15.302] [2309] (audio_device_impl.cc:612): StereoPlayoutIsAvailable
+[2024-09-07 15:31:15.302] [2309] (audio_device_impl.cc:619): output: 1
+[2024-09-07 15:31:15.302] [2309] (audio_device_impl.cc:624): SetStereoPlayout(1)
+[2024-09-07 15:31:15.302] [2309] (audio_device_buffer.cc:208): SetPlayoutChannels(2)
+[2024-09-07 15:31:15.302] [2309] (audio_device_impl.cc:911): BuiltInAECIsAvailable
+[2024-09-07 15:31:15.302] [2309] (audio_device_generic.cc:32): BuiltInAECIsAvailable: Not supported on this platform
+[2024-09-07 15:31:15.302] [2309] (audio_device_impl.cc:914): output: 0
+[2024-09-07 15:31:15.302] [2309] (audio_processing_impl.cc:911): AudioProcessing::ApplyConfig: AudioProcessing::Config{ pipeline: { maximum_internal_processing_rate: 48000, multi_channel_render: 0, multi_channel_capture: 0 }, pre_amplifier: { enabled: 0, fixed_gain_factor: 1 },capture_level_adjustment: { enabled: 0, pre_gain_factor: 1, post_gain_factor: 1, analog_mic_gain_emulation: { enabled: 0, initial_level: 255 }}, high_pass_filter: { enabled: 1 }, echo_canceller: { enabled: 1, mobile_mode: 0, enforce_high_pass_filtering: 1 }, noise_suppression: { enabled: 0, level: Moderate }, transient_suppression: { enabled: 0 }, gain_controller1: { enabled: 0, mode: AdaptiveAnalog, target_level_dbfs: 3, compression_gain_db: 9, enable_limiter: 1, analog_gain_controller { enabled: 1, startup_min_volume: 0, clipped_level_min: 70, enable_digital_adaptive: 1, clipped_level_step: 15, clipped_ratio_threshold: 0.1, clipped_wait_frames: 300, clipping_predictor:  { enabled: 0, mode: 0, window_length: 5, reference_window_length: 5, reference_window_delay: 5, clipping_threshold: -1, crest_factor_margin: 3, use_predicted_step: 1 }}}, gain_controller2: { enabled: 0, fixed_digital: { gain_db: 0 }, adaptive_digital: { enabled: 0, headroom_db: 6, max_gain_db: 30, initial_gain_db: 8, max_gain_change_db_per_second: 3, max_output_noise_level_dbfs: -50 }, input_volume_control : { enabled 0}}
+[2024-09-07 15:31:15.303] [2309] (matched_filter.cc:141): AEC3: Pre echo configuration:  threshold = 0.5, mode =  3.
+[2024-09-07 15:31:15.303] [2309] (transparent_mode.cc:239): AEC3 Transparent Mode: Legacy
+[2024-09-07 15:31:15.303] [2309] (echo_canceller3.cc:793): AEC3 created with sample rate: 16000 Hz, num render channels: 1, num capture channels: 1
+[2024-09-07 15:31:15.303] [2309] (audio_processing_impl.cc:911): AudioProcessing::ApplyConfig: AudioProcessing::Config{ pipeline: { maximum_internal_processing_rate: 48000, multi_channel_render: 0, multi_channel_capture: 0 }, pre_amplifier: { enabled: 0, fixed_gain_factor: 1 },capture_level_adjustment: { enabled: 0, pre_gain_factor: 1, post_gain_factor: 1, analog_mic_gain_emulation: { enabled: 0, initial_level: 255 }}, high_pass_filter: { enabled: 1 }, echo_canceller: { enabled: 1, mobile_mode: 0, enforce_high_pass_filtering: 1 }, noise_suppression: { enabled: 0, level: Moderate }, transient_suppression: { enabled: 0 }, gain_controller1: { enabled: 1, mode: AdaptiveAnalog, target_level_dbfs: 3, compression_gain_db: 9, enable_limiter: 1, analog_gain_controller { enabled: 1, startup_min_volume: 0, clipped_level_min: 70, enable_digital_adaptive: 1, clipped_level_step: 15, clipped_ratio_threshold: 0.1, clipped_wait_frames: 300, clipping_predictor:  { enabled: 0, mode: 0, window_length: 5, reference_window_length: 5, reference_window_delay: 5, clipping_threshold: -1, crest_factor_margin: 3, use_predicted_step: 1 }}}, gain_controller2: { enabled: 0, fixed_digital: { gain_db: 0 }, adaptive_digital: { enabled: 0, headroom_db: 6, max_gain_db: 30, initial_gain_db: 8, max_gain_change_db_per_second: 3, max_output_noise_level_dbfs: -50 }, input_volume_control : { enabled 0}}
+[2024-09-07 15:31:15.303] [2309] (clipping_predictor.cc:358): [AGC2] Clipping prediction disabled.
+[2024-09-07 15:31:15.303] [2309] (agc_manager_direct.cc:481): [agc] analog controller enabled: yes
+[2024-09-07 15:31:15.303] [2309] (agc_manager_direct.cc:484): [agc] Min mic level: 12 (overridden: no)
+[2024-09-07 15:31:15.303] [2309] (captured_audio_processor.cpp:127): SetNoiseCancellation: 0
+[2024-09-07 15:31:15.303] [2309] (audio_processing_impl.cc:911): AudioProcessing::ApplyConfig: AudioProcessing::Config{ pipeline: { maximum_internal_processing_rate: 48000, multi_channel_render: 0, multi_channel_capture: 0 }, pre_amplifier: { enabled: 0, fixed_gain_factor: 1 },capture_level_adjustment: { enabled: 0, pre_gain_factor: 1, post_gain_factor: 1, analog_mic_gain_emulation: { enabled: 0, initial_level: 255 }}, high_pass_filter: { enabled: 1 }, echo_canceller: { enabled: 1, mobile_mode: 0, enforce_high_pass_filtering: 1 }, noise_suppression: { enabled: 1, level: High }, transient_suppression: { enabled: 0 }, gain_controller1: { enabled: 1, mode: AdaptiveAnalog, target_level_dbfs: 3, compression_gain_db: 9, enable_limiter: 1, analog_gain_controller { enabled: 1, startup_min_volume: 0, clipped_level_min: 70, enable_digital_adaptive: 1, clipped_level_step: 15, clipped_ratio_threshold: 0.1, clipped_wait_frames: 300, clipping_predictor:  { enabled: 0, mode: 0, window_length: 5, reference_window_length: 5, reference_window_delay: 5, clipping_threshold: -1, crest_factor_margin: 3, use_predicted_step: 1 }}}, gain_controller2: { enabled: 0, fixed_digital: { gain_db: 0 }, adaptive_digital: { enabled: 0, headroom_db: 6, max_gain_db: 30, initial_gain_db: 8, max_gain_change_db_per_second: 3, max_output_noise_level_dbfs: -50 }, input_volume_control : { enabled 0}}
+[2024-09-07 15:31:15.303] [2309] (field_trial.cc:164): Setting field trial string:WebRTC-Audio-NetEqDecisionLogicConfig/reinit_after_expands:100/
+[2024-09-07 15:31:15.305] [2309] (engine.cpp:238): *** OnDevicesChanged:
+[2024-09-07 15:31:15.305] [2309] (engine.cpp:239): * audioInput:
+[2024-09-07 15:31:15.305] [2309] (engine.cpp:244): * audioOutput:
+[2024-09-07 15:31:15.305] [2309] (engine.cpp:238): *** OnDevicesChanged:
+[2024-09-07 15:31:15.305] [2309] (engine.cpp:239): * audioInput:
+[2024-09-07 15:31:15.305] [2309] (engine.cpp:242): - default: Family 17h/19h HD Audio Controller Analog Stereo ()
+[2024-09-07 15:31:15.305] [2309] (engine.cpp:242): - Family 17h/19h HD Audio Controller Analog Stereo ()
+[2024-09-07 15:31:15.305] [2309] (engine.cpp:244): * audioOutput:
+[2024-09-07 15:31:15.305] [2309] (engine.cpp:247): - default: Family 17h/19h HD Audio Controller Analog Stereo ()
+[2024-09-07 15:31:15.305] [2309] (engine.cpp:247): - Family 17h/19h HD Audio Controller Analog Stereo ()
+[2024-09-07 15:31:15.417] [2309] (audio_engine.cpp:152): Setting audio input device: 'Blue Snowball Mono'
+[2024-09-07 15:31:15.417] [2309] (audio_device_impl.cc:826): RecordingIsInitialized
+[2024-09-07 15:31:15.417] [2309] (audio_device_impl.cc:578): SetStereoRecording(1)
+[2024-09-07 15:31:15.417] [2309] (audio_device_buffer.cc:202): SetRecordingChannels(2)
+[2024-09-07 15:31:15.417] [2309] (audio_device_impl.cc:788): SetRecordingDevice
+[2024-09-07 15:31:15.417] [2309] (audio_device_generic.cc:67): SetRecordingDevice: Not supported on this platform
+[2024-09-07 15:31:15.418] [2309] (audio_device_impl.cc:566): StereoRecordingIsAvailable
+[2024-09-07 15:31:15.419] [2309] (audio_device_impl.cc:573): output: 1
+[2024-09-07 15:31:15.419] [2309] (audio_device_impl.cc:578): SetStereoRecording(1)
+[2024-09-07 15:31:15.419] [2309] (audio_device_buffer.cc:202): SetRecordingChannels(2)
+[2024-09-07 15:31:15.419] [2309] (audio_mixer_manager_pulse_linux.cc:669): input device index has not been set
+[2024-09-07 15:31:15.419] [2309] (audio_device_impl.cc:547): SetMicrophoneVolume(255)
+[2024-09-07 15:31:15.419] [2309] (audio_mixer_manager_pulse_linux.cc:575): input device index has not been set
+[2024-09-07 15:31:15.419] [2309] (audio_engine.cpp:169): Setting audio output device: 'default'
+[2024-09-07 15:31:15.419] [2309] (audio_device_impl.cc:820): PlayoutIsInitialized
+[2024-09-07 15:31:15.419] [2309] (audio_device_impl.cc:708): SetPlayoutDevice(0)
+[2024-09-07 15:31:15.419] [2309] (audio_device_impl.cc:612): StereoPlayoutIsAvailable
+[2024-09-07 15:31:15.419] [2309] (audio_device_impl.cc:619): output: 1
+[2024-09-07 15:31:15.419] [2309] (audio_device_impl.cc:624): SetStereoPlayout(1)
+[2024-09-07 15:31:15.419] [2309] (audio_device_buffer.cc:208): SetPlayoutChannels(2)
+[2024-09-07 15:31:15.419] [2309] (audio_mixer_manager_pulse_linux.cc:669): input device index has not been set
+[2024-09-07 15:31:15.419] [2309] (audio_device_impl.cc:547): SetMicrophoneVolume(255)
+[2024-09-07 15:31:15.419] [2309] (audio_mixer_manager_pulse_linux.cc:575): input device index has not been set
+[2024-09-07 15:31:15.419] [2309] (engine_audio_transport.cpp:547): EngineAudioTransport::SetSidechainCompression 1
+[2024-09-07 15:31:15.420] [2269] (discord.cpp:765): JS console: [default] [BUILD INFO] Release Channel: stable, Build Number: 325182, Version Hash: 6e34e46bfbfacdc17343460dc5b1b29530d75ea9
+[2024-09-07 15:31:15.553] [2269] (discord.cpp:765): JS console: [default] [NATIVE INFO] host 0.0.63, modules: discord_desktop_core: 1, discord_erlpack: 1, discord_spellcheck: 1, discord_utils: 1, discord_voice: 1, discord_zstd: 1, discord_krisp: 1, discord_game_utils: 1, discord_rpc: 1, build: null
+[2024-09-07 15:31:15.591] [2309] (audio_engine.cpp:152): Setting audio input device: 'default'
+[2024-09-07 15:31:15.591] [2309] (audio_device_impl.cc:826): RecordingIsInitialized
+[2024-09-07 15:31:15.591] [2309] (audio_device_impl.cc:578): SetStereoRecording(1)
+[2024-09-07 15:31:15.591] [2309] (audio_device_buffer.cc:202): SetRecordingChannels(2)
+[2024-09-07 15:31:15.591] [2309] (audio_device_impl.cc:776): SetRecordingDevice(0)
+[2024-09-07 15:31:15.591] [2309] (audio_device_impl.cc:566): StereoRecordingIsAvailable
+[2024-09-07 15:31:15.592] [2309] (audio_device_impl.cc:573): output: 1
+[2024-09-07 15:31:15.592] [2309] (audio_device_impl.cc:578): SetStereoRecording(1)
+[2024-09-07 15:31:15.592] [2309] (audio_device_buffer.cc:202): SetRecordingChannels(2)
+[2024-09-07 15:31:15.592] [2309] (audio_mixer_manager_pulse_linux.cc:669): input device index has not been set
+[2024-09-07 15:31:15.592] [2309] (audio_device_impl.cc:547): SetMicrophoneVolume(255)
+[2024-09-07 15:31:15.592] [2309] (audio_mixer_manager_pulse_linux.cc:575): input device index has not been set
+[2024-09-07 15:31:15.592] [2309] (audio_engine.cpp:169): Setting audio output device: 'default'
+[2024-09-07 15:31:15.592] [2309] (audio_device_impl.cc:820): PlayoutIsInitialized
+[2024-09-07 15:31:15.592] [2309] (audio_device_impl.cc:708): SetPlayoutDevice(0)
+[2024-09-07 15:31:15.592] [2309] (audio_device_impl.cc:612): StereoPlayoutIsAvailable
+[2024-09-07 15:31:15.593] [2309] (audio_device_impl.cc:619): output: 1
+[2024-09-07 15:31:15.593] [2309] (audio_device_impl.cc:624): SetStereoPlayout(1)
+[2024-09-07 15:31:15.593] [2309] (audio_device_buffer.cc:208): SetPlayoutChannels(2)
+[2024-09-07 15:31:15.593] [2309] (audio_engine.cpp:152): Setting audio input device: 'default'
+[2024-09-07 15:31:15.593] [2309] (audio_device_impl.cc:826): RecordingIsInitialized
+[2024-09-07 15:31:15.593] [2309] (audio_device_impl.cc:578): SetStereoRecording(1)
+[2024-09-07 15:31:15.593] [2309] (audio_device_buffer.cc:202): SetRecordingChannels(2)
+[2024-09-07 15:31:15.593] [2309] (audio_device_impl.cc:776): SetRecordingDevice(0)
+[2024-09-07 15:31:15.593] [2309] (audio_device_impl.cc:566): StereoRecordingIsAvailable
+[2024-09-07 15:31:15.594] [2309] (audio_device_impl.cc:573): output: 1
+[2024-09-07 15:31:15.594] [2309] (audio_device_impl.cc:578): SetStereoRecording(1)
+[2024-09-07 15:31:15.594] [2309] (audio_device_buffer.cc:202): SetRecordingChannels(2)
+[2024-09-07 15:31:15.594] [2309] (audio_mixer_manager_pulse_linux.cc:669): input device index has not been set
+[2024-09-07 15:31:15.594] [2309] (audio_device_impl.cc:547): SetMicrophoneVolume(255)
+[2024-09-07 15:31:15.594] [2309] (audio_mixer_manager_pulse_linux.cc:575): input device index has not been set
+[2024-09-07 15:31:15.594] [2309] (audio_engine.cpp:169): Setting audio output device: 'default'
+[2024-09-07 15:31:15.594] [2309] (audio_device_impl.cc:820): PlayoutIsInitialized
+[2024-09-07 15:31:15.594] [2309] (audio_device_impl.cc:708): SetPlayoutDevice(0)
+[2024-09-07 15:31:15.594] [2309] (audio_device_impl.cc:612): StereoPlayoutIsAvailable
+[2024-09-07 15:31:15.594] [2309] (audio_device_impl.cc:619): output: 1
+[2024-09-07 15:31:15.594] [2309] (audio_device_impl.cc:624): SetStereoPlayout(1)
+[2024-09-07 15:31:15.594] [2309] (audio_device_buffer.cc:208): SetPlayoutChannels(2)
+[2024-09-07 15:31:15.605] [2269] (discord.cpp:765): JS console: ["Initializing krisp module"]
+[2024-09-07 15:31:15.882] [2269] (discord.cpp:765): JS console: [MediaEngineStore] Failed to load Krisp module: Failed to setup Krisp module, error code: -3
+[2024-09-07 15:31:16.016] [2269] (discord.cpp:765): JS console: [Spellchecker] sh is not a valid locale.
+[2024-09-07 15:31:16.075] [2269] (discord.cpp:765): JS console: [Spellchecker] Switching to en-US (available)
+[2024-09-07 15:31:16.278] [2269] (discord.cpp:765): JS console: [CloudSyncUtils] CloudSync is not supported on this platform
+[2024-09-07 15:31:16.365] [2269] (discord.cpp:765): JS console: [DEPRECATED] Please use `subscribeWithSelector` middleware
+[2024-09-07 15:31:16.421] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-07 15:31:16.421] [2269] (discord.cpp:765): JS console: [GatewaySocket] [FAST CONNECT] successfully took over websocket, state: [object Object]
+[2024-09-07 15:31:16.421] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECTED] wss://gateway.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 0 ms
+[2024-09-07 15:31:16.442] [2269] (discord.cpp:765): JS console: [RPCServer:WSS] Starting on 6463
+[2024-09-07 15:31:16.447] [2269] (discord.cpp:765): JS console: [RPCServer:IPC] Starting on /run/user/1000/discord-ipc-0
+[2024-09-07 15:31:16.905] [2269] (discord.cpp:765): JS console: [GatewaySocket] [READY] took 484ms, as 6183b656c0ec67d0f05e168d2f9720fc
+[2024-09-07 15:31:16.927] [2269] (discord.cpp:765): JS console: [Flux] Dispatching CONNECTION_OPEN
+[2024-09-07 15:31:16.929] [2269] (discord.cpp:765): JS console: [DatabaseManager] removing database (user: 175004270414921728, database: undefined)
+[2024-09-07 15:31:16.934] [2269] (discord.cpp:765): JS console: [NativeDispatchUtils] Tried getting Dispatch instance before instantiated
+[2024-09-07 15:31:16.944] [2269] (discord.cpp:765): JS console: [Spotify] WS Connecting
+[2024-09-07 15:31:16.944] [2269] (discord.cpp:765): JS console: [Spotify] Added account: dragonzilla9
+[2024-09-07 15:31:16.965] [2269] (discord.cpp:765): JS console: [GatewaySocket] [READY_SUPPLEMENTAL] took 544ms
+[2024-09-07 15:31:17.304] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-07 15:31:17.478] [2269] (discord.cpp:765): JS console: [Spotify] WS Connected
+[2024-09-07 15:31:17.564] [2269] (discord.cpp:765): JS console: [Spotify] Profile updated for dragonzilla9: isPremium = true
+[2024-09-07 15:31:17.595] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-07 15:31:31.276] [2748] (region_latency_tester.cpp:72): Sending 5 latency test pings to region us-central
+[2024-09-07 15:31:31.276] [2748] (region_latency_tester.cpp:72): Sending 5 latency test pings to region us-east
+[2024-09-07 15:31:31.276] [2748] (region_latency_tester.cpp:72): Sending 5 latency test pings to region newark
+[2024-09-07 15:31:31.276] [2748] (region_latency_tester.cpp:72): Sending 5 latency test pings to region atlanta
+[2024-09-07 15:31:31.276] [2748] (region_latency_tester.cpp:72): Sending 5 latency test pings to region us-south
+[2024-09-07 15:31:31.316] [2748] (region_latency_tester.cpp:283): Average RTT for region us-central is 17.25
+[2024-09-07 15:31:31.316] [2748] (region_latency_tester.cpp:283): Average RTT for region us-east is 20
+[2024-09-07 15:31:31.316] [2748] (region_latency_tester.cpp:283): Average RTT for region newark is 17
+[2024-09-07 15:31:31.316] [2748] (region_latency_tester.cpp:283): Average RTT for region atlanta is 31.5
+[2024-09-07 15:31:31.316] [2748] (region_latency_tester.cpp:283): Average RTT for region us-south is 39
+[2024-09-07 15:41:14.811] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-07 15:52:32.386] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: 
+[2024-09-07 16:03:19.500] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-07 16:10:42.896] [2309] (engine.cpp:238): *** OnDevicesChanged:
+[2024-09-07 16:10:42.896] [2309] (engine.cpp:239): * audioInput:
+[2024-09-07 16:10:42.896] [2309] (engine.cpp:242): - default: Family 17h/19h HD Audio Controller Analog Stereo ()
+[2024-09-07 16:10:42.896] [2309] (engine.cpp:242): - Family 17h/19h HD Audio Controller Analog Stereo ()
+[2024-09-07 16:10:42.896] [2309] (engine.cpp:244): * audioOutput:
+[2024-09-07 16:10:42.896] [2309] (engine.cpp:247): - default: Family 17h/19h HD Audio Controller Analog Stereo ()
+[2024-09-07 16:10:42.896] [2309] (engine.cpp:247): - Family 17h/19h HD Audio Controller Analog Stereo ()
+[2024-09-07 16:10:42.896] [2309] (engine.cpp:247): - Rembrandt Radeon High Definition Audio Controller Digital Stereo (HDMI 3) ()
+[2024-09-07 16:10:42.898] [2309] (audio_engine.cpp:169): Setting audio output device: 'default'
+[2024-09-07 16:10:42.898] [2309] (audio_device_impl.cc:820): PlayoutIsInitialized
+[2024-09-07 16:10:42.898] [2309] (audio_device_impl.cc:708): SetPlayoutDevice(0)
+[2024-09-07 16:10:42.898] [2309] (audio_device_impl.cc:612): StereoPlayoutIsAvailable
+[2024-09-07 16:10:42.898] [2309] (audio_device_impl.cc:619): output: 1
+[2024-09-07 16:10:42.898] [2309] (audio_device_impl.cc:624): SetStereoPlayout(1)
+[2024-09-07 16:10:42.898] [2309] (audio_device_buffer.cc:208): SetPlayoutChannels(2)
+[2024-09-07 16:25:31.149] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway-us-east1-c.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-07 16:25:31.235] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECTED] wss://gateway-us-east1-c.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 86 ms
+[2024-09-07 16:25:31.236] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUME] resuming session 6183b656c0ec67d0f05e168d2f9720fc, seq: 281
+[2024-09-07 16:25:31.336] [2269] (discord.cpp:765): JS console: [Flux] Dispatching CONNECTION_RESUMED
+[2024-09-07 16:25:31.337] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUMED] took 188ms, replayed 0 events, new seq: 282
+[2024-09-07 16:33:43.058] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-07 16:33:43.165] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: 
+[2024-09-07 16:33:43.222] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-07 16:33:48.398] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-07 16:35:04.735] [2269] (discord.cpp:765): JS console: [GatewaySocket] [WS CLOSED] (false, 1006, ) retrying in 2.63 seconds.
+[2024-09-07 16:35:07.365] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway-us-east1-c.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-07 16:35:07.473] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECTED] wss://gateway-us-east1-c.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 107 ms
+[2024-09-07 16:35:07.473] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUME] resuming session 6183b656c0ec67d0f05e168d2f9720fc, seq: 327
+[2024-09-07 16:35:07.565] [2269] (discord.cpp:765): JS console: [Flux] Dispatching CONNECTION_RESUMED
+[2024-09-07 16:35:07.565] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUMED] took 200ms, replayed 0 events, new seq: 328
+[2024-09-07 16:41:51.499] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: 
+[2024-09-07 18:34:50.700] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-07 18:34:50.906] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-07 18:34:50.991] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-07 19:02:07.396] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: 
+[2024-09-07 19:08:01.274] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway-us-east1-c.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-07 19:08:01.372] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECTED] wss://gateway-us-east1-c.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 98 ms
+[2024-09-07 19:08:01.372] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUME] resuming session 6183b656c0ec67d0f05e168d2f9720fc, seq: 1081
+[2024-09-07 19:08:01.470] [2269] (discord.cpp:765): JS console: [Flux] Dispatching CONNECTION_RESUMED
+[2024-09-07 19:08:01.470] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUMED] took 196ms, replayed 0 events, new seq: 1082
+[2024-09-07 19:20:00.302] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-07 19:28:37.045] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: 
+[2024-09-07 19:43:36.392] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-07 19:43:36.511] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-07 19:43:36.511] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-07 19:47:44.346] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway-us-east1-c.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-07 19:47:44.434] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECTED] wss://gateway-us-east1-c.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 88 ms
+[2024-09-07 19:47:44.434] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUME] resuming session 6183b656c0ec67d0f05e168d2f9720fc, seq: 1312
+[2024-09-07 19:47:44.532] [2269] (discord.cpp:765): JS console: [Flux] Dispatching CONNECTION_RESUMED
+[2024-09-07 19:47:44.533] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUMED] took 187ms, replayed 0 events, new seq: 1313
+[2024-09-07 21:31:31.308] [72484] (region_latency_tester.cpp:72): Sending 5 latency test pings to region us-central
+[2024-09-07 21:31:31.308] [72484] (region_latency_tester.cpp:72): Sending 5 latency test pings to region us-east
+[2024-09-07 21:31:31.308] [72484] (region_latency_tester.cpp:72): Sending 5 latency test pings to region newark
+[2024-09-07 21:31:31.308] [72484] (region_latency_tester.cpp:72): Sending 5 latency test pings to region atlanta
+[2024-09-07 21:31:31.308] [72484] (region_latency_tester.cpp:72): Sending 5 latency test pings to region us-south
+[2024-09-07 21:31:31.352] [72484] (region_latency_tester.cpp:283): Average RTT for region us-central is 18.75
+[2024-09-07 21:31:31.352] [72484] (region_latency_tester.cpp:283): Average RTT for region us-east is 22
+[2024-09-07 21:31:31.352] [72484] (region_latency_tester.cpp:283): Average RTT for region newark is 18.75
+[2024-09-07 21:31:31.352] [72484] (region_latency_tester.cpp:283): Average RTT for region atlanta is 33.5
+[2024-09-07 21:31:31.352] [72484] (region_latency_tester.cpp:283): Average RTT for region us-south is 42
+[2024-09-07 22:11:12.990] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway-us-east1-c.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-07 22:11:13.077] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECTED] wss://gateway-us-east1-c.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 87 ms
+[2024-09-07 22:11:13.077] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUME] resuming session 6183b656c0ec67d0f05e168d2f9720fc, seq: 2437
+[2024-09-07 22:11:13.174] [2269] (discord.cpp:765): JS console: [Flux] Dispatching CONNECTION_RESUMED
+[2024-09-07 22:11:13.174] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUMED] took 184ms, replayed 0 events, new seq: 2438
+[2024-09-08 02:05:39.658] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway-us-east1-c.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-08 02:05:39.738] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECTED] wss://gateway-us-east1-c.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 80 ms
+[2024-09-08 02:05:39.738] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUME] resuming session 6183b656c0ec67d0f05e168d2f9720fc, seq: 3664
+[2024-09-08 02:05:39.833] [2269] (discord.cpp:765): JS console: [Flux] Dispatching CONNECTION_RESUMED
+[2024-09-08 02:05:39.836] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUMED] took 178ms, replayed 0 events, new seq: 3665
+[2024-09-08 03:14:49.238] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway-us-east1-c.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-08 03:14:49.319] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECTED] wss://gateway-us-east1-c.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 81 ms
+[2024-09-08 03:14:49.320] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUME] resuming session 6183b656c0ec67d0f05e168d2f9720fc, seq: 4098
+[2024-09-08 03:14:49.415] [2269] (discord.cpp:765): JS console: [Flux] Dispatching CONNECTION_RESUMED
+[2024-09-08 03:14:49.420] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUMED] took 182ms, replayed 0 events, new seq: 4099
+[2024-09-08 03:31:31.344] [164867] (region_latency_tester.cpp:72): Sending 5 latency test pings to region us-central
+[2024-09-08 03:31:31.344] [164867] (region_latency_tester.cpp:72): Sending 5 latency test pings to region us-east
+[2024-09-08 03:31:31.344] [164867] (region_latency_tester.cpp:72): Sending 5 latency test pings to region newark
+[2024-09-08 03:31:31.344] [164867] (region_latency_tester.cpp:72): Sending 5 latency test pings to region atlanta
+[2024-09-08 03:31:31.344] [164867] (region_latency_tester.cpp:72): Sending 5 latency test pings to region us-south
+[2024-09-08 03:31:31.389] [164867] (region_latency_tester.cpp:283): Average RTT for region us-central is 15
+[2024-09-08 03:31:31.389] [164867] (region_latency_tester.cpp:283): Average RTT for region us-east is 19.5
+[2024-09-08 03:31:31.389] [164867] (region_latency_tester.cpp:283): Average RTT for region newark is 19
+[2024-09-08 03:31:31.389] [164867] (region_latency_tester.cpp:283): Average RTT for region atlanta is 35.5
+[2024-09-08 03:31:31.389] [164867] (region_latency_tester.cpp:283): Average RTT for region us-south is 43.5
+[2024-09-08 04:39:42.670] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-08 04:39:42.818] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-08 04:39:42.900] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: 
+[2024-09-08 05:08:36.984] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 05:32:39.238] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 05:33:29.232] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: 
+[2024-09-08 05:33:32.170] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 05:35:06.788] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: 
+[2024-09-08 05:35:09.687] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 05:43:53.195] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-08 05:43:53.271] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-08 05:43:53.356] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: 
+[2024-09-08 05:43:56.041] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 05:47:03.678] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: 
+[2024-09-08 05:47:06.617] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 05:52:36.000] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway-us-east1-c.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-08 05:52:36.082] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECTED] wss://gateway-us-east1-c.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 82 ms
+[2024-09-08 05:52:36.083] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUME] resuming session 6183b656c0ec67d0f05e168d2f9720fc, seq: 4707
+[2024-09-08 05:52:36.187] [2269] (discord.cpp:765): JS console: [Flux] Dispatching CONNECTION_RESUMED
+[2024-09-08 05:52:36.192] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUMED] took 192ms, replayed 0 events, new seq: 4708
+[2024-09-08 06:23:23.450] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: 
+[2024-09-08 09:31:31.367] [257338] (region_latency_tester.cpp:72): Sending 5 latency test pings to region us-central
+[2024-09-08 09:31:31.367] [257338] (region_latency_tester.cpp:72): Sending 5 latency test pings to region us-east
+[2024-09-08 09:31:31.367] [257338] (region_latency_tester.cpp:72): Sending 5 latency test pings to region newark
+[2024-09-08 09:31:31.367] [257338] (region_latency_tester.cpp:72): Sending 5 latency test pings to region atlanta
+[2024-09-08 09:31:31.367] [257338] (region_latency_tester.cpp:72): Sending 5 latency test pings to region us-south
+[2024-09-08 09:31:31.410] [257338] (region_latency_tester.cpp:283): Average RTT for region us-central is 19
+[2024-09-08 09:31:31.410] [257338] (region_latency_tester.cpp:283): Average RTT for region us-east is 22
+[2024-09-08 09:31:31.410] [257338] (region_latency_tester.cpp:283): Average RTT for region newark is 18.75
+[2024-09-08 09:31:31.410] [257338] (region_latency_tester.cpp:283): Average RTT for region atlanta is 34
+[2024-09-08 09:31:31.410] [257338] (region_latency_tester.cpp:283): Average RTT for region us-south is 42.25
+[2024-09-08 09:32:51.957] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway-us-east1-c.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-08 09:32:52.042] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECTED] wss://gateway-us-east1-c.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 85 ms
+[2024-09-08 09:32:52.042] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUME] resuming session 6183b656c0ec67d0f05e168d2f9720fc, seq: 5640
+[2024-09-08 09:32:52.142] [2269] (discord.cpp:765): JS console: [Flux] Dispatching CONNECTION_RESUMED
+[2024-09-08 09:32:52.142] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUMED] took 185ms, replayed 0 events, new seq: 5641
+[2024-09-08 11:42:52.045] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-08 11:42:52.196] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-08 11:42:52.282] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: 
+[2024-09-08 11:45:28.954] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 11:48:35.989] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway-us-east1-c.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-08 11:48:36.083] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECTED] wss://gateway-us-east1-c.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 93 ms
+[2024-09-08 11:48:36.083] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUME] resuming session 6183b656c0ec67d0f05e168d2f9720fc, seq: 6389
+[2024-09-08 11:48:36.180] [2269] (discord.cpp:765): JS console: [Flux] Dispatching CONNECTION_RESUMED
+[2024-09-08 11:48:36.185] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUMED] took 196ms, replayed 0 events, new seq: 6390
+[2024-09-08 12:11:14.445] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway-us-east1-c.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-08 12:11:14.545] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECTED] wss://gateway-us-east1-c.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 100 ms
+[2024-09-08 12:11:14.545] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUME] resuming session 6183b656c0ec67d0f05e168d2f9720fc, seq: 6631
+[2024-09-08 12:11:14.643] [2269] (discord.cpp:765): JS console: [Flux] Dispatching CONNECTION_RESUMED
+[2024-09-08 12:11:14.647] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUMED] took 202ms, replayed 0 events, new seq: 6632
+[2024-09-08 12:52:07.124] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway-us-east1-c.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-08 12:52:07.210] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECTED] wss://gateway-us-east1-c.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 86 ms
+[2024-09-08 12:52:07.210] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUME] resuming session 6183b656c0ec67d0f05e168d2f9720fc, seq: 6829
+[2024-09-08 12:52:07.309] [2269] (discord.cpp:765): JS console: [Flux] Dispatching CONNECTION_RESUMED
+[2024-09-08 12:52:07.313] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUMED] took 189ms, replayed 0 events, new seq: 6830
+[2024-09-08 13:37:24.235] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-08 13:37:24.322] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 13:37:24.412] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-08 13:37:29.613] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 13:37:32.606] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 13:38:16.323] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 13:38:19.256] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 13:38:29.857] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 13:38:32.835] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 13:39:41.385] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 13:39:44.328] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 13:39:48.466] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 13:39:51.492] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 13:44:23.032] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 13:44:25.856] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 13:44:43.940] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 13:44:46.922] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 13:46:00.981] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 13:46:03.893] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 14:00:57.489] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 14:38:56.837] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-08 14:38:56.920] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-08 14:38:56.924] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 15:31:31.401] [345710] (region_latency_tester.cpp:72): Sending 5 latency test pings to region us-central
+[2024-09-08 15:31:31.401] [345710] (region_latency_tester.cpp:72): Sending 5 latency test pings to region us-east
+[2024-09-08 15:31:31.401] [345710] (region_latency_tester.cpp:72): Sending 5 latency test pings to region newark
+[2024-09-08 15:31:31.401] [345710] (region_latency_tester.cpp:72): Sending 5 latency test pings to region atlanta
+[2024-09-08 15:31:31.401] [345710] (region_latency_tester.cpp:72): Sending 5 latency test pings to region us-south
+[2024-09-08 15:31:31.445] [345710] (region_latency_tester.cpp:283): Average RTT for region us-central is 15.25
+[2024-09-08 15:31:31.445] [345710] (region_latency_tester.cpp:283): Average RTT for region us-east is 18.25
+[2024-09-08 15:31:31.445] [345710] (region_latency_tester.cpp:283): Average RTT for region newark is 15
+[2024-09-08 15:31:31.445] [345710] (region_latency_tester.cpp:283): Average RTT for region atlanta is 30.25
+[2024-09-08 15:31:31.445] [345710] (region_latency_tester.cpp:283): Average RTT for region us-south is 43
+[2024-09-08 16:30:37.673] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway-us-east1-c.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-08 16:30:37.769] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECTED] wss://gateway-us-east1-c.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 96 ms
+[2024-09-08 16:30:37.770] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUME] resuming session 6183b656c0ec67d0f05e168d2f9720fc, seq: 7951
+[2024-09-08 16:30:37.868] [2269] (discord.cpp:765): JS console: [Flux] Dispatching CONNECTION_RESUMED
+[2024-09-08 16:30:37.872] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUMED] took 199ms, replayed 0 events, new seq: 7952
+[2024-09-08 17:45:21.262] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-08 17:45:21.376] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-08 17:45:21.473] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: 
+[2024-09-08 17:46:55.847] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 18:12:23.549] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway-us-east1-c.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-08 18:12:23.648] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECTED] wss://gateway-us-east1-c.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 99 ms
+[2024-09-08 18:12:23.648] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUME] resuming session 6183b656c0ec67d0f05e168d2f9720fc, seq: 8527
+[2024-09-08 18:12:23.743] [2269] (discord.cpp:765): JS console: [Flux] Dispatching CONNECTION_RESUMED
+[2024-09-08 18:12:23.744] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUMED] took 195ms, replayed 0 events, new seq: 8528
+[2024-09-08 20:15:59.017] [2269] (discord.cpp:765): JS console: [MessageActionCreators] Fetching messages for 1205527689218490439 between undefined and undefined. jump={"jumpType":"ANIMATED"}
+[2024-09-08 20:15:59.190] [2269] (discord.cpp:765): JS console: [MessageActionCreators] Fetched 50 messages for 1205527689218490439 isBefore:false isAfter:false
+[2024-09-08 20:15:59.193] [2269] (discord.cpp:765): JS console: [ChannelMessages] loadComplete: resetting state for channelId=1205527689218490439, sending.length=0
+[2024-09-08 20:16:03.343] [2269] (discord.cpp:765): JS console: [discord_protos.discord_users.v1.FrecencyUserSettings] Loading proto
+[2024-09-08 20:16:03.441] [2269] (discord.cpp:765): JS console: [discord_protos.discord_users.v1.FrecencyUserSettings] Scheduling save from markDirty
+[2024-09-08 20:16:03.441] [2269] (discord.cpp:765): JS console: [discord_protos.discord_users.v1.FrecencyUserSettings] Persisting proto
+[2024-09-08 20:16:18.106] [2269] (discord.cpp:765): JS console: [MessageActionCreators] Fetching messages for 1205527689218490439 between 1281590725871407158 and undefined. jump=undefined
+[2024-09-08 20:16:18.311] [2269] (discord.cpp:765): JS console: [MessageActionCreators] Fetched 50 messages for 1205527689218490439 isBefore:true isAfter:false
+[2024-09-08 20:16:50.787] [2269] (discord.cpp:765): JS console: [MessageQueue] Queueing message to be sent LogId:9633
+[2024-09-08 20:16:50.787] [2269] (discord.cpp:765): JS console: [MessageQueue] Draining message from queue LogId:9633 QueueLength: 0
+[2024-09-08 20:16:50.787] [2269] (discord.cpp:765): JS console: [MessageQueue] Draining Message Queue with:  0
+[2024-09-08 20:16:51.054] [2269] (discord.cpp:765): JS console: [MessageQueue] Finished draining message from queue LogId:9633 QueueLength: 0
+[2024-09-08 20:17:11.137] [2269] (discord.cpp:765): JS console: [MessageQueue] Queueing message to be sent LogId:8685
+[2024-09-08 20:17:11.137] [2269] (discord.cpp:765): JS console: [MessageQueue] Draining message from queue LogId:8685 QueueLength: 0
+[2024-09-08 20:17:11.137] [2269] (discord.cpp:765): JS console: [MessageQueue] Draining Message Queue with:  0
+[2024-09-08 20:17:11.291] [2269] (discord.cpp:765): JS console: [MessageQueue] Finished draining message from queue LogId:8685 QueueLength: 0
+[2024-09-08 20:18:06.035] [2269] (discord.cpp:765): JS console: [MessageQueue] Queueing message to be sent LogId:4186
+[2024-09-08 20:18:06.036] [2269] (discord.cpp:765): JS console: [MessageQueue] Draining message from queue LogId:4186 QueueLength: 0
+[2024-09-08 20:18:06.036] [2269] (discord.cpp:765): JS console: [MessageQueue] Draining Message Queue with:  0
+[2024-09-08 20:18:06.176] [2269] (discord.cpp:765): JS console: [MessageQueue] Finished draining message from queue LogId:4186 QueueLength: 0
+[2024-09-08 20:18:48.079] [2269] (discord.cpp:765): JS console: [MessageQueue] Queueing message to be sent LogId:5676
+[2024-09-08 20:18:48.079] [2269] (discord.cpp:765): JS console: [MessageQueue] Draining message from queue LogId:5676 QueueLength: 0
+[2024-09-08 20:18:48.079] [2269] (discord.cpp:765): JS console: [MessageQueue] Draining Message Queue with:  0
+[2024-09-08 20:18:48.286] [2269] (discord.cpp:765): JS console: [MessageQueue] Finished draining message from queue LogId:5676 QueueLength: 0
+[2024-09-08 20:18:50.593] [2269] (discord.cpp:765): JS console: [MessageQueue] Queueing message to be sent LogId:8295
+[2024-09-08 20:18:50.593] [2269] (discord.cpp:765): JS console: [MessageQueue] Draining message from queue LogId:8295 QueueLength: 0
+[2024-09-08 20:18:50.593] [2269] (discord.cpp:765): JS console: [MessageQueue] Draining Message Queue with:  0
+[2024-09-08 20:18:50.870] [2269] (discord.cpp:765): JS console: [MessageQueue] Finished draining message from queue LogId:8295 QueueLength: 0
+[2024-09-08 20:19:34.731] [2269] (discord.cpp:765): JS console: [MessageActionCreators] Fetching messages for 1205527689218490439 between 1280932807706935318 and undefined. jump=undefined
+[2024-09-08 20:19:34.962] [2269] (discord.cpp:765): JS console: [MessageActionCreators] Fetching messages for 1205527689218490439 between 1280927885879808021 and undefined. jump=undefined
+[2024-09-08 20:19:35.149] [2269] (discord.cpp:765): JS console: [MessageActionCreators] Fetched 50 messages for 1205527689218490439 isBefore:true isAfter:false
+[2024-09-08 20:22:15.208] [2269] (discord.cpp:765): JS console: [MessageQueue] Queueing message to be sent LogId:4737
+[2024-09-08 20:22:15.208] [2269] (discord.cpp:765): JS console: [MessageQueue] Draining message from queue LogId:4737 QueueLength: 0
+[2024-09-08 20:22:15.209] [2269] (discord.cpp:765): JS console: [MessageQueue] Draining Message Queue with:  0
+[2024-09-08 20:22:15.406] [2269] (discord.cpp:765): JS console: [MessageQueue] Finished draining message from queue LogId:4737 QueueLength: 0
+[2024-09-08 20:22:25.676] [2269] (discord.cpp:765): JS console: [MessageQueue] Queueing message to be sent LogId:1071
+[2024-09-08 20:22:25.676] [2269] (discord.cpp:765): JS console: [MessageQueue] Draining message from queue LogId:1071 QueueLength: 0
+[2024-09-08 20:22:25.676] [2269] (discord.cpp:765): JS console: [MessageQueue] Draining Message Queue with:  0
+[2024-09-08 20:22:25.884] [2269] (discord.cpp:765): JS console: [MessageQueue] Finished draining message from queue LogId:1071 QueueLength: 0
+[2024-09-08 20:22:29.269] [2269] (discord.cpp:765): JS console: [MessageQueue] Draining message from queue LogId:undefined QueueLength: 0
+[2024-09-08 20:22:29.269] [2269] (discord.cpp:765): JS console: [MessageQueue] Draining Message Queue with:  1
+[2024-09-08 20:22:29.391] [2269] (discord.cpp:765): JS console: [MessageQueue] Finished draining message from queue LogId:undefined QueueLength: 0
+[2024-09-08 20:22:29.392] [2269] (discord.cpp:765): JS console: [MessageActionCreators] Fetching messages for 1205527689218490439 between undefined and undefined. jump=undefined
+[2024-09-08 20:22:42.511] [2269] (discord.cpp:765): JS console: [MessageQueue] Queueing message to be sent LogId:6003
+[2024-09-08 20:22:42.512] [2269] (discord.cpp:765): JS console: [MessageQueue] Draining message from queue LogId:6003 QueueLength: 0
+[2024-09-08 20:22:42.512] [2269] (discord.cpp:765): JS console: [MessageQueue] Draining Message Queue with:  0
+[2024-09-08 20:22:42.720] [2269] (discord.cpp:765): JS console: [MessageQueue] Finished draining message from queue LogId:6003 QueueLength: 0
+[2024-09-08 20:53:26.252] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway-us-east1-c.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-08 20:53:26.336] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECTED] wss://gateway-us-east1-c.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 84 ms
+[2024-09-08 20:53:26.336] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUME] resuming session 6183b656c0ec67d0f05e168d2f9720fc, seq: 9420
+[2024-09-08 20:53:26.433] [2269] (discord.cpp:765): JS console: [Flux] Dispatching CONNECTION_RESUMED
+[2024-09-08 20:53:26.433] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUMED] took 181ms, replayed 0 events, new seq: 9421
+[2024-09-08 20:55:20.862] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-08 20:55:21.001] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-08 20:55:21.090] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 20:55:23.646] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-08 20:58:47.034] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: 
+[2024-09-08 21:31:31.441] [422817] (region_latency_tester.cpp:72): Sending 5 latency test pings to region us-central
+[2024-09-08 21:31:31.442] [422817] (region_latency_tester.cpp:72): Sending 5 latency test pings to region us-east
+[2024-09-08 21:31:31.442] [422817] (region_latency_tester.cpp:72): Sending 5 latency test pings to region newark
+[2024-09-08 21:31:31.442] [422817] (region_latency_tester.cpp:72): Sending 5 latency test pings to region atlanta
+[2024-09-08 21:31:31.442] [422817] (region_latency_tester.cpp:72): Sending 5 latency test pings to region us-south
+[2024-09-08 21:31:36.443] [422817] (region_latency_tester.cpp:176): Timing out 1 remaining latency test pings
+[2024-09-08 21:31:36.443] [422817] (region_latency_tester.cpp:283): Average RTT for region us-central is 19.5
+[2024-09-08 21:31:36.443] [422817] (region_latency_tester.cpp:283): Average RTT for region us-east is 21.5
+[2024-09-08 21:31:36.443] [422817] (region_latency_tester.cpp:283): Average RTT for region newark is 19
+[2024-09-08 21:31:36.443] [422817] (region_latency_tester.cpp:283): Average RTT for region atlanta is 34
+[2024-09-08 21:31:36.443] [422817] (region_latency_tester.cpp:283): Average RTT for region us-south is 41
+[2024-09-08 22:27:28.012] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway-us-east1-c.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-08 22:27:28.114] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECTED] wss://gateway-us-east1-c.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 102 ms
+[2024-09-08 22:27:28.115] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUME] resuming session 6183b656c0ec67d0f05e168d2f9720fc, seq: 10194
+[2024-09-08 22:27:28.210] [2269] (discord.cpp:765): JS console: [Flux] Dispatching CONNECTION_RESUMED
+[2024-09-08 22:27:28.211] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUMED] took 199ms, replayed 0 events, new seq: 10195
+[2024-09-08 23:02:09.450] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-08 23:02:09.532] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: 
+[2024-09-08 23:02:09.542] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-08 23:12:10.016] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-09 01:04:46.212] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway-us-east1-c.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-09 01:04:46.295] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECTED] wss://gateway-us-east1-c.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 82 ms
+[2024-09-09 01:04:46.295] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUME] resuming session 6183b656c0ec67d0f05e168d2f9720fc, seq: 11573
+[2024-09-09 01:04:46.401] [2269] (discord.cpp:765): JS console: [Flux] Dispatching CONNECTION_RESUMED
+[2024-09-09 01:04:46.405] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUMED] took 193ms, replayed 0 events, new seq: 11574
+[2024-09-09 03:31:31.426] [529680] (region_latency_tester.cpp:72): Sending 5 latency test pings to region us-central
+[2024-09-09 03:31:31.426] [529680] (region_latency_tester.cpp:72): Sending 5 latency test pings to region us-east
+[2024-09-09 03:31:31.426] [529680] (region_latency_tester.cpp:72): Sending 5 latency test pings to region newark
+[2024-09-09 03:31:31.426] [529680] (region_latency_tester.cpp:72): Sending 5 latency test pings to region atlanta
+[2024-09-09 03:31:31.426] [529680] (region_latency_tester.cpp:72): Sending 5 latency test pings to region us-south
+[2024-09-09 03:31:31.468] [529680] (region_latency_tester.cpp:283): Average RTT for region us-central is 15.25
+[2024-09-09 03:31:31.468] [529680] (region_latency_tester.cpp:283): Average RTT for region us-east is 17
+[2024-09-09 03:31:31.468] [529680] (region_latency_tester.cpp:283): Average RTT for region newark is 15.25
+[2024-09-09 03:31:31.468] [529680] (region_latency_tester.cpp:283): Average RTT for region atlanta is 31
+[2024-09-09 03:31:31.468] [529680] (region_latency_tester.cpp:283): Average RTT for region us-south is 40
+[2024-09-09 04:20:09.841] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway-us-east1-c.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-09 04:20:09.924] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECTED] wss://gateway-us-east1-c.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 82 ms
+[2024-09-09 04:20:09.924] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUME] resuming session 6183b656c0ec67d0f05e168d2f9720fc, seq: 12400
+[2024-09-09 04:20:10.018] [2269] (discord.cpp:765): JS console: [Flux] Dispatching CONNECTION_RESUMED
+[2024-09-09 04:20:10.019] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUMED] took 177ms, replayed 0 events, new seq: 12401
+[2024-09-09 07:11:32.017] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway-us-east1-c.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-09 07:11:32.100] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECTED] wss://gateway-us-east1-c.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 82 ms
+[2024-09-09 07:11:32.100] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUME] resuming session 6183b656c0ec67d0f05e168d2f9720fc, seq: 12959
+[2024-09-09 07:11:32.195] [2269] (discord.cpp:765): JS console: [Flux] Dispatching CONNECTION_RESUMED
+[2024-09-09 07:11:32.199] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUMED] took 181ms, replayed 0 events, new seq: 12960
+[2024-09-09 07:58:10.664] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-09 07:58:10.777] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-09 07:58:10.871] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: 
+[2024-09-09 08:01:53.722] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-09 08:01:56.656] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-09 08:02:46.773] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object],[object Object]
+[2024-09-09 09:19:52.198] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-09 09:19:52.279] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-09 09:19:52.288] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-09 09:31:31.464] [636202] (region_latency_tester.cpp:72): Sending 5 latency test pings to region us-central
+[2024-09-09 09:31:31.464] [636202] (region_latency_tester.cpp:72): Sending 5 latency test pings to region us-east
+[2024-09-09 09:31:31.464] [636202] (region_latency_tester.cpp:72): Sending 5 latency test pings to region newark
+[2024-09-09 09:31:31.464] [636202] (region_latency_tester.cpp:72): Sending 5 latency test pings to region atlanta
+[2024-09-09 09:31:31.464] [636202] (region_latency_tester.cpp:72): Sending 5 latency test pings to region us-south
+[2024-09-09 09:31:31.508] [636202] (region_latency_tester.cpp:283): Average RTT for region us-central is 18.25
+[2024-09-09 09:31:31.508] [636202] (region_latency_tester.cpp:283): Average RTT for region us-east is 20.75
+[2024-09-09 09:31:31.508] [636202] (region_latency_tester.cpp:283): Average RTT for region newark is 18
+[2024-09-09 09:31:31.508] [636202] (region_latency_tester.cpp:283): Average RTT for region atlanta is 33
+[2024-09-09 09:31:31.508] [636202] (region_latency_tester.cpp:283): Average RTT for region us-south is 40.5
+[2024-09-09 09:55:07.508] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway-us-east1-c.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-09 09:55:07.594] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECTED] wss://gateway-us-east1-c.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 86 ms
+[2024-09-09 09:55:07.595] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUME] resuming session 6183b656c0ec67d0f05e168d2f9720fc, seq: 13705
+[2024-09-09 09:55:07.693] [2269] (discord.cpp:765): JS console: [Flux] Dispatching CONNECTION_RESUMED
+[2024-09-09 09:55:07.694] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUMED] took 185ms, replayed 0 events, new seq: 13706
+[2024-09-09 10:36:55.826] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-09 10:36:55.914] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-09 10:36:55.949] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-09 10:38:34.881] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: 
+[2024-09-09 11:36:23.962] [2309] (engine.cpp:238): *** OnDevicesChanged:
+[2024-09-09 11:36:23.962] [2309] (engine.cpp:239): * audioInput:
+[2024-09-09 11:36:23.962] [2309] (engine.cpp:242): - default: Family 17h/19h HD Audio Controller Analog Stereo ()
+[2024-09-09 11:36:23.962] [2309] (engine.cpp:242): - Family 17h/19h HD Audio Controller Analog Stereo ()
+[2024-09-09 11:36:23.962] [2309] (engine.cpp:244): * audioOutput:
+[2024-09-09 11:36:23.962] [2309] (engine.cpp:247): - default: Family 17h/19h HD Audio Controller Analog Stereo ()
+[2024-09-09 11:36:23.962] [2309] (engine.cpp:247): - Family 17h/19h HD Audio Controller Analog Stereo ()
+[2024-09-09 11:36:23.989] [2309] (audio_engine.cpp:169): Setting audio output device: 'default'
+[2024-09-09 11:36:23.989] [2309] (audio_device_impl.cc:820): PlayoutIsInitialized
+[2024-09-09 11:36:23.989] [2309] (audio_device_impl.cc:708): SetPlayoutDevice(0)
+[2024-09-09 11:36:23.990] [2309] (audio_device_impl.cc:612): StereoPlayoutIsAvailable
+[2024-09-09 11:36:23.990] [2309] (audio_device_impl.cc:619): output: 1
+[2024-09-09 11:36:23.990] [2309] (audio_device_impl.cc:624): SetStereoPlayout(1)
+[2024-09-09 11:36:23.990] [2309] (audio_device_buffer.cc:208): SetPlayoutChannels(2)
+[2024-09-09 11:36:29.244] [2269] (discord.cpp:765): JS console: [GatewaySocket] [WS CLOSED] (false, 1006, ) retrying in 1.20 seconds.
+[2024-09-09 11:36:29.244] [2269] (discord.cpp:765): JS console: [Spotify] WS Disconnected. Next retry in 867ms
+[2024-09-09 15:06:06.692] [2269] (discord.cpp:765): JS console: [Spotify] WS Connecting
+[2024-09-09 15:06:06.694] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway-us-east1-c.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-09 15:06:06.708] [2269] (discord.cpp:765): JS console: [GatewaySocket] [WS CLOSED] (false, 0, An error with the websocket occurred) retrying in 3.35 seconds.
+[2024-09-09 15:06:06.708] [2269] (discord.cpp:765): JS console: [Spotify] WS Disconnected. Next retry in 2581ms
+[2024-09-09 15:06:06.731] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-09 15:06:06.754] [2269] (discord.cpp:765): JS console: [GatewaySocket] [WS CLOSED] (true, 0, power monitor resumed) retrying immediately.
+[2024-09-09 15:06:06.754] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-09 15:06:06.757] [2269] (discord.cpp:765): JS console: [GatewaySocket] [WS CLOSED] (false, 0, An error with the websocket occurred) retrying in 1.49 seconds.
+[2024-09-09 15:06:08.250] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-09 15:06:08.254] [2269] (discord.cpp:765): JS console: [GatewaySocket] [WS CLOSED] (false, 0, An error with the websocket occurred) retrying in 3.58 seconds.
+[2024-09-09 15:06:09.289] [2269] (discord.cpp:765): JS console: [Spotify] WS Connecting
+[2024-09-09 15:06:09.298] [2269] (discord.cpp:765): JS console: [Spotify] WS Disconnected. Next retry in 16039ms
+[2024-09-09 15:06:11.505] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-09 15:06:11.512] [2269] (discord.cpp:765): JS console: [GatewaySocket] [WS CLOSED] (false, 0, An error with the websocket occurred) retrying in 2.33 seconds.
+[2024-09-09 15:06:13.840] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-09 15:06:25.368] [2269] (discord.cpp:765): JS console: [Spotify] WS Connecting
+[2024-09-09 15:06:43.879] [2269] (discord.cpp:765): JS console: [GatewaySocket] [WS CLOSED] (false, 0, The connection timed out after 30037 ms - did not receive OP_HELLO in time.) retrying in 2.70 seconds.
+[2024-09-09 15:06:46.577] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-09 15:07:16.604] [2269] (discord.cpp:765): JS console: [GatewaySocket] [WS CLOSED] (false, 0, The connection timed out after 30000 ms - did not receive OP_HELLO in time.) retrying immediately.
+[2024-09-09 15:07:16.604] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-09 15:07:46.636] [2269] (discord.cpp:765): JS console: [GatewaySocket] [WS CLOSED] (false, 0, The connection timed out after 30001 ms - did not receive OP_HELLO in time.) retrying in 2.17 seconds.
+[2024-09-09 15:07:48.805] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-09 15:08:18.835] [2269] (discord.cpp:765): JS console: [GatewaySocket] [WS CLOSED] (false, 0, The connection timed out after 30000 ms - did not receive OP_HELLO in time.) retrying in 2.18 seconds.
+[2024-09-09 15:08:21.015] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-09 15:08:40.238] [2269] (discord.cpp:765): JS console: [Spotify] WS Disconnected. Next retry in 60000ms
+[2024-09-09 15:08:51.048] [2269] (discord.cpp:765): JS console: [GatewaySocket] [WS CLOSED] (false, 0, The connection timed out after 30001 ms - did not receive OP_HELLO in time.) retrying in 2.94 seconds.
+[2024-09-09 15:08:53.987] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-09 15:09:24.019] [2269] (discord.cpp:765): JS console: [GatewaySocket] [WS CLOSED] (false, 0, The connection timed out after 30000 ms - did not receive OP_HELLO in time.) retrying in 4.50 seconds.
+[2024-09-09 15:09:28.548] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-09 15:09:28.645] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECTED] wss://gateway.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 97 ms
+[2024-09-09 15:09:29.303] [2269] (discord.cpp:765): JS console: [GatewaySocket] [READY] took 754ms, as 8d088662d2c7ecfbfd14bec8073c99e1
+[2024-09-09 15:09:29.351] [2269] (discord.cpp:765): JS console: [Flux] Dispatching CONNECTION_OPEN
+[2024-09-09 15:09:29.355] [2269] (discord.cpp:765): JS console: [DatabaseManager] removing database (user: 175004270414921728, database: null)
+[2024-09-09 15:09:29.363] [2269] (discord.cpp:765): JS console: [NativeDispatchUtils] Tried getting Dispatch instance before instantiated
+[2024-09-09 15:09:29.392] [2269] (discord.cpp:765): JS console: [MessageManager] Found expired attachment link, clearing messages
+[2024-09-09 15:09:29.392] [2269] (discord.cpp:765): JS console: [MessageActionCreators] Fetching messages for 1205527689218490439 between undefined and undefined. jump={"jumpType":"ANIMATED"}
+[2024-09-09 15:09:29.514] [2269] (discord.cpp:765): JS console: [GatewaySocket] [READY_SUPPLEMENTAL] took 966ms
+[2024-09-09 15:09:29.531] [2269] (discord.cpp:765): JS console: [MessageActionCreators] Fetched 50 messages for 1205527689218490439 isBefore:false isAfter:false
+[2024-09-09 15:09:29.532] [2269] (discord.cpp:765): JS console: [ChannelMessages] loadComplete: resetting state for channelId=1205527689218490439, sending.length=0
+[2024-09-09 15:09:40.239] [2269] (discord.cpp:765): JS console: [Spotify] WS Connecting
+[2024-09-09 15:09:40.811] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-09 15:09:41.210] [2269] (discord.cpp:765): JS console: [Spotify] WS Connected
+[2024-09-09 15:09:41.299] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object],[object Object]
+[2024-09-09 15:09:41.306] [2269] (discord.cpp:765): JS console: [Spotify] Profile updated for dragonzilla9: isPremium = true
+[2024-09-09 15:09:55.900] [661027] (region_latency_tester.cpp:72): Sending 5 latency test pings to region us-east
+[2024-09-09 15:09:55.900] [661027] (region_latency_tester.cpp:72): Sending 5 latency test pings to region newark
+[2024-09-09 15:09:55.900] [661027] (region_latency_tester.cpp:72): Sending 5 latency test pings to region us-central
+[2024-09-09 15:09:55.900] [661027] (region_latency_tester.cpp:72): Sending 5 latency test pings to region atlanta
+[2024-09-09 15:09:55.900] [661027] (region_latency_tester.cpp:72): Sending 5 latency test pings to region us-south
+[2024-09-09 15:10:00.906] [661027] (region_latency_tester.cpp:176): Timing out 25 remaining latency test pings
+[2024-09-09 15:18:48.594] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-09 15:18:48.794] [2269] (discord.cpp:765): JS console: [Spotify] Updated account access token: dragonzilla9
+[2024-09-09 15:18:48.795] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object],[object Object]
+[2024-09-09 15:30:13.861] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-09 15:30:13.925] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-09 15:30:25.424] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: 
+[2024-09-09 15:30:28.421] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: [object Object]
+[2024-09-09 16:18:47.815] [2269] (discord.cpp:765): JS console: [Spotify] Devices updated for dragonzilla9: 
+[2024-09-09 16:57:23.458] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway-us-east1-d.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-09 16:57:23.538] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECTED] wss://gateway-us-east1-d.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 80 ms
+[2024-09-09 16:57:23.539] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUME] resuming session 8d088662d2c7ecfbfd14bec8073c99e1, seq: 1062
+[2024-09-09 16:57:24.629] [2269] (discord.cpp:765): JS console: [Flux] Dispatching CONNECTION_RESUMED
+[2024-09-09 16:57:24.629] [2269] (discord.cpp:765): JS console: [GatewaySocket] [RESUMED] took 1171ms, replayed 0 events, new seq: 1063
+[2024-09-09 16:58:59.695] [2269] (discord.cpp:765): JS console: [Spotify] WS Disconnected. Next retry in 592ms
+[2024-09-09 16:58:59.695] [2269] (discord.cpp:765): JS console: [GatewaySocket] [WS CLOSED] (false, 1006, ) retrying in 2.78 seconds.
+[2024-09-09 16:59:00.287] [2269] (discord.cpp:765): JS console: [Spotify] WS Connecting
+[2024-09-09 16:59:00.341] [2269] (discord.cpp:765): JS console: [Spotify] WS Disconnected. Next retry in 1031ms
+[2024-09-09 18:19:30.071] [2269] (discord.cpp:765): JS console: [Spotify] WS Connecting
+[2024-09-09 18:19:30.072] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway-us-east1-d.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-09 18:19:30.083] [2269] (discord.cpp:765): JS console: [GatewaySocket] [WS CLOSED] (false, 0, An error with the websocket occurred) retrying in 6.14 seconds.
+[2024-09-09 18:19:30.084] [2269] (discord.cpp:765): JS console: [Spotify] WS Disconnected. Next retry in 3063ms
+[2024-09-09 18:19:30.106] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-09 18:19:30.115] [2269] (discord.cpp:765): JS console: [GatewaySocket] [WS CLOSED] (true, 0, power monitor resumed) retrying immediately.
+[2024-09-09 18:19:30.116] [2269] (discord.cpp:765): JS console: [GatewaySocket] [CONNECT] wss://gateway.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-09-09 18:19:30.142] [2269] (discord.cpp:765): JS console: [GatewaySocket] [WS CLOSED] (false, 0, An error with the websocket occurred) retrying in 1.42 seconds.

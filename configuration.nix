@@ -51,9 +51,9 @@
   services.xserver.displayManager.gdm.enable = true;
 
   # Configure keymap in X11
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "us";
-    xkbVariant = "";
+    variant = "";
   };
 
   # Enable CUPS to print documents.
@@ -109,19 +109,20 @@
   };
   
   # Enable automatic login for the user
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "yvesd";
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "yvesd";
 
   # Workaround for GNOME autologin
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
+  services.tailscale.enable = true;
+  
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
     # Programs
-    firefox
     chromium
     rofi-wayland
     gnome.nautilus
@@ -134,6 +135,8 @@
     obs-studio
     vlc
     audacity
+    moonlight-qt
+    tailscale
             
     # Zsh
     starship

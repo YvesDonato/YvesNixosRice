@@ -1,13 +1,3 @@
-2024/07/31-17:52:51.649 380382 Reusing MANIFEST /home/yvesd/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/MANIFEST-000001
-2024/07/31-17:52:51.649 380382 Recovering log #19
-2024/07/31-17:52:51.675 380382 Reusing old log /home/yvesd/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/000019.log 
-2024/07/31-17:52:51.813 380382 Level-0 table #24: started
-2024/07/31-17:52:51.827 380382 Level-0 table #24: 931531 bytes OK
-2024/07/31-17:52:51.828 380382 Delete type=0 #19
-2024/07/31-17:52:51.828 380286 Manual compaction at level-0 from '\x00\x03\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x04\x00\x00\x00' @ 0 : 0; will stop at (end)
-2024/07/31-17:52:51.829 380286 Manual compaction at level-1 from '\x00\x03\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x04\x00\x00\x00' @ 0 : 0; will stop at '\x00\x04\x01\x02\x01B\x00f\x00i\x00l\x00e\x00:\x00S\x00t\x00u\x00d\x00i\x00e\x00s\x00/\x00S\x00u\x00b\x00j\x00e\x00c\x00t\x00s\x00/\x00M\x00a\x00t\x00h\x00/\x00M\x00a\x00t\x00h\x00 \x00S\x00u\x00b\x00j\x00e\x00c\x00t\x00s\x00/\x00L\x00i\x00n\x00e\x00a\x00r\x00 \x00A\x00l\x00g\x00e\x00b\x00r\x00a\x00/\x00V\x00e\x00c\x00t\x00o\x00r\x00s\x00.\x00m\x00d' @ 124301 : 1
-2024/07/31-17:52:51.829 380286 Compacting 1@1 + 1@2 files
-2024/07/31-17:52:51.837 380286 Generated table #25@1: 910 keys, 160506 bytes
-2024/07/31-17:52:51.837 380286 Compacted 1@1 + 1@2 files => 160506 bytes
-2024/07/31-17:52:51.838 380286 compacted to: files[ 0 0 1 0 0 0 0 ]
-2024/07/31-17:52:51.838 380286 Manual compaction at level-1 from '\x00\x04\x01\x02\x01B\x00f\x00i\x00l\x00e\x00:\x00S\x00t\x00u\x00d\x00i\x00e\x00s\x00/\x00S\x00u\x00b\x00j\x00e\x00c\x00t\x00s\x00/\x00M\x00a\x00t\x00h\x00/\x00M\x00a\x00t\x00h\x00 \x00S\x00u\x00b\x00j\x00e\x00c\x00t\x00s\x00/\x00L\x00i\x00n\x00e\x00a\x00r\x00 \x00A\x00l\x00g\x00e\x00b\x00r\x00a\x00/\x00V\x00e\x00c\x00t\x00o\x00r\x00s\x00.\x00m\x00d' @ 124301 : 1 .. '\x00\x04\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/09/08-17:35:06.293 5a0c4 Reusing MANIFEST /home/yvesd/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/MANIFEST-000001
+2024/09/08-17:35:06.293 5a0c4 Recovering log #23
+2024/09/08-17:35:06.305 5a0c4 Reusing old log /home/yvesd/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/000023.log 
