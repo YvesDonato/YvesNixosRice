@@ -1,0 +1,13 @@
+2024-09-11T15:23:56.079Z 0: 
+
+----------------------------------------------
+2024-09-11T15:23:56.087Z 1: Discord starting: {"releaseChannel":"stable","version":"0.0.67"}, modulepath: /home/yvesd/.config/discord/0.0.67/modules
+2024-09-11T15:23:56.092Z 2: ✅ webContents.created web1 "index.html"
+2024-09-11T15:23:56.096Z 3: ✅ window.created win1 "discord"
+2024-09-11T15:23:56.296Z 4: ✅ webContents.did-finish-load web1
+2024-09-11T15:23:58.443Z 5: ✅ webContents.created web2 ""
+2024-09-11T15:23:58.448Z 6: ✅ window.created win2 "Discord"
+2024-09-11T15:23:59.818Z 7: ✅ webContents.did-finish-load web2
+2024-09-11T15:23:59.918Z 8: window.close win1
+2024-09-11T15:23:59.922Z 9: webContents.destroyed web1
+2024-09-11T15:23:59.924Z 10: window.closed win1

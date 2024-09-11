@@ -1,6 +1,6 @@
-2024/09/09-18:20:07.494 6fa Reusing MANIFEST /home/yvesd/.config/discord/Local Storage/leveldb/MANIFEST-000001
-2024/09/09-18:20:07.503 6fa Recovering log #1007
-2024/09/09-18:20:07.504 6fa Reusing old log /home/yvesd/.config/discord/Local Storage/leveldb/001007.log 
-2024/09/09-18:23:18.302 6fa Level-0 table #1013: started
-2024/09/09-18:23:18.325 6fa Level-0 table #1013: 816647 bytes OK
-2024/09/09-18:23:18.326 6fa Delete type=0 #1007
+2024/09/11-11:23:55.900 768 Reusing MANIFEST /home/yvesd/.config/discord/Local Storage/leveldb/MANIFEST-000001
+2024/09/11-11:23:55.904 768 Recovering log #1012
+2024/09/11-11:23:55.905 768 Reusing old log /home/yvesd/.config/discord/Local Storage/leveldb/001012.log 
+2024/09/11-11:26:44.758 769 Level-0 table #1016: started
+2024/09/11-11:26:44.779 769 Level-0 table #1016: 833180 bytes OK
+2024/09/11-11:26:44.781 769 Delete type=0 #1012

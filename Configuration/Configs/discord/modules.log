@@ -15734,3 +15734,532 @@
 2024-09-11T14:20:34.148Z [Modules] Host is up to date.
 2024-09-11T14:20:34.148Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
 2024-09-11T14:20:34.231Z [Modules] No module updates available.
+2024-09-11T15:20:34.148Z [Modules] Host is up to date.
+2024-09-11T15:20:34.148Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-11T15:20:34.274Z [Modules] No module updates available.
+2024-09-11T15:23:55.916Z [Modules] Modules initializing
+2024-09-11T15:23:55.916Z [Modules] Distribution: remote
+2024-09-11T15:23:55.916Z [Modules] Host updates: disabled
+2024-09-11T15:23:55.917Z [Modules] Module updates: enabled
+2024-09-11T15:23:55.917Z [Modules] Module install path: /home/yvesd/.config/discord/0.0.67/modules
+2024-09-11T15:23:55.917Z [Modules] Module installed file path: /home/yvesd/.config/discord/0.0.67/modules/installed.json
+2024-09-11T15:23:55.917Z [Modules] Module download path: /home/yvesd/.config/discord/0.0.67/modules/pending
+2024-09-11T15:23:56.194Z [Modules] Bootstrapping...
+2024-09-11T15:23:56.194Z [Modules] Installing discord_desktop_core@0 from /nix/store/1dyvvcsnqn35npsl7vh7acg5jpxkrw3z-discord-0.0.67/opt/Discord/resources/bootstrap/discord_desktop_core.zip
+2024-09-11T15:23:56.195Z [Modules] Failed installing discord_desktop_core@0: Error: ENOENT: no such file or directory, open '/nix/store/1dyvvcsnqn35npsl7vh7acg5jpxkrw3z-discord-0.0.67/opt/Discord/resources/bootstrap/discord_desktop_core.zip'
+2024-09-11T15:23:56.195Z [Modules] Installing discord_erlpack@0 from /nix/store/1dyvvcsnqn35npsl7vh7acg5jpxkrw3z-discord-0.0.67/opt/Discord/resources/bootstrap/discord_erlpack.zip
+2024-09-11T15:23:56.196Z [Modules] Failed installing discord_erlpack@0: Error: ENOENT: no such file or directory, open '/nix/store/1dyvvcsnqn35npsl7vh7acg5jpxkrw3z-discord-0.0.67/opt/Discord/resources/bootstrap/discord_erlpack.zip'
+2024-09-11T15:23:56.197Z [Modules] Installing discord_spellcheck@0 from /nix/store/1dyvvcsnqn35npsl7vh7acg5jpxkrw3z-discord-0.0.67/opt/Discord/resources/bootstrap/discord_spellcheck.zip
+2024-09-11T15:23:56.197Z [Modules] Failed installing discord_spellcheck@0: Error: ENOENT: no such file or directory, open '/nix/store/1dyvvcsnqn35npsl7vh7acg5jpxkrw3z-discord-0.0.67/opt/Discord/resources/bootstrap/discord_spellcheck.zip'
+2024-09-11T15:23:56.198Z [Modules] Installing discord_utils@0 from /nix/store/1dyvvcsnqn35npsl7vh7acg5jpxkrw3z-discord-0.0.67/opt/Discord/resources/bootstrap/discord_utils.zip
+2024-09-11T15:23:56.198Z [Modules] Failed installing discord_utils@0: Error: ENOENT: no such file or directory, open '/nix/store/1dyvvcsnqn35npsl7vh7acg5jpxkrw3z-discord-0.0.67/opt/Discord/resources/bootstrap/discord_utils.zip'
+2024-09-11T15:23:56.198Z [Modules] Installing discord_voice@0 from /nix/store/1dyvvcsnqn35npsl7vh7acg5jpxkrw3z-discord-0.0.67/opt/Discord/resources/bootstrap/discord_voice.zip
+2024-09-11T15:23:56.199Z [Modules] Failed installing discord_voice@0: Error: ENOENT: no such file or directory, open '/nix/store/1dyvvcsnqn35npsl7vh7acg5jpxkrw3z-discord-0.0.67/opt/Discord/resources/bootstrap/discord_voice.zip'
+2024-09-11T15:23:56.199Z [Modules] Installing discord_zstd@0 from /nix/store/1dyvvcsnqn35npsl7vh7acg5jpxkrw3z-discord-0.0.67/opt/Discord/resources/bootstrap/discord_zstd.zip
+2024-09-11T15:23:56.200Z [Modules] Failed installing discord_zstd@0: Error: ENOENT: no such file or directory, open '/nix/store/1dyvvcsnqn35npsl7vh7acg5jpxkrw3z-discord-0.0.67/opt/Discord/resources/bootstrap/discord_zstd.zip'
+2024-09-11T15:23:56.200Z [Modules] Finished module installations. [success: 0] [failure: 6]
+2024-09-11T15:23:56.200Z [Modules] Host is up to date.
+2024-09-11T15:23:56.200Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-11T15:23:56.408Z [Modules] Module update available: discord_desktop_core@1 [installed: 0]
+2024-09-11T15:23:56.408Z [Modules] Module update available: discord_erlpack@1 [installed: 0]
+2024-09-11T15:23:56.408Z [Modules] Module update available: discord_spellcheck@1 [installed: 0]
+2024-09-11T15:23:56.408Z [Modules] Module update available: discord_utils@1 [installed: 0]
+2024-09-11T15:23:56.408Z [Modules] Module update available: discord_voice@1 [installed: 0]
+2024-09-11T15:23:56.408Z [Modules] Module update available: discord_zstd@1 [installed: 0]
+2024-09-11T15:23:56.408Z [Modules] Fetching discord_desktop_core@1 from https://discord.com/api/modules/stable/discord_desktop_core/1
+2024-09-11T15:23:56.408Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip
+2024-09-11T15:23:56.542Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 2%
+2024-09-11T15:23:56.546Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 3%
+2024-09-11T15:23:56.550Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 5%
+2024-09-11T15:23:56.551Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 6%
+2024-09-11T15:23:56.552Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 7%
+2024-09-11T15:23:56.557Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 9%
+2024-09-11T15:23:56.558Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 13%
+2024-09-11T15:23:56.559Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 16%
+2024-09-11T15:23:56.561Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 19%
+2024-09-11T15:23:56.561Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 22%
+2024-09-11T15:23:56.562Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 24%
+2024-09-11T15:23:56.562Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 26%
+2024-09-11T15:23:56.564Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 29%
+2024-09-11T15:23:56.565Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 31%
+2024-09-11T15:23:56.565Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 33%
+2024-09-11T15:23:56.566Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 36%
+2024-09-11T15:23:56.566Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 39%
+2024-09-11T15:23:56.567Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 41%
+2024-09-11T15:23:56.568Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 44%
+2024-09-11T15:23:56.568Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 47%
+2024-09-11T15:23:56.569Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 49%
+2024-09-11T15:23:56.569Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 52%
+2024-09-11T15:23:56.571Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 53%
+2024-09-11T15:23:56.571Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 56%
+2024-09-11T15:23:56.572Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 60%
+2024-09-11T15:23:56.572Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 62%
+2024-09-11T15:23:56.573Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 65%
+2024-09-11T15:23:56.574Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 68%
+2024-09-11T15:23:56.574Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 70%
+2024-09-11T15:23:56.575Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 73%
+2024-09-11T15:23:56.575Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 76%
+2024-09-11T15:23:56.576Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 79%
+2024-09-11T15:23:56.577Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 81%
+2024-09-11T15:23:56.577Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 84%
+2024-09-11T15:23:56.578Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 86%
+2024-09-11T15:23:56.578Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 90%
+2024-09-11T15:23:56.579Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 93%
+2024-09-11T15:23:56.579Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 94%
+2024-09-11T15:23:56.580Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 97%
+2024-09-11T15:23:56.581Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip: 100%
+2024-09-11T15:23:56.582Z [Modules] Fetching discord_erlpack@1 from https://discord.com/api/modules/stable/discord_erlpack/1
+2024-09-11T15:23:56.582Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip
+2024-09-11T15:23:56.684Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 3%
+2024-09-11T15:23:56.685Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 9%
+2024-09-11T15:23:56.686Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 12%
+2024-09-11T15:23:56.686Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 14%
+2024-09-11T15:23:56.687Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 17%
+2024-09-11T15:23:56.687Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 20%
+2024-09-11T15:23:56.688Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 23%
+2024-09-11T15:23:56.691Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 26%
+2024-09-11T15:23:56.691Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 31%
+2024-09-11T15:23:56.692Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 37%
+2024-09-11T15:23:56.693Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 40%
+2024-09-11T15:23:56.693Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 43%
+2024-09-11T15:23:56.695Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 44%
+2024-09-11T15:23:56.696Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 47%
+2024-09-11T15:23:56.697Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 50%
+2024-09-11T15:23:56.697Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 53%
+2024-09-11T15:23:56.698Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 56%
+2024-09-11T15:23:56.698Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 59%
+2024-09-11T15:23:56.699Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 62%
+2024-09-11T15:23:56.699Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 65%
+2024-09-11T15:23:56.700Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 68%
+2024-09-11T15:23:56.700Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 71%
+2024-09-11T15:23:56.701Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 74%
+2024-09-11T15:23:56.702Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 78%
+2024-09-11T15:23:56.702Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 81%
+2024-09-11T15:23:56.703Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 84%
+2024-09-11T15:23:56.703Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 87%
+2024-09-11T15:23:56.704Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 90%
+2024-09-11T15:23:56.704Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 93%
+2024-09-11T15:23:56.705Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 96%
+2024-09-11T15:23:56.705Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 97%
+2024-09-11T15:23:56.706Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 98%
+2024-09-11T15:23:56.706Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip: 100%
+2024-09-11T15:23:56.707Z [Modules] Fetching discord_spellcheck@1 from https://discord.com/api/modules/stable/discord_spellcheck/1
+2024-09-11T15:23:56.707Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip
+2024-09-11T15:23:56.814Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 1%
+2024-09-11T15:23:56.814Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 2%
+2024-09-11T15:23:56.815Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 3%
+2024-09-11T15:23:56.816Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 4%
+2024-09-11T15:23:56.817Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 5%
+2024-09-11T15:23:56.818Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 6%
+2024-09-11T15:23:56.818Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 7%
+2024-09-11T15:23:56.819Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 8%
+2024-09-11T15:23:56.820Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 9%
+2024-09-11T15:23:56.821Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 10%
+2024-09-11T15:23:56.826Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 12%
+2024-09-11T15:23:56.827Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 14%
+2024-09-11T15:23:56.828Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 18%
+2024-09-11T15:23:56.829Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 19%
+2024-09-11T15:23:56.829Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 20%
+2024-09-11T15:23:56.832Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 21%
+2024-09-11T15:23:56.832Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 23%
+2024-09-11T15:23:56.833Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 24%
+2024-09-11T15:23:56.834Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 25%
+2024-09-11T15:23:56.835Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 26%
+2024-09-11T15:23:56.836Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 27%
+2024-09-11T15:23:56.837Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 28%
+2024-09-11T15:23:56.838Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 29%
+2024-09-11T15:23:56.839Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 30%
+2024-09-11T15:23:56.839Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 31%
+2024-09-11T15:23:56.840Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 32%
+2024-09-11T15:23:56.841Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 33%
+2024-09-11T15:23:56.842Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 34%
+2024-09-11T15:23:56.843Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 35%
+2024-09-11T15:23:56.844Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 36%
+2024-09-11T15:23:56.845Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 37%
+2024-09-11T15:23:56.845Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 38%
+2024-09-11T15:23:56.847Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 39%
+2024-09-11T15:23:56.847Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 40%
+2024-09-11T15:23:56.848Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 41%
+2024-09-11T15:23:56.849Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 42%
+2024-09-11T15:23:56.850Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 43%
+2024-09-11T15:23:56.850Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 44%
+2024-09-11T15:23:56.852Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 45%
+2024-09-11T15:23:56.852Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 46%
+2024-09-11T15:23:56.853Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 47%
+2024-09-11T15:23:56.854Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 48%
+2024-09-11T15:23:56.856Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 49%
+2024-09-11T15:23:56.860Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 50%
+2024-09-11T15:23:56.860Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 52%
+2024-09-11T15:23:56.861Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 55%
+2024-09-11T15:23:56.861Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 56%
+2024-09-11T15:23:56.862Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 57%
+2024-09-11T15:23:56.863Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 58%
+2024-09-11T15:23:56.864Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 59%
+2024-09-11T15:23:56.865Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 60%
+2024-09-11T15:23:56.865Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 61%
+2024-09-11T15:23:56.866Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 62%
+2024-09-11T15:23:56.867Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 63%
+2024-09-11T15:23:56.868Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 64%
+2024-09-11T15:23:56.869Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 65%
+2024-09-11T15:23:56.870Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 66%
+2024-09-11T15:23:56.871Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 67%
+2024-09-11T15:23:56.871Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 68%
+2024-09-11T15:23:56.872Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 69%
+2024-09-11T15:23:56.873Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 70%
+2024-09-11T15:23:56.874Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 71%
+2024-09-11T15:23:56.875Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 72%
+2024-09-11T15:23:56.876Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 73%
+2024-09-11T15:23:56.877Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 74%
+2024-09-11T15:23:56.877Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 75%
+2024-09-11T15:23:56.879Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 76%
+2024-09-11T15:23:56.879Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 77%
+2024-09-11T15:23:56.880Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 78%
+2024-09-11T15:23:56.881Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 79%
+2024-09-11T15:23:56.882Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 80%
+2024-09-11T15:23:56.882Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 81%
+2024-09-11T15:23:56.884Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 82%
+2024-09-11T15:23:56.884Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 83%
+2024-09-11T15:23:56.894Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 84%
+2024-09-11T15:23:56.895Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 85%
+2024-09-11T15:23:56.895Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 87%
+2024-09-11T15:23:56.896Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 88%
+2024-09-11T15:23:56.896Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 89%
+2024-09-11T15:23:56.896Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 91%
+2024-09-11T15:23:56.896Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 92%
+2024-09-11T15:23:56.897Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 94%
+2024-09-11T15:23:56.897Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 95%
+2024-09-11T15:23:56.898Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 96%
+2024-09-11T15:23:56.899Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 97%
+2024-09-11T15:23:56.900Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 98%
+2024-09-11T15:23:56.901Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 99%
+2024-09-11T15:23:56.901Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip: 100%
+2024-09-11T15:23:56.902Z [Modules] Fetching discord_utils@1 from https://discord.com/api/modules/stable/discord_utils/1
+2024-09-11T15:23:56.902Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip
+2024-09-11T15:23:56.992Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 1%
+2024-09-11T15:23:56.994Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 7%
+2024-09-11T15:23:56.996Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 9%
+2024-09-11T15:23:56.997Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 11%
+2024-09-11T15:23:56.997Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 13%
+2024-09-11T15:23:56.998Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 14%
+2024-09-11T15:23:56.999Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 17%
+2024-09-11T15:23:57.000Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 21%
+2024-09-11T15:23:57.001Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 25%
+2024-09-11T15:23:57.002Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 27%
+2024-09-11T15:23:57.002Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 29%
+2024-09-11T15:23:57.003Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 31%
+2024-09-11T15:23:57.003Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 33%
+2024-09-11T15:23:57.004Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 35%
+2024-09-11T15:23:57.004Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 37%
+2024-09-11T15:23:57.005Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 39%
+2024-09-11T15:23:57.005Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 41%
+2024-09-11T15:23:57.006Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 43%
+2024-09-11T15:23:57.007Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 45%
+2024-09-11T15:23:57.007Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 47%
+2024-09-11T15:23:57.008Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 48%
+2024-09-11T15:23:57.008Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 50%
+2024-09-11T15:23:57.009Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 52%
+2024-09-11T15:23:57.009Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 54%
+2024-09-11T15:23:57.010Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 56%
+2024-09-11T15:23:57.010Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 58%
+2024-09-11T15:23:57.011Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 60%
+2024-09-11T15:23:57.012Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 62%
+2024-09-11T15:23:57.012Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 63%
+2024-09-11T15:23:57.012Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 64%
+2024-09-11T15:23:57.013Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 66%
+2024-09-11T15:23:57.013Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 68%
+2024-09-11T15:23:57.014Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 70%
+2024-09-11T15:23:57.015Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 72%
+2024-09-11T15:23:57.015Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 74%
+2024-09-11T15:23:57.016Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 76%
+2024-09-11T15:23:57.016Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 78%
+2024-09-11T15:23:57.018Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 80%
+2024-09-11T15:23:57.018Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 82%
+2024-09-11T15:23:57.019Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 84%
+2024-09-11T15:23:57.020Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 86%
+2024-09-11T15:23:57.020Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 88%
+2024-09-11T15:23:57.021Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 90%
+2024-09-11T15:23:57.021Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 92%
+2024-09-11T15:23:57.022Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 94%
+2024-09-11T15:23:57.026Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 98%
+2024-09-11T15:23:57.027Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip: 100%
+2024-09-11T15:23:57.028Z [Modules] Fetching discord_voice@1 from https://discord.com/api/modules/stable/discord_voice/1
+2024-09-11T15:23:57.028Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip
+2024-09-11T15:23:57.130Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 1%
+2024-09-11T15:23:57.132Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 2%
+2024-09-11T15:23:57.134Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 3%
+2024-09-11T15:23:57.136Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 4%
+2024-09-11T15:23:57.139Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 5%
+2024-09-11T15:23:57.141Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 6%
+2024-09-11T15:23:57.144Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 7%
+2024-09-11T15:23:57.148Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 8%
+2024-09-11T15:23:57.150Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 9%
+2024-09-11T15:23:57.153Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 10%
+2024-09-11T15:23:57.159Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 11%
+2024-09-11T15:23:57.160Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 12%
+2024-09-11T15:23:57.162Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 13%
+2024-09-11T15:23:57.165Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 14%
+2024-09-11T15:23:57.167Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 15%
+2024-09-11T15:23:57.169Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 16%
+2024-09-11T15:23:57.171Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 17%
+2024-09-11T15:23:57.183Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 18%
+2024-09-11T15:23:57.184Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 19%
+2024-09-11T15:23:57.185Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 20%
+2024-09-11T15:23:57.185Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 21%
+2024-09-11T15:23:57.185Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 22%
+2024-09-11T15:23:57.186Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 23%
+2024-09-11T15:23:57.186Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 24%
+2024-09-11T15:23:57.188Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 25%
+2024-09-11T15:23:57.192Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 26%
+2024-09-11T15:23:57.193Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 27%
+2024-09-11T15:23:57.196Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 28%
+2024-09-11T15:23:57.196Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 29%
+2024-09-11T15:23:57.198Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 30%
+2024-09-11T15:23:57.200Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 31%
+2024-09-11T15:23:57.202Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 32%
+2024-09-11T15:23:57.204Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 33%
+2024-09-11T15:23:57.206Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 34%
+2024-09-11T15:23:57.208Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 35%
+2024-09-11T15:23:57.210Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 36%
+2024-09-11T15:23:57.213Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 37%
+2024-09-11T15:23:57.216Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 38%
+2024-09-11T15:23:57.218Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 39%
+2024-09-11T15:23:57.220Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 40%
+2024-09-11T15:23:57.226Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 41%
+2024-09-11T15:23:57.227Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 42%
+2024-09-11T15:23:57.229Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 43%
+2024-09-11T15:23:57.230Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 44%
+2024-09-11T15:23:57.233Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 45%
+2024-09-11T15:23:57.235Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 46%
+2024-09-11T15:23:57.237Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 47%
+2024-09-11T15:23:57.239Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 48%
+2024-09-11T15:23:57.241Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 49%
+2024-09-11T15:23:57.243Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 50%
+2024-09-11T15:23:57.246Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 51%
+2024-09-11T15:23:57.248Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 52%
+2024-09-11T15:23:57.251Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 53%
+2024-09-11T15:23:57.253Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 54%
+2024-09-11T15:23:57.260Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 55%
+2024-09-11T15:23:57.261Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 56%
+2024-09-11T15:23:57.262Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 57%
+2024-09-11T15:23:57.266Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 58%
+2024-09-11T15:23:57.267Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 59%
+2024-09-11T15:23:57.269Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 60%
+2024-09-11T15:23:57.271Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 61%
+2024-09-11T15:23:57.273Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 62%
+2024-09-11T15:23:57.275Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 63%
+2024-09-11T15:23:57.277Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 64%
+2024-09-11T15:23:57.279Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 65%
+2024-09-11T15:23:57.281Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 66%
+2024-09-11T15:23:57.283Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 67%
+2024-09-11T15:23:57.285Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 68%
+2024-09-11T15:23:57.288Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 69%
+2024-09-11T15:23:57.295Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 70%
+2024-09-11T15:23:57.295Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 71%
+2024-09-11T15:23:57.296Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 72%
+2024-09-11T15:23:57.296Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 73%
+2024-09-11T15:23:57.298Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 74%
+2024-09-11T15:23:57.299Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 75%
+2024-09-11T15:23:57.304Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 76%
+2024-09-11T15:23:57.306Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 77%
+2024-09-11T15:23:57.309Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 78%
+2024-09-11T15:23:57.310Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 79%
+2024-09-11T15:23:57.313Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 80%
+2024-09-11T15:23:57.315Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 81%
+2024-09-11T15:23:57.317Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 82%
+2024-09-11T15:23:57.319Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 83%
+2024-09-11T15:23:57.321Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 84%
+2024-09-11T15:23:57.325Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 86%
+2024-09-11T15:23:57.327Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 87%
+2024-09-11T15:23:57.329Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 88%
+2024-09-11T15:23:57.331Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 89%
+2024-09-11T15:23:57.333Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 90%
+2024-09-11T15:23:57.336Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 91%
+2024-09-11T15:23:57.353Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 92%
+2024-09-11T15:23:57.354Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 93%
+2024-09-11T15:23:57.355Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 94%
+2024-09-11T15:23:57.356Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 95%
+2024-09-11T15:23:57.359Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 96%
+2024-09-11T15:23:57.360Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 97%
+2024-09-11T15:23:57.362Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 98%
+2024-09-11T15:23:57.362Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 99%
+2024-09-11T15:23:57.363Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip: 100%
+2024-09-11T15:23:57.363Z [Modules] Fetching discord_zstd@1 from https://discord.com/api/modules/stable/discord_zstd/1
+2024-09-11T15:23:57.363Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_zstd-1.zip
+2024-09-11T15:23:57.465Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_zstd-1.zip: 16%
+2024-09-11T15:23:57.466Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_zstd-1.zip: 47%
+2024-09-11T15:23:57.466Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_zstd-1.zip: 64%
+2024-09-11T15:23:57.467Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_zstd-1.zip: 80%
+2024-09-11T15:23:57.467Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_zstd-1.zip: 96%
+2024-09-11T15:23:57.468Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_zstd-1.zip: 100%
+2024-09-11T15:23:57.468Z [Modules] Finished module downloads. [success: 6] [failure: 0]
+2024-09-11T15:23:57.469Z [Modules] Installing updates...
+2024-09-11T15:23:57.469Z [Modules] Installing discord_desktop_core@1 from /home/yvesd/.config/discord/0.0.67/modules/pending/discord_desktop_core-1.zip
+2024-09-11T15:23:57.529Z [Modules] Installing discord_erlpack@1 from /home/yvesd/.config/discord/0.0.67/modules/pending/discord_erlpack-1.zip
+2024-09-11T15:23:57.566Z [Modules] Installing discord_spellcheck@1 from /home/yvesd/.config/discord/0.0.67/modules/pending/discord_spellcheck-1.zip
+2024-09-11T15:23:57.974Z [Modules] Installing discord_utils@1 from /home/yvesd/.config/discord/0.0.67/modules/pending/discord_utils-1.zip
+2024-09-11T15:23:58.035Z [Modules] Installing discord_voice@1 from /home/yvesd/.config/discord/0.0.67/modules/pending/discord_voice-1.zip
+2024-09-11T15:23:58.355Z [Modules] Installing discord_zstd@1 from /home/yvesd/.config/discord/0.0.67/modules/pending/discord_zstd-1.zip
+2024-09-11T15:23:58.365Z [Modules] Finished module installations. [success: 6] [failure: 0]
+2024-09-11T15:23:58.366Z [Modules] Host is up to date.
+2024-09-11T15:23:58.366Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-11T15:23:58.370Z [Modules] No module updates available.
+2024-09-11T15:23:59.240Z [Modules] Starting to install discord_krisp...
+2024-09-11T15:23:59.240Z [Modules] Fetching discord_krisp@1 from https://discord.com/api/modules/stable/discord_krisp/1
+2024-09-11T15:23:59.240Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip
+2024-09-11T15:23:59.245Z [Modules] Starting to install discord_game_utils...
+2024-09-11T15:23:59.338Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 1%
+2024-09-11T15:23:59.343Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 2%
+2024-09-11T15:23:59.346Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 3%
+2024-09-11T15:23:59.348Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 4%
+2024-09-11T15:23:59.350Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 5%
+2024-09-11T15:23:59.352Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 6%
+2024-09-11T15:23:59.355Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 7%
+2024-09-11T15:23:59.357Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 8%
+2024-09-11T15:23:59.359Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 9%
+2024-09-11T15:23:59.362Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 10%
+2024-09-11T15:23:59.377Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 11%
+2024-09-11T15:23:59.378Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 12%
+2024-09-11T15:23:59.384Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 13%
+2024-09-11T15:23:59.387Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 14%
+2024-09-11T15:23:59.390Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 15%
+2024-09-11T15:23:59.392Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 16%
+2024-09-11T15:23:59.394Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 17%
+2024-09-11T15:23:59.396Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 18%
+2024-09-11T15:23:59.398Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 19%
+2024-09-11T15:23:59.400Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 20%
+2024-09-11T15:23:59.402Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 21%
+2024-09-11T15:23:59.404Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 22%
+2024-09-11T15:23:59.406Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 23%
+2024-09-11T15:23:59.409Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 24%
+2024-09-11T15:23:59.411Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 25%
+2024-09-11T15:23:59.413Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 26%
+2024-09-11T15:23:59.415Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 27%
+2024-09-11T15:23:59.418Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 28%
+2024-09-11T15:23:59.419Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 29%
+2024-09-11T15:23:59.422Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 30%
+2024-09-11T15:23:59.542Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 31%
+2024-09-11T15:23:59.544Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 32%
+2024-09-11T15:23:59.545Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 33%
+2024-09-11T15:23:59.545Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 34%
+2024-09-11T15:23:59.546Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 35%
+2024-09-11T15:23:59.557Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 36%
+2024-09-11T15:23:59.559Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 37%
+2024-09-11T15:23:59.560Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 38%
+2024-09-11T15:23:59.560Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 39%
+2024-09-11T15:23:59.561Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 40%
+2024-09-11T15:23:59.561Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 41%
+2024-09-11T15:23:59.567Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 42%
+2024-09-11T15:23:59.567Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 43%
+2024-09-11T15:23:59.568Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 44%
+2024-09-11T15:23:59.568Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 46%
+2024-09-11T15:23:59.568Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 47%
+2024-09-11T15:23:59.569Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 48%
+2024-09-11T15:23:59.569Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 49%
+2024-09-11T15:23:59.570Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 50%
+2024-09-11T15:23:59.570Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 51%
+2024-09-11T15:23:59.570Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 52%
+2024-09-11T15:23:59.571Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 53%
+2024-09-11T15:23:59.571Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 54%
+2024-09-11T15:23:59.573Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 55%
+2024-09-11T15:23:59.575Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 56%
+2024-09-11T15:23:59.577Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 57%
+2024-09-11T15:23:59.579Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 58%
+2024-09-11T15:23:59.581Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 59%
+2024-09-11T15:23:59.585Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 60%
+2024-09-11T15:23:59.587Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 61%
+2024-09-11T15:23:59.589Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 62%
+2024-09-11T15:23:59.591Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 63%
+2024-09-11T15:23:59.596Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 65%
+2024-09-11T15:23:59.597Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 66%
+2024-09-11T15:23:59.599Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 67%
+2024-09-11T15:23:59.602Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 68%
+2024-09-11T15:23:59.603Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 69%
+2024-09-11T15:23:59.606Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 70%
+2024-09-11T15:23:59.609Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 71%
+2024-09-11T15:23:59.614Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 72%
+2024-09-11T15:23:59.616Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 73%
+2024-09-11T15:23:59.618Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 74%
+2024-09-11T15:23:59.621Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 75%
+2024-09-11T15:23:59.623Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 76%
+2024-09-11T15:23:59.625Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 77%
+2024-09-11T15:23:59.627Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 78%
+2024-09-11T15:23:59.629Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 79%
+2024-09-11T15:23:59.631Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 80%
+2024-09-11T15:23:59.633Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 81%
+2024-09-11T15:23:59.635Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 82%
+2024-09-11T15:23:59.637Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 83%
+2024-09-11T15:23:59.639Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 84%
+2024-09-11T15:23:59.642Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 85%
+2024-09-11T15:23:59.643Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 86%
+2024-09-11T15:23:59.646Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 87%
+2024-09-11T15:23:59.647Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 88%
+2024-09-11T15:23:59.650Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 89%
+2024-09-11T15:23:59.652Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 90%
+2024-09-11T15:23:59.654Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 91%
+2024-09-11T15:23:59.657Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 92%
+2024-09-11T15:23:59.658Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 93%
+2024-09-11T15:23:59.661Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 94%
+2024-09-11T15:23:59.663Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 95%
+2024-09-11T15:23:59.667Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 96%
+2024-09-11T15:23:59.673Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 97%
+2024-09-11T15:23:59.675Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 98%
+2024-09-11T15:23:59.677Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 99%
+2024-09-11T15:23:59.678Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip: 100%
+2024-09-11T15:23:59.679Z [Modules] Fetching discord_game_utils@1 from https://discord.com/api/modules/stable/discord_game_utils/1
+2024-09-11T15:23:59.679Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip
+2024-09-11T15:23:59.679Z [Modules] Installing discord_krisp@1 from /home/yvesd/.config/discord/0.0.67/modules/pending/discord_krisp-1.zip
+2024-09-11T15:23:59.741Z [Modules] Host is up to date.
+2024-09-11T15:23:59.741Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-11T15:23:59.743Z [Modules] No module updates available.
+2024-09-11T15:23:59.766Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 2%
+2024-09-11T15:23:59.766Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 7%
+2024-09-11T15:23:59.766Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 9%
+2024-09-11T15:23:59.767Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 11%
+2024-09-11T15:23:59.768Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 14%
+2024-09-11T15:23:59.768Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 16%
+2024-09-11T15:23:59.769Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 18%
+2024-09-11T15:23:59.770Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 23%
+2024-09-11T15:23:59.771Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 25%
+2024-09-11T15:23:59.771Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 28%
+2024-09-11T15:23:59.772Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 30%
+2024-09-11T15:23:59.772Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 33%
+2024-09-11T15:23:59.773Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 35%
+2024-09-11T15:23:59.773Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 37%
+2024-09-11T15:23:59.774Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 40%
+2024-09-11T15:23:59.774Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 42%
+2024-09-11T15:23:59.775Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 44%
+2024-09-11T15:23:59.776Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 47%
+2024-09-11T15:23:59.776Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 49%
+2024-09-11T15:23:59.777Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 51%
+2024-09-11T15:23:59.777Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 54%
+2024-09-11T15:23:59.778Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 56%
+2024-09-11T15:23:59.778Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 59%
+2024-09-11T15:23:59.779Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 61%
+2024-09-11T15:23:59.779Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 63%
+2024-09-11T15:23:59.780Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 66%
+2024-09-11T15:23:59.781Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 68%
+2024-09-11T15:23:59.781Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 70%
+2024-09-11T15:23:59.782Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 72%
+2024-09-11T15:23:59.782Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 74%
+2024-09-11T15:23:59.782Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 75%
+2024-09-11T15:23:59.782Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 76%
+2024-09-11T15:23:59.783Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 78%
+2024-09-11T15:23:59.783Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 80%
+2024-09-11T15:23:59.784Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 83%
+2024-09-11T15:23:59.785Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 85%
+2024-09-11T15:23:59.785Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 87%
+2024-09-11T15:23:59.786Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 90%
+2024-09-11T15:23:59.786Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 92%
+2024-09-11T15:23:59.787Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 95%
+2024-09-11T15:23:59.788Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 97%
+2024-09-11T15:23:59.788Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 98%
+2024-09-11T15:23:59.789Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip: 100%
+2024-09-11T15:23:59.789Z [Modules] Finished module downloads. [success: 2] [failure: 0]
+2024-09-11T15:23:59.810Z [Modules] Starting to install discord_rpc...
+2024-09-11T15:23:59.810Z [Modules] Fetching discord_rpc@1 from https://discord.com/api/modules/stable/discord_rpc/1
+2024-09-11T15:23:59.810Z [Modules] Streaming discord_rpc@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_rpc-1.zip
+2024-09-11T15:23:59.898Z [Modules] Streaming discord_rpc@1 to /home/yvesd/.config/discord/0.0.67/modules/pending/discord_rpc-1.zip: 100%
+2024-09-11T15:23:59.899Z [Modules] Finished module downloads. [success: 1] [failure: 0]
+2024-09-11T15:23:59.923Z [Modules] Installing discord_game_utils@1 from /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip
+2024-09-11T15:23:59.962Z [Modules] Installing discord_rpc@1 from /home/yvesd/.config/discord/0.0.67/modules/pending/discord_rpc-1.zip
+2024-09-11T15:23:59.975Z [Modules] Finished module installations. [success: 3] [failure: 0]
