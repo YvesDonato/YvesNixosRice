@@ -1,26 +1,20 @@
-2024/09/15-04:42:33.505 710 Reusing MANIFEST /home/yvesd/.config/discord/Local Storage/leveldb/MANIFEST-000001
-2024/09/15-04:42:33.510 710 Recovering log #1017
-2024/09/15-04:42:33.510 710 Reusing old log /home/yvesd/.config/discord/Local Storage/leveldb/001017.log 
-2024/09/15-04:45:20.548 711 Level-0 table #1021: started
-2024/09/15-04:45:20.599 711 Level-0 table #1021: 810869 bytes OK
-2024/09/15-04:45:20.600 711 Delete type=0 #1017
-2024/09/15-04:45:20.601 711 Compacting 4@0 + 2@1 files
-2024/09/15-04:45:20.609 711 Generated table #1022@0: 13 keys, 2415301 bytes
-2024/09/15-04:45:20.626 711 Generated table #1023@0: 106 keys, 3125906 bytes
-2024/09/15-04:45:20.626 711 Compacted 4@0 + 2@1 files => 5541207 bytes
-2024/09/15-04:45:20.627 711 compacted to: files[ 0 3 1 0 0 0 0 ]
-2024/09/15-04:45:20.627 711 Delete type=2 #1009
-2024/09/15-04:45:20.627 711 Delete type=2 #1016
-2024/09/15-04:45:20.627 711 Delete type=2 #1013
-2024/09/15-04:45:20.627 711 Delete type=2 #1021
-2024/09/15-04:45:20.627 711 Delete type=2 #1010
-2024/09/15-04:45:20.627 711 Delete type=2 #1018
-2024/09/15-04:46:43.582 711 Level-0 table #1025: started
-2024/09/15-04:46:43.600 711 Level-0 table #1025: 2417594 bytes OK
-2024/09/15-04:46:43.602 711 Delete type=0 #1020
-2024/09/15-20:42:43.920 711 Level-0 table #1027: started
-2024/09/15-20:42:43.937 711 Level-0 table #1027: 2421623 bytes OK
-2024/09/15-20:42:43.939 711 Delete type=0 #1024
-2024/09/15-22:42:45.684 711 Level-0 table #1029: started
-2024/09/15-22:42:45.701 711 Level-0 table #1029: 2416159 bytes OK
-2024/09/15-22:42:45.702 711 Delete type=0 #1026
+2024/09/16-13:56:13.031 5c4 Reusing MANIFEST /home/yvesd/.config/discord/Local Storage/leveldb/MANIFEST-000001
+2024/09/16-13:56:13.037 5c4 Recovering log #1028
+2024/09/16-13:56:13.037 5c4 Reusing old log /home/yvesd/.config/discord/Local Storage/leveldb/001028.log 
+2024/09/16-13:59:37.556 5c5 Level-0 table #1032: started
+2024/09/16-13:59:37.611 5c5 Level-0 table #1032: 809988 bytes OK
+2024/09/16-13:59:37.617 5c5 Delete type=0 #1028
+2024/09/16-13:59:37.618 5c5 Compacting 4@0 + 2@1 files
+2024/09/16-13:59:37.628 5c5 Generated table #1033@0: 13 keys, 2417479 bytes
+2024/09/16-13:59:37.645 5c5 Generated table #1034@0: 106 keys, 3126143 bytes
+2024/09/16-13:59:37.645 5c5 Compacted 4@0 + 2@1 files => 5543622 bytes
+2024/09/16-13:59:37.647 5c5 compacted to: files[ 0 3 1 0 0 0 0 ]
+2024/09/16-13:59:37.647 5c5 Delete type=2 #1029
+2024/09/16-13:59:37.647 5c5 Delete type=2 #1027
+2024/09/16-13:59:37.647 5c5 Delete type=2 #1022
+2024/09/16-13:59:37.647 5c5 Delete type=2 #1032
+2024/09/16-13:59:37.647 5c5 Delete type=2 #1023
+2024/09/16-13:59:37.647 5c5 Delete type=2 #1025
+2024/09/16-15:11:10.119 5c4 Level-0 table #1036: started
+2024/09/16-15:11:10.131 5c4 Level-0 table #1036: 2416754 bytes OK
+2024/09/16-15:11:10.132 5c4 Delete type=0 #1031

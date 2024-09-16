@@ -73,3 +73,17 @@
 2024-09-16T17:56:53.367Z 8: window.close win1
 2024-09-16T17:56:53.371Z 9: webContents.destroyed web1
 2024-09-16T17:56:53.372Z 10: window.closed win1
+2024-09-16T23:03:35.963Z 11: before-quit
+2024-09-16T23:04:08.535Z 0: 
+
+----------------------------------------------
+2024-09-16T23:04:08.551Z 1: Discord starting: {"releaseChannel":"stable","version":"0.0.67"}, modulepath: /home/yvesd/.config/discord/0.0.67/modules
+2024-09-16T23:04:08.556Z 2: ✅ webContents.created web1 ""
+2024-09-16T23:04:08.558Z 3: ✅ window.created win1 "discord"
+2024-09-16T23:04:08.133Z 4: ✅ webContents.did-finish-load web1
+2024-09-16T23:04:08.311Z 5: ✅ webContents.created web2 ""
+2024-09-16T23:04:08.315Z 6: ✅ window.created win2 "Discord"
+2024-09-16T23:04:10.261Z 7: ✅ webContents.did-finish-load web2
+2024-09-16T23:04:10.362Z 8: window.close win1
+2024-09-16T23:04:10.365Z 9: webContents.destroyed web1
+2024-09-16T23:04:10.366Z 10: window.closed win1
