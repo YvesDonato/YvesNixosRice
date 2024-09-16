@@ -14,7 +14,7 @@
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  
+    
   hardware.opengl = {
     enable = true;
     driSupport = true;
@@ -32,6 +32,7 @@
   #environment.variables.LIBVA_DRIVER_NAME = "nvidia";
   
   # Drivers
+  boot.initrd.kernelModules = [ "amdgpu" ];
   services.xserver.videoDrivers = [ "amdgpu" ];
     
   # Networking
@@ -175,6 +176,7 @@
     xwayland
     swaynotificationcenter
     brightnessctl
+    hyprlock
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
   
@@ -190,5 +192,7 @@
     options = "--delete-older-than 7d";
   };
 
+  security.pam.services.hyprlock = {};
+  
   system.stateVersion = "24.05";
 }
