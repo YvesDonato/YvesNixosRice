@@ -16263,3 +16263,204 @@
 2024-09-11T15:23:59.923Z [Modules] Installing discord_game_utils@1 from /home/yvesd/.config/discord/0.0.67/modules/pending/discord_game_utils-1.zip
 2024-09-11T15:23:59.962Z [Modules] Installing discord_rpc@1 from /home/yvesd/.config/discord/0.0.67/modules/pending/discord_rpc-1.zip
 2024-09-11T15:23:59.975Z [Modules] Finished module installations. [success: 3] [failure: 0]
+2024-09-11T16:23:59.744Z [Modules] Host is up to date.
+2024-09-11T16:23:59.744Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-11T16:23:59.788Z [Modules] No module updates available.
+2024-09-11T17:23:59.746Z [Modules] Host is up to date.
+2024-09-11T17:23:59.746Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-11T17:23:59.789Z [Modules] No module updates available.
+2024-09-11T18:23:59.742Z [Modules] Host is up to date.
+2024-09-11T18:23:59.742Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-11T18:23:59.774Z [Modules] No module updates available.
+2024-09-11T19:23:59.745Z [Modules] Host is up to date.
+2024-09-11T19:23:59.745Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-11T19:23:59.784Z [Modules] No module updates available.
+2024-09-11T20:23:59.745Z [Modules] Host is up to date.
+2024-09-11T20:23:59.745Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-11T20:23:59.807Z [Modules] No module updates available.
+2024-09-11T21:23:59.744Z [Modules] Host is up to date.
+2024-09-11T21:23:59.744Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-11T21:23:59.785Z [Modules] No module updates available.
+2024-09-11T22:23:59.742Z [Modules] Host is up to date.
+2024-09-11T22:23:59.742Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-11T22:23:59.784Z [Modules] No module updates available.
+2024-09-11T23:23:59.742Z [Modules] Host is up to date.
+2024-09-11T23:23:59.742Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-11T23:23:59.771Z [Modules] No module updates available.
+2024-09-12T00:23:59.742Z [Modules] Host is up to date.
+2024-09-12T00:23:59.742Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-12T00:23:59.791Z [Modules] No module updates available.
+2024-09-12T01:23:59.742Z [Modules] Host is up to date.
+2024-09-12T01:23:59.742Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-12T01:23:59.786Z [Modules] No module updates available.
+2024-09-12T02:23:59.742Z [Modules] Host is up to date.
+2024-09-12T02:23:59.742Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-12T02:23:59.783Z [Modules] No module updates available.
+2024-09-12T03:23:59.742Z [Modules] Host is up to date.
+2024-09-12T03:23:59.742Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-12T03:23:59.786Z [Modules] No module updates available.
+2024-09-12T04:23:59.742Z [Modules] Host is up to date.
+2024-09-12T04:23:59.742Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-12T04:23:59.790Z [Modules] No module updates available.
+2024-09-12T05:23:59.742Z [Modules] Host is up to date.
+2024-09-12T05:23:59.743Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-12T05:23:59.782Z [Modules] No module updates available.
+2024-09-12T06:23:59.742Z [Modules] Host is up to date.
+2024-09-12T06:23:59.742Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-12T06:23:59.783Z [Modules] No module updates available.
+2024-09-12T07:23:59.742Z [Modules] Host is up to date.
+2024-09-12T07:23:59.742Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-12T07:23:59.777Z [Modules] No module updates available.
+2024-09-12T08:23:59.742Z [Modules] Host is up to date.
+2024-09-12T08:23:59.742Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-12T08:23:59.778Z [Modules] No module updates available.
+2024-09-12T09:23:59.742Z [Modules] Host is up to date.
+2024-09-12T09:23:59.742Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-12T09:23:59.781Z [Modules] No module updates available.
+2024-09-12T10:23:59.742Z [Modules] Host is up to date.
+2024-09-12T10:23:59.742Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-12T10:23:59.779Z [Modules] No module updates available.
+2024-09-12T11:36:36.173Z [Modules] Modules initializing
+2024-09-12T11:36:36.174Z [Modules] Distribution: remote
+2024-09-12T11:36:36.174Z [Modules] Host updates: disabled
+2024-09-12T11:36:36.175Z [Modules] Module updates: enabled
+2024-09-12T11:36:36.175Z [Modules] Module install path: /home/yvesd/.config/discord/0.0.67/modules
+2024-09-12T11:36:36.175Z [Modules] Module installed file path: /home/yvesd/.config/discord/0.0.67/modules/installed.json
+2024-09-12T11:36:36.175Z [Modules] Module download path: /home/yvesd/.config/discord/0.0.67/modules/pending
+2024-09-12T11:36:36.697Z [Modules] No updates to install
+2024-09-12T11:36:36.698Z [Modules] Host is up to date.
+2024-09-12T11:36:36.698Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-12T11:36:36.754Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-09-12T11:36:46.760Z [Modules] Host is up to date.
+2024-09-12T11:36:46.760Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-12T11:37:14.058Z [Modules] No module updates available.
+2024-09-12T11:37:16.772Z [Modules] Host is up to date.
+2024-09-12T11:37:16.773Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-12T11:37:21.520Z [Modules] No module updates available.
+2024-09-15T08:42:33.519Z [Modules] Modules initializing
+2024-09-15T08:42:33.520Z [Modules] Distribution: remote
+2024-09-15T08:42:33.520Z [Modules] Host updates: disabled
+2024-09-15T08:42:33.520Z [Modules] Module updates: enabled
+2024-09-15T08:42:33.520Z [Modules] Module install path: /home/yvesd/.config/discord/0.0.67/modules
+2024-09-15T08:42:33.520Z [Modules] Module installed file path: /home/yvesd/.config/discord/0.0.67/modules/installed.json
+2024-09-15T08:42:33.520Z [Modules] Module download path: /home/yvesd/.config/discord/0.0.67/modules/pending
+2024-09-15T08:42:33.868Z [Modules] No updates to install
+2024-09-15T08:42:33.869Z [Modules] Host is up to date.
+2024-09-15T08:42:33.869Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-15T08:42:34.060Z [Modules] No module updates available.
+2024-09-15T08:42:35.948Z [Modules] Host is up to date.
+2024-09-15T08:42:35.948Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-15T08:42:35.951Z [Modules] No module updates available.
+2024-09-15T09:42:35.949Z [Modules] Host is up to date.
+2024-09-15T09:42:35.949Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-15T09:42:35.986Z [Modules] No module updates available.
+2024-09-15T10:42:35.949Z [Modules] Host is up to date.
+2024-09-15T10:42:35.949Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-15T10:42:36.025Z [Modules] No module updates available.
+2024-09-15T11:42:35.949Z [Modules] Host is up to date.
+2024-09-15T11:42:35.949Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-15T11:42:36.048Z [Modules] No module updates available.
+2024-09-15T12:42:35.950Z [Modules] Host is up to date.
+2024-09-15T12:42:35.950Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-15T12:42:36.020Z [Modules] No module updates available.
+2024-09-15T13:42:35.949Z [Modules] Host is up to date.
+2024-09-15T13:42:35.949Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-15T13:42:35.987Z [Modules] No module updates available.
+2024-09-15T14:42:35.949Z [Modules] Host is up to date.
+2024-09-15T14:42:35.949Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-15T14:42:35.991Z [Modules] No module updates available.
+2024-09-15T15:42:35.951Z [Modules] Host is up to date.
+2024-09-15T15:42:35.952Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-15T15:42:35.990Z [Modules] No module updates available.
+2024-09-15T16:42:35.951Z [Modules] Host is up to date.
+2024-09-15T16:42:35.951Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-15T16:42:35.991Z [Modules] No module updates available.
+2024-09-15T17:42:35.951Z [Modules] Host is up to date.
+2024-09-15T17:42:35.951Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-15T17:42:36.001Z [Modules] No module updates available.
+2024-09-15T18:42:35.952Z [Modules] Host is up to date.
+2024-09-15T18:42:35.952Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-15T18:42:36.025Z [Modules] No module updates available.
+2024-09-15T19:42:35.949Z [Modules] Host is up to date.
+2024-09-15T19:42:35.949Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-15T19:42:35.993Z [Modules] No module updates available.
+2024-09-15T20:42:35.949Z [Modules] Host is up to date.
+2024-09-15T20:42:35.949Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-15T20:42:35.993Z [Modules] No module updates available.
+2024-09-15T21:42:35.949Z [Modules] Host is up to date.
+2024-09-15T21:42:35.949Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-15T21:42:35.994Z [Modules] No module updates available.
+2024-09-15T22:42:35.949Z [Modules] Host is up to date.
+2024-09-15T22:42:35.949Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-15T22:42:35.989Z [Modules] No module updates available.
+2024-09-15T23:42:35.952Z [Modules] Host is up to date.
+2024-09-15T23:42:35.952Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-15T23:42:36.000Z [Modules] No module updates available.
+2024-09-16T00:42:35.949Z [Modules] Host is up to date.
+2024-09-16T00:42:35.949Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-16T00:42:35.990Z [Modules] No module updates available.
+2024-09-16T01:42:35.951Z [Modules] Host is up to date.
+2024-09-16T01:42:35.951Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-16T01:42:36.002Z [Modules] No module updates available.
+2024-09-16T02:42:35.951Z [Modules] Host is up to date.
+2024-09-16T02:42:35.951Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-16T02:42:35.995Z [Modules] No module updates available.
+2024-09-16T03:42:35.949Z [Modules] Host is up to date.
+2024-09-16T03:42:35.949Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-16T03:42:35.994Z [Modules] No module updates available.
+2024-09-16T04:42:35.952Z [Modules] Host is up to date.
+2024-09-16T04:42:35.952Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-16T04:42:36.001Z [Modules] No module updates available.
+2024-09-16T05:42:35.949Z [Modules] Host is up to date.
+2024-09-16T05:42:35.949Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-16T05:42:35.990Z [Modules] No module updates available.
+2024-09-16T06:42:35.950Z [Modules] Host is up to date.
+2024-09-16T06:42:35.950Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-16T06:42:36.004Z [Modules] No module updates available.
+2024-09-16T07:42:35.949Z [Modules] Host is up to date.
+2024-09-16T07:42:35.950Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-16T07:42:36.030Z [Modules] No module updates available.
+2024-09-16T08:42:35.949Z [Modules] Host is up to date.
+2024-09-16T08:42:35.949Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-16T08:42:36.012Z [Modules] No module updates available.
+2024-09-16T09:42:35.950Z [Modules] Host is up to date.
+2024-09-16T09:42:35.950Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-16T09:42:36.022Z [Modules] No module updates available.
+2024-09-16T10:42:35.949Z [Modules] Host is up to date.
+2024-09-16T10:42:35.949Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-16T10:42:36.021Z [Modules] No module updates available.
+2024-09-16T11:42:35.949Z [Modules] Host is up to date.
+2024-09-16T11:42:35.949Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-16T11:42:36.010Z [Modules] No module updates available.
+2024-09-16T12:42:35.948Z [Modules] Host is up to date.
+2024-09-16T12:42:35.949Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-16T12:42:35.995Z [Modules] No module updates available.
+2024-09-16T13:42:35.949Z [Modules] Host is up to date.
+2024-09-16T13:42:35.949Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-16T13:42:35.988Z [Modules] No module updates available.
+2024-09-16T14:42:35.949Z [Modules] Host is up to date.
+2024-09-16T14:42:35.949Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-16T14:42:35.986Z [Modules] No module updates available.
+2024-09-16T17:56:13.062Z [Modules] Modules initializing
+2024-09-16T17:56:13.063Z [Modules] Distribution: remote
+2024-09-16T17:56:13.063Z [Modules] Host updates: disabled
+2024-09-16T17:56:13.063Z [Modules] Module updates: enabled
+2024-09-16T17:56:13.064Z [Modules] Module install path: /home/yvesd/.config/discord/0.0.67/modules
+2024-09-16T17:56:13.064Z [Modules] Module installed file path: /home/yvesd/.config/discord/0.0.67/modules/installed.json
+2024-09-16T17:56:13.065Z [Modules] Module download path: /home/yvesd/.config/discord/0.0.67/modules/pending
+2024-09-16T17:56:13.528Z [Modules] No updates to install
+2024-09-16T17:56:13.531Z [Modules] Host is up to date.
+2024-09-16T17:56:13.533Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-16T17:56:13.589Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-09-16T17:56:23.593Z [Modules] Host is up to date.
+2024-09-16T17:56:23.593Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-16T17:56:50.855Z [Modules] No module updates available.
+2024-09-16T17:56:53.070Z [Modules] Host is up to date.
+2024-09-16T17:56:53.071Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-16T17:56:53.094Z [Modules] No module updates available.
+2024-09-16T17:56:53.603Z [Modules] Host is up to date.
+2024-09-16T17:56:53.603Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-16T17:56:53.605Z [Modules] No module updates available.
+2024-09-16T18:56:53.073Z [Modules] Host is up to date.
+2024-09-16T18:56:53.073Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-09-16T18:56:53.128Z [Modules] No module updates available.

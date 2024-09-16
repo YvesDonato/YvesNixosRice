@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, hy3, ... }:
 
 {
   home.username = "yvesd";
@@ -73,7 +73,7 @@
       env = HYPRCURSOR_THEME,rose-pine-hyprcursor
       env = HYPRCURSOR_SIZE,24
       input {
-        kb_layout = us
+        # kb_layout = us
         kb_variant =
         kb_model =
         kb_options =

@@ -168,7 +168,9 @@
     nodePackages_latest.bash-language-server
     tailwindcss-language-server
     nil
-
+    omnisharp-roslyn
+    dotnet-sdk
+    
     # system
     xwayland
     swaynotificationcenter
