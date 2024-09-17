@@ -33,7 +33,7 @@
 
     };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-colors, hy3, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-colors, hyprland, hy3, ... }@inputs:
     let
       # System
       system = "x86_64-linux";
@@ -61,7 +61,6 @@
           
           modules = [
             ./configuration.nix
-            { config._module.args = { hy3 = hy3; }; }
           ];
       
           specialArgs = {
@@ -70,6 +69,8 @@
             inherit pkgs-unstable;
             inherit inputs;
             inherit nix-colors;
+            inherit hy3;
+            inherit hyprland;
           };
           
       };

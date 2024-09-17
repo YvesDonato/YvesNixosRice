@@ -14,6 +14,8 @@
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  boot.blacklistedKernelModules = [ "nouveau" "nvidia_drm" "nvidia" ];
     
   hardware.opengl = {
     enable = true;
@@ -171,6 +173,7 @@
     nil
     omnisharp-roslyn
     dotnet-sdk
+    cmake
     
     # system
     xwayland

@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, hy3, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   home.username = "yvesd";
@@ -35,10 +35,14 @@
     history.path = "${config.xdg.dataHome}/zsh/history";
   };
   
-  dconf = {
+ dconf = {
     enable = true;
-    settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
-  };
+    settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+      };
+    };
+ };
   
   programs.starship = {
     enable = true;
@@ -63,8 +67,6 @@
   
   wayland.windowManager.hyprland = {
     enable = true;
-    plugins = [
-    ];
     extraConfig = ''
       monitor=eDP-1,2560x1600@165,0x0,1.6
       monitor=DP-2,3440x1440@144,1600x0,1,bitdepth,10
@@ -89,18 +91,18 @@
       }
       
       general {
-        gaps_in = 5
-        gaps_out = 9
+        gaps_out = 2
+        gaps_in = 2
         border_size = 0
                 
-        col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg        
+        col.active_border = rgba(595959aa)        
         col.inactive_border = rgba(595959aa)
         layout = dwindle
       }
       
       decoration {
 
-        rounding = 9
+        rounding = 4
     
         blur {
           enabled = true
