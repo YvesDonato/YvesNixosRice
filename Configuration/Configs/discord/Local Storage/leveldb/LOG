@@ -1,6 +1,26 @@
-2024/09/17-15:40:34.161 60f Reusing MANIFEST /home/yvesd/.config/discord/Local Storage/leveldb/MANIFEST-000001
-2024/09/17-15:40:34.168 60f Recovering log #1047
-2024/09/17-15:40:34.169 60f Reusing old log /home/yvesd/.config/discord/Local Storage/leveldb/001047.log 
-2024/09/17-15:43:31.097 610 Level-0 table #1051: started
-2024/09/17-15:43:31.118 610 Level-0 table #1051: 806981 bytes OK
-2024/09/17-15:43:31.120 610 Delete type=0 #1047
+2024/09/17-20:04:52.756 607 Reusing MANIFEST /home/yvesd/.config/discord/Local Storage/leveldb/MANIFEST-000001
+2024/09/17-20:04:52.760 607 Recovering log #1050
+2024/09/17-20:04:52.761 607 Reusing old log /home/yvesd/.config/discord/Local Storage/leveldb/001050.log 
+2024/09/17-20:07:41.489 608 Level-0 table #1054: started
+2024/09/17-20:07:41.542 608 Level-0 table #1054: 808695 bytes OK
+2024/09/17-20:07:41.543 608 Delete type=0 #1050
+2024/09/18-14:43:12.273 607 Level-0 table #1056: started
+2024/09/18-14:43:12.275 607 Level-0 table #1056: 31931 bytes OK
+2024/09/18-14:43:12.276 607 Delete type=0 #1053
+2024/09/18-14:43:12.276 607 Compacting 4@0 + 2@1 files
+2024/09/18-14:43:12.288 607 Generated table #1057@0: 13 keys, 2418007 bytes
+2024/09/18-14:43:12.310 607 Generated table #1058@0: 106 keys, 3127133 bytes
+2024/09/18-14:43:12.310 607 Compacted 4@0 + 2@1 files => 5545140 bytes
+2024/09/18-14:43:12.311 607 compacted to: files[ 0 3 1 0 0 0 0 ]
+2024/09/18-14:43:12.311 607 Delete type=2 #1045
+2024/09/18-14:43:12.311 607 Delete type=2 #1048
+2024/09/18-14:43:12.311 607 Delete type=2 #1044
+2024/09/18-14:43:12.311 607 Delete type=2 #1054
+2024/09/18-14:43:12.311 607 Delete type=2 #1051
+2024/09/18-14:43:12.311 607 Delete type=2 #1056
+2024/09/18-15:31:31.886 608 Level-0 table #1060: started
+2024/09/18-15:31:31.893 608 Level-0 table #1060: 2417298 bytes OK
+2024/09/18-15:31:31.894 608 Delete type=0 #1055
+2024/09/19-07:45:27.357 608 Level-0 table #1062: started
+2024/09/19-07:45:27.375 608 Level-0 table #1062: 2417641 bytes OK
+2024/09/19-07:45:27.377 608 Delete type=0 #1059

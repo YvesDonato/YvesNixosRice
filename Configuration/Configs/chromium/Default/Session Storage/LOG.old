@@ -1,3 +1,9 @@
-2024/09/04-12:24:22.491 4 Reusing MANIFEST /home/yvesd/.config/chromium/Default/Session Storage/MANIFEST-000001
-2024/09/04-12:24:22.492 4 Recovering log #3
-2024/09/04-12:24:22.492 4 Reusing old log /home/yvesd/.config/chromium/Default/Session Storage/000003.log 
+2024/09/18-18:49:46.339 4 Reusing MANIFEST /home/yvesd/.config/chromium/Default/Session Storage/MANIFEST-000001
+2024/09/18-18:49:46.339 4 Recovering log #3
+2024/09/18-18:49:46.339 4 Reusing old log /home/yvesd/.config/chromium/Default/Session Storage/000003.log 
+2024/09/19-08:18:45.507 5 Level-0 table #5: started
+2024/09/19-08:18:45.509 5 Level-0 table #5: 86328 bytes OK
+2024/09/19-08:18:45.510 5 Delete type=0 #3
+2024/09/19-08:23:53.044 5 Level-0 table #7: started
+2024/09/19-08:23:53.050 5 Level-0 table #7: 203005 bytes OK
+2024/09/19-08:23:53.054 5 Delete type=0 #4

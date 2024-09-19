@@ -9,8 +9,7 @@
   "spacing": 5,
   "modules-left": [
     "custom/logo",
-    "group/hardware",
-    "hyprland/window"
+    "group/hardware"
   ],
   "modules-center": [
     "hyprland/workspaces"
