@@ -86,7 +86,7 @@
   
   # Shell Enable
   programs.zsh.enable = true;
-
+   
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.yvesd = {
     isNormalUser = true;
@@ -138,7 +138,6 @@
     obs-studio
     vlc
     audacity
-    moonlight-qt
     tailscale
             
     # Zsh

@@ -4,7 +4,8 @@
     electron
     obsidian
     hypridle
-    firefox 
+    firefox
+    moonlight-qt 
   ];
   
   #hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta.overrideAttrs {
