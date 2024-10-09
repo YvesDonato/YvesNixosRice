@@ -179,6 +179,7 @@
     swaynotificationcenter
     brightnessctl
     hyprlock
+    gnome.gnome-disk-utility
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
   

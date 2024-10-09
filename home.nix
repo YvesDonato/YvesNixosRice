@@ -70,6 +70,9 @@
     extraConfig = ''
       monitor=eDP-1,2560x1600@165,0x0,1.6
       monitor=DP-2,3440x1440@144,1600x0,1,bitdepth,10
+      bindl = , switch:on:Lid Switch, exec, hyprctl keyword monitor "eDP-1, disable"
+      bindl = , switch:off:Lid Switch, exec, hyprctl keyword monitor "eDP-1,2560x1600@165,0x0,1.6"
+
       exec-once = waybar & swaync & hypridle
       exec-once = bash ~/.config/hypr/start.sh
       env = HYPRCURSOR_THEME,rose-pine-hyprcursor
@@ -91,18 +94,18 @@
       }
       
       general {
-        gaps_out = 2
-        gaps_in = 2
-        border_size = 0
+        gaps_out = 0
+        gaps_in = 0
+        border_size = 3
                 
-        col.active_border = rgba(595959aa)        
+        col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg        
         col.inactive_border = rgba(595959aa)
         layout = dwindle
       }
       
       decoration {
 
-        rounding = 4
+        rounding = 0
     
         blur {
           enabled = true
@@ -148,8 +151,8 @@
     $mainMod = SUPER
 
     # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-    bind = $mainMod, T, exec, kitty
-    bind = $mainMod SHIFT, T, exec, kitty zellij
+    bind = $mainMod, T, exec, kitty zellij
+    bind = $mainMod SHIFT, T, exec, kitty
     bind = $mainMod, Q, killactive,
     bind = $mainMod, E, exec, nautilus
     bind = $mainMod, W, togglefloating,
