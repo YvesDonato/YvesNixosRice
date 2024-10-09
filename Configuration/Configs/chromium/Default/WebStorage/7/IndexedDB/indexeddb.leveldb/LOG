@@ -1,0 +1,6 @@
+2024/09/19-10:09:44.420 c64 Creating DB /home/yvesd/.config/chromium/Default/WebStorage/7/IndexedDB/indexeddb.leveldb since it was missing.
+2024/09/19-10:09:44.423 c64 Reusing MANIFEST /home/yvesd/.config/chromium/Default/WebStorage/7/IndexedDB/indexeddb.leveldb/MANIFEST-000001
+2024/09/19-10:10:19.388 c57 Level-0 table #5: started
+2024/09/19-10:10:19.390 c57 Level-0 table #5: 9714 bytes OK
+2024/09/19-10:10:19.392 c57 Delete type=0 #3
+2024/09/19-10:10:19.392 c57 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

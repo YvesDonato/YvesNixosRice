@@ -1,6 +1,6 @@
-2024/09/17-15:40:34.161 60f Reusing MANIFEST /home/yvesd/.config/discord/Local Storage/leveldb/MANIFEST-000001
-2024/09/17-15:40:34.168 60f Recovering log #1047
-2024/09/17-15:40:34.169 60f Reusing old log /home/yvesd/.config/discord/Local Storage/leveldb/001047.log 
-2024/09/17-15:43:31.097 610 Level-0 table #1051: started
-2024/09/17-15:43:31.118 610 Level-0 table #1051: 806981 bytes OK
-2024/09/17-15:43:31.120 610 Delete type=0 #1047
+2024/10/03-08:27:29.702 5d1 Reusing MANIFEST /home/yvesd/.config/discord/Local Storage/leveldb/MANIFEST-000001
+2024/10/03-08:27:29.708 5d1 Recovering log #1118
+2024/10/03-08:27:29.708 5d1 Reusing old log /home/yvesd/.config/discord/Local Storage/leveldb/001118.log 
+2024/10/03-08:42:50.662 5d2 Level-0 table #1122: started
+2024/10/03-08:42:50.712 5d2 Level-0 table #1122: 819099 bytes OK
+2024/10/03-08:42:50.714 5d2 Delete type=0 #1118

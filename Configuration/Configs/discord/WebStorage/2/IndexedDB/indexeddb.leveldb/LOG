@@ -1,6 +1,27 @@
-2024/08/30-08:33:49.953 6a8 Creating DB /home/yvesd/.config/discord/WebStorage/2/IndexedDB/indexeddb.leveldb since it was missing.
-2024/08/30-08:33:49.955 6a8 Reusing MANIFEST /home/yvesd/.config/discord/WebStorage/2/IndexedDB/indexeddb.leveldb/MANIFEST-000001
-2024/08/30-10:01:21.409 64e Level-0 table #5: started
-2024/08/30-10:01:21.410 64e Level-0 table #5: 25546 bytes OK
-2024/08/30-10:01:21.411 64e Delete type=0 #3
-2024/08/30-10:01:21.412 64e Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2024/09/30-11:49:52.578 658 Reusing MANIFEST /home/yvesd/.config/discord/WebStorage/2/IndexedDB/indexeddb.leveldb/MANIFEST-000001
+2024/09/30-11:49:52.578 658 Recovering log #7
+2024/09/30-11:49:52.578 658 Reusing old log /home/yvesd/.config/discord/WebStorage/2/IndexedDB/indexeddb.leveldb/000007.log 
+2024/09/30-11:49:52.682 65a Level-0 table #12: started
+2024/09/30-11:49:52.683 65a Level-0 table #12: 836 bytes OK
+2024/09/30-11:49:52.684 65a Delete type=0 #7
+2024/09/30-11:49:52.684 65a Manual compaction at level-0 from '\x00\x02\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x03\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/09/30-11:49:52.684 65a Manual compaction at level-1 from '\x00\x02\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x03\x00\x00\x00' @ 0 : 0; will stop at '\x00\x02\x01\x1f\x04\x03\x01\x03\x00N\x00E\x00W\x03\x00\x00\x00\x00\x00\x00L@\x03\x00ph\xb6\xa1"yB\x00\x03\x00\x00\x00\x00\x00\x00(@' @ 441 : 0
+2024/09/30-11:49:52.684 65a Compacting 1@1 + 1@2 files
+2024/09/30-11:49:52.685 65a Generated table #13@1: 23 keys, 776 bytes
+2024/09/30-11:49:52.685 65a Compacted 1@1 + 1@2 files => 776 bytes
+2024/09/30-11:49:52.686 65a compacted to: files[ 0 0 1 0 0 0 0 ]
+2024/09/30-11:49:52.687 5f9 Manual compaction at level-1 from '\x00\x02\x01\x1f\x04\x03\x01\x03\x00N\x00E\x00W\x03\x00\x00\x00\x00\x00\x00L@\x03\x00ph\xb6\xa1"yB\x00\x03\x00\x00\x00\x00\x00\x00(@' @ 441 : 0 .. '\x00\x03\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/09/30-18:53:09.938 658 Level-0 table #15: started
+2024/09/30-18:53:09.939 658 Level-0 table #15: 23564 bytes OK
+2024/09/30-18:53:09.940 658 Delete type=2 #9
+2024/09/30-18:53:09.940 658 Delete type=0 #11
+2024/09/30-18:53:09.940 658 Delete type=2 #12
+2024/09/30-18:53:09.941 658 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2024/09/30-18:53:09.941 656 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x03\x01\x1f\x04\x03\x01\x03\x00N\x00E\x00W\x03\x00\x00\x00\x00\x00\x00L@\x03\x00\x800':$yB\x00\x03\x00\x00\x00\x00\x00\x00\x10@' @ 579 : 1
+2024/09/30-18:53:09.941 656 Compacting 1@1 + 1@2 files
+2024/09/30-18:53:09.942 656 Generated table #16@1: 42 keys, 1112 bytes
+2024/09/30-18:53:09.942 656 Compacted 1@1 + 1@2 files => 1112 bytes
+2024/09/30-18:53:09.943 656 compacted to: files[ 0 0 1 0 0 0 0 ]
+2024/09/30-18:53:09.943 656 Delete type=2 #15
+2024/09/30-18:53:09.943 656 Delete type=2 #13
+2024/09/30-18:53:09.943 658 Manual compaction at level-1 from '\x00\x03\x01\x1f\x04\x03\x01\x03\x00N\x00E\x00W\x03\x00\x00\x00\x00\x00\x00L@\x03\x00\x800':$yB\x00\x03\x00\x00\x00\x00\x00\x00\x10@' @ 579 : 1 .. (end); will stop at (end)

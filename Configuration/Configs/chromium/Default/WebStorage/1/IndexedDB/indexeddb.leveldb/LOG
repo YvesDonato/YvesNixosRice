@@ -1,2 +1,7 @@
-2024/04/01-19:17:43.684 408a Creating DB /home/yvesd/.config/chromium/Default/WebStorage/1/IndexedDB/indexeddb.leveldb since it was missing.
-2024/04/01-19:17:43.686 408a Reusing MANIFEST /home/yvesd/.config/chromium/Default/WebStorage/1/IndexedDB/indexeddb.leveldb/MANIFEST-000001
+2024/10/08-15:49:49.374 77067 Reusing MANIFEST /home/yvesd/.config/chromium/Default/WebStorage/1/IndexedDB/indexeddb.leveldb/MANIFEST-000001
+2024/10/08-15:49:49.374 77067 Recovering log #3
+2024/10/08-15:49:49.374 77067 Reusing old log /home/yvesd/.config/chromium/Default/WebStorage/1/IndexedDB/indexeddb.leveldb/000003.log 
+2024/10/08-15:49:49.379 77074 Level-0 table #5: started
+2024/10/08-15:49:49.380 77074 Level-0 table #5: 28336 bytes OK
+2024/10/08-15:49:49.381 77074 Delete type=0 #3
+2024/10/08-15:49:49.381 77068 Manual compaction at level-0 from '\x00\x02\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x03\x00\x00\x00' @ 0 : 0; will stop at (end)
