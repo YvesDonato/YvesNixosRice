@@ -6,4 +6,4 @@ waypaper --restore &
 blanket &
 spotify &
 discord &
-echo 80 | tee /sys/class/power_supply/BAT0/charge_control_end_threshold
+hyprlock
