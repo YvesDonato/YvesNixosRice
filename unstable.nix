@@ -5,7 +5,8 @@
     obsidian
     hypridle
     firefox
-    moonlight-qt 
+    moonlight-qt
+    lsp-ai 
   ];
   
   #hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta.overrideAttrs {

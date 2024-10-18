@@ -1,4 +1,3 @@
-
 # Yves Donato's nixos config
 { inputs, config, pkgs, ... }:
 
@@ -39,9 +38,16 @@
     
   # Networking
   networking.hostName = "nixos";
-  
+  systemd.network.wait-online.enable = false;
+  boot.initrd.systemd.network.wait-online.enable = false;
+    
   # Enable networking
   networking.networkmanager.enable = true;
+
+  # Bluetooth
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  services.blueman.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/Toronto";
@@ -139,6 +145,7 @@
     vlc
     audacity
     tailscale
+    blueman
             
     # Zsh
     starship
