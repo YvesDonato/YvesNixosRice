@@ -18338,3 +18338,20 @@
 2024-10-18T21:54:19.200Z [Modules] Host is up to date.
 2024-10-18T21:54:19.201Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
 2024-10-18T21:54:19.237Z [Modules] No module updates available.
+2024-10-18T22:41:36.086Z [Modules] Modules initializing
+2024-10-18T22:41:36.086Z [Modules] Distribution: remote
+2024-10-18T22:41:36.086Z [Modules] Host updates: disabled
+2024-10-18T22:41:36.086Z [Modules] Module updates: enabled
+2024-10-18T22:41:36.086Z [Modules] Module install path: /home/yvesd/.config/discord/0.0.71/modules
+2024-10-18T22:41:36.086Z [Modules] Module installed file path: /home/yvesd/.config/discord/0.0.71/modules/installed.json
+2024-10-18T22:41:36.087Z [Modules] Module download path: /home/yvesd/.config/discord/0.0.71/modules/pending
+2024-10-18T22:41:36.380Z [Modules] No updates to install
+2024-10-18T22:41:36.380Z [Modules] Host is up to date.
+2024-10-18T22:41:36.381Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-10-18T22:41:36.417Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-10-18T22:41:46.422Z [Modules] Host is up to date.
+2024-10-18T22:41:46.423Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-10-18T22:41:46.593Z [Modules] No module updates available.
+2024-10-18T22:41:48.346Z [Modules] Host is up to date.
+2024-10-18T22:41:48.347Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-10-18T22:41:48.349Z [Modules] No module updates available.

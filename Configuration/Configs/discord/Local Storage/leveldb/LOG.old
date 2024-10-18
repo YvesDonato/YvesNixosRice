@@ -1,19 +1,9 @@
-2024/10/17-14:26:34.799 65d Reusing MANIFEST /home/yvesd/.config/discord/Local Storage/leveldb/MANIFEST-000001
-2024/10/17-14:26:34.805 65d Recovering log #1183
-2024/10/17-14:26:34.820 65d Level-0 table #1186: started
-2024/10/17-14:26:34.835 65d Level-0 table #1186: 834424 bytes OK
-2024/10/17-14:26:34.838 65d Delete type=0 #1183
-2024/10/17-14:28:45.417 65e Level-0 table #1189: started
-2024/10/17-14:28:45.435 65e Level-0 table #1189: 2433903 bytes OK
-2024/10/17-14:28:45.436 65e Delete type=0 #1187
-2024/10/17-14:28:45.437 65e Compacting 4@0 + 2@1 files
-2024/10/17-14:28:45.445 65e Generated table #1190@0: 15 keys, 2424982 bytes
-2024/10/17-14:28:45.460 65e Generated table #1191@0: 108 keys, 3144756 bytes
-2024/10/17-14:28:45.461 65e Compacted 4@0 + 2@1 files => 5569738 bytes
-2024/10/17-14:28:45.461 65e compacted to: files[ 0 3 1 0 0 0 0 ]
-2024/10/17-14:28:45.462 65e Delete type=2 #1186
-2024/10/17-14:28:45.462 65e Delete type=2 #1189
-2024/10/17-14:28:45.462 65e Delete type=2 #1184
-2024/10/17-14:28:45.462 65e Delete type=2 #1180
-2024/10/17-14:28:45.462 65e Delete type=2 #1179
-2024/10/17-14:28:45.462 65e Delete type=2 #1182
+2024/10/17-17:04:29.830 640 Reusing MANIFEST /home/yvesd/.config/discord/Local Storage/leveldb/MANIFEST-000001
+2024/10/17-17:04:29.841 640 Recovering log #1188
+2024/10/17-17:04:29.842 640 Reusing old log /home/yvesd/.config/discord/Local Storage/leveldb/001188.log 
+2024/10/17-17:07:32.896 641 Level-0 table #1194: started
+2024/10/17-17:07:32.907 641 Level-0 table #1194: 848270 bytes OK
+2024/10/17-17:07:32.909 641 Delete type=0 #1188
+2024/10/18-15:03:52.309 641 Level-0 table #1196: started
+2024/10/18-15:03:52.310 641 Level-0 table #1196: 30308 bytes OK
+2024/10/18-15:03:52.311 641 Delete type=0 #1193

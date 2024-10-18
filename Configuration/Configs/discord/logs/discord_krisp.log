@@ -4,3 +4,9 @@
 [2024-Oct-17 17:04:45.971 -04:00][ 2765: 2765][warning] Application not signed by Discord, Krisp is not enabled
 [2024-Oct-17 17:04:45.971 -04:00][ 2765: 2765][warning] Failed to setup Krisp module, error code: -3
 [2024-Oct-17 17:04:45.972 -04:00][ 2765: 2765][info ] Krisp SDK initialized
+[2024-Oct-18 18:41:47.606 -04:00][ 2660: 2660][info ] Logging initialized
+[2024-Oct-18 18:41:47.606 -04:00][ 2660: 2660][info ] Initializing krisp SDK...
+[2024-Oct-18 18:41:47.606 -04:00][ 2660: 2660][info ] DoKrispInitialize
+[2024-Oct-18 18:41:47.886 -04:00][ 2660: 2660][warning] Application not signed by Discord, Krisp is not enabled
+[2024-Oct-18 18:41:47.886 -04:00][ 2660: 2660][warning] Failed to setup Krisp module, error code: -3
+[2024-Oct-18 18:41:47.886 -04:00][ 2660: 2660][info ] Krisp SDK initialized
