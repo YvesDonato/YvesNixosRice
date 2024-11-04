@@ -1,0 +1,159 @@
+clear
+reboot
+ls
+cd Nixos
+ls
+hx home.nix
+update
+nixos update
+hx home.nix
+sudo nixos-rebuild switch
+hx home.nix
+sudo nixos-rebuild switch
+hx home.nix
+sudo nixos-rebuild switch
+hx home.nix
+sudo nixos-rebuild switch
+ls
+cd Nixos
+sl
+ls
+cd Configuration/
+ls
+cd Configs/
+ls
+hx home.nix
+sudo nixos-rebuild switch
+cd nushell/
+ls
+hx home.nix
+hx config.nu
+sudo nixos-rebuild switch
+update
+sudo nixos-rebuild switch
+clean
+hx home.nix
+sudo nix-env --delete-generations old; sudo nix-store --gc; sudo nix-collect-garbage -d; sudo nixos-rebuild boot
+sudo nixos-rebuild switch
+hx home.nix
+sudo systemctl restart home-manager-yvesd.service<\n>
+sudo systemctl restart home-manager-yvesd.service
+reboot
+cd Nixos
+ls
+hx home.nix
+Hsudo nixos-rebuild switch
+sudo nixos-rebuild switch
+home-manager switch -b backup<\n>
+ls
+cd Configuration/
+cd -
+ls
+cd Configuration/
+cd -
+hx configuration.nix
+sudo nixos-rebuild switch
+update
+update --help
+ll
+;clean
+clean
+sudo nixos-rebuild switch
+journalctl -xe -u home-manager-yvesd.service<\n>
+clean
+hx configuration.nix
+hx home.nix
+sudo nixos-rebuild switch
+update
+clean
+hx home.nix
+cd Nixos
+ls
+hx home.nix
+update
+nixclean
+cd Nixos
+nixclean
+hx home.nix
+cd Nixos
+hx home.nix
+update
+nixupdate
+scope aliases
+hx home.nix
+clean
+cd Nixos
+hx home.nix
+update
+nixupdate
+scope aliases
+hx home.nix
+hx home.nix
+update
+hx home.nix
+update
+clean
+hxc
+hx
+cd Nixos
+ls
+cd Configuration
+ls
+cd Configs/
+ls
+cd nushell/
+ls
+hx config.nu
+cd -
+ls
+cd nushell/
+ls
+hx config.nu
+cd 
+cd
+l
+ls
+ls -a
+cd .cache/
+ls
+cd starship/
+ls
+hx init.nu
+config nu
+.config/
+ls
+cd nushell/
+ls
+hx config.nu
+hx config.nu.backup
+default
+default config.nu
+cd
+cd Nixos
+ls
+hx home.nix
+update
+hx home.nix
+udate
+update
+cd Niox
+cd Nixos
+ls
+hx configuration.nix
+hx home.nix
+update
+z
+z nixos
+z Nixos
+ls
+hx home.nix
+update
+cd
+cd n
+clean
+cd Nixos
+l
+sls
+ls
+hx configuration.nix
+lazygit

@@ -681,3 +681,76 @@
 2024-10-11 13:35:37 Success.
 2024-10-11 13:35:37 Latest version is 1.6.7
 2024-10-11 13:35:37 App is up to date.
+2024-10-21 23:23:57 Loading main app package /nix/store/l1sh60qmc4zxlwbfrpsvpn3l6q0f0dpn-obsidian-1.6.7/share/obsidian/obsidian.asar
+2024-10-21 23:23:58 Checking for update using Github
+2024-10-21 23:23:58 Success.
+2024-10-21 23:23:58 Latest version is 1.7.4
+2024-10-21 23:23:58 Downloading update from https://github.com/obsidianmd/obsidian-releases/releases/download/v1.7.4/obsidian-1.7.4.asar.gz
+2024-10-21 23:23:59 Loading main app package /nix/store/l1sh60qmc4zxlwbfrpsvpn3l6q0f0dpn-obsidian-1.6.7/share/obsidian/obsidian.asar
+2024-10-21 23:23:59 Verifying hash & signature. Size= 8056043
+2024-10-21 23:23:59 Saving file
+2024-10-21 23:23:59 Checking for update using Github
+2024-10-21 23:23:59 Update complete.
+2024-10-22 04:25:44 Loading updated app package /home/yvesd/.config/obsidian/obsidian-1.7.4.asar
+2024-10-22 04:25:44 Checking for update using Github
+2024-10-22 04:25:45 Success.
+2024-10-22 04:25:45 Latest version is 1.7.4
+2024-10-22 04:25:45 App is up to date.
+2024-10-24 01:19:32 Loading main app package /nix/store/1qxhv5g1sc28n5mw4wzm9wg984qs377f-obsidian-1.7.4/share/obsidian/obsidian.asar
+2024-10-24 01:19:32 Checking for update using Github
+2024-10-24 01:19:32 Success.
+2024-10-24 01:19:32 Latest version is 1.7.4
+2024-10-24 01:19:32 App is up to date.
+2024-10-26 19:21:33 Loading main app package /nix/store/1qxhv5g1sc28n5mw4wzm9wg984qs377f-obsidian-1.7.4/share/obsidian/obsidian.asar
+2024-10-26 19:21:33 Checking for update using Github
+2024-10-26 19:21:34 Success.
+2024-10-26 19:21:34 Latest version is 1.7.4
+2024-10-26 19:21:34 App is up to date.
+2024-10-28 01:35:03 Loading main app package /nix/store/1qxhv5g1sc28n5mw4wzm9wg984qs377f-obsidian-1.7.4/share/obsidian/obsidian.asar
+2024-10-28 01:35:04 Checking for update using Github
+2024-10-28 01:35:04 Success.
+2024-10-28 01:35:04 Latest version is 1.7.4
+2024-10-28 01:35:04 App is up to date.
+2024-10-30 13:49:20 Loading main app package /nix/store/1qxhv5g1sc28n5mw4wzm9wg984qs377f-obsidian-1.7.4/share/obsidian/obsidian.asar
+2024-10-30 13:49:21 Checking for update using Github
+2024-10-30 13:49:21 Success.
+2024-10-30 13:49:21 Latest version is 1.7.4
+2024-10-30 13:49:21 App is up to date.
+2024-10-31 18:52:52 Loading main app package /nix/store/1qxhv5g1sc28n5mw4wzm9wg984qs377f-obsidian-1.7.4/share/obsidian/obsidian.asar
+2024-10-31 18:52:52 Checking for update using Github
+2024-10-31 18:52:53 Success.
+2024-10-31 18:52:53 Latest version is 1.7.4
+2024-10-31 18:52:53 App is up to date.
+2024-10-31 21:42:01 Loading main app package /nix/store/1qxhv5g1sc28n5mw4wzm9wg984qs377f-obsidian-1.7.4/share/obsidian/obsidian.asar
+2024-10-31 21:42:01 Checking for update using Github
+2024-10-31 21:42:02 Success.
+2024-10-31 21:42:02 Latest version is 1.7.4
+2024-10-31 21:42:02 App is up to date.
+2024-11-01 17:29:02 Loading main app package /nix/store/1qxhv5g1sc28n5mw4wzm9wg984qs377f-obsidian-1.7.4/share/obsidian/obsidian.asar
+2024-11-01 17:29:03 Checking for update using Github
+2024-11-01 17:29:03 Success.
+2024-11-01 17:29:03 Latest version is 1.7.4
+2024-11-01 17:29:03 App is up to date.
+2024-11-03 23:22:05 Loading main app package /nix/store/49nxvd3yzgmj07p43906cczfz7j7x2ls-obsidian-1.7.4/share/obsidian/obsidian.asar
+2024-11-03 23:22:05 Checking for update using Github
+2024-11-03 23:22:06 Success.
+2024-11-03 23:22:06 Latest version is 1.7.4
+2024-11-03 23:22:06 App is up to date.
+2024-11-03 23:22:07 Loading main app package /nix/store/49nxvd3yzgmj07p43906cczfz7j7x2ls-obsidian-1.7.4/share/obsidian/obsidian.asar
+2024-11-03 23:22:07 Checking for update using Github
+2024-11-04 00:48:43 Checking for update using Github
+2024-11-04 00:48:43 Success.
+2024-11-04 00:48:43 Latest version is 1.7.4
+2024-11-04 00:48:43 App is up to date.
+2024-11-04 01:48:43 Checking for update using Github
+2024-11-04 01:48:43 Success.
+2024-11-04 01:48:43 Latest version is 1.7.4
+2024-11-04 01:48:43 App is up to date.
+2024-11-04 02:59:44 Checking for update using Github
+2024-11-04 02:59:44 Success.
+2024-11-04 02:59:44 Latest version is 1.7.4
+2024-11-04 02:59:44 App is up to date.
+2024-11-04 14:56:43 Checking for update using Github
+2024-11-04 14:56:43 Success.
+2024-11-04 14:56:43 Latest version is 1.7.4
+2024-11-04 14:56:43 App is up to date.
