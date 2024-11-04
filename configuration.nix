@@ -98,7 +98,7 @@
     isNormalUser = true;
     description = "Yves Donato";
     extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.zsh;
+    shell = pkgs.nushell;
   };
 
   environment.variables = {
@@ -111,6 +111,7 @@
 
   # Home Mangager
   home-manager = {
+    backupFileExtension = "backup";
     extraSpecialArgs = {inherit inputs;};
     users = {
       yvesd = import ./home.nix;
@@ -130,9 +131,12 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  programs.direnv.enable = true;
+ 
   environment.systemPackages = with pkgs; [
     # Programs
     chromium
+    anki
     rofi-wayland
     gnome.nautilus
     pavucontrol
@@ -146,6 +150,7 @@
     audacity
     tailscale
     blueman
+    jan
             
     # Zsh
     starship
@@ -167,19 +172,12 @@
     lsof
     
     # Languages
-    python3
-    clang
-    clang-tools
-    stdenv
-    nodejs
     vscode-langservers-extracted
     nodePackages_latest.typescript-language-server
     nodePackages_latest.bash-language-server
     tailwindcss-language-server
     nil
     omnisharp-roslyn
-    dotnet-sdk
-    cmake
     
     # system
     xwayland

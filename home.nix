@@ -19,31 +19,54 @@
   };
   
   # Program Settings
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
+  # programs.zsh = {
+  #   enable = true;
+  #   enableCompletion = true;
+  #   autosuggestion.enable = true;
+  #   syntaxHighlighting.enable = true;
 
-    shellAliases = {
-      ll = "ls -l";
-      update = "sudo nixos-rebuild switch";
-      clean = " sudo nix-env --delete-generations old; sudo nix-store --gc; sudo nix-collect-garbage -d; sudo nixos-rebuild boot";
-    };
+  #   shellAliases = {
+  #     ll = "ls -l";
+  #     update = "sudo nixos-rebuild switch";
+  #     clean = "sudo nix-env --delete-generations old; sudo nix-store --gc; sudo nix-collect-garbage -d; sudo nixos-rebuild boot";
+  #   };
     
-    history.size = 10000;
-    history.path = "${config.xdg.dataHome}/zsh/history";
-  };
+  #   history.size = 10000;
+  #   history.path = "${config.xdg.dataHome}/zsh/history";
+  # };
   
- dconf = {
+  dconf = {
     enable = true;
     settings = {
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
       };
     };
- };
+   };
+
+  programs.zoxide = {
+    enable = true;
+    enableNushellIntegration = true;
+    options = [
+      "--cmd cd"
+    ];
+  };
   
+  
+  programs.nushell = { 
+    enable = true;
+    # configFile.source = ./.../config.nu;
+    extraConfig = ''
+      $env.config = {
+        show_banner: false,
+      }
+    '';
+    shellAliases = {
+      update = "sudo nixos-rebuild switch";
+      clean = "sudo nix-store --gc;";
+    };
+  };  
+   
   programs.starship = {
     enable = true;
     settings = {
@@ -68,8 +91,9 @@
   wayland.windowManager.hyprland = {
     enable = true;
     extraConfig = ''
-      monitor=eDP-1,2560x1600@165,0x0,1.6
-      monitor=DP-2,3440x1440@144,1600x0,1,bitdepth,10
+      monitor = eDP-1,2560x1600@165,0x0,1.6
+      monitor = DP-2, 3440x1440@143.97, 1600x0, 1
+      monitor = desc:CVT VITURE 0x88888800, 1920x1080@120.00, 1600x0, 1
       bindl = , switch:on:Lid Switch, exec, hyprctl keyword monitor "eDP-1, disable"
       bindl = , switch:off:Lid Switch, exec, hyprctl keyword monitor "eDP-1,2560x1600@165,0x0,1.6"
 
@@ -120,7 +144,7 @@
       }
 
       animations {
-        enabled = true
+        enabled = false
 
         bezier = myBezier, 0.05, 0.9, 0.1, 1.05
 
