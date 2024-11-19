@@ -12,19 +12,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    
     # Hyprland
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
-    
+
     hy3 = {
-      url = "github:outfoxxed/hy3";       
+      url = "github:outfoxxed/hy3?ref=hl0.45.0"; # where {version} is the hyprland release version
       inputs.hyprland.follows = "hyprland";
     };
-        
+    
     # Nix colors
     nix-colors.url = "github:misterio77/nix-colors";
 
@@ -33,7 +33,7 @@
 
     };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-colors, hyprland, hy3, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-colors, hyprland, nixvim, hy3, ... }@inputs:
     let
       # System
       system = "x86_64-linux";
@@ -69,11 +69,27 @@
             inherit pkgs-unstable;
             inherit inputs;
             inherit nix-colors;
-            inherit hy3;
             inherit hyprland;
           };
-          
       };
     };
-  };
+    homeConfigurations = {
+        mee = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = {
+            inherit username; inherit nixvim;
+          };
+          modules = [
+            ./home.nix
+           home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.sharedModules = [
+                nixvim.homeManagerModules.nixvim
+              ];
+            }
+          ];
+        };
+      };
+ };
 }

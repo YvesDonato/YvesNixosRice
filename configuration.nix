@@ -38,7 +38,7 @@
     
   # Networking
   networking.hostName = "nixos";
-  systemd.network.wait-online.enable = false;
+  systemd.services.NetworkManager-wait-online.enable = pkgs.lib.mkForce false;
   boot.initrd.systemd.network.wait-online.enable = false;
     
   # Enable networking
@@ -147,17 +147,14 @@
     libreoffice
     obs-studio
     vlc
-    audacity
     tailscale
     blueman
-    jan
             
     # Zsh
     starship
 
     # Terminal
     helix
-    neovim
     zellij
     git
     neofetch
@@ -170,6 +167,7 @@
     git-credential-manager
     wlr-randr
     lsof
+    joshuto
     
     # Languages
     vscode-langservers-extracted
@@ -178,6 +176,7 @@
     tailwindcss-language-server
     nil
     omnisharp-roslyn
+    nodePackages.eslint
     
     # system
     xwayland

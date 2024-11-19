@@ -1,13 +1,12 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, nixvim, ... }:
 
 {
   home.username = "yvesd";
   home.homeDirectory = "/home/yvesd";
-
+    
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
-  home.packages = [
-  
+  home.packages = [ 
   ];
 
   home.file = {
@@ -17,6 +16,10 @@
   home.sessionVariables = {
   
   };
+
+  imports = [
+    
+  ];
   
   # Program Settings
   # programs.zsh = {
@@ -51,8 +54,7 @@
       "--cmd cd"
     ];
   };
-  
-  
+
   programs.nushell = { 
     enable = true;
     # configFile.source = ./.../config.nu;
@@ -63,7 +65,10 @@
     '';
     shellAliases = {
       update = "sudo nixos-rebuild switch";
-      clean = "sudo nix-store --gc;";
+      clean = "sudo nix-collect-garbage -d";
+      j = "joshuto";
+      c = "cd";
+      h = "hx";
     };
   };  
    
@@ -74,29 +79,24 @@
     };
   };
 
-  programs.neovim = {
-    viAlias = true;
-    vimAlias = true;
+  programs.direnv ={
     enable = true;
-    plugins = with pkgs.vimPlugins; [
-      nvim-lspconfig
-      nvim-treesitter.withAllGrammars
-      plenary-nvim
-      gruvbox-material
-      mini-nvim
-      telescope-nvim
-    ];
+    enableNushellIntegration = true;
+    nix-direnv.enable = true;
   };
-  
+
   wayland.windowManager.hyprland = {
     enable = true;
+    plugins = [
+      # inputs.hy3.packages.x86_64-linux.hy3
+      # inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
+    ];
     extraConfig = ''
-      monitor = eDP-1,2560x1600@165,0x0,1.6
-      monitor = DP-2, 3440x1440@143.97, 1600x0, 1
+      monitor = eDP-1,2560x1600@165,0x0, 1.333333
+      monitor = DP-2, 3440x1440@143.97, 1920x0, 1
       monitor = desc:CVT VITURE 0x88888800, 1920x1080@120.00, 1600x0, 1
       bindl = , switch:on:Lid Switch, exec, hyprctl keyword monitor "eDP-1, disable"
-      bindl = , switch:off:Lid Switch, exec, hyprctl keyword monitor "eDP-1,2560x1600@165,0x0,1.6"
-
+      bindl = , switch:off:Lid Switch, exec, hyprctl keyword monitor "eDP-1,2560x1600@165,0x0,1.333333"
       exec-once = waybar & swaync & hypridle
       exec-once = bash ~/.config/hypr/start.sh
       env = HYPRCURSOR_THEME,rose-pine-hyprcursor
@@ -120,7 +120,7 @@
       general {
         gaps_out = 5
         gaps_in = 2
-        border_size = 3
+        border_size = 2
                 
         col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg        
         col.inactive_border = rgba(595959aa)
@@ -180,7 +180,7 @@
     bind = $mainMod, Q, killactive,
     bind = $mainMod, E, exec, nautilus
     bind = $mainMod, W, togglefloating,
-    bind = $mainMod, G, exec, gitg
+    bind = $mainMod, G, exec, pkill -SIGUSR1 waybar
     bind = $mainMod, A, exec, rofi -show drun -show-icons
 
     # Browser stuff
@@ -199,10 +199,9 @@
     bind = $mainMod, P, exec, grim -g "$(slurp -d)" - | wl-copy
     bind = $mainMod, O, exec, obsidian
 
-    windowrulev2 = workspace 10,DP-2, title:^(Blanket)$
     windowrulev2 = workspace 10,DP-2 title:^(Spotify Premium)$
     windowrulev2 = workspace 9,DP-2 class:^(discord)$
-    
+
     # Move focus with mainMod + arrow keys
     bind = $mainMod, left, movefocus, l
     bind = $mainMod, right, movefocus, r

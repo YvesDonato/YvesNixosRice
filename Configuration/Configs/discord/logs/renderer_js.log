@@ -26605,3 +26605,5 @@ Possible causes: the network is offline, Origin is not allowed by Access-Control
 [2024-11-19 09:13:24.180] [info]  [Spotify] WS Disconnected. Next retry in 60000ms
 [2024-11-19 09:14:24.183] [info]  [Spotify] WS Connecting
 [2024-11-19 09:14:24.564] [info]  [Spotify] WS Disconnected. Next retry in 60000ms
+[2024-11-19 09:15:24.567] [info]  [Spotify] WS Connecting
+[2024-11-19 09:15:24.942] [info]  [Spotify] WS Disconnected. Next retry in 60000ms

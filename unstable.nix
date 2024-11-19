@@ -6,7 +6,10 @@
     hypridle
     firefox
     moonlight-qt
-    lsp-ai 
+    lsp-ai
+    psst
+    audacity
+    shotcut
   ];
   
   #hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta.overrideAttrs {
