@@ -1,4 +1,4 @@
-Yves's Custom Nixos Rice
+Yves's Custom Nixos Rice:
 WM - Hyprland
 Terminal - Kitty
 Shell - NuShell
