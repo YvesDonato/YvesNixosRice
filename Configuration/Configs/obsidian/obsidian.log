@@ -754,3 +754,773 @@
 2024-11-04 14:56:43 Success.
 2024-11-04 14:56:43 Latest version is 1.7.4
 2024-11-04 14:56:43 App is up to date.
+2024-11-05 23:24:44 Loading main app package /nix/store/49nxvd3yzgmj07p43906cczfz7j7x2ls-obsidian-1.7.4/share/obsidian/obsidian.asar
+2024-11-05 23:24:44 Checking for update using Github
+2024-11-05 23:24:44 Success.
+2024-11-05 23:24:44 Latest version is 1.7.5
+2024-11-05 23:24:44 Downloading update from https://github.com/obsidianmd/obsidian-releases/releases/download/v1.7.5/obsidian-1.7.5.asar.gz
+2024-11-05 23:24:45 Verifying hash & signature. Size= 8056498
+2024-11-05 23:24:45 Saving file
+2024-11-05 23:24:45 Update complete.
+2024-11-06 01:23:21 Checking for update using Github
+2024-11-06 01:23:21 Success.
+2024-11-06 01:23:21 Latest version is 1.7.5
+2024-11-06 01:23:21 An update is already downloaded.
+2024-11-06 02:23:21 Checking for update using Github
+2024-11-06 02:23:21 Success.
+2024-11-06 02:23:21 Latest version is 1.7.5
+2024-11-06 02:23:21 An update is already downloaded.
+2024-11-06 03:23:21 Checking for update using Github
+2024-11-06 03:23:21 Success.
+2024-11-06 03:23:21 Latest version is 1.7.5
+2024-11-06 03:23:21 An update is already downloaded.
+2024-11-06 04:23:21 Checking for update using Github
+2024-11-06 04:23:21 Success.
+2024-11-06 04:23:21 Latest version is 1.7.5
+2024-11-06 04:23:21 An update is already downloaded.
+2024-11-06 05:23:21 Checking for update using Github
+2024-11-06 05:23:21 Success.
+2024-11-06 05:23:21 Latest version is 1.7.5
+2024-11-06 05:23:21 An update is already downloaded.
+2024-11-06 06:23:21 Checking for update using Github
+2024-11-06 06:23:21 Success.
+2024-11-06 06:23:21 Latest version is 1.7.5
+2024-11-06 06:23:21 An update is already downloaded.
+2024-11-06 07:23:21 Checking for update using Github
+2024-11-06 07:23:21 Success.
+2024-11-06 07:23:21 Latest version is 1.7.5
+2024-11-06 07:23:21 An update is already downloaded.
+2024-11-06 08:23:21 Checking for update using Github
+2024-11-06 08:23:21 Success.
+2024-11-06 08:23:21 Latest version is 1.7.5
+2024-11-06 08:23:21 An update is already downloaded.
+2024-11-06 09:23:21 Checking for update using Github
+2024-11-06 09:23:22 Success.
+2024-11-06 09:23:22 Latest version is 1.7.5
+2024-11-06 09:23:22 An update is already downloaded.
+2024-11-06 10:23:22 Checking for update using Github
+2024-11-06 10:23:22 Success.
+2024-11-06 10:23:22 Latest version is 1.7.5
+2024-11-06 10:23:22 An update is already downloaded.
+2024-11-06 11:23:22 Checking for update using Github
+2024-11-06 11:23:22 Success.
+2024-11-06 11:23:22 Latest version is 1.7.5
+2024-11-06 11:23:22 An update is already downloaded.
+2024-11-06 12:23:22 Checking for update using Github
+2024-11-06 12:23:22 Success.
+2024-11-06 12:23:22 Latest version is 1.7.5
+2024-11-06 12:23:22 An update is already downloaded.
+2024-11-06 13:23:22 Checking for update using Github
+2024-11-06 13:23:22 Success.
+2024-11-06 13:23:22 Latest version is 1.7.5
+2024-11-06 13:23:22 An update is already downloaded.
+2024-11-06 14:23:22 Checking for update using Github
+2024-11-06 14:23:22 Success.
+2024-11-06 14:23:22 Latest version is 1.7.5
+2024-11-06 14:23:22 An update is already downloaded.
+2024-11-06 15:23:22 Checking for update using Github
+2024-11-06 15:23:22 Success.
+2024-11-06 15:23:22 Latest version is 1.7.5
+2024-11-06 15:23:22 An update is already downloaded.
+2024-11-06 16:23:22 Checking for update using Github
+2024-11-06 16:23:22 Success.
+2024-11-06 16:23:22 Latest version is 1.7.5
+2024-11-06 16:23:22 An update is already downloaded.
+2024-11-06 17:23:22 Checking for update using Github
+2024-11-06 17:23:22 Success.
+2024-11-06 17:23:22 Latest version is 1.7.5
+2024-11-06 17:23:22 An update is already downloaded.
+2024-11-06 18:23:22 Checking for update using Github
+2024-11-06 18:23:22 Success.
+2024-11-06 18:23:22 Latest version is 1.7.5
+2024-11-06 18:23:22 An update is already downloaded.
+2024-11-06 19:23:22 Checking for update using Github
+2024-11-06 19:23:22 Success.
+2024-11-06 19:23:22 Latest version is 1.7.5
+2024-11-06 19:23:22 An update is already downloaded.
+2024-11-06 20:23:22 Checking for update using Github
+2024-11-06 20:23:22 Success.
+2024-11-06 20:23:22 Latest version is 1.7.5
+2024-11-06 20:23:22 An update is already downloaded.
+2024-11-06 21:23:22 Checking for update using Github
+2024-11-06 21:23:22 Success.
+2024-11-06 21:23:22 Latest version is 1.7.5
+2024-11-06 21:23:22 An update is already downloaded.
+2024-11-06 22:23:22 Checking for update using Github
+2024-11-06 22:23:23 Success.
+2024-11-06 22:23:23 Latest version is 1.7.5
+2024-11-06 22:23:23 An update is already downloaded.
+2024-11-06 23:23:22 Checking for update using Github
+2024-11-06 23:23:23 Success.
+2024-11-06 23:23:23 Latest version is 1.7.5
+2024-11-06 23:23:23 An update is already downloaded.
+2024-11-07 00:23:22 Checking for update using Github
+2024-11-07 00:23:23 Success.
+2024-11-07 00:23:23 Latest version is 1.7.5
+2024-11-07 00:23:23 An update is already downloaded.
+2024-11-07 01:23:22 Checking for update using Github
+2024-11-07 01:23:23 Success.
+2024-11-07 01:23:23 Latest version is 1.7.5
+2024-11-07 01:23:23 An update is already downloaded.
+2024-11-07 02:23:23 Checking for update using Github
+2024-11-07 02:23:23 Success.
+2024-11-07 02:23:23 Latest version is 1.7.5
+2024-11-07 02:23:23 An update is already downloaded.
+2024-11-07 03:23:23 Checking for update using Github
+2024-11-07 03:23:23 Success.
+2024-11-07 03:23:23 Latest version is 1.7.5
+2024-11-07 03:23:23 An update is already downloaded.
+2024-11-07 04:23:23 Checking for update using Github
+2024-11-07 04:23:23 Success.
+2024-11-07 04:23:23 Latest version is 1.7.5
+2024-11-07 04:23:23 An update is already downloaded.
+2024-11-07 05:23:23 Checking for update using Github
+2024-11-07 05:23:23 Success.
+2024-11-07 05:23:23 Latest version is 1.7.5
+2024-11-07 05:23:23 An update is already downloaded.
+2024-11-07 06:23:23 Checking for update using Github
+2024-11-07 06:23:23 Success.
+2024-11-07 06:23:23 Latest version is 1.7.5
+2024-11-07 06:23:23 An update is already downloaded.
+2024-11-07 07:23:23 Checking for update using Github
+2024-11-07 07:23:23 Success.
+2024-11-07 07:23:23 Latest version is 1.7.5
+2024-11-07 07:23:23 An update is already downloaded.
+2024-11-07 08:23:23 Checking for update using Github
+2024-11-07 08:23:23 Success.
+2024-11-07 08:23:23 Latest version is 1.7.5
+2024-11-07 08:23:23 An update is already downloaded.
+2024-11-07 09:23:23 Checking for update using Github
+2024-11-07 09:23:23 Success.
+2024-11-07 09:23:23 Latest version is 1.7.5
+2024-11-07 09:23:23 An update is already downloaded.
+2024-11-07 10:23:23 Checking for update using Github
+2024-11-07 10:23:23 Success.
+2024-11-07 10:23:23 Latest version is 1.7.5
+2024-11-07 10:23:23 An update is already downloaded.
+2024-11-07 11:23:23 Checking for update using Github
+2024-11-07 11:23:23 Success.
+2024-11-07 11:23:23 Latest version is 1.7.5
+2024-11-07 11:23:23 An update is already downloaded.
+2024-11-07 19:46:53 Checking for update using Github
+2024-11-07 19:46:53 Success.
+2024-11-07 19:46:53 Latest version is 1.7.5
+2024-11-07 19:46:53 An update is already downloaded.
+2024-11-07 20:46:53 Checking for update using Github
+2024-11-07 20:46:54 Success.
+2024-11-07 20:46:54 Latest version is 1.7.5
+2024-11-07 20:46:54 An update is already downloaded.
+2024-11-07 21:46:54 Checking for update using Github
+2024-11-07 21:46:54 Success.
+2024-11-07 21:46:54 Latest version is 1.7.5
+2024-11-07 21:46:54 An update is already downloaded.
+2024-11-07 22:46:54 Checking for update using Github
+2024-11-07 22:46:54 Success.
+2024-11-07 22:46:54 Latest version is 1.7.5
+2024-11-07 22:46:54 An update is already downloaded.
+2024-11-07 23:46:54 Checking for update using Github
+2024-11-07 23:46:54 Success.
+2024-11-07 23:46:54 Latest version is 1.7.5
+2024-11-07 23:46:54 An update is already downloaded.
+2024-11-08 00:46:54 Checking for update using Github
+2024-11-08 00:46:54 Success.
+2024-11-08 00:46:54 Latest version is 1.7.5
+2024-11-08 00:46:54 An update is already downloaded.
+2024-11-08 01:46:54 Checking for update using Github
+2024-11-08 01:46:54 Success.
+2024-11-08 01:46:54 Latest version is 1.7.5
+2024-11-08 01:46:54 An update is already downloaded.
+2024-11-08 02:46:54 Checking for update using Github
+2024-11-08 02:46:54 Success.
+2024-11-08 02:46:54 Latest version is 1.7.5
+2024-11-08 02:46:54 An update is already downloaded.
+2024-11-08 03:46:54 Checking for update using Github
+2024-11-08 03:46:54 Success.
+2024-11-08 03:46:54 Latest version is 1.7.5
+2024-11-08 03:46:54 An update is already downloaded.
+2024-11-08 04:46:54 Checking for update using Github
+2024-11-08 04:46:54 Success.
+2024-11-08 04:46:54 Latest version is 1.7.5
+2024-11-08 04:46:54 An update is already downloaded.
+2024-11-08 05:46:54 Checking for update using Github
+2024-11-08 05:46:54 Success.
+2024-11-08 05:46:54 Latest version is 1.7.5
+2024-11-08 05:46:54 An update is already downloaded.
+2024-11-08 06:46:54 Checking for update using Github
+2024-11-08 06:46:54 Success.
+2024-11-08 06:46:54 Latest version is 1.7.5
+2024-11-08 06:46:54 An update is already downloaded.
+2024-11-08 07:46:54 Checking for update using Github
+2024-11-08 07:46:54 Success.
+2024-11-08 07:46:54 Latest version is 1.7.5
+2024-11-08 07:46:54 An update is already downloaded.
+2024-11-08 08:46:54 Checking for update using Github
+2024-11-08 08:46:54 Success.
+2024-11-08 08:46:54 Latest version is 1.7.5
+2024-11-08 08:46:54 An update is already downloaded.
+2024-11-08 09:46:54 Checking for update using Github
+2024-11-08 09:46:54 Success.
+2024-11-08 09:46:54 Latest version is 1.7.5
+2024-11-08 09:46:54 An update is already downloaded.
+2024-11-08 10:46:54 Checking for update using Github
+2024-11-08 10:46:54 Success.
+2024-11-08 10:46:54 Latest version is 1.7.5
+2024-11-08 10:46:54 An update is already downloaded.
+2024-11-08 11:46:54 Checking for update using Github
+2024-11-08 11:46:55 Success.
+2024-11-08 11:46:55 Latest version is 1.7.5
+2024-11-08 11:46:55 An update is already downloaded.
+2024-11-08 12:14:33 Loading updated app package /home/yvesd/.config/obsidian/obsidian-1.7.5.asar
+2024-11-08 12:14:33 Checking for update using Github
+2024-11-08 12:46:55 Checking for update using Github
+2024-11-08 12:46:55 Success.
+2024-11-08 12:46:55 Latest version is 1.7.5
+2024-11-08 12:46:55 An update is already downloaded.
+2024-11-08 13:46:55 Checking for update using Github
+2024-11-08 13:46:55 Success.
+2024-11-08 13:46:55 Latest version is 1.7.5
+2024-11-08 13:46:55 An update is already downloaded.
+2024-11-08 14:46:55 Checking for update using Github
+2024-11-08 14:46:55 Success.
+2024-11-08 14:46:55 Latest version is 1.7.5
+2024-11-08 14:46:55 An update is already downloaded.
+2024-11-08 15:46:55 Checking for update using Github
+2024-11-08 15:46:55 Success.
+2024-11-08 15:46:55 Latest version is 1.7.5
+2024-11-08 15:46:55 An update is already downloaded.
+2024-11-08 17:26:59 Checking for update using Github
+2024-11-08 17:26:59 Success.
+2024-11-08 17:26:59 Latest version is 1.7.5
+2024-11-08 17:26:59 An update is already downloaded.
+2024-11-08 18:26:59 Checking for update using Github
+2024-11-08 18:26:59 Success.
+2024-11-08 18:26:59 Latest version is 1.7.5
+2024-11-08 18:26:59 An update is already downloaded.
+2024-11-08 20:01:08 Checking for update using Github
+2024-11-08 20:01:08 Success.
+2024-11-08 20:01:08 Latest version is 1.7.5
+2024-11-08 20:01:08 An update is already downloaded.
+2024-11-08 21:01:08 Checking for update using Github
+2024-11-08 21:01:08 Failed to check for update using Github (net::ERR_NAME_NOT_RESOLVED)
+2024-11-08 21:01:08 Checking for update using obsidian.md
+2024-11-08 21:01:08 Failed to check for update using obsidian.md (net::ERR_NAME_NOT_RESOLVED)
+2024-11-08 22:01:08 Checking for update using Github
+2024-11-08 22:01:08 Failed to check for update using Github (net::ERR_NAME_NOT_RESOLVED)
+2024-11-08 22:01:08 Checking for update using obsidian.md
+2024-11-08 22:01:08 Failed to check for update using obsidian.md (net::ERR_NAME_NOT_RESOLVED)
+2024-11-08 23:01:08 Checking for update using Github
+2024-11-08 23:01:08 Failed to check for update using Github (net::ERR_NAME_NOT_RESOLVED)
+2024-11-08 23:01:08 Checking for update using obsidian.md
+2024-11-08 23:01:08 Failed to check for update using obsidian.md (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 00:01:08 Checking for update using Github
+2024-11-09 00:01:08 Failed to check for update using Github (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 00:01:08 Checking for update using obsidian.md
+2024-11-09 00:01:08 Failed to check for update using obsidian.md (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 01:01:08 Checking for update using Github
+2024-11-09 01:01:08 Failed to check for update using Github (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 01:01:08 Checking for update using obsidian.md
+2024-11-09 01:01:08 Failed to check for update using obsidian.md (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 02:01:08 Checking for update using Github
+2024-11-09 02:01:08 Failed to check for update using Github (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 02:01:08 Checking for update using obsidian.md
+2024-11-09 02:01:08 Failed to check for update using obsidian.md (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 03:01:08 Checking for update using Github
+2024-11-09 03:01:08 Failed to check for update using Github (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 03:01:08 Checking for update using obsidian.md
+2024-11-09 03:01:08 Failed to check for update using obsidian.md (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 04:01:08 Checking for update using Github
+2024-11-09 04:01:08 Failed to check for update using Github (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 04:01:08 Checking for update using obsidian.md
+2024-11-09 04:01:08 Failed to check for update using obsidian.md (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 05:01:09 Checking for update using Github
+2024-11-09 05:01:09 Failed to check for update using Github (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 05:01:09 Checking for update using obsidian.md
+2024-11-09 05:01:09 Failed to check for update using obsidian.md (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 06:01:09 Checking for update using Github
+2024-11-09 06:01:09 Failed to check for update using Github (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 06:01:09 Checking for update using obsidian.md
+2024-11-09 06:01:09 Failed to check for update using obsidian.md (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 07:01:09 Checking for update using Github
+2024-11-09 07:01:09 Failed to check for update using Github (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 07:01:09 Checking for update using obsidian.md
+2024-11-09 07:01:09 Failed to check for update using obsidian.md (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 08:01:09 Checking for update using Github
+2024-11-09 08:01:09 Failed to check for update using Github (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 08:01:09 Checking for update using obsidian.md
+2024-11-09 08:01:09 Failed to check for update using obsidian.md (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 09:01:09 Checking for update using Github
+2024-11-09 09:01:09 Failed to check for update using Github (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 09:01:09 Checking for update using obsidian.md
+2024-11-09 09:01:09 Failed to check for update using obsidian.md (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 10:01:09 Checking for update using Github
+2024-11-09 10:01:09 Failed to check for update using Github (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 10:01:09 Checking for update using obsidian.md
+2024-11-09 10:01:09 Failed to check for update using obsidian.md (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 11:01:09 Checking for update using Github
+2024-11-09 11:01:09 Failed to check for update using Github (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 11:01:09 Checking for update using obsidian.md
+2024-11-09 11:01:09 Failed to check for update using obsidian.md (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 12:01:09 Checking for update using Github
+2024-11-09 12:01:09 Failed to check for update using Github (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 12:01:09 Checking for update using obsidian.md
+2024-11-09 12:01:09 Failed to check for update using obsidian.md (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 13:01:09 Checking for update using Github
+2024-11-09 13:01:09 Failed to check for update using Github (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 13:01:09 Checking for update using obsidian.md
+2024-11-09 13:01:09 Failed to check for update using obsidian.md (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 14:01:09 Checking for update using Github
+2024-11-09 14:01:09 Failed to check for update using Github (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 14:01:09 Checking for update using obsidian.md
+2024-11-09 14:01:09 Failed to check for update using obsidian.md (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 15:01:09 Checking for update using Github
+2024-11-09 15:01:09 Failed to check for update using Github (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 15:01:09 Checking for update using obsidian.md
+2024-11-09 15:01:09 Failed to check for update using obsidian.md (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 16:01:09 Checking for update using Github
+2024-11-09 16:01:09 Failed to check for update using Github (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 16:01:09 Checking for update using obsidian.md
+2024-11-09 16:01:09 Failed to check for update using obsidian.md (net::ERR_NAME_NOT_RESOLVED)
+2024-11-09 17:01:10 Checking for update using Github
+2024-11-09 17:01:10 Success.
+2024-11-09 17:01:10 Latest version is 1.7.5
+2024-11-09 17:01:10 An update is already downloaded.
+2024-11-09 18:01:10 Checking for update using Github
+2024-11-09 18:01:10 Success.
+2024-11-09 18:01:10 Latest version is 1.7.5
+2024-11-09 18:01:10 An update is already downloaded.
+2024-11-09 19:01:10 Checking for update using Github
+2024-11-09 19:01:10 Success.
+2024-11-09 19:01:10 Latest version is 1.7.5
+2024-11-09 19:01:10 An update is already downloaded.
+2024-11-09 20:11:36 Checking for update using Github
+2024-11-09 20:11:36 Success.
+2024-11-09 20:11:36 Latest version is 1.7.5
+2024-11-09 20:11:36 An update is already downloaded.
+2024-11-09 21:11:36 Checking for update using Github
+2024-11-09 21:11:36 Success.
+2024-11-09 21:11:36 Latest version is 1.7.5
+2024-11-09 21:11:36 An update is already downloaded.
+2024-11-09 22:11:36 Checking for update using Github
+2024-11-09 22:11:36 Success.
+2024-11-09 22:11:36 Latest version is 1.7.5
+2024-11-09 22:11:36 An update is already downloaded.
+2024-11-09 23:11:36 Checking for update using Github
+2024-11-09 23:11:37 Success.
+2024-11-09 23:11:37 Latest version is 1.7.5
+2024-11-09 23:11:37 An update is already downloaded.
+2024-11-10 00:11:36 Checking for update using Github
+2024-11-10 00:11:37 Success.
+2024-11-10 00:11:37 Latest version is 1.7.5
+2024-11-10 00:11:37 An update is already downloaded.
+2024-11-10 01:11:37 Checking for update using Github
+2024-11-10 01:11:37 Success.
+2024-11-10 01:11:37 Latest version is 1.7.5
+2024-11-10 01:11:37 An update is already downloaded.
+2024-11-10 02:11:37 Checking for update using Github
+2024-11-10 02:11:37 Success.
+2024-11-10 02:11:37 Latest version is 1.7.5
+2024-11-10 02:11:37 An update is already downloaded.
+2024-11-10 03:11:37 Checking for update using Github
+2024-11-10 03:11:37 Success.
+2024-11-10 03:11:37 Latest version is 1.7.5
+2024-11-10 03:11:37 An update is already downloaded.
+2024-11-10 04:11:37 Checking for update using Github
+2024-11-10 04:11:37 Success.
+2024-11-10 04:11:37 Latest version is 1.7.5
+2024-11-10 04:11:37 An update is already downloaded.
+2024-11-10 05:11:37 Checking for update using Github
+2024-11-10 05:11:37 Success.
+2024-11-10 05:11:37 Latest version is 1.7.5
+2024-11-10 05:11:37 An update is already downloaded.
+2024-11-10 06:11:37 Checking for update using Github
+2024-11-10 06:11:37 Success.
+2024-11-10 06:11:37 Latest version is 1.7.5
+2024-11-10 06:11:37 An update is already downloaded.
+2024-11-10 07:11:37 Checking for update using Github
+2024-11-10 07:11:37 Success.
+2024-11-10 07:11:37 Latest version is 1.7.5
+2024-11-10 07:11:37 An update is already downloaded.
+2024-11-10 08:11:37 Checking for update using Github
+2024-11-10 08:11:37 Success.
+2024-11-10 08:11:37 Latest version is 1.7.5
+2024-11-10 08:11:37 An update is already downloaded.
+2024-11-10 09:11:37 Checking for update using Github
+2024-11-10 09:11:37 Success.
+2024-11-10 09:11:37 Latest version is 1.7.5
+2024-11-10 09:11:37 An update is already downloaded.
+2024-11-10 10:11:37 Checking for update using Github
+2024-11-10 10:11:37 Success.
+2024-11-10 10:11:37 Latest version is 1.7.5
+2024-11-10 10:11:37 An update is already downloaded.
+2024-11-10 11:11:37 Checking for update using Github
+2024-11-10 11:11:37 Success.
+2024-11-10 11:11:37 Latest version is 1.7.5
+2024-11-10 11:11:37 An update is already downloaded.
+2024-11-10 12:11:38 Checking for update using Github
+2024-11-10 12:11:38 Success.
+2024-11-10 12:11:38 Latest version is 1.7.5
+2024-11-10 12:11:38 An update is already downloaded.
+2024-11-10 13:11:38 Checking for update using Github
+2024-11-10 13:11:38 Success.
+2024-11-10 13:11:38 Latest version is 1.7.5
+2024-11-10 13:11:38 An update is already downloaded.
+2024-11-10 14:11:38 Checking for update using Github
+2024-11-10 14:11:38 Success.
+2024-11-10 14:11:38 Latest version is 1.7.5
+2024-11-10 14:11:38 An update is already downloaded.
+2024-11-10 15:11:38 Checking for update using Github
+2024-11-10 15:11:38 Success.
+2024-11-10 15:11:38 Latest version is 1.7.5
+2024-11-10 15:11:38 An update is already downloaded.
+2024-11-10 16:11:38 Checking for update using Github
+2024-11-10 16:11:38 Success.
+2024-11-10 16:11:38 Latest version is 1.7.5
+2024-11-10 16:11:38 An update is already downloaded.
+2024-11-10 17:11:38 Checking for update using Github
+2024-11-10 17:11:38 Success.
+2024-11-10 17:11:38 Latest version is 1.7.5
+2024-11-10 17:11:38 An update is already downloaded.
+2024-11-10 18:11:38 Checking for update using Github
+2024-11-10 18:11:38 Success.
+2024-11-10 18:11:38 Latest version is 1.7.5
+2024-11-10 18:11:38 An update is already downloaded.
+2024-11-10 19:11:38 Checking for update using Github
+2024-11-10 19:11:38 Success.
+2024-11-10 19:11:38 Latest version is 1.7.5
+2024-11-10 19:11:38 An update is already downloaded.
+2024-11-10 20:11:38 Checking for update using Github
+2024-11-10 20:11:38 Success.
+2024-11-10 20:11:38 Latest version is 1.7.5
+2024-11-10 20:11:38 An update is already downloaded.
+2024-11-10 21:11:38 Checking for update using Github
+2024-11-10 21:11:38 Success.
+2024-11-10 21:11:38 Latest version is 1.7.5
+2024-11-10 21:11:38 An update is already downloaded.
+2024-11-10 22:11:38 Checking for update using Github
+2024-11-10 22:11:38 Success.
+2024-11-10 22:11:38 Latest version is 1.7.5
+2024-11-10 22:11:38 An update is already downloaded.
+2024-11-10 23:11:38 Checking for update using Github
+2024-11-10 23:11:38 Success.
+2024-11-10 23:11:38 Latest version is 1.7.5
+2024-11-10 23:11:38 An update is already downloaded.
+2024-11-11 00:11:38 Checking for update using Github
+2024-11-11 00:11:39 Success.
+2024-11-11 00:11:39 Latest version is 1.7.5
+2024-11-11 00:11:39 An update is already downloaded.
+2024-11-11 01:11:39 Checking for update using Github
+2024-11-11 01:11:39 Success.
+2024-11-11 01:11:39 Latest version is 1.7.5
+2024-11-11 01:11:39 An update is already downloaded.
+2024-11-11 02:11:39 Checking for update using Github
+2024-11-11 02:11:39 Success.
+2024-11-11 02:11:39 Latest version is 1.7.5
+2024-11-11 02:11:39 An update is already downloaded.
+2024-11-11 03:11:39 Checking for update using Github
+2024-11-11 03:11:39 Success.
+2024-11-11 03:11:39 Latest version is 1.7.5
+2024-11-11 03:11:39 An update is already downloaded.
+2024-11-11 04:11:39 Checking for update using Github
+2024-11-11 04:11:39 Success.
+2024-11-11 04:11:39 Latest version is 1.7.5
+2024-11-11 04:11:39 An update is already downloaded.
+2024-11-11 05:11:39 Checking for update using Github
+2024-11-11 05:11:39 Success.
+2024-11-11 05:11:39 Latest version is 1.7.5
+2024-11-11 05:11:39 An update is already downloaded.
+2024-11-11 06:11:39 Checking for update using Github
+2024-11-11 06:11:39 Success.
+2024-11-11 06:11:39 Latest version is 1.7.5
+2024-11-11 06:11:39 An update is already downloaded.
+2024-11-11 07:11:39 Checking for update using Github
+2024-11-11 07:11:39 Success.
+2024-11-11 07:11:39 Latest version is 1.7.5
+2024-11-11 07:11:39 An update is already downloaded.
+2024-11-11 08:11:39 Checking for update using Github
+2024-11-11 08:11:39 Success.
+2024-11-11 08:11:39 Latest version is 1.7.5
+2024-11-11 08:11:39 An update is already downloaded.
+2024-11-11 09:11:39 Checking for update using Github
+2024-11-11 09:11:39 Success.
+2024-11-11 09:11:39 Latest version is 1.7.5
+2024-11-11 09:11:39 An update is already downloaded.
+2024-11-11 10:11:39 Checking for update using Github
+2024-11-11 10:11:39 Success.
+2024-11-11 10:11:39 Latest version is 1.7.5
+2024-11-11 10:11:39 An update is already downloaded.
+2024-11-11 11:11:39 Checking for update using Github
+2024-11-11 11:11:39 Success.
+2024-11-11 11:11:39 Latest version is 1.7.5
+2024-11-11 11:11:39 An update is already downloaded.
+2024-11-11 12:11:39 Checking for update using Github
+2024-11-11 12:11:39 Success.
+2024-11-11 12:11:39 Latest version is 1.7.5
+2024-11-11 12:11:39 An update is already downloaded.
+2024-11-11 13:11:40 Checking for update using Github
+2024-11-11 13:11:40 Success.
+2024-11-11 13:11:40 Latest version is 1.7.5
+2024-11-11 13:11:40 An update is already downloaded.
+2024-11-11 14:11:40 Checking for update using Github
+2024-11-11 14:11:40 Success.
+2024-11-11 14:11:40 Latest version is 1.7.5
+2024-11-11 14:11:40 An update is already downloaded.
+2024-11-11 15:11:40 Checking for update using Github
+2024-11-11 15:11:40 Success.
+2024-11-11 15:11:40 Latest version is 1.7.5
+2024-11-11 15:11:40 An update is already downloaded.
+2024-11-12 15:24:05 Loading updated app package /home/yvesd/.config/obsidian/obsidian-1.7.5.asar
+2024-11-12 15:24:05 Checking for update using Github
+2024-11-12 15:24:06 Success.
+2024-11-12 15:24:06 Latest version is 1.7.6
+2024-11-12 15:24:06 Downloading update from https://github.com/obsidianmd/obsidian-releases/releases/download/v1.7.6/obsidian-1.7.6.asar.gz
+2024-11-12 15:24:06 Verifying hash & signature. Size= 8000010
+2024-11-12 15:24:06 Saving file
+2024-11-12 15:24:06 Update complete.
+2024-11-12 16:24:05 Checking for update using Github
+2024-11-12 16:24:05 Success.
+2024-11-12 16:24:05 Latest version is 1.7.6
+2024-11-12 16:24:05 An update is already downloaded.
+2024-11-12 18:32:24 Checking for update using Github
+2024-11-12 18:32:25 Success.
+2024-11-12 18:32:25 Latest version is 1.7.6
+2024-11-12 18:32:25 An update is already downloaded.
+2024-11-12 19:32:25 Checking for update using Github
+2024-11-12 19:32:25 Success.
+2024-11-12 19:32:25 Latest version is 1.7.6
+2024-11-12 19:32:25 An update is already downloaded.
+2024-11-12 20:32:25 Checking for update using Github
+2024-11-12 20:32:25 Success.
+2024-11-12 20:32:25 Latest version is 1.7.6
+2024-11-12 20:32:25 An update is already downloaded.
+2024-11-12 21:32:25 Checking for update using Github
+2024-11-12 21:32:25 Success.
+2024-11-12 21:32:25 Latest version is 1.7.6
+2024-11-12 21:32:25 An update is already downloaded.
+2024-11-12 22:32:25 Checking for update using Github
+2024-11-12 22:32:25 Success.
+2024-11-12 22:32:25 Latest version is 1.7.6
+2024-11-12 22:32:25 An update is already downloaded.
+2024-11-14 17:55:39 Loading updated app package /home/yvesd/.config/obsidian/obsidian-1.7.6.asar
+2024-11-14 17:55:39 Checking for update using Github
+2024-11-14 17:55:39 Success.
+2024-11-14 17:55:39 Latest version is 1.7.6
+2024-11-14 17:55:39 App is up to date.
+2024-11-14 17:55:41 Loading updated app package /home/yvesd/.config/obsidian/obsidian-1.7.6.asar
+2024-11-14 17:55:41 Checking for update using Github
+2024-11-15 12:46:36 Loading updated app package /home/yvesd/.config/obsidian/obsidian-1.7.6.asar
+2024-11-15 12:46:36 Checking for update using Github
+2024-11-15 12:46:36 Success.
+2024-11-15 12:46:36 Latest version is 1.7.6
+2024-11-15 12:46:36 App is up to date.
+2024-11-15 13:46:35 Checking for update using Github
+2024-11-15 13:46:35 Success.
+2024-11-15 13:46:35 Latest version is 1.7.6
+2024-11-15 13:46:35 App is up to date.
+2024-11-15 14:46:35 Checking for update using Github
+2024-11-15 14:46:35 Success.
+2024-11-15 14:46:35 Latest version is 1.7.6
+2024-11-15 14:46:35 App is up to date.
+2024-11-15 16:30:23 Checking for update using Github
+2024-11-15 16:30:23 Success.
+2024-11-15 16:30:23 Latest version is 1.7.6
+2024-11-15 16:30:23 App is up to date.
+2024-11-15 17:57:08 Checking for update using Github
+2024-11-15 17:57:08 Success.
+2024-11-15 17:57:08 Latest version is 1.7.6
+2024-11-15 17:57:08 App is up to date.
+2024-11-15 18:57:08 Checking for update using Github
+2024-11-15 18:57:08 Success.
+2024-11-15 18:57:08 Latest version is 1.7.6
+2024-11-15 18:57:08 App is up to date.
+2024-11-15 20:21:38 Checking for update using Github
+2024-11-15 20:21:38 Success.
+2024-11-15 20:21:38 Latest version is 1.7.6
+2024-11-15 20:21:38 App is up to date.
+2024-11-15 21:21:38 Checking for update using Github
+2024-11-15 21:21:38 Success.
+2024-11-15 21:21:38 Latest version is 1.7.6
+2024-11-15 21:21:38 App is up to date.
+2024-11-15 22:21:38 Checking for update using Github
+2024-11-15 22:21:38 Success.
+2024-11-15 22:21:38 Latest version is 1.7.6
+2024-11-15 22:21:38 App is up to date.
+2024-11-15 23:21:38 Checking for update using Github
+2024-11-15 23:21:38 Success.
+2024-11-15 23:21:38 Latest version is 1.7.6
+2024-11-15 23:21:38 App is up to date.
+2024-11-16 00:21:38 Checking for update using Github
+2024-11-16 00:21:38 Success.
+2024-11-16 00:21:38 Latest version is 1.7.6
+2024-11-16 00:21:38 App is up to date.
+2024-11-16 20:35:02 Checking for update using Github
+2024-11-16 20:35:02 Success.
+2024-11-16 20:35:02 Latest version is 1.7.6
+2024-11-16 20:35:02 App is up to date.
+2024-11-16 21:35:02 Checking for update using Github
+2024-11-16 21:35:02 Success.
+2024-11-16 21:35:02 Latest version is 1.7.6
+2024-11-16 21:35:02 App is up to date.
+2024-11-16 22:35:02 Checking for update using Github
+2024-11-16 22:35:02 Success.
+2024-11-16 22:35:02 Latest version is 1.7.6
+2024-11-16 22:35:02 App is up to date.
+2024-11-17 00:10:16 Checking for update using Github
+2024-11-17 00:10:17 Success.
+2024-11-17 00:10:17 Latest version is 1.7.6
+2024-11-17 00:10:17 App is up to date.
+2024-11-17 01:10:17 Checking for update using Github
+2024-11-17 01:10:17 Success.
+2024-11-17 01:10:17 Latest version is 1.7.6
+2024-11-17 01:10:17 App is up to date.
+2024-11-17 02:10:17 Checking for update using Github
+2024-11-17 02:10:17 Success.
+2024-11-17 02:10:17 Latest version is 1.7.6
+2024-11-17 02:10:17 App is up to date.
+2024-11-17 03:10:17 Checking for update using Github
+2024-11-17 03:10:17 Success.
+2024-11-17 03:10:17 Latest version is 1.7.6
+2024-11-17 03:10:17 App is up to date.
+2024-11-17 04:10:17 Checking for update using Github
+2024-11-17 04:10:17 Success.
+2024-11-17 04:10:17 Latest version is 1.7.6
+2024-11-17 04:10:17 App is up to date.
+2024-11-17 05:10:17 Checking for update using Github
+2024-11-17 05:10:17 Success.
+2024-11-17 05:10:17 Latest version is 1.7.6
+2024-11-17 05:10:17 App is up to date.
+2024-11-17 06:10:17 Checking for update using Github
+2024-11-17 06:10:17 Success.
+2024-11-17 06:10:17 Latest version is 1.7.6
+2024-11-17 06:10:17 App is up to date.
+2024-11-17 07:10:17 Checking for update using Github
+2024-11-17 07:10:17 Success.
+2024-11-17 07:10:17 Latest version is 1.7.6
+2024-11-17 07:10:17 App is up to date.
+2024-11-17 08:10:17 Checking for update using Github
+2024-11-17 08:10:17 Success.
+2024-11-17 08:10:17 Latest version is 1.7.6
+2024-11-17 08:10:17 App is up to date.
+2024-11-17 09:10:17 Checking for update using Github
+2024-11-17 09:10:17 Success.
+2024-11-17 09:10:17 Latest version is 1.7.6
+2024-11-17 09:10:17 App is up to date.
+2024-11-17 10:10:17 Checking for update using Github
+2024-11-17 10:10:18 Success.
+2024-11-17 10:10:18 Latest version is 1.7.6
+2024-11-17 10:10:18 App is up to date.
+2024-11-17 11:10:18 Checking for update using Github
+2024-11-17 11:10:18 Success.
+2024-11-17 11:10:18 Latest version is 1.7.6
+2024-11-17 11:10:18 App is up to date.
+2024-11-17 12:10:18 Checking for update using Github
+2024-11-17 12:10:18 Success.
+2024-11-17 12:10:18 Latest version is 1.7.6
+2024-11-17 12:10:18 App is up to date.
+2024-11-17 13:10:18 Checking for update using Github
+2024-11-17 13:10:18 Success.
+2024-11-17 13:10:18 Latest version is 1.7.6
+2024-11-17 13:10:18 App is up to date.
+2024-11-17 14:10:18 Checking for update using Github
+2024-11-17 14:10:18 Success.
+2024-11-17 14:10:18 Latest version is 1.7.6
+2024-11-17 14:10:18 App is up to date.
+2024-11-17 15:10:18 Checking for update using Github
+2024-11-17 15:10:18 Success.
+2024-11-17 15:10:18 Latest version is 1.7.6
+2024-11-17 15:10:18 App is up to date.
+2024-11-17 16:10:18 Checking for update using Github
+2024-11-17 16:10:18 Success.
+2024-11-17 16:10:18 Latest version is 1.7.6
+2024-11-17 16:10:18 App is up to date.
+2024-11-17 17:10:18 Checking for update using Github
+2024-11-17 17:10:18 Success.
+2024-11-17 17:10:18 Latest version is 1.7.6
+2024-11-17 17:10:18 App is up to date.
+2024-11-17 18:10:18 Checking for update using Github
+2024-11-17 18:10:18 Success.
+2024-11-17 18:10:18 Latest version is 1.7.6
+2024-11-17 18:10:18 App is up to date.
+2024-11-17 19:10:18 Checking for update using Github
+2024-11-17 19:10:18 Success.
+2024-11-17 19:10:18 Latest version is 1.7.6
+2024-11-17 19:10:18 App is up to date.
+2024-11-17 20:10:18 Checking for update using Github
+2024-11-17 20:10:18 Success.
+2024-11-17 20:10:18 Latest version is 1.7.6
+2024-11-17 20:10:18 App is up to date.
+2024-11-17 21:10:18 Checking for update using Github
+2024-11-17 21:10:18 Success.
+2024-11-17 21:10:18 Latest version is 1.7.6
+2024-11-17 21:10:18 App is up to date.
+2024-11-17 22:10:18 Checking for update using Github
+2024-11-17 22:10:18 Success.
+2024-11-17 22:10:18 Latest version is 1.7.6
+2024-11-17 22:10:18 App is up to date.
+2024-11-17 23:10:18 Checking for update using Github
+2024-11-17 23:10:18 Success.
+2024-11-17 23:10:18 Latest version is 1.7.6
+2024-11-17 23:10:18 App is up to date.
+2024-11-18 00:10:18 Checking for update using Github
+2024-11-18 00:10:18 Success.
+2024-11-18 00:10:18 Latest version is 1.7.6
+2024-11-18 00:10:18 App is up to date.
+2024-11-18 01:10:18 Checking for update using Github
+2024-11-18 01:10:19 Success.
+2024-11-18 01:10:19 Latest version is 1.7.6
+2024-11-18 01:10:19 App is up to date.
+2024-11-18 02:10:19 Checking for update using Github
+2024-11-18 02:10:19 Success.
+2024-11-18 02:10:19 Latest version is 1.7.6
+2024-11-18 02:10:19 App is up to date.
+2024-11-18 03:10:19 Checking for update using Github
+2024-11-18 03:10:19 Success.
+2024-11-18 03:10:19 Latest version is 1.7.6
+2024-11-18 03:10:19 App is up to date.
+2024-11-18 04:10:19 Checking for update using Github
+2024-11-18 04:10:19 Success.
+2024-11-18 04:10:19 Latest version is 1.7.6
+2024-11-18 04:10:19 App is up to date.
+2024-11-18 05:10:19 Checking for update using Github
+2024-11-18 05:10:19 Success.
+2024-11-18 05:10:19 Latest version is 1.7.6
+2024-11-18 05:10:19 App is up to date.
+2024-11-18 06:10:19 Checking for update using Github
+2024-11-18 06:10:19 Success.
+2024-11-18 06:10:19 Latest version is 1.7.6
+2024-11-18 06:10:19 App is up to date.
+2024-11-18 07:10:19 Checking for update using Github
+2024-11-18 07:10:19 Success.
+2024-11-18 07:10:19 Latest version is 1.7.6
+2024-11-18 07:10:19 App is up to date.
+2024-11-18 08:10:19 Checking for update using Github
+2024-11-18 08:10:19 Success.
+2024-11-18 08:10:19 Latest version is 1.7.6
+2024-11-18 08:10:19 App is up to date.
+2024-11-18 09:10:19 Checking for update using Github
+2024-11-18 09:10:19 Success.
+2024-11-18 09:10:19 Latest version is 1.7.6
+2024-11-18 09:10:19 App is up to date.
+2024-11-18 10:10:19 Checking for update using Github
+2024-11-18 10:10:19 Success.
+2024-11-18 10:10:19 Latest version is 1.7.6
+2024-11-18 10:10:19 App is up to date.
+2024-11-18 11:10:19 Checking for update using Github
+2024-11-18 11:10:19 Success.
+2024-11-18 11:10:19 Latest version is 1.7.6
+2024-11-18 11:10:19 App is up to date.
+2024-11-18 12:10:19 Checking for update using Github
+2024-11-18 12:10:19 Success.
+2024-11-18 12:10:19 Latest version is 1.7.6
+2024-11-18 12:10:19 App is up to date.
+2024-11-18 13:10:19 Checking for update using Github
+2024-11-18 13:10:19 Success.
+2024-11-18 13:10:19 Latest version is 1.7.6
+2024-11-18 13:10:19 App is up to date.
+2024-11-18 14:10:19 Checking for update using Github
+2024-11-18 14:10:20 Success.
+2024-11-18 14:10:20 Latest version is 1.7.6
+2024-11-18 14:10:20 App is up to date.
+2024-11-18 15:10:20 Checking for update using Github
+2024-11-18 15:10:20 Success.
+2024-11-18 15:10:20 Latest version is 1.7.6
+2024-11-18 15:10:20 App is up to date.

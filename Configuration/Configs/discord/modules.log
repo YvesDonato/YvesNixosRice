@@ -19984,3 +19984,1761 @@
 2024-11-04T23:05:22.896Z [Modules] Host is up to date.
 2024-11-04T23:05:22.897Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
 2024-11-04T23:05:22.898Z [Modules] No module updates available.
+2024-11-05T00:05:22.899Z [Modules] Host is up to date.
+2024-11-05T00:05:22.899Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T00:05:22.954Z [Modules] No module updates available.
+2024-11-05T01:05:22.900Z [Modules] Host is up to date.
+2024-11-05T01:05:22.900Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T01:05:22.967Z [Modules] No module updates available.
+2024-11-05T02:05:22.899Z [Modules] Host is up to date.
+2024-11-05T02:05:22.899Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T02:05:22.961Z [Modules] No module updates available.
+2024-11-05T03:05:22.897Z [Modules] Host is up to date.
+2024-11-05T03:05:22.897Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T03:05:22.953Z [Modules] No module updates available.
+2024-11-05T04:05:22.899Z [Modules] Host is up to date.
+2024-11-05T04:05:22.899Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T04:05:22.966Z [Modules] No module updates available.
+2024-11-05T05:05:22.899Z [Modules] Host is up to date.
+2024-11-05T05:05:22.899Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T05:05:22.973Z [Modules] No module updates available.
+2024-11-05T06:05:22.900Z [Modules] Host is up to date.
+2024-11-05T06:05:22.900Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T06:05:22.962Z [Modules] No module updates available.
+2024-11-05T07:05:22.901Z [Modules] Host is up to date.
+2024-11-05T07:05:22.901Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T07:05:22.960Z [Modules] No module updates available.
+2024-11-05T08:05:22.897Z [Modules] Host is up to date.
+2024-11-05T08:05:22.897Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T08:05:22.954Z [Modules] No module updates available.
+2024-11-05T09:05:22.898Z [Modules] Host is up to date.
+2024-11-05T09:05:22.898Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T09:05:22.956Z [Modules] No module updates available.
+2024-11-05T10:05:22.898Z [Modules] Host is up to date.
+2024-11-05T10:05:22.898Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T10:05:22.952Z [Modules] No module updates available.
+2024-11-05T11:05:22.897Z [Modules] Host is up to date.
+2024-11-05T11:05:22.897Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T11:05:22.950Z [Modules] No module updates available.
+2024-11-05T12:05:22.897Z [Modules] Host is up to date.
+2024-11-05T12:05:22.897Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T12:05:22.948Z [Modules] No module updates available.
+2024-11-05T13:05:22.897Z [Modules] Host is up to date.
+2024-11-05T13:05:22.897Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T13:05:22.982Z [Modules] No module updates available.
+2024-11-05T14:05:22.897Z [Modules] Host is up to date.
+2024-11-05T14:05:22.897Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T14:05:22.965Z [Modules] No module updates available.
+2024-11-05T14:59:13.560Z [Modules] Modules initializing
+2024-11-05T14:59:13.560Z [Modules] Distribution: remote
+2024-11-05T14:59:13.560Z [Modules] Host updates: disabled
+2024-11-05T14:59:13.560Z [Modules] Module updates: enabled
+2024-11-05T14:59:13.560Z [Modules] Module install path: /home/yvesd/.config/discord/0.0.72/modules
+2024-11-05T14:59:13.560Z [Modules] Module installed file path: /home/yvesd/.config/discord/0.0.72/modules/installed.json
+2024-11-05T14:59:13.560Z [Modules] Module download path: /home/yvesd/.config/discord/0.0.72/modules/pending
+2024-11-05T14:59:13.786Z [Modules] No updates to install
+2024-11-05T14:59:13.786Z [Modules] Host is up to date.
+2024-11-05T14:59:13.786Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T14:59:13.945Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-05T14:59:23.951Z [Modules] Host is up to date.
+2024-11-05T14:59:23.951Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T14:59:24.146Z [Modules] No module updates available.
+2024-11-05T14:59:25.605Z [Modules] Host is up to date.
+2024-11-05T14:59:25.605Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T14:59:25.608Z [Modules] No module updates available.
+2024-11-05T15:25:06.818Z [Modules] Modules initializing
+2024-11-05T15:25:06.818Z [Modules] Distribution: remote
+2024-11-05T15:25:06.818Z [Modules] Host updates: disabled
+2024-11-05T15:25:06.819Z [Modules] Module updates: enabled
+2024-11-05T15:25:06.819Z [Modules] Module install path: /home/yvesd/.config/discord/0.0.72/modules
+2024-11-05T15:25:06.819Z [Modules] Module installed file path: /home/yvesd/.config/discord/0.0.72/modules/installed.json
+2024-11-05T15:25:06.819Z [Modules] Module download path: /home/yvesd/.config/discord/0.0.72/modules/pending
+2024-11-05T15:25:07.083Z [Modules] No updates to install
+2024-11-05T15:25:07.084Z [Modules] Host is up to date.
+2024-11-05T15:25:07.084Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T15:25:07.117Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-05T15:25:17.123Z [Modules] Host is up to date.
+2024-11-05T15:25:17.123Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T15:25:17.309Z [Modules] No module updates available.
+2024-11-05T15:25:18.670Z [Modules] Host is up to date.
+2024-11-05T15:25:18.670Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T15:25:18.673Z [Modules] No module updates available.
+2024-11-05T16:25:18.673Z [Modules] Host is up to date.
+2024-11-05T16:25:18.673Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T16:25:18.730Z [Modules] No module updates available.
+2024-11-05T17:25:18.673Z [Modules] Host is up to date.
+2024-11-05T17:25:18.673Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T17:25:18.743Z [Modules] No module updates available.
+2024-11-05T18:25:18.670Z [Modules] Host is up to date.
+2024-11-05T18:25:18.670Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T18:25:18.711Z [Modules] No module updates available.
+2024-11-05T18:35:17.497Z [Modules] Modules initializing
+2024-11-05T18:35:17.497Z [Modules] Distribution: remote
+2024-11-05T18:35:17.498Z [Modules] Host updates: disabled
+2024-11-05T18:35:17.498Z [Modules] Module updates: enabled
+2024-11-05T18:35:17.498Z [Modules] Module install path: /home/yvesd/.config/discord/0.0.72/modules
+2024-11-05T18:35:17.498Z [Modules] Module installed file path: /home/yvesd/.config/discord/0.0.72/modules/installed.json
+2024-11-05T18:35:17.498Z [Modules] Module download path: /home/yvesd/.config/discord/0.0.72/modules/pending
+2024-11-05T18:35:17.761Z [Modules] No updates to install
+2024-11-05T18:35:17.761Z [Modules] Host is up to date.
+2024-11-05T18:35:17.761Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T18:35:17.794Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-05T18:35:27.799Z [Modules] Host is up to date.
+2024-11-05T18:35:27.800Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T18:35:27.979Z [Modules] No module updates available.
+2024-11-05T18:35:29.363Z [Modules] Host is up to date.
+2024-11-05T18:35:29.363Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T18:35:29.365Z [Modules] No module updates available.
+2024-11-05T19:35:29.924Z [Modules] Host is up to date.
+2024-11-05T19:35:29.924Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T19:35:29.985Z [Modules] No module updates available.
+2024-11-05T20:35:29.921Z [Modules] Host is up to date.
+2024-11-05T20:35:29.921Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T20:35:29.986Z [Modules] No module updates available.
+2024-11-05T21:35:29.921Z [Modules] Host is up to date.
+2024-11-05T21:35:29.921Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T21:35:29.976Z [Modules] No module updates available.
+2024-11-05T22:38:09.276Z [Modules] Host is up to date.
+2024-11-05T22:38:09.276Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T22:38:09.332Z [Modules] No module updates available.
+2024-11-05T23:38:09.273Z [Modules] Host is up to date.
+2024-11-05T23:38:09.273Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-05T23:38:09.333Z [Modules] No module updates available.
+2024-11-06T00:42:45.452Z [Modules] Host is up to date.
+2024-11-06T00:42:45.453Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-06T00:42:45.526Z [Modules] No module updates available.
+2024-11-06T01:42:45.452Z [Modules] Host is up to date.
+2024-11-06T01:42:45.452Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-06T01:42:45.509Z [Modules] No module updates available.
+2024-11-06T02:42:45.450Z [Modules] Host is up to date.
+2024-11-06T02:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-06T02:42:45.515Z [Modules] No module updates available.
+2024-11-06T03:42:45.450Z [Modules] Host is up to date.
+2024-11-06T03:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-06T03:42:45.509Z [Modules] No module updates available.
+2024-11-06T04:42:45.450Z [Modules] Host is up to date.
+2024-11-06T04:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-06T04:42:45.504Z [Modules] No module updates available.
+2024-11-06T05:42:45.452Z [Modules] Host is up to date.
+2024-11-06T05:42:45.452Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-06T05:42:45.505Z [Modules] No module updates available.
+2024-11-06T06:42:45.450Z [Modules] Host is up to date.
+2024-11-06T06:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-06T06:42:45.509Z [Modules] No module updates available.
+2024-11-06T07:42:45.450Z [Modules] Host is up to date.
+2024-11-06T07:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-06T07:42:45.494Z [Modules] No module updates available.
+2024-11-06T08:42:45.450Z [Modules] Host is up to date.
+2024-11-06T08:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-06T08:42:45.541Z [Modules] No module updates available.
+2024-11-06T09:42:45.450Z [Modules] Host is up to date.
+2024-11-06T09:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-06T09:42:45.505Z [Modules] No module updates available.
+2024-11-06T10:42:45.450Z [Modules] Host is up to date.
+2024-11-06T10:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-06T10:42:45.501Z [Modules] No module updates available.
+2024-11-06T11:42:45.450Z [Modules] Host is up to date.
+2024-11-06T11:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-06T11:42:45.513Z [Modules] No module updates available.
+2024-11-06T12:42:45.450Z [Modules] Host is up to date.
+2024-11-06T12:42:45.451Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-06T12:42:45.508Z [Modules] No module updates available.
+2024-11-06T13:42:45.449Z [Modules] Host is up to date.
+2024-11-06T13:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-06T13:42:45.503Z [Modules] No module updates available.
+2024-11-06T14:42:45.450Z [Modules] Host is up to date.
+2024-11-06T14:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-06T14:42:45.485Z [Modules] No module updates available.
+2024-11-06T15:42:45.450Z [Modules] Host is up to date.
+2024-11-06T15:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-06T15:42:45.481Z [Modules] No module updates available.
+2024-11-06T16:42:45.450Z [Modules] Host is up to date.
+2024-11-06T16:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-06T16:42:45.537Z [Modules] No module updates available.
+2024-11-06T17:42:45.450Z [Modules] Host is up to date.
+2024-11-06T17:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-06T17:42:45.492Z [Modules] No module updates available.
+2024-11-06T18:42:45.450Z [Modules] Host is up to date.
+2024-11-06T18:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-06T18:42:45.478Z [Modules] No module updates available.
+2024-11-06T19:42:45.450Z [Modules] Host is up to date.
+2024-11-06T19:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-06T19:42:45.484Z [Modules] No module updates available.
+2024-11-06T20:42:45.450Z [Modules] Host is up to date.
+2024-11-06T20:42:45.451Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-06T20:42:45.522Z [Modules] No module updates available.
+2024-11-06T21:42:45.450Z [Modules] Host is up to date.
+2024-11-06T21:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-06T21:42:45.513Z [Modules] No module updates available.
+2024-11-06T22:42:45.450Z [Modules] Host is up to date.
+2024-11-06T22:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-06T22:42:45.503Z [Modules] No module updates available.
+2024-11-06T23:42:45.450Z [Modules] Host is up to date.
+2024-11-06T23:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-06T23:42:45.510Z [Modules] No module updates available.
+2024-11-07T00:42:45.450Z [Modules] Host is up to date.
+2024-11-07T00:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-07T00:42:45.506Z [Modules] No module updates available.
+2024-11-07T01:42:45.451Z [Modules] Host is up to date.
+2024-11-07T01:42:45.451Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-07T01:42:45.487Z [Modules] No module updates available.
+2024-11-07T02:42:45.450Z [Modules] Host is up to date.
+2024-11-07T02:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-07T02:42:45.505Z [Modules] No module updates available.
+2024-11-07T03:42:45.451Z [Modules] Host is up to date.
+2024-11-07T03:42:45.451Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-07T03:42:45.513Z [Modules] No module updates available.
+2024-11-07T04:42:45.450Z [Modules] Host is up to date.
+2024-11-07T04:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-07T04:42:45.506Z [Modules] No module updates available.
+2024-11-07T05:42:45.450Z [Modules] Host is up to date.
+2024-11-07T05:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-07T05:42:45.503Z [Modules] No module updates available.
+2024-11-07T06:42:45.450Z [Modules] Host is up to date.
+2024-11-07T06:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-07T06:42:45.501Z [Modules] No module updates available.
+2024-11-07T07:42:45.450Z [Modules] Host is up to date.
+2024-11-07T07:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-07T07:42:45.507Z [Modules] No module updates available.
+2024-11-07T08:42:45.450Z [Modules] Host is up to date.
+2024-11-07T08:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-07T08:42:45.514Z [Modules] No module updates available.
+2024-11-07T09:42:45.450Z [Modules] Host is up to date.
+2024-11-07T09:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-07T09:42:45.512Z [Modules] No module updates available.
+2024-11-07T10:42:45.450Z [Modules] Host is up to date.
+2024-11-07T10:42:45.450Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-07T10:42:45.503Z [Modules] No module updates available.
+2024-11-07T14:44:11.115Z [Modules] Host is up to date.
+2024-11-07T14:44:11.115Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-07T14:44:11.156Z [Modules] No module updates available.
+2024-11-07T19:07:40.208Z [Modules] Host is up to date.
+2024-11-07T19:07:40.208Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-07T19:07:40.273Z [Modules] No module updates available.
+2024-11-07T20:07:40.207Z [Modules] Host is up to date.
+2024-11-07T20:07:40.208Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-07T20:07:40.267Z [Modules] No module updates available.
+2024-11-07T21:07:40.208Z [Modules] Host is up to date.
+2024-11-07T21:07:40.208Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-07T21:07:40.262Z [Modules] No module updates available.
+2024-11-07T22:07:40.207Z [Modules] Host is up to date.
+2024-11-07T22:07:40.208Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-07T22:07:40.274Z [Modules] No module updates available.
+2024-11-07T23:07:40.208Z [Modules] Host is up to date.
+2024-11-07T23:07:40.208Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-07T23:07:40.244Z [Modules] No module updates available.
+2024-11-08T00:07:40.208Z [Modules] Host is up to date.
+2024-11-08T00:07:40.208Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-08T00:07:40.246Z [Modules] No module updates available.
+2024-11-08T01:07:40.208Z [Modules] Host is up to date.
+2024-11-08T01:07:40.208Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-08T01:07:40.268Z [Modules] No module updates available.
+2024-11-08T02:07:40.208Z [Modules] Host is up to date.
+2024-11-08T02:07:40.208Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-08T02:07:40.251Z [Modules] No module updates available.
+2024-11-08T03:07:40.208Z [Modules] Host is up to date.
+2024-11-08T03:07:40.208Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-08T03:07:40.270Z [Modules] No module updates available.
+2024-11-08T04:07:40.208Z [Modules] Host is up to date.
+2024-11-08T04:07:40.208Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-08T04:07:40.264Z [Modules] No module updates available.
+2024-11-08T05:07:40.208Z [Modules] Host is up to date.
+2024-11-08T05:07:40.208Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-08T05:07:40.273Z [Modules] No module updates available.
+2024-11-08T06:07:40.208Z [Modules] Host is up to date.
+2024-11-08T06:07:40.208Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-08T06:07:40.262Z [Modules] No module updates available.
+2024-11-08T07:07:40.208Z [Modules] Host is up to date.
+2024-11-08T07:07:40.208Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-08T07:07:40.261Z [Modules] No module updates available.
+2024-11-08T08:07:40.208Z [Modules] Host is up to date.
+2024-11-08T08:07:40.208Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-08T08:07:40.267Z [Modules] No module updates available.
+2024-11-08T09:07:40.208Z [Modules] Host is up to date.
+2024-11-08T09:07:40.208Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-08T09:07:40.263Z [Modules] No module updates available.
+2024-11-08T10:07:40.208Z [Modules] Host is up to date.
+2024-11-08T10:07:40.208Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-08T10:07:40.263Z [Modules] No module updates available.
+2024-11-08T11:07:40.208Z [Modules] Host is up to date.
+2024-11-08T11:07:40.208Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-08T11:07:40.281Z [Modules] No module updates available.
+2024-11-08T12:07:40.208Z [Modules] Host is up to date.
+2024-11-08T12:07:40.208Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-08T12:07:40.236Z [Modules] No module updates available.
+2024-11-08T13:07:40.207Z [Modules] Host is up to date.
+2024-11-08T13:07:40.207Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-08T13:07:40.268Z [Modules] No module updates available.
+2024-11-08T14:07:40.208Z [Modules] Host is up to date.
+2024-11-08T14:07:40.208Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-08T14:07:40.274Z [Modules] No module updates available.
+2024-11-08T15:07:40.209Z [Modules] Host is up to date.
+2024-11-08T15:07:40.209Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-08T15:07:40.249Z [Modules] No module updates available.
+2024-11-08T16:07:40.208Z [Modules] Host is up to date.
+2024-11-08T16:07:40.208Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-08T16:07:40.295Z [Modules] No module updates available.
+2024-11-08T17:08:03.491Z [Modules] Host is up to date.
+2024-11-08T17:08:03.491Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-08T17:08:03.550Z [Modules] No module updates available.
+2024-11-08T18:08:03.491Z [Modules] Host is up to date.
+2024-11-08T18:08:03.491Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-08T18:08:03.546Z [Modules] No module updates available.
+2024-11-08T19:08:25.755Z [Modules] Host is up to date.
+2024-11-08T19:08:25.755Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-08T19:08:25.819Z [Modules] No module updates available.
+2024-11-08T20:08:25.755Z [Modules] Host is up to date.
+2024-11-08T20:08:25.755Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-08T20:08:25.783Z [Modules] No module updates available.
+2024-11-08T21:08:25.755Z [Modules] Host is up to date.
+2024-11-08T21:08:25.755Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-08T21:08:25.821Z [Modules] Failed fetching module versions: Error: getaddrinfo EAI_AGAIN discord.com
+2024-11-08T22:08:25.755Z [Modules] Host is up to date.
+2024-11-08T22:08:25.755Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-08T22:08:25.761Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-08T23:08:25.754Z [Modules] Host is up to date.
+2024-11-08T23:08:25.754Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-08T23:08:25.780Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-09T00:08:25.754Z [Modules] Host is up to date.
+2024-11-09T00:08:25.755Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-09T00:08:25.760Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-09T01:08:25.755Z [Modules] Host is up to date.
+2024-11-09T01:08:25.755Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-09T01:08:25.761Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-09T02:08:25.755Z [Modules] Host is up to date.
+2024-11-09T02:08:25.755Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-09T02:08:25.782Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-09T03:08:25.755Z [Modules] Host is up to date.
+2024-11-09T03:08:25.755Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-09T03:08:25.781Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-09T04:08:25.755Z [Modules] Host is up to date.
+2024-11-09T04:08:25.755Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-09T04:08:25.759Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-09T05:08:25.755Z [Modules] Host is up to date.
+2024-11-09T05:08:25.755Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-09T05:08:25.780Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-09T06:08:25.755Z [Modules] Host is up to date.
+2024-11-09T06:08:25.755Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-09T06:08:25.758Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-09T07:08:25.755Z [Modules] Host is up to date.
+2024-11-09T07:08:25.755Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-09T07:08:25.760Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-09T08:08:25.755Z [Modules] Host is up to date.
+2024-11-09T08:08:25.755Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-09T08:08:25.759Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-09T09:08:25.755Z [Modules] Host is up to date.
+2024-11-09T09:08:25.755Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-09T09:08:25.760Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-09T10:08:25.755Z [Modules] Host is up to date.
+2024-11-09T10:08:25.755Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-09T10:08:25.759Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-09T11:08:25.754Z [Modules] Host is up to date.
+2024-11-09T11:08:25.754Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-09T11:08:25.780Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-09T12:08:25.755Z [Modules] Host is up to date.
+2024-11-09T12:08:25.755Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-09T12:08:25.781Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-09T13:08:25.754Z [Modules] Host is up to date.
+2024-11-09T13:08:25.755Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-09T13:08:25.781Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-09T14:08:25.754Z [Modules] Host is up to date.
+2024-11-09T14:08:25.755Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-09T14:08:25.783Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-09T15:08:25.754Z [Modules] Host is up to date.
+2024-11-09T15:08:25.754Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-09T15:08:25.759Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-09T16:08:25.754Z [Modules] Host is up to date.
+2024-11-09T16:08:25.754Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-09T16:08:25.758Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-09T17:08:26.215Z [Modules] Host is up to date.
+2024-11-09T17:08:26.215Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-09T17:08:26.280Z [Modules] No module updates available.
+2024-11-09T18:08:26.215Z [Modules] Host is up to date.
+2024-11-09T18:08:26.215Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-09T18:08:26.271Z [Modules] No module updates available.
+2024-11-09T19:08:26.215Z [Modules] Host is up to date.
+2024-11-09T19:08:26.215Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-09T19:08:26.286Z [Modules] No module updates available.
+2024-11-09T20:08:43.824Z [Modules] Host is up to date.
+2024-11-09T20:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-09T20:08:43.906Z [Modules] No module updates available.
+2024-11-09T21:08:43.824Z [Modules] Host is up to date.
+2024-11-09T21:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-09T21:08:43.887Z [Modules] No module updates available.
+2024-11-09T22:08:43.824Z [Modules] Host is up to date.
+2024-11-09T22:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-09T22:08:43.883Z [Modules] No module updates available.
+2024-11-09T23:08:43.824Z [Modules] Host is up to date.
+2024-11-09T23:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-09T23:08:43.883Z [Modules] No module updates available.
+2024-11-10T00:08:43.824Z [Modules] Host is up to date.
+2024-11-10T00:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-10T00:08:43.884Z [Modules] No module updates available.
+2024-11-10T01:08:43.825Z [Modules] Host is up to date.
+2024-11-10T01:08:43.825Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-10T01:08:43.883Z [Modules] No module updates available.
+2024-11-10T02:08:43.825Z [Modules] Host is up to date.
+2024-11-10T02:08:43.825Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-10T02:08:43.889Z [Modules] No module updates available.
+2024-11-10T03:08:43.824Z [Modules] Host is up to date.
+2024-11-10T03:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-10T03:08:43.888Z [Modules] No module updates available.
+2024-11-10T04:08:43.824Z [Modules] Host is up to date.
+2024-11-10T04:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-10T04:08:43.890Z [Modules] No module updates available.
+2024-11-10T05:08:43.825Z [Modules] Host is up to date.
+2024-11-10T05:08:43.825Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-10T05:08:43.883Z [Modules] No module updates available.
+2024-11-10T06:08:43.825Z [Modules] Host is up to date.
+2024-11-10T06:08:43.825Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-10T06:08:43.879Z [Modules] No module updates available.
+2024-11-10T07:08:43.824Z [Modules] Host is up to date.
+2024-11-10T07:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-10T07:08:43.880Z [Modules] No module updates available.
+2024-11-10T08:08:43.824Z [Modules] Host is up to date.
+2024-11-10T08:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-10T08:08:43.850Z [Modules] No module updates available.
+2024-11-10T09:08:43.824Z [Modules] Host is up to date.
+2024-11-10T09:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-10T09:08:43.880Z [Modules] No module updates available.
+2024-11-10T10:08:43.825Z [Modules] Host is up to date.
+2024-11-10T10:08:43.825Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-10T10:08:43.891Z [Modules] No module updates available.
+2024-11-10T11:08:43.824Z [Modules] Host is up to date.
+2024-11-10T11:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-10T11:08:43.876Z [Modules] No module updates available.
+2024-11-10T12:08:43.825Z [Modules] Host is up to date.
+2024-11-10T12:08:43.825Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-10T12:08:43.884Z [Modules] No module updates available.
+2024-11-10T13:08:43.824Z [Modules] Host is up to date.
+2024-11-10T13:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-10T13:08:43.892Z [Modules] No module updates available.
+2024-11-10T14:08:43.824Z [Modules] Host is up to date.
+2024-11-10T14:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-10T14:08:43.886Z [Modules] No module updates available.
+2024-11-10T15:08:43.824Z [Modules] Host is up to date.
+2024-11-10T15:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-10T15:08:43.879Z [Modules] No module updates available.
+2024-11-10T16:08:43.824Z [Modules] Host is up to date.
+2024-11-10T16:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-10T16:08:43.886Z [Modules] No module updates available.
+2024-11-10T17:08:43.824Z [Modules] Host is up to date.
+2024-11-10T17:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-10T17:08:43.958Z [Modules] No module updates available.
+2024-11-10T18:08:43.824Z [Modules] Host is up to date.
+2024-11-10T18:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-10T18:08:43.886Z [Modules] No module updates available.
+2024-11-10T19:08:43.824Z [Modules] Host is up to date.
+2024-11-10T19:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-10T19:08:43.892Z [Modules] No module updates available.
+2024-11-10T20:08:43.824Z [Modules] Host is up to date.
+2024-11-10T20:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-10T20:08:43.905Z [Modules] No module updates available.
+2024-11-10T21:08:43.824Z [Modules] Host is up to date.
+2024-11-10T21:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-10T21:08:43.891Z [Modules] No module updates available.
+2024-11-10T22:08:43.824Z [Modules] Host is up to date.
+2024-11-10T22:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-10T22:08:43.896Z [Modules] No module updates available.
+2024-11-10T23:08:43.824Z [Modules] Host is up to date.
+2024-11-10T23:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-10T23:08:43.884Z [Modules] No module updates available.
+2024-11-11T00:08:43.824Z [Modules] Host is up to date.
+2024-11-11T00:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T00:08:43.890Z [Modules] No module updates available.
+2024-11-11T01:08:43.824Z [Modules] Host is up to date.
+2024-11-11T01:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T01:08:43.892Z [Modules] No module updates available.
+2024-11-11T02:08:43.824Z [Modules] Host is up to date.
+2024-11-11T02:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T02:08:43.900Z [Modules] No module updates available.
+2024-11-11T03:08:43.824Z [Modules] Host is up to date.
+2024-11-11T03:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T03:08:43.895Z [Modules] No module updates available.
+2024-11-11T04:08:43.823Z [Modules] Host is up to date.
+2024-11-11T04:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T04:08:43.884Z [Modules] No module updates available.
+2024-11-11T05:08:43.824Z [Modules] Host is up to date.
+2024-11-11T05:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T05:08:43.887Z [Modules] No module updates available.
+2024-11-11T06:08:43.824Z [Modules] Host is up to date.
+2024-11-11T06:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T06:08:43.879Z [Modules] No module updates available.
+2024-11-11T07:08:43.824Z [Modules] Host is up to date.
+2024-11-11T07:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T07:08:43.887Z [Modules] No module updates available.
+2024-11-11T08:08:43.824Z [Modules] Host is up to date.
+2024-11-11T08:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T08:08:43.883Z [Modules] No module updates available.
+2024-11-11T09:08:43.824Z [Modules] Host is up to date.
+2024-11-11T09:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T09:08:43.886Z [Modules] No module updates available.
+2024-11-11T10:08:43.824Z [Modules] Host is up to date.
+2024-11-11T10:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T10:08:43.887Z [Modules] No module updates available.
+2024-11-11T11:08:43.825Z [Modules] Host is up to date.
+2024-11-11T11:08:43.825Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T11:08:43.887Z [Modules] No module updates available.
+2024-11-11T12:08:43.824Z [Modules] Host is up to date.
+2024-11-11T12:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T12:08:43.878Z [Modules] No module updates available.
+2024-11-11T13:08:43.824Z [Modules] Host is up to date.
+2024-11-11T13:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T13:08:43.924Z [Modules] No module updates available.
+2024-11-11T14:08:43.824Z [Modules] Host is up to date.
+2024-11-11T14:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T14:08:43.911Z [Modules] No module updates available.
+2024-11-11T15:08:43.824Z [Modules] Host is up to date.
+2024-11-11T15:08:43.824Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T15:08:43.904Z [Modules] No module updates available.
+2024-11-11T18:57:31.252Z [Modules] Modules initializing
+2024-11-11T18:57:31.253Z [Modules] Distribution: remote
+2024-11-11T18:57:31.253Z [Modules] Host updates: disabled
+2024-11-11T18:57:31.253Z [Modules] Module updates: enabled
+2024-11-11T18:57:31.253Z [Modules] Module install path: /home/yvesd/.config/discord/0.0.72/modules
+2024-11-11T18:57:31.253Z [Modules] Module installed file path: /home/yvesd/.config/discord/0.0.72/modules/installed.json
+2024-11-11T18:57:31.253Z [Modules] Module download path: /home/yvesd/.config/discord/0.0.72/modules/pending
+2024-11-11T18:57:31.480Z [Modules] No updates to install
+2024-11-11T18:57:31.481Z [Modules] Host is up to date.
+2024-11-11T18:57:31.481Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T18:57:31.510Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-11T18:57:41.516Z [Modules] Host is up to date.
+2024-11-11T18:57:41.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T18:57:41.521Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-11T18:58:01.522Z [Modules] Host is up to date.
+2024-11-11T18:58:01.522Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T18:58:01.527Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-11T18:58:31.553Z [Modules] Host is up to date.
+2024-11-11T18:58:31.553Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T18:58:31.558Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-11T18:59:11.594Z [Modules] Host is up to date.
+2024-11-11T18:59:11.594Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T18:59:11.598Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-11T19:00:01.644Z [Modules] Host is up to date.
+2024-11-11T19:00:01.644Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T19:00:01.648Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-11T19:01:01.648Z [Modules] Host is up to date.
+2024-11-11T19:01:01.648Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T19:01:01.653Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-11T19:02:01.708Z [Modules] Host is up to date.
+2024-11-11T19:02:01.708Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T19:02:01.713Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-11T19:03:01.768Z [Modules] Host is up to date.
+2024-11-11T19:03:01.769Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T19:03:01.773Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-11T19:04:01.813Z [Modules] Host is up to date.
+2024-11-11T19:04:01.813Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T19:04:25.049Z [Modules] No module updates available.
+2024-11-11T19:04:30.595Z [Modules] Host is up to date.
+2024-11-11T19:04:30.595Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T19:04:30.634Z [Modules] No module updates available.
+2024-11-11T19:05:11.834Z [Modules] Host is up to date.
+2024-11-11T19:05:11.834Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T19:05:12.005Z [Modules] No module updates available.
+2024-11-11T20:04:30.598Z [Modules] Host is up to date.
+2024-11-11T20:04:30.598Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T20:04:30.682Z [Modules] No module updates available.
+2024-11-11T21:04:30.596Z [Modules] Host is up to date.
+2024-11-11T21:04:30.596Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T21:04:35.665Z [Modules] No module updates available.
+2024-11-11T23:53:41.840Z [Modules] Host is up to date.
+2024-11-11T23:53:41.840Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-11T23:53:41.935Z [Modules] No module updates available.
+2024-11-12T00:53:41.838Z [Modules] Host is up to date.
+2024-11-12T00:53:41.838Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-12T00:53:41.925Z [Modules] No module updates available.
+2024-11-12T01:53:41.838Z [Modules] Host is up to date.
+2024-11-12T01:53:41.838Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-12T01:53:41.916Z [Modules] No module updates available.
+2024-11-12T02:53:41.839Z [Modules] Host is up to date.
+2024-11-12T02:53:41.839Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-12T02:53:41.920Z [Modules] No module updates available.
+2024-11-12T03:53:41.838Z [Modules] Host is up to date.
+2024-11-12T03:53:41.838Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-12T03:53:41.926Z [Modules] No module updates available.
+2024-11-12T04:53:41.839Z [Modules] Host is up to date.
+2024-11-12T04:53:41.839Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-12T04:53:41.922Z [Modules] No module updates available.
+2024-11-12T05:53:41.838Z [Modules] Host is up to date.
+2024-11-12T05:53:41.838Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-12T05:53:41.927Z [Modules] No module updates available.
+2024-11-12T06:53:41.838Z [Modules] Host is up to date.
+2024-11-12T06:53:41.838Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-12T06:53:41.921Z [Modules] No module updates available.
+2024-11-12T07:53:41.838Z [Modules] Host is up to date.
+2024-11-12T07:53:41.838Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-12T07:53:41.913Z [Modules] No module updates available.
+2024-11-12T08:53:41.838Z [Modules] Host is up to date.
+2024-11-12T08:53:41.838Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-12T08:53:41.922Z [Modules] No module updates available.
+2024-11-12T09:53:41.837Z [Modules] Host is up to date.
+2024-11-12T09:53:41.838Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-12T09:53:41.874Z [Modules] No module updates available.
+2024-11-12T10:53:41.839Z [Modules] Host is up to date.
+2024-11-12T10:53:41.839Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-12T10:53:41.924Z [Modules] No module updates available.
+2024-11-12T11:53:41.838Z [Modules] Host is up to date.
+2024-11-12T11:53:41.838Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-12T11:53:42.327Z [Modules] No module updates available.
+2024-11-12T12:53:41.838Z [Modules] Host is up to date.
+2024-11-12T12:53:41.838Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-12T12:53:41.921Z [Modules] No module updates available.
+2024-11-12T13:53:41.838Z [Modules] Host is up to date.
+2024-11-12T13:53:41.838Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-12T13:53:41.871Z [Modules] No module updates available.
+2024-11-12T14:53:41.837Z [Modules] Host is up to date.
+2024-11-12T14:53:41.837Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-12T14:53:41.911Z [Modules] No module updates available.
+2024-11-12T15:53:41.838Z [Modules] Host is up to date.
+2024-11-12T15:53:41.838Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-12T15:53:41.933Z [Modules] No module updates available.
+2024-11-12T17:49:26.783Z [Modules] Host is up to date.
+2024-11-12T17:49:26.783Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-12T17:49:26.833Z [Modules] No module updates available.
+2024-11-12T18:49:26.783Z [Modules] Host is up to date.
+2024-11-12T18:49:26.783Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-12T18:49:26.875Z [Modules] No module updates available.
+2024-11-12T19:49:26.783Z [Modules] Host is up to date.
+2024-11-12T19:49:26.783Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-12T19:49:26.870Z [Modules] No module updates available.
+2024-11-12T20:49:26.785Z [Modules] Host is up to date.
+2024-11-12T20:49:26.785Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-12T20:49:26.876Z [Modules] No module updates available.
+2024-11-12T21:49:26.783Z [Modules] Host is up to date.
+2024-11-12T21:49:26.783Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-12T21:49:26.811Z [Modules] No module updates available.
+2024-11-12T22:41:33.005Z [Modules] Modules initializing
+2024-11-12T22:41:33.005Z [Modules] Distribution: remote
+2024-11-12T22:41:33.006Z [Modules] Host updates: disabled
+2024-11-12T22:41:33.006Z [Modules] Module updates: enabled
+2024-11-12T22:41:33.006Z [Modules] Module install path: /home/yvesd/.config/discord/0.0.72/modules
+2024-11-12T22:41:33.006Z [Modules] Module installed file path: /home/yvesd/.config/discord/0.0.72/modules/installed.json
+2024-11-12T22:41:33.006Z [Modules] Module download path: /home/yvesd/.config/discord/0.0.72/modules/pending
+2024-11-12T22:41:33.301Z [Modules] No updates to install
+2024-11-12T22:41:33.301Z [Modules] Host is up to date.
+2024-11-12T22:41:33.301Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-12T22:41:33.333Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-12T22:41:43.335Z [Modules] Host is up to date.
+2024-11-12T22:41:43.335Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-12T22:41:43.591Z [Modules] No module updates available.
+2024-11-12T22:41:45.333Z [Modules] Host is up to date.
+2024-11-12T22:41:45.333Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-12T22:41:45.335Z [Modules] No module updates available.
+2024-11-12T23:47:08.775Z [Modules] Host is up to date.
+2024-11-12T23:47:08.775Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-12T23:47:08.854Z [Modules] No module updates available.
+2024-11-13T00:47:08.773Z [Modules] Host is up to date.
+2024-11-13T00:47:08.773Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-13T00:47:08.866Z [Modules] No module updates available.
+2024-11-13T01:47:08.772Z [Modules] Host is up to date.
+2024-11-13T01:47:08.772Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-13T01:47:08.809Z [Modules] No module updates available.
+2024-11-13T16:20:50.368Z [Modules] Modules initializing
+2024-11-13T16:20:50.368Z [Modules] Distribution: remote
+2024-11-13T16:20:50.368Z [Modules] Host updates: disabled
+2024-11-13T16:20:50.368Z [Modules] Module updates: enabled
+2024-11-13T16:20:50.368Z [Modules] Module install path: /home/yvesd/.config/discord/0.0.72/modules
+2024-11-13T16:20:50.368Z [Modules] Module installed file path: /home/yvesd/.config/discord/0.0.72/modules/installed.json
+2024-11-13T16:20:50.368Z [Modules] Module download path: /home/yvesd/.config/discord/0.0.72/modules/pending
+2024-11-13T16:20:50.629Z [Modules] No updates to install
+2024-11-13T16:20:50.630Z [Modules] Host is up to date.
+2024-11-13T16:20:50.630Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-13T16:20:50.659Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-13T16:21:00.664Z [Modules] Host is up to date.
+2024-11-13T16:21:00.664Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-13T16:21:00.668Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-13T16:21:20.669Z [Modules] Host is up to date.
+2024-11-13T16:21:20.669Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-13T16:21:20.673Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-13T16:21:50.698Z [Modules] Host is up to date.
+2024-11-13T16:21:50.698Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-13T16:21:51.105Z [Modules] No module updates available.
+2024-11-13T16:22:13.486Z [Modules] Host is up to date.
+2024-11-13T16:22:13.486Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-13T16:22:13.488Z [Modules] No module updates available.
+2024-11-13T17:19:18.709Z [Modules] Modules initializing
+2024-11-13T17:19:18.709Z [Modules] Distribution: remote
+2024-11-13T17:19:18.709Z [Modules] Host updates: disabled
+2024-11-13T17:19:18.709Z [Modules] Module updates: enabled
+2024-11-13T17:19:18.709Z [Modules] Module install path: /home/yvesd/.config/discord/0.0.72/modules
+2024-11-13T17:19:18.710Z [Modules] Module installed file path: /home/yvesd/.config/discord/0.0.72/modules/installed.json
+2024-11-13T17:19:18.710Z [Modules] Module download path: /home/yvesd/.config/discord/0.0.72/modules/pending
+2024-11-13T17:19:18.971Z [Modules] No updates to install
+2024-11-13T17:19:18.971Z [Modules] Host is up to date.
+2024-11-13T17:19:18.972Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-13T17:19:19.003Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-13T17:19:29.004Z [Modules] Host is up to date.
+2024-11-13T17:19:29.004Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-13T17:19:29.465Z [Modules] No module updates available.
+2024-11-13T17:19:31.323Z [Modules] Host is up to date.
+2024-11-13T17:19:31.323Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-13T17:19:31.326Z [Modules] No module updates available.
+2024-11-13T17:21:37.378Z [Modules] Modules initializing
+2024-11-13T17:21:37.378Z [Modules] Distribution: remote
+2024-11-13T17:21:37.378Z [Modules] Host updates: disabled
+2024-11-13T17:21:37.378Z [Modules] Module updates: enabled
+2024-11-13T17:21:37.378Z [Modules] Module install path: /home/yvesd/.config/discord/0.0.72/modules
+2024-11-13T17:21:37.378Z [Modules] Module installed file path: /home/yvesd/.config/discord/0.0.72/modules/installed.json
+2024-11-13T17:21:37.378Z [Modules] Module download path: /home/yvesd/.config/discord/0.0.72/modules/pending
+2024-11-13T17:21:37.634Z [Modules] No updates to install
+2024-11-13T17:21:37.634Z [Modules] Host is up to date.
+2024-11-13T17:21:37.635Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-13T17:21:37.664Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-13T17:21:47.667Z [Modules] Host is up to date.
+2024-11-13T17:21:47.667Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-13T17:21:48.091Z [Modules] No module updates available.
+2024-11-13T17:21:49.598Z [Modules] Host is up to date.
+2024-11-13T17:21:49.598Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-13T17:21:49.601Z [Modules] No module updates available.
+2024-11-13T18:21:49.601Z [Modules] Host is up to date.
+2024-11-13T18:21:49.601Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-13T18:21:50.390Z [Modules] No module updates available.
+2024-11-13T19:21:49.601Z [Modules] Host is up to date.
+2024-11-13T19:21:49.601Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-13T19:21:49.894Z [Modules] No module updates available.
+2024-11-13T20:21:49.601Z [Modules] Host is up to date.
+2024-11-13T20:21:49.601Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-13T20:21:49.712Z [Modules] No module updates available.
+2024-11-13T21:21:49.601Z [Modules] Host is up to date.
+2024-11-13T21:21:49.601Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-13T21:21:49.717Z [Modules] No module updates available.
+2024-11-13T22:21:49.601Z [Modules] Host is up to date.
+2024-11-13T22:21:49.601Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-13T22:21:49.681Z [Modules] No module updates available.
+2024-11-13T23:26:59.979Z [Modules] Host is up to date.
+2024-11-13T23:26:59.979Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-13T23:27:00.511Z [Modules] No module updates available.
+2024-11-14T00:26:59.978Z [Modules] Host is up to date.
+2024-11-14T00:26:59.978Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-14T00:27:00.090Z [Modules] No module updates available.
+2024-11-14T08:44:54.188Z [Modules] Host is up to date.
+2024-11-14T08:44:54.188Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-14T08:44:54.407Z [Modules] No module updates available.
+2024-11-14T09:44:56.469Z [Modules] Host is up to date.
+2024-11-14T09:44:56.469Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-14T09:44:56.618Z [Modules] No module updates available.
+2024-11-14T10:44:56.469Z [Modules] Host is up to date.
+2024-11-14T10:44:56.469Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-14T10:44:56.597Z [Modules] No module updates available.
+2024-11-14T14:54:53.065Z [Modules] Modules initializing
+2024-11-14T14:54:53.065Z [Modules] Distribution: remote
+2024-11-14T14:54:53.066Z [Modules] Host updates: disabled
+2024-11-14T14:54:53.066Z [Modules] Module updates: enabled
+2024-11-14T14:54:53.066Z [Modules] Module install path: /home/yvesd/.config/discord/0.0.72/modules
+2024-11-14T14:54:53.066Z [Modules] Module installed file path: /home/yvesd/.config/discord/0.0.72/modules/installed.json
+2024-11-14T14:54:53.066Z [Modules] Module download path: /home/yvesd/.config/discord/0.0.72/modules/pending
+2024-11-14T14:54:53.189Z [Modules] No updates to install
+2024-11-14T14:54:53.189Z [Modules] Host is up to date.
+2024-11-14T14:54:53.189Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-14T14:54:53.595Z [Modules] No module updates available.
+2024-11-14T14:54:57.948Z [Modules] Host is up to date.
+2024-11-14T14:54:57.948Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-14T14:54:57.951Z [Modules] No module updates available.
+2024-11-14T18:24:01.993Z [Modules] Host is up to date.
+2024-11-14T18:24:01.993Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-14T18:24:02.240Z [Modules] No module updates available.
+2024-11-14T19:24:01.995Z [Modules] Host is up to date.
+2024-11-14T19:24:01.995Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-14T19:24:02.181Z [Modules] No module updates available.
+2024-11-14T20:24:01.991Z [Modules] Host is up to date.
+2024-11-14T20:24:01.991Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-14T20:24:02.332Z [Modules] No module updates available.
+2024-11-14T21:51:10.990Z [Modules] Host is up to date.
+2024-11-14T21:51:10.990Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-14T21:51:11.098Z [Modules] No module updates available.
+2024-11-14T22:51:12.469Z [Modules] Host is up to date.
+2024-11-14T22:51:12.469Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-14T22:51:12.521Z [Modules] No module updates available.
+2024-11-14T22:56:50.459Z [Modules] Modules initializing
+2024-11-14T22:56:50.460Z [Modules] Distribution: remote
+2024-11-14T22:56:50.460Z [Modules] Host updates: disabled
+2024-11-14T22:56:50.460Z [Modules] Module updates: enabled
+2024-11-14T22:56:50.460Z [Modules] Module install path: /home/yvesd/.config/discord/0.0.72/modules
+2024-11-14T22:56:50.460Z [Modules] Module installed file path: /home/yvesd/.config/discord/0.0.72/modules/installed.json
+2024-11-14T22:56:50.460Z [Modules] Module download path: /home/yvesd/.config/discord/0.0.72/modules/pending
+2024-11-14T22:56:50.750Z [Modules] No updates to install
+2024-11-14T22:56:50.750Z [Modules] Host is up to date.
+2024-11-14T22:56:50.750Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-14T22:56:50.789Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-14T22:57:00.794Z [Modules] Host is up to date.
+2024-11-14T22:57:00.794Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-14T22:57:00.975Z [Modules] No module updates available.
+2024-11-14T22:57:03.294Z [Modules] Host is up to date.
+2024-11-14T22:57:03.294Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-14T22:57:03.296Z [Modules] No module updates available.
+2024-11-14T23:57:03.298Z [Modules] Host is up to date.
+2024-11-14T23:57:03.298Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-14T23:57:03.371Z [Modules] No module updates available.
+2024-11-15T13:13:03.054Z [Modules] Host is up to date.
+2024-11-15T13:13:03.054Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-15T13:13:03.101Z [Modules] No module updates available.
+2024-11-15T14:13:03.053Z [Modules] Host is up to date.
+2024-11-15T14:13:03.053Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-15T14:13:03.089Z [Modules] No module updates available.
+2024-11-15T15:13:03.052Z [Modules] Host is up to date.
+2024-11-15T15:13:03.052Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-15T15:13:03.117Z [Modules] No module updates available.
+2024-11-15T16:13:10.351Z [Modules] Host is up to date.
+2024-11-15T16:13:10.351Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-15T16:13:10.400Z [Modules] No module updates available.
+2024-11-15T17:13:28.831Z [Modules] Host is up to date.
+2024-11-15T17:13:28.831Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-15T17:13:28.886Z [Modules] No module updates available.
+2024-11-15T18:13:28.832Z [Modules] Host is up to date.
+2024-11-15T18:13:28.833Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-15T18:13:28.881Z [Modules] No module updates available.
+2024-11-15T19:13:51.646Z [Modules] Host is up to date.
+2024-11-15T19:13:51.647Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-15T19:13:51.695Z [Modules] No module updates available.
+2024-11-15T20:13:52.222Z [Modules] Host is up to date.
+2024-11-15T20:13:52.222Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-15T20:13:52.291Z [Modules] No module updates available.
+2024-11-15T21:13:52.224Z [Modules] Host is up to date.
+2024-11-15T21:13:52.224Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-15T21:13:52.264Z [Modules] No module updates available.
+2024-11-15T22:13:52.224Z [Modules] Host is up to date.
+2024-11-15T22:13:52.224Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-15T22:13:52.259Z [Modules] No module updates available.
+2024-11-15T23:13:52.224Z [Modules] Host is up to date.
+2024-11-15T23:13:52.225Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-15T23:13:52.268Z [Modules] No module updates available.
+2024-11-16T00:13:52.222Z [Modules] Host is up to date.
+2024-11-16T00:13:52.222Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-16T00:13:52.255Z [Modules] No module updates available.
+2024-11-16T20:16:07.687Z [Modules] Host is up to date.
+2024-11-16T20:16:07.687Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-16T20:16:07.716Z [Modules] No module updates available.
+2024-11-16T21:16:07.687Z [Modules] Host is up to date.
+2024-11-16T21:16:07.688Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-16T21:16:07.728Z [Modules] No module updates available.
+2024-11-16T22:16:07.685Z [Modules] Host is up to date.
+2024-11-16T22:16:07.685Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-16T22:16:07.724Z [Modules] No module updates available.
+2024-11-16T23:16:19.519Z [Modules] Host is up to date.
+2024-11-16T23:16:19.519Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-16T23:16:19.552Z [Modules] No module updates available.
+2024-11-17T00:16:19.519Z [Modules] Host is up to date.
+2024-11-17T00:16:19.519Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-17T00:16:19.637Z [Modules] No module updates available.
+2024-11-17T01:16:19.516Z [Modules] Host is up to date.
+2024-11-17T01:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-17T01:16:19.565Z [Modules] No module updates available.
+2024-11-17T02:16:19.516Z [Modules] Host is up to date.
+2024-11-17T02:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-17T02:16:19.555Z [Modules] No module updates available.
+2024-11-17T03:16:19.516Z [Modules] Host is up to date.
+2024-11-17T03:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-17T03:16:19.546Z [Modules] No module updates available.
+2024-11-17T04:16:19.516Z [Modules] Host is up to date.
+2024-11-17T04:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-17T04:16:19.578Z [Modules] No module updates available.
+2024-11-17T05:16:19.516Z [Modules] Host is up to date.
+2024-11-17T05:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-17T05:16:19.545Z [Modules] No module updates available.
+2024-11-17T06:16:19.516Z [Modules] Host is up to date.
+2024-11-17T06:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-17T06:16:19.544Z [Modules] No module updates available.
+2024-11-17T07:16:19.516Z [Modules] Host is up to date.
+2024-11-17T07:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-17T07:16:19.551Z [Modules] No module updates available.
+2024-11-17T08:16:19.516Z [Modules] Host is up to date.
+2024-11-17T08:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-17T08:16:19.547Z [Modules] No module updates available.
+2024-11-17T09:16:19.516Z [Modules] Host is up to date.
+2024-11-17T09:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-17T09:16:19.541Z [Modules] No module updates available.
+2024-11-17T10:16:19.516Z [Modules] Host is up to date.
+2024-11-17T10:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-17T10:16:19.548Z [Modules] No module updates available.
+2024-11-17T11:16:19.516Z [Modules] Host is up to date.
+2024-11-17T11:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-17T11:16:19.551Z [Modules] No module updates available.
+2024-11-17T12:16:19.516Z [Modules] Host is up to date.
+2024-11-17T12:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-17T12:16:19.550Z [Modules] No module updates available.
+2024-11-17T13:16:19.516Z [Modules] Host is up to date.
+2024-11-17T13:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-17T13:16:19.557Z [Modules] No module updates available.
+2024-11-17T14:16:19.516Z [Modules] Host is up to date.
+2024-11-17T14:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-17T14:16:19.695Z [Modules] No module updates available.
+2024-11-17T15:16:19.516Z [Modules] Host is up to date.
+2024-11-17T15:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-17T15:16:19.550Z [Modules] No module updates available.
+2024-11-17T16:16:19.516Z [Modules] Host is up to date.
+2024-11-17T16:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-17T16:16:19.562Z [Modules] No module updates available.
+2024-11-17T17:16:19.517Z [Modules] Host is up to date.
+2024-11-17T17:16:19.517Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-17T17:16:19.546Z [Modules] No module updates available.
+2024-11-17T18:16:19.516Z [Modules] Host is up to date.
+2024-11-17T18:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-17T18:16:19.591Z [Modules] No module updates available.
+2024-11-17T19:16:19.516Z [Modules] Host is up to date.
+2024-11-17T19:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-17T19:16:19.548Z [Modules] No module updates available.
+2024-11-17T20:16:19.516Z [Modules] Host is up to date.
+2024-11-17T20:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-17T20:16:19.557Z [Modules] No module updates available.
+2024-11-17T21:16:19.516Z [Modules] Host is up to date.
+2024-11-17T21:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-17T21:16:19.548Z [Modules] No module updates available.
+2024-11-17T22:16:19.516Z [Modules] Host is up to date.
+2024-11-17T22:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-17T22:16:19.563Z [Modules] No module updates available.
+2024-11-17T23:16:19.516Z [Modules] Host is up to date.
+2024-11-17T23:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-17T23:16:19.637Z [Modules] No module updates available.
+2024-11-18T00:16:19.516Z [Modules] Host is up to date.
+2024-11-18T00:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T00:16:19.555Z [Modules] No module updates available.
+2024-11-18T01:16:19.516Z [Modules] Host is up to date.
+2024-11-18T01:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T01:16:19.564Z [Modules] No module updates available.
+2024-11-18T02:16:19.516Z [Modules] Host is up to date.
+2024-11-18T02:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T02:16:19.550Z [Modules] No module updates available.
+2024-11-18T03:16:19.516Z [Modules] Host is up to date.
+2024-11-18T03:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T03:16:19.550Z [Modules] No module updates available.
+2024-11-18T04:16:19.517Z [Modules] Host is up to date.
+2024-11-18T04:16:19.517Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T04:16:19.582Z [Modules] No module updates available.
+2024-11-18T05:16:19.517Z [Modules] Host is up to date.
+2024-11-18T05:16:19.517Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T05:16:19.557Z [Modules] No module updates available.
+2024-11-18T06:16:19.516Z [Modules] Host is up to date.
+2024-11-18T06:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T06:16:19.559Z [Modules] No module updates available.
+2024-11-18T07:16:19.516Z [Modules] Host is up to date.
+2024-11-18T07:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T07:16:19.560Z [Modules] No module updates available.
+2024-11-18T08:16:19.517Z [Modules] Host is up to date.
+2024-11-18T08:16:19.517Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T08:16:19.549Z [Modules] No module updates available.
+2024-11-18T09:16:19.516Z [Modules] Host is up to date.
+2024-11-18T09:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T09:16:19.570Z [Modules] No module updates available.
+2024-11-18T10:16:19.516Z [Modules] Host is up to date.
+2024-11-18T10:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T10:16:19.555Z [Modules] No module updates available.
+2024-11-18T11:16:19.516Z [Modules] Host is up to date.
+2024-11-18T11:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T11:16:19.551Z [Modules] No module updates available.
+2024-11-18T12:16:19.516Z [Modules] Host is up to date.
+2024-11-18T12:16:19.517Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T12:16:19.548Z [Modules] No module updates available.
+2024-11-18T13:16:19.516Z [Modules] Host is up to date.
+2024-11-18T13:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T13:16:19.551Z [Modules] No module updates available.
+2024-11-18T14:16:19.516Z [Modules] Host is up to date.
+2024-11-18T14:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T14:16:19.548Z [Modules] No module updates available.
+2024-11-18T15:16:19.516Z [Modules] Host is up to date.
+2024-11-18T15:16:19.516Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T15:16:19.568Z [Modules] No module updates available.
+2024-11-18T19:53:44.010Z [Modules] Modules initializing
+2024-11-18T19:53:44.010Z [Modules] Distribution: remote
+2024-11-18T19:53:44.011Z [Modules] Host updates: disabled
+2024-11-18T19:53:44.011Z [Modules] Module updates: enabled
+2024-11-18T19:53:44.011Z [Modules] Module install path: /home/yvesd/.config/discord/0.0.72/modules
+2024-11-18T19:53:44.011Z [Modules] Module installed file path: /home/yvesd/.config/discord/0.0.72/modules/installed.json
+2024-11-18T19:53:44.011Z [Modules] Module download path: /home/yvesd/.config/discord/0.0.72/modules/pending
+2024-11-18T19:53:44.281Z [Modules] No updates to install
+2024-11-18T19:53:44.281Z [Modules] Host is up to date.
+2024-11-18T19:53:44.281Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T19:53:44.308Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-18T19:53:54.313Z [Modules] Host is up to date.
+2024-11-18T19:53:54.313Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T19:53:54.507Z [Modules] No module updates available.
+2024-11-18T19:53:56.258Z [Modules] Host is up to date.
+2024-11-18T19:53:56.258Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T19:53:56.261Z [Modules] No module updates available.
+2024-11-18T20:53:55.599Z [Modules] Host is up to date.
+2024-11-18T20:53:55.599Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T20:53:55.643Z [Modules] No module updates available.
+2024-11-18T21:07:38.233Z [Modules] Modules initializing
+2024-11-18T21:07:38.233Z [Modules] Distribution: remote
+2024-11-18T21:07:38.234Z [Modules] Host updates: disabled
+2024-11-18T21:07:38.234Z [Modules] Module updates: enabled
+2024-11-18T21:07:38.234Z [Modules] Module install path: /home/yvesd/.config/discord/0.0.74/modules
+2024-11-18T21:07:38.234Z [Modules] Module installed file path: /home/yvesd/.config/discord/0.0.74/modules/installed.json
+2024-11-18T21:07:38.234Z [Modules] Module download path: /home/yvesd/.config/discord/0.0.74/modules/pending
+2024-11-18T21:07:38.480Z [Modules] Bootstrapping...
+2024-11-18T21:07:38.480Z [Modules] Installing discord_desktop_core@0 from /nix/store/7z7xzyjfc8nhdbv4hlfk4lyn6z4bfm66-discord-0.0.74/opt/Discord/resources/bootstrap/discord_desktop_core.zip
+2024-11-18T21:07:38.482Z [Modules] Failed installing discord_desktop_core@0: Error: ENOENT: no such file or directory, open '/nix/store/7z7xzyjfc8nhdbv4hlfk4lyn6z4bfm66-discord-0.0.74/opt/Discord/resources/bootstrap/discord_desktop_core.zip'
+2024-11-18T21:07:38.482Z [Modules] Installing discord_erlpack@0 from /nix/store/7z7xzyjfc8nhdbv4hlfk4lyn6z4bfm66-discord-0.0.74/opt/Discord/resources/bootstrap/discord_erlpack.zip
+2024-11-18T21:07:38.483Z [Modules] Failed installing discord_erlpack@0: Error: ENOENT: no such file or directory, open '/nix/store/7z7xzyjfc8nhdbv4hlfk4lyn6z4bfm66-discord-0.0.74/opt/Discord/resources/bootstrap/discord_erlpack.zip'
+2024-11-18T21:07:38.484Z [Modules] Installing discord_spellcheck@0 from /nix/store/7z7xzyjfc8nhdbv4hlfk4lyn6z4bfm66-discord-0.0.74/opt/Discord/resources/bootstrap/discord_spellcheck.zip
+2024-11-18T21:07:38.484Z [Modules] Failed installing discord_spellcheck@0: Error: ENOENT: no such file or directory, open '/nix/store/7z7xzyjfc8nhdbv4hlfk4lyn6z4bfm66-discord-0.0.74/opt/Discord/resources/bootstrap/discord_spellcheck.zip'
+2024-11-18T21:07:38.484Z [Modules] Installing discord_utils@0 from /nix/store/7z7xzyjfc8nhdbv4hlfk4lyn6z4bfm66-discord-0.0.74/opt/Discord/resources/bootstrap/discord_utils.zip
+2024-11-18T21:07:38.484Z [Modules] Failed installing discord_utils@0: Error: ENOENT: no such file or directory, open '/nix/store/7z7xzyjfc8nhdbv4hlfk4lyn6z4bfm66-discord-0.0.74/opt/Discord/resources/bootstrap/discord_utils.zip'
+2024-11-18T21:07:38.484Z [Modules] Installing discord_voice@0 from /nix/store/7z7xzyjfc8nhdbv4hlfk4lyn6z4bfm66-discord-0.0.74/opt/Discord/resources/bootstrap/discord_voice.zip
+2024-11-18T21:07:38.485Z [Modules] Failed installing discord_voice@0: Error: ENOENT: no such file or directory, open '/nix/store/7z7xzyjfc8nhdbv4hlfk4lyn6z4bfm66-discord-0.0.74/opt/Discord/resources/bootstrap/discord_voice.zip'
+2024-11-18T21:07:38.485Z [Modules] Installing discord_zstd@0 from /nix/store/7z7xzyjfc8nhdbv4hlfk4lyn6z4bfm66-discord-0.0.74/opt/Discord/resources/bootstrap/discord_zstd.zip
+2024-11-18T21:07:38.485Z [Modules] Failed installing discord_zstd@0: Error: ENOENT: no such file or directory, open '/nix/store/7z7xzyjfc8nhdbv4hlfk4lyn6z4bfm66-discord-0.0.74/opt/Discord/resources/bootstrap/discord_zstd.zip'
+2024-11-18T21:07:38.485Z [Modules] Finished module installations. [success: 0] [failure: 6]
+2024-11-18T21:07:38.485Z [Modules] Host is up to date.
+2024-11-18T21:07:38.485Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T21:07:38.519Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-18T21:07:48.521Z [Modules] Host is up to date.
+2024-11-18T21:07:48.521Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T21:07:48.706Z [Modules] Module update available: discord_desktop_core@1 [installed: 0]
+2024-11-18T21:07:48.706Z [Modules] Module update available: discord_erlpack@1 [installed: 0]
+2024-11-18T21:07:48.706Z [Modules] Module update available: discord_spellcheck@1 [installed: 0]
+2024-11-18T21:07:48.706Z [Modules] Module update available: discord_utils@1 [installed: 0]
+2024-11-18T21:07:48.706Z [Modules] Module update available: discord_voice@1 [installed: 0]
+2024-11-18T21:07:48.706Z [Modules] Module update available: discord_zstd@1 [installed: 0]
+2024-11-18T21:07:48.706Z [Modules] Fetching discord_desktop_core@1 from https://discord.com/api/modules/stable/discord_desktop_core/1
+2024-11-18T21:07:48.706Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip
+2024-11-18T21:07:48.950Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 1%
+2024-11-18T21:07:48.953Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 2%
+2024-11-18T21:07:48.964Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 4%
+2024-11-18T21:07:48.971Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 5%
+2024-11-18T21:07:48.972Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 6%
+2024-11-18T21:07:48.973Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 7%
+2024-11-18T21:07:48.976Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 8%
+2024-11-18T21:07:48.978Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 9%
+2024-11-18T21:07:48.984Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 12%
+2024-11-18T21:07:48.986Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 13%
+2024-11-18T21:07:48.989Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 15%
+2024-11-18T21:07:48.995Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 18%
+2024-11-18T21:07:48.995Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 19%
+2024-11-18T21:07:48.997Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 20%
+2024-11-18T21:07:49.002Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 23%
+2024-11-18T21:07:49.007Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 24%
+2024-11-18T21:07:49.015Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 27%
+2024-11-18T21:07:49.019Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 29%
+2024-11-18T21:07:49.021Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 32%
+2024-11-18T21:07:49.024Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 35%
+2024-11-18T21:07:49.026Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 37%
+2024-11-18T21:07:49.035Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 39%
+2024-11-18T21:07:49.038Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 42%
+2024-11-18T21:07:49.041Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 45%
+2024-11-18T21:07:49.044Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 47%
+2024-11-18T21:07:49.046Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 49%
+2024-11-18T21:07:49.048Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 50%
+2024-11-18T21:07:49.053Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 53%
+2024-11-18T21:07:49.056Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 55%
+2024-11-18T21:07:49.058Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 58%
+2024-11-18T21:07:49.059Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 59%
+2024-11-18T21:07:49.061Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 62%
+2024-11-18T21:07:49.064Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 64%
+2024-11-18T21:07:49.065Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 65%
+2024-11-18T21:07:49.067Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 67%
+2024-11-18T21:07:49.068Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 69%
+2024-11-18T21:07:49.071Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 72%
+2024-11-18T21:07:49.073Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 74%
+2024-11-18T21:07:49.075Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 75%
+2024-11-18T21:07:49.077Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 77%
+2024-11-18T21:07:49.080Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 80%
+2024-11-18T21:07:49.080Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 81%
+2024-11-18T21:07:49.081Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 82%
+2024-11-18T21:07:49.084Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 84%
+2024-11-18T21:07:49.084Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 85%
+2024-11-18T21:07:49.087Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 88%
+2024-11-18T21:07:49.090Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 91%
+2024-11-18T21:07:49.090Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 92%
+2024-11-18T21:07:49.092Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 94%
+2024-11-18T21:07:49.096Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 96%
+2024-11-18T21:07:49.099Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 99%
+2024-11-18T21:07:49.099Z [Modules] Streaming discord_desktop_core@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip: 100%
+2024-11-18T21:07:49.100Z [Modules] Fetching discord_erlpack@1 from https://discord.com/api/modules/stable/discord_erlpack/1
+2024-11-18T21:07:49.100Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip
+2024-11-18T21:07:49.243Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 3%
+2024-11-18T21:07:49.243Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 4%
+2024-11-18T21:07:49.246Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 7%
+2024-11-18T21:07:49.247Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 8%
+2024-11-18T21:07:49.250Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 10%
+2024-11-18T21:07:49.252Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 13%
+2024-11-18T21:07:49.252Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 14%
+2024-11-18T21:07:49.255Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 16%
+2024-11-18T21:07:49.260Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 19%
+2024-11-18T21:07:49.260Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 20%
+2024-11-18T21:07:49.261Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 21%
+2024-11-18T21:07:49.263Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 24%
+2024-11-18T21:07:49.265Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 25%
+2024-11-18T21:07:49.268Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 28%
+2024-11-18T21:07:49.270Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 31%
+2024-11-18T21:07:49.270Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 32%
+2024-11-18T21:07:49.273Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 35%
+2024-11-18T21:07:49.273Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 36%
+2024-11-18T21:07:49.277Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 39%
+2024-11-18T21:07:49.279Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 42%
+2024-11-18T21:07:49.280Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 43%
+2024-11-18T21:07:49.284Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 46%
+2024-11-18T21:07:49.286Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 49%
+2024-11-18T21:07:49.288Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 50%
+2024-11-18T21:07:49.291Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 53%
+2024-11-18T21:07:49.291Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 54%
+2024-11-18T21:07:49.294Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 57%
+2024-11-18T21:07:49.297Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 60%
+2024-11-18T21:07:49.297Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 61%
+2024-11-18T21:07:49.299Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 63%
+2024-11-18T21:07:49.302Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 66%
+2024-11-18T21:07:49.305Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 69%
+2024-11-18T21:07:49.308Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 70%
+2024-11-18T21:07:49.309Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 73%
+2024-11-18T21:07:49.309Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 74%
+2024-11-18T21:07:49.312Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 77%
+2024-11-18T21:07:49.314Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 79%
+2024-11-18T21:07:49.319Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 82%
+2024-11-18T21:07:49.319Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 83%
+2024-11-18T21:07:49.322Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 85%
+2024-11-18T21:07:49.327Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 88%
+2024-11-18T21:07:49.330Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 90%
+2024-11-18T21:07:49.332Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 92%
+2024-11-18T21:07:49.334Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 95%
+2024-11-18T21:07:49.336Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 96%
+2024-11-18T21:07:49.336Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 97%
+2024-11-18T21:07:49.338Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 98%
+2024-11-18T21:07:49.339Z [Modules] Streaming discord_erlpack@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip: 100%
+2024-11-18T21:07:49.339Z [Modules] Fetching discord_spellcheck@1 from https://discord.com/api/modules/stable/discord_spellcheck/1
+2024-11-18T21:07:49.340Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip
+2024-11-18T21:07:49.596Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 1%
+2024-11-18T21:07:49.609Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 2%
+2024-11-18T21:07:49.620Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 3%
+2024-11-18T21:07:49.633Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 4%
+2024-11-18T21:07:49.644Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 5%
+2024-11-18T21:07:49.656Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 6%
+2024-11-18T21:07:49.670Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 7%
+2024-11-18T21:07:49.678Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 8%
+2024-11-18T21:07:49.688Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 9%
+2024-11-18T21:07:49.698Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 10%
+2024-11-18T21:07:49.707Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 11%
+2024-11-18T21:07:49.718Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 12%
+2024-11-18T21:07:49.727Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 13%
+2024-11-18T21:07:49.735Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 14%
+2024-11-18T21:07:49.743Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 15%
+2024-11-18T21:07:49.751Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 16%
+2024-11-18T21:07:49.761Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 17%
+2024-11-18T21:07:49.768Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 18%
+2024-11-18T21:07:49.777Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 19%
+2024-11-18T21:07:49.786Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 20%
+2024-11-18T21:07:50.352Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 21%
+2024-11-18T21:07:50.353Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 22%
+2024-11-18T21:07:50.357Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 23%
+2024-11-18T21:07:50.373Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 24%
+2024-11-18T21:07:50.379Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 25%
+2024-11-18T21:07:50.387Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 26%
+2024-11-18T21:07:50.395Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 27%
+2024-11-18T21:07:50.403Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 28%
+2024-11-18T21:07:50.410Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 29%
+2024-11-18T21:07:50.417Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 30%
+2024-11-18T21:07:50.426Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 31%
+2024-11-18T21:07:50.433Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 32%
+2024-11-18T21:07:50.443Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 33%
+2024-11-18T21:07:50.448Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 34%
+2024-11-18T21:07:50.456Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 35%
+2024-11-18T21:07:50.462Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 36%
+2024-11-18T21:07:50.470Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 37%
+2024-11-18T21:07:50.478Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 38%
+2024-11-18T21:07:50.485Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 39%
+2024-11-18T21:07:50.491Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 40%
+2024-11-18T21:07:50.498Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 41%
+2024-11-18T21:07:50.504Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 42%
+2024-11-18T21:07:50.511Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 43%
+2024-11-18T21:07:50.515Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 44%
+2024-11-18T21:07:50.522Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 45%
+2024-11-18T21:07:50.528Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 46%
+2024-11-18T21:07:50.537Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 47%
+2024-11-18T21:07:50.541Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 48%
+2024-11-18T21:07:50.549Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 49%
+2024-11-18T21:07:50.557Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 50%
+2024-11-18T21:07:50.560Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 51%
+2024-11-18T21:07:50.566Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 52%
+2024-11-18T21:07:50.574Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 53%
+2024-11-18T21:07:50.581Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 54%
+2024-11-18T21:07:50.589Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 55%
+2024-11-18T21:07:50.592Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 56%
+2024-11-18T21:07:50.613Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 57%
+2024-11-18T21:07:50.616Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 58%
+2024-11-18T21:07:50.620Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 59%
+2024-11-18T21:07:50.624Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 60%
+2024-11-18T21:07:50.629Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 61%
+2024-11-18T21:07:50.641Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 62%
+2024-11-18T21:07:51.790Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 63%
+2024-11-18T21:07:51.790Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 64%
+2024-11-18T21:07:51.793Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 65%
+2024-11-18T21:07:51.796Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 66%
+2024-11-18T21:07:51.811Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 67%
+2024-11-18T21:07:51.817Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 68%
+2024-11-18T21:07:51.823Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 69%
+2024-11-18T21:07:51.826Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 70%
+2024-11-18T21:07:51.831Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 71%
+2024-11-18T21:07:51.835Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 72%
+2024-11-18T21:07:51.841Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 73%
+2024-11-18T21:07:51.846Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 74%
+2024-11-18T21:07:51.850Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 75%
+2024-11-18T21:07:51.857Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 76%
+2024-11-18T21:07:51.861Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 77%
+2024-11-18T21:07:51.866Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 78%
+2024-11-18T21:07:51.869Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 79%
+2024-11-18T21:07:51.877Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 80%
+2024-11-18T21:07:51.880Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 81%
+2024-11-18T21:07:51.887Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 82%
+2024-11-18T21:07:52.501Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 83%
+2024-11-18T21:07:52.502Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 84%
+2024-11-18T21:07:52.505Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 85%
+2024-11-18T21:07:52.508Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 86%
+2024-11-18T21:07:52.512Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 87%
+2024-11-18T21:07:52.515Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 88%
+2024-11-18T21:07:52.532Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 89%
+2024-11-18T21:07:52.535Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 90%
+2024-11-18T21:07:52.539Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 91%
+2024-11-18T21:07:52.543Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 92%
+2024-11-18T21:07:52.548Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 93%
+2024-11-18T21:07:52.552Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 94%
+2024-11-18T21:07:52.557Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 95%
+2024-11-18T21:07:52.562Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 96%
+2024-11-18T21:07:52.565Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 97%
+2024-11-18T21:07:52.570Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 98%
+2024-11-18T21:07:52.574Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 99%
+2024-11-18T21:07:52.578Z [Modules] Streaming discord_spellcheck@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip: 100%
+2024-11-18T21:07:52.579Z [Modules] Fetching discord_utils@1 from https://discord.com/api/modules/stable/discord_utils/1
+2024-11-18T21:07:52.579Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip
+2024-11-18T21:07:52.734Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 1%
+2024-11-18T21:07:52.738Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 2%
+2024-11-18T21:07:52.740Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 3%
+2024-11-18T21:07:52.741Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 4%
+2024-11-18T21:07:52.742Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 5%
+2024-11-18T21:07:52.744Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 6%
+2024-11-18T21:07:52.746Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 7%
+2024-11-18T21:07:52.747Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 8%
+2024-11-18T21:07:52.749Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 9%
+2024-11-18T21:07:52.751Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 10%
+2024-11-18T21:07:52.753Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 11%
+2024-11-18T21:07:52.757Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 12%
+2024-11-18T21:07:52.757Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 13%
+2024-11-18T21:07:52.758Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 14%
+2024-11-18T21:07:52.760Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 15%
+2024-11-18T21:07:52.761Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 16%
+2024-11-18T21:07:52.762Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 17%
+2024-11-18T21:07:52.764Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 18%
+2024-11-18T21:07:52.765Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 19%
+2024-11-18T21:07:52.767Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 20%
+2024-11-18T21:07:52.768Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 21%
+2024-11-18T21:07:52.770Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 22%
+2024-11-18T21:07:52.772Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 23%
+2024-11-18T21:07:52.773Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 24%
+2024-11-18T21:07:52.775Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 25%
+2024-11-18T21:07:52.777Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 26%
+2024-11-18T21:07:52.778Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 27%
+2024-11-18T21:07:52.780Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 28%
+2024-11-18T21:07:52.784Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 29%
+2024-11-18T21:07:52.785Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 30%
+2024-11-18T21:07:52.787Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 31%
+2024-11-18T21:07:52.787Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 32%
+2024-11-18T21:07:52.788Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 33%
+2024-11-18T21:07:52.790Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 34%
+2024-11-18T21:07:52.791Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 35%
+2024-11-18T21:07:52.793Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 36%
+2024-11-18T21:07:52.794Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 37%
+2024-11-18T21:07:52.799Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 38%
+2024-11-18T21:07:52.800Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 39%
+2024-11-18T21:07:52.801Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 40%
+2024-11-18T21:07:52.803Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 41%
+2024-11-18T21:07:52.804Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 42%
+2024-11-18T21:07:52.806Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 43%
+2024-11-18T21:07:52.807Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 44%
+2024-11-18T21:07:52.811Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 45%
+2024-11-18T21:07:52.812Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 46%
+2024-11-18T21:07:52.813Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 47%
+2024-11-18T21:07:52.815Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 48%
+2024-11-18T21:07:52.816Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 49%
+2024-11-18T21:07:52.817Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 50%
+2024-11-18T21:07:52.819Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 51%
+2024-11-18T21:07:52.820Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 52%
+2024-11-18T21:07:52.822Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 53%
+2024-11-18T21:07:52.823Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 54%
+2024-11-18T21:07:52.824Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 55%
+2024-11-18T21:07:52.829Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 56%
+2024-11-18T21:07:52.831Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 57%
+2024-11-18T21:07:52.833Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 58%
+2024-11-18T21:07:52.834Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 59%
+2024-11-18T21:07:52.840Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 60%
+2024-11-18T21:07:52.842Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 61%
+2024-11-18T21:07:52.843Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 62%
+2024-11-18T21:07:52.845Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 63%
+2024-11-18T21:07:52.846Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 64%
+2024-11-18T21:07:52.848Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 65%
+2024-11-18T21:07:52.849Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 66%
+2024-11-18T21:07:52.850Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 67%
+2024-11-18T21:07:52.852Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 68%
+2024-11-18T21:07:52.853Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 69%
+2024-11-18T21:07:52.855Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 70%
+2024-11-18T21:07:52.856Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 71%
+2024-11-18T21:07:52.858Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 72%
+2024-11-18T21:07:52.860Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 73%
+2024-11-18T21:07:52.861Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 74%
+2024-11-18T21:07:52.862Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 75%
+2024-11-18T21:07:52.866Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 76%
+2024-11-18T21:07:52.866Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 77%
+2024-11-18T21:07:52.867Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 78%
+2024-11-18T21:07:52.869Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 79%
+2024-11-18T21:07:52.870Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 80%
+2024-11-18T21:07:52.872Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 81%
+2024-11-18T21:07:52.873Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 82%
+2024-11-18T21:07:52.875Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 83%
+2024-11-18T21:07:52.877Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 84%
+2024-11-18T21:07:52.879Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 85%
+2024-11-18T21:07:52.880Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 86%
+2024-11-18T21:07:52.882Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 87%
+2024-11-18T21:07:52.883Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 88%
+2024-11-18T21:07:52.884Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 89%
+2024-11-18T21:07:52.886Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 90%
+2024-11-18T21:07:52.888Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 91%
+2024-11-18T21:07:52.889Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 92%
+2024-11-18T21:07:52.891Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 93%
+2024-11-18T21:07:52.892Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 94%
+2024-11-18T21:07:52.893Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 95%
+2024-11-18T21:07:52.894Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 96%
+2024-11-18T21:07:52.897Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 97%
+2024-11-18T21:07:52.901Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 98%
+2024-11-18T21:07:52.902Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 99%
+2024-11-18T21:07:52.904Z [Modules] Streaming discord_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip: 100%
+2024-11-18T21:07:52.905Z [Modules] Fetching discord_voice@1 from https://discord.com/api/modules/stable/discord_voice/1
+2024-11-18T21:07:52.905Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip
+2024-11-18T21:07:53.077Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 1%
+2024-11-18T21:07:53.086Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 2%
+2024-11-18T21:07:53.097Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 3%
+2024-11-18T21:07:53.108Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 4%
+2024-11-18T21:07:53.119Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 5%
+2024-11-18T21:07:53.127Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 6%
+2024-11-18T21:07:53.143Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 7%
+2024-11-18T21:07:53.155Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 8%
+2024-11-18T21:07:53.163Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 9%
+2024-11-18T21:07:53.173Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 10%
+2024-11-18T21:07:53.180Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 11%
+2024-11-18T21:07:53.189Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 12%
+2024-11-18T21:07:53.203Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 13%
+2024-11-18T21:07:53.211Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 14%
+2024-11-18T21:07:53.222Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 15%
+2024-11-18T21:07:53.230Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 16%
+2024-11-18T21:07:53.238Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 17%
+2024-11-18T21:07:53.247Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 18%
+2024-11-18T21:07:53.255Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 19%
+2024-11-18T21:07:53.263Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 20%
+2024-11-18T21:07:53.275Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 21%
+2024-11-18T21:07:53.283Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 22%
+2024-11-18T21:07:53.294Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 23%
+2024-11-18T21:07:53.302Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 24%
+2024-11-18T21:07:53.313Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 25%
+2024-11-18T21:07:53.324Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 26%
+2024-11-18T21:07:53.340Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 27%
+2024-11-18T21:07:53.348Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 28%
+2024-11-18T21:07:53.360Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 29%
+2024-11-18T21:07:53.368Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 30%
+2024-11-18T21:07:53.378Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 31%
+2024-11-18T21:07:53.387Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 32%
+2024-11-18T21:07:53.396Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 33%
+2024-11-18T21:07:53.406Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 34%
+2024-11-18T21:07:53.416Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 35%
+2024-11-18T21:07:53.427Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 36%
+2024-11-18T21:07:53.435Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 37%
+2024-11-18T21:07:53.443Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 38%
+2024-11-18T21:07:53.454Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 39%
+2024-11-18T21:07:53.462Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 40%
+2024-11-18T21:07:53.470Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 41%
+2024-11-18T21:07:53.479Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 42%
+2024-11-18T21:07:53.486Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 43%
+2024-11-18T21:07:53.516Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 44%
+2024-11-18T21:07:53.526Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 45%
+2024-11-18T21:07:53.534Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 46%
+2024-11-18T21:07:53.542Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 47%
+2024-11-18T21:07:53.550Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 48%
+2024-11-18T21:07:53.558Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 49%
+2024-11-18T21:07:53.585Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 50%
+2024-11-18T21:07:53.595Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 51%
+2024-11-18T21:07:53.604Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 52%
+2024-11-18T21:07:53.615Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 53%
+2024-11-18T21:07:53.627Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 54%
+2024-11-18T21:07:53.634Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 55%
+2024-11-18T21:07:53.644Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 56%
+2024-11-18T21:07:53.653Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 57%
+2024-11-18T21:07:53.661Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 58%
+2024-11-18T21:07:53.671Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 59%
+2024-11-18T21:07:53.679Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 60%
+2024-11-18T21:07:53.689Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 61%
+2024-11-18T21:07:53.702Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 62%
+2024-11-18T21:07:53.714Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 63%
+2024-11-18T21:07:53.723Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 64%
+2024-11-18T21:07:53.735Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 65%
+2024-11-18T21:07:53.743Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 66%
+2024-11-18T21:07:53.752Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 67%
+2024-11-18T21:07:53.762Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 68%
+2024-11-18T21:07:53.770Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 69%
+2024-11-18T21:07:53.779Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 70%
+2024-11-18T21:07:53.788Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 71%
+2024-11-18T21:07:53.797Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 72%
+2024-11-18T21:07:53.804Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 73%
+2024-11-18T21:07:53.817Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 74%
+2024-11-18T21:07:53.831Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 75%
+2024-11-18T21:07:53.839Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 76%
+2024-11-18T21:07:53.847Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 77%
+2024-11-18T21:07:53.855Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 78%
+2024-11-18T21:07:53.864Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 79%
+2024-11-18T21:07:53.890Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 80%
+2024-11-18T21:07:53.899Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 81%
+2024-11-18T21:07:53.910Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 82%
+2024-11-18T21:07:53.917Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 83%
+2024-11-18T21:07:53.939Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 84%
+2024-11-18T21:07:53.947Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 85%
+2024-11-18T21:07:53.956Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 86%
+2024-11-18T21:07:53.965Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 87%
+2024-11-18T21:07:53.973Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 88%
+2024-11-18T21:07:53.981Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 89%
+2024-11-18T21:07:53.990Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 90%
+2024-11-18T21:07:53.999Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 91%
+2024-11-18T21:07:54.008Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 92%
+2024-11-18T21:07:54.017Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 93%
+2024-11-18T21:07:54.029Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 94%
+2024-11-18T21:07:54.039Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 95%
+2024-11-18T21:07:54.048Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 96%
+2024-11-18T21:07:54.056Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 97%
+2024-11-18T21:07:54.064Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 98%
+2024-11-18T21:07:54.073Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 99%
+2024-11-18T21:07:54.081Z [Modules] Streaming discord_voice@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip: 100%
+2024-11-18T21:07:54.082Z [Modules] Fetching discord_zstd@1 from https://discord.com/api/modules/stable/discord_zstd/1
+2024-11-18T21:07:54.082Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip
+2024-11-18T21:07:54.301Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 2%
+2024-11-18T21:07:54.302Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 12%
+2024-11-18T21:07:54.302Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 13%
+2024-11-18T21:07:54.302Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 15%
+2024-11-18T21:07:54.302Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 17%
+2024-11-18T21:07:54.302Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 18%
+2024-11-18T21:07:54.302Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 19%
+2024-11-18T21:07:54.303Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 20%
+2024-11-18T21:07:54.303Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 21%
+2024-11-18T21:07:54.303Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 22%
+2024-11-18T21:07:54.303Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 27%
+2024-11-18T21:07:54.304Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 30%
+2024-11-18T21:07:54.304Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 32%
+2024-11-18T21:07:54.304Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 33%
+2024-11-18T21:07:54.304Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 34%
+2024-11-18T21:07:54.304Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 35%
+2024-11-18T21:07:54.304Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 36%
+2024-11-18T21:07:54.305Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 37%
+2024-11-18T21:07:54.305Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 38%
+2024-11-18T21:07:54.305Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 40%
+2024-11-18T21:07:54.305Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 41%
+2024-11-18T21:07:54.305Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 42%
+2024-11-18T21:07:54.305Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 43%
+2024-11-18T21:07:54.306Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 44%
+2024-11-18T21:07:54.306Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 45%
+2024-11-18T21:07:54.306Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 46%
+2024-11-18T21:07:54.307Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 47%
+2024-11-18T21:07:54.307Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 48%
+2024-11-18T21:07:54.307Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 49%
+2024-11-18T21:07:54.307Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 50%
+2024-11-18T21:07:54.307Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 52%
+2024-11-18T21:07:54.307Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 53%
+2024-11-18T21:07:54.307Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 54%
+2024-11-18T21:07:54.308Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 55%
+2024-11-18T21:07:54.308Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 56%
+2024-11-18T21:07:54.308Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 58%
+2024-11-18T21:07:54.308Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 59%
+2024-11-18T21:07:54.308Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 60%
+2024-11-18T21:07:54.308Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 61%
+2024-11-18T21:07:54.309Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 62%
+2024-11-18T21:07:54.309Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 64%
+2024-11-18T21:07:54.309Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 65%
+2024-11-18T21:07:54.309Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 66%
+2024-11-18T21:07:54.309Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 67%
+2024-11-18T21:07:54.309Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 68%
+2024-11-18T21:07:54.309Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 69%
+2024-11-18T21:07:54.310Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 71%
+2024-11-18T21:07:54.310Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 72%
+2024-11-18T21:07:54.310Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 73%
+2024-11-18T21:07:54.310Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 75%
+2024-11-18T21:07:54.310Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 76%
+2024-11-18T21:07:54.310Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 77%
+2024-11-18T21:07:54.310Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 78%
+2024-11-18T21:07:54.311Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 79%
+2024-11-18T21:07:54.311Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 80%
+2024-11-18T21:07:54.311Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 82%
+2024-11-18T21:07:54.311Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 83%
+2024-11-18T21:07:54.311Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 84%
+2024-11-18T21:07:54.311Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 85%
+2024-11-18T21:07:54.311Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 86%
+2024-11-18T21:07:54.317Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 88%
+2024-11-18T21:07:54.317Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 89%
+2024-11-18T21:07:54.318Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 91%
+2024-11-18T21:07:54.319Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 97%
+2024-11-18T21:07:54.319Z [Modules] Streaming discord_zstd@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip: 100%
+2024-11-18T21:07:54.319Z [Modules] Finished module downloads. [success: 6] [failure: 0]
+2024-11-18T21:07:54.320Z [Modules] Installing updates...
+2024-11-18T21:07:54.320Z [Modules] Installing discord_desktop_core@1 from /home/yvesd/.config/discord/0.0.74/modules/pending/discord_desktop_core-1.zip
+2024-11-18T21:07:54.366Z [Modules] Installing discord_erlpack@1 from /home/yvesd/.config/discord/0.0.74/modules/pending/discord_erlpack-1.zip
+2024-11-18T21:07:54.404Z [Modules] Installing discord_spellcheck@1 from /home/yvesd/.config/discord/0.0.74/modules/pending/discord_spellcheck-1.zip
+2024-11-18T21:07:54.735Z [Modules] Installing discord_utils@1 from /home/yvesd/.config/discord/0.0.74/modules/pending/discord_utils-1.zip
+2024-11-18T21:07:54.804Z [Modules] Installing discord_voice@1 from /home/yvesd/.config/discord/0.0.74/modules/pending/discord_voice-1.zip
+2024-11-18T21:07:55.083Z [Modules] Installing discord_zstd@1 from /home/yvesd/.config/discord/0.0.74/modules/pending/discord_zstd-1.zip
+2024-11-18T21:07:55.088Z [Modules] Finished module installations. [success: 6] [failure: 0]
+2024-11-18T21:07:55.088Z [Modules] Host is up to date.
+2024-11-18T21:07:55.088Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T21:07:55.091Z [Modules] No module updates available.
+2024-11-18T21:07:55.971Z [Modules] Starting to install discord_krisp...
+2024-11-18T21:07:55.971Z [Modules] Fetching discord_krisp@1 from https://discord.com/api/modules/stable/discord_krisp/1
+2024-11-18T21:07:55.971Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip
+2024-11-18T21:07:55.974Z [Modules] Starting to install discord_game_utils...
+2024-11-18T21:07:56.386Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 1%
+2024-11-18T21:07:56.403Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 2%
+2024-11-18T21:07:56.418Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 3%
+2024-11-18T21:07:56.428Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 4%
+2024-11-18T21:07:56.435Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 5%
+2024-11-18T21:07:56.441Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 6%
+2024-11-18T21:07:56.450Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 7%
+2024-11-18T21:07:56.458Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 8%
+2024-11-18T21:07:56.479Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 9%
+2024-11-18T21:07:56.494Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 10%
+2024-11-18T21:07:56.496Z [Modules] Host is up to date.
+2024-11-18T21:07:56.496Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T21:07:56.498Z [Modules] No module updates available.
+2024-11-18T21:07:56.502Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 11%
+2024-11-18T21:07:56.511Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 12%
+2024-11-18T21:07:56.514Z [Modules] Starting to install discord_rpc...
+2024-11-18T21:07:56.519Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 13%
+2024-11-18T21:07:56.528Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 14%
+2024-11-18T21:07:56.545Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 15%
+2024-11-18T21:07:56.559Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 16%
+2024-11-18T21:07:56.566Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 17%
+2024-11-18T21:07:56.580Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 18%
+2024-11-18T21:07:56.584Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 19%
+2024-11-18T21:07:56.598Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 20%
+2024-11-18T21:07:56.606Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 21%
+2024-11-18T21:07:56.616Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 22%
+2024-11-18T21:07:56.633Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 23%
+2024-11-18T21:07:56.638Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 24%
+2024-11-18T21:07:56.647Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 25%
+2024-11-18T21:07:56.656Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 26%
+2024-11-18T21:07:56.665Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 27%
+2024-11-18T21:07:56.677Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 28%
+2024-11-18T21:07:56.685Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 29%
+2024-11-18T21:07:56.700Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 30%
+2024-11-18T21:07:56.709Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 31%
+2024-11-18T21:07:56.719Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 32%
+2024-11-18T21:07:56.728Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 33%
+2024-11-18T21:07:56.739Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 34%
+2024-11-18T21:07:56.747Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 35%
+2024-11-18T21:07:56.756Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 36%
+2024-11-18T21:07:56.765Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 37%
+2024-11-18T21:07:56.773Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 38%
+2024-11-18T21:07:56.792Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 39%
+2024-11-18T21:07:56.801Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 40%
+2024-11-18T21:07:56.812Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 41%
+2024-11-18T21:07:56.820Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 42%
+2024-11-18T21:07:56.836Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 43%
+2024-11-18T21:07:56.846Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 44%
+2024-11-18T21:07:56.850Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 45%
+2024-11-18T21:07:56.858Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 46%
+2024-11-18T21:07:56.866Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 47%
+2024-11-18T21:07:56.878Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 48%
+2024-11-18T21:07:56.895Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 49%
+2024-11-18T21:07:56.906Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 50%
+2024-11-18T21:07:56.914Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 51%
+2024-11-18T21:07:56.932Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 52%
+2024-11-18T21:07:56.936Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 53%
+2024-11-18T21:07:56.949Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 54%
+2024-11-18T21:07:56.956Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 55%
+2024-11-18T21:07:56.965Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 56%
+2024-11-18T21:07:56.974Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 57%
+2024-11-18T21:07:56.987Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 58%
+2024-11-18T21:07:56.999Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 59%
+2024-11-18T21:07:57.010Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 60%
+2024-11-18T21:07:57.019Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 61%
+2024-11-18T21:07:57.031Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 62%
+2024-11-18T21:07:57.037Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 63%
+2024-11-18T21:07:57.046Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 64%
+2024-11-18T21:07:57.054Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 65%
+2024-11-18T21:07:57.063Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 66%
+2024-11-18T21:07:57.072Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 67%
+2024-11-18T21:07:57.085Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 68%
+2024-11-18T21:07:57.091Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 69%
+2024-11-18T21:07:57.105Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 70%
+2024-11-18T21:07:57.117Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 71%
+2024-11-18T21:07:57.130Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 72%
+2024-11-18T21:07:57.134Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 73%
+2024-11-18T21:07:57.150Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 74%
+2024-11-18T21:07:57.158Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 75%
+2024-11-18T21:07:57.181Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 76%
+2024-11-18T21:07:57.190Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 77%
+2024-11-18T21:07:57.203Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 78%
+2024-11-18T21:07:57.214Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 79%
+2024-11-18T21:07:57.222Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 80%
+2024-11-18T21:07:57.230Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 81%
+2024-11-18T21:07:57.241Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 82%
+2024-11-18T21:07:57.248Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 83%
+2024-11-18T21:07:57.258Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 84%
+2024-11-18T21:07:57.267Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 85%
+2024-11-18T21:07:57.276Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 86%
+2024-11-18T21:07:57.286Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 87%
+2024-11-18T21:07:57.298Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 88%
+2024-11-18T21:07:57.305Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 89%
+2024-11-18T21:07:57.315Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 90%
+2024-11-18T21:07:57.324Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 91%
+2024-11-18T21:07:57.333Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 92%
+2024-11-18T21:07:57.345Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 93%
+2024-11-18T21:07:57.353Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 94%
+2024-11-18T21:07:57.361Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 95%
+2024-11-18T21:07:57.369Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 96%
+2024-11-18T21:07:57.378Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 97%
+2024-11-18T21:07:57.386Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 98%
+2024-11-18T21:07:57.395Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 99%
+2024-11-18T21:07:57.408Z [Modules] Streaming discord_krisp@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip: 100%
+2024-11-18T21:07:57.409Z [Modules] Fetching discord_game_utils@1 from https://discord.com/api/modules/stable/discord_game_utils/1
+2024-11-18T21:07:57.409Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip
+2024-11-18T21:07:57.409Z [Modules] Installing discord_krisp@1 from /home/yvesd/.config/discord/0.0.74/modules/pending/discord_krisp-1.zip
+2024-11-18T21:07:57.600Z [Modules] Finished module installations. [success: 1] [failure: 0]
+2024-11-18T21:07:57.630Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 1%
+2024-11-18T21:07:57.630Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 2%
+2024-11-18T21:07:57.632Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 3%
+2024-11-18T21:07:57.639Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 4%
+2024-11-18T21:07:57.641Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 5%
+2024-11-18T21:07:57.642Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 6%
+2024-11-18T21:07:57.642Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 7%
+2024-11-18T21:07:57.643Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 8%
+2024-11-18T21:07:57.644Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 9%
+2024-11-18T21:07:57.645Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 10%
+2024-11-18T21:07:57.647Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 11%
+2024-11-18T21:07:57.648Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 12%
+2024-11-18T21:07:57.649Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 13%
+2024-11-18T21:07:57.653Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 14%
+2024-11-18T21:07:57.659Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 15%
+2024-11-18T21:07:57.659Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 16%
+2024-11-18T21:07:57.665Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 17%
+2024-11-18T21:07:57.666Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 19%
+2024-11-18T21:07:57.666Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 21%
+2024-11-18T21:07:57.666Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 24%
+2024-11-18T21:07:57.689Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 25%
+2024-11-18T21:07:57.690Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 26%
+2024-11-18T21:07:57.690Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 28%
+2024-11-18T21:07:57.690Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 30%
+2024-11-18T21:07:57.690Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 33%
+2024-11-18T21:07:57.690Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 35%
+2024-11-18T21:07:57.690Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 38%
+2024-11-18T21:07:57.691Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 42%
+2024-11-18T21:07:57.691Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 45%
+2024-11-18T21:07:57.691Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 47%
+2024-11-18T21:07:57.691Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 50%
+2024-11-18T21:07:57.691Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 51%
+2024-11-18T21:07:57.692Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 52%
+2024-11-18T21:07:57.693Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 53%
+2024-11-18T21:07:57.694Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 54%
+2024-11-18T21:07:57.695Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 55%
+2024-11-18T21:07:57.697Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 56%
+2024-11-18T21:07:57.698Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 57%
+2024-11-18T21:07:57.699Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 58%
+2024-11-18T21:07:57.700Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 59%
+2024-11-18T21:07:57.701Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 60%
+2024-11-18T21:07:57.703Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 61%
+2024-11-18T21:07:57.704Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 62%
+2024-11-18T21:07:57.704Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 63%
+2024-11-18T21:07:57.705Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 64%
+2024-11-18T21:07:57.706Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 65%
+2024-11-18T21:07:57.708Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 66%
+2024-11-18T21:07:57.709Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 67%
+2024-11-18T21:07:57.710Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 68%
+2024-11-18T21:07:57.714Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 69%
+2024-11-18T21:07:57.715Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 70%
+2024-11-18T21:07:57.716Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 71%
+2024-11-18T21:07:57.717Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 72%
+2024-11-18T21:07:57.718Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 73%
+2024-11-18T21:07:57.718Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 74%
+2024-11-18T21:07:57.723Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 75%
+2024-11-18T21:07:57.723Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 76%
+2024-11-18T21:07:57.724Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 77%
+2024-11-18T21:07:57.725Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 78%
+2024-11-18T21:07:57.726Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 79%
+2024-11-18T21:07:57.727Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 80%
+2024-11-18T21:07:57.728Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 81%
+2024-11-18T21:07:57.729Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 82%
+2024-11-18T21:07:57.730Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 83%
+2024-11-18T21:07:57.730Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 84%
+2024-11-18T21:07:57.731Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 85%
+2024-11-18T21:07:57.735Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 87%
+2024-11-18T21:07:57.736Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 88%
+2024-11-18T21:07:57.736Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 89%
+2024-11-18T21:07:57.737Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 90%
+2024-11-18T21:07:57.738Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 91%
+2024-11-18T21:07:57.739Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 92%
+2024-11-18T21:07:57.739Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 93%
+2024-11-18T21:07:57.741Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 94%
+2024-11-18T21:07:57.743Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 95%
+2024-11-18T21:07:57.743Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 96%
+2024-11-18T21:07:57.744Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 97%
+2024-11-18T21:07:57.745Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 98%
+2024-11-18T21:07:57.746Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 99%
+2024-11-18T21:07:57.747Z [Modules] Streaming discord_game_utils@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip: 100%
+2024-11-18T21:07:57.748Z [Modules] Fetching discord_rpc@1 from https://discord.com/api/modules/stable/discord_rpc/1
+2024-11-18T21:07:57.748Z [Modules] Streaming discord_rpc@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_rpc-1.zip
+2024-11-18T21:07:57.748Z [Modules] Installing discord_game_utils@1 from /home/yvesd/.config/discord/0.0.74/modules/pending/discord_game_utils-1.zip
+2024-11-18T21:07:57.783Z [Modules] Finished module installations. [success: 1] [failure: 0]
+2024-11-18T21:07:57.858Z [Modules] Streaming discord_rpc@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_rpc-1.zip: 23%
+2024-11-18T21:07:57.858Z [Modules] Streaming discord_rpc@1 to /home/yvesd/.config/discord/0.0.74/modules/pending/discord_rpc-1.zip: 100%
+2024-11-18T21:07:57.859Z [Modules] Finished module downloads. [success: 3] [failure: 0]
+2024-11-18T21:07:57.859Z [Modules] Installing discord_rpc@1 from /home/yvesd/.config/discord/0.0.74/modules/pending/discord_rpc-1.zip
+2024-11-18T21:07:57.866Z [Modules] Finished module installations. [success: 1] [failure: 0]
+2024-11-18T22:30:06.980Z [Modules] Host is up to date.
+2024-11-18T22:30:06.980Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T22:30:07.027Z [Modules] No module updates available.
+2024-11-18T23:32:27.682Z [Modules] Modules initializing
+2024-11-18T23:32:27.682Z [Modules] Distribution: remote
+2024-11-18T23:32:27.682Z [Modules] Host updates: disabled
+2024-11-18T23:32:27.683Z [Modules] Module updates: enabled
+2024-11-18T23:32:27.683Z [Modules] Module install path: /home/yvesd/.config/discord/0.0.74/modules
+2024-11-18T23:32:27.683Z [Modules] Module installed file path: /home/yvesd/.config/discord/0.0.74/modules/installed.json
+2024-11-18T23:32:27.683Z [Modules] Module download path: /home/yvesd/.config/discord/0.0.74/modules/pending
+2024-11-18T23:32:27.956Z [Modules] No updates to install
+2024-11-18T23:32:27.956Z [Modules] Host is up to date.
+2024-11-18T23:32:27.957Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T23:32:27.987Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-18T23:32:37.992Z [Modules] Host is up to date.
+2024-11-18T23:32:37.993Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T23:32:38.182Z [Modules] No module updates available.
+2024-11-18T23:32:39.554Z [Modules] Host is up to date.
+2024-11-18T23:32:39.554Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T23:32:39.556Z [Modules] No module updates available.
+2024-11-18T23:35:15.774Z [Modules] Modules initializing
+2024-11-18T23:35:15.774Z [Modules] Distribution: remote
+2024-11-18T23:35:15.775Z [Modules] Host updates: disabled
+2024-11-18T23:35:15.775Z [Modules] Module updates: enabled
+2024-11-18T23:35:15.775Z [Modules] Module install path: /home/yvesd/.config/discord/0.0.74/modules
+2024-11-18T23:35:15.775Z [Modules] Module installed file path: /home/yvesd/.config/discord/0.0.74/modules/installed.json
+2024-11-18T23:35:15.775Z [Modules] Module download path: /home/yvesd/.config/discord/0.0.74/modules/pending
+2024-11-18T23:35:16.018Z [Modules] No updates to install
+2024-11-18T23:35:16.019Z [Modules] Host is up to date.
+2024-11-18T23:35:16.019Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T23:35:16.048Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-18T23:35:26.053Z [Modules] Host is up to date.
+2024-11-18T23:35:26.054Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T23:35:26.265Z [Modules] No module updates available.
+2024-11-18T23:35:27.553Z [Modules] Host is up to date.
+2024-11-18T23:35:27.553Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T23:35:27.556Z [Modules] No module updates available.
+2024-11-18T23:50:45.034Z [Modules] Modules initializing
+2024-11-18T23:50:45.034Z [Modules] Distribution: remote
+2024-11-18T23:50:45.034Z [Modules] Host updates: disabled
+2024-11-18T23:50:45.034Z [Modules] Module updates: enabled
+2024-11-18T23:50:45.034Z [Modules] Module install path: /home/yvesd/.config/discord/0.0.74/modules
+2024-11-18T23:50:45.034Z [Modules] Module installed file path: /home/yvesd/.config/discord/0.0.74/modules/installed.json
+2024-11-18T23:50:45.034Z [Modules] Module download path: /home/yvesd/.config/discord/0.0.74/modules/pending
+2024-11-18T23:50:45.322Z [Modules] No updates to install
+2024-11-18T23:50:45.322Z [Modules] Host is up to date.
+2024-11-18T23:50:45.322Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T23:50:45.357Z [Modules] Failed fetching module versions: Error: getaddrinfo ENOTFOUND discord.com
+2024-11-18T23:50:55.364Z [Modules] Host is up to date.
+2024-11-18T23:50:55.364Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T23:50:55.572Z [Modules] No module updates available.
+2024-11-18T23:50:56.929Z [Modules] Host is up to date.
+2024-11-18T23:50:56.929Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-18T23:50:56.932Z [Modules] No module updates available.
+2024-11-19T00:50:57.739Z [Modules] Host is up to date.
+2024-11-19T00:50:57.739Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-19T00:50:57.792Z [Modules] No module updates available.
+2024-11-19T01:50:57.739Z [Modules] Host is up to date.
+2024-11-19T01:50:57.739Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-19T01:50:57.774Z [Modules] No module updates available.
+2024-11-19T13:22:59.044Z [Modules] Host is up to date.
+2024-11-19T13:22:59.044Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2024-11-19T13:22:59.088Z [Modules] No module updates available.

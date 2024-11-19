@@ -1,0 +1,48 @@
+{
+  "credentials": {
+    "username": "dragonzilla9",
+    "auth_data": "AQA75y7pFgPHL_7opRIICtyeb4oQd3_yiH5SzXQ0kbE3sDEXJZXuwqhT1Qlh7RaFNcYujHTkhP3qh9-Wrh6gWlTbSyQNeMDGa4VQ3UPUVZW__MOkC9ae3sdR0TUsr9vKemb55vZ8aMWH3y__UtsN9Xlumf6GQjc2vDPCCUMoXjLfgHiS1i_-L-OE5vz7fvCT0x4qiyO_4ro",
+    "auth_type": 1
+  },
+  "audio_quality": "High",
+  "theme": "Dark",
+  "volume": 1.0,
+  "last_route": {
+    "AlbumDetail": {
+      "id": "65edimIChzNNK8VGn56pIK",
+      "name": "Nectar",
+      "images": [
+        {
+          "url": "https://i.scdn.co/image/ab67616d0000b2738da6404284573219a9b1e2f4",
+          "width": 640,
+          "height": 640
+        },
+        {
+          "url": "https://i.scdn.co/image/ab67616d00001e028da6404284573219a9b1e2f4",
+          "width": 300,
+          "height": 300
+        },
+        {
+          "url": "https://i.scdn.co/image/ab67616d000048518da6404284573219a9b1e2f4",
+          "width": 64,
+          "height": 64
+        }
+      ]
+    }
+  },
+  "queue_behavior": "Sequential",
+  "show_track_cover": true,
+  "window_size": {
+    "width": 1906.0,
+    "height": 1151.0
+  },
+  "slider_scroll_scale": {
+    "scale": 3.0,
+    "y": 1.0,
+    "x": 1.0
+  },
+  "sort_order": "Ascending",
+  "sort_criteria": "DateAdded",
+  "paginated_limit": 500,
+  "seek_duration": 10
+}

@@ -157,3 +157,740 @@ sls
 ls
 hx configuration.nix
 lazygit
+clear
+zi
+z linux
+cd linux
+fzf
+cd nixos
+zi
+zi nixos
+nv
+vim
+ls
+cd Nixos
+ls
+hx home.nix
+update
+nvim
+hx home.nix
+rebot
+reboot
+rfkill
+rfkill block waln
+rfkill block wlan
+rfkill list
+cd Nixos
+ls
+hx flake.nix
+update
+nix flake update
+update
+clean
+update
+nix-collect-garbage
+j
+nix-env --list-generations
+nix-env --delete-generations old
+update
+j
+nix-collect-garbage -d
+update
+nix-collect-garbage -d<\n>
+nix-store --gc --print-dead
+nix-env --delete-generations old<\n>
+ls /boot/EFI/nixos/ -hl
+cd
+ls /boot/EFI/nixos/ -hl
+sudo nix-collect-garbage -d<\n>
+udo nix-collect-garbage --delete-older-than 15d
+sudo nix-collect-garbage --delete-older-than 15d
+nix-env --list-generations
+reboot
+update
+cd Nixos
+ls
+hx configuration.nix
+hx flake.nix
+nix flake update
+ls
+hx home.nix
+update
+nix flake update
+hx flake.nix
+hx home.nix
+update
+hx home.nix
+update
+hx flake.nix
+nix flake update
+update
+hx flake.nix
+hx home.nix
+hx flake.nix
+nix flake update
+hx home.nix
+update
+ls
+hx flake.nix
+nix flake updatel
+nix flake update
+update
+hx home.nix
+hx flake.nix
+nix flake unstable.nix
+nix flake update
+update
+hx flake.nix
+nix flake update
+hx home.nix
+update
+hx home.nix
+update
+hx home.nix
+update
+hx home.nix
+update
+hx configuration.nix
+update
+hx home.nix
+update
+hx configuration.nix
+hx home.nix
+update
+hx home.nix
+update
+hx home.nix
+update
+hx home.nix
+update
+hx home.nix
+update
+clean
+cd Nixos
+ls
+hx home.nix
+update
+hx configuration.nix
+hx home.nix
+update
+clean
+hx home.nix
+clear
+cd Nixops
+cd Nixos
+hx home.nix
+hx configuration.nix
+hx flake.nix
+update
+hx flake.nix
+update
+hx home.nix
+update
+hx home.nix
+hx configuration.nix
+update
+hx configuration.nix
+hx home.nix
+update
+hx home.nix
+update
+reboot
+update
+ls
+cd Nixos
+hx con
+hx configuration.nix
+hx flake.nix
+ls
+hx home.nix
+hx flake.nix
+nix flake update
+update
+hx
+ls
+nix flake init --template github:nix-community/nixvim
+ls
+rm flake.nix
+cd Templates/
+s
+ls
+cdd
+cd 
+rm 
+rm -rf Templates/
+ls
+rm -rf README.md
+ls
+mkdir test
+cd test/
+ls
+nix flake init --template github:nix-community/nixvim
+ls
+cd
+rm -rf config/
+ls
+cd tes
+cd test
+ls
+nix flake update
+nix run
+ls
+cd flake.nix
+hx flake.nix
+cd config/
+ls
+cd default.nix
+hx default.nix
+hx bufferline.nix
+ls
+cd
+rm -rf test/
+cd Nixos
+ls
+hx flake.nix
+flake update
+nixos flake update
+nix flake update
+hx home.nix
+update
+hx flake.nix
+nix flake update
+update
+hx home.nix
+update
+hx home.nix
+update
+hx home.nix
+update
+hx home.nix
+update
+hx home.nix
+update
+hx home.nix
+update
+hx home.nix
+update
+hx home.nix
+update
+clean
+rfkill list
+rfkill unblock lan
+rfkill unblock wlan
+ls
+rfkill block wlan
+rfkill
+shutdown
+rfkill block
+ls
+rfkill block wlan
+rfkill unblock wlan
+ls
+cd Codingspaces/
+ls
+cd C/
+ls
+cd code/
+ls
+hx philosophers.c
+ls
+cd ~
+cd Codingspaces/
+ls
+cd C
+ls
+lks
+ls
+cd code/
+ls
+hx  statistics.c
+cd code/l
+cd code/
+l
+sls
+ls
+nix develop
+ls
+cd -
+ls
+cd C
+ls
+nix dev 
+nix develop --co
+nix develop --command nushell
+ls
+cd code/
+rfkill unblock wlan
+rfkill block wlan
+clear
+ls
+cd -
+sl
+ls
+nix develop -c nushell
+ls
+nix develop -commmand nushell
+nix develop --command nushell
+nix develop nushell
+nix develop
+nix develop -c $SHELL
+nix develop
+ls
+nix develop
+nix-direnv 
+cd
+ls
+cd Codingspaces/
+ls
+cd
+l
+ls
+hx Nixos/
+cd Nixos
+ls
+hx home.nix
+update
+cd 
+cd Codingspaces
+ls
+cd C
+direnv allow
+mv /home/yvesd/Downloads/envrc .
+ls
+direnv allow
+ls
+mv envrc .envrc
+ls
+direnv allow
+ls
+l
+ls -a
+direnv allow
+direnv allow .
+hx .envrc
+direnv allow .
+cd C
+cd Codingspaces/C
+ls
+cd
+ls
+cd Codingspaces/
+ls
+cd C++/ls
+cd C++/
+ls
+/home/yvesd/Downloads/envrc .
+mv /home/yvesd/Downloads/envrc .
+ls
+mv envrc .envrc
+direnv allow
+ls
+cd
+ls
+cd Codingspaces/
+ls
+cd `C#/`
+ls
+mv /home/yvesd/Downloads/.envrc .
+direv allow
+direnv allow
+cd 
+cd Codingspaces/Python/
+ls
+mv /home/yvesd/Downloads/.envrc .
+direnv allow
+ls
+cd
+ls
+cd Codingspaces/C
+ls
+gcc
+cd code/
+ls
+mkir Lab1
+mkdir Lab1
+ls
+lls
+ls
+cd `OS Class/`
+ls
+clear
+ls
+cd Assignment1/
+ls
+cd -
+ls
+cd Assignment2/
+ls
+hx philosophers.c
+ls
+mv philosophers.c philoOld.c
+ls
+hx philosophers.c
+gcc philosophers.c
+./a.out
+reboot
+ls
+rfkill unblock wlan
+ls
+cd Nixos
+ls
+hx hyprland.nix
+hx home.nix
+update
+hx home.nix
+update
+reboot
+cd Nixos
+ls
+hx home.nix
+update
+neofetch
+tlp-stat -b
+supo tlp-stat -b
+sudo tlp-stat -b
+clean
+lspci -vnnn | perl -lne 'print if /^\d+\:.+(\[\S+\:\S+\])/' | grep VGA
+sudo lspci -vnnn | perl -lne 'print if /^\d+\:.+(\[\S+\:\S+\])/' | grep VGA
+lspci
+lshw -C display
+xrandr --listproviders
+nvidia-smi
+aticonfig --odgc --odgt
+watch
+sudo modprobe nvidia,
+sudo modprobe nvidia
+glxinfo | grep -E "OpenGL vendor|OpenGL renderer"
+rfkill
+rfkill unblock bluetooth
+rkill
+rfkill
+l
+ls
+cd Nixos
+ls
+hx home.nix
+update
+clean
+cd
+cd Codingspaces/C
+ls
+rm a.out
+ls
+cd code/
+ls
+cd `OS Class/`
+ls
+cd Assignment2/
+ls
+kill 1814
+kill 1569
+cd Nixos
+ls
+hx configuration.nix
+update
+cd Nixos
+ls
+hx configuration.nix
+hx unstable.nix
+update
+hx unstable.nix
+update
+hyprctl clients
+hx home.nix
+update
+cd .config/hypr
+ls
+hx back2
+hx start.sh
+cd Nixos/
+ls
+hyprctl monitors all
+hx home.nix
+update
+hx home.nix
+update
+hyprctl
+hyprctl monitors
+hx home.nix
+update
+hx home.nix
+update
+clean
+hx home.nix
+update
+hyprctl monitors
+cd Nixos
+ls
+cd home.nix
+hyprctl clients
+hx home.nix
+update
+cd Nixos
+ls
+hx configuration.nix
+hx home.nix
+update
+clean
+hyprctl clients
+hx Codingspaces/
+cd Codingspaces/C
+ls
+cd code/
+ls
+cd `OS Class/`
+ls
+cd Assignment2/
+ls
+./a.out
+hx philosophers.c
+gcc philosophers.c
+./a.out
+hx philosophers.c
+gcc philosophers.c
+./a.out
+gcc philosophers.c
+hx philosophers.c
+gcc philosophers.c
+./a.out
+hx philosophers.c
+gcc philosophers.c
+./a.out
+hx philosophers.c
+gcc philosophers.c
+./a.out
+hx philosophers.c
+./a.out
+gcc philosophers.c
+./a.out
+hx philosophers.c
+gcc philosophers.c
+hx philosophers.c
+./a.out
+hx philosophers.c
+gcc philosophers.c
+./a.out
+gcc philosophers.c
+./a.out
+gcc philosophers.c
+./a.out
+hx philosophers.c
+gcc philosophers.c
+./a.out
+hx philosophers.c
+rfkill 
+rfkill block wlan
+rfkill 
+ls
+gcc dining_philosophors.c
+ks
+ls
+gcc dining_philosophors.c
+./a.out
+hx dining_philosophors.c
+./a.out
+hx dining_philosophors.c
+audacity 
+cd Nixos
+l
+ls
+hx configuration.nix
+hx unstable.nix
+update
+hx home
+hx home.nix
+update
+hx unstable.nix
+update
+hx philosophers.c
+gcc philosophers.c
+./a.out
+hx philosophers.c
+gcc philosophers.c
+./a.out
+hx philosophers.c
+rfkill
+rfkill unblock wlan
+rfkill block bluetooth
+cd Nixos
+ls
+hx flake.nix
+flake update
+nix flake update
+hx home.nix
+update
+clean
+update
+hx home.nix
+updae
+update
+hx home.nix
+hx configuration.nix
+update
+clean
+hx home.nix
+hx flake.nix
+hx configuration.nix
+hx home.nix
+hx hyprland.nix
+hx flake.nix
+update
+hx unstable.nix
+update
+hx home.nix
+update
+hx unstable.nix
+update
+hx flak.nix
+hx flake.nix
+update
+hx flake.nix
+nix flake update,
+nix flake update
+update
+hx flake.nix
+nix flake update
+hx flake.nix
+update
+hx flake.nix
+nix flake update
+update
+hx flake.nix
+nix flake update
+update
+hx flake.nix
+nix flake update
+hx hyprland.nix
+update
+hx nixos
+cd Nixos
+ls
+hx configuration.nix
+hx hyprland.nix
+update
+ls
+hx home.nix,
+hx home.nix
+hx hyprland.nix
+hx home.nix
+update
+hx home.nix
+update
+hx hyprland.nix
+update
+hx home.nix
+update
+killall -SIGUSR1 waybar 
+killall -SIGUSR1 waybar
+killall  waybar
+killall waybar
+killall
+killall --list
+killall waybar
+j
+killall waybar || waybar
+j
+systemctl --user enable --now waybar.service
+clear
+killall -SIGUSR1 waybar
+waybar
+killwaybar
+kill waybar
+killall waybar
+pkill waybar
+hyprctl dispatch exec waybar
+pkill -SIGUSR1 waybar
+hx Nixos
+cd Nixos
+ls
+cd configuration.nix
+hx home.nix
+update
+hx home.nix
+update
+hx home.nix
+update
+pkill -SIGUSR1 waybar
+hyprctl dispatch exec waybar
+pkill -SIGUSR1 waybar
+waybar
+pkill -SIGUSR1 waybar
+clear
+ls
+waybar
+pkill -SIGUSR1 waybar
+hx home.nix
+waybar
+cd Nixos/
+ls
+hx home.nix
+update
+cd Nixos
+ls
+hx configuration.nix
+hx hyprland.nix
+update
+hx home.nix
+update
+ls
+cd chrome/
+ls
+hx userChrome.css
+cd
+ls
+hx nixos
+hx Codingspaces/
+cd Nixos/
+ls
+hx home.nix
+update
+hx hyprland.nix
+update
+hx hyprland.nix
+update
+reboot
+ls
+cd chrome/
+ls
+hx userChrome.css
+update
+hx userChrome.css
+ls
+cd C
+ls
+cd Nixos
+ls
+hx configuration.nix
+clean
+update
+ranger
+ls
+hx configuration.nix
+update
+joshuto
+hx configuration.nix
+update
+joshuto
+j
+hx home.nix
+hx configuration.nix
+update
+j
+h
+c
+j
+update
+h
+c Nixos/
+j
+ls
+rm -rf jan
+ls
+l
+clean
+c Nixos/
+ls
+lazygit
+c Nixos
+ls
+lazgit
