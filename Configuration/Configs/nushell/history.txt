@@ -1382,3 +1382,13 @@ hx l
 lazygit
 git config --global user.email "draonzilla9@gmail.com"
 git config user.name "YvesD"
+ls
+cd Nixos
+l
+ls
+hx configuration.nix
+update
+hx configuration.nix
+update
+nvidia-offload 
+nvidia-smi

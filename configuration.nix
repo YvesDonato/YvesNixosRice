@@ -38,8 +38,8 @@
 
    hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
+    powerManagement.enable = true;
+    powerManagement.finegrained = true;
     open = false;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.production;
@@ -154,7 +154,6 @@
   nixpkgs.config.allowUnfree = true;
 
   programs.direnv.enable = true;
- 
   environment.systemPackages = with pkgs; [
     # Programs
     chromium

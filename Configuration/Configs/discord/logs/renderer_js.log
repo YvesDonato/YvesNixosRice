@@ -35747,3 +35747,56 @@ Possible causes: the network is offline, Origin is not allowed by Access-Control
 [2024-12-03 00:27:03.520] [info]  [GatewaySocket] [READY_SUPPLEMENTAL] took 867ms
 [2024-12-03 00:27:03.684] [error] Unrecognized Content-Security-Policy directive 'prefetch-src'.
 [2024-12-03 00:27:03.979] [info]  [Spotify] Removed account: dragonzilla9
+[2024-12-03 01:00:00.168] [info]  [GatewaySocket] [WS CLOSED] (false, 1006, ) retrying in 2.78 seconds.
+[2024-12-03 01:00:02.946] [info]  [GatewaySocket] [CONNECT] wss://gateway-us-east1-b.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-12-03 01:00:02.949] [info]  [GatewaySocket] [WS CLOSED] (false, 0, An error with the websocket occurred) retrying in 7.08 seconds.
+[2024-12-03 10:14:38.290] [warn]  [AnalyticsTrackingStore] Track: Request has been terminated
+Possible causes: the network is offline, Origin is not allowed by Access-Control-Allow-Origin, the page is being unloaded, etc.
+[2024-12-03 10:14:38.295] [error] Uncaught (in promise) ChunkLoadError: Loading chunk 83536 failed.
+(error: https://discord.com/assets/85f960944967d5583516.js)
+[2024-12-03 10:14:38.428] [info]  [GatewaySocket] [CONNECT] wss://gateway.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-12-03 10:14:38.432] [info]  [GatewaySocket] [WS CLOSED] (true, 0, power monitor resumed) retrying immediately.
+[2024-12-03 10:14:38.433] [info]  [GatewaySocket] [CONNECT] wss://gateway.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-12-03 10:14:38.434] [info]  [GatewaySocket] [WS CLOSED] (false, 0, An error with the websocket occurred) retrying in 1.20 seconds.
+[2024-12-03 10:14:39.637] [info]  [GatewaySocket] [CONNECT] wss://gateway.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-12-03 10:14:39.639] [info]  [GatewaySocket] [WS CLOSED] (false, 0, An error with the websocket occurred) retrying in 2.46 seconds.
+[2024-12-03 10:14:42.102] [info]  [GatewaySocket] [CONNECT] wss://gateway.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-12-03 10:14:42.206] [info]  [GatewaySocket] [CONNECTED] wss://gateway.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 103 ms
+[2024-12-03 10:14:42.736] [info]  [GatewaySocket] [READY] took 633ms, as 7e4e57c2c1efa0ee7dd8b2e826c0a7b2
+[2024-12-03 10:14:42.755] [info]  [Flux] Dispatching CONNECTION_OPEN
+[2024-12-03 10:14:42.756] [info]  [DatabaseManager] removing database (user: 175004270414921728, database: null)
+[2024-12-03 10:14:42.762] [warn]  [NativeDispatchUtils] Tried getting Dispatch instance before instantiated
+[2024-12-03 10:14:42.767] [info]  [Spotify] WS Connecting
+[2024-12-03 10:14:42.768] [info]  [Spotify] Added account: dragonzilla9
+[2024-12-03 10:14:42.791] [info]  [GatewaySocket] [READY_SUPPLEMENTAL] took 689ms
+[2024-12-03 10:14:43.051] [info]  [Spotify] Removed account: dragonzilla9
+[2024-12-03 10:15:47.487] [error] Unrecognized Content-Security-Policy directive 'prefetch-src'.
+[2024-12-03 10:15:47.723] [info]  [FAST CONNECT] wss://gateway.discord.gg/?encoding=etf&v=9&compress=zstd-stream, encoding: etf, version: 9
+[2024-12-03 10:15:47.748] [error] Unrecognized Content-Security-Policy directive 'prefetch-src'.
+[2024-12-03 10:15:47.748] [error] Unrecognized Content-Security-Policy directive 'prefetch-src'.
+[2024-12-03 10:15:47.952] [info]  Initializing voice engine with audio subsystem: standard
+[2024-12-03 10:15:48.030] [info]  [default] [BUILD INFO] Release Channel: stable, Build Number: 349573, Version Hash: 9f2ac79774512a531c2d9b1d65a453e9bd606630
+[2024-12-03 10:15:48.063] [info]  [default] [NATIVE INFO] host 0.0.74, modules: discord_desktop_core: 1, discord_erlpack: 1, discord_spellcheck: 1, discord_utils: 1, discord_voice: 1, discord_zstd: 1, discord_krisp: 1, discord_game_utils: 1, discord_rpc: 1, build: null
+[2024-12-03 10:15:48.073] [info]  [FAST CONNECT] connected in 350ms
+[2024-12-03 10:15:48.370] [warn]  [MediaEngineStore] Failed to load Krisp module: Failed to setup Krisp module, error code: -3
+[2024-12-03 10:15:48.501] [error] [Spellchecker] sh is not a valid locale.
+[2024-12-03 10:15:48.522] [error] Unrecognized Content-Security-Policy directive 'prefetch-src'.
+[2024-12-03 10:15:48.523] [info]  [Spellchecker] Switching to en-US (available)
+[2024-12-03 10:15:48.594] [error] Unrecognized Content-Security-Policy directive 'prefetch-src'.
+[2024-12-03 10:15:48.595] [error] Unrecognized Content-Security-Policy directive 'prefetch-src'.
+[2024-12-03 10:15:48.703] [warn]  [CloudSyncUtils] CloudSync is not supported on this platform
+[2024-12-03 10:15:48.750] [info]  [GatewaySocket] [CONNECT] wss://gateway.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-12-03 10:15:48.751] [info]  [GatewaySocket] [FAST CONNECT] successfully took over websocket, state: [object Object]
+[2024-12-03 10:15:48.751] [info]  [GatewaySocket] [CONNECTED] wss://gateway.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 0 ms
+[2024-12-03 10:15:48.781] [info]  [RPCServer:WSS] Starting on 6463
+[2024-12-03 10:15:48.783] [info]  [RPCServer:IPC] Starting on /run/user/1000/discord-ipc-0
+[2024-12-03 10:15:49.266] [info]  [GatewaySocket] [READY] took 516ms, as fb046c8707f0be07855dff46f84e777f
+[2024-12-03 10:15:49.289] [info]  [Flux] Dispatching CONNECTION_OPEN
+[2024-12-03 10:15:49.291] [info]  [DatabaseManager] removing database (user: 175004270414921728, database: undefined)
+[2024-12-03 10:15:49.297] [warn]  [NativeDispatchUtils] Tried getting Dispatch instance before instantiated
+[2024-12-03 10:15:49.307] [info]  [Spotify] WS Connecting
+[2024-12-03 10:15:49.308] [info]  [Spotify] Added account: dragonzilla9
+[2024-12-03 10:15:49.356] [info]  [GatewaySocket] [READY_SUPPLEMENTAL] took 606ms
+[2024-12-03 10:15:49.464] [info]  [discord_protos.discord_users.v1.FrecencyUserSettings] Loading proto
+[2024-12-03 10:15:49.631] [error] Unrecognized Content-Security-Policy directive 'prefetch-src'.
+[2024-12-03 10:15:49.632] [info]  [Spotify] Removed account: dragonzilla9
