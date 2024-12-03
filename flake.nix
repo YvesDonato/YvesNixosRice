@@ -33,7 +33,7 @@
 
     };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-colors, hyprland, nixvim, hy3, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-colors, hyprland, hy3, nixvim, ... }@inputs:
     let
       # System
       system = "x86_64-linux";
@@ -85,7 +85,6 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.sharedModules = [
-                nixvim.homeManagerModules.nixvim
               ];
             }
           ];

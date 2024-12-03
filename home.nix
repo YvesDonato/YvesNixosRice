@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, nixvim, ... }:
+{ config, pkgs, ... }:
 
 {
   home.username = "yvesd";
@@ -14,11 +14,9 @@
   };
   
   home.sessionVariables = {
-  
   };
 
   imports = [
-    
   ];
   
   # Program Settings
@@ -66,12 +64,18 @@
     shellAliases = {
       update = "sudo nixos-rebuild switch";
       clean = "sudo nix-collect-garbage -d";
-      j = "joshuto";
       c = "cd";
       h = "hx";
     };
   };  
-   
+
+  # programs.nixvim = {
+  #   enable = true;
+
+  #   # colorschemes.catppuccin.enable = true;
+  #   # plugins.lualine.enable = true;
+  # };
+    
   programs.starship = {
     enable = true;
     settings = {
@@ -92,9 +96,9 @@
       # inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
     ];
     extraConfig = ''
-      monitor = eDP-1,2560x1600@165,0x0, 1.333333
+      monitor = eDP-1,preferred,auto, 1.333333
       monitor = DP-2, 3440x1440@143.97, 1920x0, 1
-      monitor = desc:CVT VITURE 0x88888800, 1920x1080@120.00, 1600x0, 1
+      monitor = desc:CVT VITURE 0x88888800, 1920x1080@120.00, 1600x0, 1, vrr, 1
       bindl = , switch:on:Lid Switch, exec, hyprctl keyword monitor "eDP-1, disable"
       bindl = , switch:off:Lid Switch, exec, hyprctl keyword monitor "eDP-1,2560x1600@165,0x0,1.333333"
       exec-once = waybar & swaync & hypridle

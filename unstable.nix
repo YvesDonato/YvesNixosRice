@@ -10,6 +10,8 @@
     psst
     audacity
     shotcut
+    smassh
+    leetgo
   ];
   
   #hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta.overrideAttrs {

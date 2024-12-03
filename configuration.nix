@@ -14,7 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.blacklistedKernelModules = [ "nouveau" "nvidia_drm" "nvidia" ];
+  # boot.blacklistedKernelModules = [ "nouveau" "nvidia_drm" "nvidia" ];
     
   hardware.opengl = {
     enable = true;
@@ -33,8 +33,25 @@
   #environment.variables.LIBVA_DRIVER_NAME = "nvidia";
   
   # Drivers
-  boot.initrd.kernelModules = [ "amdgpu" ];
-  services.xserver.videoDrivers = [ "amdgpu" ];
+  boot.initrd.kernelModules = [ "nvidia"];
+  services.xserver.videoDrivers = [ "nvidia"];
+
+   hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+    open = false;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.production;
+    prime = {
+		  nvidiaBusId = "PCI:1:0:0";
+      amdgpuBusId = "PCI:101:0:0";
+      offload = {
+			  enable = true;
+			  enableOffloadCmd = true;
+	    };
+    };
+  };
     
   # Networking
   networking.hostName = "nixos";
@@ -76,6 +93,11 @@
   security.pam.services.lightdm.enableGnomeKeyring = true;
   security.pam.services.sddm.enableGnomeKeyring = true;
 
+  services.asusd = {
+    enable = true;
+    enableUserService = true;
+  };
+  
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Enable sound with pipewire.
@@ -155,6 +177,7 @@
 
     # Terminal
     helix
+    neovim
     zellij
     git
     neofetch
@@ -167,8 +190,11 @@
     git-credential-manager
     wlr-randr
     lsof
-    joshuto
-    
+    yazi
+    asusctl
+    supergfxctl
+    lshw
+            
     # Languages
     vscode-langservers-extracted
     nodePackages_latest.typescript-language-server
