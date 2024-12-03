@@ -35655,3 +35655,95 @@ Possible causes: the network is offline, Origin is not allowed by Access-Control
 [2024-12-02 18:04:37.735] [info]  [discord_protos.discord_users.v1.FrecencyUserSettings] Loading proto
 [2024-12-02 18:04:37.941] [info]  [Spotify] Removed account: dragonzilla9
 [2024-12-02 18:04:37.950] [error] Unrecognized Content-Security-Policy directive 'prefetch-src'.
+[2024-12-03 00:19:29.178] [error] Unrecognized Content-Security-Policy directive 'prefetch-src'.
+[2024-12-03 00:19:29.468] [info]  [FAST CONNECT] wss://gateway.discord.gg/?encoding=etf&v=9&compress=zstd-stream, encoding: etf, version: 9
+[2024-12-03 00:19:29.499] [error] Unrecognized Content-Security-Policy directive 'prefetch-src'.
+[2024-12-03 00:19:29.500] [error] Unrecognized Content-Security-Policy directive 'prefetch-src'.
+[2024-12-03 00:19:29.811] [info]  Initializing voice engine with audio subsystem: standard
+[2024-12-03 00:19:29.940] [info]  [default] [BUILD INFO] Release Channel: stable, Build Number: 349573, Version Hash: 9f2ac79774512a531c2d9b1d65a453e9bd606630
+[2024-12-03 00:19:30.052] [info]  [default] [NATIVE INFO] host 0.0.74, modules: discord_desktop_core: 1, discord_erlpack: 1, discord_spellcheck: 1, discord_utils: 1, discord_voice: 1, discord_zstd: 1, discord_krisp: 1, discord_game_utils: 1, discord_rpc: 1, build: null
+[2024-12-03 00:19:30.092] [info]  [FAST CONNECT] connected in 621ms
+[2024-12-03 00:19:30.409] [warn]  [MediaEngineStore] Failed to load Krisp module: Failed to setup Krisp module, error code: -3
+[2024-12-03 00:19:30.544] [error] [Spellchecker] sh is not a valid locale.
+[2024-12-03 00:19:30.566] [error] Unrecognized Content-Security-Policy directive 'prefetch-src'.
+[2024-12-03 00:19:30.567] [info]  [Spellchecker] Switching to en-US (available)
+[2024-12-03 00:19:30.653] [error] Unrecognized Content-Security-Policy directive 'prefetch-src'.
+[2024-12-03 00:19:30.653] [error] Unrecognized Content-Security-Policy directive 'prefetch-src'.
+[2024-12-03 00:19:30.777] [warn]  [CloudSyncUtils] CloudSync is not supported on this platform
+[2024-12-03 00:19:30.917] [info]  [GatewaySocket] [CONNECT] wss://gateway.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-12-03 00:19:30.917] [info]  [GatewaySocket] [FAST CONNECT] successfully took over websocket, state: [object Object]
+[2024-12-03 00:19:30.917] [info]  [GatewaySocket] [CONNECTED] wss://gateway.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 1 ms
+[2024-12-03 00:19:30.941] [info]  [RPCServer:WSS] Starting on 6463
+[2024-12-03 00:19:30.945] [info]  [RPCServer:IPC] Starting on /run/user/1000/discord-ipc-0
+[2024-12-03 00:19:31.007] [warn]  [GatewaySocket] [WS CLOSED] because of authentication failure, marking as closed.
+[2024-12-03 00:19:31.008] [warn]  [GatewaySocket] [RESET] (true, 4004, Authentication failed.)
+[2024-12-03 00:19:31.008] [info]  [Flux] Dispatching CONNECTION_CLOSED
+[2024-12-03 00:19:31.027] [info]  [Routing/Utils] transitionTo - Transitioning to /login
+[2024-12-03 00:19:35.352] [info]  [LoginQRSocket] [0ms] connecting to wss://remote-auth-gateway.discord.gg/?v=2
+[2024-12-03 00:19:35.532] [info]  [LoginQRSocket] [181ms] got hello, auth timeout=240213ms
+[2024-12-03 00:19:35.609] [info]  [LoginQRSocket] [258ms] connected, handshaking with fingerprint: q4x9vw5s_fsIYwJkOne6YvAVQn2bnDZKGW7xXc4wooU
+[2024-12-03 00:19:35.660] [info]  [LoginQRSocket] [309ms] computed nonce proof
+[2024-12-03 00:19:35.714] [info]  [LoginQRSocket] [362ms] handshake complete awaiting remote auth.
+[2024-12-03 00:23:24.176] [error] Unrecognized Content-Security-Policy directive 'prefetch-src'.
+[2024-12-03 00:23:24.889] [info]  Initializing voice engine with audio subsystem: standard
+[2024-12-03 00:23:24.948] [info]  [default] [BUILD INFO] Release Channel: stable, Build Number: 349573, Version Hash: 9f2ac79774512a531c2d9b1d65a453e9bd606630
+[2024-12-03 00:23:24.983] [info]  [default] [NATIVE INFO] host 0.0.74, modules: discord_desktop_core: 1, discord_erlpack: 1, discord_spellcheck: 1, discord_utils: 1, discord_voice: 1, discord_zstd: 1, discord_krisp: 1, discord_game_utils: 1, discord_rpc: 1, build: null
+[2024-12-03 00:23:25.475] [warn]  [MediaEngineStore] Failed to load Krisp module: Failed to setup Krisp module, error code: -3
+[2024-12-03 00:23:25.621] [error] [Spellchecker] sh is not a valid locale.
+[2024-12-03 00:23:25.635] [error] Unrecognized Content-Security-Policy directive 'prefetch-src'.
+[2024-12-03 00:23:25.645] [info]  [Spellchecker] Switching to en-GB (available)
+[2024-12-03 00:23:25.861] [warn]  [CloudSyncUtils] CloudSync is not supported on this platform
+[2024-12-03 00:23:25.948] [info]  [RPCServer:WSS] Starting on 6463
+[2024-12-03 00:23:25.950] [info]  [RPCServer:IPC] Starting on /run/user/1000/discord-ipc-0
+[2024-12-03 00:23:58.869] [info]  [LoginQRSocket] [0ms] connecting to wss://remote-auth-gateway.discord.gg/?v=2
+[2024-12-03 00:23:58.981] [info]  [LoginQRSocket] [112ms] got hello, auth timeout=314324ms
+[2024-12-03 00:23:59.073] [info]  [LoginQRSocket] [205ms] connected, handshaking with fingerprint: GGaMp002GYUUuKKJzVBg0TWSeEEELz_OZvnzWKKrYO0
+[2024-12-03 00:23:59.127] [info]  [LoginQRSocket] [258ms] computed nonce proof
+[2024-12-03 00:23:59.183] [info]  [LoginQRSocket] [315ms] handshake complete awaiting remote auth.
+[2024-12-03 00:26:27.663] [info]  [LoginQRSocket] [148792ms] remote auth handshake started, awaiting ticket/cancel.
+[2024-12-03 00:26:28.912] [info]  [LoginQRSocket] [150041ms] disconnected, code: 1006 
+[2024-12-03 00:26:28.912] [error] [LoginQRSocket] Could not complete QR code login, trying to restart with a new QR code.
+[2024-12-03 00:26:30.624] [error] WebSocket is already in CLOSING or CLOSED state.
+[2024-12-03 00:26:31.138] [info]  [LoginQRSocket] [152270ms] cleaning up
+[2024-12-03 00:26:31.139] [info]  [LoginQRSocket] [0ms] connecting to wss://remote-auth-gateway.discord.gg/?v=2
+[2024-12-03 00:26:31.140] [info]  [LoginQRSocket] [2ms] disconnected, error: {"isTrusted":true}
+[2024-12-03 00:26:31.140] [error] [LoginQRSocket] Could not complete QR code login, trying to restart with a new QR code.
+[2024-12-03 00:26:31.141] [info]  [LoginQRSocket] [2ms] disconnected, code: 1006 
+[2024-12-03 00:26:31.141] [error] [LoginQRSocket] Could not complete QR code login, trying to restart with a new QR code.
+[2024-12-03 00:26:38.144] [info]  [LoginQRSocket] [7004ms] cleaning up
+[2024-12-03 00:26:38.145] [info]  [LoginQRSocket] [0ms] connecting to wss://remote-auth-gateway.discord.gg/?v=2
+[2024-12-03 00:26:38.147] [info]  [LoginQRSocket] [2ms] disconnected, error: {"isTrusted":true}
+[2024-12-03 00:26:38.147] [error] [LoginQRSocket] Could not complete QR code login, trying to restart with a new QR code.
+[2024-12-03 00:26:38.147] [info]  [LoginQRSocket] [3ms] disconnected, code: 1006 
+[2024-12-03 00:26:38.147] [error] [LoginQRSocket] Could not complete QR code login, trying to restart with a new QR code.
+[2024-12-03 00:26:42.665] [info]  [LoginQRSocket] [4518ms] cleaning up
+[2024-12-03 00:26:42.665] [info]  [LoginQRSocket] [0ms] connecting to wss://remote-auth-gateway.discord.gg/?v=2
+[2024-12-03 00:26:42.667] [info]  [LoginQRSocket] [2ms] disconnected, error: {"isTrusted":true}
+[2024-12-03 00:26:42.667] [error] [LoginQRSocket] Could not complete QR code login, trying to restart with a new QR code.
+[2024-12-03 00:26:42.667] [info]  [LoginQRSocket] [2ms] disconnected, code: 1006 
+[2024-12-03 00:26:42.667] [error] [LoginQRSocket] Could not complete QR code login, trying to restart with a new QR code.
+[2024-12-03 00:26:43.174] [warn]  [AnalyticsTrackingStore] Track: Request has been terminated
+Possible causes: the network is offline, Origin is not allowed by Access-Control-Allow-Origin, the page is being unloaded, etc.
+[2024-12-03 00:26:54.139] [info]  [LoginQRSocket] [11471ms] cleaning up
+[2024-12-03 00:26:54.139] [info]  [LoginQRSocket] [0ms] connecting to wss://remote-auth-gateway.discord.gg/?v=2
+[2024-12-03 00:26:54.240] [info]  [LoginQRSocket] [100ms] got hello, auth timeout=318203ms
+[2024-12-03 00:26:54.299] [info]  [LoginQRSocket] [160ms] connected, handshaking with fingerprint: 7JgfuNXV6YXOcs-mvUaAEet6P_GLGeOL87pIaislDdc
+[2024-12-03 00:26:54.352] [info]  [LoginQRSocket] [213ms] computed nonce proof
+[2024-12-03 00:26:54.401] [info]  [LoginQRSocket] [261ms] handshake complete awaiting remote auth.
+[2024-12-03 00:27:00.315] [info]  [LoginQRSocket] [6173ms] remote auth handshake started, awaiting ticket/cancel.
+[2024-12-03 00:27:02.631] [info]  [Flux] Dispatching LOGIN
+[2024-12-03 00:27:02.632] [info]  [Flux] Dispatching LOGIN_SUCCESS
+[2024-12-03 00:27:02.646] [info]  [Routing/Utils] transitionTo - Transitioning to /app
+[2024-12-03 00:27:02.653] [info]  [GatewaySocket] [CONNECT] wss://gateway.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+[2024-12-03 00:27:02.654] [info]  [LoginQRSocket] [8514ms] cleaning up
+[2024-12-03 00:27:02.762] [info]  [GatewaySocket] [CONNECTED] wss://gateway.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 110 ms
+[2024-12-03 00:27:03.254] [info]  [GatewaySocket] [READY] took 602ms, as aa195f4be99525066812d83fd9615154
+[2024-12-03 00:27:03.276] [info]  [Flux] Dispatching CONNECTION_OPEN
+[2024-12-03 00:27:03.278] [info]  [DatabaseManager] removing database (user: 175004270414921728, database: undefined)
+[2024-12-03 00:27:03.293] [warn]  [NativeDispatchUtils] Tried getting Dispatch instance before instantiated
+[2024-12-03 00:27:03.300] [info]  [Spotify] WS Connecting
+[2024-12-03 00:27:03.300] [info]  [Spotify] Added account: dragonzilla9
+[2024-12-03 00:27:03.438] [info]  [discord_protos.discord_users.v1.FrecencyUserSettings] Loading proto
+[2024-12-03 00:27:03.520] [info]  [GatewaySocket] [READY_SUPPLEMENTAL] took 867ms
+[2024-12-03 00:27:03.684] [error] Unrecognized Content-Security-Policy directive 'prefetch-src'.
+[2024-12-03 00:27:03.979] [info]  [Spotify] Removed account: dragonzilla9

@@ -423,3 +423,49 @@
   serviceName: 'audio.mojom.AudioService',
   name: 'Audio Service'
 }
+2024-12-03T05:19:28.502Z 0: 
+
+----------------------------------------------
+2024-12-03T05:19:28.547Z 1: Discord starting: {"releaseChannel":"stable","version":"0.0.74"}, modulepath: /home/yvesd/.config/discord/0.0.74/modules
+2024-12-03T05:19:28.550Z 2: ✅ webContents.created web1 ""
+2024-12-03T05:19:28.553Z 3: ✅ window.created win1 "discord"
+2024-12-03T05:19:28.564Z 4: ❌ child-process-gone {
+  type: 'GPU',
+  reason: 'abnormal-exit',
+  exitCode: 8704,
+  serviceName: 'GPU'
+}
+2024-12-03T05:19:28.632Z 5: ❌ child-process-gone {
+  type: 'GPU',
+  reason: 'abnormal-exit',
+  exitCode: 8704,
+  serviceName: 'GPU'
+}
+2024-12-03T05:19:28.706Z 6: ❌ child-process-gone {
+  type: 'GPU',
+  reason: 'abnormal-exit',
+  exitCode: 8704,
+  serviceName: 'GPU'
+}
+2024-12-03T05:19:28.772Z 7: ✅ webContents.did-finish-load web1
+2024-12-03T05:19:29.088Z 8: ✅ webContents.created web2 ""
+2024-12-03T05:19:29.091Z 9: ✅ window.created win2 "Discord"
+2024-12-03T05:19:30.957Z 10: ✅ webContents.did-finish-load web2
+2024-12-03T05:19:31.058Z 11: window.close win1
+2024-12-03T05:19:31.060Z 12: webContents.destroyed web1
+2024-12-03T05:19:31.061Z 13: window.closed win1
+2024-12-03T05:22:36.996Z 14: before-quit
+2024-12-03T05:22:37.002Z 15: window.close win2
+2024-12-03T05:23:13.630Z 0: 
+
+----------------------------------------------
+2024-12-03T05:23:13.641Z 1: Discord starting: {"releaseChannel":"stable","version":"0.0.74"}, modulepath: /home/yvesd/.config/discord/0.0.74/modules
+2024-12-03T05:23:13.648Z 2: ✅ webContents.created web1 ""
+2024-12-03T05:23:13.652Z 3: ✅ window.created win1 "discord"
+2024-12-03T05:23:13.923Z 4: ✅ webContents.did-finish-load web1
+2024-12-03T05:23:24.091Z 5: ✅ webContents.created web2 ""
+2024-12-03T05:23:24.093Z 6: ✅ window.created win2 "Discord"
+2024-12-03T05:23:25.965Z 7: ✅ webContents.did-finish-load web2
+2024-12-03T05:23:26.066Z 8: window.close win1
+2024-12-03T05:23:26.101Z 9: webContents.destroyed web1
+2024-12-03T05:23:26.102Z 10: window.closed win1

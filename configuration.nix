@@ -33,8 +33,8 @@
   #environment.variables.LIBVA_DRIVER_NAME = "nvidia";
   
   # Drivers
-  boot.initrd.kernelModules = [ "nvidia"];
-  services.xserver.videoDrivers = [ "nvidia"];
+  boot.initrd.kernelModules = [ "nvidia" "amdgpu"];
+  services.xserver.videoDrivers = [ "nvidia" "amdgpu"];
 
    hardware.nvidia = {
     modesetting.enable = true;

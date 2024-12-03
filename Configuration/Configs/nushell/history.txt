@@ -1352,3 +1352,33 @@ update
 nix-store --optimise
 nix-collect-garbage -d
 update
+waybar
+ls
+yazi
+update
+git clone https://github.com/YvesDonato/Codingspace.git
+yazi
+cd Codingspace/
+ls
+cd C
+direnv allow
+cd ..
+ls
+cd C#
+direnv allow
+cd ..
+cd C++
+direnv allow
+cd ..
+ls
+cd Python/
+direnv allow
+cd ..
+clean
+cd ..
+cd Nixos
+ls
+hx l
+lazygit
+git config --global user.email "draonzilla9@gmail.com"
+git config user.name "YvesD"
