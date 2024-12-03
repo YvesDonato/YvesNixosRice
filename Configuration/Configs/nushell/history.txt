@@ -894,3 +894,461 @@ lazygit
 c Nixos
 ls
 lazgit
+lazygit
+pkill discord
+killall 1587
+kill 1587
+rfkill block bluetooth waln
+rfkill block bluetooth wlan
+g
+rfkill
+rfkill unblock wlan
+ls
+cd Nixos
+ls
+hx flake.nix
+cd
+f
+j
+update
+h
+v
+vim
+nvim
+j
+cd .config/
+ls
+mkdir nvim
+ls
+cd nvim
+ls
+hx init.lua
+ls
+hx init.lua
+sl
+ls
+files
+file 
+natualus
+f
+j
+mkdir lua
+ls
+cd lua
+hx options.lua
+cd -
+ls
+hx init.lua
+rm -rf lua
+mkdir lua
+ls
+cd lua
+hx options.lua
+hx plugins.lua
+ls
+cd -
+rm -rf lua
+ls
+hx options.ua
+hx options.la
+hx options.lua
+ls
+rm -rf init.lua
+ls
+mkdir plugin
+ls
+cd plugin/
+ls
+hx cmp.lua
+cd -
+ls
+cd plugin/
+ls
+hx lsp.lua
+hx telescope.lua
+hx treesitter.lua
+hx other.lua
+j
+update
+hx other.lua
+update
+nvim
+update
+cd -
+cd ..
+cd .
+cd ....
+ls
+cd Configuration/
+.
+cd .
+cd ..
+cd Configuration/ls
+cd Configuration/
+ls
+cd Configs/
+ls
+rm -rf nvim
+cd ..
+cd ...
+cd Nixos
+ls
+cd home.nix
+hx home.nix
+update
+hx flake.nix
+hx home.nix
+update
+hx flake.nix
+update
+hx home.nix
+update
+hx flake.nix
+update
+hx flake.nix
+hx home.nix
+update
+hx home.nix
+hx flake.nix
+hx home.nix
+update
+hx home.nix
+update
+hx flake.nix
+ls
+hx flake.nix
+hx home.nix
+update
+nix flake update
+update
+hx home.nix
+updaet
+update
+hx flake.nix
+update
+hx flake.nix
+update
+updaet
+update
+hx flake.nix
+cd Nixos/
+hx flake.nix
+updaet
+update
+nix flake update
+update
+hx flake.nix
+update
+hx home.nix
+update
+hx home.nix
+update
+hx home.nix
+killall 137233
+killall discord
+pkill discord
+pkill 137233
+killall 137233
+j
+ls
+cd Nixos
+l
+ls
+hx configuration.nix
+hx home.nix
+update
+hx configuration.nix
+update
+j
+yazi
+hx home.nix
+j
+yazi
+yh
+y
+hx home.nix
+update
+j
+clean
+yazi
+cd Configuration/Configs/yazi/
+ls
+cd flavors/
+ls
+cd ..
+ls
+hx yazi.toml
+cd ...
+ls
+cd ..
+ls
+$EDITOR
+hx configuration.nix
+cd ..
+ls
+cd kitty/
+ls
+hx kitty.conf
+echo $EDITOR
+cd ..
+ls
+cd yazi/
+ls
+hx yazi.tool
+rm yazi.tool
+mpv
+hx yazi.toml
+j
+yazi
+hx home.nix
+update
+vlc
+y
+yazi
+hx home.nix
+update
+yi
+yazi
+hx home.nix
+yazi
+hx home.nix
+update
+clean
+yazi
+rfkill block wlan
+rfkill unblock wlan
+j
+yazi
+update
+rog-control-center
+supergfxd
+supergfxctl
+supergfxctl -m
+supergfxctl --mode Integrated
+systemctl enable supergfxd
+asusctl
+sudo asusctl
+revoot
+$ systemctl daemon-reload && systemctl restart asusd<\n>
+systemctl daemon-reload && systemctl restart asusd<\n>
+systemctl daemon-reload;  systemctl restart asusd<\n>
+cd Nixos
+ls
+cd configuration.nix
+hx configuration.nix
+update
+hx configuration.nix
+hx home.nix
+hx configuration.nix
+hx
+yazi
+asusctl
+systemctl --user start asusd-user.service
+asusctl
+Rog
+sudo systemctl status asusd.service<\n>● asusd.service - ASUS Notebook Control<\n>
+asusctl
+asusctl -c limit 
+asusctl -c 
+asusctl --help
+systemctl start
+systemctl start supergfxd.service
+supergfxctl -s
+supergfxctl -g
+supergfxctl -m intergrated
+supergfxctl -m hybrid
+supergfxctl -m Intergrated
+supergfxctl -h
+supergfxctl -g
+supergfxctl -S
+supergfxctl -m Intergrated
+supergfxctl -m int
+systemctl start
+systemctl start asusd.service 
+asusctl
+asusctl -c limit 
+asusctl -c 80
+asusctl -s
+yazi
+update
+systemd service asusd.service 
+systemctl start asusd.service 
+asusctl -s
+yazi
+update
+supergfxctl -m Intergrated,
+supergfxctl -m Intergrated
+systemctl start supergfxd.service
+supergfxctl -m Intergrated
+supergfxctl -m
+supergfxctl -h
+supergfxctl -V
+supergfxctl -S
+supergfxctl -h
+supergfxctl -m
+supergfxctl -g
+<\n>supergfxctl --mode Integrated
+reboot
+supergfxctl -g
+logout
+<\n>supergfxctl --mode Integrated
+supergfxctl -g
+supergfxctl -m
+supergfxctl -h
+supergfxctl -p
+supergfxctl -P
+supergfxctl -S
+supergfxctl -v
+supergfxctl -g
+supergfxctl -s
+hyprctl dispatch exec waybar
+rfkill block wlan
+ls
+rfkill unblock wlan
+rfkill block wlan
+yazi
+update
+smaatch
+smmassh
+smassh
+yazi
+update
+cd Codingspaces/LeetCode/
+ls
+leetgo -h
+leetgo init 
+ls
+hx leetgo.yaml
+leetgo
+leetgo pick 1
+hx leetgo.yaml
+leetgo pick 1
+hx leetgo.yaml
+leetgo pick 1
+ls
+cd cpp/
+ls
+cd 00
+cd 0001.two-sum/
+ls
+hx solution.cpp
+hx question.md
+ls
+cd -
+ls
+cd LC_IO.h
+hx LC_IO.h
+cd bits/
+ls
+hx stdc++.h
+cd -
+cd ..
+ls
+hx cpp/
+cd cpp/
+ls
+cd 0001.two-sum/
+ls
+hx solution.cpp
+cd ..
+ls
+hx leetgo.yaml
+leetgo pick 1
+ls
+cd c
+ls
+hx 0001.two-sum.c
+ls
+cd ..
+ls
+hx leetgo.yaml
+leetgo pick 1
+ls
+hx leetgo.yaml
+leetgo test last -L
+leetgo test last 
+clean
+rfkill blockwlan
+rfkill block wlan
+rfkill unblock wlan
+clean
+rfkill block wlan
+rfkill unblovk
+rfkill unbloc wlan
+rfkill unblock wlan
+clena
+clean
+hyprctl monitors all
+yazi
+update
+hyprctl monitors all
+yazi
+update
+yazi
+hyprctl monitors all
+sudo lshw -c display
+yazi
+updat
+update
+clena
+clean
+update
+sudo lshw -c display 
+yazi
+update
+clean
+update
+nvidia-smi
+yazi
+update
+nvidia-offload
+nvidia-offload -h
+nvidia-offload --help
+nvidia-settings
+nvidia-smi
+yazi
+update
+clean
+update
+nvidia-smi
+yazi
+sudo lshw -c display 
+sudo lshw  display 
+yazi
+update
+clean
+update
+sudo lshw -c display 
+sudo lshw -c display
+nvidia-smi
+supergfxctl -m hybrid<\n>
+supergfxctl -m hybrid
+supergfxctl -m Hybrid
+sudo lshw -c display
+supergfxctl -g
+nvidia-smi
+inxi -SMGx
+yazi
+update
+nvidia-smi
+sudo lshw -c display 
+nvidia-smi
+lspci
+lspci -vnnn | perl -lne 'print if /^\d+\:.+(\[\S+\:\S+\])/' | grep VGA
+rfkill block wlan
+nvidia-settings<\n>
+yazi
+update
+clean
+update
+clean
+update
+clean
+nix-store --gc
+sudo nix-store --gc
+nix-collect-garbage
+nix-collect-garbage -d
+update
+nix-store --optimise
+nix-collect-garbage -d
+update

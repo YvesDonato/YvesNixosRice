@@ -1,13 +1,13 @@
 autologin.saved_credentials="{\"dragonzilla9\":[\"dragonzilla9\",\"rhKTGfcMvHKCa/1UEhcNiX9rZBwePghknfOMIXFSALg1U6AkGjyu0AQVLeEeqrqaaIec1PhQnBkjiKeynZI2ylH1uBu0H6MEvFLnMvzKhRN9JamcDEsDd1Negz0oY6FlWHpSqAY5juoZMywnXul2/9QWMFgv65ASBh4LuWaICCTBVi65QuOaoWgk4DMp8Y1biTyQ6rkjCxKvAGj5IgxssJWtlwRjJl2OCYjtkL9wLBVtH6IxIFsm9Xb8vYdfaPCJLhVOw07ynDU0FvlatbjO+xQ3F8iNzF3DMMnaIMhFm54=\"]}"
 autologin.blob="rhKTGfcMvHKCa/1UEhcNiX9rZBwePghknfOMIXFSALg1U6AkGjyu0AQVLeEeqrqaaIec1PhQnBkjiKeynZI2ylH1uBu0H6MEvFLnMvzKhRN9JamcDEsDd1Negz0oY6FlWHpSqAY5juoZMywnXul2/9QWMFgv65ASBh4LuWaICCTBVi65QuOaoWgk4DMp8Y1biTyQ6rkjCxKvAGj5IgxssJWtlwRjJl2OCYjtkL9wLBVtH6IxIFsm9Xb8vYdfaPCJLhVOw07ynDU0FvlatbjO+xQ3F8iNzF3DMMnaIMhFm54="
 es.send-on-startup=true
-core.clock_delta=0
 autologin.username="dragonzilla9"
-app.window.state=2
 app.window.position.saved=true
 app.window.position.height=1391
 storage.last-location="/home/yvesd/.cache/spotify/Storage"
-app.window.state.saved=true
 app.window.position.width=1709
+core.clock_delta=0
+app.window.state=2
+app.window.state.saved=true
 autologin.canonical_username="dragonzilla9"
 app.last-launched-version="1.2.48.405.gf2c48e6f"

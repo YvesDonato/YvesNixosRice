@@ -1524,3 +1524,195 @@
 2024-11-18 15:10:20 Success.
 2024-11-18 15:10:20 Latest version is 1.7.6
 2024-11-18 15:10:20 App is up to date.
+2024-11-20 22:23:47 Loading main app package /nix/store/qhw0pn4c3fbd9l4f8xcqqh3a5wx7lk5c-obsidian-1.7.6/share/obsidian/obsidian.asar
+2024-11-20 22:23:48 Checking for update using Github
+2024-11-20 22:23:48 Success.
+2024-11-20 22:23:48 Latest version is 1.7.7
+2024-11-20 22:23:48 Downloading update from https://github.com/obsidianmd/obsidian-releases/releases/download/v1.7.7/obsidian-1.7.7.asar.gz
+2024-11-20 22:23:48 Verifying hash & signature. Size= 8000009
+2024-11-20 22:23:48 Saving file
+2024-11-20 22:23:48 Update complete.
+2024-11-20 23:23:48 Checking for update using Github
+2024-11-20 23:23:48 Success.
+2024-11-20 23:23:48 Latest version is 1.7.7
+2024-11-20 23:23:48 An update is already downloaded.
+2024-11-21 00:23:48 Checking for update using Github
+2024-11-21 00:23:48 Success.
+2024-11-21 00:23:48 Latest version is 1.7.7
+2024-11-21 00:23:48 An update is already downloaded.
+2024-11-21 01:23:48 Checking for update using Github
+2024-11-21 01:23:48 Success.
+2024-11-21 01:23:48 Latest version is 1.7.7
+2024-11-21 01:23:48 An update is already downloaded.
+2024-11-21 02:23:48 Checking for update using Github
+2024-11-21 02:23:48 Success.
+2024-11-21 02:23:48 Latest version is 1.7.7
+2024-11-21 02:23:48 An update is already downloaded.
+2024-11-21 03:23:48 Checking for update using Github
+2024-11-21 03:23:48 Success.
+2024-11-21 03:23:48 Latest version is 1.7.7
+2024-11-21 03:23:48 An update is already downloaded.
+2024-11-21 04:23:48 Checking for update using Github
+2024-11-21 04:23:48 Success.
+2024-11-21 04:23:48 Latest version is 1.7.7
+2024-11-21 04:23:48 An update is already downloaded.
+2024-11-21 05:23:48 Checking for update using Github
+2024-11-21 05:23:48 Success.
+2024-11-21 05:23:48 Latest version is 1.7.7
+2024-11-21 05:23:48 An update is already downloaded.
+2024-11-21 06:23:48 Checking for update using Github
+2024-11-21 06:23:48 Success.
+2024-11-21 06:23:48 Latest version is 1.7.7
+2024-11-21 06:23:48 An update is already downloaded.
+2024-11-21 07:23:48 Checking for update using Github
+2024-11-21 07:23:48 Success.
+2024-11-21 07:23:48 Latest version is 1.7.7
+2024-11-21 07:23:48 An update is already downloaded.
+2024-11-21 08:23:48 Checking for update using Github
+2024-11-21 08:23:48 Success.
+2024-11-21 08:23:48 Latest version is 1.7.7
+2024-11-21 08:23:48 An update is already downloaded.
+2024-11-21 09:23:48 Checking for update using Github
+2024-11-21 09:23:48 Success.
+2024-11-21 09:23:48 Latest version is 1.7.7
+2024-11-21 09:23:48 An update is already downloaded.
+2024-11-21 10:23:48 Checking for update using Github
+2024-11-21 10:23:48 Success.
+2024-11-21 10:23:48 Latest version is 1.7.7
+2024-11-21 10:23:48 An update is already downloaded.
+2024-11-21 16:31:01 Loading updated app package /home/yvesd/.config/obsidian/obsidian-1.7.7.asar
+2024-11-21 16:31:01 Checking for update using Github
+2024-11-21 16:31:01 Success.
+2024-11-21 16:31:01 Latest version is 1.7.7
+2024-11-21 16:31:01 App is up to date.
+2024-11-30 19:12:14 Loading updated app package /home/yvesd/.config/obsidian/obsidian-1.7.7.asar
+2024-11-30 19:12:14 Checking for update using Github
+2024-11-30 19:12:14 Loading updated app package /home/yvesd/.config/obsidian/obsidian-1.7.7.asar
+2024-11-30 19:12:14 Checking for update using Github
+2024-11-30 19:12:15 Success.
+2024-11-30 19:12:15 Latest version is 1.7.7
+2024-11-30 19:12:15 App is up to date.
+2024-11-30 20:12:14 Checking for update using Github
+2024-11-30 20:12:14 Success.
+2024-11-30 20:12:14 Latest version is 1.7.7
+2024-11-30 20:12:14 App is up to date.
+2024-11-30 21:12:14 Checking for update using Github
+2024-11-30 21:12:14 Success.
+2024-11-30 21:12:14 Latest version is 1.7.7
+2024-11-30 21:12:14 App is up to date.
+2024-11-30 23:06:12 Checking for update using Github
+2024-11-30 23:06:13 Success.
+2024-11-30 23:06:13 Latest version is 1.7.7
+2024-11-30 23:06:13 App is up to date.
+2024-12-01 00:06:12 Checking for update using Github
+2024-12-01 00:06:12 Success.
+2024-12-01 00:06:12 Latest version is 1.7.7
+2024-12-01 00:06:12 App is up to date.
+2024-12-01 01:09:15 Checking for update using Github
+2024-12-01 01:09:15 Success.
+2024-12-01 01:09:15 Latest version is 1.7.7
+2024-12-01 01:09:15 App is up to date.
+2024-12-01 02:09:15 Checking for update using Github
+2024-12-01 02:09:15 Success.
+2024-12-01 02:09:15 Latest version is 1.7.7
+2024-12-01 02:09:15 App is up to date.
+2024-12-01 03:09:15 Checking for update using Github
+2024-12-01 03:09:15 Success.
+2024-12-01 03:09:15 Latest version is 1.7.7
+2024-12-01 03:09:15 App is up to date.
+2024-12-01 04:09:15 Checking for update using Github
+2024-12-01 04:09:15 Success.
+2024-12-01 04:09:15 Latest version is 1.7.7
+2024-12-01 04:09:15 App is up to date.
+2024-12-01 05:09:15 Checking for update using Github
+2024-12-01 05:09:15 Success.
+2024-12-01 05:09:15 Latest version is 1.7.7
+2024-12-01 05:09:15 App is up to date.
+2024-12-01 06:09:15 Checking for update using Github
+2024-12-01 06:09:15 Success.
+2024-12-01 06:09:15 Latest version is 1.7.7
+2024-12-01 06:09:15 App is up to date.
+2024-12-01 07:09:15 Checking for update using Github
+2024-12-01 07:09:16 Success.
+2024-12-01 07:09:16 Latest version is 1.7.7
+2024-12-01 07:09:16 App is up to date.
+2024-12-01 08:09:15 Checking for update using Github
+2024-12-01 08:09:16 Success.
+2024-12-01 08:09:16 Latest version is 1.7.7
+2024-12-01 08:09:16 App is up to date.
+2024-12-01 09:09:16 Checking for update using Github
+2024-12-01 09:09:16 Success.
+2024-12-01 09:09:16 Latest version is 1.7.7
+2024-12-01 09:09:16 App is up to date.
+2024-12-01 10:09:16 Checking for update using Github
+2024-12-01 10:09:16 Success.
+2024-12-01 10:09:16 Latest version is 1.7.7
+2024-12-01 10:09:16 App is up to date.
+2024-12-01 11:09:16 Checking for update using Github
+2024-12-01 11:09:16 Success.
+2024-12-01 11:09:16 Latest version is 1.7.7
+2024-12-01 11:09:16 App is up to date.
+2024-12-01 12:09:16 Checking for update using Github
+2024-12-01 12:09:16 Success.
+2024-12-01 12:09:16 Latest version is 1.7.7
+2024-12-01 12:09:16 App is up to date.
+2024-12-01 13:09:16 Checking for update using Github
+2024-12-01 13:09:16 Success.
+2024-12-01 13:09:16 Latest version is 1.7.7
+2024-12-01 13:09:16 App is up to date.
+2024-12-01 14:09:16 Checking for update using Github
+2024-12-01 14:09:16 Success.
+2024-12-01 14:09:16 Latest version is 1.7.7
+2024-12-01 14:09:16 App is up to date.
+2024-12-01 15:09:16 Checking for update using Github
+2024-12-01 15:09:16 Success.
+2024-12-01 15:09:16 Latest version is 1.7.7
+2024-12-01 15:09:16 App is up to date.
+2024-12-01 16:09:16 Checking for update using Github
+2024-12-01 16:09:16 Success.
+2024-12-01 16:09:16 Latest version is 1.7.7
+2024-12-01 16:09:16 App is up to date.
+2024-12-01 17:57:02 Checking for update using Github
+2024-12-01 17:57:02 Success.
+2024-12-01 17:57:02 Latest version is 1.7.7
+2024-12-01 17:57:02 App is up to date.
+2024-12-01 18:57:02 Checking for update using Github
+2024-12-01 18:57:02 Success.
+2024-12-01 18:57:02 Latest version is 1.7.7
+2024-12-01 18:57:02 App is up to date.
+2024-12-01 19:57:02 Checking for update using Github
+2024-12-01 19:57:03 Success.
+2024-12-01 19:57:03 Latest version is 1.7.7
+2024-12-01 19:57:03 App is up to date.
+2024-12-01 20:57:02 Checking for update using Github
+2024-12-01 20:57:03 Success.
+2024-12-01 20:57:03 Latest version is 1.7.7
+2024-12-01 20:57:03 App is up to date.
+2024-12-01 21:57:03 Checking for update using Github
+2024-12-01 21:57:03 Success.
+2024-12-01 21:57:03 Latest version is 1.7.7
+2024-12-01 21:57:03 App is up to date.
+2024-12-01 22:57:03 Checking for update using Github
+2024-12-01 22:57:03 Success.
+2024-12-01 22:57:03 Latest version is 1.7.7
+2024-12-01 22:57:03 App is up to date.
+2024-12-02 01:07:48 Checking for update using Github
+2024-12-02 01:07:48 Success.
+2024-12-02 01:07:48 Latest version is 1.7.7
+2024-12-02 01:07:48 App is up to date.
+2024-12-02 02:07:48 Checking for update using Github
+2024-12-02 02:07:48 Success.
+2024-12-02 02:07:48 Latest version is 1.7.7
+2024-12-02 02:07:48 App is up to date.
+2024-12-02 04:13:13 Checking for update using Github
+2024-12-02 04:13:13 Success.
+2024-12-02 04:13:13 Latest version is 1.7.7
+2024-12-02 04:13:13 App is up to date.
+2024-12-02 19:59:21 Checking for update using Github
+2024-12-02 19:59:21 Success.
+2024-12-02 19:59:21 Latest version is 1.7.7
+2024-12-02 19:59:21 App is up to date.
+2024-12-02 20:59:21 Checking for update using Github
+2024-12-02 20:59:21 Success.
+2024-12-02 20:59:21 Latest version is 1.7.7
+2024-12-02 20:59:21 App is up to date.
