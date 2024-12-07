@@ -14,44 +14,37 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # boot.blacklistedKernelModules = [ "nouveau" "nvidia_drm" "nvidia" ];
+  boot.blacklistedKernelModules = [ "nouveau" "nvidia_drm" "nvidia" ];
     
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-    extraPackages = with pkgs; [
-      #libva
-      #libva-utils
-      #nvidia-vaapi-driver
-      #vaapiVdpau
-      #libvdpau-va-gl
-    ];
+    enable32Bit = true;
   };
+      
 
   #environment.variables.VDPAU_DRIVER = "va_gl";
   #environment.variables.LIBVA_DRIVER_NAME = "nvidia";
   
   # Drivers
-  boot.initrd.kernelModules = [ "nvidia" "amdgpu"];
-  services.xserver.videoDrivers = [ "nvidia" "amdgpu"];
+  boot.initrd.kernelModules = [ "amdgpu"];
+  services.xserver.videoDrivers = [ "amdgpu"];
 
-   hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = true;
-    powerManagement.finegrained = true;
-    open = false;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.production;
-    prime = {
-		  nvidiaBusId = "PCI:1:0:0";
-      amdgpuBusId = "PCI:101:0:0";
-      offload = {
-			  enable = true;
-			  enableOffloadCmd = true;
-	    };
-    };
-  };
+  # hardware.nvidia = {
+  #   modesetting.enable = true;
+  #   powerManagement.enable = true;
+  #   powerManagement.finegrained = true;
+  #   open = false;
+  #   nvidiaSettings = true;
+  #   package = config.boot.kernelPackages.nvidiaPackages.production;
+  #   prime = {
+		#   nvidiaBusId = "PCI:1:0:0";
+  #     amdgpuBusId = "PCI:101:0:0";
+  #     offload = {
+		# 	  enable = true;
+		# 	  enableOffloadCmd = true;
+	 #    };
+  #   };
+  # };
     
   # Networking
   networking.hostName = "nixos";
@@ -99,9 +92,9 @@
   };
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
+  
   # Enable sound with pipewire.
-  sound.enable = true;
+  hardware.alsa.enablePersistence = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -159,7 +152,7 @@
     chromium
     anki
     rofi-wayland
-    gnome.nautilus
+    nautilus
     pavucontrol
     pamixer
     discord
@@ -170,6 +163,7 @@
     vlc
     tailscale
     blueman
+    pomodoro-gtk
             
     # Zsh
     starship
@@ -208,7 +202,7 @@
     swaynotificationcenter
     brightnessctl
     hyprlock
-    gnome.gnome-disk-utility
+    gnome-disk-utility
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
   
@@ -226,5 +220,5 @@
 
   security.pam.services.hyprlock = {};
   
-  system.stateVersion = "24.05";
+  system.stateVersion = "24.11";
 }

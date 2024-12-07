@@ -2,12 +2,13 @@ lastupdatecheck: 0
 recentrepos:
     - /home/yvesd/Nixos
 startuppopupversion: 5
-lastversion: 0.42.0
+lastversion: 0.44.1
 customcommandshistory:
     - q
 hidecommandlog: false
 ignorewhitespaceindiffview: true
 diffcontextsize: 3
+renamesimilaritythreshold: 50
 localbranchsortorder: recency
 remotebranchsortorder: alphabetical
 gitlogorder: topo-order

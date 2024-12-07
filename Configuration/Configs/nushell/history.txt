@@ -1392,3 +1392,46 @@ hx configuration.nix
 update
 nvidia-offload 
 nvidia-smi
+lazygit
+touch .gitignore<\n>
+ls
+git rm --cached /home/yvesd/Nixos/Configuration/Configs/discord
+git rm ---cached /home/yvesd/Nixos/Configuration/Configs/discord
+git rm -r --cached /home/yvesd/Nixos/Configuration/Configs/discord
+hx .gitignore
+lazygit
+git rm -r --cached /home/yvesd/Nixos/Configuration/Configs/discord
+lazygit
+git rm -r --cached /home/yvesd/Nixos/Configuration/Configs/discord
+git-status
+hx .gitignore
+lazygit
+hx .gitignore
+lazygit
+git rm -r --cached /home/yvesd/Nixos/Configuration/Configs/discord
+lazygit
+git update-index --skip-worktree  /home/yvesd/Nixos/Configuration/Configs/discord
+git rm -r --cached /home/yvesd/Nixos/Configuration/Configs/discord
+lazygit
+sleep
+yazi
+update
+yazi
+update
+rfkill block wlan
+rkill unblock wlan
+rfkill unblock wlan
+rfkill
+yazi
+nix flake update
+cd Nixos
+nix flake update
+sudo nix flake update
+update
+clean
+update
+hx configuration.nix
+update
+hx configuration.nix
+update
+clean
