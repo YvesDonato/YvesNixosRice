@@ -92,6 +92,8 @@
   wayland.windowManager.hyprland = {
     enable = true;
     plugins = [
+      pkgs.hyprlandPlugins.hy3
+      pkgs.hyprlandPlugins.hyprspace
       # inputs.hy3.packages.x86_64-linux.hy3
       # inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
     ];
@@ -100,18 +102,21 @@
       monitor = DP-2, 3440x1440@143.97, 1920x0, 1
       monitor = desc:CVT VITURE 0x88888800, 1920x1080@120.00, 1600x0, 1, vrr, 1
       bindl = , switch:on:Lid Switch, exec, hyprctl keyword monitor "eDP-1, disable"
-      bindl = , switch:off:Lid Switch, exec, hyprctl keyword monitor "eDP-1,2560x1600@165,0x0,1.333333"
+      bindl = , switch:off:Lid Switch, exec, hyprctl keyword monitor "eDP-1,2560x1600@165,0x0,1.333333"      
       exec-once = waybar & swaync & hypridle
       exec-once = bash ~/.config/hypr/start.sh
       env = HYPRCURSOR_THEME,rose-pine-hyprcursor
       env = HYPRCURSOR_SIZE,24
+      plugin {
+        hy3 {
+        }
+      }
       input {
         # kb_layout = us
         kb_variant =
         kb_model =
         kb_options =
         kb_rules =
-
         follow_mouse = 1
 
         touchpad {
@@ -128,7 +133,7 @@
                 
         col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg        
         col.inactive_border = rgba(595959aa)
-        layout = dwindle
+        layout = hy3
       }
       
       decoration {
@@ -140,11 +145,7 @@
           size = 3
           passes = 1
         }
-
-        drop_shadow = true
-        shadow_range = 4
-        shadow_render_power = 3
-        col.shadow = rgba(1a1a1aee)
+            
       }
 
       animations {
@@ -192,25 +193,28 @@
     bind = $mainMod, H, exec, firefox --private-window # Private Window
     bind = $mainMod, Y, exec, firefox --new-window https://www.youtube.com/feed/subscriptions
     bind = $mainMod, U, exec, firefox --new-window https://slate.sheridancollege.ca/d2l/login
-    bind = $mainMod, N, exec, 
-    bind = $mainMod, O, exec, 
+    bind = $mainMod, N, exec,
+    bind = $mainMod, O, overview:toggle
 
     bind = $mainMod, D, exec,
-    bind = $mainMod, M, exec, 
+    bind = $mainMod, V, hy3:makegroup, v, ephemeral
+    bind = $mainMod, M, hy3:makegroup, tab, ephemeral 
+    bind = $mainMod SHIFT, M, hy3:makegroup, tab, force_ephemeral 
+
     bind = $mainMod, B, exec, 
     bind = $mainMod, C, exec, firefox --new-window https://calendar.google.com
     bind = $mainMod, L, exec, hyprlock
     bind = $mainMod, P, exec, grim -g "$(slurp -d)" - | wl-copy
-    bind = $mainMod, O, exec, obsidian
+    
 
     windowrulev2 = workspace 10,DP-2 title:^(Spotify Premium)$
     windowrulev2 = workspace 9,DP-2 class:^(discord)$
 
     # Move focus with mainMod + arrow keys
-    bind = $mainMod, left, movefocus, l
-    bind = $mainMod, right, movefocus, r
-    bind = $mainMod, up, movefocus, u
-    bind = $mainMod, down, movefocus, d
+    bind = $mainMod, left, hy3:movefocus, l
+    bind = $mainMod, right, hy3:movefocus, r
+    bind = $mainMod, up, hy3:movefocus, u
+    bind = $mainMod, down, hy3:movefocus, d
 
     # Switch workspaces with mainMod + [0-9]
     bind = $mainMod, 1, workspace, 1

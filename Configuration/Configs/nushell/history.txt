@@ -1435,3 +1435,82 @@ update
 hx configuration.nix
 update
 clean
+lazygit
+hyprctl --intance 0 'keyword misc:allow_session_lock_restore 1'
+hyprctl --instance 0 'keyword misc:allow_session_lock_restore 1'
+cd Nixos
+ls
+hx home.nix
+update
+hx home.nix
+update
+cd Nixos
+ls
+hyprlock
+pkill -USR1 hyprlock
+hx home.nix
+update
+hyprctl --instance 0 'keyword misc:allow_session_lock_restore 1'
+rfkill block wlan
+ls
+cd Nixos
+ls
+rkill
+rfkill
+rkill unblock wlan
+rfkill unblock wlan
+cd Nixos
+ls
+hx unstable.nix
+hx configuration.nix
+hx unstable.nix
+update
+hx unstable.nix
+update
+reboot
+rfkill unblock bluetooth
+cd Nixos
+ls
+hx home.nix
+update
+hx home.nix
+update
+hx home.nix
+update
+hx home.nix
+update
+hx home.nix
+update
+hx home.nix
+update
+clean
+hx home.nix
+update
+hx home.nix
+update
+hx home.nix
+cd Nixos
+l
+hx home.nix
+updater
+update
+hx home.nix
+update
+clean
+hx home.nix
+update
+ls
+cd Nixos
+ls
+hx home.nix
+update
+hx home.nix
+update
+cd Nixos
+ls
+cd Nixos
+cd Nixos
+ls
+cd Nixos
+l
+ls

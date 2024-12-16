@@ -5,13 +5,13 @@
     obsidian
     hypridle
     firefox
-    moonlight-qt
     lsp-ai
     psst
     audacity
     shotcut
     smassh
     leetgo
+    moonlight-qt
   ];
   
   #hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta.overrideAttrs {
