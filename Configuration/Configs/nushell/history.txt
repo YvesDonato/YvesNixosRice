@@ -1514,3 +1514,2135 @@ ls
 cd Nixos
 l
 ls
+cd Nixos
+ls
+cd flake.nix
+hx flake.nix
+hx configuration.nix
+flake update
+nixos flake update
+nix flake update
+update
+firefox -search test
+zen -search test
+ls
+cd Nixos
+ls
+hx flake.nix
+update
+ls
+cd Nixos
+ls
+zen
+hx home.nix
+update
+hyprctl --instance 0 'keyword misc:allow_session_lock_restore 1'
+cd Nixos
+ls
+hx configuration.nix
+update
+pirate-get -h
+pirate-get -b dune2
+pirate-get -b -c movies dune2
+pirate-get -b -c movie dune2
+pirate-get -L
+pirate-get --local
+pirate-get --local database
+hx configuration.nix
+update
+ls
+yazi
+cd .config/
+ls
+cd rofi/
+ls
+rofi
+rofi -f
+rofi -h
+rofi --drun
+rofi --modes
+rofi -modes
+rofi -show drun
+rofi -show window
+hx config.rasi
+rofi -show window
+hx config.rasi
+rofi -show window
+hx config.rasi
+rofi -show dmenu
+rofi -dmenu -p
+rofi -dmenu -p "Select workspace:"
+man rofi
+"test"|rofi -dmenu -p "Select workspace:"
+"test","test"|rofi -dmenu -p "Select workspace:"
+"test" "test"|rofi -dmenu -p "Select workspace:"
+"test"| "test"|rofi -dmenu -p "Select workspace:"
+"test" & "test"|rofi -dmenu -p "Select workspace:"
+Option #1\nOption #2\nOption #3" | rofi -dmenu<\n>
+echo -e "Option #1\nOption #2\nOption #3" | rofi -dmenu
+echo  "Option #1\nOption #2\nOption #3" | rofi -dmenu
+echo  "Option #1\nOption #2Option #3" | rofi -dmenu
+"test\n"|rofi -dmenu -p "Select workspace:"
+"test\ntest"|rofi -dmenu -p "Select workspace:"
+ls
+mkdir scripts
+ls
+cd scripts/
+ls
+hx power-menu.sh
+bash power-menu.sh
+echo test
+echo "test"
+hx power-menu.sh
+bash power-menu.sh
+hx power-menu.sh
+bash power-menu.sh
+hx power-menu.sh
+bash power-menu.sh
+hx power-menu.sh
+bash power-menu.sh
+hx power-menu.sh
+bash power-menu.sh
+hx power-menu.sh
+bash power-menu.sh
+hx power-menu.sh
+bash power-menu.sh
+hx power-menu.sh
+bash power-menu.sh
+"test"|rofi -dmenu -p "Select workspace:"
+hx power-menu.sh
+bash power-menu.sh
+hx power-menu.sh
+bash power-menu.sh
+hx power-menu.sh
+bash power-menu.sh
+hx power-menu.sh
+bash power-menu.sh
+hx power-menu.sh
+bash power-menu.sh
+hx power-menu.sh
+bash power-menu.sh
+hx power-menu.sh
+bash power-menu.sh
+hx power-menu.sh
+bash power-menu.sh
+hx power-menu.sh
+bash power-menu.sh
+hx power-menu.sh
+bash power-menu.sh
+hx power-menu.sh
+bash power-menu.sh
+echo -h
+hx power-menu.sh
+bash power-menu.sh
+hx power-menu.sh
+bash power-menu.sh
+hx power-menu.sh
+bash power-menu.sh
+hx power-menu.sh
+bash power-menu.sh
+hx power-menu.sh
+bash power-menu.sh
+hx power-menu.sh
+bash power-menu.sh
+hx power-menu.sh
+bash power-menu.sh
+hx power-menu.sh
+bash power-menu.sh
+man shutdown
+hx power-menu.sh
+man shutdown
+bash power-menu.sh
+hx power-menu.sh
+bash power-menu.sh
+hx power-menu.sh
+bash power-menu.sh
+ls
+cd .config/
+ls
+cd rofi/
+ls
+hx config.rasi
+cd scripts/
+ls
+hx power-menu.sh
+bash power-menu.sh
+hx power-menu.sh
+rofi -mode 
+hx main-menu.sh
+bash main-menu.sh
+hx main-menu.sh
+bash main-menu.sh
+rfkill -h
+rfkill toggle wlan
+rfkill toggle bluetooth
+rfkill
+echo rfkill
+rfkill | echo
+echo | rfkill
+rfkill list | grep -A 3 "ID 0" | grep Soft | awk '{print $3}'
+rfkill  | grep -A 3 "ID 0" | grep Soft | awk '{print $3}'
+rfkill | grep -A 3 "ID 0"
+rfkill | grep -A 3 "0"
+rfkill | grep -A 3 "1"
+rfkill | grep -A 3 "0"
+rfkill | grep -A 3 "bluetooth"
+rfkill | grep -A "bluetooth"
+rfkill | grep "bluetooth"
+rfkill | grep "0" 
+rfkill | grep "hc0" 
+rfkill | grep "hci0" 
+rfkill | grep "hci0" | awk '{print $3}'
+rfkill | grep "hci0" | awk '{print $4}'
+rfkill | grep "phy0" | awk '{print $4}'
+hx wifi-menu.sh
+bash wifi-menu.sh
+cd .config/
+ls
+cd
+cd .config/
+ls
+cd rofi/
+ls
+cd scripts/
+sl
+ls
+hx wifi-menu.sh
+bash wifi-menu.sh
+rfkill block bluetooth
+rfkill toggle bluetooth
+l
+hx wifi-menu.sh
+bash wifi-menu.sh
+rfkill
+hx wifi-menu.sh
+bash wifi-menu.sh
+hx wifi-menu.sh
+bash wifi-menu.sh
+rfkill | grep "phy0" | awk '{print $4}'
+rkill block wlan
+rfkill block wlan
+rfkill | grep "phy0" | awk '{print $4}'
+rfkill toggle wlanh
+rfkill toggle wlan
+rfkill | grep "phy0" | awk '{print $4}'
+rfkill toggle wlan
+rfkill | grep "phy0" | awk '{print $4}'
+hx wifi-menu.sh
+bash wifi-menu.sh
+hx wifi-menu.sh
+bash wifi-menu.sh
+rfkill
+echo "" | rofi -dmenu -p "Enter your input:"
+hx wifi-menu.sh
+hx main-menu.sh
+hx power-menu.sh
+echo "" | rofi -dmenu -p "Enter your input:"
+hx search.sh
+bash search.sh
+hx search.sh
+bash search.sh
+firefox -h
+firefox --new-window -search new
+firefox --new-tab -search new
+zen --new-tab -search new
+zen -search new --new-tab
+zen -h
+zen --new-tab --search new
+firefox --new-tab "https://www.google.com/search?q=your+search+query"
+zen --new-tab "https://www.google.com/search?q=your+search+query"
+hx search.sh
+bash search.sh
+hx search.sh
+bash search.sh
+hx main-menu.sh
+bash search.sh
+bash main-menu.sh
+hx search.sh
+bash search.sh
+hx search.sh
+bash search.sh
+hx search.sh
+bash search.sh
+hx search.sh
+mkdir search-scripts
+ls
+cd search-scripts/
+ls
+hx google.sh
+cd ..
+bash search-scripts/google.sh
+hx search.sh
+cd search-scripts/
+hx google.sh
+hx chatgpt.sh
+hx google.sh
+hx chatgpt.sh
+bash search.sh
+hx main-menu.sh
+bash main-menu.sh
+hx google.sh
+bash main-menu.sh
+hx main-menu.sh
+bash main-menu.sh
+hx google.sh
+hx chatgpt.sh
+bash chatgpt.sh
+hx chatgpt.sh
+hx search.sh
+bash search.sh
+hx search.sh
+bash search.sh
+hx search.sh
+bash search.sh
+fc-list
+cd ..
+ls
+hx config.rasi
+clean
+clear
+hx config.rasi
+cd scripts/
+ls
+hx main-menu.sh
+hx power-menu.sh
+hx wifi-menu.sh
+bash main-menu.sh
+hx search.sh
+bash main-menu.sh
+hx google.sh
+hx chatgpt.sh
+hx search.sh
+bash main-menu.sh
+hx search.sh
+bash main-menu.sh
+hx search.sh
+bash main-menu.sh
+hx search.sh
+hx main-menu.sh
+bash main-menu.sh
+cd ..
+ls
+hx config.rasi
+cd scripts/
+ls
+hx wifi-menu.sh
+bash main-menu.sh
+hx wifi-menu.sh
+bash main-menu.sh
+cd ..
+ls
+cd config.rasi
+hx wifi-menu.sh
+bash main-menu.sh
+hx wifi-menu.sh
+bash main-menu.sh
+hx wifi-menu.sh
+hx main-menu.sh
+bash main-menu.sh
+hx power-menu.sh
+bash main-menu.sh
+hx power-menu.sh
+bash main-menu.sh
+hx search.sh
+bash main-menu.sh
+hx main-menu.sh
+bash main-menu.sh
+cd ..
+cd
+l
+clean
+ls
+cd Nixos
+hx config.rasi
+hx search.sh
+ls
+cd
+cd Nixos
+ls
+bash Configuration/Configs/rofi/scripts/main-menu.sh
+hx home.nix
+update
+cd Configuration/ls
+cd Configuration/
+ls
+cd Configs/
+ls
+cd hypr/
+ls
+bash ./rofi/scripts/main-menu.sh
+bash ../rofi/scripts/main-menu.sh
+hx home.nix
+update
+hx hyprland.conf
+kitty bash ../rofi/scripts/main-menu.sh
+kitty -e bash ../rofi/scripts/main-menu.sh
+hx home.nix
+update
+chmod +x ../rofi/scripts/main-menu.sh
+j
+hyprctl reload
+chmod +x ../rofi/scripts/main-menu.sh
+bash ../rofi/scripts/main-menu.sh
+hx home.nix
+update
+cd main-menu.sh
+hx main-menu.sh
+hx wifi-menu.sh
+hx search.sh
+smmassh
+zellij
+zellij -h
+zellij -s pervious
+zellij --attach-to-session
+zellij list-sessions
+ls
+cd Nixos
+ls
+cd ..
+cd .config/
+ls
+cd rofi
+ls
+cd scripts/
+ls
+cd search.sh
+hx search.sh
+cd search.sh
+cd search-scripts/
+ls
+cd google.sh
+ls
+hx google.sh
+bash google.sh
+hx chatgpt.sh
+hx google.sh
+bash google.sh
+hx google.sh
+bash google.sh
+hx google.sh
+bash google.sh
+grep "-c" "-c test"
+grep "c" "-c test"
+grep "c" "c test"
+hx google.sh
+bash google.sh
+echo "This is a test string" | grep "test"
+echo "This is a test string" | grep ""
+echo "This is a test string" | grep "not"
+echo "This is a test string" | grep "-c"
+echo "This is a test string" | grep -- "-c"
+echo "-c This is a test string" | grep -- "-c"
+bash google.sh
+hx google.sh
+bash google.sh
+hx google.sh
+bash google.sh
+hx google.sh
+bash google.sh
+hx google.sh
+bash google.sh
+hx google.sh
+bash google.sh
+hx google.sh
+bash google.sh
+hx google.sh
+bash google.sh
+hx google.sh
+bash google.sh
+hx google.sh
+bash google.sh
+hx google.sh
+bash google.sh
+hx google.sh
+bash google.sh
+hx google.sh
+bash google.sh
+hx google.sh
+bash google.sh
+hx google.sh
+bash google.sh
+hx google.sh
+bash google.sh
+ls
+cd ..
+ls
+hx uni-search
+hx uni-search.sh
+ls
+hx google.sh
+ls
+cd Nixos
+l
+cd home.nix
+hx home.nix
+update
+ls
+cd ..
+bash uni-search.sh
+hx home.nix
+ls
+clean
+chmod +x /home/username/rofi/scripts/main-menu.sh
+chmod +x uni-search.sh
+ls
+cd Nixos
+l
+ls
+cd ..
+cd .config/
+ls
+cd rofi/
+ls
+cd scripts/
+ls
+hx uni-search.sh
+ls
+cd ..
+cd ......
+cd
+ls
+cd nixos
+l
+ls
+hx unstable.nix
+update
+aichat --serve
+aichat -h
+aichat test
+aichat what model are you
+aichat --list-models
+aichat -m gpt-4o-mini test
+aichat -m openai:gpt-4o-mini test
+aichat -m openai:gpt-4o-mini what model are yo
+aichat --list-roles
+aichat --list-agents
+hx main-menu.sh
+aichat --info
+cd ..
+cd .config/
+ls
+cd aichat/
+ls
+hx config.yaml
+mkdir role
+rm role/
+mkdir roles
+ls
+cd roles/
+ls
+hx systemhelp.md
+aichat --list-roles
+aichat -r systemhelp test
+aichat -r systemhelp what is the meaning of life
+aichat -r systemhelp test
+aichat -r systemhelp what is the meaning of life
+zen --search tst
+ls
+hx unstable.nix
+update
+brotab
+brotab list
+hx unstable.nix
+clean; update
+hx uni-search.sh
+hx systemhelp.md
+cd .config/
+cd rofi
+cd scripts/
+ls
+hx uni-search.sh
+cd ..
+ls
+cd ..
+cd aichat/
+ls
+cd roles/
+ls
+cd systemhelp.md
+cd ..
+cd rofi/scripts/
+ls
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+cd .config/rofi/scripts/
+ls
+hx uni-search.sh
+ls
+cd ..
+ls
+cd aichat/confi
+cd aichat/
+ls
+cd roles/
+ls
+hx systemhelp.md
+hx grammerchecker.md
+aichat -h
+aichat --list-roles
+hx uni-search.sh
+hx grammerchecker.md
+hx systemhelp.md
+hx route.md
+hx systemhelp.md
+hx route.md
+bash uni-search.sh
+hx systemhelp.md
+ls
+hx route.md
+hx systemhelp.md
+hx route.md
+hx systemhelp.md
+hx uni-search.sh
+bash uni-search.sh
+ls
+hx route.md
+cd .config/rofi/scripts/
+ls
+cd ..
+ls
+cd aichat/
+ls
+cd roles/
+ls
+hx grammerchecker.md
+hx route.md
+hx systemhelp.md
+bash uni-search.sh
+hx uni-search.sh
+hx route.md
+cd .config/rofi/scripts/
+bash uni-search.sh
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+echo "tes.com"|grep -- "^http|\.com|\.ca|\.org|\.to"
+echo "tes.com"|grep -E "^http|\.com|\.ca|\.org|\.to"
+echo "tes.com"|grep -E "^(http|.*\.com|.*\.ca|.*\.org|.*\.to)"<\n>
+echo "tes.com"|grep -E "^http|\\.com|\\.ca|\\.org|\\.to"<\n>
+echo "tes.comiagdsgadsg"|grep -E "^http|\\.com|\\.ca|\\.org|\\.to"<\n>
+hx uni-search.sh
+bash uni-search.sh
+echo "https://chatgpt.com/c/67636193-1538-8008-aaf1-73083cd6f0c8"|grep -E "^http|\\.com|\\.ca|\\.org|\\.to"<\n>
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+bash uni-search.sh
+:Wq
+bash uni-search.sh
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+zen --new-tab https://chatgpt.com/c/6763659c-c144-8008-973c-11f96a45205b
+hx uni-search.sh
+zen --new-tab https://chatgpt.com/c/6763659c-c144-8008-973c-11f96a45205b
+bash uni-search.sh
+zen --new-tab https://chatgpt.com/c/6763659c-c144-8008-973c-11f96a45205b
+bash uni-search.sh
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+ls
+cd .config/rofi/scripts/
+ls
+cd ..
+ls
+cd ..
+cd aichat/roles/
+ls
+hx systemhelp.md
+hx uni-search.sh
+aichat --serve
+aichat --help
+cd nixos
+ls
+wl-copy
+firefox --new-tab --search "search terms"
+zen --remote
+cd .config/rofi/scripts/
+ls
+ld
+vf .
+cd ..
+ls
+cd ..
+ls
+cd aichat/roles/
+ls
+hx systemhelp.md
+hx home.nix
+cd Nixos
+lks
+ls
+hx configuration.nix
+hx flake.nix
+update
+cd .config/rofi/scripts/
+ls
+hx uni-search.sh
+rofi -dmenu -matching fuzzy -no-custom -location 0 -p "Search > "
+rofi -dmenu -matching fuzzy -no-custom -location 0 -p search
+rofi -dmenu  -no-custom -location 0 -p search
+rofi -dmenu  -location 0 -p search
+cp /home/yvesd/Downloads/web-search.sh .
+ls
+bash wifi-menu.sh
+bash web-search.sh
+bash web-search.sh.
+bash web-search.sh
+rm web-search.sh
+ls
+aichat --serve
+curl -X POST -H "Content-Type: application/json" -d '{<\n>  "model":"claude:claude-3-5-sonnet-20240620",<\n>  "messages":[{"role":"user","content":"hello"}], <\n>  "stream":true<\n>}' http://127.0.0.1:8000/v1/chat/completions
+aichat --model-list
+aichat --list
+aichat --list-models
+curl -X POST -H "Content-Type: application/json" -d '{<\n>  "model":"openai:gpt-4o",<\n>  "messages":[{"role":"user","content":"hello"}], <\n>  "stream":true<\n>}' http://127.0.0.1:8000/v1/chat/completions
+aichat --serve
+curl -X POST -H "Content-Type: application/json" -d '{<\n>  "model":"openai:gpt-4o",<\n>  "messages":[{"role":"user","content":"hello"}], <\n>  "stream":true<\n>}' http://127.0.0.1:8000/v1/chat/completions
+aichat --serve
+aichat --serve,
+aichat --serve
+curl -X POST -H "Content-Type: application/json" -d '{<\n>  "model":"openai:gpt-4o",<\n>  "messages":[{"role":"user","content":"hello"}], <\n>  "stream":true<\n>}' http://127.0.0.1:8000/v1/chat/completions
+curl -X POST -H "Content-Type: application/json" -d '{<\n>  "model":"openai:gpt-4o",<\n>  "messages":[{"role":"user","content":"hello"}], <\n>  "stream":true<\n>}'  http://127.0.0.1:8000/playground
+curl -X POST -H "Content-Type: application/json" -d '{<\n>  "model":"openai:gpt-4o",<\n>  "messages":[{"role":"user","content":"hello"}], <\n>  "stream":true<\n>}' http://127.0.0.1:8000/playground
+aichat --serve
+ls
+hx search.sh
+hx uni-search.sh
+aichat what is meaning of life
+hx uni-search.sh
+kitty -e test
+kitty 
+kitty | aichat
+kitty | aichat test
+kitty -h
+kitty -m
+kitty -cmd
+kity aichat
+kitty aichat
+kitty aichat what is the meaning of life
+kitty --hold aichat what is the meaning of life
+kitty aichat what is the meaning of life
+kitty --detach aichat what is the meaning of life
+echo "test"|kitty aichat 
+aichat -h
+kitty aichat -s hello
+kitty aichat -s
+aichat -s
+cd .config/rofi/scripts/
+ls
+hx uni-search.sh
+cd ..
+cd ...
+ls
+cd ..
+ls
+hx home.nix
+grim -g "$(slurp -d)" - | aichat -f
+grim -g "$(slurp -d)" - | wl-copy
+hx home.nix
+grim -g "$(slurp -d)" - | wl-copy
+slurp
+slurp -h
+grim - | wl-copy
+grim -hn
+grim -h
+grim -g | slurp -d
+grim -g | slurp -d | wl-copy
+slurp -d | grim -g
+grim -g - | slurp -d | wl-copy
+slurp -d | grim -g -
+slurp -d | grim -g - | wl-copy
+grim -g - | slurp -d | wl-copy
+grim -g "$(slurp -d)" - | wl-copy
+grim -g "$(slurp -d)" - 
+grim -g "$(slurp)" -
+slurp
+slurp -d
+aichat -f /home/yvesd/Pasted image.png
+aichat -f ~/home/yvesd/Pasted image.png
+aichat -f ~/Pasted image.png
+aichat -f ~/home/yvesd/Pasted image.png
+aichat -f /home/yvesd/Pasted image.png
+aichat -f https://example.com/page summarize
+aichat -f https://asuracomic.net/
+aichat -f https://slate.sheridancollege.ca
+aichat -f https://www.google.com/search?client=firefox-b-d&q=test read me the webistes
+aichat can you use search?
+cd ..
+ls
+cd 
+cd .config/
+cd aichat/roles/
+ls
+bash uni-search.sh
+echo "-gw test" |grep -- "-gw" | awk -F"-gw" '{print $3}'
+echo "-gw test" |grep -- "-gw" | awk -F"-gw" '{print $2}'
+echo "-gw test" |grep -- "-gw" | awk -F"-gw" '{print $3}'
+echo "-gw test" |grep -- "-gw" | awk -F"-gw" '{print $1}'
+echo "-gw test" |grep -- "-gw" | awk -F"-gw" '{print $2}'
+echo "-gw test" |grep -- "-gw " | awk -F"-gw" '{print $2}'
+echo "-gw test" |grep -- "-gw " | awk -F"-gw " '{print $2}'
+bash uni-search.sh
+hx route.md
+bash uni-search.sh
+hx route.md
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+bash uni-search.sh
+sl
+ls
+hx uni-search.sh
+bash uni-search.sh
+hx uni-search.sh
+hx systemhelp.md
+cd Codebases/Yves-donato/
+ls
+npm
+npx
+hx main.html
+cp main.html index.html
+ks
+ls
+rm main.html
+lhx index.html
+hx index.html
+rm index.html
+ls
+direnv allow
+flake update
+nix flake update
+ls
+hx flake.nix
+npm
+bun
+ls
+hx flake.nix
+bun
+npm
+npm create svelte@latest Yves-proj
+npm install -g npm@11.0.0
+hx flake.nix
+npx sv create yves-proj
+ks
+l
+sls
+ls
+rm yves-proj/
+rm -rf yves-proj/
+ls
+npx sv create yves-proj
+cd yves-proj/
+npm run dev -- --open
+vite dev --open
+npm run dev -- --open
+ls
+hx README.md
+npm run preview
+npm build
+j
+node -v
+cd .
+cd ..
+hx yves-proj/
+cd yves-proj/
+ls
+cd src/
+ls
+hx app.d.ts
+cd ..
+ls
+hx vite.config.ts
+hx tailwind.config.ts
+hx postcss.config.js
+cd svelte.config.js
+hx svelte.config.js
+npm run dev -- --open
+ls
+cd src/
+ls
+hx app.html
+hx routes/
+cd lib/
+ls
+cd images/
+l
+ls
+cd ..
+ls
+cd routes/
+ls
+hx +page.svelte
+hx Counter.svelte
+hx +page.svelte
+hx +layout.svelte
+hx Header.svelte
+cd about/
+ls
+cd ..
+clear
+ls
+cp sverdle/ test
+cp sverdle/ -r test
+ls
+hx Header.svelte
+hx +page.svelte
+cd about/
+ls
+cd Codebases/Yves-donato/
+ls
+rm -rf yves-proj/
+npx sv create yves-proj
+cd yves-proj/
+npm install
+npm run dev
+ls
+cd src/
+ls
+cd routes/
+ls
+hx +page.svelte
+cd ...
+ls
+cd ..
+ls
+npx sv create test-proj
+ls
+cd test-proj/
+ls
+cd scr
+ls
+cd src/
+ls
+cd routes/
+ls
+npm run dev
+ls
+cd src/
+ls
+cd app.d.ts
+hx app.d.ts
+cd app.html
+hx app.html
+cd lib/
+ls
+cd ..
+ls
+cd routes/
+ls
+hx +layout.svelte
+cd ..
+cdc yves-proj/
+cd yves-proj/
+ls
+cd src/
+ls
+cd routes/
+ls
+hx +page.svelte
+cd +layout.svelte
+ls
+hx +layout.svelte
+cd ..
+ls
+npm run dev
+hx Header.svelte
+hx routes/
+ls
+cd routes/
+ls
+mkdir about
+ls
+cd about/
+cd about/
+ls
+ls
+cd +page.svelte
+ls
+hx +layout.svelte
+ls
+hx +page.svelte
+ls
+cd ..
+ls
+hx Footer.svelte
+hx +layout.svelte
+ls
+hx +page.svelte
+ls
+cd ..
+ls
+hx app.html
+hx app.d.ts
+hx routes/
+cd routes/
+ls
+rm -rf about/
+ls
++page.svelte
+cd +page.svelte
+hx +page.svelte
++layout.svelte
+hx +layout.svelte
+ls
+hx +layout.svelte
++page.svelte
+npm run dev
+hx +page.svelte
+ls
+hx +layout.svelte
+cd ..
+ls
+hx app.html
+cd app.css
+hx app.css
+hx app.d.ts
+cd routes/
+ls
+cd ..
+ls
+hx +page.svelte
+cd ..
+ls
+hx app.d.ts
+ls
+cd routes/
+mkdir about
+:w
+ls
+hx +page.svelte
+hx +page.svelte
+ls
+cd about
+ls
+hx +page.svelte
+ls
+cd ..
+ls
+cd +layout.svelte
+hx +layout.svelte
+hx Footer.svelte
+hx +layout.svelte
+cd +layout.svelte
+hx +layout.svelte
+npm run dev
+cd ..
+ls
+cd ..
+ls
+cd yves-proj/src/
+ls
+cd routes/
+ls
+cd +page.svelte
+ls
+cd about/
+ls
+cd +page.svelte
+ls
+hx Header.svelte
+ls
+mkdir resume
+mkdir blog
+ls
+cd Header.svelte
+hx +layout.svelte
+npm run dev
+hx Header.svelte
+ls
+cd about/
+l
+ls
+cd ..
+ls
+cd blog/
+ls
+hx +page.svelte
+cd ..
+ls
+cd resume/
+ls
+hx +page.svelte
+ls
+zellij
+cd Codebases/Yves-donato/yves-proj/
+ls
+cd src/
+ls
+cd routes/
+ls
+cd ..
+ls
+cd ..
+ls
+cd src
+ls
+cd routes/
+ls
+hx +layout.svelte
+hx Header.svelte
+hx +page.svelte
+ls
+hx Hero.svelte
+ls
+hx +page.svelte
++layout.svelte
+hx +layout.svelte
+cd ls
+ls
+cd +layout.svelte
+hx Hero.svelte
+hx +page.svelte
+rm Hero.svelte
+ls
+hx +page.svelte
+ls
+hx Header.svelte
+ls
+cd about/
+ls
+hx +page.svelte
+cd ..
+ls
+cd blog/
+ls
+hx +page.svelte
+hx +page.svelte
+cd ..
+ls
+.gitignore
+hx .gitignore
+hx .env
+hx .gitignore
+ls
+npm install nodemailer
+npm audit fix --force
+ls
+npm run dev
+hx +page.server.js
+hx +page.svelte
+ls
+hx+page.server.js
+telnet smtp.gmail.com 587
+ping smtp.gmail.com 587
+ls
+hx .env
+hx +page.server.js
+rm +page.server.js
+lazygit
+git remote add origin https://github.com/YvesDonato/yves-proj.git
+lazygit
+npm run build
+npm run preview
+lazygit
+npm i --save-dev @sveltejs/adapter-cloudflare
+cd svelte.config.js
+hx svelte.config.js
+lazygti
+lazygit
+ls
+npm run preview
+npm run dev
+hx package.json
+lazygit
+npm install --save-dev eslint@9.6.x
+lazygit
+ls
+hx package.json
+npm install
+lazygit
+npm ls @eslint/config-array
+npm install --save-dev eslint@8.50.0
+lazygit
+npm install --save-dev typescript-eslint@8.10.0
+lazygit
+npm uninstall eslint<\n>
+lazygit
+npm ls @eslint/config-array
+npm uninstall typescript-eslint
+lazygit
+cd Codebases/Yves-donato/yves-proj/
+ls
+cd ..
+cd Yves-donato/
+ls
+cd flake.nix
+hx flake.nix
+cd yves-proj/
+ls
+npm run dev
+hx svelte.config.js
+npm run dev
+hx svelte.config.js
+cd src/
+ls
+cd routes/
+l
+ls
+hx +page.svelte
+hx +layout.svelte
+hx +page.svelte
+hx +layout.svelte
+cd ..
+ls
+cd ..
+l
+ls
+hx svelte.config.js
+cd Codebases/Yves-donato/yves-proj/
+ls
+hx svelte.config.js
+npm run dev
+cd src/
+ls
+cd routes/
+l
+ls
+hx +layout.svelte
+cd ..
+ls
+hx app.html
+cd routes/
+ls
+hx +layout.svelte
+cd ..
+ls
+cd ..
+ls
+hx svelte.config.js
+lazygit
+cd svelte.config.js
+hx svelte.config.js
+cd src/
+ls
+cd routes/
+ls
+hx +layout.svelte
+hx Header.svelte
+hx +layout.svelte
+hx +page.svelte
+hx about/
+cd ..
+ls
+cd ..
+ls
+hx svelte.config.js
+lazygit
+hx svelte.config.js
+lazygit
+hx svelte.config.js
+lazygit
+cd src/
+ls
+cd routes/
+ls
+hx Header.svelte
+hx +page.svelte
+cd ..
+cd .
+cd ..
+lazygit
+mkdir functions
+ls
+cd functions/
+hx send-email.jd
+mv send-email.jd send-email.js
+ls
+cd send-email.js
+hx send-email.js
+cd ..
+cd src/
+lsx
+cd routes/
+ls
+hx +page.svelte
+cd ..
+cd svelte.config.js
+hx svelte.config.js
+lazygit
+cd functions
+ls
+ls
+cd ..
+ls
+hx _routes.json
+lazygit
+rm _routes.json
+cd svelte.config.js
+hx svelte.config.js
+lazygit
+hx svelte.config.js
+lazygit
+npm install -g wrangler<\n>
+hx svelte.config.js
+lazygit
+cd svelte.config.js
+hx svelte.config.js
+hx send-email.js
+rm -rf functions/
+ls
+ls
+cd ..
+ls
+cd yves-proj/
+ls
+rm -f vite.config.ts.timestamp-*.mjs<\n>
+ls
+cd .
+ls
+cd src/
+ls
+hx routes/
+cd routes/
+ls
+mkdir send-email
+cd send-email/
+ls
+hx +server.js
+cd ..
+ls
+cd ..
+lazygit
+curl -X POST \<\n>  -H "Content-Type: application/json" \<\n>  -d '{"email":"test@example.com"}' \<\n>  https://your-site.com/send-email
+curl
+crul -h
+curl -h
+cd Codebases/Yves-donato/test-proj/
+cd ..
+cd yves-proj/
+l
+ls
+npm run dev
+hxs svelte.config.js
+hx svelte.config.js
+npm run dev
+ls
+cd src/
+ls
+cd routes/
+ls
+hx +page.server.js
+cd send-email/
+ls
+hx +server.js
+cd ..
+ls
+hx +page.server.js
+ls
+cd ..
+cd +page.svelte
+npm run dev
+hx +page.svelte
+rm +page.server.js
+cd send-email/
+ls
+hx +server.js
+cd ..
+ls
+hx +page.svelte
+hx send-email/
+cd ..
+ls
+hx svelte.config.js
+lazygit
+npm run dev
+hx .env
+hx svelte.config.js
+cd src/routes/send-email/
+ls
+hx +server.js
+cd ..
+cd.
+cd ..
+npm install --save @sendgrid/mail
+cd ..
+npm run dev
+hx +server.js
+cd ..
+ls
+cd +page.svelte
+hx +page.svelte
+hx .env
+ls
+cd send-email/
+ls
+hx .env
+rm .env
+export VARIABLE_NAME=value<\n>
+export VARIABLE_NAME=value
+hx +server.js
+hx svelte.config.js
+lazygit
+ls
+hx svelte.config.js
+npm uninstall @sveltejs/adapter-cloudflare<\n>
+npm i -D @sveltejs/adapter-vercel
+ls
+hx svelte.config.js
+lazygit
+cd Nixos
+ls
+flake update
+nix flake update
+update
+cd Nixos
+ls
+hx configuration.nix
+update
+hx configuration.nix
+update
+cd .
+ls
+cd ..
+.config/
+l
+ls
+Meta
+warpd
+warpd --hint
+warpd --grid
+cd ..
+ls
+cd Nixos
+l
+sls
+ls
+hx configuration.nix
+hx unstable.nix
+update
+hyprctl dispatch submap reset && wl-kbptr && hyprctl dispatch submap cursor
+hyprctl dispatch submap reset and  wl-kbptr && hyprctl dispatch submap cursor
+hyprctl dispatch submap reset and wl-kbptr && hyprctl dispatch submap cursor
+hyprctl dispatch submap reset and wl-kbptr; hyprctl dispatch submap cursor
+hx home.nix
+update
+hx home.nix
+wlrctl
+wlrctl pointer scroll 10 0
+hx home.nix
+ls
+hx hyprland.nix
+hx unstable.nix
+update
+smmassh
+cd Nixos
+ls
+cd ..
+ls
+cd Codebases/Yves-donato/
+ls
+hx yves-proj/
+cd yves-proj/
+ls
+cd src/routes
+ls
+hx +layout.svelte
+cd ..
+lazygit
+ls
+cd src
+ls
+cd routes/
+l
+ls
+npm run dev
+ls
+hx +layout.svelte
+cd ..
+lazygti
+lazygit
+ls
+cd src/routes/
+ls
+cd about/
+l
+ls
+hx +page.svelte
+cd ..
+hx +page.svelte
+lazygit
+cd Nixos
+ls
+cd ..
+cd Codebases/
+cd Yves-donato/yves-proj/
+ls
+cd src/routes/
+ls
+cd about/
+ls
+hx +page.svelte
+cd ..
+ls
+hx +page.svelte
+lazygit
+hx +page.svelte
+cd about/
+ls
+cd Codebases/Yves-donato/yves-proj/
+ls
+cd src/routes/
+ls
+cd about/
+ls
+hx +page.svelte
+lazygit
+smmassh
+cd Codebases/Yves-donato/yves-proj/
+ls
+cd src/
+ls
+cd routes/
+ls
+hx +page.svelte
+cd about/
+l
+lx
+ls
+hx +page.svelte
+lazygit
+hx +page.svelte
+ls
+cd ..
+ls
+cd blog/
+ls
+cd ..
+ls
+cd about/
+ls
+hx +page.svelte
+ls
+hx +page.svelte
+ls
+cd Codebases/
+os
+ls
+hx
+l
+hx -
+cd ..
+ls
+cd Codingspace/
+l
+ls
+hx Python/
+ls
+cd C/
+ls
+cd -
+ls
+cd ..
+ls
+cd Codebases/
+ls
+git clone https://github.com/YvesDonato/AcademAmigo.git
+ls
+cd AcademAmigo/
+ls
+cd AcademAmigo/ls
+cd AcademAmigo/
+ls
+npm run dev
+cd ..
+ls
+cd Yves-donato/
+ls
+cd ..
+cd AcademAmigo/
+direnv allow
+ls
+nix flake update
+ls
+rm flake.lock
+ls
+nix flake update
+cd flake.nix
+hx flake.nix
+nix flake update
+cd ..
+cd AcademAmigo/
+ls
+rm flake.nix
+ls
+cd Codebases/
+ls
+cd AcademAmigo/
+nix flake update
+ls
+cd ..
+ls
+cd AcademAmigo/
+nix flake update
+cd ..
+l
+ls
+cd AcademAmigo/
+npm
+hx .envrc
+cd ..
+hx AcademAmigo/
+cd AcademAmigo/
+cd .
+cd ..
+cd AcademAmigo/
+cd ..
+ls
+cd AcademAmigo/
+ls
+npm 
+cd AcademAmigo/
+npm run dev
+npm run test
+ls
+cd src/
+ls
+cd components/
+l
+sls
+ls
+cd frontpage/
+ls
+cd ..
+ls
+cd ..
+ls
+hx vite.config.ts
+hx tsconfig.json
+hx tsconfig.node.json
+cd ..
+ls
+cd ..
+ls
+npx sv create my-app
+cd AcademAmigo/
+cd ..
+ls
+mkdir Node-Projects
+ls
+cd Node-Projects/
+direnv allow
+ls
+npx sv create my-app
+ls
+rm my-app/
+rm -rf my-app/
+ls
+npx sv create AcademAmigo-SV
+ls
+cd AcademAmigo-SV/
+ls
+clear
+npm run dev
+ls
+cd src/
+ls
+cd routes/
+l
+ls
+hx +page.svelte
+ls
+cd ..
+npm run dev
+ls
+cd ..
+ls
+cd Yves-donato/
+ls
+cd yves-proj/
+ls
+cd src/
+ls
+cd routes/
+ls
+hx Footer.svelte
+hx Head
+cd routes/
+ls
+ls
+cd +layout.svelte
+hx +layout.svelte
+cd ..
+npm run dev
+hx +layout.svelte
+ls
+cd +layout.svelte
+hx Header.svelte
+hx +page.svelte
+hx +layout.svelte
+hx +page
+ls
+rm +page
+ls
+cd ..
+cd .
+cd ..
+ls
+cd AcademAmigo/
+ls
+cd AcademAmigo/
+ls
+cd public/
+l
+ls
+cd ..
+cd src/
+ls
+cd assets/
+ls
+cd Images/
+ls
+cd ..
+sl
+ls
+hx Yves-donato/
+cd Yves-donato/test-proj/
+ls
+hx src/
+cd src/
+ls
+cd routes/
+ls
+cd Header.svelte
+hx +page.svelte
+lazygit
+hx Header.svelte
+npm run dev
+hx Header.svelte
+cd ..
+ls
+cd Header.svelte
+hx +layout.svelte
+sl
+ls
+cd ..
+ls
+cd ..
+ls
+cd /etc/
+ls
+cd udev/rules.d/
+ls
+hx 10
+hx 10-dm.rules
+amdgpu.dcdebugmask=0x10
+cd ..
+ls
+cd /
+..
+.
+ls
+cd 
+l
+ls
+cd ..
+cd
+cd Nixos
+l
+ls
+hyprctl monitors all
+hx home.nix
+update
+hx home.nix
+update
+hyprctl monitors all
+hx home.nix
+update
+hx tailwind.config.ts
+cd src/
+ls
+cd Codebases/
+ls
+cd Node-Projects/
+ls
+cd AcademAmigo-SV/
+ls
+cd src/
+l
+ls
+cd routes/
+ls
+cd ..
+npm install --save @auth/core @auth/sveltekit
+ls
+hx .env 
+cd src/
+ls
+hx hooks.server.js
+ls
+cd routes/
+ls
+npm run dev
+hx +layout.server.js
+cd ..
+ls
+hx hooks.server.js
+rm hooks.server.js
+ls
+npm run dev
+cd routes/
+ls
+rm +layout.server.js
+ls
+hx +layout.server.js
+mkdir auth
+cd auth/
+ls
+mkdir callback
+ls
+cd callback/
+hx +server.js
+cd ..
+ls
+hx Header.svelte
+hx +page.svelte
+ls
+cd auth/
+ls
+cd callback/
+ls
+npm run dev
+hx +server.js
+mkdir google
+ls
+mv +server.js google/
+ls
+cd ..
+cd ...
+ls
+cd ..
+ls
+hx .env
+cdls
+cd ..
+cd .
+cd ..
+ls
+rm -rf auth/
+hx hooks.server.ts
+cd +layout.server.js
+npm run dev
+ls
+rm -rf hooks.server.ts
+ls
+cd src/
+ls
+hx auth.ts
+hx +layout.server.js
+ls
+rm +layout.server.js
+ls
++layout.svelte
+hx +page.svelte
+ls
+mkdir signin
+ls
+cd signin/
+ls
+hx +page.server.ts
+cd ..
+mkdir auth
+ls
+mv signin/ auth/
+ls
+cd auth/
+ls
+mv signin/ ..
+ls
+cd .
+sl
+cd ..
+ls
+rm auth/
+ls
+cd +page.svelte
+hx +page.svelte
+cd ..
+ls
+cd routes/
+ls
+rm -rf signin/
+cd ..
+ls
+rm auth.ts
+ls
+cd ..
+ls
+hx .env
+npm
+npm uninstall authjs<\n>
+npm install @supabase/supabase-js<\n>
+ls
+cd src/
+ls
+cd lib/
+ls
+rm index.ts
+hx supabaseClient.ts
+cd ..
+ls
+hx hooks.server.t
+hx hooks.server.ts
+cd src/
+hx app.d.ts
+ls
+cd routes/
+ls
+hx +layout.ts
+npm install @supabase/supabase-js @supabase/ssr
+npm run dev
+hx +layout.server.ts
+npm run dev
+npm install @supabase/supabase-js@2
+cd ..
+ls
+cd ..
+ls
+cd src/
+ls
+hx app.d.ts
+hx routes/
+ls
+cd routes/
+ls
+hx +layout.server.ts
+hx +layout.ts
+hx +layout.server.ts
+ls
+cd ..
+ls
+rm app.d.ts
+cd lib/
+ls
+rm supabaseClient.ts
+npm run dev
+cd ..
+ls
+hx hooks.server.ts
+rm hooks.server.ts
+cd src/
+ls
+cd routes/
+ls
+rm +layout.server.ts
+hx +layout.ts
+rm +layout.ts
+ls
+cd ..
+ls
+hx app.d.ts
+npm install @supabase/supabase-js @supabase/ssr<\n>
+ls
+cd ..
+ls
+cp .env .env.local
+ls
+rm .env
+hx .env.local
+cd src/
+ls
+hx hooks.server.ts
+hx app.d.ts
+ls
+cd routes/
+ls
+hx +layout.server.ts
+hx +layout.ts
+hx +layout.svelte
+mkdir auth
+cd auth
+ls
+hx +page.server.ts
+hx +page.svelte
+hx +layout.svelte
+cd ..
+cd auth/
+mkdir error
+cd error/
+hx +page.svelte
+cd ..
+mkdir confirm
+cd confirm/
+hx +server.ts
+cd ..
+mkdir private
+cd private/
+ls
+hx +layout.server.ts
++layout.svelte
+hx +layout.svelte
+ls
+hx +page.svelte
+ls
+cd ..
+ls
+cd auth/
+ls
+hx +page.svelte
+ls
+npm run dev
+hx routes/
+ls
+cd routes/
+l
+ls
+hx +page.svelte
+ls
+hx +layout.svelte
+hx +layout.svelte
+hx Header.svelte
+cd ..
+ls
+cd Node-Projects/
+ls
+cd Yves-donato/
+ls
+hx yves-proj/
+cd yves-proj/
+ls
+cd src/
+ls
+hx routes/
+ls
+cd routes/
+ls
+hx +page.svelte
+hx +layout.svelte
+hx Header.svelte
+ls
+hx +page.svelte
+hx +layout.svelte
+cd ..
+ls
+hx Header.svelte
+ls
+hx auth/
+ls
+hx +layout.svelte
+cd auth
+ls
+hx +page.svelte
+ls
+hx +page.svelte
+npm install openai
+hx Header.svelte
+ls
+hx +layout.server.ts
+ls
+cd ..
+ls
+hx private/
+ls
+cd private/
+ls
+hx +page.svelte
+hx +layout.svelte
+hx Headerapp.svelte
+hx +layout.ts
+hx +layout.svelte
+hx Headerapp.svelte
+ls
+hx +layout.svelte
+hx +page.svelte
+hx .env.local
+cd src/
+ls
+cd routes/
+l
+ls
+cd private/
+ls
+mv Headerapp.svelte Sidebar.svelte
+ls
+hx +layout.server.ts
+hx Headerapp.svelte
+ls
+rm Headerapp.svelte
+hx +layout.svelte
+hx +page.svelte
+ls
+hx Sidebar.svelte
+hx +layout.svelte
+ls
+cd ..
+ls
+cd auth/
+ls
+hx +layout.svelte
++page.svelte
+hx +page.svelte
+hx +page.svelte
+cd ..
+cd private/
+ls
+hx +page.svelte
+hx +layout.svelte
+cd ..
+cd auth
+ls
+cd confirm/
+ls
+hx +server.ts
+cd ..
+ls
++page.svelte
+hx +page.svelte
+cd ..
+ls
+cd ..
+ls
+hx app.d.ts
+cd routes/
+ls
+cd private/
+ls
+cd Nixos/
+l
+ls

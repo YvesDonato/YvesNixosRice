@@ -98,7 +98,7 @@
       # inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
     ];
     extraConfig = ''
-      monitor = eDP-1,preferred,auto, 1.333333
+      monitor = eDP-1, 2560x1600@165.00, auto, 1.333333
       monitor = DP-2, 3440x1440@143.97, 1920x0, 1
       monitor = desc:CVT VITURE 0x88888800, 1920x1080@120.00, 1600x0, 1, vrr, 1
       bindl = , switch:on:Lid Switch, exec, hyprctl keyword monitor "eDP-1, disable"
@@ -176,24 +176,24 @@
     misc {
       force_default_wallpaper = -1 # Set to 0 to disable the anime mascot wallpapers
     }
-    # See https://wiki.hyprland.org/Configuring/Keywords/ for more
     $mainMod = SUPER
-
-    # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
+    $browser = zen
+   
     bind = $mainMod, T, exec, kitty zellij
     bind = $mainMod SHIFT, T, exec, kitty
     bind = $mainMod, Q, killactive,
     bind = $mainMod, E, exec, nautilus
     bind = $mainMod, W, togglefloating,
     bind = $mainMod, G, exec, pkill -SIGUSR1 waybar
-    bind = $mainMod, A, exec, rofi -show drun -show-icons
+    bind = $mainMod, A, exec, /home/yvesd/Nixos/Configuration/Configs/rofi/scripts/main-menu.sh 
+    bind = $mainMod, S, exec, /home/yvesd/Nixos/Configuration/Configs/rofi/scripts/uni-search.sh
 
     # Browser stuff
-    bind = $mainMod, F, exec, firefox
-    bind = $mainMod, H, exec, firefox --private-window # Private Window
-    bind = $mainMod, Y, exec, firefox --new-window https://www.youtube.com/feed/subscriptions
-    bind = $mainMod, U, exec, firefox --new-window https://slate.sheridancollege.ca/d2l/login
-    bind = $mainMod, N, exec,
+    bind = $mainMod, F, exec, $browser
+    bind = $mainMod, H, exec, $browser --private-window # Private Window
+    bind = $mainMod, Y, exec, $browser --new-window https://www.youtube.com/feed/subscriptions
+    bind = $mainMod, U, exec, $browser --new-window https://slate.sheridancollege.ca/d2l/login
+    bind = $mainMod, N, exec, 
     bind = $mainMod, O, overview:toggle
 
     bind = $mainMod, D, exec,
@@ -202,7 +202,7 @@
     bind = $mainMod SHIFT, M, hy3:makegroup, tab, force_ephemeral 
 
     bind = $mainMod, B, exec, 
-    bind = $mainMod, C, exec, firefox --new-window https://calendar.google.com
+    bind = $mainMod, C, exec, 
     bind = $mainMod, L, exec, hyprlock
     bind = $mainMod, P, exec, grim -g "$(slurp -d)" - | wl-copy
     

@@ -19,11 +19,8 @@
     
     # Hyprland
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-
-    hy3 = {
-      url = "github:outfoxxed/hy3?ref=hl0.45.0"; # where {version} is the hyprland release version
-      inputs.hyprland.follows = "hyprland";
-    };
+    
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
     
     # Nix colors
     nix-colors.url = "github:misterio77/nix-colors";
@@ -33,7 +30,7 @@
 
     };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-colors, hyprland, hy3, nixvim, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-colors, hyprland, nixvim, ... }@inputs:
     let
       # System
       system = "x86_64-linux";

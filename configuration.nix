@@ -149,6 +149,7 @@
   programs.direnv.enable = true;
   environment.systemPackages = with pkgs; [
     # Programs
+    inputs.zen-browser.packages."${system}".default
     chromium
     anki
     rofi-wayland
@@ -164,7 +165,7 @@
     tailscale
     blueman
     pomodoro-gtk
-            
+                
     # Zsh
     starship
 

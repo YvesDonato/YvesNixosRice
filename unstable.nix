@@ -12,6 +12,7 @@
     smassh
     leetgo
     moonlight-qt
+    aichat
   ];
   
   #hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta.overrideAttrs {
