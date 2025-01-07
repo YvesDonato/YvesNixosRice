@@ -12,80 +12,79 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    
     # Hyprland
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    
+
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
-    
+
     # Nix colors
     nix-colors.url = "github:misterio77/nix-colors";
 
     # Cursors Themes
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
 
+    # NVF
+    nvf.url = "github:notashelf/nvf";
+  };
+
+  outputs = {
+    self,
+    nixpkgs,
+    nixpkgs-unstable,
+    home-manager,
+    nix-colors,
+    hyprland,
+    nvf,
+    ...
+  } @ inputs: let
+    # System
+    system = "x86_64-linux";
+    username = "yvesd";
+    name = "Yves";
+
+    # Nixos Packages Settings
+    # Stable
+    lib = nixpkgs.lib;
+    pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
     };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-colors, hyprland, nixvim, ... }@inputs:
-    let
-      # System
-      system = "x86_64-linux";
-      username = "yvesd";
-      name = "Yves";
-      
-      # Nixos Packages Settings
-      # Stable
-      lib = nixpkgs.lib;
-      pkgs = import nixpkgs {
+    # Unstable
+    pkgs-unstable = import nixpkgs-unstable {
+      inherit system;
+      config.allowUnfree = true;
+    };
+  in {
+    nixosConfigurations = {
+      nixos = lib.nixosSystem {
         inherit system;
-        config.allowUnfree = true;
-      };
 
-      # Unstable
-      pkgs-unstable = import nixpkgs-unstable {
-        inherit system;
-        config.allowUnfree = true;
-      };
-        
-    in {
-      nixosConfigurations = {
-        nixos = lib.nixosSystem {
-          inherit system;
-          
-          modules = [
-            ./configuration.nix
-          ];
-      
-          specialArgs = {
-            # inherit username;
-            inherit name;
-            inherit pkgs-unstable;
-            inherit inputs;
-            inherit nix-colors;
-            inherit hyprland;
-          };
+        modules = [
+          ./configuration.nix
+        ];
+
+        specialArgs = {
+          # inherit username;
+          inherit name;
+          inherit pkgs-unstable;
+          inherit inputs;
+          inherit nix-colors;
+          inherit hyprland;
+        };
       };
     };
     homeConfigurations = {
-        mee = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          extraSpecialArgs = {
-            inherit username; inherit nixvim;
-          };
-          modules = [
-            ./home.nix
-           home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.sharedModules = [
-              ];
-            }
-          ];
+      mee = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = {
+          inherit username;
         };
+        modules = [
+          nvf.homeManagerModules.default
+          ./home.nix
+        ];
       };
- };
+    };
+  };
 }
