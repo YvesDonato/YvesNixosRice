@@ -25,7 +25,6 @@
       enable = true;
       enable32Bit = true;
     };
-    alsa.enablePersistence = true;
     pulseaudio.enable = false;
 
     # Bluetooth

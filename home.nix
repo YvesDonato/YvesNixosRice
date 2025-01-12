@@ -19,7 +19,7 @@
   };
 
   imports = [
-    inputs.nvf.homeManagerModules.default
+    inputs.nixvim.homeManagerModules.nixvim
   ];
 
   dconf = {
@@ -42,7 +42,6 @@
 
     nushell = {
       enable = true;
-      # configFile.source = ./.../config.nu;
       extraConfig = ''
         $env.config = {
           show_banner: false,
@@ -56,85 +55,277 @@
       };
     };
 
-    nvf = {
+    nixvim = {
       enable = true;
-      settings.vim = {
-        viAlias = true;
-        vimAlias = true;
+      enableMan = true;
+      defaultEditor = true;
+      viAlias = true;
+      vimAlias = true;
+      luaLoader.enable = true;
 
-        useSystemClipboard = true;
+      globals = {
+        mapleader = " ";
+        maplocalleader = " ";
+      };
 
-        options = {
-          shiftwidth = 3;
-          wrap = false;
-        };
+      colorschemes.tokyonight = {
+        enable = true;
+        settings.style = "night";
+      };
 
-        treesitter.indent.enable = false;
-
-        theme = {
+      plugins = {
+        alpha = {
           enable = true;
-          name = "tokyonight";
-          style = "night";
+          theme = "dashboard";
         };
+
+        lualine = {
+          enable = true;
+        };
+
+        which-key = {
+          enable = true;
+        };
+
+        gitsigns = {
+          enable = true;
+        };
+
+        web-devicons = {
+          enable = true;
+        };
+
+        indent-blankline = {
+          enable = true;
+        };
+
+        notify = {
+          enable = true;
+        };
+
+        telescope = {
+          enable = true;
+          extensions = {
+            fzf-native.enable = true;
+            undo.enable = true;
+          };
+
+          settings.defaults = {
+            prompt_prefix = "   ";
+            color_devicons = true;
+            set_env.COLORTERM = "truecolor";
+
+            mappings = {
+              i = {
+                # Have Telescope not to enter a normal-like mode when hitting escape (and instead exiting), you can map <Esc> to do so via:
+                "<esc>".__raw = ''
+                  function(...)
+                    return require("telescope.actions").close(...)
+                  end'';
+                "<c-t>".__raw = ''
+                  function(...)
+                    require('trouble.providers.telescope').open_with_trouble(...);
+                  end
+                '';
+               };
+              n = {
+                "<c-t>".__raw = ''
+                  function(...)
+                    require('trouble.providers.telescope').open_with_trouble(...);
+                  end
+                '';
+              };
+            };
+            # trim leading whitespace from grep
+            vimgrep_arguments = [
+              "${pkgs.ripgrep}/bin/rg"
+              "--color=never"
+              "--no-heading"
+              "--with-filename"
+              "--line-number"
+              "--column"
+              "--smart-case"
+              "--trim"
+            ];
+          };
+
+          keymaps = {
+            "<leader>fp" = {
+              action = "projects";
+              options.desc = "Search Todo";
+            };
+            "<leader>st" = {
+              action = "todo-comments";
+              options.desc = "Search Todo";
+            };
+            "<leader>sn" = {
+              action = "notify";
+              options.desc = "Search Notifications";
+            };
+            "<leader>su" = {
+              action = "undo";
+              options.desc = "Search Undo";
+            };
+            "<leader><space>" = {
+              action = "find_files";
+              options.desc = "Find project files";
+            };
+            "<leader>ff" = {
+              action = "find_files hidden=true";
+              options.desc = "Find project files";
+            };
+            "<leader>/" = {
+              action = "live_grep";
+              options.desc = "Grep (root dir)";
+            };
+            "<leader>:" = {
+              action = "command_history";
+              options.desc = "Command History";
+            };
+            "<leader>fr" = {
+              action = "oldfiles";
+              options.desc = "Recent";
+            };
+            "<c-p>" = {
+              mode = [
+                "n"
+                "i"
+              ];
+              action = "registers";
+              options.desc = "Select register to paste";
+            };
+            "<leader>gc" = {
+              action = "git_commits";
+              options.desc = "commits";
+            };
+            "<leader>sa" = {
+              action = "autocommands";
+              options.desc = "Auto Commands";
+            };
+            "<leader>sc" = {
+              action = "commands";
+              options.desc = "Commands";
+            };
+            "<leader>sd" = {
+              action = "diagnostics bufnr=0";
+              options.desc = "Workspace diagnostics";
+            };
+            "<leader>sh" = {
+              action = "help_tags";
+              options.desc = "Help pages";
+            };
+            "<leader>sk" = {
+              action = "keymaps";
+              options.desc = "Key maps";
+            };
+            "<leader>sM" = {
+              action = "man_pages";
+              options.desc = "Man pages";
+            };
+            "<leader>sm" = {
+              action = "marks";
+              options.desc = "Jump to Mark";
+            };
+            "<leader>so" = {
+              action = "vim_options";
+              options.desc = "Options";
+            };
+            "<leader>uC" = {
+              action = "colorscheme";
+              options.desc = "Colorscheme preview";
+            };
+          };
+        };
+
+        harpoon = {
+          enable = true;
+          enableTelescope = true;
+        };
+
+        lsp-signature.enable = true;
+        lint.enable = true;
 
         lsp = {
           enable = true;
-          formatOnSave = true;
+          servers = {
+            typos_lsp.enable = true;
+            # Web
+            cssls.enable = true;
+            tailwindcss.enable = true;
+            html.enable = true;
+            svelte.enable = true;
+            eslint.enable = true;
+            ts_ls.enable = true;
+
+            nixd.enable = true;
+          };
         };
 
-        ui.colorizer = {
+        lsp-format = {
           enable = true;
         };
 
-        languages = {
-          enableFormat = true;
-          enableTreesitter = true;
-          enableLSP = true;
-          enableDAP = true;
-          enableExtraDiagnostics = true;
-
-          nix = {
-            enable = true;
-          };
-
-          svelte = {
-            enable = true;
-          };
-
-          clang = {
-            enable = true;
-            cHeader = true;
-          };
-
-          python = {
-            enable = true;
-          };
-
-          tailwind = {
-            enable = true;
-          };
-        };
-
-        assistant.copilot = {
+        none-ls = {
           enable = true;
-          cmp.enable = true;
+          enableLspFormat = true;
+          sources.formatting = {
+            alejandra.enable = true;
+          };
         };
 
-        keymaps = [
-          {
-            key = "<leader>a";
-            mode = "n";
-            silent = true;
-            action = ":Copilot<CR>";
-          }
-        ];
+        treesitter = {
+          enable = true;
+          settings = {
+            highlight.enable = true;
+            incremental_selection.enable = true;
+          };
+          nixvimInjections = true;
+        };
 
-        git.gitsigns.enable = true;
-        binds.whichKey.enable = true;
-        dashboard.alpha.enable = true;
-        statusline.lualine.enable = true;
-        telescope.enable = true;
-        autocomplete.nvim-cmp.enable = true;
+        copilot-cmp = {
+          enable = true;
+        };
+
+        cmp = {
+          enable = true;
+          autoEnableSources = true;
+          settings = {
+            mapping = {
+              "<C-d>" = "cmp.mapping.scroll_docs(-4)";
+              "<C-f>" = "cmp.mapping.scroll_docs(4)";
+              "<C-Space>" = "cmp.mapping.complete()";
+              "<C-e>" = "cmp.mapping.close()";
+              "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
+              "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
+              "<CR>" = "cmp.mapping.confirm({ select = true })";
+            };
+
+            sources = [
+              {name = "path";}
+              {name = "nvim_lsp";}
+              {name = "copilot";}
+              {
+                name = "buffer";
+                option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
+              }
+            ];
+          };
+        };
+      };
+
+      opts = {
+        updatetime = 100;
+
+        relativenumber = true;
+        number = true;
+
+        swapfile = false;
+        undofile = true;
+
+        tabstop = 2;
+        shiftwidth = 2;
+        expandtab = true;
+        autoindent = true;
       };
     };
 
@@ -150,6 +341,7 @@
       nix-direnv.enable = true;
     };
   };
+
   wayland.windowManager.hyprland = {
     enable = true;
     plugins = [
@@ -239,8 +431,7 @@
       $mainMod = SUPER
       $browser = zen
 
-      bind = $mainMod, T, exec, kitty zellij
-      bind = $mainMod SHIFT, T, exec, kitty
+      bind = $mainMod, T, exec, ghostty
       bind = $mainMod, Q, killactive,
       bind = $mainMod, E, exec, nautilus
       bind = $mainMod, W, togglefloating,
@@ -265,7 +456,6 @@
       bind = $mainMod, C, exec,
       bind = $mainMod, L, exec, hyprlock
       bind = $mainMod, P, exec, grim -g "$(slurp -d)" - | wl-copy
-
 
       windowrulev2 = workspace 10,DP-2 title:^(Spotify Premium)$
       windowrulev2 = workspace 9,DP-2 class:^(discord)$

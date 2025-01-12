@@ -9,5 +9,6 @@
     leetgo
     moonlight-qt
     aichat
+    ghostty
   ];
 }

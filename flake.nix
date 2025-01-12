@@ -23,8 +23,14 @@
     # Cursors Themes
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
 
+    nixvim = {
+      url = "github:nix-community/nixvim/nixos-24.11";
+      # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # NVF
-    nvf.url = "github:notashelf/nvf";
+    # nvf.url = "github:notashelf/nvf";
   };
 
   outputs = {
@@ -34,7 +40,8 @@
     home-manager,
     nix-colors,
     hyprland,
-    nvf,
+    nixvim,
+    # nvf,
     ...
   } @ inputs: let
     # System
@@ -81,7 +88,8 @@
           inherit username;
         };
         modules = [
-          nvf.homeManagerModules.default
+          nixvim.homeManagerModules.nixvim
+          # nvf.homeManagerModules.default
           ./home.nix
         ];
       };
