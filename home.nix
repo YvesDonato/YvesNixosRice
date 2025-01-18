@@ -7,13 +7,11 @@
     username = "yvesd";
     homeDirectory = "/home/yvesd";
     stateVersion = "24.11";
-
     packages = [
     ];
 
     file = {
     };
-
     sessionVariables = {
     };
   };
@@ -117,7 +115,6 @@
 
             mappings = {
               i = {
-                # Have Telescope not to enter a normal-like mode when hitting escape (and instead exiting), you can map <Esc> to do so via:
                 "<esc>".__raw = ''
                   function(...)
                     return require("telescope.actions").close(...)
@@ -127,7 +124,7 @@
                     require('trouble.providers.telescope').open_with_trouble(...);
                   end
                 '';
-               };
+              };
               n = {
                 "<c-t>".__raw = ''
                   function(...)
@@ -237,11 +234,6 @@
           };
         };
 
-        harpoon = {
-          enable = true;
-          enableTelescope = true;
-        };
-
         lsp-signature.enable = true;
         lint.enable = true;
 
@@ -249,6 +241,7 @@
           enable = true;
           servers = {
             typos_lsp.enable = true;
+
             # Web
             cssls.enable = true;
             tailwindcss.enable = true;
@@ -265,11 +258,23 @@
           enable = true;
         };
 
-        none-ls = {
+        conform-nvim = {
           enable = true;
-          enableLspFormat = true;
-          sources.formatting = {
-            alejandra.enable = true;
+          settings = {
+            formatters_by_ft = {
+              javascript = ["prettierd"];
+              javascriptreact = ["prettierd"];
+              typescript = ["prettierd"];
+              typescriptreact = ["prettierd"];
+              svelte = ["prettierd"];
+
+              nix = ["alejandra"];
+            };
+
+            format_on_save = {
+              timeoutMs = 500;
+              lspFallback = true;
+            };
           };
         };
 
@@ -280,10 +285,6 @@
             incremental_selection.enable = true;
           };
           nixvimInjections = true;
-        };
-
-        copilot-cmp = {
-          enable = true;
         };
 
         cmp = {
@@ -297,24 +298,56 @@
               "<C-e>" = "cmp.mapping.close()";
               "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
               "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
-              "<CR>" = "cmp.mapping.confirm({ select = true })";
+              "<C-y>" = "cmp.mapping.confirm({ select = true })";
             };
 
             sources = [
-              {name = "path";}
-              {name = "nvim_lsp";}
-              {name = "copilot";}
+              {
+                name = "nvim_lsp";
+                priority = 100;
+              }
+              {
+                name = "nvim_lsp_signature_help";
+                priority = 100;
+              }
+              {
+                name = "nvim_lsp_document_symbol";
+                priority = 100;
+              }
+              {
+                name = "treesitter";
+                priority = 80;
+              }
+              {
+                name = "copilot";
+                priority = 70;
+              }
               {
                 name = "buffer";
+                priority = 50;
+                # Words from other open buffers can also be suggested.
                 option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
+                keywordLength = 3;
+              }
+              {
+                name = "path";
+                priority = 30;
               }
             ];
           };
         };
       };
 
+      clipboard = {
+        providers.wl-copy.enable = true;
+        register = "unnamedplus";
+      };
+
       opts = {
-        updatetime = 100;
+        updatetime = 50;
+        timeoutlen = 250;
+        signcolumn = "yes";
+        termguicolors = true;
 
         relativenumber = true;
         number = true;
@@ -349,69 +382,75 @@
       pkgs.hyprlandPlugins.hyprspace
     ];
     extraConfig = ''
-        monitor = eDP-1, 2560x1600@165.00, auto, 1.333333
-        monitor = DP-2, 3440x1440@143.97, 1920x0, 1
-        monitor = desc:CVT VITURE 0x88888800, 1920x1080@120.00, 1600x0, 1, vrr, 1
-        monitor = DP-5, preferred, auto-left, 2
-        bindl = , switch:on:Lid Switch, exec, hyprctl keyword monitor "eDP-1, disable"
-        bindl = , switch:off:Lid Switch, exec, hyprctl keyword monitor "eDP-1,2560x1600@165,0x0,1.333333"
-        exec-once = waybar & swaync & hypridle
-        exec-once = bash ~/.config/hypr/start.sh
-        env = HYPRCURSOR_THEME,rose-pine-hyprcursor
-        env = HYPRCURSOR_SIZE,24
-        plugin {
-          hy3 {
-          }
+      monitor = eDP-1, 2560x1600@165.00, auto, 1.333333
+      monitor = DP-2, 3440x1440@143.97, 1920x0, 1
+      monitor = desc:CVT VITURE 0x88888800, 1920x1080@120.00, 1600x0, 1, vrr, 1
+      monitor = DP-5, preferred, auto-left, 2
+      bindl = , switch:on:Lid Switch, exec, hyprctl keyword monitor "eDP-1, disable"
+      bindl = , switch:off:Lid Switch, exec, hyprctl keyword monitor "eDP-1,2560x1600@165,0x0,1.333333"
+      exec-once = waybar & swaync & hypridle
+      exec-once = bash ~/.config/hypr/start.sh
+      env = HYPRCURSOR_THEME,rose-pine-hyprcursor
+      env = HYPRCURSOR_SIZE,24
+      plugin {
+        hy3 {
         }
-        input {
-          # kb_layout = us
-          kb_variant =
-          kb_model =
-          kb_options =
-          kb_rules =
-          follow_mouse = 1
+      }
 
-          touchpad {
-            natural_scroll = no
-          }
+      render {
+        explicit_sync = 2
+        explicit_sync_kms = 0
+      }
 
-          sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
-        }
+      input {
+        # kb_layout = us
+        kb_variant =
+        kb_model =
+        kb_options =
+        kb_rules =
+        follow_mouse = 1
 
-        general {
-          gaps_out = 5
-          gaps_in = 2
-          border_size = 2
-
-          col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
-          col.inactive_border = rgba(595959aa)
-          layout = hy3
+        touchpad {
+          natural_scroll = no
         }
 
-        decoration {
+        sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
+      }
 
-          rounding = 5
+      general {
+        gaps_out = 5
+        gaps_in = 2
+        border_size = 2
 
-          blur {
-            enabled = true
-            size = 3
-            passes = 1
-          }
+        col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
+        col.inactive_border = rgba(595959aa)
+        layout = hy3
+      }
 
+      decoration {
+
+        rounding = 5
+
+        blur {
+          enabled = true
+          size = 3
+          passes = 1
         }
 
-        animations {
-          enabled = false
+      }
 
-          bezier = myBezier, 0.05, 0.9, 0.1, 1.05
+      animations {
+        enabled = false
 
-          animation = windows, 1, 2, myBezier
-          animation = windowsOut, 1, 7, default, popin 80%
-          animation = border, 1, 10, default
-          animation = borderangle, 1, 8, default
-          animation = fade, 1, 2, default
-          animation = workspaces, 1, 2, default
-        }
+        bezier = myBezier, 0.05, 0.9, 0.1, 1.05
+
+        animation = windows, 1, 2, myBezier
+        animation = windowsOut, 1, 7, default, popin 80%
+        animation = border, 1, 10, default
+        animation = borderangle, 1, 8, default
+        animation = fade, 1, 2, default
+        animation = workspaces, 1, 2, default
+      }
 
       dwindle {
         pseudotile = yes # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below

@@ -1,6 +1,8 @@
 lastupdatecheck: 0
 recentrepos:
     - /home/yvesd/Nixos
+    - /home/yvesd/Codebases/Node-Projects/AcademAmigo-SV
+    - /home/yvesd/Codebases/Node-Projects/Yves-donato/yves-proj
 startuppopupversion: 5
 lastversion: 0.44.1
 customcommandshistory:

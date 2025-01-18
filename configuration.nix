@@ -15,7 +15,11 @@
   boot = {
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
-    blacklistedKernelModules = ["nouveau" "nvidia_drm" "nvidia"];
+    blacklistedKernelModules = [
+      "nouveau"
+      "nvidia_drm"
+      "nvidia"
+    ];
     initrd.kernelModules = ["amdgpu"];
     initrd.systemd.network.wait-online.enable = false;
   };
@@ -94,7 +98,10 @@
     rtkit.enable = true;
   };
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Shell Enable
   programs.zsh.enable = true;
@@ -103,7 +110,10 @@
   users.users.yvesd = {
     isNormalUser = true;
     description = "Yves Donato";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     shell = pkgs.nushell;
   };
 
@@ -113,7 +123,7 @@
     TERMINAL = "kitty";
   };
 
-  # Home Mangager
+  # Home Manager
   home-manager = {
     backupFileExtension = "backup";
     extraSpecialArgs = {inherit inputs;};
@@ -121,6 +131,13 @@
       yvesd = import ./home.nix;
     };
   };
+
+  # Virtualbox
+  virtualisation.virtualbox.host = {
+    enable = true;
+    enableExtensionPack = true;
+  };
+  users.extraGroups.vboxusers.members = ["user-with-access-to-virtualbox"];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -169,13 +186,8 @@
     glow
 
     # Languages
-    vscode-langservers-extracted
-    nodePackages_latest.typescript-language-server
-    nodePackages_latest.bash-language-server
-    tailwindcss-language-server
-    nil
-    omnisharp-roslyn
-    nodePackages.eslint
+    prettierd
+    alejandra
 
     # system
     xwayland
@@ -188,10 +200,16 @@
 
   # Fonts
   fonts.packages = with pkgs; [
-    (nerdfonts.override {fonts = ["FiraCode" "DroidSansMono" "CascadiaCode"];})
+    (nerdfonts.override {
+      fonts = [
+        "FiraCode"
+        "DroidSansMono"
+        "CascadiaCode"
+      ];
+    })
   ];
 
-  # Garbage colector
+  # Garbage collector
   nix.gc = {
     automatic = true;
     dates = "weekly";
