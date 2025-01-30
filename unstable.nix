@@ -10,5 +10,6 @@
     moonlight-qt
     aichat
     ghostty
+    morgen
   ];
 }

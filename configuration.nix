@@ -2,6 +2,7 @@
 {
   inputs,
   pkgs,
+  config,
   ...
 }: {
   imports = [
@@ -15,13 +16,9 @@
   boot = {
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
-    blacklistedKernelModules = [
-      "nouveau"
-      "nvidia_drm"
-      "nvidia"
-    ];
     initrd.kernelModules = ["amdgpu"];
     initrd.systemd.network.wait-online.enable = false;
+    kernelPackages = pkgs.linuxPackages_latest;
   };
 
   hardware = {
@@ -29,6 +26,29 @@
       enable = true;
       enable32Bit = true;
     };
+
+    # nvidia = {
+    #   modesetting.enable = true;
+    #
+    #   powerManagement = {
+    #     enable = true;
+    #     finegrained = true;
+    #   };
+    #
+    #   open = false;
+    #   nvidiaSettings = true;
+    #   package = config.boot.kernelPackages.nvidiaPackages.beta;
+    #
+    #   prime = {
+    #     nvidiaBusId = "PCI:1:0:0";
+    #     amdgpuBusId = "PCI:101:0:0";
+    #     offload = {
+    #       enable = true;
+    #       enableOffloadCmd = true;
+    #     };
+    #   };
+    # };
+
     pulseaudio.enable = false;
 
     # Bluetooth

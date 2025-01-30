@@ -101,6 +101,13 @@
           enable = true;
         };
 
+        avante = {
+          enable = true;
+          settings = {
+            provider = "copilot";
+          };
+        };
+
         telescope = {
           enable = true;
           extensions = {
