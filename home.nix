@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-unstable,
   inputs,
   ...
 }: {
@@ -12,6 +13,7 @@
 
     file = {
     };
+
     sessionVariables = {
     };
   };
@@ -75,6 +77,10 @@
         alpha = {
           enable = true;
           theme = "dashboard";
+        };
+
+        vimtex = {
+          enable = true;
         };
 
         lualine = {
@@ -279,7 +285,7 @@
             };
 
             format_on_save = {
-              timeoutMs = 500;
+              timeoutMs = 800;
               lspFallback = true;
             };
           };
@@ -389,24 +395,26 @@
       pkgs.hyprlandPlugins.hyprspace
     ];
     extraConfig = ''
-      monitor = eDP-1, 2560x1600@165.00, auto, 1.333333
-      monitor = DP-2, 3440x1440@143.97, 1920x0, 1
+      monitor = eDP-1, 2560x1600@165.00, auto, 1.333333, vrr, 1
+      monitor = DP-2, 3440x1440@143.97, 1920x0, 1, vrr, 0
       monitor = desc:CVT VITURE 0x88888800, 1920x1080@120.00, 1600x0, 1, vrr, 1
       monitor = DP-5, preferred, auto-left, 2
       bindl = , switch:on:Lid Switch, exec, hyprctl keyword monitor "eDP-1, disable"
+
       bindl = , switch:off:Lid Switch, exec, hyprctl keyword monitor "eDP-1,2560x1600@165,0x0,1.333333"
       exec-once = waybar & swaync & hypridle
       exec-once = bash ~/.config/hypr/start.sh
       env = HYPRCURSOR_THEME,rose-pine-hyprcursor
       env = HYPRCURSOR_SIZE,24
+
       plugin {
         hy3 {
         }
       }
 
       render {
-        explicit_sync = 2
-        explicit_sync_kms = 0
+        explicit_sync = 1
+        explicit_sync_kms = 1
       }
 
       input {
@@ -425,9 +433,12 @@
       }
 
       general {
-        gaps_out = 5
-        gaps_in = 2
-        border_size = 2
+        # gaps_out = 5
+        # gaps_in = 2
+        gaps_out = 0
+        gaps_in = 0
+
+        border_size = 0
 
         col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
         col.inactive_border = rgba(595959aa)
@@ -436,7 +447,7 @@
 
       decoration {
 
-        rounding = 5
+        rounding = 0
 
         blur {
           enabled = true
@@ -459,6 +470,16 @@
         animation = workspaces, 1, 2, default
       }
 
+      workspace = w[t1], gapsout:0, gapsin:0
+      workspace = w[tg1], gapsout:0, gapsin:0
+      workspace = f[1], gapsout:0, gapsin:0
+      windowrulev2 = bordersize 0, floating:0, onworkspace:w[t1]
+      windowrulev2 = rounding 0, floating:0, onworkspace:w[t1]
+      windowrulev2 = bordersize 0, floating:0, onworkspace:w[tg1]
+      windowrulev2 = rounding 0, floating:0, onworkspace:w[tg1]
+      windowrulev2 = bordersize 0, floating:0, onworkspace:f[1]
+      windowrulev2 = rounding 0, floating:0, onworkspace:f[1]
+
       dwindle {
         pseudotile = yes # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
         preserve_split = yes # you probably want this
@@ -473,6 +494,7 @@
 
       misc {
         force_default_wallpaper = -1 # Set to 0 to disable the anime mascot wallpapers
+        vrr = 1
       }
       $mainMod = SUPER
       $browser = zen

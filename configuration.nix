@@ -3,6 +3,7 @@
   inputs,
   pkgs,
   config,
+  pkgs-unstable,
   ...
 }: {
   imports = [
@@ -146,17 +147,20 @@
   # Home Manager
   home-manager = {
     backupFileExtension = "backup";
-    extraSpecialArgs = {inherit inputs;};
+    extraSpecialArgs = {
+      inherit inputs;
+      inherit pkgs-unstable;
+    };
     users = {
       yvesd = import ./home.nix;
     };
   };
 
-  # Virtualbox
-  virtualisation.virtualbox.host = {
-    enable = true;
-    enableExtensionPack = true;
-  };
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = ["yvesd"];
+  virtualisation.libvirtd.enable = true;
+  virtualisation.libvirtd.qemu.swtpm.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
   users.extraGroups.vboxusers.members = ["user-with-access-to-virtualbox"];
 
   # Allow unfree packages
@@ -206,7 +210,6 @@
     glow
 
     # Languages
-    prettierd
     alejandra
 
     # system
@@ -216,6 +219,8 @@
     hyprlock
     gnome-disk-utility
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+    swtpm
+    hypridle
   ];
 
   # Fonts

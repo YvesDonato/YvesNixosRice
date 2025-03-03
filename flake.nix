@@ -78,9 +78,11 @@
       };
     };
     homeConfigurations = {
-      mee = home-manager.lib.homeManagerConfiguration {
+      yvesd = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+
         extraSpecialArgs = {
+          inherit pkgs-unstable;
           inherit username;
         };
         modules = [
