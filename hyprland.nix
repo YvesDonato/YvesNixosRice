@@ -28,14 +28,15 @@
   environment.systemPackages = with pkgs; [
     waybar
     kitty
-    swww
     wlogout
     wl-clipboard
     grim
     slurp
-    hyprpaper
+    swww
     waypaper
     hyprcursor
+    hypridle
+    hyprlock
   ];
 
   # Security

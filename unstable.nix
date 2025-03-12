@@ -4,7 +4,9 @@
     leetgo
     moonlight-qt
     ghostty
-    morgen
     qemu
+    tailscale
+    webcord-vencord
+    spotify
   ];
 }

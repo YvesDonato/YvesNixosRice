@@ -107,12 +107,12 @@
           enable = true;
         };
 
-        avante = {
-          enable = true;
-          settings = {
-            provider = "copilot";
-          };
-        };
+        # avante = {
+        #   enable = true;
+        #   settings = {
+        #     provider = "copilot";
+        #   };
+        # };
 
         telescope = {
           enable = true;
@@ -331,10 +331,10 @@
                 name = "treesitter";
                 priority = 80;
               }
-              {
-                name = "copilot";
-                priority = 70;
-              }
+              # {
+              #   name = "copilot";
+              #   priority = 70;
+              # }
               {
                 name = "buffer";
                 priority = 50;
@@ -515,7 +515,7 @@
       bind = $mainMod, N, exec,
       bind = $mainMod, O, overview:toggle
 
-      bind = $mainMod, D, exec,
+      bind = $mainMod, D, exec, moonlight
       bind = $mainMod, V, hy3:makegroup, v, ephemeral
       bind = $mainMod, M, hy3:makegroup, tab, ephemeral
       bind = $mainMod SHIFT, M, hy3:makegroup, tab, force_ephemeral
@@ -525,8 +525,8 @@
       bind = $mainMod, L, exec, hyprlock
       bind = $mainMod, P, exec, grim -g "$(slurp -d)" - | wl-copy
 
-      windowrulev2 = workspace 10,DP-2 title:^(Spotify Premium)$
-      windowrulev2 = workspace 9,DP-2 class:^(discord)$
+      windowrulev2 = workspace 10,DP-2 class:^(spotify)$
+      windowrulev2 = workspace 9,DP-2 class:^(WebCord)$
 
       # Move focus with mainMod + arrow keys
       bind = $mainMod, left, hy3:movefocus, l

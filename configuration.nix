@@ -167,6 +167,7 @@
   nixpkgs.config.allowUnfree = true;
 
   programs.direnv.enable = true;
+
   environment.systemPackages = with pkgs; [
     # Programs
     inputs.zen-browser.packages."${system}".default
@@ -176,8 +177,6 @@
     nautilus
     pavucontrol
     pamixer
-    discord
-    spotify
     blanket
     libreoffice
     obs-studio
@@ -216,11 +215,9 @@
     xwayland
     swaynotificationcenter
     brightnessctl
-    hyprlock
     gnome-disk-utility
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
     swtpm
-    hypridle
   ];
 
   # Fonts
