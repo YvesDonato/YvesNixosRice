@@ -6,7 +6,7 @@
     ghostty
     qemu
     tailscale
-    webcord-vencord
+    discord
     spotify
   ];
 }

@@ -1,6 +1,7 @@
 {
   inputs,
   pkgs,
+  pkgs-unstable,
   ...
 }: {
   # Hyprland
@@ -12,6 +13,7 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
+    #package = pkgs-unstable.hyprland;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
 
