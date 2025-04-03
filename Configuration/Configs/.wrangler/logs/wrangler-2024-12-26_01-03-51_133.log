@@ -1,0 +1,16 @@
+
+--- 2024-12-26T01:03:51.221Z debug
+🪵  Writing logs to "/home/yvesd/.config/.wrangler/logs/wrangler-2024-12-26_01-03-51_133.log"
+---
+
+--- 2024-12-26T01:03:51.221Z debug
+.env file not found at "/home/yvesd/Codebases/Yves-donato/yves-proj/.dev.vars". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2024-12-26T01:03:51.952Z debug
+.env file not found at "/home/yvesd/Codebases/Yves-donato/yves-proj/.dev.vars". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2024-12-26T01:03:51.957Z debug
+.env file not found at "/home/yvesd/Codebases/Yves-donato/yves-proj/.dev.vars". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---

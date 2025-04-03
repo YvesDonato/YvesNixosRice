@@ -3646,3 +3646,15 @@ ls
 cd Nixos/
 l
 ls
+lazygit
+ls
+cd ghostty
+ls
+vi config
+ls
+cd nixos
+ls
+cd hyprland.nix
+vi hyprland.nix
+vi home.nix
+update

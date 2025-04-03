@@ -1,0 +1,15 @@
+{
+	"globalToggleWindow": null,
+	"morgen-device-id": "a8b68e98-cd56-4573-893d-139140249a1c",
+	"morgen-refresh-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWMxNGI1NmUxZmRlNTAwMWI5ZmVmZTIiLCJpYXQiOjE3MzgwMTY1ODh9.c60stysX2KyTWyxZvZCDx-xphU_pXhSY9gEPJp3Knbw",
+	"morgen-user-id": "65c14b56e1fde5001b9fefe2",
+	"morgen-email": "yvesdonato0@gmail.com",
+	"morgen-entitlements": "{\"entitlements\":[{\"name\":\"user\",\"displayName\":\"Account access\",\"displayDescription\":\"Access to account management\",\"created\":\"2025-01-27\",\"props\":{}},{\"name\":\"basics\",\"displayName\":\"Basics\",\"displayDescription\":\"Access to basic app functionalities\",\"created\":\"2021-04-01\",\"props\":{}},{\"name\":\"accounts-1\",\"displayName\":\"Max 1 calendar account\",\"displayDescription\":\"At most one calendar account can be connected\",\"created\":\"2021-09-27\",\"props\":{\"maxAccounts\":1}},{\"name\":\"scheduling-links-unlimited\",\"displayName\":\"Unlimited meetings booked with scheduling links\",\"displayDescription\":\"Use the scheduling links without limitations\",\"created\":\"2021-09-01\",\"props\":{\"maxBookingsPerCalendarMonth\":1000000000000}},{\"name\":\"timezones-unlimited\",\"displayName\":\"Add as many time zones as you need\",\"displayDescription\":\"Add up to 9 additional time zones in the Time Zone Helper\",\"created\":\"2021-10-01\",\"props\":{\"maxTimezones\":1000000000000}},{\"name\":\"recurrent-scheduling-links-1\",\"displayName\":\"Max 1 recurrent scheduling links\",\"displayDescription\":\"At most one recurrent scheduling link can be created\",\"created\":\"2022-04-08\",\"props\":{\"maxRecurrentSchedulingLinks\":1}},{\"name\":\"mobile-app-early-access\",\"displayName\":\"Mobile app\",\"displayDescription\":\"Access to Morgen for iOS and Android\",\"created\":\"2022-07-28\",\"props\":{}},{\"name\":\"mobile-app\",\"displayName\":\"Mobile app\",\"displayDescription\":\"Full access to Morgen for iOS and Android\",\"created\":\"2023-08-30\",\"props\":{}},{\"name\":\"task-scheduling\",\"displayName\":\"Time block tasks in the calendar\",\"displayDescription\":\"Allow creation and scheduling of tasks in the calendar\",\"created\":\"2024-03-01\",\"props\":{}},{\"name\":\"videoconferencing\",\"displayName\":\"Add virtual rooms to events created in Morgen\",\"displayDescription\":\"Add virtual rooms to events created in Morgen\",\"created\":\"2024-03-01\",\"props\":{}}],\"updated\":\"2025-01-28T14:39:50-05:00\"}",
+	"winBounds": {
+		"x": 0,
+		"y": 0,
+		"width": 851,
+		"height": 1391
+	},
+	"zoomFactor": 1
+}

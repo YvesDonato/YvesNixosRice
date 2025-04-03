@@ -520,7 +520,7 @@
       bind = $mainMod, M, hy3:makegroup, tab, ephemeral
       bind = $mainMod SHIFT, M, hy3:makegroup, tab, force_ephemeral
 
-      bind = $mainMod, B, exec,
+      bind = $mainMod, B, togglespecialworkspace
       bind = $mainMod, C, exec,
       bind = $mainMod, L, exec, hyprlock
       bind = $mainMod, P, exec, grim -g "$(slurp -d)" - | wl-copy
@@ -557,10 +557,6 @@
       bind = $mainMod SHIFT, 8, movetoworkspace, 8
       bind = $mainMod SHIFT, 9, movetoworkspace, 9
       bind = $mainMod SHIFT, 0, movetoworkspace, 10
-
-      # Scroll through existing workspaces with mainMod + scroll
-      bind = $mainMod, mouse_down, workspace, e+1
-      bind = $mainMod, mouse_up, workspace, e-1
 
       # Move/resize windows with mainMod + LMB/RMB and dragging
       bindm = $mainMod, mouse:272, movewindow
