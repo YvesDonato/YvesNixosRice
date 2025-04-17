@@ -497,7 +497,7 @@
         vrr = 1
       }
       $mainMod = SUPER
-      $browser = zen
+      $browser = zen-beta
 
       bind = $mainMod, T, exec, ghostty
       bind = $mainMod, Q, killactive,
