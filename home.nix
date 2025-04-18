@@ -526,7 +526,7 @@
       bind = $mainMod, P, exec, grim -g "$(slurp -d)" - | wl-copy
 
       windowrulev2 = workspace 10,DP-2 class:^(spotify)$
-      windowrulev2 = workspace 9,DP-2 class:^(WebCord)$
+      windowrulev2 = workspace 9,DP-2 class:^(discord)$
 
       # Move focus with mainMod + arrow keys
       bind = $mainMod, left, hy3:movefocus, l

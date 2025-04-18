@@ -13,8 +13,8 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-    #package = pkgs-unstable.hyprland;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    package = pkgs.hyprland;
+    #package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
 
   nix.settings = {
@@ -24,6 +24,7 @@
 
   # XDG
   xdg.portal.enable = true;
+  xdg.portal.config.common.default = "*";
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
   # Hyprland Speific Packages

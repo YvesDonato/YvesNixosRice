@@ -13,7 +13,7 @@
     };
 
     # Hyprland
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    #hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
@@ -36,7 +36,7 @@
     nixpkgs-unstable,
     home-manager,
     nix-colors,
-    hyprland,
+    #hyprland,
     nixvim,
     ...
   } @ inputs: let
@@ -73,7 +73,7 @@
           inherit pkgs-unstable;
           inherit inputs;
           inherit nix-colors;
-          inherit hyprland;
+          #inherit hyprland;
         };
       };
     };
