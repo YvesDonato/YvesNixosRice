@@ -14,7 +14,7 @@
     enable = true;
     xwayland.enable = true;
     package = pkgs.hyprland;
-    #package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    portalPackage = pkgs.xdg-desktop-portal-hyprland;
   };
 
   nix.settings = {

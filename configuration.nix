@@ -19,7 +19,7 @@
     loader.efi.canTouchEfiVariables = true;
     initrd.kernelModules = ["amdgpu"];
     initrd.systemd.network.wait-online.enable = false;
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_6_13;
   };
 
   hardware = {
@@ -36,9 +36,16 @@
     #     finegrained = true;
     #   };
     #
-    #   open = false;
+    #   open = true;
     #   nvidiaSettings = true;
-    #   package = config.boot.kernelPackages.nvidiaPackages.beta;
+    #
+    #   package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
+    #     version = "570.86.16";
+    #     sha256_64bit = "sha256-RWPqS7ZUJH9JEAWlfHLGdqrNlavhaR1xMyzs8lJhy9U=";
+    #     openSha256 = "sha256-DuVNA63+pJ8IB7Tw2gM4HbwlOh1bcDg2AN2mbEU9VPE=";
+    #     settingsSha256 = "sha256-9rtqh64TyhDF5fFAYiWl3oDHzKJqyOW3abpcf2iNRT8=";
+    #     usePersistenced = false;
+    #   };
     #
     #   prime = {
     #     nvidiaBusId = "PCI:1:0:0";
@@ -49,7 +56,7 @@
     #     };
     #   };
     # };
-
+    #
     pulseaudio.enable = false;
 
     # Bluetooth
@@ -207,10 +214,17 @@
     supergfxctl
     lshw
     glow
+    nvtop
+    curl
 
     # Languages
     alejandra
-
+    ruff
+    clang
+    svelte-language-server
+    typescript-language-server
+    tailwindcss-language-server
+   
     # system
     xwayland
     swaynotificationcenter

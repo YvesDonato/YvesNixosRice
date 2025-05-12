@@ -8,5 +8,8 @@
     tailscale
     discord
     spotify
+    helix
+    chromedriver
+    aichat
   ];
 }

@@ -262,6 +262,7 @@
             svelte.enable = true;
             eslint.enable = true;
             ts_ls.enable = true;
+            pyright.enable = true;
 
             nixd.enable = true;
           };
@@ -390,18 +391,20 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
+    package = pkgs.hyprland;
+    #portalPackage = pkgs-unstable.xdg-desktop-portal-hyprland;
     plugins = [
       pkgs.hyprlandPlugins.hy3
       pkgs.hyprlandPlugins.hyprspace
     ];
     extraConfig = ''
-      monitor = eDP-1, 2560x1600@165.00, auto, 1.333333, vrr, 1
-      monitor = DP-2, 3440x1440@143.97, 1920x0, 1, vrr, 0
-      monitor = desc:CVT VITURE 0x88888800, 1920x1080@120.00, 1600x0, 1, vrr, 1
-      monitor = DP-5, preferred, auto-left, 2
+      monitor = , highres@highrr, auto, 1, vrr, 0
+      monitor = eDP-1, highres@highrr, auto, 1.333333, vrr, 1
+      #monitor = DP-2, 3440x1440@143.97, 1920x0, 1, vrr, 0
+      monitor = DP-3, highres@highrr, 1920x0, 1, vrr, 0
       bindl = , switch:on:Lid Switch, exec, hyprctl keyword monitor "eDP-1, disable"
 
-      bindl = , switch:off:Lid Switch, exec, hyprctl keyword monitor "eDP-1,2560x1600@165,0x0,1.333333"
+      bindl = , switch:off:Lid Switch, exec, hyprctl keyword monitor "eDP-1, highres@highrr, 0x0, 1.333333"
       exec-once = waybar & swaync & hypridle
       exec-once = bash ~/.config/hypr/start.sh
       env = HYPRCURSOR_THEME,rose-pine-hyprcursor
@@ -515,7 +518,8 @@
       bind = $mainMod, N, exec,
       bind = $mainMod, O, overview:toggle
 
-      bind = $mainMod, D, exec, moonlight
+      bind = $mainMod SHIFT, D, exec, moonlight
+      bind = $mainMod, D, exec, moonlight stream yves desktop
       bind = $mainMod, V, hy3:makegroup, v, ephemeral
       bind = $mainMod, M, hy3:makegroup, tab, ephemeral
       bind = $mainMod SHIFT, M, hy3:makegroup, tab, force_ephemeral
@@ -525,8 +529,10 @@
       bind = $mainMod, L, exec, hyprlock
       bind = $mainMod, P, exec, grim -g "$(slurp -d)" - | wl-copy
 
-      windowrulev2 = workspace 10,DP-2 class:^(spotify)$
-      windowrulev2 = workspace 9,DP-2 class:^(discord)$
+      windowrulev2 = workspace 10, DP-2 class:^(spotify)$
+      windowrulev2 = workspace 9, DP-2 class:^(discord)$
+      windowrulev2 = bordersize 2, floating:1
+      windowrulev2 = opacity 0.8, floating:1
 
       # Move focus with mainMod + arrow keys
       bind = $mainMod, left, hy3:movefocus, l
