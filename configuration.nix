@@ -57,7 +57,6 @@
     #   };
     # };
     #
-    pulseaudio.enable = false;
 
     # Bluetooth
     bluetooth.enable = true; # enables support for Bluetooth
@@ -72,6 +71,7 @@
     displayManager.autoLogin.enable = true;
     displayManager.autoLogin.user = "yvesd";
     tailscale.enable = true;
+    pulseaudio.enable = false;
 
     xserver = {
       enable = true;
@@ -131,9 +131,6 @@
     "flakes"
   ];
 
-  # Shell Enable
-  programs.zsh.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.yvesd = {
     isNormalUser = true;
@@ -175,6 +172,8 @@
 
   programs.direnv.enable = true;
 
+  programs.nix-ld.enable = true;
+
   environment.systemPackages = with pkgs; [
     # Programs
     inputs.zen-browser.packages."${system}".default
@@ -214,9 +213,10 @@
     supergfxctl
     lshw
     glow
-    nvtop
     curl
-
+    acpi
+    patchelf
+   
     # Languages
     alejandra
     ruff
@@ -224,10 +224,11 @@
     svelte-language-server
     typescript-language-server
     tailwindcss-language-server
+    glibc
+    zlib
    
     # system
     xwayland
-    swaynotificationcenter
     brightnessctl
     gnome-disk-utility
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
@@ -236,15 +237,9 @@
 
   # Fonts
   fonts.packages = with pkgs; [
-    (nerdfonts.override {
-      fonts = [
-        "FiraCode"
-        "DroidSansMono"
-        "CascadiaCode"
-      ];
-    })
+    nerd-fonts.hack
   ];
-
+  
   # Garbage collector
   nix.gc = {
     automatic = true;
@@ -252,5 +247,5 @@
     options = "--delete-older-than 7d";
   };
 
-  system.stateVersion = "24.11";
+  system.stateVersion = "25.05";
 }

@@ -1,33 +1,33 @@
 # themes
 theme = tokyonight_night
-font-family = CaskaydiaCove Nerd Font Mono
+font-family = Hack Nerd Font Mono
 font-size = 12
 adjust-cell-height = 10%
 background-opacity = 0.65
 
-# save state
-window-save-state = always
+# # save state
+# window-save-state = always
 
-# tabs
-keybind = ctrl+t>n=new_tab
-keybind = ctrl+t>x=close_surface
-keybind = ctrl+t>right=next_tab
-keybind = ctrl+t>left=previous_tab
+# # tabs
+# keybind = ctrl+t>n=new_tab
+# keybind = ctrl+t>x=close_surface
+# keybind = ctrl+t>right=next_tab
+# keybind = ctrl+t>left=previous_tab
 
-# split
-keybind = ctrl+p>x=close_surface
+# # split
+# keybind = ctrl+p>x=close_surface
 
-keybind = ctrl+p>n>right=new_split:right
-keybind = ctrl+p>n>left=new_split:left
-keybind = ctrl+p>n>up=new_split:up
-keybind = ctrl+p>n>down=new_split:down
+# keybind = ctrl+p>n>right=new_split:right
+# keybind = ctrl+p>n>left=new_split:left
+# keybind = ctrl+p>n>up=new_split:up
+# keybind = ctrl+p>n>down=new_split:down
 
-keybind = ctrl+p>down=goto_split:bottom
-keybind = ctrl+p>up=goto_split:top
-keybind = ctrl+p>left=goto_split:left
-keybind = ctrl+p>right=goto_split:right
+# keybind = ctrl+p>down=goto_split:bottom
+# keybind = ctrl+p>up=goto_split:top
+# keybind = ctrl+p>left=goto_split:left
+# keybind = ctrl+p>right=goto_split:right
 
-#copy
+# #copy
 keybind = ctrl+y=copy_to_clipboard
 keybind = ctrl+v=paste_from_clipboard
 

@@ -3,18 +3,16 @@
 
   inputs = {
     # Nixos Packages URLs
-    nixpkgs.url = "nixpkgs/nixos-24.11";
+    nixpkgs.url = "nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
     # Home Manager
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Hyprland
-    #hyprland.url = "github:hyprwm/Hyprland";
-
+    # Zen Browser
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
     # Nix colors
@@ -24,7 +22,7 @@
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
 
     nixvim = {
-      url = "github:nix-community/nixvim/nixos-24.11";
+      url = "github:nix-community/nixvim/nixos-25.05";
       # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -36,7 +34,6 @@
     nixpkgs-unstable,
     home-manager,
     nix-colors,
-    #hyprland,
     nixvim,
     ...
   } @ inputs: let
@@ -68,12 +65,10 @@
         ];
 
         specialArgs = {
-          # inherit username;
           inherit name;
           inherit pkgs-unstable;
           inherit inputs;
           inherit nix-colors;
-          #inherit hyprland;
         };
       };
     };
@@ -87,7 +82,6 @@
         };
         modules = [
           nixvim.homeManagerModules.nixvim
-          # nvf.homeManagerModules.default
           ./home.nix
         ];
       };

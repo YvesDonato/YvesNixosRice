@@ -11,5 +11,6 @@
     helix
     chromedriver
     aichat
+    readest
   ];
 }

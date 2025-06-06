@@ -29,17 +29,17 @@
 
   # Hyprland Speific Packages
   environment.systemPackages = with pkgs; [
-    waybar
-    kitty
-    wlogout
     wl-clipboard
     grim
     slurp
-    swww
     waypaper
     hyprcursor
     hypridle
     hyprlock
+    waybar
+    swaynotificationcenter
+    swww
+    eww
   ];
 
   # Security

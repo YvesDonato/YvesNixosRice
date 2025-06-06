@@ -7,7 +7,7 @@
   home = {
     username = "yvesd";
     homeDirectory = "/home/yvesd";
-    stateVersion = "24.11";
+    stateVersion = "25.05";
     packages = [
     ];
 
@@ -55,329 +55,330 @@
       };
     };
 
-    nixvim = {
-      enable = true;
-      enableMan = true;
-      defaultEditor = true;
-      viAlias = true;
-      vimAlias = true;
-      luaLoader.enable = true;
+    # nixvim = {
+    #   enable = true;
+    #   enableMan = true;
+    #   defaultEditor = true;
+    #   viAlias = true;
+    #   vimAlias = true;
+    #   luaLoader.enable = true;
 
-      globals = {
-        mapleader = " ";
-        maplocalleader = " ";
-      };
+    #   globals = {
+    #     mapleader = " ";
+    #     maplocalleader = " ";
+    #   };
 
-      colorschemes.tokyonight = {
-        enable = true;
-        settings.style = "night";
-      };
+    #   colorschemes.tokyonight = {
+    #     enable = true;
+    #     settings.style = "night";
+    #   };
 
-      plugins = {
-        alpha = {
-          enable = true;
-          theme = "dashboard";
-        };
+    #   plugins = {
+    #     alpha = {
+    #       enable = true;
+    #       theme = "dashboard";
+    #     };
 
-        vimtex = {
-          enable = true;
-        };
+    #     vimtex = {
+    #       enable = true;
+    #     };
 
-        lualine = {
-          enable = true;
-        };
+    #     lualine = {
+    #       enable = true;
+    #     };
 
-        which-key = {
-          enable = true;
-        };
+    #     which-key = {
+    #       enable = true;
+    #     };
 
-        gitsigns = {
-          enable = true;
-        };
+    #     gitsigns = {
+    #       enable = true;
+    #     };
 
-        web-devicons = {
-          enable = true;
-        };
+    #     web-devicons = {
+    #       enable = true;
+    #     };
 
-        indent-blankline = {
-          enable = true;
-        };
+    #     indent-blankline = {
+    #       enable = true;
+    #     };
 
-        notify = {
-          enable = true;
-        };
+    #     notify = {
+    #       enable = true;
+    #     };
 
-        # avante = {
-        #   enable = true;
-        #   settings = {
-        #     provider = "copilot";
-        #   };
-        # };
+    #     # avante = {
+    #     #   enable = true;
+    #     #   settings = {
+    #     #     provider = "copilot";
+    #     #   };
+    #     # };
 
-        telescope = {
-          enable = true;
-          extensions = {
-            fzf-native.enable = true;
-            undo.enable = true;
-          };
+    #     telescope = {
+    #       enable = true;
+    #       extensions = {
+    #         fzf-native.enable = true;
+    #         undo.enable = true;
+    #       };
 
-          settings.defaults = {
-            prompt_prefix = "   ";
-            color_devicons = true;
-            set_env.COLORTERM = "truecolor";
+    #       settings.defaults = {
+    #         prompt_prefix = "   ";
+    #         color_devicons = true;
+    #         set_env.COLORTERM = "truecolor";
 
-            mappings = {
-              i = {
-                "<esc>".__raw = ''
-                  function(...)
-                    return require("telescope.actions").close(...)
-                  end'';
-                "<c-t>".__raw = ''
-                  function(...)
-                    require('trouble.providers.telescope').open_with_trouble(...);
-                  end
-                '';
-              };
-              n = {
-                "<c-t>".__raw = ''
-                  function(...)
-                    require('trouble.providers.telescope').open_with_trouble(...);
-                  end
-                '';
-              };
-            };
-            # trim leading whitespace from grep
-            vimgrep_arguments = [
-              "${pkgs.ripgrep}/bin/rg"
-              "--color=never"
-              "--no-heading"
-              "--with-filename"
-              "--line-number"
-              "--column"
-              "--smart-case"
-              "--trim"
-            ];
-          };
+    #         mappings = {
+    #           i = {
+    #             "<esc>".__raw = ''
+    #               function(...)
+    #                 return require("telescope.actions").close(...)
+    #               end'';
+    #             "<c-t>".__raw = ''
+    #               function(...)
+    #                 require('trouble.providers.telescope').open_with_trouble(...);
+    #               end
+    #             '';
+    #           };
+    #           n = {
+    #             "<c-t>".__raw = ''
+    #               function(...)
+    #                 require('trouble.providers.telescope').open_with_trouble(...);
+    #               end
+    #             '';
+    #           };
+    #         };
+    #         # trim leading whitespace from grep
+    #         vimgrep_arguments = [
+    #           "${pkgs.ripgrep}/bin/rg"
+    #           "--color=never"
+    #           "--no-heading"
+    #           "--with-filename"
+    #           "--line-number"
+    #           "--column"
+    #           "--smart-case"
+    #           "--trim"
+    #         ];
+    #       };
 
-          keymaps = {
-            "<leader>fp" = {
-              action = "projects";
-              options.desc = "Search Todo";
-            };
-            "<leader>st" = {
-              action = "todo-comments";
-              options.desc = "Search Todo";
-            };
-            "<leader>sn" = {
-              action = "notify";
-              options.desc = "Search Notifications";
-            };
-            "<leader>su" = {
-              action = "undo";
-              options.desc = "Search Undo";
-            };
-            "<leader><space>" = {
-              action = "find_files";
-              options.desc = "Find project files";
-            };
-            "<leader>ff" = {
-              action = "find_files hidden=true";
-              options.desc = "Find project files";
-            };
-            "<leader>/" = {
-              action = "live_grep";
-              options.desc = "Grep (root dir)";
-            };
-            "<leader>:" = {
-              action = "command_history";
-              options.desc = "Command History";
-            };
-            "<leader>fr" = {
-              action = "oldfiles";
-              options.desc = "Recent";
-            };
-            "<c-p>" = {
-              mode = [
-                "n"
-                "i"
-              ];
-              action = "registers";
-              options.desc = "Select register to paste";
-            };
-            "<leader>gc" = {
-              action = "git_commits";
-              options.desc = "commits";
-            };
-            "<leader>sa" = {
-              action = "autocommands";
-              options.desc = "Auto Commands";
-            };
-            "<leader>sc" = {
-              action = "commands";
-              options.desc = "Commands";
-            };
-            "<leader>sd" = {
-              action = "diagnostics bufnr=0";
-              options.desc = "Workspace diagnostics";
-            };
-            "<leader>sh" = {
-              action = "help_tags";
-              options.desc = "Help pages";
-            };
-            "<leader>sk" = {
-              action = "keymaps";
-              options.desc = "Key maps";
-            };
-            "<leader>sM" = {
-              action = "man_pages";
-              options.desc = "Man pages";
-            };
-            "<leader>sm" = {
-              action = "marks";
-              options.desc = "Jump to Mark";
-            };
-            "<leader>so" = {
-              action = "vim_options";
-              options.desc = "Options";
-            };
-            "<leader>uC" = {
-              action = "colorscheme";
-              options.desc = "Colorscheme preview";
-            };
-          };
-        };
+    #       keymaps = {
+    #         "<leader>fp" = {
+    #           action = "projects";
+    #           options.desc = "Search Todo";
+    #         };
+    #         "<leader>st" = {
+    #           action = "todo-comments";
+    #           options.desc = "Search Todo";
+    #         };
+    #         "<leader>sn" = {
+    #           action = "notify";
+    #           options.desc = "Search Notifications";
+    #         };
+    #         "<leader>su" = {
+    #           action = "undo";
+    #           options.desc = "Search Undo";
+    #         };
+    #         "<leader><space>" = {
+    #           action = "find_files";
+    #           options.desc = "Find project files";
+    #         };
+    #         "<leader>ff" = {
+    #           action = "find_files hidden=true";
+    #           options.desc = "Find project files";
+    #         };
+    #         "<leader>/" = {
+    #           action = "live_grep";
+    #           options.desc = "Grep (root dir)";
+    #         };
+    #         "<leader>:" = {
+    #           action = "command_history";
+    #           options.desc = "Command History";
+    #         };
+    #         "<leader>fr" = {
+    #           action = "oldfiles";
+    #           options.desc = "Recent";
+    #         };
+    #         "<c-p>" = {
+    #           mode = [
+    #             "n"
+    #             "i"
+    #           ];
+    #           action = "registers";
+    #           options.desc = "Select register to paste";
+    #         };
+    #         "<leader>gc" = {
+    #           action = "git_commits";
+    #           options.desc = "commits";
+    #         };
+    #         "<leader>sa" = {
+    #           action = "autocommands";
+    #           options.desc = "Auto Commands";
+    #         };
+    #         "<leader>sc" = {
+    #           action = "commands";
+    #           options.desc = "Commands";
+    #         };
+    #         "<leader>sd" = {
+    #           action = "diagnostics bufnr=0";
+    #           options.desc = "Workspace diagnostics";
+    #         };
+    #         "<leader>sh" = {
+    #           action = "help_tags";
+    #           options.desc = "Help pages";
+    #         };
+    #         "<leader>sk" = {
+    #           action = "keymaps";
+    #           options.desc = "Key maps";
+    #         };
+    #         "<leader>sM" = {
+    #           action = "man_pages";
+    #           options.desc = "Man pages";
+    #         };
+    #         "<leader>sm" = {
+    #           action = "marks";
+    #           options.desc = "Jump to Mark";
+    #         };
+    #         "<leader>so" = {
+    #           action = "vim_options";
+    #           options.desc = "Options";
+    #         };
+    #         "<leader>uC" = {
+    #           action = "colorscheme";
+    #           options.desc = "Colorscheme preview";
+    #         };
+    #       };
+    #     };
 
-        lsp-signature.enable = true;
-        lint.enable = true;
+    #     lsp-signature.enable = true;
+    #     lint.enable = true;
 
-        lsp = {
-          enable = true;
-          servers = {
-            typos_lsp.enable = true;
+    #     lsp = {
+    #       enable = true;
+    #       servers = {
+    #         typos_lsp.enable = true;
 
-            # Web
-            cssls.enable = true;
-            tailwindcss.enable = true;
-            html.enable = true;
-            svelte.enable = true;
-            eslint.enable = true;
-            ts_ls.enable = true;
-            pyright.enable = true;
+    #         # Web
+    #         cssls.enable = true;
+    #         tailwindcss.enable = true;
+    #         html.enable = true;
+    #         svelte.enable = true;
+    #         eslint.enable = true;
+    #         ts_ls.enable = true;
+    #         pyright.enable = true;
 
-            nixd.enable = true;
-          };
-        };
+    #         nixd.enable = true;
+    #       };
+    #     };
 
-        lsp-format = {
-          enable = true;
-        };
+    #     lsp-format = {
+    #       enable = true;
+    #     };
 
-        conform-nvim = {
-          enable = true;
-          settings = {
-            formatters_by_ft = {
-              javascript = ["prettierd"];
-              javascriptreact = ["prettierd"];
-              typescript = ["prettierd"];
-              typescriptreact = ["prettierd"];
-              svelte = ["prettierd"];
+    #     conform-nvim = {
+    #       enable = true;
+    #       settings = {
+    #         formatters_by_ft = {
+    #           javascript = ["prettierd"];
+    #           javascriptreact = ["prettierd"];
+    #           typescript = ["prettierd"];
+    #           typescriptreact = ["prettierd"];
+    #           svelte = ["prettierd"];
 
-              nix = ["alejandra"];
-            };
+    #           nix = ["alejandra"];
+    #         };
 
-            format_on_save = {
-              timeoutMs = 800;
-              lspFallback = true;
-            };
-          };
-        };
+    #         format_on_save = {
+    #           timeoutMs = 800;
+    #           lspFallback = true;
+    #         };
+    #       };
+    #     };
 
-        treesitter = {
-          enable = true;
-          settings = {
-            highlight.enable = true;
-            incremental_selection.enable = true;
-          };
-          nixvimInjections = true;
-        };
+    #     treesitter = {
+    #       enable = true;
+    #       settings = {
+    #         highlight.enable = true;
+    #         incremental_selection.enable = true;
+    #       };
+    #       nixvimInjections = true;
+    #     };
 
-        cmp = {
-          enable = true;
-          autoEnableSources = true;
-          settings = {
-            mapping = {
-              "<C-d>" = "cmp.mapping.scroll_docs(-4)";
-              "<C-f>" = "cmp.mapping.scroll_docs(4)";
-              "<C-Space>" = "cmp.mapping.complete()";
-              "<C-e>" = "cmp.mapping.close()";
-              "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
-              "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
-              "<C-y>" = "cmp.mapping.confirm({ select = true })";
-            };
+    #     cmp = {
+    #       enable = true;
+    #       autoEnableSources = true;
+    #       settings = {
+    #         mapping = {
+    #           "<C-d>" = "cmp.mapping.scroll_docs(-4)";
+    #           "<C-f>" = "cmp.mapping.scroll_docs(4)";
+    #           "<C-Space>" = "cmp.mapping.complete()";
+    #           "<C-e>" = "cmp.mapping.close()";
+    #           "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
+    #           "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
+    #           "<C-y>" = "cmp.mapping.confirm({ select = true })";
+    #         };
 
-            sources = [
-              {
-                name = "nvim_lsp";
-                priority = 100;
-              }
-              {
-                name = "nvim_lsp_signature_help";
-                priority = 100;
-              }
-              {
-                name = "nvim_lsp_document_symbol";
-                priority = 100;
-              }
-              {
-                name = "treesitter";
-                priority = 80;
-              }
-              # {
-              #   name = "copilot";
-              #   priority = 70;
-              # }
-              {
-                name = "buffer";
-                priority = 50;
-                # Words from other open buffers can also be suggested.
-                option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
-                keywordLength = 3;
-              }
-              {
-                name = "path";
-                priority = 30;
-              }
-            ];
-          };
-        };
-      };
+    #         sources = [
+    #           {
+    #             name = "nvim_lsp";
+    #             priority = 100;
+    #           }
+    #           {
+    #             name = "nvim_lsp_signature_help";
+    #             priority = 100;
+    #           }
+    #           {
+    #             name = "nvim_lsp_document_symbol";
+    #             priority = 100;
+    #           }
+    #           {
+    #             name = "treesitter";
+    #             priority = 80;
+    #           }
+    #           # {
+    #           #   name = "copilot";
+    #           #   priority = 70;
+    #           # }
+    #           {
+    #             name = "buffer";
+    #             priority = 50;
+    #             # Words from other open buffers can also be suggested.
+    #             option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
+    #             keywordLength = 3;
+    #           }
+    #           {
+    #             name = "path";
+    #             priority = 30;
+    #           }
+    #         ];
+    #       };
+    #     };
+    #   };
 
-      clipboard = {
-        providers.wl-copy.enable = true;
-        register = "unnamedplus";
-      };
+    #   clipboard = {
+    #     providers.wl-copy.enable = true;
+    #     register = "unnamedplus";
+    #   };
 
-      opts = {
-        updatetime = 50;
-        timeoutlen = 250;
-        signcolumn = "yes";
-        termguicolors = true;
+    #   opts = {
+    #     updatetime = 50;
+    #     timeoutlen = 250;
+    #     signcolumn = "yes";
+    #     termguicolors = true;
 
-        relativenumber = true;
-        number = true;
+    #     relativenumber = true;
+    #     number = true;
 
-        swapfile = false;
-        undofile = true;
+    #     swapfile = false;
+    #     undofile = true;
 
-        tabstop = 2;
-        shiftwidth = 2;
-        expandtab = true;
-        autoindent = true;
-      };
-    };
+    #     tabstop = 2;
+    #     shiftwidth = 2;
+    #     expandtab = true;
+    #     autoindent = true;
+    #   };
+    # };
 
     starship = {
       enable = true;
+      enableNushellIntegration = true;
       settings = {
       };
     };
@@ -387,31 +388,34 @@
       enableNushellIntegration = true;
       nix-direnv.enable = true;
     };
+          
   };
 
   wayland.windowManager.hyprland = {
     enable = true;
     package = pkgs.hyprland;
-    #portalPackage = pkgs-unstable.xdg-desktop-portal-hyprland;
     plugins = [
       pkgs.hyprlandPlugins.hy3
-      pkgs.hyprlandPlugins.hyprspace
     ];
     extraConfig = ''
       monitor = , highres@highrr, auto, 1, vrr, 0
       monitor = eDP-1, highres@highrr, auto, 1.333333, vrr, 1
-      #monitor = DP-2, 3440x1440@143.97, 1920x0, 1, vrr, 0
+      monitor = DP-2, highres@highrr, auto, 1, vrr, 0, bitdepth, 10
+      #, cm, hdr, sdrbrightness, 1.3, sdrsaturation, 0.90
       monitor = DP-3, highres@highrr, 1920x0, 1, vrr, 0
       bindl = , switch:on:Lid Switch, exec, hyprctl keyword monitor "eDP-1, disable"
-
       bindl = , switch:off:Lid Switch, exec, hyprctl keyword monitor "eDP-1, highres@highrr, 0x0, 1.333333"
-      exec-once = waybar & swaync & hypridle
+      exec-once = eww daemon & hypridle
+      exec-once = eww open bar
       exec-once = bash ~/.config/hypr/start.sh
       env = HYPRCURSOR_THEME,rose-pine-hyprcursor
       env = HYPRCURSOR_SIZE,24
 
       plugin {
         hy3 {
+          autotile {
+            trigger_height = 848
+          }
         }
       }
 
@@ -446,6 +450,9 @@
         col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
         col.inactive_border = rgba(595959aa)
         layout = hy3
+        snap {
+          enabled = true
+        }
       }
 
       decoration {
@@ -457,11 +464,10 @@
           size = 3
           passes = 1
         }
-
       }
 
       animations {
-        enabled = false
+        enabled = true
 
         bezier = myBezier, 0.05, 0.9, 0.1, 1.05
 
@@ -488,8 +494,10 @@
         preserve_split = yes # you probably want this
       }
 
-      master {
-      }
+      # master {
+      #   orientation = center
+      #   mfact = 0.34
+      # }
 
       gestures {
         workspace_swipe = off
@@ -499,6 +507,7 @@
         force_default_wallpaper = -1 # Set to 0 to disable the anime mascot wallpapers
         vrr = 1
       }
+      
       $mainMod = SUPER
       $browser = zen-beta
 
@@ -516,13 +525,13 @@
       bind = $mainMod, Y, exec, $browser --new-window https://www.youtube.com/feed/subscriptions
       bind = $mainMod, U, exec, $browser --new-window https://slate.sheridancollege.ca/d2l/login
       bind = $mainMod, N, exec,
-      bind = $mainMod, O, overview:toggle
+      #bind = $mainMod, O, overview:toggle
 
       bind = $mainMod SHIFT, D, exec, moonlight
       bind = $mainMod, D, exec, moonlight stream yves desktop
-      bind = $mainMod, V, hy3:makegroup, v, ephemeral
-      bind = $mainMod, M, hy3:makegroup, tab, ephemeral
-      bind = $mainMod SHIFT, M, hy3:makegroup, tab, force_ephemeral
+      bind = $mainMod CTRL, V, hy3:makegroup, v, ephemeral
+      bind = $mainMod CTRL, T, hy3:makegroup, tab, ephemeral
+      # bind = $mainMod SHIFT, M, hy3:makegroup, tab, force_ephemeral
 
       bind = $mainMod, B, togglespecialworkspace
       bind = $mainMod, C, exec,
