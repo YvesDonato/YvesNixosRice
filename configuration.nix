@@ -4,6 +4,7 @@
   pkgs,
   config,
   pkgs-unstable,
+  lib,
   ...
 }: {
   imports = [
@@ -126,10 +127,20 @@
     rtkit.enable = true;
   };
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix = {
+    settings = {
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      trusted-users = [ "root" "yvesd" ];
+    };
+    extraOptions = ''
+         extra-substituters = https://devenv.cachix.org
+         extra-trusted-public-keys = devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=
+       '';
+  };
+  # cachix.enable = false;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.yvesd = {
@@ -233,6 +244,10 @@
     gnome-disk-utility
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
     swtpm
+    wayland
+    libGL
+    libxkbcommon
+
   ];
 
   # Fonts

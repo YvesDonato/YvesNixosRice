@@ -12,5 +12,7 @@
     chromedriver
     aichat
     readest
+    devenv
+    cachix
   ];
 }
