@@ -88,7 +88,7 @@
         };
         modules = [
           nixvim.homeManagerModules.nixvim
-          ./home.nix
+          ./homeManager/home.nix
         ];
       };
     };
