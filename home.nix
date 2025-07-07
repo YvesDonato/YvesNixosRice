@@ -50,6 +50,7 @@
       shellAliases = {
         update = "sudo nixos-rebuild switch";
         clean = "sudo nix-collect-garbage -d";
+        ai = "~/Codingspace/Rust/code/cargo/Client-api/target/debug/Client-api";
         c = "cd";
         h = "hx";
       };
@@ -405,8 +406,7 @@
       monitor = DP-3, highres@highrr, 1920x0, 1, vrr, 0
       bindl = , switch:on:Lid Switch, exec, hyprctl keyword monitor "eDP-1, disable"
       bindl = , switch:off:Lid Switch, exec, hyprctl keyword monitor "eDP-1, highres@highrr, 0x0, 1.333333"
-      exec-once = eww daemon & hypridle
-      exec-once = eww open bar
+      exec-once = quickshell -d & hypridle
       exec-once = bash ~/.config/hypr/start.sh
       env = HYPRCURSOR_THEME,rose-pine-hyprcursor
       env = HYPRCURSOR_SIZE,24
@@ -467,7 +467,7 @@
       }
 
       animations {
-        enabled = true
+        enabled = false
 
         bezier = myBezier, 0.05, 0.9, 0.1, 1.05
 
@@ -510,30 +510,38 @@
       
       $mainMod = SUPER
       $browser = zen-beta
-
+      $clear = qs ipc call hints visable 0
+      bindlnot=,Super_L,exec, qs ipc call hints visable 1
+      bindlnrt=$mainMod,Super_L,exec, qs ipc call hints visable 0
+      
+      # bindo = , Super_L, exec, qs ipc call hints visable 1
+      # bindr = $mainMod , Super_L, exec, qs ipc call hints visable 0
       bind = $mainMod, T, exec, ghostty
-      bind = $mainMod, Q, killactive,
+      bind = $mainMod, Q, killactive
+
       bind = $mainMod, E, exec, nautilus
-      bind = $mainMod, W, togglefloating,
-      bind = $mainMod, G, exec, pkill -SIGUSR1 waybar
-      bind = $mainMod, A, exec, /home/yvesd/Nixos/Configuration/Configs/rofi/scripts/main-menu.sh
-      bind = $mainMod, S, exec, /home/yvesd/Nixos/Configuration/Configs/rofi/scripts/uni-search.sh
+      bind = $mainMod, W, togglefloating
+      bind = $mainMod, G, exec, 
+      bind = $mainMod, A, exec, /home/yvesd/Nixos/Configuration/Configs/rofi/scripts/main-menu.sh; $clear
+      bind = $mainMod, S, exec, /home/yvesd/Nixos/Configuration/Configs/rofi/scripts/uni-search.sh; $clear
 
       # Browser stuff
       bind = $mainMod, F, exec, $browser
-      bind = $mainMod, H, exec, $browser --private-window # Private Window
-      bind = $mainMod, Y, exec, $browser --new-window https://www.youtube.com/feed/subscriptions
-      bind = $mainMod, U, exec, $browser --new-window https://slate.sheridancollege.ca/d2l/login
+      bind = $mainMod, H, exec, $browser --private-window; $clear # Private Window
+      bind = $mainMod, Y, exec, $browser --new-window https://www.youtube.com/feed/subscriptions; $clear
+      bind = $mainMod, U, exec, $browser --new-window https://slate.sheridancollege.ca/d2l/login; $clear
       bind = $mainMod, N, exec,
-      #bind = $mainMod, O, overview:toggle
 
       bind = $mainMod SHIFT, D, exec, moonlight
       bind = $mainMod, D, exec, moonlight stream yves desktop
       bind = $mainMod CTRL, V, hy3:makegroup, v, ephemeral
       bind = $mainMod CTRL, T, hy3:makegroup, tab, ephemeral
+
       # bind = $mainMod SHIFT, M, hy3:makegroup, tab, force_ephemeral
 
       bind = $mainMod, B, togglespecialworkspace
+      bind = $mainMod, B, exec, $clear
+
       bind = $mainMod, C, exec,
       bind = $mainMod, L, exec, hyprlock
       bind = $mainMod, P, exec, grim -g "$(slurp -d)" - | wl-copy
@@ -551,28 +559,50 @@
 
       # Switch workspaces with mainMod + [0-9]
       bind = $mainMod, 1, workspace, 1
+      
       bind = $mainMod, 2, workspace, 2
+
       bind = $mainMod, 3, workspace, 3
+
       bind = $mainMod, 4, workspace, 4
+
       bind = $mainMod, 5, workspace, 5
+
       bind = $mainMod, 6, workspace, 6
+
       bind = $mainMod, 7, workspace, 7
+
       bind = $mainMod, 8, workspace, 8
+
       bind = $mainMod, 9, workspace, 9
+
       bind = $mainMod, 0, workspace, 10
 
       # Move active window to a workspace with mainMod + SHIFT + [0-9]
       bind = $mainMod SHIFT, 1, movetoworkspace, 1
+
       bind = $mainMod SHIFT, 2, movetoworkspace, 2
+
       bind = $mainMod SHIFT, 3, movetoworkspace, 3
+
       bind = $mainMod SHIFT, 4, movetoworkspace, 4
+
       bind = $mainMod SHIFT, 5, movetoworkspace, 5
+
       bind = $mainMod SHIFT, 6, movetoworkspace, 6
+
       bind = $mainMod SHIFT, 7, movetoworkspace, 7
+
       bind = $mainMod SHIFT, 8, movetoworkspace, 8
+
       bind = $mainMod SHIFT, 9, movetoworkspace, 9
+
       bind = $mainMod SHIFT, 0, movetoworkspace, 10
 
+      binds {
+          drag_threshold = 10
+      }
+      
       # Move/resize windows with mainMod + LMB/RMB and dragging
       bindm = $mainMod, mouse:272, movewindow
       bindm = $mainMod, mouse:273, resizewindow

@@ -62,6 +62,7 @@
     # Bluetooth
     bluetooth.enable = true; # enables support for Bluetooth
     bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+    xpadneo.enable = true;
   };
 
   services = {
@@ -215,7 +216,6 @@
     killall
     btop
     tlp
-    lazygit
     git-credential-manager
     wlr-randr
     lsof
@@ -227,6 +227,8 @@
     curl
     acpi
     patchelf
+    leetcode-cli
+    gitui
    
     # Languages
     alejandra
@@ -244,10 +246,8 @@
     gnome-disk-utility
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
     swtpm
-    wayland
-    libGL
-    libxkbcommon
-
+    dex
+    transmission
   ];
 
   # Fonts

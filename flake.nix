@@ -23,9 +23,14 @@
 
     nixvim = {
       url = "github:nix-community/nixvim/nixos-25.05";
-      # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    
   };
 
   outputs = {
@@ -35,6 +40,7 @@
     home-manager,
     nix-colors,
     nixvim,
+    quickshell,
     ...
   } @ inputs: let
     # System

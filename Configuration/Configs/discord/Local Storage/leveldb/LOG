@@ -1,6 +1,0 @@
-2024/12/03-10:15:36.793 6c9 Reusing MANIFEST /home/yvesd/.config/discord/Local Storage/leveldb/MANIFEST-000001
-2024/12/03-10:15:36.807 6c9 Recovering log #1526
-2024/12/03-10:15:36.808 6c9 Reusing old log /home/yvesd/.config/discord/Local Storage/leveldb/001526.log 
-2024/12/03-10:18:40.083 6ca Level-0 table #1530: started
-2024/12/03-10:18:40.103 6ca Level-0 table #1530: 842481 bytes OK
-2024/12/03-10:18:40.105 6ca Delete type=0 #1526

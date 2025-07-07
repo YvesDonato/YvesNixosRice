@@ -36,10 +36,7 @@
     hyprcursor
     hypridle
     hyprlock
-    waybar
-    swaynotificationcenter
-    swww
-    eww
+    inputs.quickshell.packages.${pkgs.system}.default
   ];
 
   # Security
