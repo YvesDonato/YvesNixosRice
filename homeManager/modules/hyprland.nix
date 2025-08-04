@@ -140,7 +140,7 @@
       bind = $mainMod, E, exec, nautilus
       bind = $mainMod, W, togglefloating
       bind = $mainMod, G, exec, 
-      bind = $mainMod, A, exec, /home/yvesd/Nixos/homeManager/modules/scripts/main-menu.sh
+      bind = $mainMod, A, exec, /home/yvesd/Nixos/homeManager/modules/scripts/rofi/main-menu.sh
       # bind = $mainMod, S, exec, /home/yvesd/Nixos/Configuration/Configs/rofi/scripts/uni-search.sh;
 
       # Browser stuff
