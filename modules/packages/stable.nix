@@ -16,6 +16,9 @@
     tailscale
     blueman
     pomodoro-gtk
+    gzdoom
+    crispy-doom
+    sqlitebrowser
 
     # Zsh
     starship
@@ -53,6 +56,7 @@
     tailwindcss-language-server
     glibc
     zlib
+    marksman
    
     # system
     xwayland
@@ -61,6 +65,6 @@
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
     swtpm
     dex
-    transmission
+    transmission_4
   ];
 }

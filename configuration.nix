@@ -23,7 +23,7 @@
     loader.efi.canTouchEfiVariables = true;
     initrd.kernelModules = ["amdgpu"];
     initrd.systemd.network.wait-online.enable = false;
-    kernelPackages = pkgs.linuxPackages_6_13;
+    kernelPackages = pkgs.linuxPackages_latest;
   };
 
   hardware = {

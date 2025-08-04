@@ -11,5 +11,7 @@
     chromedriver
     aichat
     readest
+    android-studio
+    obsidian
   ];
 }

@@ -120,7 +120,7 @@
       }
 
       misc {
-        force_default_wallpaper = -1 # Set to 0 to disable the anime mascot wallpapers
+        force_default_wallpaper = 0 # Set to 0 to disable the anime mascot wallpapers
         vrr = 1
       }
       
@@ -129,7 +129,9 @@
       $clear = qs ipc call hints visable 0
       bindlnot=,Super_L,exec, qs ipc call hints visable 1
       bindlnrt=$mainMod,Super_L,exec, qs ipc call hints visable 0
-      
+
+      bind = $mainMod, G, exec, bash /home/yvesd/Nixos/homeManager/modules/scripts/lights.bash
+
       # bindo = , Super_L, exec, qs ipc call hints visable 1
       # bindr = $mainMod , Super_L, exec, qs ipc call hints visable 0
       bind = $mainMod, T, exec, ghostty
@@ -138,14 +140,14 @@
       bind = $mainMod, E, exec, nautilus
       bind = $mainMod, W, togglefloating
       bind = $mainMod, G, exec, 
-      bind = $mainMod, A, exec, /home/yvesd/Nixos/Configuration/Configs/rofi/scripts/main-menu.sh; $clear
-      bind = $mainMod, S, exec, /home/yvesd/Nixos/Configuration/Configs/rofi/scripts/uni-search.sh; $clear
+      bind = $mainMod, A, exec, /home/yvesd/Nixos/homeManager/modules/scripts/main-menu.sh
+      # bind = $mainMod, S, exec, /home/yvesd/Nixos/Configuration/Configs/rofi/scripts/uni-search.sh;
 
       # Browser stuff
       bind = $mainMod, F, exec, $browser
       bind = $mainMod, H, exec, $browser --private-window; $clear # Private Window
-      bind = $mainMod, Y, exec, $browser --new-window https://www.youtube.com/feed/subscriptions; $clear
-      bind = $mainMod, U, exec, $browser --new-window https://slate.sheridancollege.ca/d2l/login; $clear
+      bind = $mainMod, Y, exec, $browser --new-window https://www.youtube.com/feed/subscriptions; 
+      bind = $mainMod, U, exec, $browser --new-window https://slate.sheridancollege.ca/d2l/login; 
       bind = $mainMod, N, exec,
 
       bind = $mainMod SHIFT, D, exec, moonlight
@@ -156,7 +158,6 @@
       # bind = $mainMod SHIFT, M, hy3:makegroup, tab, force_ephemeral
 
       bind = $mainMod, B, togglespecialworkspace
-      bind = $mainMod, B, exec, $clear
 
       bind = $mainMod, C, exec,
       bind = $mainMod, L, exec, hyprlock
