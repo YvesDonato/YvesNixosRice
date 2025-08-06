@@ -10,34 +10,75 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    package = pkgs.hyprland;
+    package = pkgs-unstable.hyprland;
     plugins = [
-      pkgs.hyprlandPlugins.hy3
+      pkgs-unstable.hyprlandPlugins.hy3
     ];
     extraConfig = ''
       monitor = , highres@highrr, auto, 1, vrr, 0
-      monitor = eDP-1, highres@highrr, auto, 1.333333, vrr, 1
-      monitor = DP-2, highres@highrr, auto, 1, vrr, 0, bitdepth, 10
-      #, cm, hdr, sdrbrightness, 1.3, sdrsaturation, 0.90
+      monitor = eDP-1, highres@highrr, auto-left, 1.333333, vrr, 1
+      #monitor = DP-2, highres@highrr, auto, 1, vrr, 0, bitdepth, 10
+
+      # monitorv2 {
+      #   output = eDP-1
+      #   mode = highres@highrr
+      #   position = auto-left
+      #   scale = 1.333333
+      #   vrr = 1
+      # }
+      
+      monitorv2 {
+        output = DP-2
+        mode = highres@highrr
+        position = 0x0
+        scale = 1
+        vrr = 0
+        bitdepth = 10
+        cm = auto
+        # sdrbrightness = 1.2
+        # sdrsaturation = 0.98
+        # supports_wide_color = 1
+        # supports_hdr = 1
+        sdr_min_luminance = 0.005
+        # sdr_max_luminance = 248
+        # sdr_max_luminance = 60
+
+        # min_luminance = 0.005
+        # max_luminance = 1047
+        # max_avg_luminance = 484
+      }
+      
+      #, cm, hdr, sdrbrightness, 1.2, sdrsaturation, 0.98
       monitor = DP-3, highres@highrr, 1920x0, 1, vrr, 0
       bindl = , switch:on:Lid Switch, exec, hyprctl keyword monitor "eDP-1, disable"
-      bindl = , switch:off:Lid Switch, exec, hyprctl keyword monitor "eDP-1, highres@highrr, 0x0, 1.333333"
+      bindl = , switch:off:Lid Switch, exec, hyprctl keyword monitor "eDP-1, highres@highrr, auto-left, 1.333333, vrr, 1"
       exec-once = quickshell -d & hypridle
       exec-once = bash ~/.config/hypr/start.sh
       env = HYPRCURSOR_THEME,rose-pine-hyprcursor
       env = HYPRCURSOR_SIZE,24
 
-      plugin {
-        hy3 {
-          autotile {
-            trigger_height = 848
-          }
-        }
+      experimental {
+        xx_color_management_v4 = true
       }
 
       render {
-        explicit_sync = 1
-        explicit_sync_kms = 1
+        cm_fs_passthrough = 0
+        cm_auto_hdr = 1
+      }
+
+      plugin {
+        hy3 {
+          autotile {
+            enable = true
+            trigger_width = 848
+          }
+          tabs {
+            text_font = Hack Nerd Font Mono
+            text_height = 11
+            height = 25
+            col.active = rgba(3d85c640)
+          }
+        }
       }
 
       input {

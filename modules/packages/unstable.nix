@@ -13,5 +13,7 @@
     readest
     android-studio
     obsidian
+    mpv
+    vulkan-hdr-layer-kwin6
   ];
 }

@@ -12,11 +12,8 @@
     blanket
     libreoffice
     obs-studio
-    vlc
     tailscale
     blueman
-    pomodoro-gtk
-    gzdoom
     crispy-doom
     sqlitebrowser
 
@@ -25,11 +22,9 @@
 
     # Terminal
     neovim
-    zellij
     git
     neofetch
     wget
-    spotify-cli-linux
     killall
     btop
     tlp
