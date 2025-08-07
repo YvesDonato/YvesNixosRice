@@ -6,7 +6,6 @@
     chromium
     anki
     rofi-wayland
-    nautilus
     pavucontrol
     pamixer
     blanket

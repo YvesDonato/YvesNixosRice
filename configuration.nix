@@ -153,6 +153,8 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "kvm"
+      "adbusers"
     ];
     shell = pkgs.nushell;
   };
@@ -181,6 +183,8 @@
   virtualisation.libvirtd.qemu.swtpm.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
   users.extraGroups.vboxusers.members = ["user-with-access-to-virtualbox"];
+  
+  programs.adb.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

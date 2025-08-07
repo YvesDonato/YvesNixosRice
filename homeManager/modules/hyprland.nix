@@ -22,7 +22,7 @@
       # monitorv2 {
       #   output = eDP-1
       #   mode = highres@highrr
-      #   position = auto-left
+      #   position = auto
       #   scale = 1.333333
       #   vrr = 1
       # }
@@ -30,7 +30,7 @@
       monitorv2 {
         output = DP-2
         mode = highres@highrr
-        position = 0x0
+        position = auto
         scale = 1
         vrr = 0
         bitdepth = 10
@@ -178,7 +178,7 @@
       bind = $mainMod, T, exec, ghostty
       bind = $mainMod, Q, killactive
 
-      bind = $mainMod, E, exec, nautilus
+      bind = $mainMod, E, exec, ghostty -e yazi
       bind = $mainMod, W, togglefloating
       bind = $mainMod, G, exec, 
       bind = $mainMod, A, exec, /home/yvesd/Nixos/homeManager/modules/scripts/rofi/main-menu.sh
