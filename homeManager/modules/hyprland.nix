@@ -58,12 +58,13 @@
       env = HYPRCURSOR_SIZE,24
 
       experimental {
-        xx_color_management_v4 = true
+        # xx_color_management_v4 = true
       }
 
       render {
         cm_fs_passthrough = 0
-        cm_auto_hdr = 1
+        cm_auto_hdr = 2
+        direct_scanout = 1
       }
 
       plugin {
@@ -191,8 +192,8 @@
       bind = $mainMod, U, exec, $browser --new-window https://slate.sheridancollege.ca/d2l/login; 
       bind = $mainMod, N, exec,
 
-      bind = $mainMod SHIFT, D, exec, moonlight
-      bind = $mainMod, D, exec, moonlight stream yves desktop
+      bind = $mainMod SHIFT, D, exec, ENABLE_HDR_WSI=1 moonlight
+      bind = $mainMod, D, exec, ENABLE_HDR_WSI=1 moonlight stream yves desktop
       bind = $mainMod CTRL, V, hy3:makegroup, v, ephemeral
       bind = $mainMod CTRL, T, hy3:makegroup, tab, ephemeral
 

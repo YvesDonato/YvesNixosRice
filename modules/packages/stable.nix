@@ -40,7 +40,10 @@
     patchelf
     leetcode-cli
     gitui
-   
+    fd
+    presenterm
+    python313Packages.weasyprint
+
     # Languages
     alejandra
     ruff
