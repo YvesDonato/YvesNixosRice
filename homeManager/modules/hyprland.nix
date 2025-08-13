@@ -211,10 +211,14 @@
       windowrulev2 = opacity 0.8, floating:1
 
       # Move focus with mainMod + arrow keys
-      bind = $mainMod, left, hy3:movefocus, l
-      bind = $mainMod, right, hy3:movefocus, r
-      bind = $mainMod, up, hy3:movefocus, u
-      bind = $mainMod, down, hy3:movefocus, d
+      bind = $mainMod, left, hy3:movefocus, l, visible
+      bind = $mainMod, right, hy3:movefocus, r, visible
+      bind = $mainMod, up, hy3:movefocus, u, visible
+      bind = $mainMod, down, hy3:movefocus, d, visible
+      bind = $mainMod ALT, left,  hy3:movefocus, l
+      bind = $mainMod ALT, right, hy3:movefocus, r
+      bind = $mainMod ALT, up,    hy3:movefocus, u
+      bind = $mainMod ALT, down,  hy3:movefocus, d
 
       # Switch workspaces with mainMod + [0-9]
       bind = $mainMod, 1, workspace, 1
