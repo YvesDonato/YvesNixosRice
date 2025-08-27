@@ -43,6 +43,9 @@
     fd
     presenterm
     python313Packages.weasyprint
+    unzip
+    p7zip
+    pandoc
 
     # Languages
     alejandra
