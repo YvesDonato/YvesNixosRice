@@ -11,7 +11,6 @@
     blanket
     libreoffice
     obs-studio
-    tailscale
     blueman
     crispy-doom
     sqlitebrowser

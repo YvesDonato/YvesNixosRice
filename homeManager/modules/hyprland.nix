@@ -58,20 +58,19 @@
       env = HYPRCURSOR_SIZE,24
 
       experimental {
-        # xx_color_management_v4 = true
+        xx_color_management_v4 = true
       }
 
       render {
         cm_fs_passthrough = 0
-        cm_auto_hdr = 2
-        direct_scanout = 1
+        cm_auto_hdr = 1
       }
 
       plugin {
         hy3 {
           autotile {
             enable = true
-            trigger_width = 848
+            trigger_width = 700
           }
           tabs {
             text_font = Hack Nerd Font Mono
@@ -147,10 +146,10 @@
       windowrulev2 = bordersize 0, floating:0, onworkspace:f[1]
       windowrulev2 = rounding 0, floating:0, onworkspace:f[1]
 
-      dwindle {
-        pseudotile = yes # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
-        preserve_split = yes # you probably want this
-      }
+      # dwindle {
+      #   pseudotile = yes # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+      #   preserve_split = yes # you probably want this
+      # }
 
       # master {
       #   orientation = center

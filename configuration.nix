@@ -75,7 +75,7 @@
     gnome.gnome-keyring.enable = true;
     displayManager.autoLogin.enable = true;
     displayManager.autoLogin.user = "yvesd";
-    tailscale.enable = true;
+    # tailscale.enable = true;
     pulseaudio.enable = false;
 
     xserver = {
