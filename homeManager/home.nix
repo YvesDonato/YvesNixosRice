@@ -73,6 +73,13 @@
         c = "cd";
         h = "hx";
       };
+
+    };
+    ghostty = {
+      enable = true;
+      settings = {
+        theme = "tokyonight_night";
+      };
     };
 
     # nixvim = {
