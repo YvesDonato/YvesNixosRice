@@ -78,7 +78,21 @@
     ghostty = {
       enable = true;
       settings = {
-        theme = "tokyonight_night";
+        theme = "tokyonight_moon";
+        keybind = [
+          "ctrl+v=paste_from_clipboard"
+          "ctrl+y=copy_to_clipboard"
+        ];
+      };
+    };
+    helix = {
+      enable = true;
+      settings = {
+        theme = "tokyonight_moon";
+        editor = {
+          line-number = "relative";
+          lsp.display-messages = true;
+        };
       };
     };
 

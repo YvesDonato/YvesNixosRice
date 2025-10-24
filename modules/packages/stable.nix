@@ -56,7 +56,10 @@
     glibc
     zlib
     marksman
-   
+
+    mongosh
+    mongodb
+       
     # system
     xwayland
     brightnessctl

@@ -156,10 +156,6 @@
       #   mfact = 0.34
       # }
 
-      gestures {
-        workspace_swipe = off
-      }
-
       misc {
         force_default_wallpaper = 0 # Set to 0 to disable the anime mascot wallpapers
         vrr = 1
@@ -171,7 +167,7 @@
       bindlnot=,Super_L,exec, qs ipc call hints visable 1
       bindlnrt=$mainMod,Super_L,exec, qs ipc call hints visable 0
 
-      bind = $mainMod, G, exec, bash /home/yvesd/Nixos/homeManager/modules/scripts/lights.bash
+      bind = $mainMod, G, exec, bash /home/yvesd/nixos/homeManager/modules/scripts/lights.bash
 
       # bindo = , Super_L, exec, qs ipc call hints visable 1
       # bindr = $mainMod , Super_L, exec, qs ipc call hints visable 0
@@ -181,9 +177,9 @@
       bind = $mainMod, E, exec, ghostty -e yazi
       bind = $mainMod, W, togglefloating
       bind = $mainMod, G, exec, 
-      # bind = $mainMod, A, exec, /home/yvesd/Nixos/homeManager/modules/scripts/rofi/main-menu.sh
-      bind = $mainMod, A, exec, rofi -show drun
-      # bind = $mainMod, S, exec, /home/yvesd/Nixos/Configuration/Configs/rofi/scripts/uni-search.sh;
+      bind = $mainMod, A, exec, /home/yvesd/nixos/homeManager/modules/scripts/rofi/main-menu.sh
+      # bind = $mainMod, A, exec, rofi -show drun
+      # bind = $mainMod, S, exec, /home/yvesd/nixos/Configuration/Configs/rofi/scripts/uni-search.sh;
 
       # Browser stuff
       bind = $mainMod, F, exec, $browser
