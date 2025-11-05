@@ -14,6 +14,7 @@
     android-studio
     obsidian
     mpv
+    remmina
     vulkan-hdr-layer-kwin6
   ];
 }
