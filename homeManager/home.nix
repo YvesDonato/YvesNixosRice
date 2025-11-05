@@ -92,6 +92,14 @@
         editor = {
           line-number = "relative";
           lsp.display-messages = true;
+          cursor-shape = {
+            insert = "bar";
+          };
+          indent-guides = {
+            render = true;
+            character = "╎";
+            skip-levels = 1;
+          };
         };
       };
     };
