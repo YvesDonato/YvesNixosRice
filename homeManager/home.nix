@@ -49,7 +49,30 @@
       package = pkgs.adwaita-qt;
     };
   };
+  services = {
+    hypridle = {
+      enable = true;
+      settings = {
+        general = {
+          after_sleep_cmd = "hyprctl dispatch dpms on";
+          ignore_dbus_inhibit = false;
+          lock_cmd = "qs ipc call lock locked true";
+        };
 
+        listener = [
+          {
+            timeout = 900;
+            on-timeout = "qs ipc call lock locked true";
+          }
+          {
+            timeout = 1200;
+            on-timeout = "hyprctl dispatch dpms off";
+            on-resume = "hyprctl dispatch dpms on";
+          }
+        ];
+      };
+    };
+  };
   programs = {
     zoxide = {
       enable = true;
@@ -75,6 +98,7 @@
       };
 
     };
+
     ghostty = {
       enable = true;
       settings = {
@@ -82,9 +106,13 @@
         keybind = [
           "ctrl+v=paste_from_clipboard"
           "ctrl+y=copy_to_clipboard"
+          "ctrl+1=decrease_font_size:1"
+          "ctrl+2=increase_font_size:1"
+          "ctrl+r=reset_font_size"
         ];
       };
     };
+    
     helix = {
       enable = true;
       settings = {

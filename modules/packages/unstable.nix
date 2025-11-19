@@ -16,5 +16,12 @@
     mpv
     remmina
     vulkan-hdr-layer-kwin6
+    lazyssh
+    presenterm
+    d2
+    mermaid-cli
+    typst
+    termscp
+    aider-chat
   ];
 }
