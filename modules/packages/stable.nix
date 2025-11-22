@@ -40,7 +40,6 @@
     leetcode-cli
     gitui
     fd
-    presenterm
     python313Packages.weasyprint
     unzip
     p7zip
@@ -68,5 +67,9 @@
     swtpm
     dex
     transmission_4
+
+    glib
+    nss
+    nspr
   ];
 }

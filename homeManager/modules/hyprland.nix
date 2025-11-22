@@ -198,7 +198,7 @@
       bind = $mainMod, B, togglespecialworkspace
 
       bind = $mainMod, C, exec,
-      bind = $mainMod, L, exec, hyprlock
+      bind = $mainMod, L, exec, qs ipc call lock locked true
       bind = $mainMod, P, exec, grim -g "$(slurp -d)" - | wl-copy
 
       windowrulev2 = workspace 10, DP-2 class:^(spotify)$
