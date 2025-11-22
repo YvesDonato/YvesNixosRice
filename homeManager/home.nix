@@ -7,7 +7,11 @@
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
     ./modules/hyprland.nix
+<<<<<<< HEAD
     # ./modules/zed-editor.nix
+=======
+    ./modules/zed-editor.nix
+>>>>>>> Laptop
   ];
   
   home = {
