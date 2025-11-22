@@ -7,6 +7,7 @@
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
     ./modules/hyprland.nix
+    ./modules/zed-editor.nix
   ];
   
   home = {

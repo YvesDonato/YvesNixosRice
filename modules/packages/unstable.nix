@@ -23,5 +23,6 @@
     typst
     termscp
     aider-chat
+    zed-editor-fhs
   ];
 }
