@@ -7,7 +7,6 @@
     tailscale
     discord
     spotify
-    helix
     chromedriver
     aichat
     readest
@@ -24,5 +23,8 @@
     termscp
     aider-chat
     zed-editor-fhs
+    teams-for-linux
+    sshfs-fuse
+    zellij
   ];
 }

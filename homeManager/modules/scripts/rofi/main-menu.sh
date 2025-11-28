@@ -11,6 +11,8 @@ bash /home/yvesd/nixos/homeManager/modules/scripts/rofi/wifi-menu.sh
 "Search")
 bash /home/yvesd/nixos/homeManager/modules/scripts/rofi/uni-search.sh
 ;;
+"Codebox")
+bash /home/yvesd/nixos/homeManager/modules/scripts/rofi/codebox.sh
 "App")
 rofi -show drun
 esac

@@ -24,6 +24,9 @@
     initrd.kernelModules = ["amdgpu"];
     initrd.systemd.network.wait-online.enable = false;
     kernelPackages = pkgs.linuxPackages_latest;
+    kernelModules = [
+      "v4l2loopback"
+    ];
   };
 
   hardware = {
@@ -155,6 +158,7 @@
       "wheel"
       "kvm"
       "adbusers"
+      "docker"
     ];
     shell = pkgs.nushell;
   };
@@ -183,7 +187,11 @@
   virtualisation.libvirtd.qemu.swtpm.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
   users.extraGroups.vboxusers.members = ["user-with-access-to-virtualbox"];
-  
+
+  virtualisation.docker = {
+    enable = true;
+  };
+
   programs.adb.enable = true;
 
   # Allow unfree packages

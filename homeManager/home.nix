@@ -7,11 +7,7 @@
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
     ./modules/hyprland.nix
-<<<<<<< HEAD
     # ./modules/zed-editor.nix
-=======
-    ./modules/zed-editor.nix
->>>>>>> Laptop
   ];
   
   home = {
@@ -93,11 +89,31 @@
         $env.config = {
           show_banner: false,
         }
+        $env.config.hooks.env_change.PWD = [
+          { |before, after|
+              let remote_dir = ($nu.home-path | path join "remote") # CHANGE THIS to your folder
+
+              # ---------------------------
+              # 1. ACTION: ENTERING (Mount)
+              # ---------------------------
+              if ($after == $remote_dir) {
+                  # Check if it's already mounted by seeing if it's empty
+                  # (Using a try/catch prevents crashing if the folder is weird)
+                  try {
+                      if (ls $after | is-empty) { 
+                          print "🔌 Mounting Codebox..."
+                          # Using -o reconnect is crucial for auto-recovery
+                          sshfs -o reconnect yves@codebox:/home/yves/code $after
+                      }
+                  }
+              }
+          }
+      ]
       '';
       shellAliases = {
         update = "sudo nixos-rebuild switch";
         clean = "sudo nix-collect-garbage -d";
-        ai = "~/Codingspace/Rust/code/cargo/Client-api/target/debug/Client-api";
+        z = "zeditor";
         c = "cd";
         h = "hx";
       };
@@ -117,9 +133,22 @@
         ];
       };
     };
+
+    zellij = {
+      enable = true;
+      package = pkgs-unstable.zellij;
+      settings = {
+        theme = "tokyo-night-storm";
+        default_layout = "compact";
+        simplified_ui = true;
+        pane_frames = false;
+        show_startup_tips = false;
+      };
+    };
     
     helix = {
       enable = true;
+      package = pkgs-unstable.helix;
       settings = {
         theme = "tokyonight_moon";
         editor = {

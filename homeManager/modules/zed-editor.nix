@@ -9,7 +9,6 @@
   ];
   programs.zed-editor = {
     enable = true;
-<<<<<<< HEAD
     package = pkgs-unstable.zed-editor;
     extensions = [ "nix" "toml" "rust" ];
     extraPackages = [ pkgs.nixd pkgs.nil ];
