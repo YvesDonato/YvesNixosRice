@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-select=$(printf "Search\nPower\nWifi\nApp" |rofi -dmenu -no-show-icons -theme-str 'inputbar { enabled: false; } listview {lines: 4;}' -p " ")
+select=$(printf "Search\nPower\nWifi\nApp\nCodebox" |rofi -dmenu -no-show-icons -theme-str 'inputbar { enabled: false; } listview {lines: 4;}' -p " ")
 
 case $select in "Power")
 bash /home/yvesd/nixos/homeManager/modules/scripts/rofi/power-menu.sh
@@ -13,6 +13,7 @@ bash /home/yvesd/nixos/homeManager/modules/scripts/rofi/uni-search.sh
 ;;
 "Codebox")
 bash /home/yvesd/nixos/homeManager/modules/scripts/rofi/codebox.sh
+;;
 "App")
 rofi -show drun
 esac
