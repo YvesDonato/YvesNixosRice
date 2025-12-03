@@ -76,6 +76,7 @@
     printing.enable = true;
     passSecretService.enable = true;
     gnome.gnome-keyring.enable = true;
+    displayManager.gdm.enable = true;
     displayManager.autoLogin.enable = true;
     displayManager.autoLogin.user = "yvesd";
     tailscale.enable = true;
@@ -84,7 +85,6 @@
     xserver = {
       enable = true;
       videoDrivers = ["amdgpu"];
-      displayManager.gdm.enable = true;
       excludePackages = [pkgs.xterm];
       xkb = {
         layout = "us";
@@ -212,7 +212,7 @@
     options = "--delete-older-than 7d";
   };
 
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.11";
   services.openssh = {
     enable = true;
     ports = [ 22 ];

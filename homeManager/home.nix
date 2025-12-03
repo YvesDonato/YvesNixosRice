@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
+    inputs.nixvim.homeModules.nixvim
     ./modules/hyprland.nix
     # ./modules/zed-editor.nix
   ];
@@ -13,7 +13,7 @@
   home = {
     username = "yvesd";
     homeDirectory = "/home/yvesd";
-    stateVersion = "25.05";
+    stateVersion = "25.11";
     packages = [
     ];
 
@@ -123,7 +123,7 @@
     ghostty = {
       enable = true;
       settings = {
-        theme = "tokyonight_moon";
+        theme = "TokyoNight Moon";
         keybind = [
           "ctrl+v=paste_from_clipboard"
           "ctrl+y=copy_to_clipboard"
@@ -138,7 +138,7 @@
       enable = true;
       package = pkgs-unstable.zellij;
       settings = {
-        theme = "tokyo-night-storm";
+        theme = "tokyo-night-dark";
         default_layout = "compact";
         simplified_ui = true;
         pane_frames = false;

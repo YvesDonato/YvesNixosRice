@@ -2,10 +2,10 @@
 {pkgs, inputs, ...}: {
   environment.systemPackages = with pkgs; [
     # Programs
-    inputs.zen-browser.packages."${system}".default
+    inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
     chromium
     anki
-    rofi-wayland
+    rofi
     pavucontrol
     pamixer
     blanket
@@ -56,14 +56,14 @@
     zlib
     marksman
 
-    mongosh
-    mongodb
+    # mongosh
+    # mongodb
        
     # system
     xwayland
     brightnessctl
     gnome-disk-utility
-    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+    inputs.rose-pine-hyprcursor.packages.${pkgs.stdenv.hostPlatform.system}.default
     swtpm
     dex
     transmission_4

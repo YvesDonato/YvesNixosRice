@@ -10,9 +10,9 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    package = pkgs-unstable.hyprland;
+    package = pkgs.hyprland;
     plugins = [
-      pkgs-unstable.hyprlandPlugins.hy3
+      pkgs.hyprlandPlugins.hy3
     ];
     extraConfig = ''
       monitor = , highres@highrr, auto, 1, vrr, 0
@@ -201,10 +201,10 @@
       bind = $mainMod, L, exec, qs ipc call lock locked true
       bind = $mainMod, P, exec, grim -g "$(slurp -d)" - | wl-copy
 
-      windowrulev2 = workspace 10, DP-2 class:^(spotify)$
-      windowrulev2 = workspace 9, DP-2 class:^(discord)$
-      windowrulev2 = bordersize 2, floating:1
-      windowrulev2 = opacity 0.8, floating:1
+      windowrule = workspace 10, class:spotify
+      windowrule = workspace 9, class:discord
+      windowrule = bordersize 2, floating:1
+      windowrule = opacity 0.8, floating:1
 
       # Move focus with mainMod + arrow keys
       bind = $mainMod, left, hy3:movefocus, l, visible
