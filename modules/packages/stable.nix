@@ -44,6 +44,7 @@
     unzip
     p7zip
     pandoc
+    fzf
 
     # Languages
     alejandra
@@ -55,6 +56,7 @@
     glibc
     zlib
     marksman
+    ripgrep
 
     # mongosh
     # mongodb
