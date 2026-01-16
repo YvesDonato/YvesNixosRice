@@ -14,6 +14,7 @@
     blueman
     crispy-doom
     sqlitebrowser
+    rstudio
 
     # Zsh
     starship
@@ -45,7 +46,8 @@
     p7zip
     pandoc
     fzf
-
+    libnotify
+    
     # Languages
     alejandra
     ruff

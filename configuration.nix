@@ -21,7 +21,7 @@
   boot = {
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
-    initrd.kernelModules = ["amdgpu"];
+    initrd.kernelModules = ["amdgpu" "uinput"];
     initrd.systemd.network.wait-online.enable = false;
     kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = [
@@ -69,6 +69,8 @@
     bluetooth.enable = true; # enables support for Bluetooth
     bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
     xpadneo.enable = true;
+    opentabletdriver.enable = true;
+    uinput.enable = true;
   };
 
   services = {
@@ -201,9 +203,17 @@
   programs.nix-ld.enable = true;
 
   # Fonts
-  fonts.packages = with pkgs; [
-    nerd-fonts.hack
-  ];
+  fonts = {
+    fontconfig = {
+      subpixel.rgba = "none";
+      hinting.enable = true;
+      hinting.style = "slight";
+    };
+
+    packages = with pkgs; [
+      nerd-fonts.hack
+    ];
+  };
   
   # Garbage collector
   nix.gc = {

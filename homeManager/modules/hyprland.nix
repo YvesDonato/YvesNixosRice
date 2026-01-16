@@ -197,7 +197,7 @@
 
       bind = $mainMod, B, togglespecialworkspace
 
-      bind = $mainMod, C, exec, /home/yvesd/nixos/homeManager/modules/scripts/rofi/codebox.sh
+      bind = $mainMod, C, exec, qs ipc call zellij-sessions toggle      
       bind = $mainMod, L, exec, qs ipc call lock locked true
       bind = $mainMod, P, exec, grim -g "$(slurp -d)" - | wl-copy
 

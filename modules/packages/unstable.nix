@@ -26,5 +26,8 @@
     teams-for-linux
     sshfs-fuse
     zellij
+    claude-code
+    opencode
+    audacity
   ];
 }

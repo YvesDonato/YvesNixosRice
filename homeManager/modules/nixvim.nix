@@ -43,6 +43,9 @@
 
       treesitter = {
         enable = true;
+        settings = {
+          highlight.enable = true;
+        };
       };
       
       which-key = {
@@ -114,7 +117,13 @@
         servers = {
           copilot.enable = true;
           nixd.enable = true;
-          basedpyright.enable = true; 
+          basedpyright.enable = true;
+          html.enable = true;
+          svelte.enable = true;
+          tailwindcss = {
+            enable = true;
+            filetypes = [ "svelte" ];
+          };
         };
       };
 
@@ -128,8 +137,8 @@
             # "<leader><CR>" = "cmp.mapping.complete()";
             # "<C-e>" = "cmp.mapping.close()";
             "<Esc>" = "cmp.mapping(function(fallback) if cmp.visible() then cmp.abort() else fallback() end end, {'i', 's'})";
-            "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
-            "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
+            "<S-Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
+            # "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
             "<CR>" = "cmp.mapping.confirm({ select = true })";
           };
           sources = [
