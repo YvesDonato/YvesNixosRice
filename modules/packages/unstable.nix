@@ -1,4 +1,4 @@
-{pkgs-unstable, ...}: {
+{pkgs-unstable, inputs, ...}: {
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs-unstable; [
     moonlight-qt
@@ -27,7 +27,8 @@
     sshfs-fuse
     zellij
     claude-code
-    opencode
+    inputs.opencode.packages."${stdenv.hostPlatform.system}".default
+    inputs.codex.packages."${stdenv.hostPlatform.system}".default
     audacity
   ];
 }

@@ -18,7 +18,7 @@
       monitor = , highres@highrr, auto, 1, vrr, 0
       monitor = eDP-1, highres@highrr, auto-left, 1.333333, vrr, 1
       #monitor = DP-2, highres@highrr, auto, 1, vrr, 0, bitdepth, 10
-
+      monitor = HEADLESS-2, disable
       # monitorv2 {
       #   output = eDP-1
       #   mode = highres@highrr

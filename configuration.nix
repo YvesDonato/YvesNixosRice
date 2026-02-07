@@ -83,6 +83,13 @@
     displayManager.autoLogin.user = "yvesd";
     tailscale.enable = true;
     pulseaudio.enable = false;
+    
+    # sunshine = {
+    #   enable = true;
+    #   autoStart = true;
+    #   capSysAdmin = true;
+    #   openFirewall = true;
+    # };
 
     xserver = {
       enable = true;

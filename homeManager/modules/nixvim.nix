@@ -84,6 +84,7 @@
             enable = true;
             settings = {
               hijack_netrw = true;
+              depth = 1;
             };
           };
 
@@ -102,9 +103,9 @@
         };
 
         keymaps = {
-          "<leader>ff" = "find_files";
+          "<leader>ff" = "file_browser";
           "<leader>fg" = "live_grep";
-          "<leader>fb" = "file_browser";
+          "<leader>fs" = "find_files";
           "<leader>u" = "undo";
         };
       };
@@ -139,7 +140,7 @@
             "<Esc>" = "cmp.mapping(function(fallback) if cmp.visible() then cmp.abort() else fallback() end end, {'i', 's'})";
             "<S-Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
             # "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
-            "<CR>" = "cmp.mapping.confirm({ select = true })";
+            "<S-CR>" = "cmp.mapping.confirm({ select = true })";
           };
           sources = [
             {
