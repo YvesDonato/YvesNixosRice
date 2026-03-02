@@ -15,8 +15,8 @@
     # Zen Browser
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
-    opencode.url = "github:anomalyco/opencode/production";
-
+    # opencode.url = "github:anomalyco/opencode/production";
+    claude-code.url = "github:sadjow/claude-code-nix";
     codex.url = "github:sadjow/codex-cli-nix";
 
     # Nix colors

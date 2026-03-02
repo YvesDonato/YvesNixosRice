@@ -90,31 +90,6 @@
 
     nushell = {
       enable = true;
-      extraConfig = ''
-        $env.config = {
-          show_banner: false,
-        }
-        $env.config.hooks.env_change.PWD = [
-          { |before, after|
-              let remote_dir = ($nu.home-path | path join "remote") # CHANGE THIS to your folder
-
-              # ---------------------------
-              # 1. ACTION: ENTERING (Mount)
-              # ---------------------------
-              if ($after == $remote_dir) {
-                  # Check if it's already mounted by seeing if it's empty
-                  # (Using a try/catch prevents crashing if the folder is weird)
-                  try {
-                      if (ls $after | is-empty) { 
-                          print "🔌 Mounting Codebox..."
-                          # Using -o reconnect is crucial for auto-recovery
-                          sshfs -o reconnect yves@codebox:/home/yves/code $after
-                      }
-                  }
-              }
-          }
-      ]
-      '';
       shellAliases = {
         update = "sudo nixos-rebuild switch";
         clean = "sudo nix-collect-garbage -d";
@@ -159,6 +134,7 @@
       enable = true;
       enableNushellIntegration = true;
       settings = {
+        aws.disabled = true;
       };
     };
 
