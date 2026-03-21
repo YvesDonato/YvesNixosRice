@@ -26,9 +26,11 @@
     teams-for-linux
     sshfs-fuse
     zellij
+    opencode
     inputs.claude-code.packages."${stdenv.hostPlatform.system}".default
-    # inputs.opencode.packages."${stdenv.hostPlatform.system}".default
     inputs.codex.packages."${stdenv.hostPlatform.system}".default
     audacity
+    parsec-bin
+    flutter
   ];
 }

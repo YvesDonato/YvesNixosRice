@@ -47,7 +47,9 @@
         # max_luminance = 1047
         # max_avg_luminance = 484
       }
-      
+
+      monitor = desc:AOC 16T20 A6T2550Z00866,1920x1080@60,auto-right,1
+
       #, cm, hdr, sdrbrightness, 1.2, sdrsaturation, 0.98
       monitor = DP-3, highres@highrr, 1920x0, 1, vrr, 0
       bindl = , switch:on:Lid Switch, exec, hyprctl keyword monitor "eDP-1, disable"

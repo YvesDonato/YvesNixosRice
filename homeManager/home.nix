@@ -90,6 +90,11 @@
 
     nushell = {
       enable = true;
+      extraConfig = ''
+        $env.config = {
+          show_banner: false,
+        }
+      '';
       shellAliases = {
         update = "sudo nixos-rebuild switch";
         clean = "sudo nix-collect-garbage -d";
