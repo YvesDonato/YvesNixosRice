@@ -138,7 +138,7 @@
       sddm.enableGnomeKeyring = true;
       hyprlock = {};
     };
-
+    polkit.enable = true;
     rtkit.enable = true;
   };
 
@@ -229,15 +229,18 @@
   };
 
   system.stateVersion = "25.11";
-  services.openssh = {
-    enable = true;
-    ports = [ 22 ];
-    settings = {
-      PasswordAuthentication = true;
-      AllowUsers = null; # Allows all users by default. Can be [ "user1" "user2" ]
-      UseDns = true;
-      X11Forwarding = false;
-      PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+  services = {
+    udisks2.enable = true;
+    openssh = {
+      enable = true;
+      ports = [ 22 ];
+      settings = {
+        PasswordAuthentication = true;
+        AllowUsers = null; # Allows all users by default. Can be [ "user1" "user2" ]
+        UseDns = true;
+        X11Forwarding = false;
+        PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+      };
     };
   };
 

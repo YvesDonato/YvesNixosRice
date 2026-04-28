@@ -16,7 +16,7 @@
     ];
     extraConfig = ''
       monitor = , highres@highrr, auto, 1, vrr, 0
-      monitor = eDP-1, highres@highrr, auto-left, 1.333333, vrr, 1
+      monitor = eDP-1, highres@highrr, auto, 1.333333, vrr, 1
       #monitor = DP-2, highres@highrr, auto, 1, vrr, 0, bitdepth, 10
       monitor = HEADLESS-2, disable
       # monitorv2 {
@@ -30,7 +30,7 @@
       monitorv2 {
         output = DP-2
         mode = highres@highrr
-        position = auto
+        position = auto-left
         scale = 1
         vrr = 0
         bitdepth = 10
@@ -48,7 +48,7 @@
         # max_avg_luminance = 484
       }
 
-      monitor = desc:AOC 16T20 A6T2550Z00866,1920x1080@60,auto-right,1
+      monitor = desc:AOC 16T20 A6T2550Z00866,1920x1080@60,auto-left,1
 
       #, cm, hdr, sdrbrightness, 1.2, sdrsaturation, 0.98
       monitor = DP-3, highres@highrr, 1920x0, 1, vrr, 0

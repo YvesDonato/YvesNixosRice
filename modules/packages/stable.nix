@@ -14,8 +14,8 @@
     blueman
     crispy-doom
     sqlitebrowser
-    rstudio
-
+    isoimagewriter
+    
     # Zsh
     starship
 
