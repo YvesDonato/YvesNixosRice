@@ -1,31 +1,32 @@
 #!/usr/bin/env bash
 
 if hyprctl monitors | grep -q "streaming_monitor"; then
-  headless="Disable Headless"
+	headless="Disable Headless"
 else
-  headless="Enable Headless"
+	headless="Enable Headless"
 fi
 
-select=$(printf "Search\nPower\nWifi\nApp\nCodebox\n%s" "$headless" |rofi -dmenu -no-show-icons -theme-str 'inputbar { enabled: false; } listview {lines: 6;}' -p " ")
+select=$(printf "Search\nPower\nWifi\nApp\nCodebox\n%s" "$headless" | rofi -dmenu -no-show-icons -theme-str 'inputbar { enabled: false; } listview {lines: 6;}' -p " ")
 
 case $select in "Power")
-bash /home/yvesd/nixos/homeManager/modules/scripts/rofi/power-menu.sh
-;;
+	bash /home/yvesd/nixos/homeManager/modules/scripts/rofi/power-menu.sh
+	;;
 "Wifi")
-bash /home/yvesd/nixos/homeManager/modules/scripts/rofi/wifi-menu.sh
-;;
+	bash /home/yvesd/nixos/homeManager/modules/scripts/rofi/wifi-menu.sh
+	;;
 "Search")
-bash /home/yvesd/nixos/homeManager/modules/scripts/rofi/uni-search.sh
-;;
+	bash /home/yvesd/nixos/homeManager/modules/scripts/rofi/uni-search.sh
+	;;
 "Codebox")
-bash /home/yvesd/nixos/homeManager/modules/scripts/rofi/codebox.sh
-;;
+	bash /home/yvesd/nixos/homeManager/modules/scripts/rofi/codebox.sh
+	;;
 "App")
-rofi -show drun
-;;
+	rofi -show drun
+	;;
 "Enable Headless")
-/home/yvesd/nixos/homeManager/modules/scripts/rofi/toggle-headless.sh
-;;
+	/home/yvesd/nixos/homeManager/modules/scripts/rofi/toggle-headless.sh
+	;;
 "Disable Headless")
-/home/yvesd/nixos/homeManager/modules/scripts/rofi/toggle-headless.sh
+	/home/yvesd/nixos/homeManager/modules/scripts/rofi/toggle-headless.sh
+	;;
 esac

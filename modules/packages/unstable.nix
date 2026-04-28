@@ -1,4 +1,8 @@
-{pkgs-unstable, inputs, ...}: {
+{
+  pkgs-unstable,
+  inputs,
+  ...
+}: {
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs-unstable; [
     moonlight-qt

@@ -1,5 +1,8 @@
-
-{pkgs, inputs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     # Programs
     inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
@@ -15,7 +18,7 @@
     crispy-doom
     sqlitebrowser
     isoimagewriter
-    
+
     # Zsh
     starship
 
@@ -47,7 +50,7 @@
     pandoc
     fzf
     libnotify
-    
+
     # Languages
     alejandra
     ruff
@@ -62,7 +65,7 @@
 
     # mongosh
     # mongodb
-       
+
     # system
     xwayland
     brightnessctl

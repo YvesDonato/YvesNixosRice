@@ -4,7 +4,6 @@
   inputs,
   ...
 }: {
-
   imports = [
   ];
 
@@ -26,7 +25,7 @@
       #   scale = 1.333333
       #   vrr = 1
       # }
-      
+
       monitorv2 {
         output = DP-2
         mode = highres@highrr
@@ -52,9 +51,9 @@
 
       #, cm, hdr, sdrbrightness, 1.2, sdrsaturation, 0.98
       monitor = DP-3, highres@highrr, 1920x0, 1, vrr, 0
-      bindl = , switch:on:Lid Switch, exec, hyprctl keyword monitor "eDP-1, disable"
-      bindl = , switch:off:Lid Switch, exec, hyprctl keyword monitor "eDP-1, highres@highrr, auto-left, 1.333333, vrr, 1"
-      exec-once = quickshell -d & hypridle
+      bindl = , switch:on:Lid Switch, exec, bash -lc 'sleep 0.5; hyprctl keyword monitor "eDP-1, disable"'
+      bindl = , switch:off:Lid Switch, exec, bash -lc 'sleep 1.5; hyprctl keyword monitor "eDP-1, highres@highrr, auto-left, 1.333333, vrr, 1"; hyprctl dispatch dpms on'
+      exec-once = quickshell -d
       exec-once = bash ~/.config/hypr/start.sh
       env = HYPRCURSOR_THEME,rose-pine-hyprcursor
       env = HYPRCURSOR_SIZE,24
@@ -162,7 +161,7 @@
         force_default_wallpaper = 0 # Set to 0 to disable the anime mascot wallpapers
         vrr = 1
       }
-      
+
       $mainMod = SUPER
       $browser = zen-beta
       $clear = qs ipc call hints visable 0
@@ -178,7 +177,6 @@
 
       bind = $mainMod, E, exec, ghostty -e yazi
       bind = $mainMod, W, togglefloating
-      bind = $mainMod, G, exec, 
       bind = $mainMod, A, exec, /home/yvesd/nixos/homeManager/modules/scripts/rofi/main-menu.sh
       # bind = $mainMod, A, exec, rofi -show drun
       # bind = $mainMod, S, exec, /home/yvesd/nixos/Configuration/Configs/rofi/scripts/uni-search.sh;
@@ -186,10 +184,8 @@
       # Browser stuff
       bind = $mainMod, F, exec, $browser
       bind = $mainMod, H, exec, $browser --private-window; $clear # Private Window
-      bind = $mainMod, Y, exec, $browser --new-window https://www.youtube.com/feed/subscriptions; 
-      bind = $mainMod, U, exec, $browser --new-window https://slate.sheridancollege.ca/d2l/login; 
-      bind = $mainMod, N, exec,
-
+      bind = $mainMod, Y, exec, $browser --new-window https://www.youtube.com/feed/subscriptions;
+      bind = $mainMod, U, exec, $browser --new-window https://slate.sheridancollege.ca/d2l/login;
       bind = $mainMod SHIFT, D, exec, ENABLE_HDR_WSI=1 moonlight
       bind = $mainMod, D, exec, ENABLE_HDR_WSI=1 moonlight stream yves desktop
       bind = $mainMod CTRL, V, hy3:makegroup, v, ephemeral
@@ -199,7 +195,7 @@
 
       bind = $mainMod, B, togglespecialworkspace
 
-      bind = $mainMod, C, exec, qs ipc call zellij-sessions toggle      
+      bind = $mainMod, C, exec, qs ipc call zellij-sessions toggle
       bind = $mainMod, L, exec, qs ipc call lock locked true
       bind = $mainMod, P, exec, grim -g "$(slurp -d)" - | wl-copy
 
@@ -220,7 +216,7 @@
 
       # Switch workspaces with mainMod + [0-9]
       bind = $mainMod, 1, workspace, 1
-      
+
       bind = $mainMod, 2, workspace, 2
 
       bind = $mainMod, 3, workspace, 3
@@ -263,7 +259,7 @@
       binds {
           drag_threshold = 10
       }
-      
+
       # Move/resize windows with mainMod + LMB/RMB and dragging
       bindm = $mainMod, mouse:272, movewindow
       bindm = $mainMod, mouse:273, resizewindow

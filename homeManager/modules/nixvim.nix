@@ -3,12 +3,11 @@
   pkgs-unstable,
   inputs,
   ...
-}:{
-
+}: {
   imports = [
     inputs.nixvim.homeModules.nixvim
   ];
-  
+
   programs.nixvim = {
     enable = true;
     enableMan = true;
@@ -30,7 +29,7 @@
     performance = {
       byteCompileLua.enable = true;
     };
-    
+
     plugins = {
       alpha = {
         enable = true;
@@ -47,7 +46,7 @@
           highlight.enable = true;
         };
       };
-      
+
       which-key = {
         enable = true;
       };
@@ -56,7 +55,7 @@
         enable = true;
       };
 
-      comment = { 
+      comment = {
         enable = true;
       };
 
@@ -99,7 +98,6 @@
           fzf-native = {
             enable = true;
           };
-
         };
 
         keymaps = {
@@ -109,7 +107,7 @@
           "<leader>u" = "undo";
         };
       };
-     
+
       lualine = {
         enable = true;
       };
@@ -123,7 +121,7 @@
           svelte.enable = true;
           tailwindcss = {
             enable = true;
-            filetypes = [ "svelte" ];
+            filetypes = ["svelte"];
           };
         };
       };
@@ -158,7 +156,7 @@
             {
               name = "treesitter";
               priority = 80;
-            }  
+            }
             {
               name = "copilot";
               priority = 70;
@@ -203,9 +201,9 @@
 
     keymaps = [
       {
-        mode = "n";        # Normal mode
-        key = "U";         # Shift + u
-        action = "<C-r>";  # The original Redo command
+        mode = "n"; # Normal mode
+        key = "U"; # Shift + u
+        action = "<C-r>"; # The original Redo command
         options = {
           desc = "Redo";
         };

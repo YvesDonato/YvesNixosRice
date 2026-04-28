@@ -82,7 +82,7 @@
     displayManager.autoLogin.user = "yvesd";
     tailscale.enable = true;
     pulseaudio.enable = false;
-    
+
     # sunshine = {
     #   enable = true;
     #   autoStart = true;
@@ -134,7 +134,6 @@
 
   security = {
     pam.services = {
-      ightdm.enableGnomeKeyring = true;
       sddm.enableGnomeKeyring = true;
       hyprlock = {};
     };
@@ -148,12 +147,12 @@
         "nix-command"
         "flakes"
       ];
-      trusted-users = [ "root" "yvesd" ];
+      trusted-users = ["root" "yvesd"];
     };
     extraOptions = ''
-         extra-substituters = https://devenv.cachix.org
-         extra-trusted-public-keys = devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=
-       '';
+      extra-substituters = https://devenv.cachix.org
+      extra-trusted-public-keys = devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=
+    '';
   };
   # cachix.enable = false;
 
@@ -172,9 +171,9 @@
   };
 
   environment.variables = {
-    EDITOR = "helix";
-    BROWSER = "firefox";
-    TERMINAL = "kitty";
+    EDITOR = "nvim";
+    BROWSER = "zen-beta";
+    TERMINAL = "ghostty";
   };
 
   # Home Manager
@@ -194,7 +193,7 @@
   virtualisation.libvirtd.enable = true;
   virtualisation.libvirtd.qemu.swtpm.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
-  users.extraGroups.vboxusers.members = ["user-with-access-to-virtualbox"];
+  users.extraGroups.vboxusers.members = ["yvesd"];
 
   virtualisation.docker = {
     enable = true;
@@ -220,7 +219,7 @@
       nerd-fonts.hack
     ];
   };
-  
+
   # Garbage collector
   nix.gc = {
     automatic = true;
@@ -233,7 +232,7 @@
     udisks2.enable = true;
     openssh = {
       enable = true;
-      ports = [ 22 ];
+      ports = [22];
       settings = {
         PasswordAuthentication = true;
         AllowUsers = null; # Allows all users by default. Can be [ "user1" "user2" ]
@@ -243,5 +242,4 @@
       };
     };
   };
-
 }

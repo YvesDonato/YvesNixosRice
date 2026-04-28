@@ -32,7 +32,7 @@
     quickshell = {
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
-    };    
+    };
   };
 
   outputs = {
@@ -87,9 +87,9 @@
         extraSpecialArgs = {
           inherit pkgs-unstable;
           inherit username;
+          inherit inputs;
         };
         modules = [
-          nixvim.homeModules.nixvim
           ./homeManager/home.nix
         ];
       };

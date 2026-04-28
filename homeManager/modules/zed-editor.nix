@@ -1,48 +1,19 @@
 {
+  lib,
   pkgs,
   pkgs-unstable,
-  inputs,
   ...
 }: {
+  imports = [];
 
-  imports = [
-  ];
   programs.zed-editor = {
     enable = true;
     package = pkgs-unstable.zed-editor;
-    extensions = [ "nix" "toml" "rust" ];
-    extraPackages = [ pkgs.nixd pkgs.nil ];
-    userSettings = {
-      theme = {
-        mode = "dark";
-        dark = "Tokyo Night Storm";
-        light = "One Light";
-      };
 
-      hour_format = "hour12";
-      helix_mode = true;
-      vim_mode = true;
-      relative_line_numbers = true;
-      tab_bar = {
-        show = true;
-      };
-      title_bar = {
-        show_branch_icon = false;
-        show_user_picture = false;
-        show_sign_in = false;
-        show_menus = false;
-      };
-      # AI
-      features = {
-        edit_prediction_provider = "copilot";
-      };
-      # agent = {
-      #   default_model = {
-      #     provider = "anthropic";
-      #     model = "claude-4-5-sonnet";
-      #   };
-      # };
-    };
+    # This populates the userSettings "auto_install_extensions".
+    extensions = ["nix" "toml" "rust" "elixir" "make"];
+    extraPackages = [pkgs.nixd pkgs.nil];
+
     # userKeymaps = [
     #   {
     #     context = "Editor && (vim_mode == normal || vim_mode == visual)";
@@ -63,34 +34,17 @@
     #     };
     #   }
     # ];
-=======
 
-    # This populates the userSettings "auto_install_extensions"
-    extensions = [ "nix" "toml" "elixir" "make" ];
-    extraPackages = [ pkgs.nixd ];
-
-    # Everything inside of these brackets are Zed options
     userSettings = {
       assistant = {
         enabled = true;
         version = "2";
         default_open_ai_model = null;
 
-        # Provider options:
-        # - zed.dev models (claude-3-5-sonnet-latest) requires GitHub connected
-        # - anthropic models (claude-3-5-sonnet-latest, claude-3-haiku-latest, claude-3-opus-latest) requires API_KEY
-        # - copilot_chat models (gpt-4o, gpt-4, gpt-3.5-turbo, o1-preview) requires GitHub connected
         default_model = {
           provider = "zed.dev";
           model = "claude-3-5-sonnet-latest";
         };
-
-        # inline_alternatives = [
-        #   {
-        #     provider = "copilot_chat";
-        #     model = "gpt-3.5-turbo";
-        #   }
-        # ];
       };
 
       node = {
@@ -100,6 +54,29 @@
 
       hour_format = "hour24";
       auto_update = false;
+      helix_mode = true;
+      vim_mode = true;
+      relative_line_numbers = true;
+      load_direnv = "shell_hook";
+      base_keymap = "VSCode";
+      show_whitespaces = "all";
+      ui_font_size = 16;
+      buffer_font_size = 16;
+
+      features = {
+        edit_prediction_provider = "copilot";
+      };
+
+      tab_bar = {
+        show = true;
+      };
+
+      title_bar = {
+        show_branch_icon = false;
+        show_user_picture = false;
+        show_sign_in = false;
+        show_menus = false;
+      };
 
       terminal = {
         alternate_scroll = "off";
@@ -108,7 +85,7 @@
         dock = "bottom";
         detect_venv = {
           on = {
-            directories = [ ".env" "env" ".venv" "venv" ];
+            directories = [".env" "env" ".venv" "venv"];
             activate_script = "default";
           };
         };
@@ -122,9 +99,6 @@
         option_as_meta = false;
         button = false;
         shell = "system";
-        # shell = {
-        #   program = "zsh";
-        # };
         toolbar = {
           title = true;
         };
@@ -134,7 +108,6 @@
       lsp = {
         rust-analyzer = {
           binary = {
-            # path = lib.getExe pkgs.rust-analyzer;
             path_lookup = true;
           };
         };
@@ -157,42 +130,31 @@
 
       languages = {
         "Elixir" = {
-          language_servers = [ "!lexical" "elixir-ls" "!next-ls" ];
+          language_servers = ["!lexical" "elixir-ls" "!next-ls"];
           format_on_save = {
             external = {
               command = "mix";
-              arguments = [ "format" "--stdin-filename" "{buffer_path}" "-" ];
+              arguments = ["format" "--stdin-filename" "{buffer_path}" "-"];
             };
           };
         };
 
         "HEEX" = {
-          language_servers = [ "!lexical" "elixir-ls" "!next-ls" ];
+          language_servers = ["!lexical" "elixir-ls" "!next-ls"];
           format_on_save = {
             external = {
               command = "mix";
-              arguments = [ "format" "--stdin-filename" "{buffer_path}" "-" ];
+              arguments = ["format" "--stdin-filename" "{buffer_path}" "-"];
             };
           };
         };
       };
 
-      helix_mode = true;
-
-      # Tell Zed to use direnv and direnv can use a flake.nix environment
-      load_direnv = "shell_hook";
-      base_keymap = "VSCode";
-
       theme = {
         mode = "system";
         light = "One Light";
-        dark = "One Dark";
+        dark = "Tokyo Night Storm";
       };
-
-      show_whitespaces = "all";
-      ui_font_size = 16;
-      buffer_font_size = 16;
     };
->>>>>>> Laptop
   };
 }

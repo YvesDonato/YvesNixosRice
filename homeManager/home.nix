@@ -10,12 +10,12 @@
     # ./modules/helix.nix
     # ./modules/zed-editor.nix
   ];
-  
+
   home = {
     username = "yvesd";
     homeDirectory = "/home/yvesd";
     stateVersion = "25.11";
-    
+
     packages = [
     ];
 
@@ -52,13 +52,14 @@
       package = pkgs.adwaita-qt;
     };
   };
-  
+
   services = {
     hypridle = {
       enable = true;
       settings = {
         general = {
-          after_sleep_cmd = "hyprctl dispatch dpms on";
+          before_sleep_cmd = "qs ipc call lock locked true";
+          after_sleep_cmd = "sleep 0.5; hyprctl dispatch dpms on";
           ignore_dbus_inhibit = false;
           ignore_systemd_inhibit = false;
           lock_cmd = "qs ipc call lock locked true";
@@ -100,9 +101,8 @@
         clean = "sudo nix-collect-garbage -d";
         z = "zeditor";
         c = "cd";
-        h = "hx";
+        h = "nvim";
       };
-
     };
 
     ghostty = {
@@ -134,7 +134,7 @@
         copy_on_select = false;
       };
     };
-    
+
     starship = {
       enable = true;
       enableNushellIntegration = true;
@@ -148,7 +148,6 @@
       enableNushellIntegration = true;
       nix-direnv.enable = true;
     };
-          
   };
   programs.home-manager.enable = true;
 }
