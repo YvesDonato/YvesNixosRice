@@ -21,6 +21,8 @@
   boot = {
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
+    loader.timeout = 1;
+    tmp.cleanOnBoot = true;
     initrd.kernelModules = ["amdgpu" "uinput"];
     initrd.systemd.network.wait-online.enable = false;
     kernelPackages = pkgs.linuxPackages_latest;
@@ -82,6 +84,28 @@
     displayManager.autoLogin.user = "yvesd";
     tailscale.enable = true;
     pulseaudio.enable = false;
+    udisks2.enable = true;
+
+    journald.extraConfig = ''
+      SystemMaxUse=512M
+      RuntimeMaxUse=128M
+      MaxRetentionSec=14day
+      RateLimitIntervalSec=30s
+      RateLimitBurst=1000
+    '';
+
+    openssh = {
+      enable = true;
+      startWhenNeeded = true;
+      ports = [22];
+      settings = {
+        PasswordAuthentication = true;
+        AllowUsers = null; # Allows all users by default. Can be [ "user1" "user2" ]
+        UseDns = false;
+        X11Forwarding = false;
+        PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+      };
+    };
 
     # sunshine = {
     #   enable = true;
@@ -119,6 +143,16 @@
     hostName = "nixos";
     networkmanager.enable = true;
   };
+
+  # Compressed in-memory swap helps avoid stalls or OOM kills under memory spikes.
+  zramSwap = {
+    enable = true;
+    memoryPercent = 25;
+    algorithm = "zstd";
+  };
+
+  # Avoid extra metadata writes on the SSD root filesystem.
+  fileSystems."/".options = ["noatime"];
 
   systemd = {
     services = {
@@ -197,6 +231,14 @@
 
   virtualisation.docker = {
     enable = true;
+    autoPrune = {
+      enable = true;
+      dates = "weekly";
+      flags = [
+        "--all"
+        "--filter=until=168h"
+      ];
+    };
   };
 
   programs.adb.enable = true;
@@ -228,18 +270,4 @@
   };
 
   system.stateVersion = "25.11";
-  services = {
-    udisks2.enable = true;
-    openssh = {
-      enable = true;
-      ports = [22];
-      settings = {
-        PasswordAuthentication = true;
-        AllowUsers = null; # Allows all users by default. Can be [ "user1" "user2" ]
-        UseDns = true;
-        X11Forwarding = false;
-        PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
-      };
-    };
-  };
 }

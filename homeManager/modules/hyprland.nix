@@ -53,8 +53,6 @@
       monitor = DP-3, highres@highrr, 1920x0, 1, vrr, 0
       bindl = , switch:on:Lid Switch, exec, bash -lc 'sleep 0.5; hyprctl keyword monitor "eDP-1, disable"'
       bindl = , switch:off:Lid Switch, exec, bash -lc 'sleep 1.5; hyprctl keyword monitor "eDP-1, highres@highrr, auto-left, 1.333333, vrr, 1"; hyprctl dispatch dpms on'
-      exec-once = quickshell -d
-      exec-once = bash ~/.config/hypr/start.sh
       env = HYPRCURSOR_THEME,rose-pine-hyprcursor
       env = HYPRCURSOR_SIZE,24
 

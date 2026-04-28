@@ -53,6 +53,49 @@
     };
   };
 
+  systemd.user.services = {
+    quickshell = {
+      Unit = {
+        Description = "Quickshell desktop shell";
+        After = ["graphical-session.target"];
+        PartOf = ["graphical-session.target"];
+      };
+
+      Service = {
+        ExecStart = "${inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/quickshell";
+        Restart = "on-failure";
+        RestartSec = 2;
+        MemoryHigh = "512M";
+        MemoryMax = "1G";
+      };
+
+      Install = {
+        WantedBy = ["graphical-session.target"];
+      };
+    };
+
+    quickshell-notification-server = {
+      Unit = {
+        Description = "Quickshell notification HTTP bridge";
+        After = ["graphical-session.target"];
+        PartOf = ["graphical-session.target"];
+      };
+
+      Service = {
+        ExecStart = "${pkgs.python3}/bin/python3 -u /home/yvesd/.config/quickshell/scripts/notification-server.py";
+        Restart = "on-failure";
+        RestartSec = 2;
+        MemoryHigh = "64M";
+        MemoryMax = "128M";
+        TasksMax = 32;
+      };
+
+      Install = {
+        WantedBy = ["graphical-session.target"];
+      };
+    };
+  };
+
   services = {
     hypridle = {
       enable = true;
@@ -71,7 +114,7 @@
             on-timeout = "qs ipc call lock locked true";
           }
           {
-            timeout = 1800;
+            timeout = 1810;
             on-timeout = "hyprctl dispatch dpms off";
             on-resume = "hyprctl dispatch dpms on";
           }
