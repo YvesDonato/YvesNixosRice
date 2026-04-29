@@ -1,4 +1,5 @@
 {
+  lib,
   pkgs,
   pkgs-unstable,
   inputs,
@@ -20,6 +21,34 @@
     ];
 
     file = {
+      ".config/opencode/opencode.json" = {
+        force = true;
+        text =
+          builtins.toJSON {
+            "$schema" = "https://opencode.ai/config.json";
+            plugin = ["superpowers@git+https://github.com/obra/superpowers.git"];
+            mcp = {
+              agentbrowser = {
+                type = "local";
+                command = [
+                  (lib.getExe' pkgs.nodejs "npx")
+                  "-y"
+                  "@playwright/mcp@0.0.71"
+                  "--executable-path"
+                  (lib.getExe pkgs.chromium)
+                  "--no-sandbox"
+                  "--output-dir"
+                  "/tmp/opencode-agentbrowser"
+                ];
+                environment = {
+                  PATH = "${lib.makeBinPath [pkgs.nodejs]}:{env:PATH}";
+                };
+                enabled = true;
+              };
+            };
+          }
+          + "\n";
+      };
     };
 
     sessionVariables = {

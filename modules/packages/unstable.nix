@@ -14,9 +14,12 @@
     chromedriver
     aichat
     readest
-    android-studio
     obsidian
-    mpv
+    (mpv.override {
+      yt-dlp = yt-dlp.override {
+        javascriptSupport = false;
+      };
+    })
     remmina
     vulkan-hdr-layer-kwin6
     lazyssh
@@ -30,7 +33,8 @@
     teams-for-linux
     sshfs-fuse
     zellij
-    opencode
+    inputs.opencode.packages."${stdenv.hostPlatform.system}".default
+    inputs.linuxmis.packages."${stdenv.hostPlatform.system}".linuxmis
     inputs.claude-code.packages."${stdenv.hostPlatform.system}".default
     inputs.codex.packages."${stdenv.hostPlatform.system}".default
     audacity

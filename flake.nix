@@ -18,6 +18,15 @@
     claude-code.url = "github:sadjow/claude-code-nix";
     codex.url = "github:sadjow/codex-cli-nix";
 
+    opencode = {
+      url = "github:anomalyco/opencode/dev";
+    };
+
+    linuxmis = {
+      url = "github:YvesDonato/Linuxmis";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
     # Nix colors
     nix-colors.url = "github:misterio77/nix-colors";
 

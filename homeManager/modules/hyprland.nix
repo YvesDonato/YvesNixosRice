@@ -51,8 +51,8 @@
 
       #, cm, hdr, sdrbrightness, 1.2, sdrsaturation, 0.98
       monitor = DP-3, highres@highrr, 1920x0, 1, vrr, 0
-      bindl = , switch:on:Lid Switch, exec, bash -lc 'sleep 0.5; hyprctl keyword monitor "eDP-1, disable"'
-      bindl = , switch:off:Lid Switch, exec, bash -lc 'sleep 1.5; hyprctl keyword monitor "eDP-1, highres@highrr, auto-left, 1.333333, vrr, 1"; hyprctl dispatch dpms on'
+      bindl = , switch:on:Lid Switch, exec, bash /home/yvesd/nixos/homeManager/modules/scripts/hypr-lid-handler.bash closed
+      bindl = , switch:off:Lid Switch, exec, bash /home/yvesd/nixos/homeManager/modules/scripts/hypr-lid-handler.bash open
       env = HYPRCURSOR_THEME,rose-pine-hyprcursor
       env = HYPRCURSOR_SIZE,24
 
@@ -184,8 +184,8 @@
       bind = $mainMod, H, exec, $browser --private-window; $clear # Private Window
       bind = $mainMod, Y, exec, $browser --new-window https://www.youtube.com/feed/subscriptions;
       bind = $mainMod, U, exec, $browser --new-window https://slate.sheridancollege.ca/d2l/login;
-      bind = $mainMod SHIFT, D, exec, ENABLE_HDR_WSI=1 moonlight
-      bind = $mainMod, D, exec, ENABLE_HDR_WSI=1 moonlight stream yves desktop
+      bind = $mainMod SHIFT, D, exec, ENABLE_HDR_WSI=1 linuxmis
+      bind = $mainMod, D, exec, ENABLE_HDR_WSI=1 linuxmis stream yves desktop
       bind = $mainMod CTRL, V, hy3:makegroup, v, ephemeral
       bind = $mainMod CTRL, T, hy3:makegroup, tab, ephemeral
 
