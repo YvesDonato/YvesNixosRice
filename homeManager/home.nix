@@ -27,6 +27,18 @@
           builtins.toJSON {
             "$schema" = "https://opencode.ai/config.json";
             plugin = ["superpowers@git+https://github.com/obra/superpowers.git"];
+            permission = {
+              bash = {
+                "*" = "ask";
+                "git status*" = "allow";
+                "git diff*" = "allow";
+                "rg *" = "allow";
+                "ls *" = "allow";
+              };
+              edit = "ask";
+              task = "ask";
+              "agentbrowser_*" = "ask";
+            };
             mcp = {
               agentbrowser = {
                 type = "local";
@@ -48,6 +60,91 @@
             };
           }
           + "\n";
+      };
+
+      ".config/opencode/plugins/notifications.js" = {
+        force = true;
+        text = ''
+          const notifySend = "${lib.getExe' pkgs.libnotify "notify-send"}";
+          const quickshellBridge = "http://127.0.0.1:9999";
+          const seenPermissions = new Set();
+
+          const asText = (value) => {
+            if (!value) return "";
+            if (typeof value === "string") return value;
+            if (typeof value.message === "string") return value.message;
+            if (typeof value.name === "string") return value.name;
+
+            try {
+              return JSON.stringify(value);
+            } catch {
+              return String(value);
+            }
+          };
+
+          const trim = (value, limit = 240) => {
+            const text = asText(value).replace(/\s+/g, " ").trim();
+            return text.length > limit ? text.slice(0, limit - 1) + "…" : text;
+          };
+
+          export const OpenCodeNotifications = async ({ $ }) => {
+            const notify = async (summary, body = "", urgency = "normal") => {
+              const safeSummary = trim(summary, 80) || "OpenCode";
+              const safeBody = trim(body, 240);
+              const message = safeBody ? safeSummary + ": " + safeBody : safeSummary;
+
+              try {
+                await $`''${notifySend} -a OpenCode -u ''${urgency} ''${safeSummary} ''${safeBody}`;
+                return;
+              } catch {
+                // Fall back to the local Quickshell bridge when the notification daemon is unavailable.
+              }
+
+              try {
+                await fetch(quickshellBridge, {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ message }),
+                });
+              } catch {
+                // Notification delivery is best-effort; never break OpenCode work.
+              }
+            };
+
+            const notifyPermission = async (permission) => {
+              if (permission?.id && seenPermissions.has(permission.id)) return;
+              if (permission?.id) seenPermissions.add(permission.id);
+
+              await notify(
+                "OpenCode needs approval",
+                permission?.title || permission?.type || "A permission prompt is waiting.",
+                "normal",
+              );
+            };
+
+            return {
+              event: async ({ event }) => {
+                if (event.type === "session.idle") {
+                  const sessionID = event.properties?.sessionID;
+                  const session = sessionID ? "Session " + sessionID.slice(0, 8) : "Session";
+                  await notify("OpenCode finished", session + " is idle.");
+                }
+
+                if (event.type === "session.error") {
+                  await notify("OpenCode error", event.properties.error || "Session failed.", "critical");
+                }
+
+                if (event.type === "permission.updated" || event.type === "permission.asked") {
+                  await notifyPermission(event.properties);
+                }
+              },
+
+              "permission.ask": async (input) => {
+                await notifyPermission(input);
+              },
+            };
+          };
+        '';
       };
     };
 

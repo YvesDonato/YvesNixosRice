@@ -65,10 +65,10 @@ enable_internal_with_retries() {
 }
 
 case "${1:-}" in
-	closed) disable_internal ;;
-	open) enable_internal_with_retries ;;
-	*)
-		printf 'usage: %s {closed|open}\n' "$0" >&2
-		exit 2
-		;;
+closed) disable_internal ;;
+open) enable_internal_with_retries ;;
+*)
+	printf 'usage: %s {closed|open}\n' "$0" >&2
+	exit 2
+	;;
 esac
