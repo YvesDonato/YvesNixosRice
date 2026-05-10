@@ -4,12 +4,21 @@
   pkgs,
   config,
   pkgs-unstable,
+  desktopWindowManager,
   lib,
   ...
 }: {
+  assertions = [
+    {
+      assertion = builtins.elem desktopWindowManager ["hyprland" "mango"];
+      message = "desktopWindowManager must be either \"hyprland\" or \"mango\".";
+    }
+  ];
+
   imports = [
     ./hardware-configuration.nix
     ./modules/hyprland.nix
+    ./modules/mango.nix
 
     ./modules/packages/unstable.nix
     ./modules/packages/stable.nix
@@ -216,6 +225,7 @@
     extraSpecialArgs = {
       inherit inputs;
       inherit pkgs-unstable;
+      inherit desktopWindowManager;
     };
     users = {
       yvesd = import ./homeManager/home.nix;

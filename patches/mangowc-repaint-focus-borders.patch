@@ -1,0 +1,23 @@
+diff --git a/src/mango.c b/src/mango.c
+index 4d91818..d0f2e77 100644
+--- a/src/mango.c
++++ b/src/mango.c
+@@ -3052,0 +3053,10 @@
++static void repaint_client_border(Client *c) {
++	if (!c || c->iskilling || !c->mon || client_is_unmanaged(c))
++		return;
++
++	if (!client_surface(c)->mapped)
++		return;
++
++	setborder_color(c);
++}
++
+@@ -3055,0 +3066 @@
++	Client *old_selmon_sel = selmon ? selmon->sel : NULL;
+@@ -3111,0 +3123,5 @@
++		repaint_client_border(selmon->prevsel);
++		if (old_selmon_sel != selmon->prevsel) {
++			repaint_client_border(old_selmon_sel);
++		}
++		repaint_client_border(c);

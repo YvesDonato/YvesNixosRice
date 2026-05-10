@@ -3,10 +3,31 @@
   pkgs,
   pkgs-unstable,
   inputs,
+  desktopWindowManager,
   ...
-}: {
+}: let
+  quickshellRuntimePath =
+    (lib.makeBinPath (with pkgs; [
+      acpi
+      bash
+      brightnessctl
+      coreutils
+      gnugrep
+      gnused
+      mangowc
+    ]))
+    + ":/run/current-system/sw/bin:/etc/profiles/per-user/yvesd/bin";
+in {
+  assertions = [
+    {
+      assertion = builtins.elem desktopWindowManager ["hyprland" "mango"];
+      message = "desktopWindowManager must be either \"hyprland\" or \"mango\".";
+    }
+  ];
+
   imports = [
     ./modules/hyprland.nix
+    ./modules/mango.nix
     ./modules/nixvim.nix
     # ./modules/helix.nix
     # ./modules/zed-editor.nix
@@ -152,6 +173,8 @@
     };
   };
 
+  xdg.configFile."quickshell/generated/desktop-wm".text = desktopWindowManager + "\n";
+
   dconf = {
     enable = true;
     settings = {
@@ -189,6 +212,21 @@
 
       Service = {
         ExecStart = "${inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/quickshell";
+        Environment =
+          [
+            "PATH=${quickshellRuntimePath}"
+            "QT_QPA_PLATFORM=wayland"
+            "XDG_CURRENT_DESKTOP=${
+              if desktopWindowManager == "mango"
+              then "mango"
+              else "Hyprland"
+            }"
+            "XDG_SESSION_DESKTOP=${desktopWindowManager}"
+            "XDG_SESSION_TYPE=wayland"
+          ]
+          ++ lib.optionals (desktopWindowManager == "mango") [
+            "WAYLAND_DISPLAY=wayland-0"
+          ];
         Restart = "on-failure";
         RestartSec = 2;
         MemoryHigh = "512M";
@@ -225,27 +263,44 @@
   services = {
     hypridle = {
       enable = true;
-      settings = {
-        general = {
-          before_sleep_cmd = "qs ipc call lock locked true";
-          after_sleep_cmd = "sleep 0.5; hyprctl dispatch dpms on";
-          ignore_dbus_inhibit = false;
-          ignore_systemd_inhibit = false;
-          lock_cmd = "qs ipc call lock locked true";
-        };
+      settings =
+        if desktopWindowManager == "hyprland"
+        then {
+          general = {
+            before_sleep_cmd = "qs ipc call lock locked true";
+            after_sleep_cmd = "sleep 0.5; hyprctl dispatch dpms on";
+            ignore_dbus_inhibit = false;
+            ignore_systemd_inhibit = false;
+            lock_cmd = "qs ipc call lock locked true";
+          };
 
-        listener = [
-          {
-            timeout = 1800;
-            on-timeout = "qs ipc call lock locked true";
-          }
-          {
-            timeout = 1810;
-            on-timeout = "hyprctl dispatch dpms off";
-            on-resume = "hyprctl dispatch dpms on";
-          }
-        ];
-      };
+          listener = [
+            {
+              timeout = 1800;
+              on-timeout = "qs ipc call lock locked true";
+            }
+            {
+              timeout = 1810;
+              on-timeout = "hyprctl dispatch dpms off";
+              on-resume = "hyprctl dispatch dpms on";
+            }
+          ];
+        }
+        else {
+          general = {
+            before_sleep_cmd = "qs ipc call lock locked true";
+            ignore_dbus_inhibit = false;
+            ignore_systemd_inhibit = false;
+            lock_cmd = "qs ipc call lock locked true";
+          };
+
+          listener = [
+            {
+              timeout = 1800;
+              on-timeout = "qs ipc call lock locked true";
+            }
+          ];
+        };
     };
   };
 

@@ -61,6 +61,8 @@
     system = "x86_64-linux";
     username = "yvesd";
     name = "Yves";
+    # Valid values: "hyprland" or "mango".
+    desktopWindowManager = "mango";
 
     # Nixos Packages Settings
     # Stable
@@ -75,9 +77,9 @@
       inherit system;
       config.allowUnfree = true;
     };
-  in {
-    nixosConfigurations = {
-      nixos = lib.nixosSystem {
+
+    mkNixosConfiguration = wm:
+      lib.nixosSystem {
         inherit system;
 
         modules = [
@@ -89,22 +91,34 @@
           inherit pkgs-unstable;
           inherit inputs;
           inherit nix-colors;
+          desktopWindowManager = wm;
         };
       };
-    };
-    homeConfigurations = {
-      yvesd = home-manager.lib.homeManagerConfiguration {
+
+    mkHomeConfiguration = wm:
+      home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         extraSpecialArgs = {
           inherit pkgs-unstable;
           inherit username;
           inherit inputs;
+          desktopWindowManager = wm;
         };
         modules = [
           ./homeManager/home.nix
         ];
       };
+  in {
+    nixosConfigurations = {
+      nixos = mkNixosConfiguration desktopWindowManager;
+      "nixos-mango" = mkNixosConfiguration "mango";
+      "nixos-hyprland" = mkNixosConfiguration "hyprland";
+    };
+    homeConfigurations = {
+      yvesd = mkHomeConfiguration desktopWindowManager;
+      "yvesd-mango" = mkHomeConfiguration "mango";
+      "yvesd-hyprland" = mkHomeConfiguration "hyprland";
     };
   };
 }

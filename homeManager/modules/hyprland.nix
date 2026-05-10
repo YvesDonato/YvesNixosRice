@@ -1,7 +1,9 @@
 {
+  lib,
   pkgs,
   pkgs-unstable,
   inputs,
+  desktopWindowManager,
   ...
 }: let
   system = pkgs.stdenv.hostPlatform.system;
@@ -17,22 +19,20 @@
     (import ./hyprland/window-rules.nix)
     (import ./hyprland/navigation.nix)
   ];
-in {
-  imports = [
-  ];
+in
+  lib.mkIf (desktopWindowManager == "hyprland") {
+    wayland.windowManager.hyprland = {
+      enable = true;
+      package = hyprlandPackage;
+      systemd.enable = false;
+    };
 
-  wayland.windowManager.hyprland = {
-    enable = true;
-    package = hyprlandPackage;
-    systemd.enable = false;
-  };
-
-  xdg.configFile."hypr/hyprland.lua" = {
-    text = builtins.concatStringsSep "\n" hyprlandLuaFragments;
-    onChange = ''
-      if command -v hyprctl >/dev/null 2>&1; then
-        hyprctl reload >/dev/null 2>&1 || true
-      fi
-    '';
-  };
-}
+    xdg.configFile."hypr/hyprland.lua" = {
+      text = builtins.concatStringsSep "\n" hyprlandLuaFragments;
+      onChange = ''
+        if command -v hyprctl >/dev/null 2>&1; then
+          hyprctl reload >/dev/null 2>&1 || true
+        fi
+      '';
+    };
+  }
