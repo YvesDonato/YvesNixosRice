@@ -12,7 +12,7 @@
     vrr = 0,
     bitdepth = 10,
     cm = "auto",
-    sdrbrightness = 0.95,
+    sdrbrightness = 0.98,
   })
 
   hl.monitor({ output = "desc:AOC 16T20 A6T2550Z00866", mode = "1920x1080@60", position = "auto-left", scale = 1 })
