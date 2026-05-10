@@ -10,6 +10,7 @@
       (oldAttrs.patches or [])
       ++ [
         ../patches/mangowc-repaint-focus-borders.patch
+        ../patches/mangowc-adaptive-scroller.patch
       ];
   });
 in

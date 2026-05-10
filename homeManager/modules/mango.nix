@@ -13,6 +13,7 @@
   sleep = "${pkgs.coreutils}/bin/sleep";
   runtimePath = lib.makeBinPath [pkgs.bash pkgs.coreutils pkgs.mangowc pkgs.wlr-randr];
   wlrRandr = lib.getExe pkgs.wlr-randr;
+  mangoScrollerMinProportion = "0.333333";
   mangoCycleLayouts = [
     "scroller"
     "tile"
@@ -56,12 +57,12 @@
 
     # Scroller layout
     scroller_structs=20
-    scroller_default_proportion=0.333333
+    scroller_default_proportion=${mangoScrollerMinProportion}
     scroller_focus_center=0
     scroller_prefer_center=0
     edge_scroller_pointer_focus=1
     scroller_default_proportion_single=1.0
-    scroller_proportion_preset=0.333333,0.5,1.0
+    scroller_proportion_preset=${mangoScrollerMinProportion},0.5,1.0
 
     # Layouts cycled by Super+Tab. Edit mangoCycleLayouts in this Nix module.
     circle_layout=${mangoCycleLayoutConfig}
