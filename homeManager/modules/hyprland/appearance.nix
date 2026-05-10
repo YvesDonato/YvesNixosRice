@@ -1,42 +1,40 @@
 ''
-
-  general {
-    # gaps_out = 5
-    # gaps_in = 2
-    gaps_out = 0
-    gaps_in = 0
-
-    border_size = 0
-
-    col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
-    col.inactive_border = rgba(595959aa)
-    layout = hy3
-    snap {
-      enabled = true
-    }
-  }
-
-  decoration {
-
-    rounding = 0
-
-    blur {
-      enabled = true
-      size = 3
-      passes = 1
-    }
-  }
-
-  animations {
-    enabled = false
-
-    bezier = myBezier, 0.05, 0.9, 0.1, 1.05
-
-    animation = windows, 1, 2, myBezier
-    animation = windowsOut, 1, 7, default, popin 80%
-    animation = border, 1, 10, default
-    animation = borderangle, 1, 8, default
-    animation = fade, 1, 2, default
-    animation = workspaces, 1, 2, default
-  }
+  -- Appearance
+  hl.config({
+    general = {
+      gaps_out = 0,
+      gaps_in = 0,
+      border_size = 0,
+      col = {
+        active_border = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
+        inactive_border = "rgba(595959aa)",
+      },
+      layout = "scrolling",
+      snap = {
+        enabled = true,
+      },
+    },
+    decoration = {
+      rounding = 0,
+      blur = {
+        enabled = true,
+        size = 3,
+        passes = 1,
+      },
+    },
+    animations = {
+      enabled = false,
+    },
+    scrolling = {
+      fullscreen_on_one_column = true,
+      column_width = 1 / 3,
+      focus_fit_method = 1,
+      follow_focus = true,
+      explicit_column_widths = "0.3333333333, 0.5, 1.0",
+      follow_min_visible = 1.0,
+      wrap_focus = true,
+      wrap_swapcol = true,
+      direction = "right",
+    },
+  })
 ''

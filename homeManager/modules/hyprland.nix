@@ -4,7 +4,9 @@
   inputs,
   ...
 }: let
-  hyprlandConfigFragments = [
+  system = pkgs.stdenv.hostPlatform.system;
+  hyprlandPackage = inputs.hyprland.packages.${system}.hyprland;
+  hyprlandLuaFragments = [
     (import ./hyprland/monitors.nix)
     (import ./hyprland/environment.nix)
     (import ./hyprland/input.nix)
@@ -21,10 +23,16 @@ in {
 
   wayland.windowManager.hyprland = {
     enable = true;
-    package = pkgs.hyprland;
-    plugins = [
-      pkgs.hyprlandPlugins.hy3
-    ];
-    extraConfig = builtins.concatStringsSep "" hyprlandConfigFragments;
+    package = hyprlandPackage;
+    systemd.enable = false;
+  };
+
+  xdg.configFile."hypr/hyprland.lua" = {
+    text = builtins.concatStringsSep "\n" hyprlandLuaFragments;
+    onChange = ''
+      if command -v hyprctl >/dev/null 2>&1; then
+        hyprctl reload >/dev/null 2>&1 || true
+      fi
+    '';
   };
 }

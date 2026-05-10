@@ -3,7 +3,11 @@
   pkgs,
   pkgs-unstable,
   ...
-}: {
+}: let
+  system = pkgs.stdenv.hostPlatform.system;
+  hyprlandPackage = inputs.hyprland.packages.${system}.hyprland;
+  hyprlandPortalPackage = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
+in {
   # Hyprland
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
@@ -13,8 +17,8 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-    package = pkgs.hyprland;
-    portalPackage = pkgs.xdg-desktop-portal-hyprland;
+    package = hyprlandPackage;
+    portalPackage = hyprlandPortalPackage;
   };
 
   nix.settings = {
