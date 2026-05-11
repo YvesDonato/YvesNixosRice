@@ -147,10 +147,36 @@
     };
   };
 
+  programs.nm-applet = {
+    enable = true;
+    indicator = true;
+  };
+
   # Networking
   networking = {
     hostName = "nixos";
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      plugins = with pkgs; [
+        networkmanager-openconnect
+      ];
+      ensureProfiles.profiles.sheridan-vpn = {
+        connection = {
+          id = "Sheridan VPN";
+          uuid = "c5a1e30d-1f3d-4f73-88f6-ec1e7b515059";
+          type = "vpn";
+          autoconnect = false;
+        };
+        vpn = {
+          "service-type" = "org.freedesktop.NetworkManager.openconnect";
+          gateway = "vpn.sheridancollege.ca";
+          remote = "vpn.sheridancollege.ca";
+          protocol = "anyconnect";
+          useragent = "AnyConnect";
+          authtype = "password";
+        };
+      };
+    };
   };
 
   # Compressed in-memory swap helps avoid stalls or OOM kills under memory spikes.

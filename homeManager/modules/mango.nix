@@ -5,14 +5,19 @@
   ...
 }: let
   shell = "${pkgs.bash}/bin/sh";
-  restoreMonitors = "${lib.getExe pkgs.wlr-randr} --output DP-2 --mode 3440x1440@143.975Hz --pos 0,0 --scale 1 --output eDP-1 --on --mode 2560x1600@165.002Hz --pos 3440,0 --scale 1.333333";
+  wlrRandr = lib.getExe pkgs.wlr-randr;
+  laptopOutput = "eDP-1";
+  laptopMode = "2560x1600@165.002Hz";
+  laptopPosition = "3440,0";
+  laptopScale = "1.333333";
+  enableLaptopPanel = "${wlrRandr} --output ${laptopOutput} --on --mode ${laptopMode} --pos ${laptopPosition} --scale ${laptopScale}";
+  restoreMonitors = "${wlrRandr} --output DP-2 --mode 3440x1440@143.975Hz --pos 0,0 --scale 1 --output ${laptopOutput} --on --mode ${laptopMode} --pos ${laptopPosition} --scale ${laptopScale}";
   applyLidState = "/home/yvesd/.config/mango/apply-lid-state.sh";
   lidSwitchWatcher = "/home/yvesd/.config/mango/lid-switch-watch.sh";
   mmsg = "${pkgs.mangowc}/bin/mmsg";
   qs = "/run/current-system/sw/bin/qs";
   sleep = "${pkgs.coreutils}/bin/sleep";
   runtimePath = lib.makeBinPath [pkgs.bash pkgs.coreutils pkgs.mangowc pkgs.wlr-randr];
-  wlrRandr = lib.getExe pkgs.wlr-randr;
   mangoScrollerMinProportion = "0.333333";
   mangoCycleLayouts = [
     "scroller"
@@ -122,9 +127,9 @@
     monitorrule=DP-2,0.55,1,scroller,0,1,0,0,3440,1440,143.975
     monitorrule=eDP-1,0.55,1,scroller,0,1.333333,3440,0,2560,1600,165.002
 
-    # Close and open both keep the laptop panel disabled. A user service also
-    # watches the ACPI lid state because Mango switch events can be unreliable
-    # on this host.
+    # Closing disables the laptop panel; opening reenables it. A user service
+    # also watches the ACPI lid state because Mango switch events can be
+    # unreliable on this host.
     switchbind=fold,spawn,${applyLidState} closed
     switchbind=unfold,spawn,${applyLidState} open
 
@@ -158,11 +163,10 @@
     bind=SUPER,h,spawn_shell,zen-beta --private-window; ${qs} ipc call hints visable 0
     bind=SUPER,y,spawn,zen-beta --new-window https://www.youtube.com/feed/subscriptions
     bind=SUPER,u,spawn,zen-beta --new-window https://slate.sheridancollege.ca/d2l/login
-    bind=SUPER+SHIFT,d,spawn,ENABLE_HDR_WSI=1 linuxmis
-    bind=SUPER,d,spawn,ENABLE_HDR_WSI=1 linuxmis stream yves desktop
+    bind=SUPER+SHIFT,d,spawn,linuxmis
+    bind=SUPER,d,spawn,linuxmis stream yves desktop
 
     # Shell companion actions
-    bind=SUPER,b,toggle_scratchpad,
     bind=SUPER,c,spawn,${qs} ipc call zellij-sessions toggle
     bind=SUPER,l,spawn,${qs} ipc call lock locked true
     bind=SUPER,p,spawn_shell,grim -t png -g "$(slurp -d)" - | wl-copy -t image/png
@@ -259,8 +263,11 @@ in
         state="''${1:-}"
 
         case "$state" in
-          closed | open)
-            ${wlrRandr} --output eDP-1 --off || ${mmsg} -s -d disable_monitor,eDP-1 || true
+          closed)
+            ${wlrRandr} --output ${laptopOutput} --off || ${mmsg} -s -d disable_monitor,${laptopOutput} || true
+            ;;
+          open)
+            ${enableLaptopPanel} || ${mmsg} -s -d enable_monitor,${laptopOutput} || true
             ;;
           *)
             printf 'usage: %s open|closed\n' "$0" >&2
@@ -346,7 +353,7 @@ in
           dbus-update-activation-environment --systemd DISPLAY QT_QPA_PLATFORM WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE
         fi
 
-        systemctl --user start quickshell.service quickshell-notification-server.service
+        systemctl --user start quickshell.service quickshell-notification-server.service mango-lid-switch.service
       '';
     };
 
