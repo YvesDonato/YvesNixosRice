@@ -20,7 +20,6 @@
         javascriptSupport = false;
       };
     })
-    remmina
     vulkan-hdr-layer-kwin6
     lazyssh
     presenterm
@@ -40,5 +39,6 @@
     audacity
     parsec-bin
     flutter
+    freecad
   ];
 }

@@ -16,6 +16,7 @@
   lidSwitchWatcher = "/home/yvesd/.config/mango/lid-switch-watch.sh";
   mmsg = "${pkgs.mangowc}/bin/mmsg";
   qs = "/run/current-system/sw/bin/qs";
+  chatgptScratchpad = "/home/yvesd/nixos/homeManager/modules/scripts/toggle-chatgpt-scratchpad.sh";
   sleep = "${pkgs.coreutils}/bin/sleep";
   runtimePath = lib.makeBinPath [pkgs.bash pkgs.coreutils pkgs.mangowc pkgs.wlr-randr];
   mangoScrollerMinProportion = "0.333333";
@@ -90,7 +91,7 @@
     focus_cross_monitor=0
     focus_cross_tag=0
     exchange_cross_monitor=0
-    scratchpad_cross_monitor=0
+    scratchpad_cross_monitor=1
     enable_floating_snap=0
     snap_distance=30
     cursor_size=24
@@ -147,6 +148,7 @@
 
     # Quickshell command palette: keep Super+A like Hyprland, but let Mango center it as a floating window.
     windowrule=title:Command Palette,isfloating:1,isnoborder:1,isoverlay:1,noswallow:1,width:720,height:560
+    windowrule=appid:zen-beta,title:^ChatGPT,isfloating:1,isnamedscratchpad:1,noswallow:1,width:1400,height:1100
 
     # Core bindings
     bind=SUPER,r,reload_config
@@ -167,6 +169,7 @@
     bind=SUPER,d,spawn,linuxmis stream yves desktop
 
     # Shell companion actions
+    bind=SUPER,b,spawn,${chatgptScratchpad}
     bind=SUPER,c,spawn,${qs} ipc call zellij-sessions toggle
     bind=SUPER,l,spawn,${qs} ipc call lock locked true
     bind=SUPER,p,spawn_shell,grim -t png -g "$(slurp -d)" - | wl-copy -t image/png

@@ -7,10 +7,28 @@
   # which matches the Python Playwright 1.56.0 wheel used by openconnect-saml.
   pythonPlaywrightVersion = "1.56.0";
   anyConnectUserAgent = "AnyConnect Linux_64 4.7.00136";
+  defaultSheridanVpnIp = "142.55.3.2";
   sheridanVpnRunner = pkgs.writeText "sheridan-vpn-runner.py" ''
+    import os
+    import socket
+
     from openconnect_saml.browser import chrome as chrome_mod
 
     original_authenticate_at = chrome_mod.ChromeBrowser.authenticate_at
+
+
+    vpn_ip = os.environ.get("SHERIDAN_VPN_RESOLVE_IP")
+    if vpn_ip:
+        original_getaddrinfo = socket.getaddrinfo
+
+
+        def pinned_getaddrinfo(host, port, *args, **kwargs):
+            if host == "vpn.sheridancollege.ca":
+                return original_getaddrinfo(vpn_ip, port, *args, **kwargs)
+            return original_getaddrinfo(host, port, *args, **kwargs)
+
+
+        socket.getaddrinfo = pinned_getaddrinfo
 
 
     async def sheridan_spawn(self):
@@ -27,6 +45,10 @@
             "headless": self.headless,
             "args": ["--disable-blink-features=AutomationControlled"],
         }
+        if vpn_ip:
+            launch_args["args"].append(
+                f"--host-resolver-rules=MAP vpn.sheridancollege.ca {vpn_ip}"
+            )
         if self.proxy:
             launch_args["proxy"] = {"server": self.proxy}
         if self.channel:
@@ -50,6 +72,7 @@
             raise
 
         self._context = await self._browser.new_context(
+            bypass_csp=True,
             user_agent=(
                 "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
                 "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
@@ -101,6 +124,7 @@
       export PATH="/run/wrappers/bin:$PATH"
       export PLAYWRIGHT_BROWSERS_PATH="${pkgs.playwright-driver.browsers-chromium}"
       export PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS="true"
+      export SHERIDAN_VPN_RESOLVE_IP="''${SHERIDAN_VPN_RESOLVE_IP:-${defaultSheridanVpnIp}}"
 
       run_openconnect_saml() {
         exec uv run \
@@ -113,9 +137,13 @@
         run_openconnect_saml "$@"
       fi
 
-      foreground=false
+      foreground=true
       if [[ "''${1:-}" == "foreground" || "''${1:-}" == "debug" ]]; then
         foreground=true
+        shift
+      fi
+      if [[ "''${1:-}" == "background" || "''${1:-}" == "detach" ]]; then
+        foreground=false
         shift
       fi
 
@@ -127,7 +155,8 @@
         --browser "chrome"
         --no-totp
         --no-history
-        --useragent "AnyConnect"
+        --useragent "${anyConnectUserAgent}"
+        --resolve "vpn.sheridancollege.ca:$SHERIDAN_VPN_RESOLVE_IP"
       )
 
       if [[ "$foreground" == false ]]; then

@@ -2,6 +2,7 @@
   -- Core bindings
   local mainMod = "SUPER"
   local browser = "zen-beta"
+  local chatgptScratchpad = "/home/yvesd/nixos/homeManager/modules/scripts/toggle-chatgpt-scratchpad.sh"
   local clearCommand = "qs ipc call hints visable 0"
 
   hl.bind("Super_L", hl.dsp.exec_cmd("qs ipc call hints visable 1"), { locked = true, non_consuming = true, long_press = true, transparent = true })
@@ -23,7 +24,7 @@
   hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd("ENABLE_HDR_WSI=1 linuxmis"))
   hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("ENABLE_HDR_WSI=1 linuxmis stream yves desktop"))
 
-  hl.bind(mainMod .. " + B", hl.dsp.workspace.toggle_special())
+  hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(chatgptScratchpad))
   hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("qs ipc call zellij-sessions toggle"))
   hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("qs ipc call lock locked true"))
   hl.bind(mainMod .. " + P", hl.dsp.exec_cmd([[grim -g "$(slurp -d)" - | wl-copy]]))
