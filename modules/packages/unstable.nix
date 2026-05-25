@@ -1,6 +1,7 @@
 {
   pkgs-unstable,
   inputs,
+  piCodingAgent,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
@@ -32,10 +33,10 @@
     teams-for-linux
     sshfs-fuse
     zellij
-    inputs.opencode.packages."${stdenv.hostPlatform.system}".default
     inputs.linuxmis.packages."${stdenv.hostPlatform.system}".linuxmis
     inputs.claude-code.packages."${stdenv.hostPlatform.system}".default
     inputs.codex.packages."${stdenv.hostPlatform.system}".default
+    piCodingAgent
     audacity
     parsec-bin
     flutter

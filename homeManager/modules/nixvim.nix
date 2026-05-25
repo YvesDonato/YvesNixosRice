@@ -3,7 +3,9 @@
   pkgs-unstable,
   inputs,
   ...
-}: {
+}: let
+  codelldbAdapter = pkgs.vscode-extensions.vadimcn.vscode-lldb.adapter;
+in {
   imports = [
     inputs.nixvim.homeModules.nixvim
   ];
@@ -15,6 +17,11 @@
     viAlias = true;
     vimAlias = true;
     luaLoader.enable = true;
+
+    extraPackages = [
+      pkgs.clang-tools
+      codelldbAdapter
+    ];
 
     globals = {
       mapleader = " ";
@@ -189,6 +196,10 @@
         enable = true;
         servers = {
           basedpyright.enable = true;
+          clangd = {
+            enable = true;
+            package = pkgs.clang-tools;
+          };
           html.enable = true;
           marksman.enable = true;
           nixd.enable = true;
@@ -199,6 +210,41 @@
           };
           ts_ls.enable = true;
         };
+      };
+
+      dap = {
+        enable = true;
+      };
+
+      dap-lldb = {
+        enable = true;
+        settings = {
+          codelldb_path = "${codelldbAdapter}/bin/codelldb";
+          configurations = {
+            c = [
+              {
+                name = "Debug C executable";
+                type = "lldb";
+                request = "launch";
+                program.__raw = ''
+                  function()
+                    return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+                  end
+                '';
+                cwd = "\${workspaceFolder}";
+                stopOnEntry = false;
+              }
+            ];
+          };
+        };
+      };
+
+      dap-ui = {
+        enable = true;
+      };
+
+      dap-virtual-text = {
+        enable = true;
       };
 
       cmp = {
@@ -289,6 +335,20 @@
           end
         end,
       })
+
+      local dap_ok, dap = pcall(require, "dap")
+      local dapui_ok, dapui = pcall(require, "dapui")
+      if dap_ok and dapui_ok then
+        dap.listeners.after.event_initialized["dapui_config"] = function()
+          dapui.open()
+        end
+        dap.listeners.before.event_terminated["dapui_config"] = function()
+          dapui.close()
+        end
+        dap.listeners.before.event_exited["dapui_config"] = function()
+          dapui.close()
+        end
+      end
     '';
 
     clipboard = {
@@ -321,6 +381,78 @@
         action = "<C-r>"; # The original Redo command
         options = {
           desc = "Redo";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>e";
+        action = "<cmd>lua vim.diagnostic.open_float()<CR>";
+        options = {
+          desc = "Show diagnostic";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>dc";
+        action = "<cmd>lua require('dap').continue()<CR>";
+        options = {
+          desc = "Debug continue";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>db";
+        action = "<cmd>lua require('dap').toggle_breakpoint()<CR>";
+        options = {
+          desc = "Debug breakpoint";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>di";
+        action = "<cmd>lua require('dap').step_into()<CR>";
+        options = {
+          desc = "Debug step into";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>do";
+        action = "<cmd>lua require('dap').step_over()<CR>";
+        options = {
+          desc = "Debug step over";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>dO";
+        action = "<cmd>lua require('dap').step_out()<CR>";
+        options = {
+          desc = "Debug step out";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>dt";
+        action = "<cmd>lua require('dap').terminate()<CR>";
+        options = {
+          desc = "Debug terminate";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>dr";
+        action = "<cmd>lua require('dap').repl.toggle()<CR>";
+        options = {
+          desc = "Debug REPL";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>du";
+        action = "<cmd>lua require('dapui').toggle()<CR>";
+        options = {
+          desc = "Debug UI";
         };
       }
     ];

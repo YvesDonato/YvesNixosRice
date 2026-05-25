@@ -21,10 +21,6 @@
     claude-code.url = "github:sadjow/claude-code-nix";
     codex.url = "github:sadjow/codex-cli-nix";
 
-    opencode = {
-      url = "github:anomalyco/opencode/dev";
-    };
-
     linuxmis = {
       url = "github:YvesDonato/Linuxmis";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -78,6 +74,8 @@
       config.allowUnfree = true;
     };
 
+    piCodingAgent = pkgs-unstable.callPackage ./packages/pi-coding-agent.nix {};
+
     mkNixosConfiguration = wm:
       lib.nixosSystem {
         inherit system;
@@ -91,6 +89,7 @@
           inherit pkgs-unstable;
           inherit inputs;
           inherit nix-colors;
+          inherit piCodingAgent;
           desktopWindowManager = wm;
         };
       };
@@ -119,6 +118,9 @@
       yvesd = mkHomeConfiguration desktopWindowManager;
       "yvesd-mango" = mkHomeConfiguration "mango";
       "yvesd-hyprland" = mkHomeConfiguration "hyprland";
+    };
+    packages.${system} = {
+      pi-coding-agent = piCodingAgent;
     };
   };
 }

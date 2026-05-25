@@ -11,6 +11,9 @@ This repository defines a NixOS system and a Home Manager user environment.
 - `homeManager/modules/` contains user-level modules such as Hyprland, Nixvim, Helix, and Zed.
 - `homeManager/modules/scripts/` contains shell scripts used by rofi and Hyprland bindings.
 
+## Agent Workflow Preferences
+For non-trivial codebase discovery, reading, or locating implementation details, prefer spawning a read-only Codex Spark subagent (for example `Explore`, `codebase-locator`, or `codebase-analyzer` with `openai-codex/gpt-5.3-codex-spark`) instead of doing all exploration in the parent session. Use direct reads or grep only for tiny exact lookups, files about to be edited, or when a subagent would add unnecessary latency.
+
 ## Build, Test, and Development Commands
 Run validation from the repository root.
 

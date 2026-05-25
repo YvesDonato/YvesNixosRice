@@ -88,7 +88,9 @@ in {
         text = ''
           const notifySend = "${lib.getExe' pkgs.libnotify "notify-send"}";
           const quickshellBridge = "http://127.0.0.1:9999";
-          const seenPermissions = new Set();
+          const permissionNotificationDelayMs = 15000;
+          const pendingPermissionNotifications = new Map();
+          const notifiedPermissions = new Set();
 
           const asText = (value) => {
             if (!value) return "";
@@ -132,15 +134,40 @@ in {
               }
             };
 
-            const notifyPermission = async (permission) => {
-              if (permission?.id && seenPermissions.has(permission.id)) return;
-              if (permission?.id) seenPermissions.add(permission.id);
+            const permissionID = (permission) => permission?.id || permission?.requestID;
+
+            const clearPermissionNotification = (permission) => {
+              const id = permissionID(permission);
+              if (!id) return;
+
+              const timer = pendingPermissionNotifications.get(id);
+              if (timer) clearTimeout(timer);
+              pendingPermissionNotifications.delete(id);
+            };
+
+            const sendPermissionNotification = async (permission) => {
+              const id = permissionID(permission);
+              if (id) {
+                pendingPermissionNotifications.delete(id);
+                notifiedPermissions.add(id);
+              }
 
               await notify(
                 "OpenCode needs approval",
                 permission?.title || permission?.type || "A permission prompt is waiting.",
                 "normal",
               );
+            };
+
+            const schedulePermissionNotification = (permission) => {
+              const id = permissionID(permission);
+              if (id && (pendingPermissionNotifications.has(id) || notifiedPermissions.has(id))) return;
+
+              const timer = setTimeout(() => {
+                void sendPermissionNotification(permission);
+              }, permissionNotificationDelayMs);
+
+              if (id) pendingPermissionNotifications.set(id, timer);
             };
 
             return {
@@ -155,13 +182,17 @@ in {
                   await notify("OpenCode error", event.properties.error || "Session failed.", "critical");
                 }
 
+                if (event.type === "permission.replied") {
+                  clearPermissionNotification(event.properties);
+                }
+
                 if (event.type === "permission.updated" || event.type === "permission.asked") {
-                  await notifyPermission(event.properties);
+                  schedulePermissionNotification(event.properties);
                 }
               },
 
               "permission.ask": async (input) => {
-                await notifyPermission(input);
+                schedulePermissionNotification(input);
               },
             };
           };
