@@ -26,7 +26,7 @@ send_power() {
 if [[ -e "$TOGGLE_FILE" ]]; then
 	send_power "uuid-bulb-1" "H6010" "E7:28:98:17:3C:0F:9E:2A" 0
 	send_power "uuid-bulb-2" "H6010" "AE:50:98:17:3C:10:E7:10" 0
-	rm "$TOGGLE_FILE"
+	rm -f "$TOGGLE_FILE"
 else
 	send_power "uuid-bulb-1" "H6010" "E7:28:98:17:3C:0F:9E:2A" 1
 	send_power "uuid-bulb-2" "H6010" "AE:50:98:17:3C:10:E7:10" 1

@@ -5,14 +5,7 @@
   desktopWindowManager,
   ...
 }: let
-  mangoPackage = pkgs.mangowc.overrideAttrs (oldAttrs: {
-    patches =
-      (oldAttrs.patches or [])
-      ++ [
-        ../patches/mangowc-repaint-focus-borders.patch
-        ../patches/mangowc-adaptive-scroller.patch
-      ];
-  });
+  mangoPackage = pkgs.callPackage ../packages/mangowc-patched.nix {};
 in
   lib.mkIf (desktopWindowManager == "mango") {
     environment.sessionVariables = {

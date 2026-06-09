@@ -4,6 +4,7 @@
   desktopWindowManager,
   ...
 }: let
+  mangowcPatched = pkgs.callPackage ../../packages/mangowc-patched.nix {};
   shell = "${pkgs.bash}/bin/sh";
   wlrRandr = lib.getExe pkgs.wlr-randr;
   laptopOutput = "eDP-1";
@@ -14,11 +15,11 @@
   restoreMonitors = "${wlrRandr} --output DP-2 --mode 3440x1440@143.975Hz --pos 0,0 --scale 1 --output ${laptopOutput} --on --mode ${laptopMode} --pos ${laptopPosition} --scale ${laptopScale}";
   applyLidState = "/home/yvesd/.config/mango/apply-lid-state.sh";
   lidSwitchWatcher = "/home/yvesd/.config/mango/lid-switch-watch.sh";
-  mmsg = "${pkgs.mangowc}/bin/mmsg";
+  mmsg = "${mangowcPatched}/bin/mmsg";
   qs = "/run/current-system/sw/bin/qs";
   chatgptScratchpad = "/home/yvesd/nixos/homeManager/modules/scripts/toggle-chatgpt-scratchpad.sh";
   sleep = "${pkgs.coreutils}/bin/sleep";
-  runtimePath = lib.makeBinPath [pkgs.bash pkgs.coreutils pkgs.mangowc pkgs.wlr-randr];
+  runtimePath = lib.makeBinPath [pkgs.bash pkgs.coreutils mangowcPatched pkgs.wlr-randr];
   mangoScrollerMinProportion = "0.333333";
   mangoCycleLayouts = [
     "scroller"
@@ -369,7 +370,9 @@ in
 
       Service = {
         ExecStart = "${shell} ${lidSwitchWatcher}";
-        Restart = "always";
+        # on-failure: the watcher exits 0 when no ACPI lid file exists; "always"
+        # would crash-loop it into the start limit on such hosts.
+        Restart = "on-failure";
         RestartSec = 2;
         Environment = [
           "PATH=${runtimePath}"

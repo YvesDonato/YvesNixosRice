@@ -189,9 +189,6 @@ in {
     sqlitebrowser
     isoimagewriter
 
-    # Zsh
-    starship
-
     # Terminal
     neovim
     git

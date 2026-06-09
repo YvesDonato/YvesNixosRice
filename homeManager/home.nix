@@ -6,16 +6,17 @@
   desktopWindowManager,
   ...
 }: let
+  mangowcPatched = pkgs.callPackage ../packages/mangowc-patched.nix {};
   quickshellRuntimePath =
-    (lib.makeBinPath (with pkgs; [
-      acpi
-      bash
-      brightnessctl
-      coreutils
-      gnugrep
-      gnused
-      mangowc
-    ]))
+    (lib.makeBinPath ((with pkgs; [
+        acpi
+        bash
+        brightnessctl
+        coreutils
+        gnugrep
+        gnused
+      ])
+      ++ [mangowcPatched]))
     + ":/run/current-system/sw/bin:/etc/profiles/per-user/yvesd/bin";
 in {
   assertions = [
@@ -272,8 +273,11 @@ in {
     quickshell-notification-server = {
       Unit = {
         Description = "Quickshell notification HTTP bridge";
-        After = ["graphical-session.target"];
+        After = ["graphical-session.target" "quickshell.service"];
         PartOf = ["graphical-session.target"];
+        # The script lives in unmanaged quickshell config; without this guard a
+        # missing file puts the unit in a 2s crash-restart loop.
+        ConditionPathExists = "%h/.config/quickshell/scripts/notification-server.py";
       };
 
       Service = {
@@ -362,11 +366,12 @@ in {
 
     ghostty = {
       enable = true;
+      package = pkgs-unstable.ghostty;
       settings = {
         theme = "TokyoNight Moon";
         background-opacity = 0.80;
         background-blur = false;
-        copy-on-select = false;
+        copy-on-select = true;
         keybind = [
           "ctrl+v=paste_from_clipboard"
           "ctrl+y=copy_to_clipboard"
@@ -386,7 +391,7 @@ in {
         simplified_ui = true;
         pane_frames = false;
         show_startup_tips = false;
-        copy_on_select = false;
+        copy_on_select = true;
       };
     };
 

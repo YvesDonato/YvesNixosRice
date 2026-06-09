@@ -16,8 +16,13 @@
     hyprland.url = "github:hyprwm/Hyprland";
 
     # Zen Browser
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
 
+    # Coding harnesses
     claude-code.url = "github:sadjow/claude-code-nix";
     codex.url = "github:sadjow/codex-cli-nix";
 
@@ -26,11 +31,11 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-    # Nix colors
-    nix-colors.url = "github:misterio77/nix-colors";
-
     # Cursors Themes
-    rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
+    rose-pine-hyprcursor = {
+      url = "github:ndom91/rose-pine-hyprcursor";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nixvim = {
       url = "github:nix-community/nixvim/nixos-25.11";
@@ -48,7 +53,6 @@
     nixpkgs,
     nixpkgs-unstable,
     home-manager,
-    nix-colors,
     nixvim,
     quickshell,
     ...
@@ -88,7 +92,6 @@
           inherit name;
           inherit pkgs-unstable;
           inherit inputs;
-          inherit nix-colors;
           inherit piCodingAgent;
           desktopWindowManager = wm;
         };

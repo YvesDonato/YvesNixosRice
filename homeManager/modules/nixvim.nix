@@ -21,6 +21,9 @@ in {
     extraPackages = [
       pkgs.clang-tools
       codelldbAdapter
+      # conform-nvim's only configured formatter; keep it explicit so
+      # format-on-save can't silently lose its binary.
+      pkgs.nodePackages.prettier
     ];
 
     globals = {
@@ -200,15 +203,53 @@ in {
             enable = true;
             package = pkgs.clang-tools;
           };
+          cssls.enable = true;
+          eslint.enable = true;
           html.enable = true;
+          jsonls.enable = true;
           marksman.enable = true;
           nixd.enable = true;
           svelte.enable = true;
           tailwindcss = {
             enable = true;
-            filetypes = ["svelte"];
+            filetypes = [
+              "css"
+              "html"
+              "javascript"
+              "javascript.jsx"
+              "javascriptreact"
+              "svelte"
+              "typescript"
+              "typescript.tsx"
+              "typescriptreact"
+            ];
           };
           ts_ls.enable = true;
+        };
+      };
+
+      conform-nvim = {
+        enable = true;
+        autoInstall.enable = true;
+        settings = {
+          formatters_by_ft = {
+            css = ["prettier"];
+            html = ["prettier"];
+            javascript = ["prettier"];
+            "javascript.jsx" = ["prettier"];
+            javascriptreact = ["prettier"];
+            json = ["prettier"];
+            jsonc = ["prettier"];
+            markdown = ["prettier"];
+            typescript = ["prettier"];
+            "typescript.tsx" = ["prettier"];
+            typescriptreact = ["prettier"];
+          };
+          format_on_save = {
+            lsp_format = "never";
+            timeout_ms = 2000;
+          };
+          notify_no_formatters = false;
         };
       };
 
@@ -389,6 +430,14 @@ in {
         action = "<cmd>lua vim.diagnostic.open_float()<CR>";
         options = {
           desc = "Show diagnostic";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>cf";
+        action = "<cmd>lua require('conform').format({ async = true, lsp_format = 'never' })<CR>";
+        options = {
+          desc = "Format buffer";
         };
       }
       {

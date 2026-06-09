@@ -7,7 +7,6 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs-unstable; [
     moonlight-qt
-    ghostty
     qemu
     tailscale
     discord
@@ -32,7 +31,6 @@
     zed-editor-fhs
     teams-for-linux
     sshfs-fuse
-    zellij
     inputs.linuxmis.packages."${stdenv.hostPlatform.system}".linuxmis
     inputs.claude-code.packages."${stdenv.hostPlatform.system}".default
     inputs.codex.packages."${stdenv.hostPlatform.system}".default

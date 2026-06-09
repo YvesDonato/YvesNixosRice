@@ -147,9 +147,20 @@ toggle_mango() {
 		local title=""
 
 		status="$(mmsg -g 2>/dev/null || true)"
+		if [ -z "$status" ]; then
+			sleep 0.1
+			continue
+		fi
+
 		appid="$(printf '%s\n' "$status" | awk '/ appid / { sub(/^.* appid /, ""); print; exit }')"
 		title="$(printf '%s\n' "$status" | awk '/ title / { sub(/^.* title /, ""); print; exit }')"
 		floating="$(printf '%s\n' "$status" | awk '/ floating / { sub(/^.* floating /, ""); print; exit }')"
+
+		# Empty fields mean mmsg's output format changed; don't match on them.
+		if [ -z "$appid" ]; then
+			sleep 0.1
+			continue
+		fi
 
 		if [ "$appid" = "zen-beta" ] && [[ "$title" == ChatGPT* ]]; then
 			if [ "$floating" != "1" ]; then

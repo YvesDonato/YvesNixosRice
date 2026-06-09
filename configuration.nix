@@ -19,7 +19,6 @@
     ./hardware-configuration.nix
     ./modules/hyprland.nix
     ./modules/mango.nix
-
     ./modules/packages/unstable.nix
     ./modules/packages/stable.nix
 
@@ -38,6 +37,11 @@
     kernelModules = [
       "v4l2loopback"
     ];
+    # Out-of-tree module; without this v4l2loopback never gets built and
+    # systemd-modules-load fails on every boot.
+    extraModulePackages = [config.boot.kernelPackages.v4l2loopback];
+    # High swappiness is the recommended pairing for zstd zram swap.
+    kernel.sysctl."vm.swappiness" = 180;
   };
 
   hardware = {
@@ -182,7 +186,7 @@
   # Compressed in-memory swap helps avoid stalls or OOM kills under memory spikes.
   zramSwap = {
     enable = true;
-    memoryPercent = 25;
+    memoryPercent = 60;
     algorithm = "zstd";
   };
 
@@ -195,6 +199,14 @@
       "getty@tty1".enable = false;
       "autovt@tty1".enable = false;
     };
+
+    # Kill runaway workloads before they hard-lock the machine; the host has
+    # crashed under heavy parallel load with kernel OOM alone.
+    oomd = {
+      enable = true;
+      enableRootSlice = true;
+      enableUserSlices = true;
+    };
   };
 
   # Set your time zone.
@@ -203,7 +215,8 @@
 
   security = {
     pam.services = {
-      sddm.enableGnomeKeyring = true;
+      gdm-password.enableGnomeKeyring = true;
+      gdm-autologin.enableGnomeKeyring = true;
       hyprlock = {};
     };
     polkit.enable = true;
@@ -267,6 +280,7 @@
 
   virtualisation.docker = {
     enable = true;
+    package = pkgs.docker_29;
     autoPrune = {
       enable = true;
       dates = "weekly";
@@ -304,6 +318,10 @@
     dates = "weekly";
     options = "--delete-older-than 7d";
   };
+
+  # Scheduled hard-link dedup of the store (cheaper than auto-optimise-store,
+  # which would slow every build).
+  nix.optimise.automatic = true;
 
   system.stateVersion = "25.11";
 }
