@@ -1,10 +1,11 @@
 {
   lib,
   pkgs,
+  pkgs-unstable,
   desktopWindowManager,
   ...
 }: let
-  mangowcPatched = pkgs.callPackage ../../packages/mangowc-patched.nix {};
+  mangowcPatched = pkgs-unstable.callPackage ../../packages/mango-patched.nix {};
   shell = "${pkgs.bash}/bin/sh";
   wlrRandr = lib.getExe pkgs.wlr-randr;
   laptopOutput = "eDP-1";
@@ -14,6 +15,7 @@
   enableLaptopPanel = "${wlrRandr} --output ${laptopOutput} --on --mode ${laptopMode} --pos ${laptopPosition} --scale ${laptopScale}";
   restoreMonitors = "${wlrRandr} --output DP-2 --mode 3440x1440@143.975Hz --pos 0,0 --scale 1 --output ${laptopOutput} --on --mode ${laptopMode} --pos ${laptopPosition} --scale ${laptopScale}";
   applyLidState = "/home/yvesd/.config/mango/apply-lid-state.sh";
+  autostartScript = "/home/yvesd/.config/mango/autostart.sh";
   lidSwitchWatcher = "/home/yvesd/.config/mango/lid-switch-watch.sh";
   mmsg = "${mangowcPatched}/bin/mmsg";
   qs = "/run/current-system/sw/bin/qs";
@@ -39,7 +41,31 @@
     "vertical_tile"
     "vertical_grid"
     "vertical_deck"
+    "dwindle"
+    "fair"
+    "vertical_fair"
   ];
+  # ALL built-in layouts in mango's layouts[] array order — mmsg reports the
+  # current layout as a 0-based index into this array, and the Super+Shift+Tab
+  # cycle-all script maps through it. Keep in sync with src/layout/layout.h
+  # when bumping mango.
+  mangoAllLayouts = [
+    "tile"
+    "scroller"
+    "grid"
+    "monocle"
+    "deck"
+    "center_tile"
+    "right_tile"
+    "vertical_scroller"
+    "vertical_tile"
+    "vertical_grid"
+    "vertical_deck"
+    "dwindle"
+    "fair"
+    "vertical_fair"
+  ];
+  cycleAllLayouts = "/home/yvesd/.config/mango/cycle-all-layouts.sh";
   unsupportedMangoCycleLayouts = lib.filter (layout: !(builtins.elem layout mangoSupportedLayouts)) mangoCycleLayouts;
   mangoCycleLayoutConfig = lib.concatStringsSep "," mangoCycleLayouts;
 
@@ -86,7 +112,7 @@
     # Misc
     no_border_when_single=0
     focus_on_activate=1
-    inhibit_regardless_of_visibility=0
+    idleinhibit_ignore_visible=0
     sloppyfocus=1
     warpcursor=1
     focus_cross_monitor=0
@@ -125,9 +151,13 @@
     overlaycolor=0x14a57cff
 
     # Monitor layout mirrors homeManager/modules/hyprland/monitors.nix.
-    # Format: name,mfact,nmaster,layout,transform,scale,x,y,width,height,refresh
-    monitorrule=DP-2,0.55,1,scroller,0,1,0,0,3440,1440,143.975
-    monitorrule=eDP-1,0.55,1,scroller,0,1.333333,3440,0,2560,1600,165.002
+    # mango 0.14 key:value format; layout now comes from the tagrules below.
+    monitorrule=name:DP-2,scale:1,x:0,y:0,width:3440,height:1440,refresh:174.963
+    monitorrule=name:eDP-1,scale:1.333333,x:3440,y:0,width:2560,height:1600,refresh:165.002
+
+    # mango 0.14 no longer runs ~/.config/mango/autostart.sh by convention;
+    # exec-once replaces it (starts quickshell + user services).
+    exec-once=${autostartScript}
 
     # Closing disables the laptop panel; opening reenables it. A user service
     # also watches the ACPI lid state because Mango switch events can be
@@ -155,17 +185,18 @@
     bind=SUPER,r,reload_config
     bind=SUPER,comma,spawn,${qs} ipc call hints toggle
     bind=SUPER,g,spawn,bash /home/yvesd/nixos/homeManager/modules/scripts/lights.bash
-    bind=SUPER,t,spawn,ghostty
+    bind=SUPER+SHIFT,g,spawn,${qs} ipc call lights toggle
+    bind=SUPER,t,spawn,ghostty -e herdr
     bind=SUPER,q,killclient,
     bind=SUPER,e,spawn,ghostty -e yazi
     bind=SUPER,w,togglefloating,
     bind=SUPER,a,spawn,${qs} ipc call command-palette toggle
 
     # Browser and app bindings
-    bind=SUPER,f,spawn,zen-beta
-    bind=SUPER,h,spawn_shell,zen-beta --private-window; ${qs} ipc call hints visable 0
-    bind=SUPER,y,spawn,zen-beta --new-window https://www.youtube.com/feed/subscriptions
-    bind=SUPER,u,spawn,zen-beta --new-window https://slate.sheridancollege.ca/d2l/login
+    bind=SUPER,f,spawn,zen-scoped
+    bind=SUPER,h,spawn_shell,zen-scoped --private-window; ${qs} ipc call hints visable 0
+    bind=SUPER,y,spawn,zen-scoped --new-window https://www.youtube.com/feed/subscriptions
+    bind=SUPER,u,spawn,zen-scoped --new-window https://slate.sheridancollege.ca/d2l/login
     bind=SUPER+SHIFT,d,spawn,linuxmis
     bind=SUPER,d,spawn,linuxmis stream yves desktop
 
@@ -177,6 +208,7 @@
 
     # Scroller layout approximations
     bind=SUPER,Tab,switch_layout
+    bind=SUPER+SHIFT,Tab,spawn,${cycleAllLayouts}
     bind=SUPER,period,exchange_client,left
     bind=SUPER,slash,exchange_client,right
 
@@ -255,6 +287,38 @@ in
       '';
     };
 
+    xdg.configFile."mango/cycle-all-layouts.sh" = {
+      executable = true;
+      text = ''
+        #!${shell}
+        set -eu
+
+        # Super+Shift+Tab: cycle through ALL built-in layouts (Super+Tab's
+        # switch_layout only cycles the curated circle_layout list). mmsg
+        # reports layout_index as a 0-based index into mango's layouts[]
+        # array; mangoAllLayouts mirrors that order.
+        layouts="${lib.concatStringsSep " " mangoAllLayouts}"
+        count=${toString (builtins.length mangoAllLayouts)}
+
+        state="$(${mmsg} get all-monitors)"
+        seg="$(printf '%s' "$state" | ${pkgs.coreutils}/bin/tr "{" "\n" | ${pkgs.gnugrep}/bin/grep "\"active\":true" | ${pkgs.coreutils}/bin/head -n 1)"
+        idx="$(printf '%s' "$seg" | ${pkgs.gnugrep}/bin/grep -oE "\"layout_index\":[0-9]+" | ${pkgs.coreutils}/bin/head -n 1 | ${pkgs.coreutils}/bin/cut -d: -f2)"
+
+        if [ -z "$idx" ]; then
+          exit 1
+        fi
+
+        next=$(((idx + 1) % count))
+        i=0
+        for name in $layouts; do
+          if [ "$i" -eq "$next" ]; then
+            exec ${mmsg} dispatch "setlayout,$name"
+          fi
+          i=$((i + 1))
+        done
+      '';
+    };
+
     xdg.configFile."mango/apply-lid-state.sh" = {
       executable = true;
       text = ''
@@ -268,10 +332,10 @@ in
 
         case "$state" in
           closed)
-            ${wlrRandr} --output ${laptopOutput} --off || ${mmsg} -s -d disable_monitor,${laptopOutput} || true
+            ${wlrRandr} --output ${laptopOutput} --off || ${mmsg} dispatch disable_monitor,${laptopOutput} || true
             ;;
           open)
-            ${enableLaptopPanel} || ${mmsg} -s -d enable_monitor,${laptopOutput} || true
+            ${enableLaptopPanel} || ${mmsg} dispatch enable_monitor,${laptopOutput} || true
             ;;
           *)
             printf 'usage: %s open|closed\n' "$0" >&2

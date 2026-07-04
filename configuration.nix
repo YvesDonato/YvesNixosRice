@@ -33,7 +33,10 @@
     tmp.cleanOnBoot = true;
     initrd.kernelModules = ["amdgpu" "uinput"];
     initrd.systemd.network.wait-online.enable = false;
-    kernelPackages = pkgs.linuxPackages_latest;
+    # Kernel + nvidia must move in lockstep; stable's nvidia (580.142) can't
+    # build against stable's linuxPackages_latest (7.1.2, of_gpio.h removal),
+    # while unstable pairs 7.1.2 with nvidia 595.x and Hydra caches that combo.
+    kernelPackages = pkgs-unstable.linuxPackages_latest;
     kernelModules = [
       "v4l2loopback"
     ];
@@ -147,7 +150,6 @@
 
     asusd = {
       enable = true;
-      enableUserService = true;
     };
   };
 
@@ -189,6 +191,16 @@
     memoryPercent = 60;
     algorithm = "zstd";
   };
+
+  # Disk overflow tier below zram: when zram fills (e.g. long browser uptime),
+  # cold pages spill to NVMe instead of thrash-scanning a full RAM-backed swap.
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 32 * 1024; # MiB
+      priority = 0; # below zram (5)
+    }
+  ];
 
   # Avoid extra metadata writes on the SSD root filesystem.
   fileSystems."/".options = ["noatime"];
@@ -260,6 +272,10 @@
 
   # Home Manager
   home-manager = {
+    # Reuse the system nixpkgs (incl. allowUnfree) instead of a second
+    # instantiation — 26.05 marks some nixvim plugins unfree, and HM's own
+    # instance wouldn't inherit nixpkgs.config.allowUnfree from below.
+    useGlobalPkgs = true;
     backupFileExtension = "backup";
     extraSpecialArgs = {
       inherit inputs;
@@ -291,7 +307,8 @@
     };
   };
 
-  programs.adb.enable = true;
+  # programs.adb was removed in 26.05 (systemd handles uaccess rules now);
+  # android-tools in systemPackages provides the adb command instead.
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

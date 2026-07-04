@@ -1,4 +1,5 @@
 {
+  config,
   lib,
   pkgs,
   pkgs-unstable,
@@ -6,7 +7,7 @@
   desktopWindowManager,
   ...
 }: let
-  mangowcPatched = pkgs.callPackage ../packages/mangowc-patched.nix {};
+  mangowcPatched = pkgs-unstable.callPackage ../packages/mango-patched.nix {};
   quickshellRuntimePath =
     (lib.makeBinPath ((with pkgs; [
         acpi
@@ -17,7 +18,7 @@
         gnused
       ])
       ++ [mangowcPatched]))
-    + ":/run/current-system/sw/bin:/etc/profiles/per-user/yvesd/bin";
+    + ":/run/current-system/sw/bin:/etc/profiles/per-user/yvesd/bin:${config.home.profileDirectory}/bin";
 in {
   assertions = [
     {
@@ -30,6 +31,9 @@ in {
     ./modules/hyprland.nix
     ./modules/mango.nix
     ./modules/nixvim.nix
+    ./modules/typst.nix
+    ./modules/herdr.nix
+    ./modules/zen-scoped.nix
     # ./modules/helix.nix
     # ./modules/zed-editor.nix
   ];
@@ -223,6 +227,8 @@ in {
       name = "Adwaita-dark";
       package = pkgs.gnome-themes-extra;
     };
+    # 26.05 changed the default to null; keep applying the theme to GTK4 apps.
+    gtk4.theme = config.gtk.theme;
   };
 
   qt = {
@@ -361,6 +367,7 @@ in {
         z = "zeditor";
         c = "cd";
         h = "nvim";
+        te = "typst-edit";
       };
     };
 

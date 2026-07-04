@@ -1,7 +1,7 @@
 ''
   -- Core bindings
   local mainMod = "SUPER"
-  local browser = "zen-beta"
+  local browser = "zen-scoped"
   local chatgptScratchpad = "/home/yvesd/nixos/homeManager/modules/scripts/toggle-chatgpt-scratchpad.sh"
   local clearCommand = "qs ipc call hints visable 0"
 
@@ -10,7 +10,8 @@
   hl.bind(mainMod .. " + comma", hl.dsp.exec_cmd("qs ipc call hints toggle"))
 
   hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("bash /home/yvesd/nixos/homeManager/modules/scripts/lights.bash"))
-  hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("ghostty"))
+  hl.bind(mainMod .. " + SHIFT + G", hl.dsp.exec_cmd("qs ipc call lights toggle"))
+  hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("ghostty -e herdr"))
   hl.bind(mainMod .. " + Q", hl.dsp.window.close())
   hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("ghostty -e yazi"))
   hl.bind(mainMod .. " + W", hl.dsp.window.float({ action = "toggle" }))

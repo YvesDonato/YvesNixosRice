@@ -2,10 +2,11 @@
   inputs,
   lib,
   pkgs,
+  pkgs-unstable,
   desktopWindowManager,
   ...
 }: let
-  mangoPackage = pkgs.callPackage ../packages/mangowc-patched.nix {};
+  mangoPackage = pkgs-unstable.callPackage ../packages/mango-patched.nix {};
 in
   lib.mkIf (desktopWindowManager == "mango") {
     environment.sessionVariables = {

@@ -25,6 +25,9 @@ in
       enable = true;
       package = hyprlandPackage;
       systemd.enable = false;
+      # Explicit since the 26.05 HM default changed hyprlang -> lua; this
+      # repo's config is the concatenated hyprland.lua below.
+      configType = "lua";
     };
 
     xdg.configFile."hypr/hyprland.lua" = {

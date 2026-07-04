@@ -9,8 +9,12 @@
   anyConnectUserAgent = "AnyConnect Linux_64 4.7.00136";
   defaultSheridanVpnIp = "142.55.3.2";
   sheridanVpnRunner = pkgs.writeText "sheridan-vpn-runner.py" ''
+    import json
     import os
     import socket
+
+    sheridan_storage_dir = os.path.expanduser("~/.config/sheridan-vpn")
+    sheridan_storage_path = os.path.join(sheridan_storage_dir, "storage_state.json")
 
     from openconnect_saml.browser import chrome as chrome_mod
 
@@ -71,13 +75,31 @@
                 ) from exc
             raise
 
-        self._context = await self._browser.new_context(
-            bypass_csp=True,
-            user_agent=(
+        os.makedirs(sheridan_storage_dir, mode=0o700, exist_ok=True)
+        context_args = {
+            "bypass_csp": True,
+            "user_agent": (
                 "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
                 "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
             ),
-        )
+        }
+        # Restore a previously saved Microsoft (Azure AD) session so reconnects
+        # complete via silent SSO instead of a fresh browser login.
+        if os.path.exists(sheridan_storage_path):
+            with open(sheridan_storage_path) as fh:
+                saved_state = json.load(fh)
+            # Only carry the Microsoft/Azure AD (IdP) session. Never restore the
+            # VPN gateway's own cookies — acSamlv2Token is single-use, and
+            # replaying it causes "Single sign-on AnyConnect token verification
+            # failure". Filtering here also self-heals an already-poisoned file.
+            saved_state["cookies"] = [
+                c
+                for c in saved_state.get("cookies", [])
+                if "sheridancollege.ca" not in c.get("domain", "")
+            ]
+            context_args["storage_state"] = saved_state
+
+        self._context = await self._browser.new_context(**context_args)
         self._page = await self._context.new_page()
         self._page.set_default_timeout(self.timeout)
 
@@ -98,13 +120,30 @@
             "https://vpn.sheridancollege.ca/+CSCOE+/saml/sp/login**",
             use_anyconnect_user_agent,
         )
-        return await original_authenticate_at(
+        result = await original_authenticate_at(
             self,
             url,
             credentials=credentials,
             final_url=final_url,
             token_cookie_name=token_cookie_name,
         )
+        # Persist the Microsoft session for next time (best-effort; never break
+        # the connection if saving fails). Contains sensitive cookies -> 0600.
+        # Drop the VPN gateway's cookies before saving: its acSamlv2Token is
+        # single-use, so persisting it would be replayed and rejected next time.
+        try:
+            saved_state = await self._context.storage_state()
+            saved_state["cookies"] = [
+                c
+                for c in saved_state.get("cookies", [])
+                if "sheridancollege.ca" not in c.get("domain", "")
+            ]
+            with open(sheridan_storage_path, "w") as fh:
+                json.dump(saved_state, fh)
+            os.chmod(sheridan_storage_path, 0o600)
+        except Exception:
+            pass
+        return result
 
 
     chrome_mod.ChromeBrowser.spawn = sheridan_spawn
@@ -187,12 +226,15 @@ in {
     blueman
     crispy-doom
     sqlitebrowser
-    isoimagewriter
+    # Qt6/KDE-Gear-6 build; the top-level Qt5 alias was removed in 26.05
+    kdePackages.isoimagewriter
+    # adb/fastboot; replaces the removed programs.adb module (26.05)
+    android-tools
 
     # Terminal
     neovim
     git
-    neofetch
+    fastfetch # neofetch was removed in 26.05 (unmaintained upstream)
     wget
     killall
     btop

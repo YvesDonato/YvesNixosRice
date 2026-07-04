@@ -12,6 +12,11 @@ in {
 
   programs.nixvim = {
     enable = true;
+    # Reuse the host pkgs for nixvim's plugin set: nixvim otherwise imports its
+    # own nixpkgs instance without our allowUnfree, which rejects the (since
+    # 26.05) unfree-flagged cmp-nvim-lsp-document-symbol. Also avoids a whole
+    # extra nixpkgs evaluation.
+    nixpkgs.pkgs = pkgs;
     enableMan = true;
     defaultEditor = true;
     viAlias = true;
@@ -21,9 +26,11 @@ in {
     extraPackages = [
       pkgs.clang-tools
       codelldbAdapter
-      # conform-nvim's only configured formatter; keep it explicit so
-      # format-on-save can't silently lose its binary.
-      pkgs.nodePackages.prettier
+      # conform-nvim's configured formatters; keep them explicit so
+      # format-on-save can't silently lose their binaries.
+      # (top-level attr since 26.05 removed the nodePackages set)
+      pkgs.prettier
+      pkgs-unstable.typstyle
     ];
 
     globals = {
@@ -63,18 +70,10 @@ in {
 
       treesitter = {
         enable = true;
-        settings = {
-          highlight = {
-            enable = true;
-            disable.__raw = ''
-              function(_, bufnr)
-                local max_filesize = 200 * 1024
-                local ok, stats = pcall((vim.uv or vim.loop).fs_stat, vim.api.nvim_buf_get_name(bufnr))
-                return ok and stats and stats.size > max_filesize
-              end
-            '';
-          };
-        };
+        # Native nixvim option (26.05). Its `disable` only takes language
+        # names, so the size-based opt-out lives in the large-file autocmd
+        # below (vim.treesitter.stop), matching the old disable-function.
+        highlight.enable = true;
       };
 
       which-key = {
@@ -224,6 +223,10 @@ in {
               "typescriptreact"
             ];
           };
+          tinymist = {
+            enable = true;
+            package = pkgs-unstable.tinymist;
+          };
           ts_ls.enable = true;
         };
       };
@@ -244,6 +247,7 @@ in {
             typescript = ["prettier"];
             "typescript.tsx" = ["prettier"];
             typescriptreact = ["prettier"];
+            typst = ["typstyle"];
           };
           format_on_save = {
             lsp_format = "never";
@@ -364,6 +368,20 @@ in {
     };
 
     extraConfigLua = ''
+      -- Force `.typ` files to the typst filetype so tinymist always attaches
+      -- (content-based detection can misfire on new/empty documents).
+      vim.filetype.add({ extension = { typ = "typst" } })
+
+      -- Disable treesitter highlighting on large files (the 26.05 native
+      -- treesitter option no longer accepts a disable function).
+      vim.api.nvim_create_autocmd("FileType", {
+        callback = function(args)
+          if vim.b[args.buf].large_file then
+            pcall(vim.treesitter.stop, args.buf)
+          end
+        end,
+      })
+
       vim.api.nvim_create_autocmd({ "BufReadPre", "FileReadPre" }, {
         callback = function(args)
           local max_filesize = 200 * 1024

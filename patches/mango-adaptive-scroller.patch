@@ -1,0 +1,118 @@
+--- a/src/layout/scroll.h
++++ b/src/layout/scroll.h
+@@ -326,6 +326,31 @@
+ 	int32_t max_client_width =
+ 		m->w.width - 2 * config.scroller_structs - cur_gappih;
+ 
++	/* adaptive: all clients fit at the default proportion -> lay them out
++	 * edge-to-edge with equal widths instead of scrolling */
++	if ((float)n_heads * config.scroller_default_proportion <= 1.0f) {
++		uint32_t available_width =
++			m->w.width - 2 * cur_gappoh - (n_heads - 1) * cur_gappih;
++		uint32_t equal_client_width = available_width / n_heads;
++		int32_t visible_right = m->w.x + m->w.width - cur_gappoh;
++		struct wlr_box target_geom;
++
++		target_geom.height = m->w.height - 2 * cur_gappov;
++		target_geom.x = m->w.x + cur_gappoh;
++		target_geom.y = m->w.y + cur_gappov;
++
++		for (int i = 0; i < n_heads; i++) {
++			target_geom.width = i == n_heads - 1
++									? visible_right - target_geom.x
++									: (int32_t)equal_client_width;
++			arrange_stack_node(heads[i], target_geom, cur_gappiv);
++			target_geom.x += target_geom.width + cur_gappih;
++		}
++
++		sync_scroller_state_to_clients(m, tag);
++		return;
++	}
++
+ 	/* 单客户端特例 */
+ 	if (n_heads == 1 && !scroller_ignore_proportion_single &&
+ 		!heads[0]->client->isfullscreen &&
+@@ -461,13 +486,18 @@
+ 							  config.scroller_structs);
+ 			}
+ 		} else {
+-			target_geom.x =
+-				root_client->geom.x > m->w.x + (m->w.width) / 2
+-					? m->w.x + (m->w.width -
+-								heads[focus_index]->scroller_proportion *
+-									max_client_width -
+-								config.scroller_structs)
+-					: m->w.x + config.scroller_structs;
++			/* adaptive: clamp the focused client into the visible area
++			 * instead of snapping it to a screen edge */
++			int32_t visible_left = m->w.x + config.scroller_structs;
++			int32_t visible_right =
++				m->w.x + m->w.width - config.scroller_structs;
++
++			target_geom.x = root_client->geom.x;
++			if (target_geom.x < visible_left) {
++				target_geom.x = visible_left;
++			} else if (target_geom.x + target_geom.width > visible_right) {
++				target_geom.x = visible_right - target_geom.width;
++			}
+ 		}
+ 		horizontal_check_scroller_root_inside_mon(heads[focus_index]->client,
+ 												  &target_geom);
+@@ -549,6 +579,31 @@
+ 	int32_t max_client_height =
+ 		m->w.height - 2 * config.scroller_structs - cur_gappiv;
+ 
++	/* adaptive: all clients fit at the default proportion -> lay them out
++	 * edge-to-edge with equal heights instead of scrolling */
++	if ((float)n_heads * config.scroller_default_proportion <= 1.0f) {
++		uint32_t available_height =
++			m->w.height - 2 * cur_gappov - (n_heads - 1) * cur_gappiv;
++		uint32_t equal_client_height = available_height / n_heads;
++		int32_t visible_bottom = m->w.y + m->w.height - cur_gappov;
++		struct wlr_box target_geom;
++
++		target_geom.width = m->w.width - 2 * cur_gappoh;
++		target_geom.x = m->w.x + cur_gappoh;
++		target_geom.y = m->w.y + cur_gappov;
++
++		for (int i = 0; i < n_heads; i++) {
++			target_geom.height = i == n_heads - 1
++									 ? visible_bottom - target_geom.y
++									 : (int32_t)equal_client_height;
++			arrange_stack_vertical_node(heads[i], target_geom, cur_gappih);
++			target_geom.y += target_geom.height + cur_gappiv;
++		}
++
++		sync_scroller_state_to_clients(m, tag);
++		return;
++	}
++
+ 	if (n_heads == 1 && !scroller_ignore_proportion_single &&
+ 		!heads[0]->client->isfullscreen &&
+ 		!heads[0]->client->ismaximizescreen) {
+@@ -683,13 +738,18 @@
+ 							  config.scroller_structs);
+ 			}
+ 		} else {
+-			target_geom.y =
+-				root_client->geom.y > m->w.y + (m->w.height) / 2
+-					? m->w.y + (m->w.height -
+-								heads[focus_index]->scroller_proportion *
+-									max_client_height -
+-								config.scroller_structs)
+-					: m->w.y + config.scroller_structs;
++			/* adaptive: clamp the focused client into the visible area
++			 * instead of snapping it to a screen edge */
++			int32_t visible_top = m->w.y + config.scroller_structs;
++			int32_t visible_bottom =
++				m->w.y + m->w.height - config.scroller_structs;
++
++			target_geom.y = root_client->geom.y;
++			if (target_geom.y < visible_top) {
++				target_geom.y = visible_top;
++			} else if (target_geom.y + target_geom.height > visible_bottom) {
++				target_geom.y = visible_bottom - target_geom.height;
++			}
+ 		}
+ 		vertical_check_scroller_root_inside_mon(heads[focus_index]->client,
+ 												&target_geom);

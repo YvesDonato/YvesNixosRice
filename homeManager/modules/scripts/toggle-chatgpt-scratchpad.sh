@@ -138,7 +138,9 @@ toggle_hyprland() {
 }
 
 toggle_mango() {
-	mmsg -s -d "toggle_named_scratchpad,zen-beta,^ChatGPT,$browser --new-window $url"
+	# mango 0.14 mmsg CLI: `dispatch <func>,args` replaces `-s -d`, and
+	# `get focusing-client` returns JSON instead of the old key-value dump.
+	mmsg dispatch "toggle_named_scratchpad,zen-beta,^ChatGPT,$browser --new-window $url"
 
 	for _ in $(seq 1 60); do
 		local appid=""
@@ -146,15 +148,15 @@ toggle_mango() {
 		local status=""
 		local title=""
 
-		status="$(mmsg -g 2>/dev/null || true)"
+		status="$(mmsg get focusing-client 2>/dev/null || true)"
 		if [ -z "$status" ]; then
 			sleep 0.1
 			continue
 		fi
 
-		appid="$(printf '%s\n' "$status" | awk '/ appid / { sub(/^.* appid /, ""); print; exit }')"
-		title="$(printf '%s\n' "$status" | awk '/ title / { sub(/^.* title /, ""); print; exit }')"
-		floating="$(printf '%s\n' "$status" | awk '/ floating / { sub(/^.* floating /, ""); print; exit }')"
+		appid="$(printf '%s' "$status" | grep -oE '"appid":"[^"]*"' | cut -d'"' -f4)"
+		title="$(printf '%s' "$status" | grep -oE '"title":"[^"]*"' | cut -d'"' -f4)"
+		floating="$(printf '%s' "$status" | grep -oE '"is_floating":(true|false)' | cut -d: -f2)"
 
 		# Empty fields mean mmsg's output format changed; don't match on them.
 		if [ -z "$appid" ]; then
@@ -163,8 +165,8 @@ toggle_mango() {
 		fi
 
 		if [ "$appid" = "zen-beta" ] && [[ "$title" == ChatGPT* ]]; then
-			if [ "$floating" != "1" ]; then
-				mmsg -s -d "toggle_named_scratchpad,zen-beta,^ChatGPT,$browser --new-window $url"
+			if [ "$floating" != "true" ]; then
+				mmsg dispatch "toggle_named_scratchpad,zen-beta,^ChatGPT,$browser --new-window $url"
 			fi
 			return 0
 		fi
