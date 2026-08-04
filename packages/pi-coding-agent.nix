@@ -9,21 +9,21 @@
   # On a version bump, update `version`, `hash`, `npmDepsHash`, and these
   # integrities (copy from https://registry.npmjs.org/@earendil-works/<name>/<version>).
   workspaceDepIntegrities = {
-    pi-agent-core = "sha512-LHygOgsW2pgXKb3IkXkOAeZPovHr9VF+EixgXVsDNuB4jmhEOXgshy/zksZ7slkUAx10OQ9W1Ed/2jsnhd1NqA==";
-    pi-ai = "sha512-zf1F5kXk1pqZeFShXOqq9ibUk8QdtRoLCDPAjO+hj44e3EUs9/GFO2qnhTC5+JA2uwVCx+WCNe1PiCjlBYWm5w==";
-    pi-tui = "sha512-LkXUM1/49pvzzeI39Y5wjBMlgafcCf67HCLhB9Z7yuXHy4XgT+VqxWcZVW5hBdhQsHZd0znjJotfGH1BzxMfiA==";
+    pi-agent-core = "sha512-Lvn89ko42h5ETUb6Z0Ku6ldskEqXaTdQBYvSa0+7bdG9V6rUEpXptv5e0OVZ1HDcvi8s6/2lGCQWsxKX+DFHNw==";
+    pi-ai = "sha512-7xfLk8sANBp+bpPEbjoOZTbPxsa+++b1JXAoSJsNa3vbs9AHHEclmvg54XLQcxH+fuwaeti/g2jeIfJ+mVYLpA==";
+    pi-tui = "sha512-bSuzS4EVSqEPj/Qr/p9eqCESfKsGuDNbl77EGci8Iaqqt/C/XCBZL1MjXaxSWW1NsT5afjp/Cb0NTPzOLv/aPA==";
   };
 in
   buildNpmPackage rec {
     pname = "pi-coding-agent";
-    version = "0.75.5";
+    version = "0.80.6";
 
     src = fetchurl {
       url = "https://registry.npmjs.org/@earendil-works/pi-coding-agent/-/pi-coding-agent-${version}.tgz";
-      hash = "sha256-iP/3TR/MkzQ+g5qoherLNeiM2quX2sJjaxG+zDskmfw=";
+      hash = "sha256-KndjRkCy2G2Q0kCHu2dVns8jZuD7UqQsVe7UFhR9pBE=";
     };
 
-    npmDepsHash = "sha256-GZtl7v1xfBgFgXST/aJem5RI4+sffdSnJJX7OMBe4tY=";
+    npmDepsHash = "sha256-93ZdpMsvMSiLTeMbpp89zdbi1J5zeSgoj51o7eZtdyk=";
 
     nodejs = nodejs_22;
     dontNpmBuild = true;

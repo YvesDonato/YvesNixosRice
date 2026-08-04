@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   pkgs-unstable,
   ...
@@ -12,6 +13,8 @@
       pkgs-unstable.zellij
       pkgs.zathura
       pkgs.coreutils
+      pkgs.jq
+      config.programs.nixvim.build.package
     ];
     text = ''
       if [ "$#" -ne 1 ]; then
@@ -42,14 +45,15 @@
       # filename, so generate a temp layout with the path baked in.
       layout="$(mktemp --suffix=.kdl)"
       trap 'rm -f "$layout"' EXIT
+      src_kdl="$(printf '%s' "$src" | jq -Rs .)"
       cat > "$layout" <<KDL
       layout {
           pane split_direction="horizontal" {
               pane command="nvim" focus=true {
-                  args "$src"
+                  args $src_kdl
               }
               pane command="typst" size="20%" {
-                  args "watch" "$src"
+                  args "watch" $src_kdl
               }
           }
       }

@@ -47,13 +47,4 @@ in
       hyprlock
       inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
-
-    # Security
-    security = {
-      pam.services.swaylock = {
-        text = ''
-          auth include login
-        '';
-      };
-    };
   }

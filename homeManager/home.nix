@@ -7,7 +7,10 @@
   desktopWindowManager,
   ...
 }: let
-  mangowcPatched = pkgs-unstable.callPackage ../packages/mango-patched.nix {};
+  system = pkgs.stdenv.hostPlatform.system;
+  mangowcPatched = pkgs-unstable.callPackage ../packages/mango-patched.nix {
+    mango = inputs.mango.packages.${system}.default;
+  };
   quickshellRuntimePath =
     (lib.makeBinPath ((with pkgs; [
         acpi
@@ -19,6 +22,7 @@
       ])
       ++ [mangowcPatched]))
     + ":/run/current-system/sw/bin:/etc/profiles/per-user/yvesd/bin:${config.home.profileDirectory}/bin";
+  wlopm = lib.getExe pkgs.wlopm;
 in {
   assertions = [
     {
@@ -33,7 +37,8 @@ in {
     ./modules/nixvim.nix
     ./modules/typst.nix
     ./modules/herdr.nix
-    ./modules/zen-scoped.nix
+    ./modules/scripts.nix
+    ./modules/helium-scoped.nix
     # ./modules/helix.nix
     # ./modules/zed-editor.nix
   ];
@@ -227,16 +232,18 @@ in {
       name = "Adwaita-dark";
       package = pkgs.gnome-themes-extra;
     };
-    # 26.05 changed the default to null; keep applying the theme to GTK4 apps.
-    gtk4.theme = config.gtk.theme;
+    gtk4.theme = null;
   };
 
   qt = {
     enable = true;
-    platformTheme.name = "Adwaita-dark";
+    platformTheme.name = "adwaita";
     style = {
-      name = "Adwaita-dark";
-      package = pkgs.adwaita-qt;
+      name = "adwaita-dark";
+      package = [
+        pkgs.adwaita-qt
+        pkgs.adwaita-qt6
+      ];
     };
   };
 
@@ -250,25 +257,19 @@ in {
 
       Service = {
         ExecStart = "${inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/quickshell";
-        Environment =
-          [
-            "PATH=${quickshellRuntimePath}"
-            "QT_QPA_PLATFORM=wayland"
-            "XDG_CURRENT_DESKTOP=${
-              if desktopWindowManager == "mango"
-              then "mango"
-              else "Hyprland"
-            }"
-            "XDG_SESSION_DESKTOP=${desktopWindowManager}"
-            "XDG_SESSION_TYPE=wayland"
-          ]
-          ++ lib.optionals (desktopWindowManager == "mango") [
-            "WAYLAND_DISPLAY=wayland-0"
-          ];
+        Environment = [
+          "PATH=${quickshellRuntimePath}"
+          "QT_QPA_PLATFORM=wayland"
+          "XDG_CURRENT_DESKTOP=${
+            if desktopWindowManager == "mango"
+            then "mango"
+            else "Hyprland"
+          }"
+          "XDG_SESSION_DESKTOP=${desktopWindowManager}"
+          "XDG_SESSION_TYPE=wayland"
+        ];
         Restart = "on-failure";
         RestartSec = 2;
-        MemoryHigh = "512M";
-        MemoryMax = "1G";
       };
 
       Install = {
@@ -308,37 +309,55 @@ in {
         if desktopWindowManager == "hyprland"
         then {
           general = {
-            before_sleep_cmd = "qs ipc call lock locked true";
+            before_sleep_cmd = "session-lock";
             after_sleep_cmd = "sleep 0.5; hyprctl dispatch dpms on";
             ignore_dbus_inhibit = false;
             ignore_systemd_inhibit = false;
-            lock_cmd = "qs ipc call lock locked true";
+            lock_cmd = "session-lock";
           };
 
           listener = [
             {
               timeout = 1800;
-              on-timeout = "qs ipc call lock locked true";
+              on-timeout = "session-lock";
             }
             {
               timeout = 1810;
               on-timeout = "hyprctl dispatch dpms off";
               on-resume = "hyprctl dispatch dpms on";
             }
+            {
+              # Battery-only: on AC the machine stays up for long jobs, matching
+              # HandleLidSwitchExternalPower = "ignore".
+              timeout = 2700;
+              on-timeout = "sh -c '[ \"$(cat /sys/class/power_supply/ADP0/online)\" = 0 ] && systemctl suspend'";
+            }
           ];
         }
         else {
           general = {
-            before_sleep_cmd = "qs ipc call lock locked true";
+            before_sleep_cmd = "session-lock";
+            after_sleep_cmd = "sleep 0.5; ${wlopm} --on '*'";
             ignore_dbus_inhibit = false;
             ignore_systemd_inhibit = false;
-            lock_cmd = "qs ipc call lock locked true";
+            lock_cmd = "session-lock";
           };
 
           listener = [
             {
               timeout = 1800;
-              on-timeout = "qs ipc call lock locked true";
+              on-timeout = "session-lock";
+            }
+            {
+              timeout = 1810;
+              on-timeout = "${wlopm} --off '*'";
+              on-resume = "${wlopm} --on '*'";
+            }
+            {
+              # Battery-only: on AC the machine stays up for long jobs, matching
+              # HandleLidSwitchExternalPower = "ignore".
+              timeout = 2700;
+              on-timeout = "sh -c '[ \"$(cat /sys/class/power_supply/ADP0/online)\" = 0 ] && systemctl suspend'";
             }
           ];
         };
@@ -380,7 +399,6 @@ in {
         background-blur = false;
         copy-on-select = true;
         keybind = [
-          "ctrl+v=paste_from_clipboard"
           "ctrl+y=copy_to_clipboard"
           "ctrl+1=decrease_font_size:1"
           "ctrl+2=increase_font_size:1"

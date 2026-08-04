@@ -29,7 +29,7 @@ in {
       # conform-nvim's configured formatters; keep them explicit so
       # format-on-save can't silently lose their binaries.
       # (top-level attr since 26.05 removed the nodePackages set)
-      pkgs.prettier
+      pkgs-unstable.prettier
       pkgs-unstable.typstyle
     ];
 
@@ -233,7 +233,6 @@ in {
 
       conform-nvim = {
         enable = true;
-        autoInstall.enable = true;
         settings = {
           formatters_by_ft = {
             css = ["prettier"];

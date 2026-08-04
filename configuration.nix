@@ -43,8 +43,16 @@
     # Out-of-tree module; without this v4l2loopback never gets built and
     # systemd-modules-load fails on every boot.
     extraModulePackages = [config.boot.kernelPackages.v4l2loopback];
-    # High swappiness is the recommended pairing for zstd zram swap.
-    kernel.sysctl."vm.swappiness" = 180;
+    kernel.sysctl = {
+      # High swappiness is the recommended pairing for zstd zram swap.
+      "vm.swappiness" = 180;
+      # Default 3 = 8-page readahead per swap-in, which multiplies cost on both
+      # swap tiers at this swappiness. 0 is the standard zram pairing.
+      "vm.page-cluster" = 0;
+      # Restores Alt+SysRq+f (manual OOM kill) and REISUB as a hang escape hatch;
+      # the default 16 leaves neither available.
+      "kernel.sysrq" = 1;
+    };
   };
 
   hardware = {
@@ -78,14 +86,13 @@
     bluetooth.enable = true; # enables support for Bluetooth
     bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
     xpadneo.enable = true;
-    opentabletdriver.enable = true;
     uinput.enable = true;
   };
 
   services = {
     blueman.enable = true;
     printing.enable = true;
-    passSecretService.enable = true;
+    passSecretService.enable = false;
     gnome.gnome-keyring.enable = true;
     displayManager.gdm.enable = true;
     displayManager.autoLogin.enable = true;
@@ -104,7 +111,9 @@
 
     logind = {
       settings.Login = {
-        HandleLidSwitch = "ignore";
+        HandleLidSwitch = "suspend";
+        # On AC or docked the lid stays a no-op on purpose: long jobs keep
+        # running with the laptop closed.
         HandleLidSwitchDocked = "ignore";
         HandleLidSwitchExternalPower = "ignore";
       };
@@ -150,6 +159,25 @@
 
     asusd = {
       enable = true;
+    };
+
+    # asusd owns the ACPI platform profile and leaves it at `performance`, which
+    # pins amd-pstate EPP to performance on all 16 cores even on battery. tlp was
+    # already installed as a package with no service; enable it so AC and battery
+    # actually differ. Profile choices on this box: quiet balanced performance.
+    tlp = {
+      enable = true;
+      settings = {
+        CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+        CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+        PLATFORM_PROFILE_ON_AC = "performance";
+        PLATFORM_PROFILE_ON_BAT = "balanced";
+        # nvidia's own udev rules already set power/control=auto on 01:00.0;
+        # keep tlp out of it so the two don't fight over RTD3.
+        RUNTIME_PM_DENYLIST = "01:00.0";
+        # USB autosuspend breaks HID/dongles more often than it saves power.
+        USB_AUTOSUSPEND = 0;
+      };
     };
   };
 
@@ -218,6 +246,12 @@
       enable = true;
       enableRootSlice = true;
       enableUserSlices = true;
+      # oomd's default SwapUsedLimit=90% is 90% of TOTAL swap. Adding the 32 GiB
+      # disk tier raised the trigger from 16.5 GiB to 45.3 GiB of 50.3 GiB, so the
+      # machine had to fully thrash NVMe before oomd acted (journal, Jul 24).
+      # 45% ~= 22.6 GiB, just past zram's 18.3 GiB.
+      # (systemd.oomd.extraConfig was renamed to settings.OOM in 26.05.)
+      settings.OOM.SwapUsedLimit = "45%";
     };
   };
 
@@ -230,6 +264,9 @@
       gdm-password.enableGnomeKeyring = true;
       gdm-autologin.enableGnomeKeyring = true;
       hyprlock = {};
+      swaylock.text = ''
+        auth include login
+      '';
     };
     polkit.enable = true;
     rtkit.enable = true;
@@ -242,6 +279,11 @@
         "flakes"
       ];
       trusted-users = ["root" "yvesd"];
+      # 4 jobs x 4 cores = 16 threads, matching the thread count. Unset this and
+      # nix runs max-jobs=auto (16) x cores=0 (16) = 256 concurrent compilers,
+      # which is how this host has hard-locked under parallel load.
+      max-jobs = 4;
+      cores = 4;
     };
     extraOptions = ''
       extra-substituters = https://devenv.cachix.org
@@ -259,14 +301,14 @@
       "wheel"
       "kvm"
       "adbusers"
-      "docker"
+      "dialout"
     ];
     shell = pkgs.nushell;
   };
 
   environment.variables = {
     EDITOR = "nvim";
-    BROWSER = "zen-beta";
+    BROWSER = "helium";
     TERMINAL = "ghostty";
   };
 
@@ -294,19 +336,6 @@
   virtualisation.spiceUSBRedirection.enable = true;
   users.extraGroups.vboxusers.members = ["yvesd"];
 
-  virtualisation.docker = {
-    enable = true;
-    package = pkgs.docker_29;
-    autoPrune = {
-      enable = true;
-      dates = "weekly";
-      flags = [
-        "--all"
-        "--filter=until=168h"
-      ];
-    };
-  };
-
   # programs.adb was removed in 26.05 (systemd handles uaccess rules now);
   # android-tools in systemPackages provides the adb command instead.
 
@@ -332,13 +361,14 @@
   # Garbage collector
   nix.gc = {
     automatic = true;
-    dates = "weekly";
+    dates = "Sun 03:00";
     options = "--delete-older-than 7d";
   };
 
   # Scheduled hard-link dedup of the store (cheaper than auto-optimise-store,
   # which would slow every build).
   nix.optimise.automatic = true;
+  nix.optimise.dates = ["Sun 04:00"];
 
   system.stateVersion = "25.11";
 }

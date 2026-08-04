@@ -13,13 +13,19 @@
     };
 
     # Hyprland
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "github:hyprwm/Hyprland/v0.55.0";
 
-    # Zen Browser
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
+    # Mango
+    mango = {
+      url = "github:mangowm/mango/0.15.1";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
+    # Helium Browser — upstream ships no flake and it isn't in nixpkgs yet, so
+    # this is a community wrapper over the imputnet/helium-linux releases.
+    helium = {
+      url = "github:oxcl/nix-flake-helium-browser";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     # Coding harnesses

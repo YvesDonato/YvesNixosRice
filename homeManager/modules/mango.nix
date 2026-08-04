@@ -2,11 +2,19 @@
   lib,
   pkgs,
   pkgs-unstable,
+  inputs,
   desktopWindowManager,
   ...
 }: let
-  mangowcPatched = pkgs-unstable.callPackage ../../packages/mango-patched.nix {};
-  shell = "${pkgs.bash}/bin/sh";
+  system = pkgs.stdenv.hostPlatform.system;
+  mangowcPatched = pkgs-unstable.callPackage ../../packages/mango-patched.nix {
+    mango = inputs.mango.packages.${system}.default;
+  };
+  systemdRun = lib.getExe' pkgs.systemd "systemd-run";
+  vesktop = lib.getExe pkgs-unstable.vesktop;
+  spotify = lib.getExe pkgs-unstable.spotify;
+  ghostty = lib.getExe pkgs-unstable.ghostty;
+  herdr = lib.getExe inputs.herdr.packages.${system}.default;
   wlrRandr = lib.getExe pkgs.wlr-randr;
   laptopOutput = "eDP-1";
   laptopMode = "2560x1600@165.002Hz";
@@ -14,14 +22,8 @@
   laptopScale = "1.333333";
   enableLaptopPanel = "${wlrRandr} --output ${laptopOutput} --on --mode ${laptopMode} --pos ${laptopPosition} --scale ${laptopScale}";
   restoreMonitors = "${wlrRandr} --output DP-2 --mode 3440x1440@143.975Hz --pos 0,0 --scale 1 --output ${laptopOutput} --on --mode ${laptopMode} --pos ${laptopPosition} --scale ${laptopScale}";
-  applyLidState = "/home/yvesd/.config/mango/apply-lid-state.sh";
-  autostartScript = "/home/yvesd/.config/mango/autostart.sh";
-  lidSwitchWatcher = "/home/yvesd/.config/mango/lid-switch-watch.sh";
   mmsg = "${mangowcPatched}/bin/mmsg";
-  qs = "/run/current-system/sw/bin/qs";
-  chatgptScratchpad = "/home/yvesd/nixos/homeManager/modules/scripts/toggle-chatgpt-scratchpad.sh";
-  sleep = "${pkgs.coreutils}/bin/sleep";
-  runtimePath = lib.makeBinPath [pkgs.bash pkgs.coreutils mangowcPatched pkgs.wlr-randr];
+  qs = "qs";
   mangoScrollerMinProportion = "0.333333";
   mangoCycleLayouts = [
     "scroller"
@@ -65,12 +67,199 @@
     "fair"
     "vertical_fair"
   ];
-  cycleAllLayouts = "/home/yvesd/.config/mango/cycle-all-layouts.sh";
   unsupportedMangoCycleLayouts = lib.filter (layout: !(builtins.elem layout mangoSupportedLayouts)) mangoCycleLayouts;
   mangoCycleLayoutConfig = lib.concatStringsSep "," mangoCycleLayouts;
 
+  mangoRestoreMonitors = pkgs.writeShellApplication {
+    name = "mango-restore-monitors";
+    runtimeInputs = [
+      mangowcPatched
+      pkgs.wlr-randr
+    ];
+    text = ''
+      ${restoreMonitors}
+      mmsg dispatch reload_config
+    '';
+  };
+
+  mangoCycleAllLayouts = pkgs.writeShellApplication {
+    name = "mango-cycle-all-layouts";
+    runtimeInputs = [
+      pkgs.jq
+      mangowcPatched
+    ];
+    text = ''
+      # Super+Shift+Tab cycles all built-in layouts. mangoAllLayouts mirrors
+      # Mango's layouts[] order and layout_index is zero-based.
+      layouts=(${lib.concatMapStringsSep " " (layout: lib.escapeShellArg layout) mangoAllLayouts})
+      count="''${#layouts[@]}"
+      idx="$(mmsg get all-monitors | jq -er '
+        first(
+          .monitors[]?
+          | select(.active == true)
+          | .layout_index
+          | select(type == "number")
+        )
+      ')"
+      next=$(((idx + 1) % count))
+      exec mmsg dispatch "setlayout,''${layouts[$next]}"
+    '';
+  };
+
+  mangoApplyLidState = pkgs.writeShellApplication {
+    name = "mango-apply-lid-state";
+    runtimeInputs = [
+      mangowcPatched
+      pkgs.wlr-randr
+    ];
+    text = ''
+      state="''${1:-}"
+
+      case "$state" in
+        closed)
+          ${wlrRandr} --output ${laptopOutput} --off || mmsg dispatch disable_monitor,${laptopOutput} || true
+          ;;
+        open)
+          ${enableLaptopPanel} || mmsg dispatch enable_monitor,${laptopOutput} || true
+          ;;
+        *)
+          printf 'usage: %s open|closed\n' "$0" >&2
+          exit 2
+          ;;
+      esac
+    '';
+  };
+
+  mangoLidSwitchWatch = pkgs.writeShellApplication {
+    name = "mango-lid-switch-watch";
+    runtimeInputs = [
+      pkgs.coreutils
+      mangoApplyLidState
+    ];
+    text = ''
+      lid_state_path="''${LID_STATE_PATH:-}"
+
+      if [ -z "$lid_state_path" ]; then
+        for candidate in /proc/acpi/button/lid/*/state; do
+          if [ -r "$candidate" ]; then
+            lid_state_path="$candidate"
+            break
+          fi
+        done
+      fi
+
+      if [ -z "$lid_state_path" ] || [ ! -r "$lid_state_path" ]; then
+        printf 'No readable ACPI lid state file found\n' >&2
+        exit 0
+      fi
+
+      read_lid_state() {
+        local line
+        IFS= read -r line <"$lid_state_path" || {
+          printf 'unknown\n'
+          return
+        }
+
+        case "$line" in
+          *closed*) printf 'closed\n' ;;
+          *open*) printf 'open\n' ;;
+          *) printf 'unknown\n' ;;
+        esac
+      }
+
+      last_state="$(read_lid_state)"
+      if [ "$last_state" = "closed" ]; then
+        mango-apply-lid-state closed
+      fi
+
+      while :; do
+        state="$(read_lid_state)"
+        if [ "$state" != "$last_state" ]; then
+          case "$state" in
+            open | closed) mango-apply-lid-state "$state" ;;
+          esac
+          last_state="$state"
+        fi
+        sleep 1
+      done
+    '';
+  };
+
+  mangoHerdr = pkgs.writeShellApplication {
+    name = "mango-herdr";
+    runtimeInputs = [
+      pkgs.coreutils
+      pkgs.jq
+      pkgs.util-linux
+      mangowcPatched
+    ];
+    text = ''
+      mode="''${1:-open}"
+      case "$mode" in
+        open | preload) ;;
+        *)
+          printf 'usage: %s open|preload\n' "$0" >&2
+          exit 2
+          ;;
+      esac
+
+      lock_file="''${XDG_RUNTIME_DIR:-/run/user/$(id -u)}/mango-herdr.lock"
+      exec 9>"$lock_file"
+      flock 9
+
+      clients="$(mmsg get all-clients)"
+      if ! jq -e 'any(.clients[]?; .appid == "com.yvesd.herdr")' <<<"$clients" >/dev/null; then
+        ${systemdRun} --user --scope --quiet --collect -- ${ghostty} --class=com.yvesd.herdr -e ${herdr} 9>&- </dev/null >/dev/null &
+      fi
+
+      for _ in {1..100}; do
+        if mmsg get all-clients | jq -e 'any(.clients[]?; .appid == "com.yvesd.herdr" and ((.tags // []) | index(11) != null))' >/dev/null; then
+          if [ "$mode" = "open" ]; then
+            exec mmsg dispatch view,11,0
+          fi
+          exit 0
+        fi
+        sleep 0.1
+      done
+
+      printf 'Timed out waiting for Herdr on Mango tag 11\n' >&2
+      exit 1
+    '';
+  };
+
+  mangoSessionStart = pkgs.writeShellApplication {
+    name = "mango-session-start";
+    runtimeInputs = [
+      pkgs.dbus
+      pkgs.systemd
+    ];
+    text = ''
+      export XDG_CURRENT_DESKTOP="''${XDG_CURRENT_DESKTOP:-mango}"
+      export XDG_SESSION_DESKTOP="''${XDG_SESSION_DESKTOP:-mango}"
+      export XDG_SESSION_TYPE="''${XDG_SESSION_TYPE:-wayland}"
+      export QT_QPA_PLATFORM="''${QT_QPA_PLATFORM:-wayland}"
+
+      variables=()
+      for variable in DISPLAY QT_QPA_PLATFORM WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE; do
+        if [[ -v "$variable" ]]; then
+          variables+=("$variable")
+        fi
+      done
+
+      if ((''${#variables[@]} > 0)); then
+        systemctl --user import-environment "''${variables[@]}"
+        dbus-update-activation-environment --systemd "''${variables[@]}"
+      fi
+
+      # graphical-session.target refuses direct manual starts. Starting the
+      # compositor target pulls it in through BindsTo, as Home Manager's
+      # native Hyprland integration does.
+      systemctl --user start mango-session.target
+    '';
+  };
+
   mangoConfig = ''
-    # Generated by /home/yvesd/nixos/homeManager/modules/mango.nix
+    # Generated by the Home Manager Mango module.
 
     # Window effects
     blur=0
@@ -151,19 +340,23 @@
     overlaycolor=0x14a57cff
 
     # Monitor layout mirrors homeManager/modules/hyprland/monitors.nix.
-    # mango 0.14 key:value format; layout now comes from the tagrules below.
-    monitorrule=name:DP-2,scale:1,x:0,y:0,width:3440,height:1440,refresh:174.963
+    # Mango monitor rule key:value format; layout comes from the tagrules below.
+    # VRR remains intentionally disabled.
+    monitorrule=name:DP-2,scale:1,x:0,y:0,width:3440,height:1440,refresh:143.975,vrr:0
     monitorrule=name:eDP-1,scale:1.333333,x:3440,y:0,width:2560,height:1600,refresh:165.002
 
-    # mango 0.14 no longer runs ~/.config/mango/autostart.sh by convention;
-    # exec-once replaces it (starts quickshell + user services).
-    exec-once=${autostartScript}
+    # Mango no longer runs ~/.config/mango/autostart.sh by convention;
+    # exec-once replaces it (starts quickshell + user services and desktop apps).
+    exec-once=${lib.getExe mangoSessionStart}
+    exec-once=${systemdRun} --user --scope --quiet --collect -- ${vesktop}
+    exec-once=${systemdRun} --user --scope --quiet --collect -- ${spotify}
+    exec-once=${lib.getExe mangoHerdr} preload
 
     # Closing disables the laptop panel; opening reenables it. A user service
     # also watches the ACPI lid state because Mango switch events can be
     # unreliable on this host.
-    switchbind=fold,spawn,${applyLidState} closed
-    switchbind=unfold,spawn,${applyLidState} open
+    switchbind=fold,spawn,${lib.getExe mangoApplyLidState} closed
+    switchbind=unfold,spawn,${lib.getExe mangoApplyLidState} open
 
     # Tags use Mango's scroller layout to approximate the current Hyprland scrolling layout.
     tagrule=id:1,layout_name:scroller
@@ -176,39 +369,42 @@
     tagrule=id:8,layout_name:scroller
     tagrule=id:9,layout_name:scroller
     tagrule=id:10,layout_name:scroller
+    tagrule=id:11,layout_name:scroller
 
     # Quickshell command palette: keep Super+A like Hyprland, but let Mango center it as a floating window.
     windowrule=title:Command Palette,isfloating:1,isnoborder:1,isoverlay:1,noswallow:1,width:720,height:560
-    windowrule=appid:zen-beta,title:^ChatGPT,isfloating:1,isnamedscratchpad:1,noswallow:1,width:1400,height:1100
+    windowrule=appid:vesktop,tags:9,istagsilent:1
+    windowrule=appid:spotify,tags:10,istagsilent:1
+    windowrule=appid:com.yvesd.herdr,tags:11,istagsilent:1
 
     # Core bindings
     bind=SUPER,r,reload_config
     bind=SUPER,comma,spawn,${qs} ipc call hints toggle
-    bind=SUPER,g,spawn,bash /home/yvesd/nixos/homeManager/modules/scripts/lights.bash
+    bind=SUPER,g,spawn,govee-toggle
     bind=SUPER+SHIFT,g,spawn,${qs} ipc call lights toggle
-    bind=SUPER,t,spawn,ghostty -e herdr
+    bind=SUPER,t,spawn,${lib.getExe mangoHerdr} open
     bind=SUPER,q,killclient,
     bind=SUPER,e,spawn,ghostty -e yazi
     bind=SUPER,w,togglefloating,
     bind=SUPER,a,spawn,${qs} ipc call command-palette toggle
 
     # Browser and app bindings
-    bind=SUPER,f,spawn,zen-scoped
-    bind=SUPER,h,spawn_shell,zen-scoped --private-window; ${qs} ipc call hints visable 0
-    bind=SUPER,y,spawn,zen-scoped --new-window https://www.youtube.com/feed/subscriptions
-    bind=SUPER,u,spawn,zen-scoped --new-window https://slate.sheridancollege.ca/d2l/login
+    bind=SUPER,f,spawn,helium-scoped
+    bind=SUPER,h,spawn_shell,helium-scoped --incognito; ${qs} ipc call hints visable 0
+    bind=SUPER,y,spawn,helium-scoped --new-window https://www.youtube.com/feed/subscriptions
+    bind=SUPER,u,spawn,helium-scoped --new-window https://slate.sheridancollege.ca/d2l/login
     bind=SUPER+SHIFT,d,spawn,linuxmis
     bind=SUPER,d,spawn,linuxmis stream yves desktop
 
     # Shell companion actions
-    bind=SUPER,b,spawn,${chatgptScratchpad}
     bind=SUPER,c,spawn,${qs} ipc call zellij-sessions toggle
-    bind=SUPER,l,spawn,${qs} ipc call lock locked true
+    bind=SUPER,n,spawn,${qs} ipc call sidebar toggle
+    bind=SUPER,l,spawn,session-lock
     bind=SUPER,p,spawn_shell,grim -t png -g "$(slurp -d)" - | wl-copy -t image/png
 
     # Scroller layout approximations
     bind=SUPER,Tab,switch_layout
-    bind=SUPER+SHIFT,Tab,spawn,${cycleAllLayouts}
+    bind=SUPER+SHIFT,Tab,spawn,${lib.getExe mangoCycleAllLayouts}
     bind=SUPER,period,exchange_client,left
     bind=SUPER,slash,exchange_client,right
 
@@ -274,155 +470,23 @@ in
 
     xdg.configFile."mango/config.conf".text = mangoConfig;
 
-    xdg.configFile."mango/restore-monitors.sh" = {
-      executable = true;
-      text = ''
-        #!${shell}
-        set -eu
+    home.packages = [
+      mangoApplyLidState
+      mangoCycleAllLayouts
+      mangoHerdr
+      mangoLidSwitchWatch
+      mangoRestoreMonitors
+      mangoSessionStart
+    ];
 
-        export XDG_RUNTIME_DIR="''${XDG_RUNTIME_DIR:-/run/user/$(${pkgs.coreutils}/bin/id -u)}"
-        export WAYLAND_DISPLAY="''${WAYLAND_DISPLAY:-wayland-0}"
-
-        ${restoreMonitors}
-      '';
-    };
-
-    xdg.configFile."mango/cycle-all-layouts.sh" = {
-      executable = true;
-      text = ''
-        #!${shell}
-        set -eu
-
-        # Super+Shift+Tab: cycle through ALL built-in layouts (Super+Tab's
-        # switch_layout only cycles the curated circle_layout list). mmsg
-        # reports layout_index as a 0-based index into mango's layouts[]
-        # array; mangoAllLayouts mirrors that order.
-        layouts="${lib.concatStringsSep " " mangoAllLayouts}"
-        count=${toString (builtins.length mangoAllLayouts)}
-
-        state="$(${mmsg} get all-monitors)"
-        seg="$(printf '%s' "$state" | ${pkgs.coreutils}/bin/tr "{" "\n" | ${pkgs.gnugrep}/bin/grep "\"active\":true" | ${pkgs.coreutils}/bin/head -n 1)"
-        idx="$(printf '%s' "$seg" | ${pkgs.gnugrep}/bin/grep -oE "\"layout_index\":[0-9]+" | ${pkgs.coreutils}/bin/head -n 1 | ${pkgs.coreutils}/bin/cut -d: -f2)"
-
-        if [ -z "$idx" ]; then
-          exit 1
-        fi
-
-        next=$(((idx + 1) % count))
-        i=0
-        for name in $layouts; do
-          if [ "$i" -eq "$next" ]; then
-            exec ${mmsg} dispatch "setlayout,$name"
-          fi
-          i=$((i + 1))
-        done
-      '';
-    };
-
-    xdg.configFile."mango/apply-lid-state.sh" = {
-      executable = true;
-      text = ''
-        #!${shell}
-        set -eu
-
-        export XDG_RUNTIME_DIR="''${XDG_RUNTIME_DIR:-/run/user/$(${pkgs.coreutils}/bin/id -u)}"
-        export WAYLAND_DISPLAY="''${WAYLAND_DISPLAY:-wayland-0}"
-
-        state="''${1:-}"
-
-        case "$state" in
-          closed)
-            ${wlrRandr} --output ${laptopOutput} --off || ${mmsg} dispatch disable_monitor,${laptopOutput} || true
-            ;;
-          open)
-            ${enableLaptopPanel} || ${mmsg} dispatch enable_monitor,${laptopOutput} || true
-            ;;
-          *)
-            printf 'usage: %s open|closed\n' "$0" >&2
-            exit 2
-            ;;
-        esac
-      '';
-    };
-
-    xdg.configFile."mango/lid-switch-watch.sh" = {
-      executable = true;
-      text = ''
-        #!${shell}
-        set -eu
-
-        lid_state_path="''${LID_STATE_PATH:-}"
-
-        if [ -z "$lid_state_path" ]; then
-          for candidate in /proc/acpi/button/lid/*/state; do
-            if [ -r "$candidate" ]; then
-              lid_state_path="$candidate"
-              break
-            fi
-          done
-        fi
-
-        if [ -z "$lid_state_path" ] || [ ! -r "$lid_state_path" ]; then
-          printf 'No readable ACPI lid state file found\n' >&2
-          exit 0
-        fi
-
-        read_lid_state() {
-          IFS= read -r line <"$lid_state_path" || {
-            printf 'unknown\n'
-            return
-          }
-
-          case "$line" in
-            *closed*) printf 'closed\n' ;;
-            *open*) printf 'open\n' ;;
-            *) printf 'unknown\n' ;;
-          esac
-        }
-
-        last_state="$(read_lid_state)"
-
-        if [ "$last_state" = "closed" ]; then
-          ${applyLidState} closed
-        fi
-
-        while :; do
-          state="$(read_lid_state)"
-
-          if [ "$state" != "$last_state" ]; then
-            case "$state" in
-              open | closed)
-                ${applyLidState} "$state"
-                ;;
-            esac
-
-            last_state="$state"
-          fi
-
-          ${sleep} 1
-        done
-      '';
-    };
-
-    xdg.configFile."mango/autostart.sh" = {
-      executable = true;
-      text = ''
-        #!${shell}
-        set -eu
-
-        export XDG_CURRENT_DESKTOP="''${XDG_CURRENT_DESKTOP:-mango}"
-        export XDG_SESSION_DESKTOP="''${XDG_SESSION_DESKTOP:-mango}"
-        export XDG_SESSION_TYPE="''${XDG_SESSION_TYPE:-wayland}"
-        export WAYLAND_DISPLAY="''${WAYLAND_DISPLAY:-wayland-0}"
-        export QT_QPA_PLATFORM="''${QT_QPA_PLATFORM:-wayland}"
-
-        systemctl --user import-environment DISPLAY QT_QPA_PLATFORM WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE
-        if command -v dbus-update-activation-environment >/dev/null 2>&1; then
-          dbus-update-activation-environment --systemd DISPLAY QT_QPA_PLATFORM WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE
-        fi
-
-        systemctl --user start quickshell.service quickshell-notification-server.service mango-lid-switch.service
-      '';
+    systemd.user.targets.mango-session = {
+      Unit = {
+        Description = "Mango compositor session";
+        Documentation = ["man:systemd.special(7)"];
+        BindsTo = ["graphical-session.target"];
+        Wants = ["graphical-session-pre.target"];
+        After = ["graphical-session-pre.target"];
+      };
     };
 
     systemd.user.services.mango-lid-switch = {
@@ -433,17 +497,15 @@ in
       };
 
       Service = {
-        ExecStart = "${shell} ${lidSwitchWatcher}";
+        ExecStart = lib.getExe mangoLidSwitchWatch;
         # on-failure: the watcher exits 0 when no ACPI lid file exists; "always"
         # would crash-loop it into the start limit on such hosts.
         Restart = "on-failure";
         RestartSec = 2;
         Environment = [
-          "PATH=${runtimePath}"
           "XDG_CURRENT_DESKTOP=mango"
           "XDG_SESSION_DESKTOP=mango"
           "XDG_SESSION_TYPE=wayland"
-          "WAYLAND_DISPLAY=wayland-0"
         ];
       };
 

@@ -18,5 +18,5 @@ urlencode() {
 user_input=$(echo "" | rofi -dmenu -p " " -theme-str 'listview { enabled: false; }' || true)
 
 if [ -n "$user_input" ]; then
-	zen-beta --new-tab "https://chat.openai.com/?q=$(urlencode "$user_input")"
+	helium "https://chat.openai.com/?q=$(urlencode "$user_input")"
 fi

@@ -11,24 +11,24 @@ fi
 select=$(printf "Search\nPower\nWifi\nApp\nCodebox\n%s" "$headless" | rofi -dmenu -no-show-icons -theme-str 'inputbar { enabled: false; } listview {lines: 6;}' -p " " || true)
 
 case $select in "Power")
-	bash /home/yvesd/nixos/homeManager/modules/scripts/rofi/power-menu.sh
+	power-menu
 	;;
 "Wifi")
-	bash /home/yvesd/nixos/homeManager/modules/scripts/rofi/wifi-menu.sh
+	wifi-menu
 	;;
 "Search")
-	bash /home/yvesd/nixos/homeManager/modules/scripts/rofi/uni-search.sh
+	uni-search
 	;;
 "Codebox")
-	bash /home/yvesd/nixos/homeManager/modules/scripts/rofi/codebox.sh
+	codebox
 	;;
 "App")
 	rofi -show drun
 	;;
 "Enable Headless")
-	/home/yvesd/nixos/homeManager/modules/scripts/rofi/toggle-headless.sh
+	toggle-headless
 	;;
 "Disable Headless")
-	/home/yvesd/nixos/homeManager/modules/scripts/rofi/toggle-headless.sh
+	toggle-headless
 	;;
 esac

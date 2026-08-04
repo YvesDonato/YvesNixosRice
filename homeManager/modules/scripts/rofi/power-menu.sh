@@ -10,6 +10,6 @@ case $select in "Turn Off")
 	reboot
 	;;
 "Lock")
-	hyprlock
+	session-lock
 	;;
 esac

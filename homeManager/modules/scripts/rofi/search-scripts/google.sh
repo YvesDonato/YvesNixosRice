@@ -19,6 +19,6 @@ user_input=$(echo "" | rofi -dmenu -p " " -theme-str 'listview { enabled: false;
 
 if [[ -n "$user_input" ]]; then
 
-	zen-beta --new-tab "https://www.google.com/search?q=$(urlencode "$user_input")"
+	helium "https://www.google.com/search?q=$(urlencode "$user_input")"
 
 fi

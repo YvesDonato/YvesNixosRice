@@ -1,12 +1,24 @@
 --- a/src/layout/scroll.h
 +++ b/src/layout/scroll.h
-@@ -326,6 +326,31 @@
+@@ -326,6 +326,43 @@
  	int32_t max_client_width =
  		m->w.width - 2 * config.scroller_structs - cur_gappih;
  
++	/* Preserve upstream fullscreen/maximized handling instead of returning
++	 * early through the adaptive equal-size path. */
++	bool adaptive_equal_size_allowed = true;
++	for (int i = 0; i < n_heads; i++) {
++		if (heads[i]->client->isfullscreen ||
++			heads[i]->client->ismaximizescreen) {
++			adaptive_equal_size_allowed = false;
++			break;
++		}
++	}
++
 +	/* adaptive: all clients fit at the default proportion -> lay them out
 +	 * edge-to-edge with equal widths instead of scrolling */
-+	if ((float)n_heads * config.scroller_default_proportion <= 1.0f) {
++	if (adaptive_equal_size_allowed &&
++		(float)n_heads * config.scroller_default_proportion <= 1.0f) {
 +		uint32_t available_width =
 +			m->w.width - 2 * cur_gappoh - (n_heads - 1) * cur_gappih;
 +		uint32_t equal_client_width = available_width / n_heads;
@@ -32,7 +44,7 @@
  	/* 单客户端特例 */
  	if (n_heads == 1 && !scroller_ignore_proportion_single &&
  		!heads[0]->client->isfullscreen &&
-@@ -461,13 +486,18 @@
+@@ -461,13 +498,18 @@
  							  config.scroller_structs);
  			}
  		} else {
@@ -58,13 +70,25 @@
  		}
  		horizontal_check_scroller_root_inside_mon(heads[focus_index]->client,
  												  &target_geom);
-@@ -549,6 +579,31 @@
+@@ -549,6 +591,43 @@
  	int32_t max_client_height =
  		m->w.height - 2 * config.scroller_structs - cur_gappiv;
  
++	/* Preserve upstream fullscreen/maximized handling instead of returning
++	 * early through the adaptive equal-size path. */
++	bool adaptive_equal_size_allowed = true;
++	for (int i = 0; i < n_heads; i++) {
++		if (heads[i]->client->isfullscreen ||
++			heads[i]->client->ismaximizescreen) {
++			adaptive_equal_size_allowed = false;
++			break;
++		}
++	}
++
 +	/* adaptive: all clients fit at the default proportion -> lay them out
 +	 * edge-to-edge with equal heights instead of scrolling */
-+	if ((float)n_heads * config.scroller_default_proportion <= 1.0f) {
++	if (adaptive_equal_size_allowed &&
++		(float)n_heads * config.scroller_default_proportion <= 1.0f) {
 +		uint32_t available_height =
 +			m->w.height - 2 * cur_gappov - (n_heads - 1) * cur_gappiv;
 +		uint32_t equal_client_height = available_height / n_heads;
@@ -90,7 +114,7 @@
  	if (n_heads == 1 && !scroller_ignore_proportion_single &&
  		!heads[0]->client->isfullscreen &&
  		!heads[0]->client->ismaximizescreen) {
-@@ -683,13 +738,18 @@
+@@ -683,13 +762,18 @@
  							  config.scroller_structs);
  			}
  		} else {

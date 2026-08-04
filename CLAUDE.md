@@ -37,7 +37,7 @@ home-manager switch --flake '.#yvesd'    # standalone HM activation
 Consequence: WM-related changes (bindings, monitors, window rules) usually need to be mirrored in **both** WM configs — they deliberately keep the same Super-key bindings, monitor layout, and TokyoNight border colors:
 
 - **Hyprland**: config is *Lua*, not hyprland.conf. `homeManager/modules/hyprland.nix` concatenates nine string fragments from `homeManager/modules/hyprland/` (monitors, bindings, navigation, window-rules, …) into `~/.config/hypr/hyprland.lua`. Fragment order matters: `bindings.nix` defines Lua locals (e.g. `mainMod`) that `navigation.nix` reuses.
-- **Mango**: one inline string in `homeManager/modules/mango.nix` written to `~/.config/mango/config.conf`, plus generated lid-switch/autostart scripts and a `mango-lid-switch` systemd user service. System-side, `modules/mango.nix` builds `pkgs-unstable.mango` (renamed from mangowc; stable lags) via `packages/mango-patched.nix`, applying the single local patch in `patches/` (adaptive scroller).
+- **Mango**: one inline string in `homeManager/modules/mango.nix` written to `~/.config/mango/config.conf`, plus generated lid-switch/autostart scripts and a `mango-lid-switch` systemd user service. System-side, `modules/mango.nix` builds nixpkgs-unstable's `mango` via `packages/mango-patched.nix`, applying the adaptive-scroller patch. After a Mango package bump, re-check the patch and the layouts list in `homeManager/modules/mango.nix` against upstream `src/layout/layout.h`.
 
 System WM modules also differ in sourcing: Hyprland comes from the `hyprland` flake input (with hyprland.cachix.org substituter), not nixpkgs.
 

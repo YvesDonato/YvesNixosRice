@@ -3,15 +3,18 @@
   inputs,
   ...
 }: let
-  # Nix's Playwright 1.56.1 browser bundle contains Chromium revision 1194,
-  # which matches the Python Playwright 1.56.0 wheel used by openconnect-saml.
-  pythonPlaywrightVersion = "1.56.0";
+  # Nix's Playwright 1.59.1 browser bundle (26.05) contains Chromium revision
+  # 1217, which matches the Python Playwright 1.59.0 wheel used by
+  # openconnect-saml. These must be re-paired on nixpkgs bumps: the wheel
+  # looks up browsers by revision inside PLAYWRIGHT_BROWSERS_PATH.
+  pythonPlaywrightVersion = "1.59.0";
   anyConnectUserAgent = "AnyConnect Linux_64 4.7.00136";
   defaultSheridanVpnIp = "142.55.3.2";
   sheridanVpnRunner = pkgs.writeText "sheridan-vpn-runner.py" ''
     import json
     import os
     import socket
+    import tempfile
 
     sheridan_storage_dir = os.path.expanduser("~/.config/sheridan-vpn")
     sheridan_storage_path = os.path.join(sheridan_storage_dir, "storage_state.json")
@@ -86,20 +89,53 @@
         # Restore a previously saved Microsoft (Azure AD) session so reconnects
         # complete via silent SSO instead of a fresh browser login.
         if os.path.exists(sheridan_storage_path):
-            with open(sheridan_storage_path) as fh:
-                saved_state = json.load(fh)
-            # Only carry the Microsoft/Azure AD (IdP) session. Never restore the
-            # VPN gateway's own cookies — acSamlv2Token is single-use, and
-            # replaying it causes "Single sign-on AnyConnect token verification
-            # failure". Filtering here also self-heals an already-poisoned file.
-            saved_state["cookies"] = [
-                c
-                for c in saved_state.get("cookies", [])
-                if "sheridancollege.ca" not in c.get("domain", "")
-            ]
-            context_args["storage_state"] = saved_state
+            try:
+                with open(sheridan_storage_path) as fh:
+                    saved_state = json.load(fh)
+                if not isinstance(saved_state, dict):
+                    raise ValueError("saved storage state is not a JSON object")
+                cookies = saved_state.get("cookies", [])
+                origins = saved_state.get("origins", [])
+                if not isinstance(cookies, list) or not isinstance(origins, list):
+                    raise ValueError("saved storage state has invalid collections")
+                if not all(isinstance(cookie, dict) for cookie in cookies):
+                    raise ValueError("saved storage state has invalid cookies")
+                if not all(isinstance(origin, dict) for origin in origins):
+                    raise ValueError("saved storage state has invalid origins")
+                if not all(isinstance(cookie.get("domain", ""), str) for cookie in cookies):
+                    raise ValueError("saved storage state has invalid cookie domains")
 
-        self._context = await self._browser.new_context(**context_args)
+                # Never restore the VPN gateway's single-use SAML token.
+                saved_state["cookies"] = [
+                    cookie
+                    for cookie in cookies
+                    if "sheridancollege.ca" not in cookie.get("domain", "")
+                ]
+                saved_state["origins"] = origins
+            except (OSError, json.JSONDecodeError, TypeError, ValueError):
+                # A partial/invalid prior write must not prevent a fresh login.
+                try:
+                    os.unlink(sheridan_storage_path)
+                except OSError:
+                    pass
+            else:
+                context_args["storage_state"] = saved_state
+
+        try:
+            self._context = await self._browser.new_context(**context_args)
+        except Exception:
+            if "storage_state" not in context_args:
+                raise
+
+            # Let Playwright perform the definitive schema validation. If a
+            # saved state is syntactically valid but unusable, discard it and
+            # retry exactly once with a fresh browser context.
+            context_args.pop("storage_state", None)
+            try:
+                os.unlink(sheridan_storage_path)
+            except OSError:
+                pass
+            self._context = await self._browser.new_context(**context_args)
         self._page = await self._context.new_page()
         self._page.set_default_timeout(self.timeout)
 
@@ -131,6 +167,7 @@
         # the connection if saving fails). Contains sensitive cookies -> 0600.
         # Drop the VPN gateway's cookies before saving: its acSamlv2Token is
         # single-use, so persisting it would be replayed and rejected next time.
+        temporary_path = None
         try:
             saved_state = await self._context.storage_state()
             saved_state["cookies"] = [
@@ -138,11 +175,24 @@
                 for c in saved_state.get("cookies", [])
                 if "sheridancollege.ca" not in c.get("domain", "")
             ]
-            with open(sheridan_storage_path, "w") as fh:
+            fd, temporary_path = tempfile.mkstemp(
+                prefix=".storage_state.", suffix=".tmp", dir=sheridan_storage_dir
+            )
+            with os.fdopen(fd, "w") as fh:
                 json.dump(saved_state, fh)
-            os.chmod(sheridan_storage_path, 0o600)
+                fh.flush()
+                os.fsync(fh.fileno())
+            os.chmod(temporary_path, 0o600)
+            os.replace(temporary_path, sheridan_storage_path)
+            temporary_path = None
         except Exception:
             pass
+        finally:
+            if temporary_path is not None:
+                try:
+                    os.unlink(temporary_path)
+                except OSError:
+                    pass
         return result
 
 
@@ -156,6 +206,7 @@
   sheridanVpn = pkgs.writeShellApplication {
     name = "sheridan-vpn";
     runtimeInputs = with pkgs; [
+      coreutils
       openconnect
       uv
     ];
@@ -167,13 +218,27 @@
 
       run_openconnect_saml() {
         exec uv run \
-          --with 'openconnect-saml[chrome]' \
+          --with 'openconnect-saml[chrome]==0.24.5' \
           --with 'playwright==${pythonPlaywrightVersion}' \
           python '${sheridanVpnRunner}' "$@"
       }
 
       if [[ "''${1:-}" == "disconnect" ]]; then
         run_openconnect_saml "$@"
+      fi
+
+      # Switch Microsoft account: the saved SSO session in storage_state.json
+      # is what silently signs the last account back in. Drop it so the login
+      # window shows a fresh account picker, then continue connecting.
+      # Optionally: sheridan-vpn switch-account someone@sheridancollege.ca
+      if [[ "''${1:-}" == "switch-account" ]]; then
+        shift
+        rm -f "$HOME/.config/sheridan-vpn/storage_state.json"
+        echo "Cleared saved Microsoft session; sign in with the account you want." >&2
+        if [[ $# -gt 0 && "''${1:-}" == *@* ]]; then
+          export SHERIDAN_VPN_USER="$1"
+          shift
+        fi
       fi
 
       foreground=true
@@ -212,8 +277,6 @@
 in {
   environment.systemPackages = with pkgs; [
     # Programs
-    inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
-    chromium
     anki
     rofi
     pavucontrol
@@ -222,6 +285,7 @@ in {
     sheridanVpn
     blanket
     libreoffice
+    freecad # Same 1.1.1 as unstable; stable avoids GDAL 3.13.1's failing Zarr test
     obs-studio
     blueman
     crispy-doom
@@ -232,19 +296,18 @@ in {
     android-tools
 
     # Terminal
+    arduino-cli
     neovim
     git
     fastfetch # neofetch was removed in 26.05 (unmaintained upstream)
     wget
     killall
     btop
-    tlp
     git-credential-manager
     wlr-randr
     lsof
     yazi
     asusctl
-    supergfxctl
     lshw
     glow
     curl
@@ -268,6 +331,7 @@ in {
     svelte-language-server
     typescript-language-server
     tailwindcss-language-server
+    pyright
     glibc
     zlib
     marksman
@@ -284,6 +348,8 @@ in {
     swtpm
     dex
     transmission_4
+    qemu
+    tailscale
 
     glib
     nss

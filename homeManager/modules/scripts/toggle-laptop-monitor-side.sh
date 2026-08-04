@@ -6,7 +6,7 @@ primary_output="DP-2"
 laptop_output="eDP-1"
 
 primary_mode_wlr="3440x1440@143.975Hz"
-primary_mode_hypr="3440x1440@143.97"
+primary_mode_hypr="3440x1440@143.975"
 laptop_mode_wlr="2560x1600@165.002Hz"
 laptop_mode_hypr="2560x1600@165.002"
 primary_scale="1"
@@ -85,12 +85,12 @@ apply_hypr_layout() {
 
 	case "$side" in
 	left)
-		hyprctl keyword monitor "$laptop_output,$laptop_mode_hypr,0x0,$laptop_scale"
-		hyprctl keyword monitor "$primary_output,$primary_mode_hypr,${laptop_logical_width}x0,$primary_scale"
+		hyprctl eval "hl.monitor({ output = \"$laptop_output\", mode = \"$laptop_mode_hypr\", position = \"0x0\", scale = $laptop_scale, vrr = 1 })"
+		hyprctl eval "hl.monitor({ output = \"$primary_output\", mode = \"$primary_mode_hypr\", position = \"${laptop_logical_width}x0\", scale = $primary_scale, vrr = 0 })"
 		;;
 	right)
-		hyprctl keyword monitor "$primary_output,$primary_mode_hypr,0x0,$primary_scale"
-		hyprctl keyword monitor "$laptop_output,$laptop_mode_hypr,${primary_width}x0,$laptop_scale"
+		hyprctl eval "hl.monitor({ output = \"$primary_output\", mode = \"$primary_mode_hypr\", position = \"0x0\", scale = $primary_scale, vrr = 0 })"
+		hyprctl eval "hl.monitor({ output = \"$laptop_output\", mode = \"$laptop_mode_hypr\", position = \"${primary_width}x0\", scale = $laptop_scale, vrr = 1 })"
 		;;
 	esac
 }
