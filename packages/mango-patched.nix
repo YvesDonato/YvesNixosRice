@@ -7,10 +7,12 @@
 mango.overrideAttrs (oldAttrs: {
   __intentionallyOverridingVersion = true;
   version = "0.15.1";
+  doCheck = true;
   patches =
     (oldAttrs.patches or [])
     ++ [
       ../patches/mango-adaptive-scroller.patch
       ../patches/mango-eleven-tags.patch
+      ../patches/mango-native-stream.patch
     ];
 })

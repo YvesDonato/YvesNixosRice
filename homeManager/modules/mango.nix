@@ -240,7 +240,7 @@
       export QT_QPA_PLATFORM="''${QT_QPA_PLATFORM:-wayland}"
 
       variables=()
-      for variable in DISPLAY QT_QPA_PLATFORM WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE; do
+      for variable in DISPLAY QT_QPA_PLATFORM WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE LINUXMIS_MANGO_SPLIT; do
         if [[ -v "$variable" ]]; then
           variables+=("$variable")
         fi
@@ -374,6 +374,7 @@
     # Quickshell command palette: keep Super+A like Hyprland, but let Mango center it as a floating window.
     windowrule=title:Command Palette,isfloating:1,isnoborder:1,isoverlay:1,noswallow:1,width:720,height:560
     windowrule=appid:vesktop,tags:9,istagsilent:1
+    windowrule=appid:^com\.linuxmis\.linuxmis$,title:^Linuxmis Native Stream$,monitor:DP-2,isfloating:0,isnoborder:1,noswallow:1,reserve_right:1
     windowrule=appid:spotify,tags:10,istagsilent:1
     windowrule=appid:com.yvesd.herdr,tags:11,istagsilent:1
 

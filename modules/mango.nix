@@ -19,6 +19,7 @@
       pkgs.systemd
     ];
     text = ''
+      export LINUXMIS_MANGO_SPLIT=1
       compositor_pid=""
 
       stop_graphical_session() {
