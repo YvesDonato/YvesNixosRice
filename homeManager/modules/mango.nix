@@ -13,6 +13,7 @@
   systemdRun = lib.getExe' pkgs.systemd "systemd-run";
   vesktop = lib.getExe pkgs-unstable.vesktop;
   spotify = lib.getExe pkgs-unstable.spotify;
+  morgen = lib.getExe pkgs-unstable.morgen;
   ghostty = lib.getExe pkgs-unstable.ghostty;
   herdr = lib.getExe inputs.herdr.packages.${system}.default;
   wlrRandr = lib.getExe pkgs.wlr-randr;
@@ -227,6 +228,49 @@
     '';
   };
 
+  mangoMorgen = pkgs.writeShellApplication {
+    name = "mango-morgen";
+    runtimeInputs = [
+      pkgs.coreutils
+      pkgs.jq
+      pkgs.util-linux
+      mangowcPatched
+    ];
+    text = ''
+      mode="''${1:-open}"
+      case "$mode" in
+        open | preload) ;;
+        *)
+          printf 'usage: %s open|preload\n' "$0" >&2
+          exit 2
+          ;;
+      esac
+
+      lock_file="''${XDG_RUNTIME_DIR:-/run/user/$(id -u)}/mango-morgen.lock"
+      exec 9>"$lock_file"
+      flock 9
+
+      clients="$(mmsg get all-clients)"
+      if ! jq -e 'any(.clients[]?; .appid == "morgen")' <<<"$clients" >/dev/null; then
+        ${systemdRun} --user --scope --quiet --collect -- ${morgen} 9>&- </dev/null >/dev/null &
+      fi
+
+      for _ in {1..100}; do
+        if client_id="$(mmsg get all-clients | jq -er 'first(.clients[]? | select(.appid == "morgen") | .id)')"; then
+          mmsg dispatch tagsilent,12 "client,$client_id"
+          if [ "$mode" = "open" ]; then
+            exec mmsg dispatch focusid "client,$client_id"
+          fi
+          exit 0
+        fi
+        sleep 0.1
+      done
+
+      printf 'Timed out waiting for Morgen on Mango tag 12\n' >&2
+      exit 1
+    '';
+  };
+
   mangoSessionStart = pkgs.writeShellApplication {
     name = "mango-session-start";
     runtimeInputs = [
@@ -240,7 +284,7 @@
       export QT_QPA_PLATFORM="''${QT_QPA_PLATFORM:-wayland}"
 
       variables=()
-      for variable in DISPLAY QT_QPA_PLATFORM WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE LINUXMIS_MANGO_SPLIT; do
+      for variable in DISPLAY QT_QPA_PLATFORM WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE MANGO_INSTANCE_SIGNATURE LINUXMIS_MANGO_SPLIT; do
         if [[ -v "$variable" ]]; then
           variables+=("$variable")
         fi
@@ -351,6 +395,7 @@
     exec-once=${systemdRun} --user --scope --quiet --collect -- ${vesktop}
     exec-once=${systemdRun} --user --scope --quiet --collect -- ${spotify}
     exec-once=${lib.getExe mangoHerdr} preload
+    exec-once=${lib.getExe mangoMorgen} preload
 
     # Closing disables the laptop panel; opening reenables it. A user service
     # also watches the ACPI lid state because Mango switch events can be
@@ -370,6 +415,7 @@
     tagrule=id:9,layout_name:scroller
     tagrule=id:10,layout_name:scroller
     tagrule=id:11,layout_name:scroller
+    tagrule=id:12,layout_name:scroller
 
     # Quickshell command palette: keep Super+A like Hyprland, but let Mango center it as a floating window.
     windowrule=title:Command Palette,isfloating:1,isnoborder:1,isoverlay:1,noswallow:1,width:720,height:560
@@ -377,6 +423,7 @@
     windowrule=appid:^com\.linuxmis\.linuxmis$,title:^Linuxmis Native Stream$,monitor:DP-2,isfloating:0,isnoborder:1,noswallow:1,reserve_right:1
     windowrule=appid:spotify,tags:10,istagsilent:1
     windowrule=appid:com.yvesd.herdr,tags:11,istagsilent:1
+    windowrule=appid:^morgen$,tags:12,istagsilent:1
 
     # Core bindings
     bind=SUPER,r,reload_config
@@ -390,6 +437,7 @@
     bind=SUPER,a,spawn,${qs} ipc call command-palette toggle
 
     # Browser and app bindings
+    bind=SUPER,c,spawn,${lib.getExe mangoMorgen} open
     bind=SUPER,f,spawn,helium-scoped
     bind=SUPER,h,spawn_shell,helium-scoped --incognito; ${qs} ipc call hints visable 0
     bind=SUPER,y,spawn,helium-scoped --new-window https://www.youtube.com/feed/subscriptions
@@ -398,7 +446,6 @@
     bind=SUPER,d,spawn,linuxmis stream yves desktop
 
     # Shell companion actions
-    bind=SUPER,c,spawn,${qs} ipc call zellij-sessions toggle
     bind=SUPER,n,spawn,${qs} ipc call sidebar toggle
     bind=SUPER,l,spawn,session-lock
     bind=SUPER,p,spawn_shell,grim -t png -g "$(slurp -d)" - | wl-copy -t image/png
@@ -475,6 +522,7 @@ in
       mangoApplyLidState
       mangoCycleAllLayouts
       mangoHerdr
+      mangoMorgen
       mangoLidSwitchWatch
       mangoRestoreMonitors
       mangoSessionStart

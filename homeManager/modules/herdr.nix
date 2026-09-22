@@ -34,6 +34,15 @@
     # New tab — herdr's prefix+c plus prefix+t ("t" for tab)
     new_tab = ["prefix+c", "prefix+t"]
 
+    # Agent panel navigation — all three are UNSET in herdr's defaults, so these
+    # are new bindings, not additions to existing ones. prefix+tab/prefix+shift+tab
+    # are already cycle_pane, so "a" for agent. prefix+alt+1..9 is herdr's
+    # documented indexed pattern, slotting beside prefix+1..9 (switch_tab) and
+    # prefix+shift+1..9 (switch_workspace).
+    next_agent = ["prefix+a"]
+    previous_agent = ["prefix+shift+a"]
+    focus_agent = ["prefix+alt+1..9"]
+
     # Desktop notifications when an agent finishes or needs input.
     # "system" = local OS notification; on Linux herdr shells out to notify-send
     # (libnotify, already installed) and needs WAYLAND_DISPLAY (set under the WM).

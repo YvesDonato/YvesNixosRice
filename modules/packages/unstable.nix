@@ -27,6 +27,7 @@ in {
     aichat
     readest
     obsidian
+    morgen
     (mpv.override {
       yt-dlp = yt-dlp.override {
         javascriptSupport = false;

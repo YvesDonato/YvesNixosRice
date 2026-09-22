@@ -274,6 +274,38 @@
       run_openconnect_saml "''${args[@]}" "$@"
     '';
   };
+  # Langflow's dependency tree (langflow-base[complete] + lfx-bundles + ~13
+  # provider bundles) is hundreds of packages and several GB -- far past what is
+  # worth packaging in Nix, and it is in neither nixpkgs nor any community flake.
+  # uv resolves it at runtime instead, the same trade as sheridan-vpn above.
+  # ponytail: version pinned by hand -- bump the string to upgrade.
+  # First run downloads several GB into ~/.cache/uv and takes a while.
+  langflow = pkgs.writeShellApplication {
+    name = "langflow";
+    runtimeInputs = [pkgs.uv];
+    text = ''
+      # Upstream's `--host` defaults to None and resolves via settings
+      # (env_prefix LANGFLOW_), so the default is not guaranteed to be loopback.
+      # Langflow executes arbitrary flows, so pin the bind address
+      # unconditionally -- an inherited LANGFLOW_HOST (direnv is enabled, so a
+      # project .envrc can set one) must not silently widen it. Opting out takes
+      # a variable nothing sets by accident. An explicit `--host` on the command
+      # line still wins, which is the intended deliberate escape hatch.
+      if [ "''${LANGFLOW_ALLOW_REMOTE:-0}" = "1" ]; then
+        echo "langflow: LANGFLOW_ALLOW_REMOTE=1 set, not pinning bind address" >&2
+      else
+        export LANGFLOW_HOST=127.0.0.1
+      fi
+
+      # Bare `langflow` should start the server; anything else (superuser,
+      # api-key, --help) passes straight through to the real CLI.
+      if [ "$#" -eq 0 ]; then
+        set -- run
+      fi
+
+      exec uv tool run --from 'langflow==1.11.2' langflow "$@"
+    '';
+  };
 in {
   environment.systemPackages = with pkgs; [
     # Programs
@@ -283,6 +315,7 @@ in {
     pamixer
     networkmanagerapplet
     sheridanVpn
+    langflow
     blanket
     libreoffice
     freecad # Same 1.1.1 as unstable; stable avoids GDAL 3.13.1's failing Zarr test
@@ -332,6 +365,10 @@ in {
     typescript-language-server
     tailwindcss-language-server
     pyright
+    rustc
+    cargo
+    rustfmt
+    clippy
     glibc
     zlib
     marksman

@@ -30,6 +30,7 @@ in {
       # format-on-save can't silently lose their binaries.
       # (top-level attr since 26.05 removed the nodePackages set)
       pkgs-unstable.prettier
+      pkgs.rustfmt
       pkgs-unstable.typstyle
     ];
 
@@ -208,6 +209,14 @@ in {
           jsonls.enable = true;
           marksman.enable = true;
           nixd.enable = true;
+          rust_analyzer = {
+            enable = true;
+            # The toolchain comes from systemPackages (on $PATH), so opt out of
+            # nixvim's own copies rather than duplicating ~1.5 GB in its closure.
+            # These must be set explicitly: leaving them unset warns on every build.
+            installCargo = false;
+            installRustc = false;
+          };
           svelte.enable = true;
           tailwindcss = {
             enable = true;
@@ -243,6 +252,7 @@ in {
             json = ["prettier"];
             jsonc = ["prettier"];
             markdown = ["prettier"];
+            rust = ["rustfmt"];
             typescript = ["prettier"];
             "typescript.tsx" = ["prettier"];
             typescriptreact = ["prettier"];
@@ -330,11 +340,6 @@ in {
               name = "treesitter";
               keyword_length = 4;
               priority = 50;
-            }
-            {
-              name = "copilot";
-              keyword_length = 3;
-              priority = 40;
             }
             {
               name = "buffer";

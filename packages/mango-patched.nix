@@ -12,7 +12,7 @@ mango.overrideAttrs (oldAttrs: {
     (oldAttrs.patches or [])
     ++ [
       ../patches/mango-adaptive-scroller.patch
-      ../patches/mango-eleven-tags.patch
+      ../patches/mango-extra-tags.patch
       ../patches/mango-native-stream.patch
     ];
 })

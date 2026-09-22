@@ -91,6 +91,15 @@
 
   services = {
     blueman.enable = true;
+
+    # Resolve .local names (e.g. the headless Pi at raspberrypi.local); the
+    # firewall is on and mDNS needs UDP 5353.
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+    };
+
     printing.enable = true;
     passSecretService.enable = false;
     gnome.gnome-keyring.enable = true;
@@ -123,6 +132,9 @@
       enable = true;
       startWhenNeeded = true;
       ports = [22];
+      # Do not open 22 globally -- the module default would expose sshd on every
+      # network this laptop joins. The port is opened on tailscale0 only, below.
+      openFirewall = false;
       settings = {
         PasswordAuthentication = true;
         AllowUsers = null; # Allows all users by default. Can be [ "user1" "user2" ]
@@ -189,6 +201,13 @@
   # Networking
   networking = {
     hostName = "nixos";
+
+    # sshd is reachable only over the authenticated tailnet, never on whatever
+    # untrusted network the laptop is attached to. `services.openssh.openFirewall`
+    # is false above so this is the only path in. Physical access is unaffected,
+    # so this cannot lock anyone out of the machine itself.
+    firewall.interfaces."tailscale0".allowedTCPPorts = [22];
+
     networkmanager = {
       enable = true;
       plugins = with pkgs; [
