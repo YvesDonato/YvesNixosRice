@@ -6,7 +6,6 @@
   ...
 }: let
   system = pkgs.stdenv.hostPlatform.system;
-  hyprlandPackage = inputs.hyprland.packages.${system}.hyprland;
   quickshellPackage = inputs.quickshell.packages.${system}.default;
   heliumPackage = inputs.helium.packages.${system}.default;
 
@@ -73,7 +72,6 @@
     name = "toggle-headless";
     runtimeInputs = [
       pkgs.gnugrep
-      hyprlandPackage
     ];
     text = builtins.readFile ./scripts/rofi/toggle-headless.sh;
   };
@@ -83,7 +81,6 @@
     runtimeInputs = [
       pkgs.gawk
       pkgs.wlr-randr
-      hyprlandPackage
     ];
     text = builtins.readFile ./scripts/toggle-laptop-monitor-side.sh;
   };
@@ -104,7 +101,6 @@
     runtimeInputs = [
       pkgs.gnugrep
       pkgs.rofi
-      hyprlandPackage
       codebox
       powerMenu
       toggleHeadless

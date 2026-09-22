@@ -1,8 +1,8 @@
 {pkgs, ...}: let
-  # Launch helium in its own transient systemd user scope so systemd-oomd can
-  # act on the browser alone. ManagedOOMSwap=kill makes oomd watch the scope
-  # and, at >=90% system swap, kill just helium (session restore brings tabs
-  # back) instead of thrashing or taking down the whole login session. app.slice
+  # Launch helium in its own transient systemd user scope: its own cgroup, so
+  # oomd sees it as a separate kill candidate (at >=45% swap it kills the leaf
+  # using the most swap; session restore brings tabs back) rather than lumped
+  # in with the caller, plus a tighter 60% memory-pressure limit. app.slice
   # additionally puts it under the existing memory-pressure monitoring. Helium
   # is Chromium-based, i.e. at least as memory-hungry as the zen setup this
   # replaced, so the scope stays.
@@ -10,9 +10,9 @@
   helium-scoped = pkgs.writeShellApplication {
     name = "helium-scoped";
     text = ''
-      # The swap trigger alone is gated on 90% of TOTAL swap, which the 32 GiB
-      # disk tier inflated well past the point of usability; the memory-pressure
-      # trigger is what actually fires while the session is stalling.
+      # The 45% swap trigger now also comes from the root slice, which covers
+      # every launch path; this wrapper stays for the tighter 60%
+      # memory-pressure limit, which fires while the session is stalling.
       run=(systemd-run --user --scope --quiet --collect
         --slice=app.slice -p ManagedOOMSwap=kill
         -p ManagedOOMMemoryPressure=kill -p ManagedOOMMemoryPressureLimit=60% --)

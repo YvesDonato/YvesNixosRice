@@ -8,5 +8,5 @@ if hyprctl monitors | grep -q "$monitor"; then
 	hyprctl output remove "$monitor"
 else
 	hyprctl output create headless "$monitor"
-	hyprctl keyword monitor "$monitor",1920x1200@60,auto,1.2
+	hyprctl eval "hl.monitor({ output = \"$monitor\", mode = \"1920x1200@60\", position = \"auto\", scale = 1.2 })"
 fi

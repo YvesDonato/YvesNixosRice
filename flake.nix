@@ -50,7 +50,8 @@
     };
 
     quickshell = {
-      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      # Pinned to the rev the unmanaged ~/.config/quickshell QML is tested against; bump deliberately.
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell?rev=fae96f1a5b7f53de9b7e40e5b53c0b7a2e97b1d7";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

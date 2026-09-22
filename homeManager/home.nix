@@ -305,62 +305,35 @@ in {
   services = {
     hypridle = {
       enable = true;
-      settings =
-        if desktopWindowManager == "hyprland"
-        then {
-          general = {
-            before_sleep_cmd = "session-lock";
-            after_sleep_cmd = "sleep 0.5; hyprctl dispatch dpms on";
-            ignore_dbus_inhibit = false;
-            ignore_systemd_inhibit = false;
-            lock_cmd = "session-lock";
-          };
-
-          listener = [
-            {
-              timeout = 1800;
-              on-timeout = "session-lock";
-            }
-            {
-              timeout = 1810;
-              on-timeout = "hyprctl dispatch dpms off";
-              on-resume = "hyprctl dispatch dpms on";
-            }
-            {
-              # Battery-only: on AC the machine stays up for long jobs, matching
-              # HandleLidSwitchExternalPower = "ignore".
-              timeout = 2700;
-              on-timeout = "sh -c '[ \"$(cat /sys/class/power_supply/ADP0/online)\" = 0 ] && systemctl suspend'";
-            }
-          ];
-        }
-        else {
-          general = {
-            before_sleep_cmd = "session-lock";
-            after_sleep_cmd = "sleep 0.5; ${wlopm} --on '*'";
-            ignore_dbus_inhibit = false;
-            ignore_systemd_inhibit = false;
-            lock_cmd = "session-lock";
-          };
-
-          listener = [
-            {
-              timeout = 1800;
-              on-timeout = "session-lock";
-            }
-            {
-              timeout = 1810;
-              on-timeout = "${wlopm} --off '*'";
-              on-resume = "${wlopm} --on '*'";
-            }
-            {
-              # Battery-only: on AC the machine stays up for long jobs, matching
-              # HandleLidSwitchExternalPower = "ignore".
-              timeout = 2700;
-              on-timeout = "sh -c '[ \"$(cat /sys/class/power_supply/ADP0/online)\" = 0 ] && systemctl suspend'";
-            }
-          ];
+      # wlopm (wlr-output-power-management) works under both WMs; Hyprland
+      # 0.55's Lua config rejects `hyprctl dispatch dpms`.
+      settings = {
+        general = {
+          before_sleep_cmd = "session-lock";
+          after_sleep_cmd = "sleep 0.5; ${wlopm} --on '*'";
+          ignore_dbus_inhibit = false;
+          ignore_systemd_inhibit = false;
+          lock_cmd = "session-lock";
         };
+
+        listener = [
+          {
+            timeout = 1800;
+            on-timeout = "session-lock";
+          }
+          {
+            timeout = 1810;
+            on-timeout = "${wlopm} --off '*'";
+            on-resume = "${wlopm} --on '*'";
+          }
+          {
+            # Battery-only: on AC the machine stays up for long jobs, matching
+            # HandleLidSwitchExternalPower = "ignore".
+            timeout = 2700;
+            on-timeout = "sh -c '[ \"$(cat /sys/class/power_supply/ADP0/online)\" = 0 ] && systemctl suspend'";
+          }
+        ];
+      };
     };
   };
 
@@ -382,7 +355,7 @@ in {
       '';
       shellAliases = {
         update = "sudo nixos-rebuild switch";
-        clean = "sudo nix-collect-garbage -d";
+        clean = "sudo nix-collect-garbage --delete-older-than 7d";
         z = "zeditor";
         c = "cd";
         h = "nvim";

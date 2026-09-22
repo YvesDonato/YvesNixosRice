@@ -42,6 +42,8 @@ in
     wayland.windowManager.hyprland = {
       enable = true;
       package = hyprlandPackage;
+      # No HM user-level portal; it would shadow the system xdg-desktop-portal-gtk.
+      portalPackage = null;
       systemd.enable = true;
       # Explicit since the 26.05 HM default changed hyprlang -> lua; this
       # repo's fragments are concatenated into Home Manager's generated Lua.

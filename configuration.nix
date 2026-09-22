@@ -28,15 +28,18 @@
   # Bootloader
   boot = {
     loader.systemd-boot.enable = true;
+    # /boot is a 511M ESP; each generation's kernel+initrd adds up fast.
+    loader.systemd-boot.configurationLimit = 10;
     loader.efi.canTouchEfiVariables = true;
     loader.timeout = 1;
     tmp.cleanOnBoot = true;
     initrd.kernelModules = ["amdgpu" "uinput"];
     initrd.systemd.network.wait-online.enable = false;
-    # Kernel + nvidia must move in lockstep; stable's nvidia (580.142) can't
-    # build against stable's linuxPackages_latest (7.1.2, of_gpio.h removal),
-    # while unstable pairs 7.1.2 with nvidia 595.x and Hydra caches that combo.
-    kernelPackages = pkgs-unstable.linuxPackages_latest;
+    # Kernel comes from unstable to pair with unstable's nvidia (stable's
+    # nvidia lags mainline). Pinned to the 7.2 series so flake updates don't
+    # jump mainline series under the out-of-tree nvidia-open/v4l2loopback/
+    # xpadneo modules; bump deliberately when nixpkgs drops 7.2.
+    kernelPackages = pkgs-unstable.linuxPackages_7_2;
     kernelModules = [
       "v4l2loopback"
     ];
@@ -100,6 +103,13 @@
       openFirewall = true;
     };
 
+    # Without resolved, tailscale takes over /etc/resolv.conf via openresolv.
+    # Avahi stays the .local resolver, so keep resolved off UDP 5353.
+    resolved = {
+      enable = true;
+      settings.Resolve.MulticastDNS = false;
+    };
+
     printing.enable = true;
     passSecretService.enable = false;
     gnome.gnome-keyring.enable = true;
@@ -125,6 +135,10 @@
         # running with the laptop closed.
         HandleLidSwitchDocked = "ignore";
         HandleLidSwitchExternalPower = "ignore";
+        # The power key sits in the keyboard row; a stray tap used to power
+        # off mid-job. Holding it still powers off.
+        HandlePowerKey = "suspend";
+        HandlePowerKeyLongPress = "poweroff";
       };
     };
 
@@ -268,10 +282,15 @@
       # oomd's default SwapUsedLimit=90% is 90% of TOTAL swap. Adding the 32 GiB
       # disk tier raised the trigger from 16.5 GiB to 45.3 GiB of 50.3 GiB, so the
       # machine had to fully thrash NVMe before oomd acted (journal, Jul 24).
-      # 45% ~= 22.6 GiB, just past zram's 18.3 GiB.
+      # 45% ~= 22.6 GiB, just past zram's 18.3 GiB. It applies machine-wide via
+      # the root slice below; oomd then kills the leaf cgroup using the most swap.
       # (systemd.oomd.extraConfig was renamed to settings.OOM in 26.05.)
       settings.OOM.SwapUsedLimit = "45%";
     };
+    # SwapUsedLimit only covers cgroups that opt in with ManagedOOMSwap=kill;
+    # enableRootSlice/enableUserSlices set only ManagedOOMMemoryPressure.
+    # Same as Fedora's root-slice default.
+    slices."-".sliceConfig.ManagedOOMSwap = "kill";
   };
 
   # Set your time zone.
@@ -338,6 +357,8 @@
     # instance wouldn't inherit nixpkgs.config.allowUnfree from below.
     useGlobalPkgs = true;
     backupFileExtension = "backup";
+    # A stale .backup file otherwise aborts activation.
+    overwriteBackup = true;
     extraSpecialArgs = {
       inherit inputs;
       inherit pkgs-unstable;
