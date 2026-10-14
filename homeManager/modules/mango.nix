@@ -13,6 +13,7 @@
   systemdRun = lib.getExe' pkgs.systemd "systemd-run";
   vesktop = lib.getExe pkgs-unstable.vesktop;
   spotify = lib.getExe pkgs-unstable.spotify;
+  chatgpt = lib.getExe (pkgs-unstable.callPackage ../../packages/chatgpt-desktop.nix {});
   morgen = lib.getExe pkgs-unstable.morgen;
   ghostty = lib.getExe pkgs-unstable.ghostty;
   herdr = lib.getExe inputs.herdr.packages.${system}.default;
@@ -394,6 +395,7 @@
     exec-once=${lib.getExe mangoSessionStart}
     exec-once=${systemdRun} --user --scope --quiet --collect -- ${vesktop}
     exec-once=${systemdRun} --user --scope --quiet --collect -- ${spotify}
+    exec-once=${systemdRun} --user --scope --quiet --collect -- ${chatgpt}
     exec-once=${lib.getExe mangoHerdr} preload
     exec-once=${lib.getExe mangoMorgen} preload
 
@@ -419,6 +421,7 @@
 
     # Quickshell command palette: keep Super+A like Hyprland, but let Mango center it as a floating window.
     windowrule=title:Command Palette,isfloating:1,isnoborder:1,isoverlay:1,noswallow:1,width:720,height:560
+    windowrule=appid:^chatgpt$,tags:8,istagsilent:1
     windowrule=appid:vesktop,tags:9,istagsilent:1
     windowrule=appid:^com\.linuxmis\.linuxmis$,title:^Linuxmis Native Stream$,monitor:DP-2,isfloating:0,isnoborder:1,noswallow:1,reserve_right:1
     windowrule=appid:spotify,tags:10,istagsilent:1

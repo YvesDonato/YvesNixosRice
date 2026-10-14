@@ -4,6 +4,8 @@
   piCodingAgent,
   ...
 }: let
+  chatgptDesktop = pkgs-unstable.callPackage ../../packages/chatgpt-desktop.nix {};
+  easyedaPro = pkgs-unstable.callPackage ../../packages/easyeda-pro.nix {};
   codexPackage = inputs.codex.packages."${pkgs-unstable.stdenv.hostPlatform.system}".default;
   codexWrapped = codexPackage.overrideAttrs (oldAttrs: {
     nativeBuildInputs = (oldAttrs.nativeBuildInputs or []) ++ [pkgs-unstable.makeWrapper];
@@ -46,6 +48,8 @@ in {
     inputs.linuxmis.packages."${stdenv.hostPlatform.system}".linuxmis
     inputs.claude-code.packages."${stdenv.hostPlatform.system}".default
     codexWrapped
+    chatgptDesktop # ChatGPT/Codex desktop app (Linux preview, repackaged .deb)
+    easyedaPro # EasyEDA Pro (repackaged vendor zip)
     inputs.herdr.packages."${stdenv.hostPlatform.system}".default
     inputs.helium.packages."${stdenv.hostPlatform.system}".default
     piCodingAgent

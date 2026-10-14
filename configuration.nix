@@ -55,6 +55,11 @@
       # Restores Alt+SysRq+f (manual OOM kill) and REISUB as a hang escape hatch;
       # the default 16 leaves neither available.
       "kernel.sysrq" = 1;
+      # Wi-Fi and dock ethernet share one LAN. Without these, each NIC answers ARP
+      # for the other's IP, the router can map the Wi-Fi IP to the dock's MAC, and
+      # internet replies land on the wrong NIC until the dock is replugged.
+      "net.ipv4.conf.all.arp_ignore" = 1;
+      "net.ipv4.conf.all.arp_announce" = 2;
     };
   };
 
@@ -156,6 +161,19 @@
         X11Forwarding = false;
         PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
       };
+      # Remote commands assume a POSIX shell (Moshi's preflight runs
+      # `echo $SSH_CONNECTION`), which nushell rejects, so the app saw no herdr
+      # sessions. Run them (sftp included) under bash; interactive logins still
+      # get nushell.
+      extraConfig = ''
+        Match User yvesd
+          ForceCommand ${pkgs.writeShellScript "ssh-session" ''
+          if [ -n "''${SSH_ORIGINAL_COMMAND:-}" ]; then
+            exec ${pkgs.bashInteractive}/bin/bash -c "$SSH_ORIGINAL_COMMAND"
+          fi
+          exec ${pkgs.nushell}/bin/nu --login
+        ''}
+      '';
     };
 
     # sunshine = {
@@ -221,6 +239,15 @@
     # is false above so this is the only path in. Physical access is unaffected,
     # so this cannot lock anyone out of the machine itself.
     firewall.interfaces."tailscale0".allowedTCPPorts = [22];
+    firewall.interfaces."tailscale0".allowedUDPPortRanges = [
+      {
+        from = 60000;
+        to = 61000;
+      } # mosh
+    ];
+    # Strict reverse-path filtering drops LAN replies that arrive on the "other"
+    # NIC when Wi-Fi and dock ethernet are both on the same subnet.
+    firewall.checkReversePath = "loose";
 
     networkmanager = {
       enable = true;
@@ -382,8 +409,20 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # ponytail: prebuilt mongodb-ce (SSPL, unfree); the default pkgs.mongodb compiles from source for hours
+  services.mongodb = {
+    enable = true;
+    package = pkgs.mongodb-ce;
+  };
+
   programs.direnv.enable = true;
   programs.nix-ld.enable = true;
+  # mosh-server for Moshi (homeManager/modules/moshi.nix). Its UDP ports are
+  # opened on tailscale0 only, matching sshd.
+  programs.mosh = {
+    enable = true;
+    openFirewall = false;
+  };
 
   # Fonts
   fonts = {

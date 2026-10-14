@@ -11,6 +11,7 @@
   systemdRun = lib.getExe' pkgs.systemd "systemd-run";
   vesktop = lib.getExe pkgs-unstable.vesktop;
   spotify = lib.getExe pkgs-unstable.spotify;
+  chatgpt = lib.getExe (pkgs-unstable.callPackage ../../packages/chatgpt-desktop.nix {});
   ghostty = lib.getExe pkgs-unstable.ghostty;
   herdr = lib.getExe inputs.herdr.packages.${system}.default;
   hyprlandLuaFragments = [
@@ -29,6 +30,7 @@
     hl.on("hyprland.start", function()
       hl.exec_cmd("${systemdRun} --user --scope --quiet --collect -- ${vesktop}")
       hl.exec_cmd("${systemdRun} --user --scope --quiet --collect -- ${spotify}")
+      hl.exec_cmd("${systemdRun} --user --scope --quiet --collect -- ${chatgpt}")
       hl.exec_cmd("${systemdRun} --user --scope --quiet --collect -- ${ghostty} --class=com.yvesd.herdr -e ${herdr}")
     end)
 

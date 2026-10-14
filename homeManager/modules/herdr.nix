@@ -39,8 +39,9 @@
     # are already cycle_pane, so "a" for agent. prefix+alt+1..9 is herdr's
     # documented indexed pattern, slotting beside prefix+1..9 (switch_tab) and
     # prefix+shift+1..9 (switch_workspace).
-    next_agent = ["prefix+a"]
-    previous_agent = ["prefix+shift+a"]
+    # Alt+Shift+Up/Down walk the agent list without the prefix (Alt+Up/Down are pane focus).
+    next_agent = ["prefix+a", "alt+shift+down"]
+    previous_agent = ["prefix+shift+a", "alt+shift+up"]
     focus_agent = ["prefix+alt+1..9"]
 
     # Desktop notifications when an agent finishes or needs input.

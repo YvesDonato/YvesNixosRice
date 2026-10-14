@@ -37,6 +37,7 @@ in {
     ./modules/nixvim.nix
     ./modules/typst.nix
     ./modules/herdr.nix
+    ./modules/moshi.nix
     ./modules/scripts.nix
     ./modules/helium-scoped.nix
     # ./modules/helix.nix
@@ -371,7 +372,12 @@ in {
         background-opacity = 0.80;
         background-blur = false;
         copy-on-select = true;
+        # Drop all default binds (tabs, splits, windows: herdr/zellij do that) so
+        # those chords reach the multiplexer; keep only copy/paste plus our own.
         keybind = [
+          "clear"
+          "ctrl+shift+c=copy_to_clipboard"
+          "ctrl+shift+v=paste_from_clipboard"
           "ctrl+y=copy_to_clipboard"
           "ctrl+1=decrease_font_size:1"
           "ctrl+2=increase_font_size:1"

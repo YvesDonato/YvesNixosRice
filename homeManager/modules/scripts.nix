@@ -85,6 +85,28 @@
     text = builtins.readFile ./scripts/toggle-laptop-monitor-side.sh;
   };
 
+  # Command-palette toggle: a transient user unit holds a logind inhibitor, so
+  # no idle lock/screen-off (hypridle honours it), no sleep and no lid suspend.
+  keepAwake = pkgs.writeShellApplication {
+    name = "keep-awake";
+    runtimeInputs = [
+      pkgs.libnotify
+      pkgs.systemd
+    ];
+    text = ''
+      if systemctl --user is-active --quiet keep-awake; then
+        systemctl --user stop keep-awake
+        notify-send -a "Keep awake" "Keep awake off" "The laptop can sleep again."
+      else
+        systemd-run --user --collect --unit=keep-awake --description="Keep the laptop awake" \
+          ${pkgs.systemd}/bin/systemd-inhibit --what=idle:sleep:handle-lid-switch \
+          --who="Keep awake" --why="Toggled from the command palette" \
+          ${pkgs.coreutils}/bin/sleep infinity
+        notify-send -a "Keep awake" "Keep awake on" "No screen lock, sleep or lid suspend until toggled off."
+      fi
+    '';
+  };
+
   goveeToggle = pkgs.writeShellApplication {
     name = "govee-toggle";
     runtimeInputs = [
@@ -137,6 +159,7 @@ in {
   home.packages = [
     codebox
     goveeToggle
+    keepAwake
     mainMenu
     powerMenu
     sessionLock

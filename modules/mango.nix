@@ -81,6 +81,13 @@ in
       enable = true;
       wlr.enable = true;
       config.common.default = "*";
+      # Without this, /etc/xdg's portals.conf (common) shadows the packaged
+      # mango-portals.conf and no backend serves ScreenCast (no screen sharing).
+      config.mango = {
+        default = ["gtk"];
+        "org.freedesktop.impl.portal.ScreenCast" = ["wlr"];
+        "org.freedesktop.impl.portal.Screenshot" = ["wlr"];
+      };
       extraPortals = [pkgs.xdg-desktop-portal-gtk];
     };
 

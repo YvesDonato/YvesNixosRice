@@ -207,7 +207,9 @@
     name = "sheridan-vpn";
     runtimeInputs = with pkgs; [
       coreutils
+      gnugrep
       openconnect
+      openssh
       uv
     ];
     text = ''
@@ -216,15 +218,50 @@
       export PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS="true"
       export SHERIDAN_VPN_RESOLVE_IP="''${SHERIDAN_VPN_RESOLVE_IP:-${defaultSheridanVpnIp}}"
 
+      openconnect_saml=(
+        uv run
+        --with 'openconnect-saml[chrome]==0.24.5'
+        --with 'playwright==${pythonPlaywrightVersion}'
+        python '${sheridanVpnRunner}'
+      )
+      login_args=(
+        --server "vpn.sheridancollege.ca"
+        --authgroup "SHERIDAN-VPN"
+        --browser "chrome"
+        --no-totp
+        --no-history
+        --useragent "${anyConnectUserAgent}"
+        --resolve "vpn.sheridancollege.ca:$SHERIDAN_VPN_RESOLVE_IP"
+      )
+
       run_openconnect_saml() {
-        exec uv run \
-          --with 'openconnect-saml[chrome]==0.24.5' \
-          --with 'playwright==${pythonPlaywrightVersion}' \
-          python '${sheridanVpnRunner}' "$@"
+        exec "''${openconnect_saml[@]}" "$@"
       }
 
       if [[ "''${1:-}" == "disconnect" ]]; then
         run_openconnect_saml "$@"
+      fi
+
+      # VPN on titan (the Proxmox host): titan signs in by itself with a headless
+      # browser reusing the Microsoft session copied from here, and its
+      # sheridan-vpn service keeps the tunnel up (Sheridan networks only; see
+      # /usr/local/sbin/sheridan-vpn-titan there). When that session expires,
+      # `sheridan-vpn titan` signs in here with the normal browser (MFA on the
+      # phone) and sends the fresh session to titan, which reconnects.
+      #   sheridan-vpn titan [reseed|up|down|status]
+      if [[ "''${1:-}" == "titan" ]]; then
+        action="''${2:-reseed}"
+        case "$action" in
+          up | down | status) exec ssh titan-shell sheridan-vpn-titan "$action" ;;
+          reseed) ;;
+          *)
+            echo "usage: sheridan-vpn titan [reseed|up|down|status]" >&2
+            exit 2
+            ;;
+        esac
+        # Signing in saves the fresh Microsoft session; the VPN cookie itself is not needed.
+        "''${openconnect_saml[@]}" "''${login_args[@]}" --authenticate json >/dev/null
+        exec ssh titan-shell sheridan-vpn-titan reseed < "$HOME/.config/sheridan-vpn/storage_state.json"
       fi
 
       # Switch Microsoft account: the saved SSO session in storage_state.json
@@ -253,15 +290,7 @@
 
       /run/wrappers/bin/sudo -v
 
-      args=(
-        --server "vpn.sheridancollege.ca"
-        --authgroup "SHERIDAN-VPN"
-        --browser "chrome"
-        --no-totp
-        --no-history
-        --useragent "${anyConnectUserAgent}"
-        --resolve "vpn.sheridancollege.ca:$SHERIDAN_VPN_RESOLVE_IP"
-      )
+      args=("''${login_args[@]}")
 
       if [[ "$foreground" == false ]]; then
         args+=(--detach --wait "''${SHERIDAN_VPN_WAIT:-60}")
@@ -319,6 +348,9 @@ in {
     blanket
     libreoffice
     freecad # Same 1.1.1 as unstable; stable avoids GDAL 3.13.1's failing Zarr test
+    kicad # schematic + PCB editor; Claude drives it via the kicad-mcp-pro MCP server
+    easyeda2kicad # import LCSC/JLCPCB parts into KiCad libraries
+    uv # provides uvx for the kicad-mcp-pro MCP server
     obs-studio
     blueman
     crispy-doom
@@ -374,8 +406,8 @@ in {
     marksman
     ripgrep
 
-    # mongosh
-    # mongodb
+    mongosh
+    # mongodb: server runs via services.mongodb in configuration.nix
 
     # system
     xwayland
