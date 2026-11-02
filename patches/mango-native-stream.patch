@@ -1,29 +1,146 @@
+diff --git a/include/mango/config/parse.h b/include/mango/config/parse.h
+index 61ade42e..99340e91 100644
+--- a/include/mango/config/parse.h
++++ b/include/mango/config/parse.h
+@@ -118,6 +118,7 @@ typedef struct {
+ 	int32_t animation_type_open;
+ 	int32_t animation_type_close;
+ 	int32_t no_border;
++	int32_t reserve_right;
+ 	int32_t no_shadow;
+ 	int32_t no_radius;
+ 	int32_t no_animation;
+diff --git a/include/mango/layout/native.h b/include/mango/layout/native.h
+new file mode 100644
+index 00000000..c739c717
+--- /dev/null
++++ b/include/mango/layout/native.h
+@@ -0,0 +1,14 @@
++#ifndef MANGO_LAYOUT_NATIVE_H
++#define MANGO_LAYOUT_NATIVE_H
++
++#include "mango/common/types.h"
++#include "src/layout/native_geometry.h"
++
++struct wlr_box native_workarea(Monitor *m);
++const Layout *native_layout(const Monitor *m);
++bool native_target_locked(const Arg *arg);
++void native_present(Client *c);
++void native_update_monitor(Monitor *m);
++void native_reject(Client *c, enum native_reason reason);
++
++#endif
+diff --git a/include/mango/manage/client.h b/include/mango/manage/client.h
+index 1f13bf41..6378a614 100644
+--- a/include/mango/manage/client.h
++++ b/include/mango/manage/client.h
+@@ -5,6 +5,7 @@
+ #include "mango/common/types.h"
+ #include "mango/config/parse.h"
+ #include "mango/draw/dim-node.h"
++#include "src/layout/native_geometry.h"
+ #include <stdbool.h>
+ #include <stddef.h>
+ #include <stdint.h>
+@@ -41,15 +42,16 @@ enum { UP, DOWN, LEFT, RIGHT, UNDIR, ALLDIR }; /* smartmovewin */
+ 
+ #define ISTILED(A)                                                             \
+ 	(A && !(A)->isfloating && !(A)->isminimized && !(A)->iskilling &&          \
+-	 !(A)->ismaximizescreen && !(A)->isfullscreen && !(A)->isunglobal)
++	 !(A)->ismaximizescreen && !(A)->isfullscreen && !(A)->isunglobal &&       \
++	 !(A)->reserve_right)
+ #define ISNORMAL(A)                                                            \
+ 	(A && !(A)->isminimized && !(A)->iskilling && !(A)->isunglobal)
+ #define ISSCROLLTILED(A)                                                       \
+ 	(A && !(A)->isfloating && !(A)->isminimized && !(A)->iskilling &&          \
+-	 !(A)->isunglobal)
++	 !(A)->isunglobal && !(A)->reserve_right)
+ #define ISFAKETILED(A)                                                         \
+ 	(A && !(A)->isfloating && !(A)->isminimized && !(A)->iskilling &&          \
+-	 !(A)->isunglobal)
++	 !(A)->isunglobal && !(A)->reserve_right)
+ #define VISIBLEON(C, M)                                                        \
+ 	((C) && (M) && (C)->mon == (M) && !(C)->isminimized &&                     \
+ 	 (((C)->tags & (M)->tagset[(M)->seltags] || (C)->isglobal ||               \
+@@ -240,6 +242,14 @@ struct Client {
+ 	bool snapshot_temp_visible;
+ 	/* per-frame: surface clipped away by the draw path */
+ 	bool is_surface_hidden;
++	int32_t reserve_right;
++	enum native_status native_status;
++	enum native_reason native_reason;
++	int32_t native_width, native_height;
++	struct wlr_box native_geom, native_usable;
++	float native_scale;
++	uint32_t native_serial;
++	bool native_ever_accepted, native_close_sent, native_hints_pending;
+ };
+ 
+ #define CLIENT_GROUP_PREV_OFF offsetof(Client, group_prev)
+@@ -398,7 +408,7 @@ void tag_client(const Arg *arg, Client *target_client);
+ void show_hide_client(Client *c);
+ void client_set_monitor(Client *c, Monitor *m, uint32_t newtags, bool focus);
+ void client_change_mon(Client *c, Monitor *m);
+-void view_insert_shift_tags(Monitor *m, uint32_t target);
++bool view_insert_shift_tags(Monitor *m, uint32_t target);
+ void client_set_floating(Client *c, int32_t floating);
+ void client_apply_fullscreen(Client *c, int32_t fullscreen, bool rearrange);
+ void client_set_fake_fullscreen(Client *c, int32_t fakefullscreen);
+diff --git a/include/mango/manage/monitor.h b/include/mango/manage/monitor.h
+index c49c3c65..a2ba9a03 100644
+--- a/include/mango/manage/monitor.h
++++ b/include/mango/manage/monitor.h
+@@ -26,6 +26,7 @@
+ #endif
+ 
+ struct Monitor {
++	Client *native_reserved;
+ 	struct wl_list link;
+ 	struct wlr_output *wlr_output;
+ 	struct wlr_scene_output *scene_output;
 diff --git a/meson.build b/meson.build
-index a40db2b6..e01d6179 100644
+index 7de79157..1d8f3f89 100644
 --- a/meson.build
 +++ b/meson.build
-@@ -148,6 +148,12 @@ executable('mmsg',
+@@ -231,6 +231,20 @@ executable('mangonag',
  )
  
  mandir = get_option('mandir')
 +foreach native_test : ['native_geometry', 'native_reservation']
 +  test(native_test, executable(native_test, 'tests/' + native_test + '.c',
 +    dependencies: [wlroots_dep, wayland_server_dep],
-+    c_args: ['-UNDEBUG', '-Wall', '-Wextra', '-Werror']))
++    c_args: ['-O2', '-UNDEBUG', '-Wall', '-Wextra', '-Werror']))
 +endforeach
++
++test('native_prediction', executable('native_prediction',
++  ['tests/native_prediction.c', 'src/layout/scroll.c', 'src/layout/native.c'],
++  include_directories: mango_inc,
++  dependencies: [libm, wlroots_dep, wayland_server_dep, libscenefx_dep,
++    xkbcommon_dep, pangocairo_dep],
++  c_args: c_args + ['-UNDEBUG', '-Wextra', '-Werror', '-ffunction-sections', '-fdata-sections'],
++  link_args: link_args + ['-Wl,--gc-sections']))
 +
  desktop_install_dir = join_paths(prefix, 'share/wayland-sessions')
  portal_install_dir = join_paths(prefix, 'share/xdg-desktop-portal')
  install_data('assets/mango.desktop', install_dir : desktop_install_dir)
-diff --git a/src/animation/client.h b/src/animation/client.h
-index bb821f7b..88fa1eed 100644
---- a/src/animation/client.h
-+++ b/src/animation/client.h
-@@ -11,12 +11,13 @@ static inline struct ivec2 compute_edge_offsets(Client *c) {
+diff --git a/src/animation/client.c b/src/animation/client.c
+index ea468199..1618a062 100644
+--- a/src/animation/client.c
++++ b/src/animation/client.c
+@@ -4,6 +4,7 @@
+ #include "mango/common/util.h"
+ #include "mango/layout/dwindle.h"
+ #include "mango/layout/layout.h"
++#include "mango/layout/native.h"
+ #include "mango/manage/client.h"
+ #include "mango/manage/misc.h"
+ #include "mango/manage/monitor.h"
+@@ -54,12 +55,14 @@ struct ivec2 compute_edge_offsets(Client *c) {
  		return offsets;
  
  	struct wlr_box cur = c->animation.current;
-+	struct wlr_box bounds = c->mon->native_reserved ? native_workarea(c->mon) : c->mon->m;
++	struct wlr_box bounds =
++		c->mon->native_reserved ? native_workarea(c->mon) : c->mon->m;
  	offsets.width =
 -		GEZERO(cur.x + cur.width - c->mon->m.x - c->mon->m.width); // right
 +		GEZERO(cur.x + cur.width - bounds.x - bounds.width); // right
@@ -37,58 +154,61 @@ index bb821f7b..88fa1eed 100644
  	return offsets;
  }
  
-@@ -61,15 +62,15 @@ struct fx_corner_radii set_client_corner_location(Client *c) {
+@@ -101,14 +104,11 @@ struct fx_corner_radii set_client_corner_location(Client *c) {
+ }
  
  bool is_horizontal_stack_layout(Monitor *m) {
- 	if (m->pertag->curtag &&
--		(m->pertag->ltidxs[m->pertag->curtag]->id == TILE ||
--		 m->pertag->ltidxs[m->pertag->curtag]->id == DECK))
-+		(native_layout(m)->id == TILE ||
-+		 native_layout(m)->id == DECK))
- 		return true;
- 	return false;
+-	uint32_t tag = get_mon_curtag(m);
+-	return m->pertag->ltidxs[tag]->id == TILE ||
+-		   m->pertag->ltidxs[tag]->id == DECK;
++	return native_layout(m)->id == TILE || native_layout(m)->id == DECK;
  }
  
  bool is_horizontal_right_stack_layout(Monitor *m) {
- 	if (m->pertag->curtag &&
--		m->pertag->ltidxs[m->pertag->curtag]->id == RIGHT_TILE)
-+		native_layout(m)->id == RIGHT_TILE)
- 		return true;
- 	return false;
+-	uint32_t tag = get_mon_curtag(m);
+-	return m->pertag->ltidxs[tag]->id == RIGHT_TILE;
++	return native_layout(m)->id == RIGHT_TILE;
  }
-@@ -569,7 +570,7 @@ void client_draw_split_border(Client *c, bool hit_no_border,
- 	if (c->iskilling || !c->mon || !client_surface(c)->mapped)
+ 
+ int32_t is_special_animation_rule(Client *c) {
+@@ -629,7 +629,9 @@ void client_draw_split_border(Client *c, bool hit_no_border,
  		return;
  
--	const Layout *layout = c->mon->pertag->ltidxs[c->mon->pertag->curtag];
-+	const Layout *layout = native_layout(c->mon);
+ 	uint32_t tag = get_client_tag_idx(c);
+-	const Layout *layout = c->mon->pertag->ltidxs[tag];
++	const Layout *layout =
++		(c->mon->native_reserved ? native_layout(c->mon)
++								 : c->mon->pertag->ltidxs[tag]);
  
  	if (hit_no_border || !ISTILED(c) || layout->id != DWINDLE ||
  		!config.dwindle_manual_split || c->isfullscreen) {
-@@ -780,7 +781,7 @@ void client_set_drop_area(Client *c) {
- 	double rel_y = cursor->y - c->geom.y - bw;
+@@ -838,7 +840,10 @@ void client_set_drop_area(Client *c) {
+ 	double rel_y = server.cursor->y - c->geom.y - bw;
  
  	struct wlr_box drop_box;
--	const Layout *cur_layout = c->mon->pertag->ltidxs[c->mon->pertag->curtag];
-+	const Layout *cur_layout = native_layout(c->mon);
+-	const Layout *cur_layout = c->mon->pertag->ltidxs[get_client_tag_idx(c)];
++	const Layout *cur_layout =
++		(c->mon->native_reserved
++			 ? native_layout(c->mon)
++			 : c->mon->pertag->ltidxs[get_client_tag_idx(c)]);
  	bool dwindle_familiar =
  		cur_layout->id == DWINDLE && config.dwindle_drop_simple_split;
  
-@@ -940,6 +941,10 @@ void client_set_drop_area(Client *c) {
- /* ---------- central rendering entry point ---------- */
- 
+@@ -995,6 +1000,10 @@ void client_set_drop_area(Client *c) {
+ 	wlr_scene_rect_set_size(c->droparea, drop_box.width, drop_box.height);
+ }
  void client_apply_clip(Client *c, float factor) {
-+	if (c->reserve_right) {
++	if (c && c->reserve_right) {
 +		native_present(c);
 +		return;
 +	}
  	if (c->iskilling || !client_surface(c)->mapped)
  		return;
  
-@@ -1318,6 +1323,10 @@ void client_set_pending_state(Client *c) {
+@@ -1508,6 +1517,10 @@ void client_set_pending_state(Client *c) {
+ 	c->dirty = true;
  }
- 
- void resize(Client *c, struct wlr_box geo, int32_t interact) {
+ void resize(Client *c, struct wlr_box geo, ResizeOpts opts) {
 +	if (c && c->reserve_right) {
 +		native_present(c);
 +		return;
@@ -96,135 +216,138 @@ index bb821f7b..88fa1eed 100644
  	if (!c || !c->mon || !client_surface(c)->mapped)
  		return;
  
-@@ -1326,6 +1335,13 @@ void resize(Client *c, struct wlr_box geo, int32_t interact) {
+@@ -1516,6 +1529,19 @@ void resize(Client *c, struct wlr_box geo, ResizeOpts opts) {
  
  	c->need_output_flush = true;
  	c->dirty = true;
-+	if (c->mon->native_reserved && (c->isfloating || c->isfullscreen)) {
++	/* Only windows sharing the screen with the stream stay out of its column:
++	 * hidden/parked floats and special-workspace overlays keep their geometry
++	 * instead of being squeezed and left there after the stream ends. */
++	if (c->mon->native_reserved && (c->isfloating || c->isfullscreen) &&
++		VISIBLEON(c, c->mon) && !(c->tags & TAG0_MASK)) {
 +		struct wlr_box area = native_workarea(c->mon);
 +		geo.width = MANGO_MIN(geo.width, area.width);
 +		geo.height = MANGO_MIN(geo.height, area.height);
-+		geo.x = MANGO_MAX(area.x, MANGO_MIN(geo.x, area.x + area.width - geo.width));
-+		geo.y = MANGO_MAX(area.y, MANGO_MIN(geo.y, area.y + area.height - geo.height));
++		geo.x = MANGO_MAX(area.x,
++						  MANGO_MIN(geo.x, area.x + area.width - geo.width));
++		geo.y = MANGO_MAX(area.y,
++						  MANGO_MIN(geo.y, area.y + area.height - geo.height));
 +	}
  
- 	struct wlr_box *bbox =
- 		(interact || c->isfloating || c->isfullscreen) ? &sgeom : &c->mon->w;
-@@ -1583,6 +1599,10 @@ bool client_apply_focus_opacity(Client *c) {
+ 	struct wlr_box *bbox = (opts.interact || c->isfloating || c->isfullscreen)
+ 							   ? &server.scene_geometry
+@@ -1845,6 +1871,10 @@ bool client_apply_focus_opacity(Client *c) {
+ }
+ 
  bool client_draw_frame(Client *c) {
- 	if (!c || !client_surface(c)->mapped)
- 		return false;
-+	if (c->reserve_right) {
++	if (c && c->reserve_right) {
 +		native_present(c);
 +		return false;
 +	}
+ 	bool need_next_tick = false;
+ 	bool force_render = false;
  
- 	if (!c->need_output_flush)
- 		return client_apply_focus_opacity(c);
-@@ -1598,4 +1618,4 @@ bool client_draw_frame(Client *c) {
- 		c->need_output_flush = false;
- 	}
- 	return client_apply_focus_opacity(c);
--}
-\ No newline at end of file
-+}
-diff --git a/src/config/parse_config.h b/src/config/parse_config.h
-index 54da5cc1..4d536328 100644
---- a/src/config/parse_config.h
-+++ b/src/config/parse_config.h
-@@ -70,6 +70,7 @@ typedef struct {
- 	const char *layer_animation_type_open;
- 	const char *layer_animation_type_close;
- 	int32_t isnoborder;
-+	int32_t reserve_right;
- 	int32_t isnoshadow;
- 	int32_t isnoradius;
- 	int32_t isnoanimation;
-@@ -2394,6 +2395,7 @@ bool parse_option(Config *config, char *key, char *value) {
+diff --git a/src/config/option_defs.c b/src/config/option_defs.c
+index a662280c..cfca17d9 100644
+--- a/src/config/option_defs.c
++++ b/src/config/option_defs.c
+@@ -1321,6 +1321,7 @@ bool parse_option(Config *config, char *key, char *value, int line_number) {
  		rule->isfullscreen = -1;
  		rule->isfakefullscreen = -1;
- 		rule->isnoborder = -1;
+ 		rule->no_border = -1;
 +		rule->reserve_right = -1;
- 		rule->isnoshadow = -1;
- 		rule->isnoradius = -1;
- 		rule->isnoanimation = -1;
-@@ -2488,6 +2490,8 @@ bool parse_option(Config *config, char *key, char *value) {
+ 		rule->no_shadow = -1;
+ 		rule->no_radius = -1;
+ 		rule->no_animation = -1;
+@@ -1419,6 +1420,8 @@ bool parse_option(Config *config, char *key, char *value, int line_number) {
  					rule->height = atof(val);
- 				} else if (strcmp(key, "isnoborder") == 0) {
- 					rule->isnoborder = atoi(val);
+ 				} else if (strcmp(key, "no_border") == 0) {
+ 					rule->no_border = atoi(val);
 +				} else if (strcmp(key, "reserve_right") == 0) {
 +					rule->reserve_right = atoi(val) != 0;
- 				} else if (strcmp(key, "isnoshadow") == 0) {
- 					rule->isnoshadow = atoi(val);
- 				} else if (strcmp(key, "isnoradius") == 0) {
-diff --git a/src/dispatch/bind_define.h b/src/dispatch/bind_define.h
-index 62f75bd6..9cda48f6 100644
---- a/src/dispatch/bind_define.h
-+++ b/src/dispatch/bind_define.h
-@@ -178,6 +178,8 @@ int32_t groupjoin(const Arg *arg) {
+ 				} else if (strcmp(key, "no_shadow") == 0) {
+ 					rule->no_shadow = atoi(val);
+ 				} else if (strcmp(key, "no_radius") == 0) {
+diff --git a/src/dispatch/bind.c b/src/dispatch/bind.c
+index 8b754044..b0b89ab5 100644
+--- a/src/dispatch/bind.c
++++ b/src/dispatch/bind.c
+@@ -14,6 +14,7 @@
+ #include "mango/layout/arrange.h"
+ #include "mango/layout/dwindle.h"
+ #include "mango/layout/layout.h"
++#include "mango/layout/native.h"
+ #include "mango/layout/overview.h"
+ #include "mango/layout/scroll.h"
+ #include "mango/manage/client.h"
+@@ -207,8 +208,7 @@ int32_t move_client(const Arg *arg) {
+ 		client_jump_to_monitor(c, monitor_from_direction(arg->i), arg->i);
+ 	} else if (tc->mon != c->mon) {
+ 		client_move_to_monitor(c, tc, arg->i);
+-	} else if (tc->mon->pertag->ltidxs[get_mon_curtag(tc->mon)]->id ==
+-			   DWINDLE) {
++	} else if (native_layout(tc->mon)->id == DWINDLE) {
+ 		dwindle_move_next_to(c, tc, config.dwindle_split_ratio, arg->i);
+ 	} else {
+ 		tc = get_focused_stack_client(tc, c);
+@@ -306,6 +306,9 @@ int32_t focus_window_or_workspace(const Arg *arg) {
+ }
  
- 	if (need_join_client == need_replace_client)
- 		return 0;
-+	if (need_join_client->reserve_right || need_replace_client->reserve_right)
-+		return 0;
+ void client_group_join(Client *need_join_client, Client *need_replace_client) {
++	if ((need_join_client && need_join_client->reserve_right) ||
++		(need_replace_client && need_replace_client->reserve_right))
++		return;
+ 	Monitor *oldmon = NULL;
  
- 	if (need_join_client->group_next || need_join_client->group_prev) {
- 		groupleave(&(Arg){.tc = need_join_client});
-@@ -447,7 +449,7 @@ int32_t setmfact(const Arg *arg) {
+ 	if (!need_join_client || !need_join_client->mon)
+@@ -666,9 +669,7 @@ int32_t set_master_factor(const Arg *arg) {
  	Client *c = NULL;
  
- 	if (!arg || !selmon ||
--		!selmon->pertag->ltidxs[selmon->pertag->curtag]->arrange)
-+		!native_layout(selmon)->arrange)
+ 	if (!arg || !server.selected_monitor ||
+-		!server.selected_monitor->pertag
+-			 ->ltidxs[get_mon_curtag(server.selected_monitor)]
+-			 ->arrange)
++		!native_layout(server.selected_monitor)->arrange)
  		return 0;
- 	f = arg->f < 1.0 ? arg->f + selmon->pertag->mfacts[selmon->pertag->curtag]
- 					 : arg->f - 1.0;
-@@ -483,7 +485,7 @@ int32_t moveresize(const Arg *arg) {
- 	if (cursor_mode != CurNormal && cursor_mode != CurPressed)
- 		return 0;
- 	xytonode(cursor->x, cursor->y, NULL, &grabc, NULL, NULL, NULL, NULL);
--	if (!grabc || client_is_unmanaged(grabc) || grabc->isfullscreen ||
-+	if (!grabc || grabc->reserve_right || client_is_unmanaged(grabc) || grabc->isfullscreen ||
- 		grabc->ismaximizescreen) {
- 		grabc = NULL;
- 		return 0;
-@@ -546,7 +548,7 @@ int32_t moveresize(const Arg *arg) {
- 
- int32_t movewin(const Arg *arg) {
- 	Client *c = arg->tc ? arg->tc : (selmon ? selmon->sel : NULL);
+ 	f = arg->f < 1.0
+ 			? arg->f + server.selected_monitor->pertag
+@@ -724,7 +725,7 @@ int32_t move_window(const Arg *arg) {
+ 		arg->tc
+ 			? arg->tc
+ 			: (server.selected_monitor ? server.selected_monitor->sel : NULL);
 -	if (!c || c->isfullscreen)
 +	if (!c || c->reserve_right || c->isfullscreen)
  		return 0;
  	if (!c->isfloating)
- 		setfloating(c, 1);
-@@ -587,6 +589,8 @@ int32_t quit(const Arg *arg) {
+ 		client_set_floating(c, 1);
+@@ -765,6 +766,8 @@ int32_t quit(const Arg *arg) {
  }
  
- int32_t resizewin(const Arg *arg) {
+ int32_t resize_window(const Arg *arg) {
 +	if (native_target_locked(arg))
 +		return 0;
- 	Client *c = arg->tc ? arg->tc : (selmon ? selmon->sel : NULL);
- 	int32_t offsetx = 0, offsety = 0;
- 
-@@ -689,6 +693,8 @@ int32_t restore_minimized(const Arg *arg) {
+ 	Client *c =
+ 		arg->tc
+ 			? arg->tc
+@@ -899,6 +902,8 @@ int32_t restore_minimized(const Arg *arg) {
  }
  
- int32_t setlayout(const Arg *arg) {
-+	if (selmon && selmon->native_reserved)
+ int32_t set_layout(const Arg *arg) {
++	if (server.selected_monitor && server.selected_monitor->native_reserved)
 +		return 0;
  	int32_t jk;
- 	if (!selmon)
+ 	if (!server.selected_monitor)
  		return 0;
-@@ -717,6 +723,8 @@ int32_t setkeymode(const Arg *arg) {
+@@ -930,6 +935,8 @@ int32_t set_key_mode(const Arg *arg) {
  }
  
  int32_t set_proportion(const Arg *arg) {
 +	if (native_target_locked(arg))
 +		return 0;
- 	if (!selmon)
+ 	if (!server.selected_monitor)
  		return 0;
  
-@@ -748,7 +756,7 @@ int32_t set_proportion(const Arg *arg) {
+@@ -962,7 +969,7 @@ int32_t set_proportion(const Arg *arg) {
  	tc->scroller_proportion = arg->f;
  
  	uint32_t max_client_width =
@@ -233,16 +356,16 @@ index 62f75bd6..9cda48f6 100644
  	tc->geom.width = max_client_width * arg->f;
  
  	arrange(m, false, false);
-@@ -756,6 +764,8 @@ int32_t set_proportion(const Arg *arg) {
+@@ -970,6 +977,8 @@ int32_t set_proportion(const Arg *arg) {
  }
  
  int32_t switch_proportion_preset(const Arg *arg) {
 +	if (native_target_locked(arg))
 +		return 0;
  	float target_proportion = 0;
- 	if (!selmon)
+ 	if (!server.selected_monitor)
  		return 0;
-@@ -818,7 +828,7 @@ int32_t switch_proportion_preset(const Arg *arg) {
+@@ -1037,7 +1046,7 @@ int32_t switch_proportion_preset(const Arg *arg) {
  	tc->scroller_proportion = target_proportion;
  
  	uint32_t max_client_width =
@@ -251,25 +374,25 @@ index 62f75bd6..9cda48f6 100644
  	tc->geom.width = max_client_width * target_proportion;
  
  	arrange(m, false, false);
-@@ -826,6 +836,8 @@ int32_t switch_proportion_preset(const Arg *arg) {
+@@ -1045,6 +1054,8 @@ int32_t switch_proportion_preset(const Arg *arg) {
  }
  
- int32_t smartmovewin(const Arg *arg) {
+ int32_t smart_move_window(const Arg *arg) {
 +	if (native_target_locked(arg))
 +		return 0;
  	Client *c = NULL, *tc = NULL;
  	int32_t nx, ny;
  	int32_t buttom, top, left, right, tar;
-@@ -843,7 +855,7 @@ int32_t smartmovewin(const Arg *arg) {
+@@ -1062,7 +1073,7 @@ int32_t smart_move_window(const Arg *arg) {
  	case UP:
  		tar = -99999;
  		top = c->geom.y;
 -		ny -= c->mon->w.height / 4;
 +		ny -= native_workarea(c->mon).height / 4;
  
- 		wl_list_for_each(tc, &clients, link) {
- 			if (!VISIBLEON(tc, selmon) || !tc->isfloating || tc == c)
-@@ -858,12 +870,12 @@ int32_t smartmovewin(const Arg *arg) {
+ 		wl_list_for_each(tc, &server.clients, link) {
+ 			if (!VISIBLEON(tc, server.selected_monitor) || !tc->isfloating ||
+@@ -1078,12 +1089,12 @@ int32_t smart_move_window(const Arg *arg) {
  		}
  
  		ny = tar == -99999 ? ny : tar;
@@ -282,14 +405,15 @@ index 62f75bd6..9cda48f6 100644
 -		ny += c->mon->w.height / 4;
 +		ny += native_workarea(c->mon).height / 4;
  
- 		wl_list_for_each(tc, &clients, link) {
- 			if (!VISIBLEON(tc, selmon) || !tc->isfloating || tc == c)
-@@ -877,13 +889,13 @@ int32_t smartmovewin(const Arg *arg) {
+ 		wl_list_for_each(tc, &server.clients, link) {
+ 			if (!VISIBLEON(tc, server.selected_monitor) || !tc->isfloating ||
+@@ -1098,13 +1109,14 @@ int32_t smart_move_window(const Arg *arg) {
  			};
  		}
  		ny = tar == 99999 ? ny : tar;
 -		ny = MANGO_MIN(ny, c->mon->w.y + c->mon->w.height - c->geom.height -
-+		ny = MANGO_MIN(ny, native_workarea(c->mon).y + native_workarea(c->mon).height - c->geom.height -
++		ny = MANGO_MIN(ny, native_workarea(c->mon).y +
++							   native_workarea(c->mon).height - c->geom.height -
  							   c->mon->gappov);
  		break;
  	case LEFT:
@@ -298,9 +422,9 @@ index 62f75bd6..9cda48f6 100644
 -		nx -= c->mon->w.width / 6;
 +		nx -= native_workarea(c->mon).width / 6;
  
- 		wl_list_for_each(tc, &clients, link) {
- 			if (!VISIBLEON(tc, selmon) || !tc->isfloating || tc == c)
-@@ -898,12 +910,12 @@ int32_t smartmovewin(const Arg *arg) {
+ 		wl_list_for_each(tc, &server.clients, link) {
+ 			if (!VISIBLEON(tc, server.selected_monitor) || !tc->isfloating ||
+@@ -1120,12 +1132,12 @@ int32_t smart_move_window(const Arg *arg) {
  		}
  
  		nx = tar == -99999 ? nx : tar;
@@ -312,374 +436,505 @@ index 62f75bd6..9cda48f6 100644
  		right = c->geom.x + c->geom.width;
 -		nx += c->mon->w.width / 6;
 +		nx += native_workarea(c->mon).width / 6;
- 		wl_list_for_each(tc, &clients, link) {
- 			if (!VISIBLEON(tc, selmon) || !tc->isfloating || tc == c)
- 				continue;
-@@ -916,7 +928,7 @@ int32_t smartmovewin(const Arg *arg) {
+ 		wl_list_for_each(tc, &server.clients, link) {
+ 			if (!VISIBLEON(tc, server.selected_monitor) || !tc->isfloating ||
+ 				tc == c)
+@@ -1139,7 +1151,8 @@ int32_t smart_move_window(const Arg *arg) {
  			};
  		}
  		nx = tar == 99999 ? nx : tar;
 -		nx = MANGO_MIN(nx, c->mon->w.x + c->mon->w.width - c->geom.width -
-+		nx = MANGO_MIN(nx, native_workarea(c->mon).x + native_workarea(c->mon).width - c->geom.width -
++		nx = MANGO_MIN(nx, native_workarea(c->mon).x +
++							   native_workarea(c->mon).width - c->geom.width -
  							   c->mon->gappoh);
  		break;
  	}
-@@ -929,6 +941,8 @@ int32_t smartmovewin(const Arg *arg) {
+@@ -1152,6 +1165,8 @@ int32_t smart_move_window(const Arg *arg) {
  }
  
- int32_t smartresizewin(const Arg *arg) {
+ int32_t smart_resize_window(const Arg *arg) {
 +	if (native_target_locked(arg))
 +		return 0;
  	Client *c = NULL, *tc = NULL;
  	int32_t nw, nh;
  	int32_t buttom, top, left, right, tar;
-@@ -944,13 +958,13 @@ int32_t smartresizewin(const Arg *arg) {
+@@ -1167,13 +1182,14 @@ int32_t smart_resize_window(const Arg *arg) {
  
  	switch (arg->i) {
  	case UP:
--		nh -= selmon->w.height / 8;
--		nh = MANGO_MAX(nh, selmon->w.height / 10);
-+		nh -= native_workarea(selmon).height / 8;
-+		nh = MANGO_MAX(nh, native_workarea(selmon).height / 10);
+-		nh -= server.selected_monitor->w.height / 8;
+-		nh = MANGO_MAX(nh, server.selected_monitor->w.height / 10);
++		nh -= native_workarea(server.selected_monitor).height / 8;
++		nh =
++			MANGO_MAX(nh, native_workarea(server.selected_monitor).height / 10);
  		break;
  	case DOWN:
  		tar = -99999;
  		buttom = c->geom.y + c->geom.height;
--		nh += selmon->w.height / 8;
-+		nh += native_workarea(selmon).height / 8;
+-		nh += server.selected_monitor->w.height / 8;
++		nh += native_workarea(server.selected_monitor).height / 8;
  
- 		wl_list_for_each(tc, &clients, link) {
- 			if (!VISIBLEON(tc, selmon) || !tc->isfloating || tc == c)
-@@ -964,17 +978,17 @@ int32_t smartresizewin(const Arg *arg) {
- 			};
+ 		wl_list_for_each(tc, &server.clients, link) {
+ 			if (!VISIBLEON(tc, server.selected_monitor) || !tc->isfloating ||
+@@ -1189,18 +1205,20 @@ int32_t smart_resize_window(const Arg *arg) {
  		}
  		nh = tar == -99999 ? nh : tar;
--		if (c->geom.y + nh + config.gappov > selmon->w.y + selmon->w.height)
--			nh = selmon->w.y + selmon->w.height - c->geom.y - config.gappov;
-+		if (c->geom.y + nh + config.gappov > native_workarea(selmon).y + native_workarea(selmon).height)
-+			nh = native_workarea(selmon).y + native_workarea(selmon).height - c->geom.y - config.gappov;
+ 		if (c->geom.y + nh + config.gappov >
+-			server.selected_monitor->w.y + server.selected_monitor->w.height)
+-			nh = server.selected_monitor->w.y +
+-				 server.selected_monitor->w.height - c->geom.y - config.gappov;
++			native_workarea(server.selected_monitor).y +
++				native_workarea(server.selected_monitor).height)
++			nh = native_workarea(server.selected_monitor).y +
++				 native_workarea(server.selected_monitor).height - c->geom.y -
++				 config.gappov;
  		break;
  	case LEFT:
--		nw -= selmon->w.width / 16;
--		nw = MANGO_MAX(nw, selmon->w.width / 10);
-+		nw -= native_workarea(selmon).width / 16;
-+		nw = MANGO_MAX(nw, native_workarea(selmon).width / 10);
+-		nw -= server.selected_monitor->w.width / 16;
+-		nw = MANGO_MAX(nw, server.selected_monitor->w.width / 10);
++		nw -= native_workarea(server.selected_monitor).width / 16;
++		nw = MANGO_MAX(nw, native_workarea(server.selected_monitor).width / 10);
  		break;
  	case RIGHT:
  		tar = 99999;
  		right = c->geom.x + c->geom.width;
--		nw += selmon->w.width / 16;
-+		nw += native_workarea(selmon).width / 16;
- 		wl_list_for_each(tc, &clients, link) {
- 			if (!VISIBLEON(tc, selmon) || !tc->isfloating || tc == c)
- 				continue;
-@@ -988,8 +1002,8 @@ int32_t smartresizewin(const Arg *arg) {
- 		}
+-		nw += server.selected_monitor->w.width / 16;
++		nw += native_workarea(server.selected_monitor).width / 16;
+ 		wl_list_for_each(tc, &server.clients, link) {
+ 			if (!VISIBLEON(tc, server.selected_monitor) || !tc->isfloating ||
+ 				tc == c)
+@@ -1216,9 +1234,11 @@ int32_t smart_resize_window(const Arg *arg) {
  
  		nw = tar == 99999 ? nw : tar;
--		if (c->geom.x + nw + config.gappoh > selmon->w.x + selmon->w.width)
--			nw = selmon->w.x + selmon->w.width - c->geom.x - config.gappoh;
-+		if (c->geom.x + nw + config.gappoh > native_workarea(selmon).x + native_workarea(selmon).width)
-+			nw = native_workarea(selmon).x + native_workarea(selmon).width - c->geom.x - config.gappoh;
+ 		if (c->geom.x + nw + config.gappoh >
+-			server.selected_monitor->w.x + server.selected_monitor->w.width)
+-			nw = server.selected_monitor->w.x +
+-				 server.selected_monitor->w.width - c->geom.x - config.gappoh;
++			native_workarea(server.selected_monitor).x +
++				native_workarea(server.selected_monitor).width)
++			nw = native_workarea(server.selected_monitor).x +
++				 native_workarea(server.selected_monitor).width - c->geom.x -
++				 config.gappoh;
  		break;
  	}
  
-@@ -1001,6 +1015,8 @@ int32_t smartresizewin(const Arg *arg) {
+@@ -1230,6 +1250,8 @@ int32_t smart_resize_window(const Arg *arg) {
  }
  
- int32_t centerwin(const Arg *arg) {
+ int32_t center_window(const Arg *arg) {
 +	if (native_target_locked(arg))
 +		return 0;
- 	Client *c = arg->tc ? arg->tc : (selmon ? selmon->sel : NULL);
- 
- 	if (!c || c->isfullscreen || c->ismaximizescreen)
-@@ -1017,12 +1033,12 @@ int32_t centerwin(const Arg *arg) {
+ 	Client *c =
+ 		arg->tc
+ 			? arg->tc
+@@ -1249,16 +1271,16 @@ int32_t center_window(const Arg *arg) {
  		return 0;
  
  	Client *stack_head = scroll_get_stack_head_client(c);
--	if (selmon->pertag->ltidxs[selmon->pertag->curtag]->id == SCROLLER) {
-+	if (native_layout(selmon)->id == SCROLLER) {
- 		stack_head->geom.x =
--			selmon->w.x + (selmon->w.width - stack_head->geom.width) / 2;
-+			native_workarea(selmon).x + (native_workarea(selmon).width - stack_head->geom.width) / 2;
+-	if (server.selected_monitor->pertag
+-			->ltidxs[get_mon_curtag(server.selected_monitor)]
+-			->id == SCROLLER) {
+-		stack_head->geom.x =
+-			server.selected_monitor->w.x +
+-			(server.selected_monitor->w.width - stack_head->geom.width) / 2;
++	if (native_layout(server.selected_monitor)->id == SCROLLER) {
++		stack_head->geom.x = native_workarea(server.selected_monitor).x +
++							 (native_workarea(server.selected_monitor).width -
++							  stack_head->geom.width) /
++								 2;
  	} else {
- 		stack_head->geom.y =
--			selmon->w.y + (selmon->w.height - stack_head->geom.height) / 2;
-+			native_workarea(selmon).y + (native_workarea(selmon).height - stack_head->geom.height) / 2;
+-		stack_head->geom.y =
+-			server.selected_monitor->w.y +
+-			(server.selected_monitor->w.height - stack_head->geom.height) / 2;
++		stack_head->geom.y = native_workarea(server.selected_monitor).y +
++							 (native_workarea(server.selected_monitor).height -
++							  stack_head->geom.height) /
++								 2;
  	}
  
- 	arrange(selmon, false, false);
-@@ -1169,6 +1185,8 @@ int32_t switch_keyboard_layout(const Arg *arg) {
+ 	arrange(server.selected_monitor, false, false);
+@@ -1401,6 +1423,8 @@ int32_t switch_keyboard_layout(const Arg *arg) {
  }
  
  int32_t switch_layout(const Arg *arg) {
-+	if (selmon && selmon->native_reserved)
++	if (server.selected_monitor && server.selected_monitor->native_reserved)
 +		return 0;
  
  	int32_t jk, ji;
  	char *target_layout_name = NULL;
-@@ -1182,10 +1200,10 @@ int32_t switch_layout(const Arg *arg) {
+@@ -1414,12 +1438,12 @@ int32_t switch_layout(const Arg *arg) {
+ 	if (config.circle_layout_count != 0) {
+ 		for (jk = 0; jk < config.circle_layout_count; jk++) {
  
- 			len = MANGO_MAX(
- 				strlen(config.circle_layout[jk]),
--				strlen(selmon->pertag->ltidxs[selmon->pertag->curtag]->name));
-+				strlen(native_layout(selmon)->name));
+-			len = MANGO_MAX(
+-				strlen(config.circle_layout[jk]),
+-				strlen(server.selected_monitor->pertag->ltidxs[tag]->name));
++			len =
++				MANGO_MAX(strlen(config.circle_layout[jk]),
++						  strlen(native_layout(server.selected_monitor)->name));
  
  			if (strncmp(config.circle_layout[jk],
--						selmon->pertag->ltidxs[selmon->pertag->curtag]->name,
-+						native_layout(selmon)->name,
+-						server.selected_monitor->pertag->ltidxs[tag]->name,
++						native_layout(server.selected_monitor)->name,
  						len) == 0) {
  				target_layout_name = jk == config.circle_layout_count - 1
  										 ? config.circle_layout[0]
-@@ -1215,7 +1233,7 @@ int32_t switch_layout(const Arg *arg) {
+@@ -1449,7 +1473,7 @@ int32_t switch_layout(const Arg *arg) {
  
  	for (jk = 0; jk < LENGTH(layouts); jk++) {
  		if (strcmp(layouts[jk].name,
--				   selmon->pertag->ltidxs[selmon->pertag->curtag]->name) == 0) {
-+				   native_layout(selmon)->name) == 0) {
- 			selmon->pertag->ltidxs[selmon->pertag->curtag] =
+-				   server.selected_monitor->pertag->ltidxs[tag]->name) == 0) {
++				   native_layout(server.selected_monitor)->name) == 0) {
+ 			server.selected_monitor->pertag->ltidxs[tag] =
  				jk == LENGTH(layouts) - 1 ? &layouts[0] : &layouts[jk + 1];
- 			clear_fullscreen_and_maximized_state(selmon);
-@@ -1236,6 +1254,8 @@ int32_t tag(const Arg *arg) {
+ 			clear_fullscreen_and_maximized_state(server.selected_monitor);
+@@ -1470,6 +1494,8 @@ int32_t tag(const Arg *arg) {
  }
  
- int32_t tagmon(const Arg *arg) {
+ int32_t tag_monitor(const Arg *arg) {
 +	if (native_target_locked(arg))
 +		return 0;
  	Monitor *m = NULL, *cm = NULL, *oldmon = NULL;
- 	if (!selmon)
+ 	if (!server.selected_monitor)
  		return 0;
-@@ -1283,9 +1303,9 @@ int32_t tagmon(const Arg *arg) {
+@@ -1519,9 +1545,11 @@ int32_t tag_monitor(const Arg *arg) {
  	reset_foreign_tolevel(c, oldmon, c->mon);
  
  	c->float_geom.width =
 -		(int32_t)(c->float_geom.width * c->mon->w.width / oldmon->w.width);
-+		(int32_t)(c->float_geom.width * native_workarea(c->mon).width / native_workarea(oldmon).width);
++		(int32_t)(c->float_geom.width * native_workarea(c->mon).width /
++				  native_workarea(oldmon).width);
  	c->float_geom.height =
 -		(int32_t)(c->float_geom.height * c->mon->w.height / oldmon->w.height);
-+		(int32_t)(c->float_geom.height * native_workarea(c->mon).height / native_workarea(oldmon).height);
- 	selmon = c->mon;
- 	c->float_geom = setclient_coordinate_center(c, c->mon, c->float_geom, 0, 0);
++		(int32_t)(c->float_geom.height * native_workarea(c->mon).height /
++				  native_workarea(oldmon).height);
+ 	set_selected_monitor(c->mon);
+ 	c->float_geom = client_center_geometry(c, c->mon, c->float_geom, 0, 0);
  
-@@ -1309,6 +1329,8 @@ int32_t tagmon(const Arg *arg) {
+@@ -1545,6 +1573,8 @@ int32_t tag_monitor(const Arg *arg) {
  }
  
- int32_t tagsilent(const Arg *arg) {
+ int32_t tag_silent(const Arg *arg) {
 +	if (native_target_locked(arg))
 +		return 0;
  	Client *fc = NULL;
- 	Client *target_client = arg->tc ? arg->tc : (selmon ? selmon->sel : NULL);
+ 	Client *target_client =
+ 		arg->tc
+@@ -1638,6 +1668,9 @@ int32_t toggle_named_scratchpad(const Arg *arg) {
+ 		return 0;
+ 	}
  
-@@ -1374,6 +1396,8 @@ int32_t tagtoright(const Arg *arg) {
++	if (!target_client || target_client->reserve_right)
++		return 0;
++
+ 	target_client->isnamedscratchpad = 1;
+ 	apply_named_scratchpad(target_client);
+ 	return 0;
+@@ -1660,6 +1693,8 @@ int32_t toggle_scratchpad(const Arg *arg) {
+ 		return 0;
+ 
+ 	wl_list_for_each_safe(c, tmp, &server.clients, link) {
++		if (c->reserve_right)
++			continue;
+ 		if (!config.scratchpad_cross_monitor &&
+ 			c->mon != server.selected_monitor) {
+ 			continue;
+@@ -1713,7 +1748,7 @@ static void tag_special_tag_internal(const Arg *arg, bool silent) {
+ 	if (!server.selected_monitor)
+ 		return;
+ 	Client *c = arg->tc ? arg->tc : server.selected_monitor->sel;
+-	if (!c)
++	if (!c || c->reserve_right)
+ 		return;
+ 
+ 	Monitor *m = c->mon ? c->mon : server.selected_monitor;
+@@ -1805,6 +1840,8 @@ int32_t toggle_fullscreen(const Arg *arg) {
  }
  
- int32_t toggle_named_scratchpad(const Arg *arg) {
+ int32_t toggle_global(const Arg *arg) {
 +	if (native_target_locked(arg))
 +		return 0;
- 	Client *target_client = NULL;
- 	char *arg_id = arg->v;
- 	char *arg_title = arg->v2;
-@@ -1403,6 +1427,8 @@ int32_t toggle_render_border(const Arg *arg) {
+ 	if (!server.selected_monitor)
+ 		return 0;
+ 
+@@ -1862,6 +1899,8 @@ int32_t toggle_maximize_screen(const Arg *arg) {
  }
  
- int32_t toggle_scratchpad(const Arg *arg) {
+ int32_t toggle_overlay(const Arg *arg) {
 +	if (native_target_locked(arg))
 +		return 0;
+ 	if (!server.selected_monitor)
+ 		return 0;
+ 
+@@ -1878,6 +1917,8 @@ int32_t toggle_overlay(const Arg *arg) {
+ }
+ 
+ int32_t toggle_tag(const Arg *arg) {
++	if (native_target_locked(arg))
++		return 0;
+ 	if (!server.selected_monitor)
+ 		return 0;
+ 
+@@ -2129,7 +2170,8 @@ int32_t view_insert(const Arg *arg) {
+ 		get_tag_status((uint32_t)config.tag_num, server.selected_monitor))
+ 		return 0;
+ 
+-	view_insert_shift_tags(server.selected_monitor, target);
++	if (!view_insert_shift_tags(server.selected_monitor, target))
++		return 0;
+ 	int32_t tag_gather_bak = config.tag_gather;
+ 	config.tag_gather = 0;
+ 	client_switch_view(&(Arg){.ui = (1u << (target - 1)) & TAGMASK}, true);
+@@ -2167,6 +2209,8 @@ int32_t view_cross_monitor(const Arg *arg) {
+ }
+ 
+ int32_t tag_cross_monitor(const Arg *arg) {
++	if (native_target_locked(arg))
++		return 0;
+ 	if (!server.selected_monitor)
+ 		return 0;
+ 
+@@ -2209,10 +2253,7 @@ int32_t zoom(const Arg *arg) {
+ 		   *sel = arg->tc ? arg->tc : client_focus_top(server.selected_monitor);
+ 
+ 	if (!sel || !server.selected_monitor ||
+-		!server.selected_monitor->pertag
+-			 ->ltidxs[get_mon_curtag(server.selected_monitor)]
+-			 ->arrange ||
+-		sel->isfloating)
++		!native_layout(server.selected_monitor)->arrange || sel->isfloating)
+ 		return 0;
+ 
+ 	wl_list_for_each(c, &server.clients,
+@@ -2244,6 +2285,8 @@ int32_t setoption(const Arg *arg) {
+ }
+ 
+ int32_t minimize_window(const Arg *arg) {
++	if (native_target_locked(arg))
++		return 0;
+ 	if (!server.selected_monitor)
+ 		return 0;
+ 
+@@ -2274,6 +2317,9 @@ static bool overview_client_on_current_tags(Client *c, bool only_current,
+ 
+ /* Enter or leave overview mode on the selected monitor. */
+ static void set_overview(const Arg *arg, bool enter) {
++	if (enter && server.selected_monitor &&
++		server.selected_monitor->native_reserved)
++		return;
  	Client *c = NULL;
- 	bool hit = false;
- 	Client *tmp = NULL;
-@@ -1485,6 +1511,8 @@ int32_t togglefullscreen(const Arg *arg) {
+ 	Client *sel = arg->tc ? arg->tc : server.selected_monitor->sel;
+ 	uint32_t target = 0;
+@@ -2425,7 +2471,7 @@ int32_t leave_overview(const Arg *arg) {
  }
  
- int32_t toggleglobal(const Arg *arg) {
-+	if (native_target_locked(arg))
-+		return 0;
- 	if (!selmon)
+ int32_t toggle_jump(const Arg *arg) {
+-	if (!server.selected_monitor)
++	if (!server.selected_monitor || server.selected_monitor->native_reserved)
  		return 0;
  
-@@ -1533,6 +1561,8 @@ int32_t togglemaximizescreen(const Arg *arg) {
+ 	if (!server.selected_monitor->isoverview) {
+@@ -2528,13 +2574,19 @@ int32_t sleep_toggle_monitor(const Arg *arg) {
  }
  
- int32_t toggleoverlay(const Arg *arg) {
-+	if (native_target_locked(arg))
-+		return 0;
- 	if (!selmon)
- 		return 0;
- 
-@@ -1549,6 +1579,8 @@ int32_t toggleoverlay(const Arg *arg) {
- }
- 
- int32_t toggletag(const Arg *arg) {
-+	if (native_target_locked(arg))
-+		return 0;
- 	if (!selmon)
- 		return 0;
- 
-@@ -1736,6 +1768,8 @@ int32_t viewcrossmon(const Arg *arg) {
- }
- 
- int32_t tagcrossmon(const Arg *arg) {
-+	if (native_target_locked(arg))
-+		return 0;
- 	if (!selmon)
- 		return 0;
- 
-@@ -1776,7 +1810,7 @@ int32_t zoom(const Arg *arg) {
- 	Client *c = NULL, *sel = arg->tc ? arg->tc : focustop(selmon);
- 
- 	if (!sel || !selmon ||
--		!selmon->pertag->ltidxs[selmon->pertag->curtag]->arrange ||
-+		!native_layout(selmon)->arrange ||
- 		sel->isfloating)
- 		return 0;
- 
-@@ -1808,6 +1842,8 @@ int32_t setoption(const Arg *arg) {
- }
- 
- int32_t minimized(const Arg *arg) {
-+	if (native_target_locked(arg))
-+		return 0;
- 	if (!selmon)
- 		return 0;
- 
-@@ -1835,6 +1871,8 @@ int32_t toggleoverview(const Arg *arg) {
- 	Client *c = NULL;
- 	if (!selmon)
- 		return 0;
-+	if (selmon->native_reserved)
-+		return 0;
- 
- 	Client *sel = arg->tc ? arg->tc : selmon->sel;
- 
-@@ -2023,7 +2061,9 @@ int32_t sleep_toggle_monitor(const Arg *arg) {
- }
- 
- int32_t scroller_apply_stack(Client *c, Client *target_client,
--							 int32_t direction) {
-+							   int32_t direction) {
-+	if ((c && c->reserve_right) || (target_client && target_client->reserve_right))
-+		return 0;
+ void scroller_apply_stack(Client *c, Client *target_client, int32_t direction) {
++	if ((c && c->reserve_right) ||
++		(target_client && target_client->reserve_right))
++		return;
  	if (!c || !c->mon || c->isfloating || !is_scroller_layout(c->mon))
- 		return 0;
+ 		return;
  
-@@ -2134,7 +2174,7 @@ int32_t toggle_all_floating(const Arg *arg) {
- }
+ 	Monitor *m = c->mon;
+ 	uint32_t tag = get_client_tag_idx(c);
  
- int32_t dwindle_set_split_direction(Client *c, bool istoggle, bool horizontal) {
--	const Layout *layout = c->mon->pertag->ltidxs[c->mon->pertag->curtag];
-+	const Layout *layout = native_layout(c->mon);
+-	bool is_horizontal = (m->pertag->ltidxs[tag]->id == SCROLLER);
++	bool is_horizontal =
++		((m->native_reserved ? native_layout(m)
++							 : m->pertag->ltidxs[get_client_tag_idx(c)])
++			 ->id == SCROLLER);
+ 
+ 	if (is_horizontal && (direction == UP || direction == DOWN))
+ 		return;
+@@ -2641,7 +2693,10 @@ int32_t toggle_all_floating(const Arg *arg) {
+ 
+ void dwindle_set_split_direction(Client *c, bool istoggle, bool horizontal) {
+ 	uint32_t tag = get_client_tag_idx(c);
+-	const Layout *layout = c->mon->pertag->ltidxs[tag];
++	const Layout *layout =
++		(c->mon->native_reserved
++			 ? native_layout(c->mon)
++			 : c->mon->pertag->ltidxs[get_client_tag_idx(c)]);
  
  	if (layout->id != DWINDLE)
+ 		return;
+@@ -2706,7 +2761,10 @@ int32_t dwindle_toggle_current_split(const Arg *arg) {
  		return 0;
-diff --git a/src/fetch/client.h b/src/fetch/client.h
-index 89279ede..6fe92f88 100644
---- a/src/fetch/client.h
-+++ b/src/fetch/client.h
-@@ -94,8 +94,8 @@ setclient_coordinate_center(Client *c, Monitor *tm, struct wlr_box geom,
- 	uint32_t cbw = c && check_hit_no_border(c) ? c->bw : 0;
  
- 	if ((!c || !c->no_force_center) && m) {
--		tempbox.x = m->w.x + (m->w.width - geom.width) / 2;
--		tempbox.y = m->w.y + (m->w.height - geom.height) / 2;
-+		tempbox.x = native_workarea(m).x + (native_workarea(m).width - geom.width) / 2;
-+		tempbox.y = native_workarea(m).y + (native_workarea(m).height - geom.height) / 2;
- 	} else {
- 		tempbox.x = geom.x;
- 		tempbox.y = geom.y;
-@@ -105,7 +105,7 @@ setclient_coordinate_center(Client *c, Monitor *tm, struct wlr_box geom,
- 	tempbox.height = geom.height;
+ 	uint32_t tag = get_client_tag_idx(c);
+-	const Layout *layout = c->mon->pertag->ltidxs[tag];
++	const Layout *layout =
++		(c->mon->native_reserved
++			 ? native_layout(c->mon)
++			 : c->mon->pertag->ltidxs[get_client_tag_idx(c)]);
+ 	if (layout->id != DWINDLE)
+ 		return 0;
  
- 	if (offsetx != 0) {
--		len = (m->w.width - tempbox.width - 2 * m->gappoh) / 2;
-+		len = (native_workarea(m).width - tempbox.width - 2 * m->gappoh) / 2;
- 		offset = len * (offsetx / 100.0);
- 		tempbox.x += offset;
+diff --git a/src/ext-protocol/foreign-toplevel.c b/src/ext-protocol/foreign-toplevel.c
+index cf314346..18397752 100644
+--- a/src/ext-protocol/foreign-toplevel.c
++++ b/src/ext-protocol/foreign-toplevel.c
+@@ -35,7 +35,7 @@ void handle_foreign_minimize_request(struct wl_listener *listener, void *data) {
+ 	Client *c = wl_container_of(listener, c, foreign_minimize_request);
+ 	struct wlr_foreign_toplevel_handle_v1_minimized_event *event = data;
  
-@@ -118,7 +118,7 @@ setclient_coordinate_center(Client *c, Monitor *tm, struct wlr_box geom,
- 		}
- 	}
- 	if (offsety != 0) {
--		len = (m->w.height - tempbox.height - 2 * m->gappov) / 2;
-+		len = (native_workarea(m).height - tempbox.height - 2 * m->gappov) / 2;
- 		offset = len * (offsety / 100.0);
- 		tempbox.y += offset;
+-	if (c->swallowdby || !c->mon)
++	if (c->ignore_minimize || c->reserve_right || c->swallowdby || !c->mon)
+ 		return;
  
-@@ -152,8 +152,8 @@ Client *center_tiled_select(Monitor *m) {
- 		if (c && VISIBLEON(c, m) && ISSCROLLTILED(c) &&
- 			client_surface(c)->mapped && !c->isfloating &&
- 			!client_is_unmanaged(c)) {
--			dirx = c->geom.x + c->geom.width / 2 - (m->w.x + m->w.width / 2);
--			diry = c->geom.y + c->geom.height / 2 - (m->w.y + m->w.height / 2);
-+			dirx = c->geom.x + c->geom.width / 2 - (native_workarea(m).x + native_workarea(m).width / 2);
-+			diry = c->geom.y + c->geom.height / 2 - (native_workarea(m).y + native_workarea(m).height / 2);
- 			distance = dirx * dirx + diry * diry;
- 			if (distance < mini_distance || mini_distance == -1) {
- 				mini_distance = distance;
-@@ -316,6 +316,8 @@ Client *focustop(Monitor *m) {
- 	wl_list_for_each(c, &fstack, flink) {
- 		if (c->iskilling || c->isunglobal)
- 			continue;
-+		if (c->reserve_right && c->native_status != NATIVE_ACCEPTED)
-+			continue;
- 		if (VISIBLEON(c, m))
- 			return c;
- 	}
-@@ -389,7 +391,7 @@ bool client_is_in_same_stack(Client *sc, Client *tc, Client *fc) {
- 	if (!sc || !tc)
+ 	if (!c->isminimized && event->minimized) {
+diff --git a/src/input/pointer.c b/src/input/pointer.c
+index 2d1034a6..4a1cf447 100644
+--- a/src/input/pointer.c
++++ b/src/input/pointer.c
+@@ -13,6 +13,7 @@
+ #include "mango/layout/arrange.h"
+ #include "mango/layout/dwindle.h"
+ #include "mango/layout/layout.h"
++#include "mango/layout/native.h"
+ #include "mango/layout/scroll.h"
+ #include "mango/manage/client.h"
+ #include "mango/manage/layer.h"
+@@ -998,6 +999,8 @@ static void client_begin_drag_float(Client *c) {
+ 
+ bool pointer_begin_move_resize(Client *gc, uint32_t mode, double x, double y,
+ 							   uint32_t edge) {
++	if (gc && gc->reserve_right)
++		return false;
+ 	if (server.cursor_mode != CurNormal && server.cursor_mode != CurPressed)
  		return false;
  
--	uint32_t id = sc->mon->pertag->ltidxs[sc->mon->pertag->curtag]->id;
-+	uint32_t id = native_layout(sc->mon)->id;
+@@ -1657,7 +1660,9 @@ void pointer_place_drag_tile(Client *c) {
  
- 	if ((id != SCROLLER && id != VERTICAL_SCROLLER) && tc->mon != selmon &&
- 		(tc->isfullscreen || tc->ismaximizescreen))
-@@ -459,4 +461,4 @@ Client *get_focused_stack_client(Client *sc, Client *custom_focus_client) {
- 		}
- 	}
- 	return sc;
--}
-\ No newline at end of file
-+}
-diff --git a/src/fetch/monitor.h b/src/fetch/monitor.h
-index 75ba7029..92152e51 100644
---- a/src/fetch/monitor.h
-+++ b/src/fetch/monitor.h
-@@ -17,10 +17,10 @@ Monitor *dirtomon(enum wlr_direction dir) {
+ 	if (closest && closest->mon) {
+ 		const Layout *layout =
+-			closest->mon->pertag->ltidxs[get_client_tag_idx(closest)];
++			(closest->mon->native_reserved
++				 ? native_layout(closest->mon)
++				 : closest->mon->pertag->ltidxs[get_client_tag_idx(closest)]);
  
- bool is_scroller_layout(Monitor *m) {
+ 		if (closest->drop_direction == UNDIR) {
+ 			client_set_floating(c, 0);
+diff --git a/src/input/trackpad.c b/src/input/trackpad.c
+index 769aeed6..5e3d1a76 100644
+--- a/src/input/trackpad.c
++++ b/src/input/trackpad.c
+@@ -13,6 +13,7 @@
+ #include "mango/layout/arrange.h"
+ #include "mango/layout/dwindle.h"
+ #include "mango/layout/layout.h"
++#include "mango/layout/native.h"
+ #include "mango/layout/scroll.h"
+ #include "mango/manage/client.h"
+ #include "mango/manage/layer.h"
+@@ -151,7 +152,7 @@ static bool swipe_func_is_overview(FuncType func) {
+ static bool swipe_layout_is_scroller(Monitor *m, bool *vertical) {
+ 	if (!m || !m->pertag)
+ 		return false;
+-	const Layout *l = m->pertag->ltidxs[get_mon_curtag(m)];
++	const Layout *l = native_layout(m);
+ 	if (!l)
+ 		return false;
+ 	if (l->id == VERTICAL_SCROLLER) {
+@@ -306,8 +307,8 @@ static bool swipe_drive_pan_target(Monitor *m, double offset, Client **out) {
+ 	if (!m || !m->sel)
+ 		return false;
  
--	if (m->pertag->ltidxs[m->pertag->curtag]->id == SCROLLER)
-+	if (native_layout(m)->id == SCROLLER)
- 		return true;
+-	double mon_cx = m->w.x + m->w.width / 2.0;
+-	double mon_cy = m->w.y + m->w.height / 2.0;
++	double mon_cx = native_workarea(m).x + native_workarea(m).width / 2.0;
++	double mon_cy = native_workarea(m).y + native_workarea(m).height / 2.0;
+ 	Client *best = NULL;
+ 	double best_dist = 0;
+ 	bool horizontal = swipe_horizontal;
+@@ -371,7 +372,9 @@ static double swipe_drive_pan_offset(Monitor *m, double raw) {
+ 	double lo = 0, hi = 0;
+ 	bool first = true;
+ 	bool horizontal = swipe_horizontal;
+-	double mon_center = (horizontal ? m->w.width : m->w.height) / 2.0;
++	double mon_center =
++		(horizontal ? native_workarea(m).width : native_workarea(m).height) /
++		2.0;
  
--	if (m->pertag->ltidxs[m->pertag->curtag]->id == VERTICAL_SCROLLER)
-+	if (native_layout(m)->id == VERTICAL_SCROLLER)
- 		return true;
+ 	Client *c = NULL;
+ 	wl_list_for_each(c, &server.clients, link) {
+@@ -380,7 +383,8 @@ static double swipe_drive_pan_offset(Monitor *m, double raw) {
  
- 	return false;
-@@ -28,7 +28,7 @@ bool is_scroller_layout(Monitor *m) {
+ 		double center = horizontal ? c->geom.x + c->geom.width / 2.0
+ 								   : c->geom.y + c->geom.height / 2.0;
+-		double center_rel = center - (horizontal ? m->w.x : m->w.y);
++		double center_rel =
++			center - (horizontal ? native_workarea(m).x : native_workarea(m).y);
+ 		double o = mon_center - center_rel;
+ 		if (first) {
+ 			lo = hi = o;
+@@ -410,8 +414,11 @@ static bool swipe_drive_pan_flick_target(Monitor *m, double dir,
+ 		return false;
  
- bool is_monocle_layout(Monitor *m) {
+ 	bool horizontal = swipe_horizontal;
+-	double mon_origin = horizontal ? m->w.x : m->w.y;
+-	double mon_center = (horizontal ? m->w.width : m->w.height) / 2.0;
++	double mon_origin =
++		horizontal ? native_workarea(m).x : native_workarea(m).y;
++	double mon_center =
++		(horizontal ? native_workarea(m).width : native_workarea(m).height) /
++		2.0;
+ 	double sel_center = horizontal ? m->sel->geom.x + m->sel->geom.width / 2.0
+ 								   : m->sel->geom.y + m->sel->geom.height / 2.0;
+ 	double base_offset = mon_center - (sel_center - mon_origin);
+@@ -586,8 +593,8 @@ static void swipe_drive_apply_drag(Monitor *m, uint32_t time) {
+ 	if (!server.grab_client || !m || distance <= 0)
+ 		return;
  
--	if (m->pertag->ltidxs[m->pertag->curtag]->id == MONOCLE)
-+	if (native_layout(m)->id == MONOCLE)
- 		return true;
+-	scale_x = (double)m->w.width / distance;
+-	scale_y = (double)m->w.height / distance;
++	scale_x = (double)native_workarea(m).width / distance;
++	scale_y = (double)native_workarea(m).height / distance;
  
- 	return false;
-@@ -36,7 +36,7 @@ bool is_monocle_layout(Monitor *m) {
+ 	dx = (server.swipe_dx - swipe_drive.drag_prev_dx) * scale_x;
+ 	dy = (server.swipe_dy - swipe_drive.drag_prev_dy) * scale_y;
+@@ -647,7 +654,8 @@ static bool swipe_drive_update(uint32_t fingers, uint32_t time) {
+ 	double p = delta / distance;
  
- bool is_centertile_layout(Monitor *m) {
+ 	if (swipe_drive.pan) {
+-		double extent = swipe_horizontal ? m->w.width : m->w.height;
++		double extent = swipe_horizontal ? native_workarea(m).width
++										 : native_workarea(m).height;
+ 		double raw = ((axis - swipe_drive.base) / distance) * extent;
+ 		double offset = swipe_drive_pan_offset(m, raw);
+ 		swipe_drive_apply_pan(m, offset);
+@@ -686,7 +694,8 @@ static void swipe_drive_end(void) {
+ 		if (swipe_drive.pan) {
+ 			double axis = swipe_drive_axis();
+ 			double distance = config.gesture_swipe_distance;
+-			double extent = swipe_horizontal ? m->w.width : m->w.height;
++			double extent = swipe_horizontal ? native_workarea(m).width
++											 : native_workarea(m).height;
+ 			double raw = ((axis - swipe_drive.base) / distance) * extent;
+ 			double offset = swipe_drive_pan_offset(m, raw);
  
--	if (m->pertag->ltidxs[m->pertag->curtag]->id == CENTER_TILE)
-+	if (native_layout(m)->id == CENTER_TILE)
- 		return true;
- 
- 	return false;
-diff --git a/src/ipc/ipc.h b/src/ipc/ipc.h
-index 0963e956..7887222c 100644
---- a/src/ipc/ipc.h
-+++ b/src/ipc/ipc.h
-@@ -172,6 +172,24 @@ static cJSON *build_client_json(Client *c) {
+diff --git a/src/ipc/ipc.c b/src/ipc/ipc.c
+index c34fead6..6dde61a1 100644
+--- a/src/ipc/ipc.c
++++ b/src/ipc/ipc.c
+@@ -6,6 +6,7 @@
+ #include "mango/input/device.h"
+ #include "mango/input/keyboard.h"
+ #include "mango/layout/layout.h"
++#include "mango/layout/native.h"
+ #include "mango/manage/client.h"
+ #include "mango/manage/layer.h"
+ #include "mango/manage/monitor.h"
+@@ -588,6 +589,26 @@ cJSON *build_client_json(Client *c) {
  	cJSON_AddNumberToObject(obj, "height", c->geom.height);
  	cJSON_AddNumberToObject(obj, "scroller_proportion",
  							(double)c->scroller_proportion);
@@ -687,13 +942,15 @@ index 0963e956..7887222c 100644
 +		cJSON_AddNullToObject(obj, "reservation");
 +	} else {
 +		cJSON *r = cJSON_AddObjectToObject(obj, "reservation");
-+		cJSON_AddStringToObject(r, "status", native_status_names[c->native_status]);
++		cJSON_AddStringToObject(r, "status",
++								native_status_names[c->native_status]);
 +		cJSON_AddNumberToObject(r, "requested_width", c->native_width);
 +		cJSON_AddNumberToObject(r, "requested_height", c->native_height);
 +		if (c->native_reason == NATIVE_OK)
 +			cJSON_AddNullToObject(r, "reason");
 +		else
-+			cJSON_AddStringToObject(r, "reason", native_reason_names[c->native_reason]);
++			cJSON_AddStringToObject(r, "reason",
++									native_reason_names[c->native_reason]);
 +		cJSON *bounds = cJSON_AddObjectToObject(r, "usable_bounds");
 +		cJSON_AddNumberToObject(bounds, "x", c->native_usable.x);
 +		cJSON_AddNumberToObject(bounds, "y", c->native_usable.y);
@@ -703,109 +960,175 @@ index 0963e956..7887222c 100644
 +	}
  	return obj;
  }
- 
-@@ -185,9 +203,9 @@ static cJSON *build_monitor_json(Monitor *m) {
+ cJSON *build_monitor_json(Monitor *m) {
+@@ -601,10 +622,8 @@ cJSON *build_monitor_json(Monitor *m) {
+ 	cJSON_AddNumberToObject(resp, "width", m->m.width);
  	cJSON_AddNumberToObject(resp, "height", m->m.height);
  	cJSON_AddNumberToObject(resp, "scale", m->wlr_output->scale);
- 	cJSON_AddNumberToObject(resp, "layout_index",
--							m->pertag->ltidxs[m->pertag->curtag] - layouts);
-+							native_layout(m) - layouts);
- 	cJSON_AddStringToObject(resp, "layout_symbol",
--							m->pertag->ltidxs[m->pertag->curtag]->symbol);
-+							native_layout(m)->symbol);
+-	cJSON_AddNumberToObject(resp, "layout_index",
+-							m->pertag->ltidxs[get_mon_curtag(m)] - layouts);
+-	cJSON_AddStringToObject(resp, "layout_symbol",
+-							m->pertag->ltidxs[get_mon_curtag(m)]->symbol);
++	cJSON_AddNumberToObject(resp, "layout_index", native_layout(m) - layouts);
++	cJSON_AddStringToObject(resp, "layout_symbol", native_layout(m)->symbol);
  	cJSON_AddStringToObject(resp, "last_open_surface", m->last_open_surface);
- 	cJSON_AddItemToObject(resp, "tags", build_tags_json(m));
- 	cJSON_AddItemToObject(resp, "active_tags", monitor_active_tags(m));
-@@ -1068,4 +1086,4 @@ void ipc_cleanup(void) {
- 	struct ipc_watch_client *wc, *tmp;
- 	wl_list_for_each_safe(wc, tmp, &watch_clients, link)
- 		ipc_remove_watch_client(wc);
--}
-\ No newline at end of file
-+}
-diff --git a/src/layout/arrange.h b/src/layout/arrange.h
-index 7f41f378..c24ea6f8 100644
---- a/src/layout/arrange.h
-+++ b/src/layout/arrange.h
-@@ -5,7 +5,7 @@ void set_size_per(Monitor *m, Client *c) {
- 	if (!m || !c)
+ 	cJSON_AddItemToObject(resp, "tag_num", cJSON_CreateNumber(config.tag_num));
+ 	cJSON_AddItemToObject(resp, "hide_clients",
+diff --git a/src/layout/arrange.c b/src/layout/arrange.c
+index 80e6044d..ab25a78f 100644
+--- a/src/layout/arrange.c
++++ b/src/layout/arrange.c
+@@ -6,6 +6,7 @@
+ #include "mango/ipc/ipc.h"
+ #include "mango/layout/dwindle.h"
+ #include "mango/layout/layout.h"
++#include "mango/layout/native.h"
+ #include "mango/layout/scroll.h"
+ #include "mango/layout/vertical.h"
+ #include "mango/manage/client.h"
+@@ -13,6 +14,7 @@
+ #include "mango/manage/monitor.h"
+ #include "mango/manage/tab.h"
+ #include <assert.h>
++#include <wlr/types/wlr_compositor.h>
+ #include <wlr/types/wlr_cursor.h>
+ 
+ void set_size_per(Monitor *m, Client *c) {
+@@ -23,7 +25,7 @@ void set_size_per(Monitor *m, Client *c) {
  		return;
  
--	const Layout *current_layout = m->pertag->ltidxs[m->pertag->curtag];
+ 	uint32_t tag = get_mon_curtag(m);
+-	const Layout *current_layout = m->pertag->ltidxs[tag];
 +	const Layout *current_layout = native_layout(m);
  
- 	wl_list_for_each(fc, &clients, link) {
+ 	wl_list_for_each(fc, &server.clients, link) {
  		if (VISIBLEON(fc, m) && ISTILED(fc) && fc != c) {
-@@ -475,7 +475,7 @@ void resize_tile_grid_fair(Client *grabc, bool isdrag, int32_t offsetx,
+@@ -500,7 +502,7 @@ void resize_tile_grid_fair(Client *gc, bool isdrag, int32_t offsetx,
  		return;
  
- 	// 获取当前布局 ID
--	const Layout *current_layout = m->pertag->ltidxs[m->pertag->curtag];
+ 	// Gets the current layout ID.
+-	const Layout *current_layout = m->pertag->ltidxs[get_mon_curtag(m)];
 +	const Layout *current_layout = native_layout(m);
  
- 	if (!start_drag_window && isdrag) {
- 		drag_begin_cursorx = cursor->x;
-@@ -979,7 +979,7 @@ void resize_tile_client(Client *grabc, bool isdrag, int32_t offsetx,
+ 	if (!server.start_drag_window && isdrag) {
+ 		server.drag_begin_cursor_x = server.cursor->x;
+@@ -1009,7 +1011,9 @@ void resize_tile_client(Client *gc, bool isdrag, int32_t offsetx,
  		return;
  
  	const Layout *current_layout =
--		grabc->mon->pertag->ltidxs[grabc->mon->pertag->curtag];
-+		native_layout(grabc->mon);
+-		gc->mon->pertag->ltidxs[get_client_tag_idx(gc)];
++		(gc->mon->native_reserved
++			 ? native_layout(gc->mon)
++			 : gc->mon->pertag->ltidxs[get_client_tag_idx(gc)]);
  	if (current_layout->id == TILE || current_layout->id == DECK ||
  		current_layout->id == CENTER_TILE || current_layout->id == RIGHT_TILE
  
-@@ -1027,7 +1027,7 @@ void reset_size_per_mon(Monitor *m, int32_t tile_cilent_num,
- 	uint32_t stack_index = 0;
- 	uint32_t nmasters = m->pertag->nmasters[m->pertag->curtag];
+@@ -1064,7 +1068,7 @@ void reset_size_per_mon(Monitor *m, int32_t tile_cilent_num,
+ 	uint32_t tag = get_mon_curtag(m);
+ 	uint32_t nmasters = m->pertag->nmasters[tag];
  
--	if (m->pertag->ltidxs[m->pertag->curtag]->id != CENTER_TILE) {
+-	if (m->pertag->ltidxs[tag]->id != CENTER_TILE) {
 +	if (native_layout(m)->id != CENTER_TILE) {
  
- 		wl_list_for_each(c, &clients, link) {
+ 		wl_list_for_each(c, &server.clients, link) {
  			if (VISIBLEON(c, m) && ISFAKETILED(c)) {
-@@ -1117,7 +1117,7 @@ void pre_caculate_before_arrange(Monitor *m, bool want_animation,
- 	uint32_t tag = m->pertag->curtag;
+@@ -1155,7 +1159,7 @@ void pre_calculate_before_arrange(Monitor *m, bool want_animation,
+ 	uint32_t tag = get_mon_curtag(m);
  	struct TagScrollerState *st = m->pertag->scroller_state[tag];
  
--	const Layout *cur_layout = m->pertag->ltidxs[m->pertag->curtag];
+-	const Layout *cur_layout = m->pertag->ltidxs[tag];
 +	const Layout *cur_layout = native_layout(m);
  	if (cur_layout->id == SCROLLER || cur_layout->id == VERTICAL_SCROLLER) {
  		update_scroller_state(m);
  	}
-@@ -1176,6 +1176,10 @@ void pre_caculate_before_arrange(Monitor *m, bool want_animation,
- 	wl_list_for_each(c, &clients, link) {
+@@ -1213,6 +1217,11 @@ void pre_calculate_before_arrange(Monitor *m, bool want_animation,
+ 	wl_list_for_each(c, &server.clients, link) {
  		if (c->iskilling)
  			continue;
 +		if (c->reserve_right) {
-+			native_present(c);
++			if (!only_calculate)
++				native_present(c);
 +			continue;
 +		}
  
  		if (c->mon == m) {
  			if (VISIBLEON(c, m)) {
-@@ -1227,6 +1231,7 @@ arrange(Monitor *m, bool want_animation, bool from_view) {
+@@ -1356,6 +1365,13 @@ void tag_gather_apply(Monitor *m) {
+ 		return;
  
- 	if (!m)
+ 	// remap client tags.
++	wl_list_for_each(c, &server.clients, link) {
++		if (c->mon == m && !c->iskilling && c->reserve_right &&
++			client_surface(c)->mapped && !(c->tags & TAG0_MASK) &&
++			tag_remap_mask(c->tags, map) != c->tags)
++			return;
++	}
++
+ 	wl_list_for_each(c, &server.clients, link) {
+ 		if (c->mon != m || c->iskilling || (c->tags & TAG0_MASK))
+ 			continue;
+@@ -1439,6 +1455,7 @@ void arrange(Monitor *m, bool want_animation, bool from_view) {
+ 
+ 	if (!m || m->iscleanuping)
  		return;
 +	native_update_monitor(m);
  
  	if (!m->wlr_output->enabled)
  		return;
-@@ -1240,7 +1245,7 @@ arrange(Monitor *m, bool want_animation, bool from_view) {
+@@ -1470,7 +1487,7 @@ void arrange(Monitor *m, bool want_animation, bool from_view) {
  	if (m->isoverview) {
  		overviewlayout.arrange(m);
  	} else {
--		m->pertag->ltidxs[m->pertag->curtag]->arrange(m);
+-		m->pertag->ltidxs[get_mon_curtag(m)]->arrange(m);
 +		native_layout(m)->arrange(m);
  	}
  
- 	if (!start_drag_window) {
+ 	if (is_tag0) {
+diff --git a/src/layout/native.c b/src/layout/native.c
+new file mode 100644
+index 00000000..a49b2ccf
+--- /dev/null
++++ b/src/layout/native.c
+@@ -0,0 +1,33 @@
++#include "mango/layout/native.h"
++#include "mango/common/server.h"
++#include "mango/dispatch/bind.h"
++#include "mango/layout/layout.h"
++#include "mango/manage/client.h"
++#include "mango/manage/monitor.h"
++#include <scenefx/types/wlr_scene.h>
++#include <string.h>
++#include <wlr/types/wlr_compositor.h>
++#include <wlr/types/wlr_seat.h>
++#include <wlr/types/wlr_xdg_shell.h>
++
++struct wlr_box native_workarea(Monitor *m) {
++	struct wlr_box area = m->w;
++	if (m->native_reserved)
++		area.width -= m->native_reserved->native_geom.width;
++	return area;
++}
++
++const Layout *native_layout(const Monitor *m) {
++	return m->native_reserved ? &layouts[1]
++							  : m->pertag->ltidxs[get_mon_curtag(m)];
++}
++
++bool native_target_locked(const Arg *arg) {
++	Client *c =
++		arg->tc
++			? arg->tc
++			: (server.selected_monitor ? server.selected_monitor->sel : NULL);
++	return c && c->reserve_right;
++}
++
++#include "native_stream.h"
 diff --git a/src/layout/native_geometry.h b/src/layout/native_geometry.h
 new file mode 100644
-index 00000000..bc50045a
+index 00000000..320df240
 --- /dev/null
 +++ b/src/layout/native_geometry.h
-@@ -0,0 +1,52 @@
+@@ -0,0 +1,59 @@
 +#ifndef MANGO_NATIVE_GEOMETRY_H
 +#define MANGO_NATIVE_GEOMETRY_H
 +
@@ -818,23 +1141,29 @@ index 00000000..bc50045a
 +
 +enum native_status { NATIVE_PENDING, NATIVE_ACCEPTED, NATIVE_REJECTED };
 +enum native_reason {
-+	NATIVE_OK, NATIVE_TOO_LARGE, NATIVE_OUTPUT_UNAVAILABLE,
-+	NATIVE_UNSUPPORTED_SCALE, NATIVE_REGION_OCCUPIED, NATIVE_INVALID_SIZE
++	NATIVE_OK,
++	NATIVE_TOO_LARGE,
++	NATIVE_OUTPUT_UNAVAILABLE,
++	NATIVE_UNSUPPORTED_SCALE,
++	NATIVE_REGION_OCCUPIED,
++	NATIVE_INVALID_SIZE
 +};
 +
-+static const char *const native_status_names[] = {
-+	"pending", "accepted", "rejected"
-+};
-+static const char *const native_reason_names[] = {
-+	NULL, "too_large", "output_unavailable", "unsupported_scale",
-+	"region_occupied", "invalid_size"
-+};
++static const char *const native_status_names[] = {"pending", "accepted",
++												  "rejected"};
++static const char *const native_reason_names[] = {NULL,
++												  "too_large",
++												  "output_unavailable",
++												  "unsupported_scale",
++												  "region_occupied",
++												  "invalid_size"};
 +
 +/* All arithmetic is checked before constructing layout-relative rectangles. */
-+static inline enum native_reason native_geometry(
-+	struct wlr_box usable, float scale, bool output_available, bool occupied,
-+	int32_t min_width, int32_t min_height, int32_t max_width,
-+	int32_t max_height, struct wlr_box *stream, struct wlr_box *local) {
++static inline enum native_reason
++native_geometry(struct wlr_box usable, float scale, bool output_available,
++				bool occupied, int32_t min_width, int32_t min_height,
++				int32_t max_width, int32_t max_height, struct wlr_box *stream,
++				struct wlr_box *local) {
 +	if (!output_available || usable.width <= 0 || usable.height <= 0)
 +		return NATIVE_OUTPUT_UNAVAILABLE;
 +	if (!isfinite(scale) || scale != 1.0f)
@@ -853,21 +1182,24 @@ index 00000000..bc50045a
 +	*local = usable;
 +	local->width -= min_width;
 +	*stream = (struct wlr_box){usable.x + local->width,
-+		usable.y + (usable.height - min_height) / 2, min_width, min_height};
++							   usable.y + (usable.height - min_height) / 2,
++							   min_width, min_height};
 +	return NATIVE_OK;
 +}
 +
 +#endif
 diff --git a/src/layout/native_stream.h b/src/layout/native_stream.h
 new file mode 100644
-index 00000000..3bba3177
+index 00000000..3ca2074d
 --- /dev/null
 +++ b/src/layout/native_stream.h
-@@ -0,0 +1,172 @@
-+/* A reservation is derived from mapped clients, never from the saved tag layout. */
+@@ -0,0 +1,204 @@
++/* A reservation is derived from mapped clients, never from the saved tag
++ * layout. */
 +static bool native_visible(Client *c, Monitor *m) {
-+	return c->mon == m && !c->iskilling && client_surface(c)->mapped &&
-+		(c->tags & m->tagset[m->seltags]);
++	return c->mon == m && !c->iskilling && !m->isoverview && !m->only_sleep &&
++		   m->wlr_output->enabled && client_surface(c)->mapped &&
++		   (c->tags & m->tagset[m->seltags]);
 +}
 +
 +static bool native_matches_buffer(Client *c) {
@@ -876,21 +1208,23 @@ index 00000000..3bba3177
 +	struct wlr_surface_state *s = &client_surface(c)->current;
 +	struct wlr_box *g = &c->surface.xdg->geometry;
 +	return g->x == 0 && g->y == 0 && g->width == c->native_width &&
-+		g->height == c->native_height && s->width == c->native_width &&
-+		s->height == c->native_height && s->buffer_width == c->native_width &&
-+		s->buffer_height == c->native_height && s->scale == 1 &&
-+		s->transform == WL_OUTPUT_TRANSFORM_NORMAL;
++		   g->height == c->native_height && s->width == c->native_width &&
++		   s->height == c->native_height &&
++		   s->buffer_width == c->native_width &&
++		   s->buffer_height == c->native_height && s->scale == 1 &&
++		   s->transform == WL_OUTPUT_TRANSFORM_NORMAL;
 +}
 +
-+static void native_present(Client *c) {
++void native_present(Client *c) {
 +	if (!c->scene)
 +		return;
 +	if (c->native_status == NATIVE_ACCEPTED && !native_matches_buffer(c))
 +		c->native_status = NATIVE_PENDING;
 +	bool show = c->native_status == NATIVE_ACCEPTED && c->mon &&
-+		c->mon->native_reserved == c && native_visible(c, c->mon) &&
-+		native_matches_buffer(c);
-+	c->animation.running = c->animation.tagining = c->animation.tagouting = false;
++				c->mon->native_reserved == c && native_visible(c, c->mon) &&
++				native_matches_buffer(c);
++	c->animation.running = c->animation.tagining = c->animation.tagouting =
++		false;
 +	c->animation.tagouted = c->is_pending_open_animation = false;
 +	c->need_output_flush = false;
 +	wlr_scene_node_set_enabled(&c->scene->node, show);
@@ -900,22 +1234,28 @@ index 00000000..3bba3177
 +	wlr_scene_node_set_position(&c->scene->node, c->geom.x, c->geom.y);
 +	wlr_scene_node_set_position(&c->scene_surface->node, 0, 0);
 +	wlr_scene_node_set_enabled(&c->scene_surface->node, true);
-+	/* No compositor scaling, clipping, effects, borders, or transition snapshots. */
++	/* No compositor scaling, clipping, effects, borders, or transition
++	 * snapshots. */
 +	wlr_scene_subsurface_tree_set_clip(&c->scene_surface->node, NULL);
 +	wlr_scene_node_set_enabled(&c->border->node, false);
 +	wlr_scene_node_set_enabled(&c->shadow->node, false);
 +	wlr_scene_node_set_enabled(&c->blur->node, false);
 +	wlr_scene_node_set_enabled(&c->shield->node, false);
-+	wlr_scene_node_set_enabled(&c->group_bar->scene_buffer->node, false);
++	if (c->group_bar) {
++		wlr_scene_node_set_enabled(&c->group_bar->scene->node, false);
++		wlr_scene_node_set_enabled(&c->group_bar->scene_buffer->node, false);
++	}
++	if (c->dim_node)
++		wlr_scene_node_set_enabled(&c->dim_node->scene_buffer->node, false);
 +}
 +
-+static void native_reject(Client *c, enum native_reason reason) {
++void native_reject(Client *c, enum native_reason reason) {
 +	c->native_status = NATIVE_REJECTED;
 +	c->native_reason = reason;
 +	if (c->mon && c->mon->sel == c) {
 +		c->mon->sel = NULL;
-+		if (client_surface(c) == seat->keyboard_state.focused_surface)
-+			wlr_seat_keyboard_clear_focus(seat);
++		if (client_surface(c) == server.seat->keyboard_state.focused_surface)
++			wlr_seat_keyboard_clear_focus(server.seat);
 +	}
 +	if (c->mon && c->mon->native_reserved == c)
 +		c->mon->native_reserved = NULL;
@@ -927,7 +1267,7 @@ index 00000000..3bba3177
 +}
 +
 +static enum native_reason native_validate(Client *c, Monitor *m,
-+	struct wlr_box *geom) {
++										  struct wlr_box *geom) {
 +	struct wlr_box local;
 +	c->native_usable = m->w;
 +	c->native_scale = m->wlr_output->scale;
@@ -936,17 +1276,16 @@ index 00000000..3bba3177
 +	struct wlr_xdg_toplevel_state *s = &c->surface.xdg->toplevel->current;
 +	c->native_width = s->min_width;
 +	c->native_height = s->min_height;
-+	if (m->isoverview)
-+		return NATIVE_REGION_OCCUPIED;
-+	return native_geometry(m->w, c->native_scale,
++	return native_geometry(
++		m->w, c->native_scale,
 +		m->wlr_output->enabled && !strcmp(m->wlr_output->name, "DP-2"), false,
 +		s->min_width, s->min_height, s->max_width, s->max_height, geom, &local);
 +}
 +
-+static void native_update_monitor(Monitor *m) {
++void native_update_monitor(Monitor *m) {
 +	Client *c, *owner = NULL, *previous = m->native_reserved;
 +	m->native_reserved = NULL;
-+	wl_list_for_each(c, &clients, link) {
++	wl_list_for_each(c, &server.clients, link) {
 +		if (!c->reserve_right || c->mon != m || c->iskilling)
 +			continue;
 +		c->native_usable = m->w;
@@ -955,22 +1294,38 @@ index 00000000..3bba3177
 +			native_present(c);
 +			continue;
 +		}
++		if (m->only_sleep || (m->isoverview && m->wlr_output->enabled)) {
++			c->native_status = NATIVE_PENDING;
++			c->native_reason = NATIVE_OK;
++			/* Sleep retains ownership; overview temporarily releases the
++			 * column. */
++			if (m->only_sleep && c == previous && client_surface(c)->mapped &&
++				(c->tags & m->tagset[m->seltags]))
++				owner = c;
++			native_present(c);
++			continue;
++		}
 +		struct wlr_box geom;
 +		enum native_reason reason = native_validate(c, m, &geom);
 +		c->native_hints_pending = false;
-+		if (reason == NATIVE_INVALID_SIZE && c->native_ever_accepted && !client_is_x11(c)) {
-+			struct wlr_xdg_toplevel_state *s = &c->surface.xdg->toplevel->current;
++		if (reason == NATIVE_INVALID_SIZE && c->native_ever_accepted &&
++			!client_is_x11(c)) {
++			struct wlr_xdg_toplevel_state *s =
++				&c->surface.xdg->toplevel->current;
 +			if (s->min_width <= 0 || s->min_height <= 0 ||
-+				s->min_width != s->max_width || s->min_height != s->max_height) {
++				s->min_width != s->max_width ||
++				s->min_height != s->max_height) {
 +				struct wlr_box old_geom, local;
-+				enum native_reason old_reason = native_geometry(m->w, c->native_scale,
-+					true, false, c->native_geom.width, c->native_geom.height,
-+					c->native_geom.width, c->native_geom.height, &old_geom, &local);
++				enum native_reason old_reason = native_geometry(
++					m->w, c->native_scale, true, false, c->native_geom.width,
++					c->native_geom.height, c->native_geom.width,
++					c->native_geom.height, &old_geom, &local);
 +				if (old_reason != NATIVE_OK) {
 +					native_reject(c, old_reason);
 +					continue;
 +				}
-+				/* SDL can commit the two hint setters separately while resizing. */
++				/* SDL can commit the two hint setters separately while
++				 * resizing. */
 +				c->native_status = NATIVE_PENDING;
 +				c->native_hints_pending = true;
 +				if (c == previous && native_visible(c, m))
@@ -981,8 +1336,10 @@ index 00000000..3bba3177
 +		}
 +		if (reason == NATIVE_INVALID_SIZE && !client_is_x11(c) &&
 +			!c->native_ever_accepted) {
-+			struct wlr_xdg_toplevel_state *s = &c->surface.xdg->toplevel->current;
-+			if (!s->min_width && !s->min_height && !s->max_width && !s->max_height) {
++			struct wlr_xdg_toplevel_state *s =
++				&c->surface.xdg->toplevel->current;
++			if (!s->min_width && !s->min_height && !s->max_width &&
++				!s->max_height) {
 +				c->native_status = NATIVE_PENDING;
 +				native_present(c);
 +				continue;
@@ -998,12 +1355,13 @@ index 00000000..3bba3177
 +			continue;
 +		}
 +		c->native_geom = geom;
-+		/* Keep an existing reservation; otherwise the oldest mapped client wins. */
++		/* Keep an existing reservation; otherwise the oldest mapped client
++		 * wins. */
 +		if (!owner || c == previous || (owner != previous && c->id < owner->id))
 +			owner = c;
 +	}
 +	m->native_reserved = owner;
-+	wl_list_for_each(c, &clients, link) {
++	wl_list_for_each(c, &server.clients, link) {
 +		if (!c->reserve_right || c->mon != m || c->iskilling ||
 +			c->native_status == NATIVE_REJECTED || !native_visible(c, m) ||
 +			c->native_width <= 0 || c->native_height <= 0)
@@ -1017,38 +1375,52 @@ index 00000000..3bba3177
 +		if (!wlr_box_equal(&c->geom, &c->native_geom) || !c->native_serial) {
 +			c->geom = c->native_geom;
 +			/* A neutral buffer already at the requested size needs no resize.
-+			 * Forcing another configure here deadlocks clients awaiting admission
-+			 * before their next presentation (SDL does not redraw unchanged sizes). */
-+			c->native_serial = native_matches_buffer(c) ?
-+				c->surface.xdg->current.configure_serial :
-+				wlr_xdg_toplevel_set_size(c->surface.xdg->toplevel,
-+					c->native_width, c->native_height);
++			 * Forcing another configure here deadlocks clients awaiting
++			 * admission before their next presentation (SDL does not redraw
++			 * unchanged sizes). */
++			c->native_serial = native_matches_buffer(c)
++								   ? c->surface.xdg->current.configure_serial
++								   : wlr_xdg_toplevel_set_size(
++										 c->surface.xdg->toplevel,
++										 c->native_width, c->native_height);
 +		}
 +		bool acknowledged = (int32_t)(c->surface.xdg->current.configure_serial -
-+			c->native_serial) >= 0;
-+		c->native_status = acknowledged && native_matches_buffer(c) ?
-+			NATIVE_ACCEPTED : NATIVE_PENDING;
++									  c->native_serial) >= 0;
++		c->native_status = acknowledged && native_matches_buffer(c)
++							   ? NATIVE_ACCEPTED
++							   : NATIVE_PENDING;
 +		c->native_reason = NATIVE_OK;
-+		bool first_accept = !c->native_ever_accepted && c->native_status == NATIVE_ACCEPTED;
++		bool first_accept =
++			!c->native_ever_accepted && c->native_status == NATIVE_ACCEPTED;
 +		c->native_ever_accepted |= c->native_status == NATIVE_ACCEPTED;
 +		native_present(c);
 +		if (first_accept)
-+			focusclient(c, 1);
++			client_focus(c, 1);
 +	}
 +}
-diff --git a/src/layout/scroll.h b/src/layout/scroll.h
-index ef0618b0..354d0a73 100644
---- a/src/layout/scroll.h
-+++ b/src/layout/scroll.h
-@@ -115,27 +115,27 @@ void vertical_scroll_adjust_fullandmax(Client *c, struct wlr_box *target_geom) {
+diff --git a/src/layout/scroll.c b/src/layout/scroll.c
+index 088e43cf..0d5734b1 100644
+--- a/src/layout/scroll.c
++++ b/src/layout/scroll.c
+@@ -3,6 +3,7 @@
+ #include "mango/common/util.h"
+ #include "mango/layout/arrange.h"
+ #include "mango/layout/layout.h"
++#include "mango/layout/native.h"
+ #include "mango/manage/client.h"
+ #include "mango/manage/monitor.h"
+ 
+@@ -123,21 +124,24 @@ void vertical_scroll_adjust_fullandmax(Client *c, struct wlr_box *target_geom) {
  					 : cur_gappoh;
  
  	if (c->isfullscreen) {
 -		target_geom->width = m->m.width;
 -		target_geom->height = m->m.height;
 -		target_geom->x = m->m.x;
-+		target_geom->width = (m->native_reserved ? native_workarea(m) : m->m).width;
-+		target_geom->height = (m->native_reserved ? native_workarea(m) : m->m).height;
++		target_geom->width =
++			(m->native_reserved ? native_workarea(m) : m->m).width;
++		target_geom->height =
++			(m->native_reserved ? native_workarea(m) : m->m).height;
 +		target_geom->x = (m->native_reserved ? native_workarea(m) : m->m).x;
  		return;
  	}
@@ -1066,26 +1438,32 @@ index ef0618b0..354d0a73 100644
 -	target_geom->width = m->w.width - 2 * cur_gappoh;
 -	target_geom->x = m->w.x + (m->w.width - target_geom->width) / 2;
 +	target_geom->width = native_workarea(m).width - 2 * cur_gappoh;
-+	target_geom->x = native_workarea(m).x + (native_workarea(m).width - target_geom->width) / 2;
++	target_geom->x = native_workarea(m).x +
++					 (native_workarea(m).width - target_geom->width) / 2;
  }
  
  void vertical_check_scroller_root_inside_mon(Client *c,
- 											 struct wlr_box *geometry) {
+@@ -145,7 +149,8 @@ void vertical_check_scroller_root_inside_mon(Client *c,
+ 	if (!c || !c->mon)
+ 		return;
  	if (!GEOMINSIDEMON(geometry, c->mon)) {
 -		geometry->y = c->mon->w.y + (c->mon->w.height - geometry->height) / 2;
-+		geometry->y = native_workarea(c->mon).y + (native_workarea(c->mon).height - geometry->height) / 2;
++		geometry->y = native_workarea(c->mon).y +
++					  (native_workarea(c->mon).height - geometry->height) / 2;
  	}
  }
  
-@@ -157,27 +157,27 @@ void horizontal_scroll_adjust_fullandmax(Client *c,
+@@ -167,21 +172,24 @@ void horizontal_scroll_adjust_fullandmax(Client *c,
  					 : cur_gappov;
  
  	if (c->isfullscreen) {
 -		target_geom->height = m->m.height;
 -		target_geom->width = m->m.width;
 -		target_geom->y = m->m.y;
-+		target_geom->height = (m->native_reserved ? native_workarea(m) : m->m).height;
-+		target_geom->width = (m->native_reserved ? native_workarea(m) : m->m).width;
++		target_geom->height =
++			(m->native_reserved ? native_workarea(m) : m->m).height;
++		target_geom->width =
++			(m->native_reserved ? native_workarea(m) : m->m).width;
 +		target_geom->y = (m->native_reserved ? native_workarea(m) : m->m).y;
  		return;
  	}
@@ -1103,18 +1481,22 @@ index ef0618b0..354d0a73 100644
 -	target_geom->height = m->w.height - 2 * cur_gappov;
 -	target_geom->y = m->w.y + (m->w.height - target_geom->height) / 2;
 +	target_geom->height = native_workarea(m).height - 2 * cur_gappov;
-+	target_geom->y = native_workarea(m).y + (native_workarea(m).height - target_geom->height) / 2;
++	target_geom->y = native_workarea(m).y +
++					 (native_workarea(m).height - target_geom->height) / 2;
  }
  
  void horizontal_check_scroller_root_inside_mon(Client *c,
- 											   struct wlr_box *geometry) {
+@@ -189,7 +197,8 @@ void horizontal_check_scroller_root_inside_mon(Client *c,
+ 	if (!c || !c->mon)
+ 		return;
  	if (!GEOMINSIDEMON(geometry, c->mon)) {
 -		geometry->x = c->mon->w.x + (c->mon->w.width - geometry->width) / 2;
-+		geometry->x = native_workarea(c->mon).x + (native_workarea(c->mon).width - geometry->width) / 2;
++		geometry->x = native_workarea(c->mon).x +
++					  (native_workarea(c->mon).width - geometry->width) / 2;
  	}
  }
  
-@@ -323,7 +323,7 @@ void scroller(Monitor *m) {
+@@ -352,7 +361,7 @@ static void scroller_core(Monitor *m, const LayoutContext *ctx) {
  		cur_gappih = cur_gappoh = cur_gappov = 0;
  	}
  	int32_t max_client_width =
@@ -1123,15 +1505,18 @@ index ef0618b0..354d0a73 100644
  
  	/* Preserve upstream fullscreen/maximized handling instead of returning
  	 * early through the adaptive equal-size path. */
-@@ -341,14 +341,14 @@ void scroller(Monitor *m) {
+@@ -369,15 +378,16 @@ static void scroller_core(Monitor *m, const LayoutContext *ctx) {
+ 	 * edge-to-edge with equal widths instead of scrolling */
  	if (adaptive_equal_size_allowed &&
- 		(float)n_heads * config.scroller_default_proportion <= 1.0f) {
- 		uint32_t available_width =
+ 		(float)n_heads * m->pertag->scroller_default_proportion[tag] <= 1.0f) {
+-		int32_t available_width =
 -			m->w.width - 2 * cur_gappoh - (n_heads - 1) * cur_gappih;
-+			native_workarea(m).width - 2 * cur_gappoh - (n_heads - 1) * cur_gappih;
- 		uint32_t equal_client_width = available_width / n_heads;
++		int32_t available_width = native_workarea(m).width - 2 * cur_gappoh -
++								  (n_heads - 1) * cur_gappih;
+ 		int32_t equal_client_width = available_width / n_heads;
 -		int32_t visible_right = m->w.x + m->w.width - cur_gappoh;
-+		int32_t visible_right = native_workarea(m).x + native_workarea(m).width - cur_gappoh;
++		int32_t visible_right =
++			native_workarea(m).x + native_workarea(m).width - cur_gappoh;
  		struct wlr_box target_geom;
  
 -		target_geom.height = m->w.height - 2 * cur_gappov;
@@ -1143,7 +1528,7 @@ index ef0618b0..354d0a73 100644
  
  		for (int i = 0; i < n_heads; i++) {
  			target_geom.width = i == n_heads - 1
-@@ -371,10 +371,10 @@ void scroller(Monitor *m) {
+@@ -401,10 +411,13 @@ static void scroller_core(Monitor *m, const LayoutContext *ctx) {
  									  ? head->scroller_proportion_single
  									  : scroller_default_proportion_single;
  		struct wlr_box target_geom;
@@ -1152,13 +1537,16 @@ index ef0618b0..354d0a73 100644
 -		target_geom.x = m->w.x + (m->w.width - target_geom.width) / 2;
 -		target_geom.y = m->w.y + (m->w.height - target_geom.height) / 2;
 +		target_geom.height = native_workarea(m).height - 2 * cur_gappov;
-+		target_geom.width = (native_workarea(m).width - 2 * cur_gappoh) * single_proportion;
-+		target_geom.x = native_workarea(m).x + (native_workarea(m).width - target_geom.width) / 2;
-+		target_geom.y = native_workarea(m).y + (native_workarea(m).height - target_geom.height) / 2;
++		target_geom.width =
++			(native_workarea(m).width - 2 * cur_gappoh) * single_proportion;
++		target_geom.x = native_workarea(m).x +
++						(native_workarea(m).width - target_geom.width) / 2;
++		target_geom.y = native_workarea(m).y +
++						(native_workarea(m).height - target_geom.height) / 2;
  		horizontal_check_scroller_root_inside_mon(head->client, &target_geom);
- 		arrange_stack_node(head, target_geom, cur_gappiv);
+ 		arrange_stack_node(head, target_geom, cur_gappiv, ctx);
  		sync_scroller_state_to_clients(m, tag);
-@@ -414,9 +414,9 @@ void scroller(Monitor *m) {
+@@ -445,9 +458,10 @@ static void scroller_core(Monitor *m, const LayoutContext *ctx) {
  	bool over_overspread_to_left = false;
  	Client *root_client = root_node->client;
  
@@ -1166,20 +1554,31 @@ index ef0618b0..354d0a73 100644
 +	if (root_client->geom.x >= native_workarea(m).x + config.scroller_structs &&
  		root_client->geom.x + root_client->geom.width <=
 -			m->w.x + m->w.width - config.scroller_structs) {
-+			native_workarea(m).x + native_workarea(m).width - config.scroller_structs) {
++			native_workarea(m).x + native_workarea(m).width -
++				config.scroller_structs) {
  		need_scroller = false;
  	} else {
  		need_scroller = true;
-@@ -457,7 +457,7 @@ void scroller(Monitor *m) {
- 		   (m->prevsel->scroller_proportion * max_client_width) +
- 				   (heads[focus_index]->scroller_proportion *
- 					max_client_width) >
+@@ -483,12 +497,12 @@ static void scroller_core(Monitor *m, const LayoutContext *ctx) {
+ 	bool need_apply_center =
+ 		config.scroller_focus_center || n_heads == 1 ||
+ 		(config.scroller_prefer_center && !need_apply_overspread &&
+-		 (!m->prevsel ||
+-		  (ISSCROLLTILED(m->prevsel) &&
+-		   (m->prevsel->scroller_proportion * max_client_width) +
+-				   (heads[focus_index]->scroller_proportion *
+-					max_client_width) >
 -			   m->w.width - 2 * config.scroller_structs - cur_gappih)));
-+			   native_workarea(m).width - 2 * config.scroller_structs - cur_gappih)));
++		 (!m->prevsel || (ISSCROLLTILED(m->prevsel) &&
++						  (m->prevsel->scroller_proportion * max_client_width) +
++								  (heads[focus_index]->scroller_proportion *
++								   max_client_width) >
++							  native_workarea(m).width -
++								  2 * config.scroller_structs - cur_gappih)));
  
  	if (n_heads == 1 && scroller_ignore_proportion_single) {
  		need_scroller = true;
-@@ -466,32 +466,32 @@ void scroller(Monitor *m) {
+@@ -497,42 +511,46 @@ static void scroller_core(Monitor *m, const LayoutContext *ctx) {
  		need_scroller = false;
  
  	struct wlr_box target_geom;
@@ -1188,7 +1587,8 @@ index ef0618b0..354d0a73 100644
  	target_geom.width =
  		max_client_width * heads[focus_index]->scroller_proportion;
 -	target_geom.y = m->w.y + (m->w.height - target_geom.height) / 2;
-+	target_geom.y = native_workarea(m).y + (native_workarea(m).height - target_geom.height) / 2;
++	target_geom.y = native_workarea(m).y +
++					(native_workarea(m).height - target_geom.height) / 2;
  	horizontal_scroll_adjust_fullandmax(heads[focus_index]->client,
  										&target_geom);
  
@@ -1197,41 +1597,49 @@ index ef0618b0..354d0a73 100644
 +		target_geom.x = (m->native_reserved ? native_workarea(m) : m->m).x;
  		horizontal_check_scroller_root_inside_mon(heads[focus_index]->client,
  												  &target_geom);
- 		arrange_stack_node(heads[focus_index], target_geom, cur_gappiv);
+ 		arrange_stack_node(heads[focus_index], target_geom, cur_gappiv, ctx);
  	} else if (heads[focus_index]->client->ismaximizescreen) {
 -		target_geom.x = m->w.x + cur_gappoh;
 +		target_geom.x = native_workarea(m).x + cur_gappoh;
  		horizontal_check_scroller_root_inside_mon(heads[focus_index]->client,
  												  &target_geom);
- 		arrange_stack_node(heads[focus_index], target_geom, cur_gappiv);
+ 		arrange_stack_node(heads[focus_index], target_geom, cur_gappiv, ctx);
  	} else if (need_scroller) {
  		if (need_apply_center) {
 -			target_geom.x = m->w.x + (m->w.width - target_geom.width) / 2;
-+			target_geom.x = native_workarea(m).x + (native_workarea(m).width - target_geom.width) / 2;
++			target_geom.x = native_workarea(m).x +
++							(native_workarea(m).width - target_geom.width) / 2;
  		} else if (need_apply_overspread) {
  			if (over_overspread_to_left) {
 -				target_geom.x = m->w.x + config.scroller_structs;
 +				target_geom.x = native_workarea(m).x + config.scroller_structs;
  			} else {
- 				target_geom.x =
+-				target_geom.x =
 -					m->w.x + (m->w.width -
-+					native_workarea(m).x + (native_workarea(m).width -
- 							  heads[focus_index]->scroller_proportion *
- 								  max_client_width -
- 							  config.scroller_structs);
-@@ -499,9 +499,9 @@ void scroller(Monitor *m) {
+-							  heads[focus_index]->scroller_proportion *
+-								  max_client_width -
+-							  config.scroller_structs);
++				target_geom.x = native_workarea(m).x +
++								(native_workarea(m).width -
++								 heads[focus_index]->scroller_proportion *
++									 max_client_width -
++								 config.scroller_structs);
+ 			}
  		} else {
  			/* adaptive: clamp the focused client into the visible area
  			 * instead of snapping it to a screen edge */
 -			int32_t visible_left = m->w.x + config.scroller_structs;
-+			int32_t visible_left = native_workarea(m).x + config.scroller_structs;
- 			int32_t visible_right =
+-			int32_t visible_right =
 -				m->w.x + m->w.width - config.scroller_structs;
-+				native_workarea(m).x + native_workarea(m).width - config.scroller_structs;
++			int32_t visible_left =
++				native_workarea(m).x + config.scroller_structs;
++			int32_t visible_right = native_workarea(m).x +
++									native_workarea(m).width -
++									config.scroller_structs;
  
  			target_geom.x = root_client->geom.x;
  			if (target_geom.x < visible_left) {
-@@ -524,7 +524,7 @@ void scroller(Monitor *m) {
+@@ -555,7 +573,7 @@ static void scroller_core(Monitor *m, const LayoutContext *ctx) {
  	for (int i = 1; i <= focus_index; i++) {
  		struct ScrollerStackNode *cur = heads[focus_index - i];
  		struct wlr_box left_geom;
@@ -1240,7 +1648,7 @@ index ef0618b0..354d0a73 100644
  		left_geom.width = max_client_width * cur->scroller_proportion;
  		horizontal_scroll_adjust_fullandmax(cur->client, &left_geom);
  		left_geom.x = heads[focus_index - i + 1]->client->geom.x - cur_gappih -
-@@ -536,7 +536,7 @@ void scroller(Monitor *m) {
+@@ -567,7 +585,7 @@ static void scroller_core(Monitor *m, const LayoutContext *ctx) {
  	for (int i = 1; i < n_heads - focus_index; i++) {
  		struct ScrollerStackNode *cur = heads[focus_index + i];
  		struct wlr_box right_geom;
@@ -1249,7 +1657,7 @@ index ef0618b0..354d0a73 100644
  		right_geom.width = max_client_width * cur->scroller_proportion;
  		horizontal_scroll_adjust_fullandmax(cur->client, &right_geom);
  		right_geom.x = heads[focus_index + i - 1]->client->geom.x + cur_gappih +
-@@ -589,7 +589,7 @@ void vertical_scroller(Monitor *m) {
+@@ -636,7 +654,7 @@ static void vertical_scroller_core(Monitor *m, const LayoutContext *ctx) {
  		cur_gappiv = cur_gappov = cur_gappoh = 0;
  	}
  	int32_t max_client_height =
@@ -1258,15 +1666,18 @@ index ef0618b0..354d0a73 100644
  
  	/* Preserve upstream fullscreen/maximized handling instead of returning
  	 * early through the adaptive equal-size path. */
-@@ -607,14 +607,14 @@ void vertical_scroller(Monitor *m) {
+@@ -653,15 +671,16 @@ static void vertical_scroller_core(Monitor *m, const LayoutContext *ctx) {
+ 	 * edge-to-edge with equal heights instead of scrolling */
  	if (adaptive_equal_size_allowed &&
- 		(float)n_heads * config.scroller_default_proportion <= 1.0f) {
- 		uint32_t available_height =
+ 		(float)n_heads * m->pertag->scroller_default_proportion[tag] <= 1.0f) {
+-		int32_t available_height =
 -			m->w.height - 2 * cur_gappov - (n_heads - 1) * cur_gappiv;
-+			native_workarea(m).height - 2 * cur_gappov - (n_heads - 1) * cur_gappiv;
- 		uint32_t equal_client_height = available_height / n_heads;
++		int32_t available_height = native_workarea(m).height - 2 * cur_gappov -
++								   (n_heads - 1) * cur_gappiv;
+ 		int32_t equal_client_height = available_height / n_heads;
 -		int32_t visible_bottom = m->w.y + m->w.height - cur_gappov;
-+		int32_t visible_bottom = native_workarea(m).y + native_workarea(m).height - cur_gappov;
++		int32_t visible_bottom =
++			native_workarea(m).y + native_workarea(m).height - cur_gappov;
  		struct wlr_box target_geom;
  
 -		target_geom.width = m->w.width - 2 * cur_gappoh;
@@ -1278,7 +1689,7 @@ index ef0618b0..354d0a73 100644
  
  		for (int i = 0; i < n_heads; i++) {
  			target_geom.height = i == n_heads - 1
-@@ -636,10 +636,10 @@ void vertical_scroller(Monitor *m) {
+@@ -685,10 +704,13 @@ static void vertical_scroller_core(Monitor *m, const LayoutContext *ctx) {
  									  ? head->scroller_proportion_single
  									  : scroller_default_proportion_single;
  		struct wlr_box target_geom;
@@ -1287,13 +1698,16 @@ index ef0618b0..354d0a73 100644
 -		target_geom.y = m->w.y + (m->w.height - target_geom.height) / 2;
 -		target_geom.x = m->w.x + (m->w.width - target_geom.width) / 2;
 +		target_geom.width = native_workarea(m).width - 2 * cur_gappoh;
-+		target_geom.height = (native_workarea(m).height - 2 * cur_gappov) * single_proportion;
-+		target_geom.y = native_workarea(m).y + (native_workarea(m).height - target_geom.height) / 2;
-+		target_geom.x = native_workarea(m).x + (native_workarea(m).width - target_geom.width) / 2;
++		target_geom.height =
++			(native_workarea(m).height - 2 * cur_gappov) * single_proportion;
++		target_geom.y = native_workarea(m).y +
++						(native_workarea(m).height - target_geom.height) / 2;
++		target_geom.x = native_workarea(m).x +
++						(native_workarea(m).width - target_geom.width) / 2;
  		vertical_check_scroller_root_inside_mon(head->client, &target_geom);
- 		arrange_stack_vertical_node(head, target_geom, cur_gappih);
+ 		arrange_stack_vertical_node(head, target_geom, cur_gappih, ctx);
  		sync_scroller_state_to_clients(m, tag);
-@@ -678,9 +678,9 @@ void vertical_scroller(Monitor *m) {
+@@ -728,9 +750,10 @@ static void vertical_scroller_core(Monitor *m, const LayoutContext *ctx) {
  	bool over_overspread_to_up = false;
  	Client *root_client = root_node->client;
  
@@ -1301,20 +1715,22 @@ index ef0618b0..354d0a73 100644
 +	if (root_client->geom.y >= native_workarea(m).y + config.scroller_structs &&
  		root_client->geom.y + root_client->geom.height <=
 -			m->w.y + m->w.height - config.scroller_structs) {
-+			native_workarea(m).y + native_workarea(m).height - config.scroller_structs) {
++			native_workarea(m).y + native_workarea(m).height -
++				config.scroller_structs) {
  		need_scroller = false;
  	} else {
  		need_scroller = true;
-@@ -721,7 +721,7 @@ void vertical_scroller(Monitor *m) {
+@@ -771,7 +794,8 @@ static void vertical_scroller_core(Monitor *m, const LayoutContext *ctx) {
  		   (m->prevsel->scroller_proportion * max_client_height) +
  				   (heads[focus_index]->scroller_proportion *
  					max_client_height) >
 -			   m->w.height - 2 * config.scroller_structs - cur_gappiv)));
-+			   native_workarea(m).height - 2 * config.scroller_structs - cur_gappiv)));
++			   native_workarea(m).height - 2 * config.scroller_structs -
++				   cur_gappiv)));
  
  	if (n_heads == 1 && scroller_ignore_proportion_single) {
  		need_scroller = true;
-@@ -730,33 +730,33 @@ void vertical_scroller(Monitor *m) {
+@@ -780,43 +804,48 @@ static void vertical_scroller_core(Monitor *m, const LayoutContext *ctx) {
  		need_scroller = false;
  
  	struct wlr_box target_geom;
@@ -1323,7 +1739,8 @@ index ef0618b0..354d0a73 100644
  	target_geom.height =
  		max_client_height * heads[focus_index]->scroller_proportion;
 -	target_geom.x = m->w.x + (m->w.width - target_geom.width) / 2;
-+	target_geom.x = native_workarea(m).x + (native_workarea(m).width - target_geom.width) / 2;
++	target_geom.x = native_workarea(m).x +
++					(native_workarea(m).width - target_geom.width) / 2;
  	vertical_scroll_adjust_fullandmax(heads[focus_index]->client, &target_geom);
  
  	if (heads[focus_index]->client->isfullscreen) {
@@ -1331,43 +1748,52 @@ index ef0618b0..354d0a73 100644
 +		target_geom.y = (m->native_reserved ? native_workarea(m) : m->m).y;
  		vertical_check_scroller_root_inside_mon(heads[focus_index]->client,
  												&target_geom);
- 		arrange_stack_vertical_node(heads[focus_index], target_geom,
- 									cur_gappih);
+ 		arrange_stack_vertical_node(heads[focus_index], target_geom, cur_gappih,
+ 									ctx);
  	} else if (heads[focus_index]->client->ismaximizescreen) {
 -		target_geom.y = m->w.y + cur_gappov;
 +		target_geom.y = native_workarea(m).y + cur_gappov;
  		vertical_check_scroller_root_inside_mon(heads[focus_index]->client,
  												&target_geom);
- 		arrange_stack_vertical_node(heads[focus_index], target_geom,
- 									cur_gappih);
+ 		arrange_stack_vertical_node(heads[focus_index], target_geom, cur_gappih,
+ 									ctx);
  	} else if (need_scroller) {
  		if (need_apply_center) {
 -			target_geom.y = m->w.y + (m->w.height - target_geom.height) / 2;
-+			target_geom.y = native_workarea(m).y + (native_workarea(m).height - target_geom.height) / 2;
++			target_geom.y =
++				native_workarea(m).y +
++				(native_workarea(m).height - target_geom.height) / 2;
  		} else if (need_apply_overspread) {
  			if (over_overspread_to_up) {
 -				target_geom.y = m->w.y + config.scroller_structs;
 +				target_geom.y = native_workarea(m).y + config.scroller_structs;
  			} else {
- 				target_geom.y =
+-				target_geom.y =
 -					m->w.y + (m->w.height -
-+					native_workarea(m).y + (native_workarea(m).height -
- 							  heads[focus_index]->scroller_proportion *
- 								  max_client_height -
- 							  config.scroller_structs);
-@@ -764,9 +764,9 @@ void vertical_scroller(Monitor *m) {
+-							  heads[focus_index]->scroller_proportion *
+-								  max_client_height -
+-							  config.scroller_structs);
++				target_geom.y = native_workarea(m).y +
++								(native_workarea(m).height -
++								 heads[focus_index]->scroller_proportion *
++									 max_client_height -
++								 config.scroller_structs);
+ 			}
  		} else {
  			/* adaptive: clamp the focused client into the visible area
  			 * instead of snapping it to a screen edge */
 -			int32_t visible_top = m->w.y + config.scroller_structs;
-+			int32_t visible_top = native_workarea(m).y + config.scroller_structs;
- 			int32_t visible_bottom =
+-			int32_t visible_bottom =
 -				m->w.y + m->w.height - config.scroller_structs;
-+				native_workarea(m).y + native_workarea(m).height - config.scroller_structs;
++			int32_t visible_top =
++				native_workarea(m).y + config.scroller_structs;
++			int32_t visible_bottom = native_workarea(m).y +
++									 native_workarea(m).height -
++									 config.scroller_structs;
  
  			target_geom.y = root_client->geom.y;
  			if (target_geom.y < visible_top) {
-@@ -795,7 +795,7 @@ void vertical_scroller(Monitor *m) {
+@@ -845,7 +874,7 @@ static void vertical_scroller_core(Monitor *m, const LayoutContext *ctx) {
  	for (int i = 1; i <= focus_index; i++) {
  		struct ScrollerStackNode *cur = heads[focus_index - i];
  		struct wlr_box up_geom;
@@ -1376,7 +1802,7 @@ index ef0618b0..354d0a73 100644
  		up_geom.height = max_client_height * cur->scroller_proportion;
  		vertical_scroll_adjust_fullandmax(cur->client, &up_geom);
  
-@@ -813,7 +813,7 @@ void vertical_scroller(Monitor *m) {
+@@ -863,7 +892,7 @@ static void vertical_scroller_core(Monitor *m, const LayoutContext *ctx) {
  	for (int i = 1; i < n_heads - focus_index; i++) {
  		struct ScrollerStackNode *cur = heads[focus_index + i];
  		struct wlr_box down_geom;
@@ -1385,121 +1811,163 @@ index ef0618b0..354d0a73 100644
  		down_geom.height = max_client_height * cur->scroller_proportion;
  		vertical_scroll_adjust_fullandmax(cur->client, &down_geom);
  		down_geom.y = heads[focus_index + i - 1]->client->geom.y + cur_gappiv +
-@@ -1155,4 +1155,4 @@ void exchange_two_scroller_clients(Client *c1, Client *c2) {
- 	finish_exchange_arrange_and_focus(c1, c2, m1, m2);
+@@ -892,6 +921,9 @@ void scroller_remove_client(Client *c) {
  
- 	return;
--}
-\ No newline at end of file
-+}
-diff --git a/src/mango.c b/src/mango.c
-index 2f884f7a..f8839dcf 100644
---- a/src/mango.c
-+++ b/src/mango.c
-@@ -100,6 +100,7 @@
- #endif
- #include "common/util.h"
- #include "draw/text-node.h"
-+#include "layout/native_geometry.h"
- 
- /* macros */
- #define MANGO_MAX(A, B) ((A) > (B) ? (A) : (B))
-@@ -116,15 +117,16 @@
- 	 A->y + A->height <= M->m.y + M->m.height)
- #define ISTILED(A)                                                             \
- 	(A && !(A)->isfloating && !(A)->isminimized && !(A)->iskilling &&          \
--	 !(A)->ismaximizescreen && !(A)->isfullscreen && !(A)->isunglobal)
-+	 !(A)->ismaximizescreen && !(A)->isfullscreen && !(A)->isunglobal &&       \
-+	 !(A)->reserve_right)
- #define ISNORMAL(A)                                                            \
- 	(A && !(A)->isminimized && !(A)->iskilling && !(A)->isunglobal)
- #define ISSCROLLTILED(A)                                                       \
- 	(A && !(A)->isfloating && !(A)->isminimized && !(A)->iskilling &&          \
--	 !(A)->isunglobal)
-+	 !(A)->isunglobal && !(A)->reserve_right)
- #define ISFAKETILED(A)                                                         \
- 	(A && !(A)->isfloating && !(A)->isminimized && !(A)->iskilling &&          \
--	 !(A)->isunglobal)
-+	 !(A)->isunglobal && !(A)->reserve_right)
- #define VISIBLEON(C, M)                                                        \
- 	((C) && (M) && (C)->mon == (M) && !(C)->is_logic_hide &&                   \
- 	 (((C)->tags & (M)->tagset[(M)->seltags] || (C)->isglobal ||               \
-@@ -482,6 +484,14 @@ struct Client {
- 	Client *group_next;
- 	bool isgroupfocusing;
- 	bool is_logic_hide;
-+	int32_t reserve_right;
-+	enum native_status native_status;
-+	enum native_reason native_reason;
-+	int32_t native_width, native_height;
-+	struct wlr_box native_geom, native_usable;
-+	float native_scale;
-+	uint32_t native_serial;
-+	bool native_ever_accepted, native_close_sent, native_hints_pending;
- };
- 
- typedef struct {
-@@ -575,6 +585,7 @@ struct Monitor {
- 	struct wl_event_source *skip_frame_timeout;
- 	struct wlr_box m;		  /* monitor area, layout-relative */
- 	struct wlr_box w;		  /* window area, layout-relative */
-+	Client *native_reserved;
- 	struct wl_list layers[4]; /* LayerSurface::link */
- 	uint32_t seltags;
- 	uint32_t tagset[2];
-@@ -1120,6 +1131,26 @@ struct Pertag {
- };
- #include "config/parse_config.h"
- 
-+static struct wlr_box native_workarea(Monitor *m) {
-+	struct wlr_box area = m->w;
-+	if (m->native_reserved)
-+		area.width -= m->native_reserved->native_geom.width;
-+	return area;
-+}
-+
-+static const Layout *native_layout(Monitor *m) {
-+	return m->native_reserved ? &layouts[1] : m->pertag->ltidxs[m->pertag->curtag];
-+}
-+
-+static bool native_target_locked(const Arg *arg) {
-+	Client *c = arg->tc ? arg->tc : (selmon ? selmon->sel : NULL);
-+	return c && c->reserve_right;
-+}
-+
-+static void native_present(Client *c);
-+static void native_update_monitor(Monitor *m);
-+static void native_reject(Client *c, enum native_reason reason);
-+
- static struct wl_signal mango_print_status;
- 
- static struct wl_listener print_status_listener = {.notify =
-@@ -1196,6 +1227,7 @@ static struct wl_event_source *sync_keymap;
- #include "layout/overview.h"
- #include "layout/scroll.h"
- #include "layout/vertical.h"
-+#include "layout/native_stream.h"
- 
- void client_change_mon(Client *c, Monitor *m) {
- 	setmon(c, m, c->tags, true);
-@@ -1380,7 +1412,7 @@ void client_replace(Client *c, Client *w, bool is_group_change_member,
- 	if (!w->mon)
+ void scroller_insert_stack(Client *c, Client *target_client,
+ 						   bool insert_before) {
++	if ((c && c->reserve_right) ||
++		(target_client && target_client->reserve_right))
++		return;
+ 	if (!target_client || target_client->mon != c->mon)
  		return;
  
--	const Layout *layout = w->mon->pertag->ltidxs[w->mon->pertag->curtag];
-+	const Layout *layout = native_layout(w->mon);
+diff --git a/src/layout/vertical.c b/src/layout/vertical.c
+index 34762a80..9ab44b98 100644
+--- a/src/layout/vertical.c
++++ b/src/layout/vertical.c
+@@ -215,7 +215,7 @@ static void vertical_grid_core(Monitor *m, const LayoutContext *ctx) {
+ 		wl_list_for_each(c, &server.clients, link) {
+ 			if (c->mon != m)
+ 				continue;
+-			if (VISIBLEON(c, m) && !c->isunglobal &&
++			if (VISIBLEON(c, m) && !c->reserve_right && !c->isunglobal &&
+ 				(!client_is_x11_popup(c) || ISFAKETILED(c))) {
+ 				ch = (m->w.height - 2 * target_gappo) * single_height_ratio;
+ 				cw = (m->w.width - 2 * target_gappo) * single_width_ratio;
+@@ -236,7 +236,7 @@ static void vertical_grid_core(Monitor *m, const LayoutContext *ctx) {
+ 		wl_list_for_each(c, &server.clients, link) {
+ 			if (c->mon != m)
+ 				continue;
+-			if (VISIBLEON(c, m) && !c->isunglobal &&
++			if (VISIBLEON(c, m) && !c->reserve_right && !c->isunglobal &&
+ 				(!client_is_x11_popup(c) || ISFAKETILED(c))) {
+ 				if (i < 2)
+ 					row_pers[i] =
+@@ -254,7 +254,7 @@ static void vertical_grid_core(Monitor *m, const LayoutContext *ctx) {
+ 		wl_list_for_each(c, &server.clients, link) {
+ 			if (c->mon != m)
+ 				continue;
+-			if (VISIBLEON(c, m) && !c->isunglobal &&
++			if (VISIBLEON(c, m) && !c->reserve_right && !c->isunglobal &&
+ 				(!client_is_x11_popup(c) || ISFAKETILED(c))) {
+ 				c->grid_col_idx = 0;
+ 				c->grid_row_idx = i;
+@@ -305,7 +305,7 @@ static void vertical_grid_core(Monitor *m, const LayoutContext *ctx) {
+ 	wl_list_for_each(c, &server.clients, link) {
+ 		if (c->mon != m)
+ 			continue;
+-		if (VISIBLEON(c, m) && !c->isunglobal &&
++		if (VISIBLEON(c, m) && !c->reserve_right && !c->isunglobal &&
+ 			(!client_is_x11_popup(c) || ISFAKETILED(c))) {
+ 			int32_t c_idx = i / rows;
+ 			int32_t r_idx = i % rows;
+@@ -332,7 +332,7 @@ static void vertical_grid_core(Monitor *m, const LayoutContext *ctx) {
+ 	wl_list_for_each(c, &server.clients, link) {
+ 		if (c->mon != m)
+ 			continue;
+-		if (VISIBLEON(c, m) && !c->isunglobal &&
++		if (VISIBLEON(c, m) && !c->reserve_right && !c->isunglobal &&
+ 			(!client_is_x11_popup(c) || ISFAKETILED(c))) {
+ 			int32_t c_idx = i / rows;
+ 			int32_t r_idx = i % rows;
+diff --git a/src/manage/client.c b/src/manage/client.c
+index 8271096c..6c1f46b8 100644
+--- a/src/manage/client.c
++++ b/src/manage/client.c
+@@ -13,6 +13,7 @@
+ #include "mango/layout/arrange.h"
+ #include "mango/layout/dwindle.h"
+ #include "mango/layout/layout.h"
++#include "mango/layout/native.h"
+ #include "mango/layout/scroll.h"
+ #include "mango/manage/layer.h"
+ #include "mango/manage/misc.h"
+@@ -929,8 +930,10 @@ client_center_geometry(Client *c, Monitor *tm, struct wlr_box geom,
+ 	uint32_t cbw = c && check_hit_no_border(c) ? c->bw : 0;
  
- 	if (layout->id == DWINDLE || layout->id == SCROLLER ||
- 		layout->id == VERTICAL_SCROLLER) {
-@@ -1611,6 +1643,7 @@ static void apply_rule_properties(Client *c, const ConfigWinRule *r) {
+ 	if ((!c || !c->no_force_center) && m) {
+-		tempbox.x = m->w.x + (m->w.width - geom.width) / 2;
+-		tempbox.y = m->w.y + (m->w.height - geom.height) / 2;
++		tempbox.x =
++			native_workarea(m).x + (native_workarea(m).width - geom.width) / 2;
++		tempbox.y = native_workarea(m).y +
++					(native_workarea(m).height - geom.height) / 2;
+ 	} else {
+ 		tempbox.x = geom.x;
+ 		tempbox.y = geom.y;
+@@ -940,7 +943,7 @@ client_center_geometry(Client *c, Monitor *tm, struct wlr_box geom,
+ 	tempbox.height = geom.height;
+ 
+ 	if (offsetx != 0) {
+-		len = (m->w.width - tempbox.width - 2 * m->gappoh) / 2;
++		len = (native_workarea(m).width - tempbox.width - 2 * m->gappoh) / 2;
+ 		offset = len * (offsetx / 100.0);
+ 		tempbox.x += offset;
+ 
+@@ -953,7 +956,7 @@ client_center_geometry(Client *c, Monitor *tm, struct wlr_box geom,
+ 		}
+ 	}
+ 	if (offsety != 0) {
+-		len = (m->w.height - tempbox.height - 2 * m->gappov) / 2;
++		len = (native_workarea(m).height - tempbox.height - 2 * m->gappov) / 2;
+ 		offset = len * (offsety / 100.0);
+ 		tempbox.y += offset;
+ 
+@@ -988,8 +991,10 @@ Client *center_tiled_select(Monitor *m) {
+ 		if (c && VISIBLEON(c, m) && ISSCROLLTILED(c) &&
+ 			client_surface(c)->mapped && !c->isfloating &&
+ 			!client_is_unmanaged(c)) {
+-			dirx = c->geom.x + c->geom.width / 2 - (m->w.x + m->w.width / 2);
+-			diry = c->geom.y + c->geom.height / 2 - (m->w.y + m->w.height / 2);
++			dirx = c->geom.x + c->geom.width / 2 -
++				   (native_workarea(m).x + native_workarea(m).width / 2);
++			diry = c->geom.y + c->geom.height / 2 -
++				   (native_workarea(m).y + native_workarea(m).height / 2);
+ 			distance = dirx * dirx + diry * diry;
+ 			if (distance < mini_distance || mini_distance == -1) {
+ 				mini_distance = distance;
+@@ -1174,7 +1179,8 @@ Client *client_focus_top(Monitor *m) {
+ 	}
+ 
+ 	wl_list_for_each(c, &server.focus_stack, flink) {
+-		if (c->iskilling || c->isunglobal)
++		if (c->iskilling || c->isunglobal ||
++			(c->reserve_right && c->native_status != NATIVE_ACCEPTED))
+ 			continue;
+ 		if (VISIBLEON(c, m) && client_surface(c)->mapped)
+ 			return c;
+@@ -1264,7 +1270,10 @@ bool client_is_in_same_stack(Client *sc, Client *tc, Client *fc) {
+ 	if (!sc || !tc || !sc->mon)
+ 		return false;
+ 
+-	uint32_t id = sc->mon->pertag->ltidxs[get_client_tag_idx(sc)]->id;
++	uint32_t id = (sc->mon->native_reserved
++					   ? native_layout(sc->mon)
++					   : sc->mon->pertag->ltidxs[get_client_tag_idx(sc)])
++					  ->id;
+ 
+ 	if ((id != SCROLLER && id != VERTICAL_SCROLLER) &&
+ 		tc->mon != server.selected_monitor &&
+@@ -1393,7 +1402,9 @@ Client *get_focused_stack_client(Client *sc, Client *custom_focus_client) {
+ 
+ 	if (sc->mon && sc->mon->pertag) {
+ 		uint32_t tag = get_client_tag_idx(sc);
+-		const Layout *layout = sc->mon->pertag->ltidxs[tag];
++		const Layout *layout =
++			(sc->mon->native_reserved ? native_layout(sc->mon)
++									  : sc->mon->pertag->ltidxs[tag]);
+ 		if (layout && layout->id == DWINDLE) {
+ 			is_dwindle = true;
+ 			dwindle_block = dwindle_focus_block_root(
+@@ -1439,6 +1450,7 @@ void apply_rule_properties(Client *c, const ConfigWinRule *r) {
  	APPLY_INT_PROP(c, r, isfullscreen);
  	APPLY_INT_PROP(c, r, isfakefullscreen);
- 	APPLY_INT_PROP(c, r, isnoborder);
+ 	APPLY_INT_PROP(c, r, no_border);
 +	APPLY_INT_PROP(c, r, reserve_right);
- 	APPLY_INT_PROP(c, r, isnoshadow);
- 	APPLY_INT_PROP(c, r, isnoradius);
- 	APPLY_INT_PROP(c, r, isnoanimation);
-@@ -1692,6 +1725,8 @@ void client_reset_mon_tags(Client *c, Monitor *mon, uint32_t newtags) {
+ 	APPLY_INT_PROP(c, r, no_shadow);
+ 	APPLY_INT_PROP(c, r, no_radius);
+ 	APPLY_INT_PROP(c, r, no_animation);
+@@ -1527,6 +1539,8 @@ void client_reset_mon_tags(Client *c, Monitor *mon, uint32_t newtags) {
  }
  
  void check_match_tag_floating_rule(Client *c, Monitor *mon) {
@@ -1508,70 +1976,29 @@ index 2f884f7a..f8839dcf 100644
  	if (c->tags && !c->isfloating && mon && !c->swallowing &&
  		mon->pertag->open_as_floating[get_tags_first_tag_num(c->tags)]) {
  		c->isfloating = 1;
-@@ -1794,6 +1829,14 @@ void applyrules(Client *c) {
- 		}
+@@ -1640,6 +1654,18 @@ void client_apply_rules(Client *c, Monitor **rule_mon, uint32_t *rule_tags) {
+ 		newtags = TAG0_MASK;
  	}
  
 +	if (c->reserve_right) {
++		newtags &= ~TAG0_MASK;
++		if (!newtags && mon && is_special_active(mon))
++			newtags = get_monitor_active_tagset(mon) & TAGMASK;
 +		c->isfloating = c->isfullscreen = c->ismaximizescreen = 0;
-+		c->isnoborder = c->isnoradius = c->isnoshadow = c->isnoanimation = 1;
-+		c->noswallow = c->noblur = c->ignore_minimize = c->ignore_maximize = 1;
-+		c->nofadein = c->nofadeout = 1;
++		c->no_border = c->no_radius = c->no_shadow = c->no_animation = 1;
++		c->no_swallow = c->no_blur = c->ignore_minimize = c->ignore_maximize =
++			1;
++		c->no_fade_in = c->no_fade_out = 1;
 +		c->bw = 0;
 +	}
 +
  	if (mon)
  		set_size_per(mon, c);
  
-@@ -2376,7 +2419,7 @@ void place_drag_tile_client(Client *c) {
- 
- 	if (closest && closest->mon) {
- 		const Layout *layout =
--			closest->mon->pertag->ltidxs[closest->mon->pertag->curtag];
-+			native_layout(closest->mon);
- 
- 		if (closest->drop_direction == UNDIR) {
- 			setfloating(c, 0);
-@@ -2764,6 +2807,8 @@ void closemon(Monitor *m) {
- 
- 	wl_list_for_each(c, &clients, link) {
- 		if (c->mon == m) {
-+			if (c->reserve_right)
-+				native_reject(c, NATIVE_OUTPUT_UNAVAILABLE);
- 
- 			if (selmon == NULL) {
- 				if (c->foreign_toplevel) {
-@@ -3042,6 +3087,17 @@ void commitnotify(struct wl_listener *listener, void *data) {
- 		return;
- 	}
- 
-+	if (c->reserve_right && client_surface(c)->mapped && c->mon) {
-+		struct wlr_xdg_toplevel_state *s = &c->surface.xdg->toplevel->current;
-+		if (c->native_status != NATIVE_REJECTED &&
-+			(c->native_width != s->min_width || c->native_height != s->min_height ||
-+			 s->min_width != s->max_width || s->min_height != s->max_height ||
-+			 (c->mon->native_reserved == c && c->native_status == NATIVE_PENDING)))
-+			arrange(c->mon, false, false);
-+		native_present(c);
-+		return;
-+	}
-+
- 	if (!c || c->iskilling || c->animation.tagouting || c->animation.tagouted ||
- 		c->animation.tagining)
- 		return;
-@@ -3974,6 +4030,8 @@ void destroykeyboardgroup(struct wl_listener *listener, void *data) {
- }
- 
- void focusclient(Client *c, int32_t lift) {
-+	if (c && c->reserve_right && c->native_status != NATIVE_ACCEPTED)
-+		return;
- 
- 	Client *last_focus_client = NULL;
- 	Monitor *um = NULL;
-@@ -4622,6 +4680,14 @@ void init_client_properties(Client *c) {
- 	c->nofadeout = 0;
+@@ -2065,6 +2091,15 @@ void init_client_properties(Client *c) {
+ 	c->no_fade_out = 0;
  	c->no_force_center = 0;
- 	c->isnoborder = 0;
+ 	c->no_border = 0;
 +	c->reserve_right = 0;
 +	c->native_status = NATIVE_PENDING;
 +	c->native_reason = NATIVE_OK;
@@ -1579,79 +2006,100 @@ index 2f884f7a..f8839dcf 100644
 +	c->native_geom = c->native_usable = (struct wlr_box){0};
 +	c->native_scale = 0;
 +	c->native_serial = 0;
-+	c->native_ever_accepted = c->native_close_sent = c->native_hints_pending = false;
- 	c->isnosizehint = 0;
- 	c->isnoradius = 0;
- 	c->isnoshadow = 0;
-@@ -4824,6 +4890,10 @@ mapnotify(struct wl_listener *listener, void *data) {
++	c->native_ever_accepted = c->native_close_sent = c->native_hints_pending =
++		false;
+ 	c->no_size_hint = 0;
+ 	c->no_radius = 0;
+ 	c->no_shadow = 0;
+@@ -2163,7 +2198,7 @@ static void client_configure_size(Client *c, struct wlr_box geo, int32_t bw) {
+ 
+ static void client_negotiate_initial_size(Client *c, Monitor *rule_mon,
+ 										  uint32_t rule_tags) {
+-	if (!c)
++	if (!c || c->reserve_right)
+ 		return;
+ 
+ 	Monitor *m =
+@@ -2197,8 +2232,7 @@ static void client_negotiate_initial_size(Client *c, Monitor *rule_mon,
+ 		return;
  	}
  
- 	// make sure the animation is open type
+-	uint32_t tag = get_mon_curtag(m);
+-	const Layout *layout = m->pertag->ltidxs[tag];
++	const Layout *layout = native_layout(m);
+ 	if (!layout || !layout->predict) {
+ 		c->mon = saved_mon;
+ 		c->tags = saved_tags;
+@@ -2359,6 +2393,10 @@ void handle_client_map(struct wl_listener *listener, void *data) {
+ 		overview_backup_surface(c);
+ 	}
+ 
 +	if (c->reserve_right) {
 +		arrange(c->mon, false, false);
 +		return;
 +	}
+ 	// make sure the animation is open type
  	c->is_pending_open_animation = true;
- 	resize(c, c->geom, 0);
- 	printstatus(IPC_WATCH_ARRANGGE);
-@@ -5485,15 +5555,15 @@ void setborder_color(Client *c) {
- }
- 
- void exchange_two_client(Client *c1, Client *c2) {
--	if (c1 == NULL || c2 == NULL ||
-+	if (c1 == NULL || c2 == NULL || c1->reserve_right || c2->reserve_right ||
- 		(!config.exchange_cross_monitor && c1->mon != c2->mon)) {
+ 	resize(c, c->geom, (ResizeOpts){.interact = 0});
+@@ -2419,6 +2457,22 @@ void handle_client_commit(struct wl_listener *listener, void *data) {
  		return;
  	}
  
- 	Monitor *m1 = c1->mon;
- 	Monitor *m2 = c2->mon;
--	const Layout *layout1 = m1->pertag->ltidxs[m1->pertag->curtag];
--	const Layout *layout2 = m2->pertag->ltidxs[m2->pertag->curtag];
-+	const Layout *layout1 = native_layout(m1);
-+	const Layout *layout2 = native_layout(m2);
++	if (c->reserve_right && client_surface(c)->mapped && c->mon) {
++		if (c->configure_serial &&
++			c->configure_serial <= c->surface.xdg->current.configure_serial)
++			c->configure_serial = 0;
++		struct wlr_xdg_toplevel_state *s = &c->surface.xdg->toplevel->current;
++		if (c->native_status != NATIVE_REJECTED &&
++			(c->native_width != s->min_width ||
++			 c->native_height != s->min_height ||
++			 s->min_width != s->max_width || s->min_height != s->max_height ||
++			 (c->mon->native_reserved == c &&
++			  c->native_status == NATIVE_PENDING)))
++			arrange(c->mon, false, false);
++		native_present(c);
++		return;
++	}
++
+ 	if (client_is_parked(c))
+ 		return;
  
- 	if (layout1->id == SCROLLER || layout2->id == SCROLLER ||
- 		layout1->id == VERTICAL_SCROLLER || layout2->id == VERTICAL_SCROLLER) {
-@@ -5662,6 +5732,8 @@ void setcursor(struct wl_listener *listener, void *data) {
+@@ -2469,8 +2523,12 @@ void handle_client_unmap(struct wl_listener *listener, void *data) {
+ 	struct ScrollerStackNode *next_node =
+ 		target_node ? target_node->next_in_stack : NULL;
  
- void // 0.5
- setfloating(Client *c, int32_t floating) {
-+	if (c && c->reserve_right)
+-	if (config.animations && !client_is_parked(c) && !c->is_clip_to_hide &&
+-		!c->isminimized && (!c->mon || VISIBLEON(c, c->mon)))
++	if (c->mon && c->mon->native_reserved == c)
++		c->mon->native_reserved = NULL;
++
++	if (!c->reserve_right && config.animations && !client_is_parked(c) &&
++		!c->is_clip_to_hide && !c->isminimized &&
++		(!c->mon || VISIBLEON(c, c->mon)))
+ 		init_fadeout_client(c);
+ 
+ 	// If the client is in a stack, remove it from the stack
+@@ -2807,6 +2865,8 @@ void client_ensure_constraint(Client *c) {
+ }
+ 
+ void client_focus(Client *c, int32_t lift) {
++	if (c && c->reserve_right && c->native_status != NATIVE_ACCEPTED)
 +		return;
  
+ 	Client *last_focus_client = NULL;
+ 	Monitor *um = NULL;
+@@ -3087,6 +3147,8 @@ void client_switch_view(const Arg *arg, bool want_animation) {
+ }
+ 
+ void tag_client(const Arg *arg, Client *target_client) {
++	if (target_client && target_client->reserve_right)
++		return;
  	Client *fc = NULL;
- 	struct wlr_box target_box;
-@@ -5787,6 +5859,8 @@ void exit_scroller_stack(Client *c) {
- }
+ 	if (target_client && (arg->ui & (TAGMASK | TAG0_MASK))) {
  
- void setmaximizescreen(Client *c, int32_t maximizescreen, bool rearrange) {
-+	if (c && c->reserve_right)
-+		return;
- 	struct wlr_box maximizescreen_box;
- 	if (!c || !c->mon || !client_surface(c)->mapped || c->iskilling)
- 		return;
-@@ -5837,6 +5911,8 @@ void setmaximizescreen(Client *c, int32_t maximizescreen, bool rearrange) {
- }
+@@ -3138,9 +3200,16 @@ void show_hide_client(Client *c) {
  
- void setfakefullscreen(Client *c, int32_t fakefullscreen) {
-+	if (c && c->reserve_right)
-+		return;
- 	c->isfakefullscreen = fakefullscreen;
- 	if (!c->mon)
- 		return;
-@@ -5850,6 +5926,8 @@ void setfakefullscreen(Client *c, int32_t fakefullscreen) {
- void setfullscreen(Client *c, int32_t fullscreen,
- 				   bool rearrange) // 用自定义全屏代理自带全屏
- {
-+	if (c && c->reserve_right)
-+		return;
- 
- 	if (!c || !c->mon || !client_surface(c)->mapped || c->iskilling)
- 		return;
-@@ -5993,9 +6071,16 @@ cleanup_context:
- 
- void setmon(Client *c, Monitor *m, uint32_t newtags, bool focus) {
+ void client_set_monitor(Client *c, Monitor *m, uint32_t newtags, bool focus) {
  	Monitor *oldmon = c->mon;
 +	if (c->reserve_right && oldmon && m && oldmon != m && !c->iskilling) {
 +		if (oldmon->wlr_output->enabled && !oldmon->iscleanuping)
@@ -1666,37 +2114,270 @@ index 2f884f7a..f8839dcf 100644
  
  	if (oldmon && oldmon->sel == c) {
  		oldmon->sel = NULL;
-@@ -6019,6 +6104,8 @@ void setmon(Client *c, Monitor *m, uint32_t newtags, bool focus) {
- 		setfloating(c, c->isfloating);
- 		setfullscreen(c, c->isfullscreen,
- 					  true); /* This will call arrange(c->mon) */
+@@ -3168,6 +3237,8 @@ void client_set_monitor(Client *c, Monitor *m, uint32_t newtags, bool focus) {
+ 		client_set_floating(c, c->isfloating);
+ 		client_apply_fullscreen(c, c->isfullscreen,
+ 								true); /* This will call arrange(c->mon) */
 +		if (c->reserve_right)
 +			arrange(m, false, false);
  	}
  
  	if (focus && !client_is_x11_popup(c)) {
-@@ -6544,6 +6631,8 @@ void startdrag(struct wl_listener *listener, void *data) {
+@@ -3183,16 +3254,16 @@ void client_change_mon(Client *c, Monitor *m) {
+ 	}
  }
  
- void tag_client(const Arg *arg, Client *target_client) {
-+	if (target_client && target_client->reserve_right)
-+		return;
- 	Client *fc = NULL;
- 	if (target_client && arg->ui & TAGMASK) {
+-void view_insert_shift_tags(Monitor *m, uint32_t target) {
++bool view_insert_shift_tags(Monitor *m, uint32_t target) {
+ 	Client *c;
+ 	uint32_t map[tag_num_MAX + 1] = {0};
+ 	uint32_t i;
  
-@@ -6823,7 +6912,10 @@ void unmapnotify(struct wl_listener *listener, void *data) {
- 	struct ScrollerStackNode *next_node =
- 		target_node ? target_node->next_in_stack : NULL;
+ 	if (!m || target < 1 || target >= (uint32_t)config.tag_num)
+-		return;
++		return false;
  
--	if (config.animations && !c->is_clip_to_hide && !c->isminimized &&
-+	if (c->mon && c->mon->native_reserved == c)
-+		c->mon->native_reserved = NULL;
+ 	if (get_tag_status((uint32_t)config.tag_num, m))
+-		return;
++		return false;
+ 
+ 	for (i = 1; i <= (uint32_t)config.tag_num; i++) {
+ 		if (i < target)
+@@ -3203,6 +3274,13 @@ void view_insert_shift_tags(Monitor *m, uint32_t target) {
+ 			map[i] = i;
+ 	}
+ 
++	wl_list_for_each(c, &server.clients, link) {
++		if (c->mon == m && !c->iskilling && c->reserve_right &&
++			client_surface(c)->mapped &&
++			tag_remap_mask(c->tags, map) != c->tags)
++			return false;
++	}
 +
-+	if (!c->reserve_right && config.animations && !c->is_clip_to_hide && !c->isminimized &&
- 		(!c->mon || VISIBLEON(c, c->mon)))
- 		init_fadeout_client(c);
+ 	wl_list_for_each(c, &server.clients, link) {
+ 		if (c->mon != m || c->iskilling)
+ 			continue;
+@@ -3223,9 +3301,12 @@ void view_insert_shift_tags(Monitor *m, uint32_t target) {
+ 	for (i = (uint32_t)config.tag_num - 1; i >= target; i--) {
+ 		tag_gather_move_pertag(m, i + 1, i);
+ 	}
++	return true;
+ }
  
-@@ -6976,6 +7068,7 @@ void updatemons(struct wl_listener *listener, void *data) {
+ void client_set_floating(Client *c, int32_t floating) {
++	if (c && c->reserve_right)
++		return;
+ 
+ 	Client *fc = NULL;
+ 	struct wlr_box target_box;
+@@ -3318,6 +3399,8 @@ void client_apply_fullscreen(
+ 	Client *c, int32_t fullscreen,
+ 	bool rearrange) // Uses the custom fullscreen proxy for its own fullscreen.
+ {
++	if (c && c->reserve_right)
++		return;
+ 
+ 	if (!c || !c->mon || !client_surface(c)->mapped || c->iskilling ||
+ 		c == server.grab_client)
+@@ -3361,6 +3444,8 @@ void client_apply_fullscreen(
+ }
+ 
+ void client_set_fake_fullscreen(Client *c, int32_t fakefullscreen) {
++	if (c && c->reserve_right)
++		return;
+ 	c->isfakefullscreen = fakefullscreen;
+ 	if (!c->mon)
+ 		return;
+@@ -3383,6 +3468,8 @@ static void maximize_screen_gaps(Client *c, int32_t *gappoh, int32_t *gappov) {
+ 
+ void client_set_maximize_screen(Client *c, int32_t maximizescreen,
+ 								bool rearrange) {
++	if (c && c->reserve_right)
++		return;
+ 	struct wlr_box maximizescreen_box;
+ 	int32_t gappoh, gappov;
+ 	if (!c || !c->mon || !client_surface(c)->mapped || c->iskilling ||
+@@ -3456,7 +3543,7 @@ void reset_maximizescreen_size(Client *c) {
+ 
+ void set_minimized(Client *c) {
+ 
+-	if (!c || !c->mon || c == server.grab_client)
++	if (!c || c->reserve_right || !c->mon || c == server.grab_client)
+ 		return;
+ 
+ 	c->isglobal = 0;
+@@ -3535,9 +3622,14 @@ void clear_fullscreen_and_maximized_state(Monitor *m) {
+ /* Clears the fullscreen flag and restores the border zeroed at fullscreen. */
+ void clear_fullscreen_flag(Client *c) {
+ 
+-	if ((c->mon->pertag->ltidxs[get_client_tag_idx(c)]->id == SCROLLER ||
+-		 c->mon->pertag->ltidxs[get_client_tag_idx(c)]->id ==
+-			 VERTICAL_SCROLLER) &&
++	if (((c->mon->native_reserved
++			  ? native_layout(c->mon)
++			  : c->mon->pertag->ltidxs[get_client_tag_idx(c)])
++				 ->id == SCROLLER ||
++		 (c->mon->native_reserved
++			  ? native_layout(c->mon)
++			  : c->mon->pertag->ltidxs[get_client_tag_idx(c)])
++				 ->id == VERTICAL_SCROLLER) &&
+ 		!c->isfloating) {
+ 		return;
+ 	}
+@@ -3707,15 +3799,19 @@ void client_add_dim_node(Client *c) {
+ }
+ 
+ void client_exchange(Client *c1, Client *c2) {
+-	if (c1 == NULL || c2 == NULL ||
++	if (c1 == NULL || c2 == NULL || c1->reserve_right || c2->reserve_right ||
+ 		(!config.exchange_cross_monitor && c1->mon != c2->mon)) {
+ 		return;
+ 	}
+ 
+ 	Monitor *m1 = c1->mon;
+ 	Monitor *m2 = c2->mon;
+-	const Layout *layout1 = m1->pertag->ltidxs[get_client_tag_idx(c1)];
+-	const Layout *layout2 = m2->pertag->ltidxs[get_client_tag_idx(c2)];
++	const Layout *layout1 =
++		(m1->native_reserved ? native_layout(m1)
++							 : m1->pertag->ltidxs[get_client_tag_idx(c1)]);
++	const Layout *layout2 =
++		(m2->native_reserved ? native_layout(m2)
++							 : m2->pertag->ltidxs[get_client_tag_idx(c2)]);
+ 
+ 	if (layout1->id == SCROLLER || layout2->id == SCROLLER ||
+ 		layout1->id == VERTICAL_SCROLLER || layout2->id == VERTICAL_SCROLLER) {
+@@ -3842,7 +3938,10 @@ void client_replace(Client *c, Client *w, bool is_group_change_member,
+ 	if (!w->mon)
+ 		return;
+ 
+-	const Layout *layout = w->mon->pertag->ltidxs[get_client_tag_idx(w)];
++	const Layout *layout =
++		(w->mon->native_reserved
++			 ? native_layout(w->mon)
++			 : w->mon->pertag->ltidxs[get_client_tag_idx(w)]);
+ 
+ 	if (layout->id == DWINDLE || layout->id == SCROLLER ||
+ 		layout->id == VERTICAL_SCROLLER) {
+@@ -3905,6 +4004,8 @@ static int32_t monitor_move_direction(const Monitor *from, const Monitor *to) {
+ }
+ 
+ static void client_reassign_monitor(Client *c, Monitor *m) {
++	if (c && c->reserve_right)
++		return;
+ 	Monitor *old_mon = c->mon;
+ 
+ 	if (!old_mon || !m || old_mon == m)
+@@ -3923,6 +4024,8 @@ static void client_reassign_monitor(Client *c, Monitor *m) {
+ }
+ 
+ bool client_jump_to_monitor(Client *c, Monitor *m, int32_t dir) {
++	if (c && c->reserve_right)
++		return false;
+ 	if (!c || !c->mon || !m || c->mon == m)
+ 		return false;
+ 	if (!config.exchange_cross_monitor ||
+@@ -3938,6 +4041,8 @@ bool client_jump_to_monitor(Client *c, Monitor *m, int32_t dir) {
+ }
+ 
+ void client_move_to_monitor(Client *c, Client *target, int32_t dir) {
++	if ((c && c->reserve_right) || (target && target->reserve_right))
++		return;
+ 	if (!c || !c->mon || !target || !target->mon || c == target)
+ 		return;
+ 
+@@ -3948,7 +4053,7 @@ void client_move_to_monitor(Client *c, Client *target, int32_t dir) {
+ 		monitor_move_direction(src_mon, dst_mon) != dir)
+ 		return;
+ 
+-	const Layout *layout = dst_mon->pertag->ltidxs[get_mon_curtag(dst_mon)];
++	const Layout *layout = native_layout(dst_mon);
+ 
+ 	if (layout->id == DWINDLE) {
+ 		dwindle_move_next_to(c, target, config.dwindle_split_ratio, dir);
+@@ -4062,6 +4167,8 @@ void finish_exchange_arrange_and_focus(Client *c1, Client *c2, Monitor *m1,
+ 
+ void client_tile_resize(Client *c, struct wlr_box geo, int32_t interact,
+ 						const LayoutContext *ctx) {
++	if (c && c->reserve_right)
++		return;
+ 	if (ctx && ctx->probe) {
+ 		if (c == ctx->probe && ctx->out)
+ 			*ctx->out = geo;
+@@ -4144,6 +4251,10 @@ static void client_update_input_penetration(Client *c) {
+ }
+ 
+ void client_update_visibility(Client *c) {
++	if (c && c->reserve_right) {
++		native_present(c);
++		return;
++	}
+ 	if (!c || !c->scene)
+ 		return;
+ 
+@@ -4227,7 +4338,7 @@ void client_sync_layer(Client *c) {
+ }
+ 
+ bool client_wants_group_bar(Client *c) {
+-	if (!c)
++	if (!c || c->reserve_right)
+ 		return false;
+ 	if (client_is_group_member(c))
+ 		return true;
+diff --git a/src/manage/monitor.c b/src/manage/monitor.c
+index b2bc0718..1bfc56a1 100644
+--- a/src/manage/monitor.c
++++ b/src/manage/monitor.c
+@@ -16,6 +16,7 @@
+ #include "mango/layout/arrange.h"
+ #include "mango/layout/dwindle.h"
+ #include "mango/layout/layout.h"
++#include "mango/layout/native.h"
+ #include "mango/layout/scroll.h"
+ #include "mango/manage/client.h"
+ #include "mango/manage/layer.h"
+@@ -121,24 +122,27 @@ Monitor *monitor_from_cycle(int32_t dir) {
+ }
+ 
+ bool is_scroller_layout(Monitor *m) {
+-	if (m->pertag->ltidxs[get_mon_curtag(m)]->id == SCROLLER)
++
++	if (native_layout(m)->id == SCROLLER)
+ 		return true;
+ 
+-	if (m->pertag->ltidxs[get_mon_curtag(m)]->id == VERTICAL_SCROLLER)
++	if (native_layout(m)->id == VERTICAL_SCROLLER)
+ 		return true;
+ 
+ 	return false;
+ }
+ 
+ bool is_monocle_layout(Monitor *m) {
+-	if (m->pertag->ltidxs[get_mon_curtag(m)]->id == MONOCLE)
++
++	if (native_layout(m)->id == MONOCLE)
+ 		return true;
+ 
+ 	return false;
+ }
+ 
+ bool is_centertile_layout(Monitor *m) {
+-	if (m->pertag->ltidxs[get_mon_curtag(m)]->id == CENTER_TILE)
++
++	if (native_layout(m)->id == CENTER_TILE)
+ 		return true;
+ 
+ 	return false;
+@@ -928,6 +932,8 @@ void monitor_close(Monitor *m) {
+ 
+ 	wl_list_for_each(c, &server.clients, link) {
+ 		if (c->mon == m) {
++			if (c->reserve_right)
++				native_reject(c, NATIVE_OUTPUT_UNAVAILABLE);
+ 
+ 			if (server.selected_monitor == NULL) {
+ 				if (c->foreign_toplevel) {
+@@ -1025,6 +1031,7 @@ void handle_output_layout_change(struct wl_listener *listener, void *data) {
  		config_head = wlr_output_configuration_head_v1_create(output_config,
  															  m->wlr_output);
  		config_head->state.enabled = 0;
@@ -1704,12 +2385,85 @@ index 2f884f7a..f8839dcf 100644
  
  		if (m->only_sleep) {
  			continue;
+@@ -1262,8 +1269,8 @@ void handle_output_power_manager_set_mode(struct wl_listener *listener,
+ 		return;
+ 
+ 	wlr_output_state_set_enabled(&m->pending, event->mode);
+-	mango_output_commit(m);
+ 	m->only_sleep = !event->mode;
++	mango_output_commit(m);
+ 	handle_output_layout_change(NULL, NULL);
+ }
+ 
+diff --git a/src/manage/tab.c b/src/manage/tab.c
+index 57110c61..0b441d03 100644
+--- a/src/manage/tab.c
++++ b/src/manage/tab.c
+@@ -5,6 +5,7 @@
+ #include "mango/draw/text-node.h"
+ #include "mango/layout/arrange.h"
+ #include "mango/layout/layout.h"
++#include "mango/layout/native.h"
+ #include "mango/manage/client.h"
+ #include "mango/manage/monitor.h"
+ #include <stddef.h>
+@@ -62,7 +63,7 @@ static bool tab_layout_id_supported(uint32_t id) {
+ static bool tab_layout_enabled(const Monitor *m) {
+ 	if (!m || !m->pertag)
+ 		return false;
+-	return tab_layout_id_supported(m->pertag->ltidxs[get_mon_curtag(m)]->id);
++	return tab_layout_id_supported(native_layout(m)->id);
+ }
+ 
+ bool tab_layout_active(const Monitor *m) {
+@@ -70,7 +71,7 @@ bool tab_layout_active(const Monitor *m) {
+ }
+ 
+ static bool tab_state_ok(const Client *c) {
+-	if (!c || !c->mon || c->iskilling || c->isminimized)
++	if (!c || !c->mon || c->reserve_right || c->iskilling || c->isminimized)
+ 		return false;
+ 	if (c->isfloating || c->isunglobal || c->is_in_scratchpad)
+ 		return false;
+@@ -78,7 +79,7 @@ static bool tab_state_ok(const Client *c) {
+ }
+ 
+ static bool tab_is_stack_candidate(Monitor *m, Client *target) {
+-	uint32_t id = m->pertag->ltidxs[get_mon_curtag(m)]->id;
++	uint32_t id = native_layout(m)->id;
+ 	if (id == MONOCLE)
+ 		return true;
+ 	if (id != DECK && id != VERTICAL_DECK)
+@@ -197,6 +198,8 @@ void tab_detach_client(Client *c) {
+ }
+ 
+ void tab_replace_client(Client *old, Client *new) {
++	if ((old && old->reserve_right) || (new && new->reserve_right))
++		return;
+ 	if (!old || !new || !tab_is_member(old))
+ 		return;
+ 
+diff --git a/src/switcher/switcher.c b/src/switcher/switcher.c
+index 28abb917..5246c65f 100644
+--- a/src/switcher/switcher.c
++++ b/src/switcher/switcher.c
+@@ -338,7 +338,9 @@ void switcher_remove_client(Client *c) {
+ }
+ 
+ static bool switcher_client_eligible(Client *c) {
+-	return c && c->mon && !c->iskilling && !c->isminimized && !c->isunglobal &&
++	return c && c->mon &&
++		   (!c->reserve_right || c->native_status == NATIVE_ACCEPTED) &&
++		   !c->iskilling && !c->isminimized && !c->isunglobal &&
+ 		   client_surface(c) && client_surface(c)->mapped &&
+ 		   !client_is_unmanaged(c) && !client_is_x11_popup(c);
+ }
 diff --git a/tests/NATIVE_SPLIT.md b/tests/NATIVE_SPLIT.md
 new file mode 100644
-index 00000000..54a556f8
+index 00000000..ec077c33
 --- /dev/null
 +++ b/tests/NATIVE_SPLIT.md
-@@ -0,0 +1,43 @@
+@@ -0,0 +1,51 @@
 +# Native Split Checks
 +
 +Build normally with Meson, then run `meson test -C build --print-errorlogs`.
@@ -1719,7 +2473,15 @@ index 00000000..54a556f8
 +drives the production state machine with scene/protocol doubles, including
 +configure acknowledgement, an already-sized neutral buffer, hint transitions,
 +workspace release/return, conflict rejection, buffer mismatches, output
-+revocation, and unmap.
++revocation, overview suspension (including mapping during overview), DPMS
++sleep/wake recovery, and unmap.
++
++`native_prediction` runs the production horizontal and vertical scroller cores
++without a compositor. It checks the 1478-pixel local region, arrangement/prediction
++agreement, reserved-client exclusion, unchanged reservation state during probes,
++fullscreen origins with panel offsets, and restoration of the saved layout and
++workarea. These unit tests do not verify
++live rendering, input coordinates, or physical-pixel capture.
 +
 +## Isolated Integration
 +
@@ -1733,9 +2495,9 @@ index 00000000..54a556f8
 +Use these test rules with zero gaps, border width 2, and animations disabled:
 +
 +```
-+monitorrule=name:DP-2,scale:1,x:0,y:0,width:3398,height:1440,refresh:60
-+tagrule=id:1,layout_name:tile
-+windowrule=appid:^com\.linuxmis\.linuxmis$,title:^Linuxmis Native Stream$,monitor:DP-2,isfloating:0,isnoborder:1,noswallow:1,reserve_right:1
++monitor_rule=name:DP-2,scale:1,x:0,y:0,width:3398,height:1440,refresh:60
++tag_rule=id:1,layout_name:tile
++window_rule=app_id:^com\.linuxmis\.linuxmis$,title:^Linuxmis Native Stream$,monitor:DP-2,is_floating:0,no_border:1,no_swallow:1,reserve_right:1
 +```
 +
 +Set **both** the test client's `WAYLAND_DISPLAY` and `MANGO_INSTANCE_SIGNATURE`
@@ -1781,89 +2543,214 @@ index 00000000..7363c007
 +}
 diff --git a/tests/native_geometry.c b/tests/native_geometry.c
 new file mode 100644
-index 00000000..f17395aa
+index 00000000..838f0cfe
 --- /dev/null
 +++ b/tests/native_geometry.c
-@@ -0,0 +1,46 @@
+@@ -0,0 +1,48 @@
++#include "../src/layout/native_geometry.h"
 +#include <assert.h>
 +#include <stdio.h>
 +#include <string.h>
-+#include "../src/layout/native_geometry.h"
 +
 +int main(void) {
 +	struct wlr_box usable = {0, 0, 3398, 1440}, stream = {0}, local = {0};
 +	assert(native_geometry(usable, 1, true, false, 1920, 1440, 1920, 1440,
-+		&stream, &local) == NATIVE_OK);
++						   &stream, &local) == NATIVE_OK);
 +	assert(stream.x == 1478 && stream.y == 0 && stream.width == 1920 &&
-+		stream.height == 1440 && local.width == 1478 && local.height == 1440);
++		   stream.height == 1440 && local.width == 1478 &&
++		   local.height == 1440);
 +	assert(native_geometry(usable, 1, true, false, 1920, 1080, 1920, 1080,
-+		&stream, &local) == NATIVE_OK);
++						   &stream, &local) == NATIVE_OK);
 +	assert(stream.y == 180 && stream.height == 1080);
 +	assert(native_geometry(usable, 1, true, false, 2758, 1440, 2758, 1440,
-+		&stream, &local) == NATIVE_OK && local.width == 640);
++						   &stream, &local) == NATIVE_OK &&
++		   local.width == 640);
 +	assert(native_geometry(usable, 1, true, false, 2759, 1440, 2759, 1440,
-+		&stream, &local) == NATIVE_TOO_LARGE);
++						   &stream, &local) == NATIVE_TOO_LARGE);
 +	assert(native_geometry(usable, 1, true, false, 1920, 1441, 1920, 1441,
-+		&stream, &local) == NATIVE_TOO_LARGE);
++						   &stream, &local) == NATIVE_TOO_LARGE);
 +	assert(native_geometry(usable, 1, true, false, INT_MAX, 1440, INT_MAX, 1440,
-+		&stream, &local) == NATIVE_TOO_LARGE);
-+	assert(native_geometry(usable, 1, true, false, 0, 1440, 0, 1440,
-+		&stream, &local) == NATIVE_INVALID_SIZE);
++						   &stream, &local) == NATIVE_TOO_LARGE);
++	assert(native_geometry(usable, 1, true, false, 0, 1440, 0, 1440, &stream,
++						   &local) == NATIVE_INVALID_SIZE);
 +	assert(native_geometry(usable, 1, true, false, 1920, 1080, 1921, 1080,
-+		&stream, &local) == NATIVE_INVALID_SIZE);
++						   &stream, &local) == NATIVE_INVALID_SIZE);
 +	assert(native_geometry(usable, 1, false, false, 1920, 1080, 1920, 1080,
-+		&stream, &local) == NATIVE_OUTPUT_UNAVAILABLE);
-+	assert(native_geometry(usable, 1.333333f, true, false, 1920, 1080, 1920, 1080,
-+		&stream, &local) == NATIVE_UNSUPPORTED_SCALE);
++						   &stream, &local) == NATIVE_OUTPUT_UNAVAILABLE);
++	assert(native_geometry(usable, 1.333333f, true, false, 1920, 1080, 1920,
++						   1080, &stream, &local) == NATIVE_UNSUPPORTED_SCALE);
 +	assert(native_geometry(usable, NAN, true, false, 1920, 1080, 1920, 1080,
-+		&stream, &local) == NATIVE_UNSUPPORTED_SCALE);
++						   &stream, &local) == NATIVE_UNSUPPORTED_SCALE);
 +	assert(native_geometry(usable, 1, true, true, 1920, 1080, 1920, 1080,
-+		&stream, &local) == NATIVE_REGION_OCCUPIED);
++						   &stream, &local) == NATIVE_REGION_OCCUPIED);
 +	usable = (struct wlr_box){-3440, -20, 3398, 1439};
 +	assert(native_geometry(usable, 1, true, false, 1920, 1080, 1920, 1080,
-+		&stream, &local) == NATIVE_OK);
++						   &stream, &local) == NATIVE_OK);
 +	assert(stream.x == -1962 && stream.y == 159 && local.x == -3440);
 +	usable.x = INT_MAX;
 +	assert(native_geometry(usable, 1, true, false, 1920, 1080, 1920, 1080,
-+		&stream, &local) == NATIVE_INVALID_SIZE);
++						   &stream, &local) == NATIVE_INVALID_SIZE);
 +	assert(strcmp(native_status_names[NATIVE_PENDING], "pending") == 0);
 +	assert(strcmp(native_reason_names[NATIVE_TOO_LARGE], "too_large") == 0);
 +	puts("native geometry: all checks passed");
 +	return 0;
 +}
+diff --git a/tests/native_prediction.c b/tests/native_prediction.c
+new file mode 100644
+index 00000000..eb66c1fc
+--- /dev/null
++++ b/tests/native_prediction.c
+@@ -0,0 +1,98 @@
++/* Run the production scroller cores without a display, scene, or reservation
++ * update. */
++#include "mango/common/server.h"
++#include "mango/layout/layout.h"
++#include "mango/layout/native.h"
++#include "mango/manage/client.h"
++#include "mango/manage/monitor.h"
++#include <assert.h>
++#include <stdio.h>
++#include <string.h>
++
++MangoServer server;
++Config config;
++Layout layouts[14] = {[0] = {.id = TILE}, [1] = {.id = SCROLLER}};
++
++bool client_wants_group_bar(Client *c) {
++	(void)c;
++	return false;
++}
++
++uint32_t get_mon_curtag(const Monitor *m) { return m->pertag->curtag; }
++
++void client_tile_resize(Client *c, struct wlr_box box, int32_t interact,
++						const LayoutContext *ctx) {
++	(void)interact;
++	/* The core must never pass the reserved client to either path. */
++	assert(!c->reserve_right);
++	if (ctx && ctx->probe) {
++		if (c == ctx->probe)
++			*ctx->out = box;
++	} else {
++		c->geom = box;
++	}
++}
++
++static void add(Client *c, Monitor *m) {
++	c->mon = m;
++	c->tags = 1;
++	c->scroller_proportion = 0.5f;
++	wl_list_insert(server.clients.prev, &c->link);
++}
++
++int main(void) {
++	Pertag pertag = {.curtag = 1};
++	Monitor m = {.pertag = &pertag, .w = {0, 0, 3398, 1440}, .tagset = {1, 2}};
++	Client stream = {.reserve_right = 1,
++					 .native_status = NATIVE_ACCEPTED,
++					 .native_geom = {1478, 180, 1920, 1080},
++					 .native_serial = 17};
++	Client first = {0}, second = {0};
++	wl_list_init(&server.clients);
++	add(&stream, &m);
++	add(&first, &m);
++	add(&second, &m);
++	m.native_reserved = &stream;
++	pertag.ltidxs[1] = &layouts[0];
++	pertag.scroller_default_proportion[1] = 0.5f;
++	update_scroller_state(&m);
++	Client *stream_client = &stream, *local_client = &first;
++	assert(!ISTILED(stream_client) && !ISFAKETILED(stream_client) &&
++		   !ISSCROLLTILED(stream_client));
++	assert(ISTILED(local_client) && native_layout(&m)->id == SCROLLER);
++	Client saved_stream;
++	memcpy(&saved_stream, &stream, sizeof(stream));
++	struct wlr_box a = {0}, b = {0}, reserved = {0};
++	assert(scroller_predict(&m, &first, &a));
++	assert(scroller_predict(&m, &second, &b));
++	assert(!scroller_predict(&m, &stream, &reserved));
++	assert(a.x == 0 && a.y == 0 && a.width == 739 && a.height == 1440);
++	assert(b.x == 739 && b.width == 739 && b.height == 1440);
++	assert(first.geom.width == 0 && second.geom.width == 0);
++	assert(m.native_reserved == &stream &&
++		   !memcmp(&stream, &saved_stream, sizeof(stream)));
++	scroller(&m);
++	assert(wlr_box_equal(&a, &first.geom) && wlr_box_equal(&b, &second.geom));
++	assert(vertical_scroller_predict(&m, &first, &a));
++	assert(a.width == 1478 && a.height == 720);
++	assert(!vertical_scroller_predict(&m, &stream, &reserved));
++	assert(m.native_reserved == &stream &&
++		   !memcmp(&stream, &saved_stream, sizeof(stream)));
++	/* Fullscreen pages use the panel-adjusted origin in both core branches. */
++	m.w.x = 100;
++	m.w.y = 50;
++	m.m = (struct wlr_box){0, 0, 3498, 1490};
++	m.sel = &first;
++	first.isfullscreen = 1;
++	pertag.scroller_default_proportion[1] = 0.75f;
++	assert(scroller_predict(&m, &first, &a));
++	assert(a.x == 100 && a.y == 50 && a.width == 1478 && a.height == 1440);
++	assert(vertical_scroller_predict(&m, &first, &a));
++	assert(a.x == 100 && a.y == 50 && a.width == 1478 && a.height == 1440);
++	/* Release restores both the saved layout and the full workarea. */
++	m.native_reserved = NULL;
++	assert(native_layout(&m)->id == TILE && native_workarea(&m).width == 3398);
++	cleanup_monitor_scroller(&m);
++	puts("native prediction: all checks passed");
++	return 0;
++}
 diff --git a/tests/native_reservation.c b/tests/native_reservation.c
 new file mode 100644
-index 00000000..dde0c3a3
+index 00000000..91fcce45
 --- /dev/null
 +++ b/tests/native_reservation.c
-@@ -0,0 +1,190 @@
-+/* Exercise the production state machine with protocol/scene doubles; no display. */
+@@ -0,0 +1,357 @@
++/* Exercise the production state machine with protocol/scene doubles; no
++ * display. */
++#include "../src/layout/native_geometry.h"
 +#include <assert.h>
 +#include <stdio.h>
 +#include <string.h>
 +#include <wayland-util.h>
-+#include "../src/layout/native_geometry.h"
 +
-+struct wlr_scene_node { bool enabled; int x, y; };
-+struct wlr_scene_tree { struct wlr_scene_node node; };
++struct wlr_scene_node {
++	bool enabled;
++	int x, y;
++};
++struct wlr_scene_tree {
++	struct wlr_scene_node node;
++};
 +struct wlr_surface_state {
 +	int width, height, buffer_width, buffer_height, scale, transform;
 +};
-+struct wlr_surface { bool mapped; struct wlr_surface_state current; };
-+struct wlr_xdg_toplevel_state { int min_width, min_height, max_width, max_height; };
-+struct wlr_xdg_toplevel { struct wlr_xdg_toplevel_state current; };
++struct wlr_surface {
++	bool mapped;
++	struct wlr_surface_state current;
++};
++struct wlr_xdg_toplevel_state {
++	int min_width, min_height, max_width, max_height;
++};
++struct wlr_xdg_toplevel {
++	struct wlr_xdg_toplevel_state current;
++};
 +struct xdg_surface {
 +	struct wlr_box geometry;
-+	struct { uint32_t configure_serial; } current;
++	struct {
++		uint32_t configure_serial;
++	} current;
 +	struct wlr_xdg_toplevel *toplevel;
 +};
 +typedef struct Client Client;
 +typedef struct Monitor {
 +	Client *native_reserved, *sel;
 +	struct wlr_box w;
-+	struct { bool enabled; float scale; char *name; } *wlr_output;
++	struct {
++		bool enabled;
++		float scale;
++		char *name;
++	} *wlr_output;
 +	uint32_t tagset[2], seltags;
-+	bool isoverview;
++	bool isoverview, only_sleep;
 +} Monitor;
 +struct Client {
 +	struct wl_list link;
@@ -1873,33 +2760,69 @@ index 00000000..dde0c3a3
 +	int reserve_right, native_width, native_height;
 +	enum native_status native_status;
 +	enum native_reason native_reason;
-+	bool native_ever_accepted, native_close_sent, native_hints_pending, is_pending_open_animation, need_output_flush;
++	bool native_ever_accepted, native_close_sent, native_hints_pending,
++		is_pending_open_animation, need_output_flush;
 +	struct wlr_box native_geom, native_usable, geom, current, pending;
 +	float native_scale;
-+	struct { bool running, tagining, tagouting, tagouted; struct wlr_box current; } animation;
-+	struct { struct xdg_surface *xdg; } surface;
++	struct {
++		bool running, tagining, tagouting, tagouted;
++		struct wlr_box current;
++	} animation;
++	struct {
++		struct xdg_surface *xdg;
++	} surface;
 +	struct wlr_surface wl_surface;
-+	struct wlr_scene_tree *scene, *scene_surface, *border, *shadow, *blur, *shield;
-+	struct { struct wlr_scene_tree *scene_buffer; } *group_bar;
++	struct wlr_scene_tree *scene, *scene_surface, *border, *shadow, *blur,
++		*shield;
++	struct {
++		struct wlr_scene_tree *scene_buffer, *scene;
++	} *group_bar, *dim_node;
 +	int close_count;
 +};
-+static struct wl_list clients;
-+static struct { struct { struct wlr_surface *focused_surface; } keyboard_state; } seat_storage;
-+static typeof(seat_storage) *seat = &seat_storage;
++
++static struct {
++	struct {
++		struct wlr_surface *focused_surface;
++	} keyboard_state;
++} seat_storage;
++static struct {
++	struct wl_list clients;
++	typeof(seat_storage) *seat;
++} server = {.seat = &seat_storage};
 +static uint32_t next_serial = 1;
 +static bool wlr_box_equal(const struct wlr_box *a, const struct wlr_box *b) {
-+	return a->x == b->x && a->y == b->y && a->width == b->width && a->height == b->height;
++	return a->x == b->x && a->y == b->y && a->width == b->width &&
++		   a->height == b->height;
 +}
 +static struct wlr_surface *client_surface(Client *c) { return &c->wl_surface; }
 +static bool client_is_x11(Client *c) { return c->x11; }
 +static void client_send_close(Client *c) { c->close_count++; }
-+static void focusclient(Client *c, int lift) { (void)lift; c->mon->sel = c; }
-+static void wlr_seat_keyboard_clear_focus(typeof(seat) s) { s->keyboard_state.focused_surface = NULL; }
-+static void wlr_scene_node_set_enabled(struct wlr_scene_node *n, bool e) { n->enabled = e; }
-+static void wlr_scene_node_set_position(struct wlr_scene_node *n, int x, int y) { n->x=x; n->y=y; }
-+static void wlr_scene_subsurface_tree_set_clip(struct wlr_scene_node *n, void *p) { (void)n; (void)p; }
-+static uint32_t wlr_xdg_toplevel_set_size(struct wlr_xdg_toplevel *t, int w, int h) {
-+	(void)t; (void)w; (void)h; return next_serial++;
++static void client_focus(Client *c, int lift) {
++	(void)lift;
++	c->mon->sel = c;
++}
++static void wlr_seat_keyboard_clear_focus(typeof(server.seat) s) {
++	s->keyboard_state.focused_surface = NULL;
++}
++static void wlr_scene_node_set_enabled(struct wlr_scene_node *n, bool e) {
++	n->enabled = e;
++}
++static void wlr_scene_node_set_position(struct wlr_scene_node *n, int x,
++										int y) {
++	n->x = x;
++	n->y = y;
++}
++static void wlr_scene_subsurface_tree_set_clip(struct wlr_scene_node *n,
++											   void *p) {
++	(void)n;
++	(void)p;
++}
++static uint32_t wlr_xdg_toplevel_set_size(struct wlr_xdg_toplevel *t, int w,
++										  int h) {
++	(void)t;
++	(void)w;
++	(void)h;
++	return next_serial++;
 +}
 +#include "../src/layout/native_stream.h"
 +
@@ -1912,32 +2835,125 @@ index 00000000..dde0c3a3
 +};
 +static void init(struct fixture *f, Monitor *m, int id, int w, int h) {
 +	memset(f, 0, sizeof(*f));
-+	f->c = (Client){.mon=m, .id=id, .tags=1, .reserve_right=1,
-+		.scene=&f->scene, .scene_surface=&f->surface,
-+		.border=&f->decor, .shadow=&f->decor, .blur=&f->decor, .shield=&f->decor,
-+		.group_bar=&f->group};
-+	f->group.scene_buffer = &f->decor;
++	f->c = (Client){.mon = m,
++					.id = id,
++					.tags = 1,
++					.reserve_right = 1,
++					.scene = &f->scene,
++					.scene_surface = &f->surface,
++					.border = &f->decor,
++					.shadow = &f->decor,
++					.blur = &f->decor,
++					.shield = &f->decor,
++					.group_bar = &f->group};
++	f->group.scene_buffer = f->group.scene = &f->decor;
 +	f->xdg.toplevel = &f->top;
 +	f->c.surface.xdg = &f->xdg;
 +	f->c.wl_surface.mapped = true;
-+	f->top.current = (struct wlr_xdg_toplevel_state){w,h,w,h};
-+	wl_list_insert(clients.prev, &f->c.link);
++	f->top.current = (struct wlr_xdg_toplevel_state){w, h, w, h};
++	wl_list_insert(server.clients.prev, &f->c.link);
 +}
 +static void ack(struct fixture *f) {
 +	f->xdg.current.configure_serial = f->c.native_serial;
-+	f->xdg.geometry = (struct wlr_box){0,0,f->c.native_width,f->c.native_height};
-+	f->c.wl_surface.current = (struct wlr_surface_state){
-+		f->c.native_width,f->c.native_height,f->c.native_width,f->c.native_height,1,0};
++	f->xdg.geometry =
++		(struct wlr_box){0, 0, f->c.native_width, f->c.native_height};
++	f->c.wl_surface.current = (struct wlr_surface_state){f->c.native_width,
++														 f->c.native_height,
++														 f->c.native_width,
++														 f->c.native_height,
++														 1,
++														 0};
 +}
-+int main(void) {
-+	wl_list_init(&clients);
++static void test_overview_and_sleep(void) {
++	wl_list_init(&server.clients);
 +	typeof(*((Monitor *)0)->wlr_output) output = {true, 1, "DP-2"};
-+	Monitor m = {.w={0,0,3398,1440},.wlr_output=&output,.tagset={1,2}};
++	Monitor m = {
++		.w = {0, 0, 3398, 1440}, .wlr_output = &output, .tagset = {1, 2}};
++	struct fixture accepted, newcomer;
++	init(&accepted, &m, 10, 1920, 1080);
++	native_update_monitor(&m);
++	ack(&accepted);
++	native_update_monitor(&m);
++	assert(accepted.c.native_status == NATIVE_ACCEPTED);
++
++	/* A backgrounded stream survives entering overview on another tag. */
++	m.seltags = 1;
++	native_update_monitor(&m);
++	m.isoverview = true;
++	native_update_monitor(&m);
++	assert(accepted.c.native_status == NATIVE_PENDING &&
++		   accepted.c.native_reason == NATIVE_OK &&
++		   accepted.c.close_count == 0);
++	assert(!m.native_reserved && !accepted.scene.node.enabled);
++
++	/* A stream mapping during overview can be admitted after overview exits. */
++	init(&newcomer, &m, 11, 1280, 720);
++	newcomer.c.tags = 2;
++	native_update_monitor(&m);
++	assert(newcomer.c.native_status == NATIVE_PENDING &&
++		   newcomer.c.native_reason == NATIVE_OK &&
++		   newcomer.c.close_count == 0);
++	assert(!newcomer.scene.node.enabled && !m.native_reserved);
++	m.isoverview = false;
++	native_update_monitor(&m);
++	ack(&newcomer);
++	native_update_monitor(&m);
++	assert(newcomer.c.native_status == NATIVE_ACCEPTED &&
++		   newcomer.scene.node.enabled && m.native_reserved == &newcomer.c);
++	assert(accepted.c.close_count == 0);
++
++	/* Overview also hides a visible accepted owner without revoking it. */
++	m.isoverview = true;
++	native_update_monitor(&m);
++	assert(newcomer.c.native_status == NATIVE_PENDING &&
++		   !newcomer.scene.node.enabled && newcomer.c.close_count == 0);
++	m.isoverview = false;
++	native_update_monitor(&m);
++	assert(newcomer.c.native_status == NATIVE_ACCEPTED &&
++		   newcomer.scene.node.enabled);
++
++	/* DPMS suspension retains ownership and admission history, then resumes. */
++	uint32_t serial = newcomer.c.native_serial;
++	m.only_sleep = true;
++	output.enabled = false;
++	native_update_monitor(&m);
++	assert(newcomer.c.native_status == NATIVE_PENDING &&
++		   newcomer.c.native_reason == NATIVE_OK &&
++		   !newcomer.scene.node.enabled);
++	assert(m.native_reserved == &newcomer.c && newcomer.c.close_count == 0);
++	native_update_monitor(&m);
++	assert(newcomer.c.native_serial == serial && newcomer.c.close_count == 0);
++	output.enabled = true;
++	m.only_sleep = false;
++	native_update_monitor(&m);
++	assert(newcomer.c.native_status == NATIVE_ACCEPTED &&
++		   newcomer.scene.node.enabled && newcomer.c.native_serial == serial);
++	assert(m.native_reserved == &newcomer.c && newcomer.c.close_count == 0);
++
++	/* Actual disable remains a permanent rejection, even after later sleep. */
++	output.enabled = false;
++	native_update_monitor(&m);
++	assert(newcomer.c.native_status == NATIVE_REJECTED &&
++		   newcomer.c.native_reason == NATIVE_OUTPUT_UNAVAILABLE &&
++		   newcomer.c.close_count == 1 && !m.native_reserved);
++	m.only_sleep = true;
++	native_update_monitor(&m);
++	assert(newcomer.c.native_status == NATIVE_REJECTED &&
++		   newcomer.c.close_count == 1);
++}
++
++int main(void) {
++	wl_list_init(&server.clients);
++	typeof(*((Monitor *)0)->wlr_output) output = {true, 1, "DP-2"};
++	Monitor m = {
++		.w = {0, 0, 3398, 1440}, .wlr_output = &output, .tagset = {1, 2}};
 +	struct fixture first, second, zero;
 +	init(&first, &m, 1, 1920, 1080);
 +	native_update_monitor(&m);
-+	assert(m.native_reserved == &first.c && first.c.native_status == NATIVE_PENDING);
-+	assert(first.c.geom.x == 1478 && first.c.geom.y == 180 && !first.scene.node.enabled);
++	assert(m.native_reserved == &first.c &&
++		   first.c.native_status == NATIVE_PENDING);
++	assert(first.c.geom.x == 1478 && first.c.geom.y == 180 &&
++		   !first.scene.node.enabled);
 +	/* Size alone cannot accept an unacknowledged configure. */
 +	ack(&first);
 +	first.xdg.current.configure_serial--;
@@ -1945,7 +2961,8 @@ index 00000000..dde0c3a3
 +	assert(first.c.native_status == NATIVE_PENDING);
 +	ack(&first);
 +	native_update_monitor(&m);
-+	assert(first.c.native_status == NATIVE_ACCEPTED && first.scene.node.enabled);
++	assert(first.c.native_status == NATIVE_ACCEPTED &&
++		   first.scene.node.enabled);
 +	assert(first.scene.node.x == 1478 && first.scene.node.y == 180);
 +	uint32_t serial = first.c.native_serial;
 +	native_update_monitor(&m);
@@ -1953,26 +2970,38 @@ index 00000000..dde0c3a3
 +	/* A new stream cannot steal a live reservation. */
 +	init(&second, &m, 2, 1280, 720);
 +	native_update_monitor(&m);
-+	assert(m.native_reserved == &first.c && second.c.native_reason == NATIVE_REGION_OCCUPIED);
-+	assert(second.c.native_status == NATIVE_REJECTED && second.c.close_count == 0);
++	assert(m.native_reserved == &first.c &&
++		   second.c.native_reason == NATIVE_REGION_OCCUPIED);
++	assert(second.c.native_status == NATIVE_REJECTED &&
++		   second.c.close_count == 0);
 +	/* Away/return releases/reinstalls the column without closing the stream. */
 +	m.seltags = 1;
 +	native_update_monitor(&m);
-+	assert(!m.native_reserved && !first.scene.node.enabled && first.c.close_count == 0);
++	assert(!m.native_reserved && !first.scene.node.enabled &&
++		   first.c.close_count == 0);
 +	m.seltags = 0;
 +	native_update_monitor(&m);
-+	assert(m.native_reserved == &first.c && first.c.native_status == NATIVE_ACCEPTED);
++	assert(m.native_reserved == &first.c &&
++		   first.c.native_status == NATIVE_ACCEPTED);
 +	/* New valid hints configure a new exact size, not a scaled old buffer. */
 +	first.top.current.min_width = 1280;
 +	native_update_monitor(&m);
 +	assert(first.c.native_status == NATIVE_PENDING && first.c.close_count == 0);
 +	assert(m.native_reserved == &first.c && first.c.native_geom.width == 1920);
-+	first.top.current = (struct wlr_xdg_toplevel_state){1280,720,1280,720};
++	first.top.current = (struct wlr_xdg_toplevel_state){1280, 720, 1280, 720};
 +	native_update_monitor(&m);
-+	assert(first.c.native_status == NATIVE_PENDING && !first.scene.node.enabled);
++	assert(first.c.native_status == NATIVE_PENDING &&
++		   !first.scene.node.enabled);
 +	ack(&first);
 +	native_update_monitor(&m);
 +	assert(first.c.native_status == NATIVE_ACCEPTED && first.c.geom.x == 2118);
++	/* Group bars are optional in 0.18; no native decoration may be exposed. */
++	first.c.dim_node = &first.group;
++	first.c.group_bar = NULL;
++	first.decor.node.enabled = true;
++	native_present(&first.c);
++	assert(first.scene.node.enabled && !first.decor.node.enabled);
++	first.c.group_bar = &first.group;
 +	/* Even after acceptance, a wrong buffer is not shown. */
 +	first.c.wl_surface.current.buffer_width--;
 +	native_present(&first.c);
@@ -1983,26 +3012,30 @@ index 00000000..dde0c3a3
 +	/* Revocation preserves JSON state and requests close exactly once. */
 +	output.scale = 1.25;
 +	native_update_monitor(&m);
-+	assert(first.c.native_status == NATIVE_REJECTED && first.c.native_reason == NATIVE_UNSUPPORTED_SCALE);
-+	assert(!m.native_reserved && first.c.close_count == 1 && !first.scene.node.enabled);
++	assert(first.c.native_status == NATIVE_REJECTED &&
++		   first.c.native_reason == NATIVE_UNSUPPORTED_SCALE);
++	assert(!m.native_reserved && first.c.close_count == 1 &&
++		   !first.scene.node.enabled);
 +	native_update_monitor(&m);
 +	assert(first.c.close_count == 1);
 +	output.scale = 1;
 +	init(&zero, &m, 3, 0, 0);
 +	native_update_monitor(&m);
 +	assert(zero.c.native_status == NATIVE_PENDING && !m.native_reserved);
-+	zero.top.current = (struct wlr_xdg_toplevel_state){1920,1080,1920,1080};
++	zero.top.current = (struct wlr_xdg_toplevel_state){1920, 1080, 1920, 1080};
 +	native_update_monitor(&m);
 +	ack(&zero);
 +	native_update_monitor(&m);
 +	assert(zero.c.native_status == NATIVE_ACCEPTED);
 +	output.enabled = false;
 +	native_update_monitor(&m);
-+	assert(zero.c.native_reason == NATIVE_OUTPUT_UNAVAILABLE && zero.c.close_count == 1);
++	assert(zero.c.native_reason == NATIVE_OUTPUT_UNAVAILABLE &&
++		   zero.c.close_count == 1);
 +	assert(strcmp(native_status_names[zero.c.native_status], "rejected") == 0);
-+	assert(strcmp(native_reason_names[zero.c.native_reason], "output_unavailable") == 0);
++	assert(strcmp(native_reason_names[zero.c.native_reason],
++				  "output_unavailable") == 0);
 +	/* A correctly sized initial neutral buffer must not need another commit. */
-+	wl_list_init(&clients);
++	wl_list_init(&server.clients);
 +	output.enabled = true;
 +	m.native_reserved = NULL;
 +	init(&zero, &m, 4, 1920, 1080);
@@ -2024,6 +3057,8 @@ index 00000000..dde0c3a3
 +	assert(first.c.native_status == NATIVE_ACCEPTED);
 +	m.w.width--;
 +	native_update_monitor(&m);
-+	assert(first.c.native_reason == NATIVE_TOO_LARGE && first.c.close_count == 1);
++	assert(first.c.native_reason == NATIVE_TOO_LARGE &&
++		   first.c.close_count == 1);
++	test_overview_and_sleep();
 +	puts("native reservation: all checks passed");
 +}

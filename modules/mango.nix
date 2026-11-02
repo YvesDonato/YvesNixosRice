@@ -80,6 +80,13 @@ in
     xdg.portal = {
       enable = true;
       wlr.enable = true;
+      # Screen-or-window requests (Discord, browsers) skip xdpw's default slurp
+      # chooser, and the service PATH has none of its dmenu fallbacks, so every
+      # share failed with "no output found".
+      wlr.settings.screencast = {
+        chooser_type = "dmenu";
+        chooser_cmd = "${lib.getExe pkgs.rofi} -dmenu -i -p 'Share'";
+      };
       config.common.default = "*";
       # Without this, /etc/xdg's portals.conf (common) shadows the packaged
       # mango-portals.conf and no backend serves ScreenCast (no screen sharing).

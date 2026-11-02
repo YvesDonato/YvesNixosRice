@@ -1,4 +1,9 @@
-{pkgs, ...}: let
+{
+  config,
+  pkgs,
+  desktopWindowManager,
+  ...
+}: let
   # Launch helium in its own transient systemd user scope: its own cgroup, so
   # oomd sees it as a separate kill candidate (at >=45% swap it kills the leaf
   # using the most swap; session restore brings tabs back) rather than lumped
@@ -26,6 +31,21 @@
   };
 in {
   home.packages = [helium-scoped];
+
+  # Google Messages has no Linux client; its web app in a Helium app window is
+  # the official desktop path (pair once via the QR code on the phone). It gets
+  # its own profile: an --app launch that starts Helium skips (and then
+  # overwrites) the main profile's session restore. Under mango it lives in
+  # the Super+S comms group, whose window rule parks any new Messages window
+  # out of sight, so the entry opens that group instead.
+  xdg.desktopEntries.google-messages = {
+    name = "Google Messages";
+    exec =
+      if desktopWindowManager == "mango"
+      then "mango-comms open"
+      else "helium-scoped --user-data-dir=${config.home.homeDirectory}/.config/helium-messages --app=https://messages.google.com/web";
+    categories = ["Network" "Chat"];
+  };
 
   # Helium ships no Widevine CDM and finds one only through Chromium's Linux
   # hint file; it does not probe the config dir. Verified on 0.15.1.1: the

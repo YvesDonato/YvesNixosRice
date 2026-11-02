@@ -9,7 +9,8 @@
   # looks up browsers by revision inside PLAYWRIGHT_BROWSERS_PATH.
   pythonPlaywrightVersion = "1.59.0";
   anyConnectUserAgent = "AnyConnect Linux_64 4.7.00136";
-  defaultSheridanVpnIp = "142.55.3.2";
+  # VPN addresses that have worked before, newest first (see sheridanVpn).
+  sheridanVpnIps = ["142.55.0.254" "142.55.3.2"];
   sheridanVpnRunner = pkgs.writeText "sheridan-vpn-runner.py" ''
     import json
     import os
@@ -207,6 +208,7 @@
     name = "sheridan-vpn";
     runtimeInputs = with pkgs; [
       coreutils
+      getent
       gnugrep
       openconnect
       openssh
@@ -216,7 +218,18 @@
       export PATH="/run/wrappers/bin:$PATH"
       export PLAYWRIGHT_BROWSERS_PATH="${pkgs.playwright-driver.browsers-chromium}"
       export PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS="true"
-      export SHERIDAN_VPN_RESOLVE_IP="''${SHERIDAN_VPN_RESOLVE_IP:-${defaultSheridanVpnIp}}"
+      # Sheridan's DNS answer for the VPN depends on the resolver, and some
+      # answers (and old pins) never accept connections, so pin the first
+      # address that does: live DNS answers, then previously working IPs.
+      if [[ -z "''${SHERIDAN_VPN_RESOLVE_IP:-}" ]]; then
+        for ip in $(getent ahostsv4 vpn.sheridancollege.ca | cut -d' ' -f1 | sort -u) ${builtins.concatStringsSep " " sheridanVpnIps}; do
+          if timeout 3 bash -c ": </dev/tcp/$ip/443" 2>/dev/null; then
+            SHERIDAN_VPN_RESOLVE_IP="$ip"
+            break
+          fi
+        done
+      fi
+      export SHERIDAN_VPN_RESOLVE_IP="''${SHERIDAN_VPN_RESOLVE_IP:-${builtins.head sheridanVpnIps}}"
 
       openconnect_saml=(
         uv run

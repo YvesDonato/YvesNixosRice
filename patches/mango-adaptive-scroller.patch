@@ -1,6 +1,8 @@
---- a/src/layout/scroll.h
-+++ b/src/layout/scroll.h
-@@ -326,6 +326,43 @@
+diff --git a/src/layout/scroll.c b/src/layout/scroll.c
+index 897baeb8..088e43cf 100644
+--- a/src/layout/scroll.c
++++ b/src/layout/scroll.c
+@@ -354,6 +354,44 @@ static void scroller_core(Monitor *m, const LayoutContext *ctx) {
  	int32_t max_client_width =
  		m->w.width - 2 * config.scroller_structs - cur_gappih;
  
@@ -18,10 +20,10 @@
 +	/* adaptive: all clients fit at the default proportion -> lay them out
 +	 * edge-to-edge with equal widths instead of scrolling */
 +	if (adaptive_equal_size_allowed &&
-+		(float)n_heads * config.scroller_default_proportion <= 1.0f) {
-+		uint32_t available_width =
++		(float)n_heads * m->pertag->scroller_default_proportion[tag] <= 1.0f) {
++		int32_t available_width =
 +			m->w.width - 2 * cur_gappoh - (n_heads - 1) * cur_gappih;
-+		uint32_t equal_client_width = available_width / n_heads;
++		int32_t equal_client_width = available_width / n_heads;
 +		int32_t visible_right = m->w.x + m->w.width - cur_gappoh;
 +		struct wlr_box target_geom;
 +
@@ -32,19 +34,20 @@
 +		for (int i = 0; i < n_heads; i++) {
 +			target_geom.width = i == n_heads - 1
 +									? visible_right - target_geom.x
-+									: (int32_t)equal_client_width;
-+			arrange_stack_node(heads[i], target_geom, cur_gappiv);
++									: equal_client_width;
++			arrange_stack_node(heads[i], target_geom, cur_gappiv, ctx);
 +			target_geom.x += target_geom.width + cur_gappih;
 +		}
 +
 +		sync_scroller_state_to_clients(m, tag);
++		free(heads);
 +		return;
 +	}
 +
- 	/* 单客户端特例 */
+ 	/* Single-client special case. */
  	if (n_heads == 1 && !scroller_ignore_proportion_single &&
  		!heads[0]->client->isfullscreen &&
-@@ -461,13 +498,18 @@
+@@ -490,13 +528,18 @@ static void scroller_core(Monitor *m, const LayoutContext *ctx) {
  							  config.scroller_structs);
  			}
  		} else {
@@ -70,7 +73,7 @@
  		}
  		horizontal_check_scroller_root_inside_mon(heads[focus_index]->client,
  												  &target_geom);
-@@ -549,6 +591,43 @@
+@@ -595,6 +638,45 @@ static void vertical_scroller_core(Monitor *m, const LayoutContext *ctx) {
  	int32_t max_client_height =
  		m->w.height - 2 * config.scroller_structs - cur_gappiv;
  
@@ -88,10 +91,10 @@
 +	/* adaptive: all clients fit at the default proportion -> lay them out
 +	 * edge-to-edge with equal heights instead of scrolling */
 +	if (adaptive_equal_size_allowed &&
-+		(float)n_heads * config.scroller_default_proportion <= 1.0f) {
-+		uint32_t available_height =
++		(float)n_heads * m->pertag->scroller_default_proportion[tag] <= 1.0f) {
++		int32_t available_height =
 +			m->w.height - 2 * cur_gappov - (n_heads - 1) * cur_gappiv;
-+		uint32_t equal_client_height = available_height / n_heads;
++		int32_t equal_client_height = available_height / n_heads;
 +		int32_t visible_bottom = m->w.y + m->w.height - cur_gappov;
 +		struct wlr_box target_geom;
 +
@@ -102,19 +105,21 @@
 +		for (int i = 0; i < n_heads; i++) {
 +			target_geom.height = i == n_heads - 1
 +									 ? visible_bottom - target_geom.y
-+									 : (int32_t)equal_client_height;
-+			arrange_stack_vertical_node(heads[i], target_geom, cur_gappih);
++									 : equal_client_height;
++			arrange_stack_vertical_node(heads[i], target_geom, cur_gappih,
++										ctx);
 +			target_geom.y += target_geom.height + cur_gappiv;
 +		}
 +
 +		sync_scroller_state_to_clients(m, tag);
++		free(heads);
 +		return;
 +	}
 +
  	if (n_heads == 1 && !scroller_ignore_proportion_single &&
  		!heads[0]->client->isfullscreen &&
  		!heads[0]->client->ismaximizescreen) {
-@@ -683,13 +762,18 @@
+@@ -730,13 +812,18 @@ static void vertical_scroller_core(Monitor *m, const LayoutContext *ctx) {
  							  config.scroller_structs);
  			}
  		} else {

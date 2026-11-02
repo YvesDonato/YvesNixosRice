@@ -17,7 +17,7 @@
 
     # Mango
     mango = {
-      url = "github:mangowm/mango/0.15.1";
+      url = "github:mangowm/mango/0.18.0";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
